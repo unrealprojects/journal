@@ -18,9 +18,9 @@
                 <folder>html</folder>
         </files>
         <positions>
-                <position>top</position>
-                <position>left-column</position>
-                <position>main</position>
-                <position>footer</position>
+                <position>left_nav</position>
+                <position>top_nav</position>
+                <position>bot_nav</position>
+
         </positions>
 </extension>
