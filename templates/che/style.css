@@ -1,4 +1,131 @@
+@charset "UTF-8";
+.text-prototype, .left_nav, .menu_top a, .menu_bot a {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none; }
+
+.left_nav {
+  line-height: 22px; }
+
+.menu_left {
+  padding: 5% 0px 0px 15%; }
+  .menu_left a {
+    color: #dddddd;
+    text-decoration: none; }
+  .menu_left li {
+    list-style: none; }
+
+.newsletter {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 8px;
+  padding: 5% 0px 5% 10%;
+  border-radius: 90px;
+  display: block;
+  margin-left: 5%;
+  width: 55%;
+  background: #7ab33c;
+  cursor: pointer; }
+
 .left_colomn {
-  width: 100px; }
+  width: 15%;
+  float: left;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  background: rgba(12, 12, 12, 0.92); }
+
+/*Настройки переводчика гугл*/
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 10px !important;
+  display: inline-block !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  cursor: pointer !important;
+  zoom: 1;
+  font-family: serif;
+  text-transform: uppercase;
+  font-weight: bold; }
+  .goog-te-gadget-simple img {
+    background-image: none !important;
+    position: absolute; }
+  .goog-te-gadget-simple span {
+    border-left-width: 0px !important; }
+
+.goog-te-menu-value {
+  margin: 0px !important; }
+
+.page {
+  float: left; }
+
+.nav_prototype, .top_nav, .bot_nav {
+  border-top: 1px solid #E0DCDC;
+  border-bottom: 1px solid #E0DCDC;
+  float: left;
+  width: 100%; }
+
+.top_nav {
+  position: relative; }
+
+.menu_top, .menu_bot {
+  padding: 0px;
+  float: left; }
+  .menu_top li, .menu_bot li {
+    float: left;
+    padding-right: 30px;
+    display: block; }
+  .menu_top a, .menu_bot a {
+    color: black; }
+
+.search {
+  position: absolute;
+  right: 0px; }
+
+.search > form {
+  display: block;
+  padding-top: 10px; }
+
+#mod-search-searchword {
+  border-radius: 90px;
+  padding: 3px; }
+
+.footer {
+  float: left; }
+
+.copyright {
+  color: #747474;
+  font-size: 11px;
+  margin-bottom: 30px; }
+
+.bot_nav {
+  border-top: 3px solid #0FC53B;
+  margin-bottom: 30px; }
+
+/*Общие настройки основной части*/
+.main {
+  width: 70%;
+  padding: 0px 0px 0px 22.5%; }
+
+/* Настройки блоков для адаптивной верстки */
+.block, .block_2, .block_6 {
+  display: block;
+  float: left; }
+
+.block_2 {
+  width: 20%; }
+
+.block_6 {
+  width: 60%; }
+
+/*Общие настройки всего сайта*/
+body {
+  margin: 0px;
+  background: #F5F5F5;
+  font-family: serif; }
 
 /*# sourceMappingURL=style.css.map */

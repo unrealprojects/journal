@@ -21,6 +21,14 @@
                 <position>left_nav</position>
                 <position>top_nav</position>
                 <position>bot_nav</position>
+                <position>newsletter</position>
+                <position>languages</position>
+                <position>logo</position>
+                <position>authorization</position>
+                <position>search</position>
+
+
+
 
         </positions>
 </extension>

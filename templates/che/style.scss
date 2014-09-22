@@ -1,1 +1,9 @@
-@import '/var/www/journal/templates/che/blocks/left_colomn/left_nav/left_nav';
+@import 'blocks/left_colomn/left_colomn';
+@import 'blocks/main/main';
+
+/*Общие настройки всего сайта*/
+body{
+  margin: 0px;
+  background: #F5F5F5;
+  font-family: serif;
+}

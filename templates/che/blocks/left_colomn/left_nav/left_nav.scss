@@ -1,8 +1,32 @@
-@media screen and (min-width: 1280px) {
-$width: 100px;
 
+$text-transform: uppercase;
+$font-size-main: 14px;
+$color:rgb(221, 221, 221);
+
+
+.text-prototype{
+  text-transform: $text-transform;
+  font-size: $font-size-main;
+  color:black;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.left_colomn{
-  width: 100px;
+.left_nav{
+  @extend .text-prototype;
+  line-height: 22px;
+}
+
+
+.menu_left{
+    padding:5% 0px 0px 15%;
+
+    a{
+      color:$color;
+      text-decoration: none;
+    }
+
+    li{
+      list-style:none;
+    }
 }

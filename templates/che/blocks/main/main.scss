@@ -1,0 +1,37 @@
+//Подключение стилей из блока Main
+@import 'header/header';
+@import 'page/page';
+@import 'nav/nav';
+@import 'footer/footer';
+
+
+/*Общие настройки основной части*/
+
+$main-padding:15%; //изменение отступов основной части от краев
+$main-width:100 - $left-width - $main-padding;
+
+.main{
+    width:$main-width;
+    padding:0px 0px 0px $left-width + $main-padding/2;
+}
+
+/* Настройки блоков для адаптивной верстки */
+$block-1:100% /10;
+$block-2:$block-1*2;
+$block-6:$block-1*6;
+
+
+.block{ //прототип для наследования остальными блокамми
+  display: block;
+  float:left;
+}
+
+.block_2{ //блок занимающий 20% от ширины родительского блока
+  @extend .block;
+  width:$block-2;
+}
+
+.block_6{ //блок занимающий 60% от ширины родительского блока
+  @extend .block;
+  width:$block-6;
+}

@@ -1,0 +1,47 @@
+//Настройки верхнего меню
+.nav_prototype{
+  border-top: 1px solid #E0DCDC;
+  border-bottom: 1px solid #E0DCDC;
+  float: left;
+  width: 100%;
+}
+
+.top_nav {
+  position: relative;
+  @extend .nav_prototype;
+}
+
+
+.menu_top{
+  padding: 0px;
+  float: left;
+
+  li{
+    float: left;
+    padding-right: 30px;
+    display: block;
+  }
+  a{
+    @extend .text-prototype;
+    color:black;
+  }
+}
+
+
+//Настройка формы поиска
+
+.search {
+  position: absolute;
+  right: 0px;
+}
+
+
+.search > form {
+  display: block;
+  padding-top: 10px;
+}
+
+#mod-search-searchword {
+  border-radius: 90px;
+  padding: 3px;
+}
