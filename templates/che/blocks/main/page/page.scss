@@ -1,3 +1,62 @@
 .page {
   float: left;
 }
+.item{
+  float: left;
+
+}
+
+
+//Блок заголовка журнала
+
+.pos-title {
+  display: block;
+  width: 100%;
+  float: left;
+  position: relative;
+  background: white;
+
+
+  a:nth-of-type(1){
+     display: block;
+     float: left;
+     width: 100%;
+  }
+
+
+
+  a:nth-of-type(2){
+    display: block;
+    float: left;
+    width: 60%;
+
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  p {
+    display: block;
+    width: 40%;
+    word-wrap: break-word;
+    margin: 0px!important;
+    float: left;
+    padding: 0px;
+  }
+}
+
+
+
+
+.pos-content {
+  width: 60%;
+  float: left;
+}
+
+
+h2.pos-subtitle {
+  width: 40%;
+  float: left;
+}

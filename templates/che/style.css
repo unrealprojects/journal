@@ -63,6 +63,42 @@
 .page {
   float: left; }
 
+.item {
+  float: left; }
+
+.pos-title {
+  display: block;
+  width: 100%;
+  float: left;
+  position: relative;
+  background: white; }
+  .pos-title a:nth-of-type(1) {
+    display: block;
+    float: left;
+    width: 100%; }
+  .pos-title a:nth-of-type(2) {
+    display: block;
+    float: left;
+    width: 60%; }
+    .pos-title a:nth-of-type(2) img {
+      width: 100%;
+      height: auto; }
+  .pos-title p {
+    display: block;
+    width: 40%;
+    word-wrap: break-word;
+    margin: 0px !important;
+    float: left;
+    padding: 0px; }
+
+.pos-content {
+  width: 60%;
+  float: left; }
+
+h2.pos-subtitle {
+  width: 40%;
+  float: left; }
+
 .nav_prototype, .top_nav, .bot_nav {
   border-top: 1px solid #E0DCDC;
   border-bottom: 1px solid #E0DCDC;
@@ -111,17 +147,6 @@
   width: 70%;
   padding: 0px 0px 0px 22.5%; }
 
-  
-  .pos-content {
-width: 60%;
-float: left;
-}  
-  
-  
-h2.pos-subtitle {
-width: 40%;
-float: left;
-}
 /* Настройки блоков для адаптивной верстки */
 .block, .block_2, .block_6 {
   display: block;
@@ -140,5 +165,3 @@ body {
   font-family: serif; }
 
 /*# sourceMappingURL=style.css.map */
-
-
