@@ -82,7 +82,7 @@
   .menu_top a, .menu_bot a {
     color: black; }
 
-.search {
+.top_nav > .search {
   position: absolute;
   right: 0px; }
 
@@ -111,6 +111,17 @@
   width: 70%;
   padding: 0px 0px 0px 22.5%; }
 
+  
+  .pos-content {
+width: 60%;
+float: left;
+}  
+  
+  
+h2.pos-subtitle {
+width: 40%;
+float: left;
+}
 /* Настройки блоков для адаптивной верстки */
 .block, .block_2, .block_6 {
   display: block;
@@ -129,3 +140,5 @@ body {
   font-family: serif; }
 
 /*# sourceMappingURL=style.css.map */
+
+
