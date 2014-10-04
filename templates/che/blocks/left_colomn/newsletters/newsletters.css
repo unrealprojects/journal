@@ -1,0 +1,14 @@
+.newsletter {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 8px;
+  padding: 5% 0px 5% 10%;
+  border-radius: 90px;
+  display: block;
+  margin-left: 5%;
+  width: 55%;
+  background: #7ab33c;
+  cursor: pointer; }
+
+/*# sourceMappingURL=newsletters.css.map */

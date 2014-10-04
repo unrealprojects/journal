@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAY;EACV,KAAK,EAAE,KAAK;EACZ,cAAc,EAAE,SAAS;EACzB,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,GAAG;EACd,OAAO,EAAE,aAAa;EACtB,aAAa,EAAE,IAAI;EACnB,OAAO,EAAE,KAAK;EACd,WAAW,EAAE,EAAE;EACf,KAAK,EAAE,GAAG;EACV,UAAU,EAAE,OAAiB;EAC7B,MAAM,EAAE,OAAO",
+"sources": ["newsletters.scss"],
+"names": [],
+"file": "newsletters.css"
+}

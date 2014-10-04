@@ -1,0 +1,104 @@
+.page {
+  float: left; }
+
+.item {
+  float: left; }
+
+.item > .pos-title {
+  background: white;
+  float: left;
+  padding: 15px; }
+  .item > .pos-title img {
+    float: right;
+    width: 60%;
+    height: auto; }
+  .item > .pos-title a {
+    text-decoration: none;
+    color: black; }
+  .item > .pos-title p {
+    font-size: 16px;
+    width: 60%; }
+  .item > .pos-title p:nth-of-type(2) {
+    font-weight: 100; }
+
+.item > .pos-subtitle {
+  width: 40%;
+  float: left; }
+
+.zoo-tagcloud {
+  list-style: none;
+  padding: 0px;
+  width: 85%; }
+  .zoo-tagcloud li {
+    padding: 5px 15px; }
+  .zoo-tagcloud li:nth-of-type(odd) {
+    background: #DFDFDF; }
+  .zoo-tagcloud a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 300; }
+
+.zoo-item-list {
+  list-style: none;
+  display: block;
+  padding: 0px;
+  border-left: 2px solid #d0ae1d; }
+
+p.title {
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ddd6d6;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  width: 85%;
+  background: white; }
+  p.title img {
+    width: 100%;
+    float: left; }
+  p.title a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: 200;
+    text-align: left;
+    display: block; }
+
+.item > .pos-subtitle .custom {
+  width: 85%;
+  background: white;
+  text-align: center;
+  padding: 20px 0px;
+  float: left;
+  border: 1px solid #ddd6d6; }
+
+.item > .floatbox {
+  width: 60%;
+  float: left; }
+
+.floatbox > .pos-content .pos-title {
+  display: inline-block;
+  width: 45%;
+  padding: 13px;
+  border: 1px solid #ddd6d6;
+  font-size: 14px;
+  background: white;
+  vertical-align: top;
+  margin: 0px;
+  margin-right: -9px; }
+  .floatbox > .pos-content .pos-title img {
+    width: 100%; }
+  .floatbox > .pos-content .pos-title a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: 200;
+    text-align: left;
+    display: block; }
+
+.floatbox > .pos-content .floatbox {
+  display: inline-block; }
+
+/*# sourceMappingURL=page.css.map */

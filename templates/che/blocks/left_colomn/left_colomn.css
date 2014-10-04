@@ -1,0 +1,40 @@
+.text-prototype, .left_nav {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none; }
+
+.left_nav {
+  line-height: 22px; }
+
+.menu_left {
+  padding: 5% 0px 0px 15%; }
+  .menu_left a {
+    color: #dddddd;
+    text-decoration: none; }
+  .menu_left li {
+    list-style: none; }
+
+.newsletter {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 8px;
+  padding: 5% 0px 5% 10%;
+  border-radius: 90px;
+  display: block;
+  margin-left: 5%;
+  width: 55%;
+  background: #7ab33c;
+  cursor: pointer; }
+
+.left_colomn {
+  width: 15%;
+  float: left;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  background: rgba(12, 12, 12, 0.92); }
+
+/*# sourceMappingURL=left_colomn.css.map */
