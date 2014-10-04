@@ -9,10 +9,10 @@
 <body>
     <div class="wrap">
        <?php
-       $parent_dir = "/var/www/journal/templates/che/blocks";
+           $block_dir = JPATH_BASE . "/templates/che/blocks";
 
-       include $parent_dir.'/left_colomn/left_colomn.php';
-       include $parent_dir.'/main/main.php';
+           include $block_dir . '\left_colomn\left_colomn.php';
+           include $block_dir . '\main\main.php';
        ?>
 
 

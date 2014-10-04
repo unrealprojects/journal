@@ -16,7 +16,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport('joomla.plugin.plugin');
 
-$lang =& JFactory::getLanguage();
+$lang = JFactory::getLanguage();
 
 if($lang->getName()=="English (United Kingdom)")
 {
@@ -37,7 +37,7 @@ class plgSystemJSecure extends JPlugin {
 	}
 	
 	function onAfterDispatch() {
-		$app=& JFactory::getApplication();
+		$app= JFactory::getApplication();
 		
 		if (!$app->isAdmin()) {
 			return true; // Dont run in admin
