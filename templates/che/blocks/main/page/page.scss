@@ -54,6 +54,7 @@
   width: 85%;
 
 
+
   li{
 
     padding: 5px 15px;
@@ -78,11 +79,11 @@
   list-style: none;
   display: block;
   padding: 0px;
+  border-left: 2px solid #d0ae1d;
 
 }
 
 p.title {
-  float: left;
   padding: 15px;
   box-sizing: border-box;
   border: 1px solid #ddd6d6;
@@ -114,12 +115,13 @@ p.title {
 
 //Рекламный блок
 
-.custom {
+.item>.pos-subtitle .custom {
   width: 85%;
   background: white;
   text-align: center;
   padding: 20px 0px;
   float: left;
+  border: 1px solid #ddd6d6;
 }
 
 

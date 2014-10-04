@@ -60,6 +60,14 @@
 .goog-te-menu-value {
   margin: 0px !important; }
 
+.logo > .custom img {
+  float: left; }
+.logo > .custom span {
+  font-size: 30px;
+  margin-top: 30px;
+  display: block;
+  padding-top: 30px; }
+
 .page {
   float: left; }
 
@@ -104,10 +112,10 @@
 .zoo-item-list {
   list-style: none;
   display: block;
-  padding: 0px; }
+  padding: 0px;
+  border-left: 2px solid #d0ae1d; }
 
 p.title {
-  float: left;
   padding: 15px;
   box-sizing: border-box;
   border: 1px solid #ddd6d6;
@@ -128,12 +136,13 @@ p.title {
     text-align: left;
     display: block; }
 
-.custom {
+.item > .pos-subtitle .custom {
   width: 85%;
   background: white;
   text-align: center;
   padding: 20px 0px;
-  float: left; }
+  float: left;
+  border: 1px solid #ddd6d6; }
 
 .item > .floatbox {
   width: 60%;
