@@ -11,8 +11,8 @@
        <?php
            $block_dir = JPATH_BASE . "/templates/che/blocks";
 
-           include $block_dir . '\left_colomn\left_colomn.php';
-           include $block_dir . '\main\main.php';
+           include $block_dir . '/left_colomn/left_colomn.php';
+           include $block_dir . '/main/main.php';
        ?>
 
 
