@@ -30,6 +30,7 @@
 
   p {
     font-size: 16px;
+    width:60%;
   }
 
   p:nth-of-type(2) {
@@ -77,7 +78,7 @@
   list-style: none;
   display: block;
   padding: 0px;
-  float:left;
+
 }
 
 p.title {
@@ -111,7 +112,15 @@ p.title {
 
 
 
+//Рекламный блок
 
+.custom {
+  width: 85%;
+  background: white;
+  text-align: center;
+  padding: 20px 0px;
+  float: left;
+}
 
 
 
@@ -130,14 +139,15 @@ p.title {
 
 
 .floatbox>.pos-content .pos-title{
-  float: left;
-  width: 50%;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid rgb(221, 214, 214);
-  font-size:14px;
-  text-align: left;
+  display: inline-block;
+  width: 45%;
+  padding: 13px;
+  border: 1px solid #ddd6d6;
+  font-size: 14px;
   background: white;
+  vertical-align: top;
+  margin: 0px;
+  margin-right: -9px;
 
   img {
     width: 100%;
@@ -152,4 +162,8 @@ p.title {
     display: block;
   }
 
+}
+
+.floatbox>.pos-content .floatbox {
+  display: inline-block;
 }

@@ -78,7 +78,8 @@
     text-decoration: none;
     color: black; }
   .item > .pos-title p {
-    font-size: 16px; }
+    font-size: 16px;
+    width: 60%; }
   .item > .pos-title p:nth-of-type(2) {
     font-weight: 100; }
 
@@ -103,8 +104,7 @@
 .zoo-item-list {
   list-style: none;
   display: block;
-  padding: 0px;
-  float: left; }
+  padding: 0px; }
 
 p.title {
   float: left;
@@ -128,19 +128,27 @@ p.title {
     text-align: left;
     display: block; }
 
+.custom {
+  width: 85%;
+  background: white;
+  text-align: center;
+  padding: 20px 0px;
+  float: left; }
+
 .item > .floatbox {
   width: 60%;
   float: left; }
 
 .floatbox > .pos-content .pos-title {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  box-sizing: border-box;
+  display: inline-block;
+  width: 45%;
+  padding: 13px;
   border: 1px solid #ddd6d6;
   font-size: 14px;
-  text-align: left;
-  background: white; }
+  background: white;
+  vertical-align: top;
+  margin: 0px;
+  margin-right: -9px; }
   .floatbox > .pos-content .pos-title img {
     width: 100%; }
   .floatbox > .pos-content .pos-title a {
@@ -150,6 +158,9 @@ p.title {
     font-weight: 200;
     text-align: left;
     display: block; }
+
+.floatbox > .pos-content .floatbox {
+  display: inline-block; }
 
 .nav_prototype, .top_nav, .bot_nav {
   border-top: 1px solid #E0DCDC;
