@@ -13,8 +13,8 @@ class JConfig {
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
 	public $host = 'localhost';
-	public $user = 'root';
-	public $password = '987975987975';
+	public $user = 'db_user';
+	public $password = '123123';
 	public $db = 'journal';
 	public $dbprefix = 'f8ad7_';
 	public $live_site = '';

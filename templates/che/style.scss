@@ -1,9 +1,20 @@
+@import '-variables';
+@import '-mixins';
 @import 'blocks/left_colomn/left_colomn';
 @import 'blocks/main/main';
 @import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
 /*Общие настройки всего сайта*/
-body{
-  margin: 0px;
-  background: #F5F5F5;
-  font-family: 'PT Serif', serif;
+
+body
+{
+	margin: 0px;
+	background: #F5F5F5;
+	font-family: 'PT Serif', serif;
+}
+
+%Unstyle
+{
+	margin: 0;
+	padding: 0;
 }

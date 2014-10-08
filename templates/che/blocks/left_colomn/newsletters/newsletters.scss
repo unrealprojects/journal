@@ -1,13 +1,14 @@
-.newsletter {
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 8px;
-  padding: 5% 0px 5% 10%;
-  border-radius: 90px;
-  display: block;
-  margin-left: 5%;
-  width: 55%;
-  background: rgb(122, 179, 60);
-  cursor: pointer;
+.newsletter
+{
+	display: inline-block;
+	width: auto;
+	padding: 8px 20px;
+	border-radius: 20px;
+	margin: 10px 30px;
+	background: rgb(122, 179, 60);
+	cursor: pointer;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: white;
+	box-shadow: 0 3px 4px rgba(0,0,0,0.5);
 }

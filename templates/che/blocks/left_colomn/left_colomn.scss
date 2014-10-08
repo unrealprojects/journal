@@ -3,15 +3,28 @@
 
 
 
-$left-width: 15%;
-$background:rgba(12, 12, 12, 0.92);
-
-
-.left_colomn{
-  width: $left-width;
-  float:left;
-  position: fixed;
-  top:0px;
-  bottom: 0px;
-  background: $background;
+.left_colomn
+{
+	width: $Nav-Width;
+	float: left;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	background-color: $Nav-Background-Color;
+	.nav.menu_left
+	{
+		margin: 50px 0 0;
+		padding: 0;
+		list-style: none;
+		.left_nav_item
+		{
+			display: block;
+			padding: 10px 50px;
+			@include Transitions(#{background-color .3s});
+			&:hover
+			{
+				background-color: $Nav-Background-Color-Hover;
+			}
+		}
+	}
 }

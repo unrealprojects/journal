@@ -1,173 +1,227 @@
-.page {
-  float: left;
-}
-.item{
-  float: left;
-
+.page
+{
+	float: left;
 }
 
+.item
+{
+	float: left;
+
+}
 
 //Блок заголовка журнала
 //
-.item>.pos-title {
+.item > .pos-title
+{
 
-  background: white;
-  float: left;
-  padding: 15px;
+	background: white;
+	float: left;
+	padding: 15px;
 
+	img
+	{
+		float: right;
+		width: 60%;
+		height: auto;
+	}
 
+	a
+	{
+		text-decoration: none;
+		color: black;
+	}
 
-  img{
-    float: right;
-    width: 60%;
-    height: auto;
-  }
+	p
+	{
+		font-size: 16px;
+		width: 60%;
+	}
 
-  a {
-    text-decoration: none;
-    color: black;
-  }
+	p:nth-of-type(2)
+	{
+		font-weight: 100;
 
-  p {
-    font-size: 16px;
-    width:60%;
-  }
-
-  p:nth-of-type(2) {
-    font-weight: 100;
-
-  }
+	}
 }
-
 
 //Левая колонка
-.item>.pos-subtitle {
-  width: 40%;
-  float: left;
+.item > .pos-subtitle
+{
+	width: 40%;
+	float: left;
 }
-
 
 //Рубрики
-.zoo-tagcloud {
-  list-style: none;
-  padding: 0px;
-  width: 85%;
+.zoo-tagcloud
+{
+	list-style: none;
+	padding: 0px;
+	width: 85%;
 
+	li
+	{
 
+		padding: 5px 15px;
+	}
 
-  li{
+	li:nth-of-type(odd)
+	{
+		background: #DFDFDF;
+	}
 
-    padding: 5px 15px;
-  }
-
-  li:nth-of-type(odd){
-    background: #DFDFDF;
-  }
-
-
-  a{
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    font-weight: 300;
-  }
+	a
+	{
+		text-decoration: none;
+		color: black;
+		font-size: 16px;
+		font-weight: 300;
+	}
 }
-
 
 //Топ пять
-.zoo-item-list {
-  list-style: none;
-  display: block;
-  padding: 0px;
-  border-left: 2px solid #d0ae1d;
+.zoo-item-list
+{
+	list-style: none;
+	display: block;
+	padding: 0px;
+	border-left: 5px solid #d0ae1d;
 
 }
 
-p.title {
-  padding: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ddd6d6;
-  font-size: 14px;
-  text-align: left;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  width: 85%;
-  background: white;
+p.title
+{
+	padding: 15px;
+	box-sizing: border-box;
+	border: 1px solid #ddd6d6;
+	font-size: 14px;
+	text-align: left;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	width: 85%;
+	background: white;
 
+	img
+	{
+		width: 100%;
+		height: auto;
+		float: left;
 
-
-  img {
-    width: 100%;
-    height:auto;
-    float: left;
-
-  }
-  a{
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    font-weight: 200;
-    text-align: left;
-    display: block;
-  }
+	}
+	a
+	{
+		text-decoration: none;
+		font-size: 16px;
+		color: black;
+		font-weight: 200;
+		text-align: left;
+		display: block;
+	}
 
 }
-
-
 
 //Рекламный блок
 
-.item>.pos-subtitle .custom {
-  width: 85%;
-  background: white;
-  text-align: center;
-  padding: 20px 0px;
-  float: left;
-  border: 1px solid #ddd6d6;
+.item > .pos-subtitle .custom
+{
+	width: 85%;
+	background: white;
+	text-align: center;
+	padding: 20px 0px;
+	float: left;
+	border: 1px solid #ddd6d6;
 }
-
-
-
 
 //блок контента
-.item>.floatbox {
-  width: 60%;
-  float: left;
+.item > .floatbox
+{
+	width: 60%;
+	float: left;
 
 }
 
+.floatbox > .pos-content .pos-item
+{
+	display: inline-block;
+	border: 1px solid #ddd6d6;
+	font-size: 14px;
+	vertical-align: top;
+	margin: 0px;
+	margin-top: -1px;
+	margin-right: -9px;
 
+	@extend %Content;
+	@extend %BorderBox;
+	@include Adaptive-Mobile
+	{
+		width: 100%;
+	}
+	@include Adaptive($Viewport-XS)
+	{
+		width: 50%;
+		min-height: 300px;
+	}
+	@include Adaptive($Viewport-SM)
+	{
+		min-height: 300px;
+	}
+	@include Adaptive($Viewport-MD)
+	{
+		min-height: 375px;
+	}
+	@include Adaptive($Viewport-LR)
+	{
+		width: 33.33%;
+		min-height: 350px;
+	}
+	&:hover
+	{
+		background-color: $C-Grey-6;
+	}
+	img
+	{
+		width: 100%;
+	}
 
-
-
-
-
-.floatbox>.pos-content .pos-title{
-  display: inline-block;
-  width: 45%;
-  padding: 13px;
-  border: 1px solid #ddd6d6;
-  font-size: 14px;
-  background: white;
-  vertical-align: top;
-  margin: 0px;
-  margin-right: -9px;
-
-  img {
-    width: 100%;
-  }
-
-  a{
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    font-weight: 200;
-    text-align: left;
-    display: block;
-  }
+	a
+	{
+		text-decoration: none;
+		font-size: 18px;
+		color: black;
+		font-weight: 200;
+		text-align: left;
+		display: block;
+		margin-top: 10px;
+	}
 
 }
 
-.floatbox>.pos-content .floatbox {
-  display: inline-block;
+.floatbox > .pos-content .floatbox
+{
+	display: inline-block;
+}
+
+.pos-item .pos-meta
+{
+	width: 50%;
+	display: inline-block;
+	float: left;
+	padding: 0 0 0 25px;
+	margin: 0;
+	background: url(./lib/img/views.png) left center no-repeat;
+	font-size: 12px;
+	color: #7c7e80;
+	@extend %BorderBox;
+}
+.pos-item > .floatbox
+{
+	width: 50%;
+	display: inline-block;
+	float: right;
+	text-align: right;
+	font-size: 12px;
+	color: #7c7e80;
+}
+.element h3
+{
+	@extend %Heading;
 }
