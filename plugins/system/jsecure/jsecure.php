@@ -45,7 +45,7 @@ class plgSystemJSecure extends JPlugin {
 		
 		$config        = new JConfig();
 		$JSecureConfig = new JSecureConfig();
-		$app           =& JFactory::getApplication();
+		$app           = JFactory::getApplication();
 		$path          = '';
 		$path         .= $JSecureConfig->options == 1 ? JURI::root().$JSecureConfig->custom_path : JURI::root();
 		$jsecure 	   =  new jsecure();

@@ -10,7 +10,6 @@
     <div class="wrap">
        <?php
             $parent_dir = JPATH_BASE . "/templates/che/blocks";
-
            include $parent_dir . '/left_colomn/left_colomn.php';
            include $parent_dir . '/main/main.php';
        ?>
@@ -27,7 +26,15 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="/templates/che/blocks/main/header/js/translate.js"></script>
     <script src="/templates/che/blocks/main/nav/js/search.js"></script>
+    <script src="/templates/che/lib/js/masonry.pkgd.js"></script>
+    <script>
+        var container = document.querySelector('.element-relateditems ');
+        var msnry = new Masonry( container, {
+            // options
 
+            itemSelector: '.pos-item'
+        });
+    </script>
 </body>
 
 </html>

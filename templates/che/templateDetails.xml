@@ -27,6 +27,9 @@
                 <position>authorization</position>
                 <position>search</position>
 
+                <position>before_component</position>
+                <position>after_component</position>
+
 
 
 
