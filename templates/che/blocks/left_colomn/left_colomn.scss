@@ -5,7 +5,11 @@
 
 .left_colomn
 {
-	width: $Nav-Width;
+	width: $Nav-Width - 60px;
+	@include Adaptive($Viewport-SM)
+	{
+		width: $Nav-Width;
+	}
 	float: left;
 	position: fixed;
 	top: 0px;

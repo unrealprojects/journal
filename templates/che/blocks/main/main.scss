@@ -8,15 +8,21 @@
 @import 'nav/nav';
 @import 'footer/footer';
 
+
 body {
 	min-width: 1020px;
+	border-top: 5px solid #1a90ff;
 }
 
 .main
 {
-	border-top: 5px solid #1a90ff;
-	padding-left: $Nav-Width + $Nav-Spacing;
-	padding-right: $Nav-Spacing;
+	padding-left: ($Nav-Width - 60px) + ($Nav-Spacing / 2);
+	@include Adaptive($Viewport-SM)
+	{
+		padding-left: $Nav-Width + $Nav-Spacing;
+	}
+
+	max-width: 1200px;
 }
 
 /* Настройки блоков для адаптивной вер стки */
@@ -42,7 +48,7 @@ $block-6: $block-1*6;
 {
 	//блок занимающий 60% от ширины родительского блока
 	@extend .block;
-	width: $block-6; 
+	width: $block-6;
 }
 %Content
 {
@@ -56,6 +62,7 @@ $block-6: $block-1*6;
 	font-family: 'PT Serif Caption', serif!important;
 	font-weight: 100;
 	font-size: 32px!important;
+	line-height: 32px!important;
 	color: #24282d;
 	text-decoration: none;
 	margin: $size-l 0 $size!important;

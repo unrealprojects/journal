@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'Transitions'.
-        on line 40 of nav.scss, in `Transitions'
-        from line 40 of nav.scss
+        on line 42 of nav.scss, in `Transitions'
+        from line 42 of nav.scss
 
-35: 		text-transform: uppercase;
-36: 		text-decoration: none;
-37: 		font-size: 16px;
-38: 		font-weight: bold;
-39: 		color: black;
-40: 		@include Transitions(#{color .4s, border-color .4s});
-41: 		padding: 20px 10px;
-42: 		@include Adaptive($Viewport-MD)
-43: 		{
-44: 			padding: 20px;
-45: 		}
+37: 		text-transform: uppercase;
+38: 		text-decoration: none;
+39: 		font-size: 16px;
+40: 		font-weight: bold;
+41: 		color: black;
+42: 		@include Transitions(#{color .4s, border-color .4s});
+43: 		padding: 20px 10px;
+44: 		@include Adaptive($Viewport-MD)
+45: 		{
+46: 			padding: 20px;
+47: 		}
 
 Backtrace:
-nav.scss:40:in `Transitions'
-nav.scss:40
+nav.scss:42:in `Transitions'
+nav.scss:42
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/stack.rb:98:in `block in with_mixin'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/stack.rb:115:in `with_frame'
@@ -82,4 +82,4 @@ C:/Ruby200-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'Transitions'.\A         on line 40 of nav.scss, in `Transitions'\A         from line 40 of nav.scss\A \A 35: 		text-transform: uppercase;\A 36: 		text-decoration: none;\A 37: 		font-size: 16px;\A 38: 		font-weight: bold;\A 39: 		color: black;\A 40: 		@include Transitions(#{color .4s, border-color .4s});\A 41: 		padding: 20px 10px;\A 42: 		@include Adaptive($Viewport-MD)\A 43: 		{\A 44: 			padding: 20px;\A 45: 		}"; }
+  content: "Error: Undefined mixin 'Transitions'.\A         on line 42 of nav.scss, in `Transitions'\A         from line 42 of nav.scss\A \A 37: 		text-transform: uppercase;\A 38: 		text-decoration: none;\A 39: 		font-size: 16px;\A 40: 		font-weight: bold;\A 41: 		color: black;\A 42: 		@include Transitions(#{color .4s, border-color .4s});\A 43: 		padding: 20px 10px;\A 44: 		@include Adaptive($Viewport-MD)\A 45: 		{\A 46: 			padding: 20px;\A 47: 		}"; }

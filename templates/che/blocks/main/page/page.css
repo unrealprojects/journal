@@ -5,7 +5,7 @@ Error: Undefined mixin 'Adaptive-Mobile'.
 
 173: 	vertical-align: top;
 174: 	margin: 0px;
-175: 
+175: 	margin-top: -1px;
 176: 	@extend %Content;
 177: 	@extend %BorderBox;
 178: 	@include Adaptive-Mobile
@@ -71,4 +71,4 @@ C:/Ruby200-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'Adaptive-Mobile'.\A         on line 178 of page.scss, in `Adaptive-Mobile'\A         from line 178 of page.scss\A \A 173: 	vertical-align: top;\A 174: 	margin: 0px;\A 175: \A 176: 	@extend %Content;\A 177: 	@extend %BorderBox;\A 178: 	@include Adaptive-Mobile\A 179: 	{\A 180: 		width: 100%;\A 181: 	}\A 182: 	@include Adaptive($Viewport-XS)\A 183: 	{"; }
+  content: "Error: Undefined mixin 'Adaptive-Mobile'.\A         on line 178 of page.scss, in `Adaptive-Mobile'\A         from line 178 of page.scss\A \A 173: 	vertical-align: top;\A 174: 	margin: 0px;\A 175: 	margin-top: -1px;\A 176: 	@extend %Content;\A 177: 	@extend %BorderBox;\A 178: 	@include Adaptive-Mobile\A 179: 	{\A 180: 		width: 100%;\A 181: 	}\A 182: 	@include Adaptive($Viewport-XS)\A 183: 	{"; }

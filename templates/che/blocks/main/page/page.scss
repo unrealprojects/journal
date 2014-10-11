@@ -172,7 +172,7 @@ p.title
 	font-size: 14px;
 	vertical-align: top;
 	margin: 0px;
-
+	margin-top: -1px;
 	@extend %Content;
 	@extend %BorderBox;
 	@include Adaptive-Mobile
@@ -205,9 +205,14 @@ p.title
 
 }
 
-.floatbox > .pos-content .floatbox
+.floatbox > .pos-content
 {
-	display: inline-block;
+	padding-left: 20px;
+	.floatbox
+	{
+		display: inline-block;
+	}
+
 }
 
 .pos-item .pos-meta
@@ -230,6 +235,11 @@ p.title
 	text-align: right;
 	font-size: 12px;
 	color: #7c7e80;
+	.pos-media
+	{
+		float: right!important
+	}
+
 }
 .element h3
 {
@@ -258,6 +268,8 @@ p.title
 
 .Projects
 {
+	clear: both;
+	@extend ._Clearfix;
 	.Projects-Header
 	{
 		@extend %Heading;
@@ -292,4 +304,17 @@ p.title
 .item-page
 {
 	@extend %Content;
+}
+#yoo-zoo .item p.pos-meta
+{
+	font-style: normal;
+	margin-bottom: 0;
+}
+.heading
+{
+	border: 0!important;
+}
+h1.title
+{
+	@extend %Heading;
 }
