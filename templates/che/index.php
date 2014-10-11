@@ -28,9 +28,8 @@
     <script src="/templates/che/lib/js/masonry.pkgd.js"></script>
     <script>
         var container = document.querySelector('.element-relateditems ');
-        var msnry = new Masonry( container, {
+        var msnry =     new Masonry( container, {
             // options
-
             itemSelector: '.pos-item'
         });
     </script>
