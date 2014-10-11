@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'Adaptive-Mobile'.
-        on line 154 of page.scss, in `Adaptive-Mobile'
-        from line 154 of page.scss
+        on line 162 of page.scss, in `Adaptive-Mobile'
+        from line 162 of page.scss
 
-149: 	margin-top: -1px;
-150: 	margin-right: -9px;
-151: 
-152: 	@extend %Content;
-153: 	@extend %BorderBox;
-154: 	@include Adaptive-Mobile
-155: 	{
-156: 		width: 100%;
-157: 	}
-158: 	@include Adaptive($Viewport-XS)
-159: 	{
+157: 	margin-top: -1px;
+158: 	margin-right: -9px;
+159: 
+160: 	@extend %Content;
+161: 	@extend %BorderBox;
+162: 	@include Adaptive-Mobile
+163: 	{
+164: 		width: 100%;
+165: 	}
+166: 	@include Adaptive($Viewport-XS)
+167: 	{
 
 Backtrace:
-page.scss:154:in `Adaptive-Mobile'
-page.scss:154
+page.scss:162:in `Adaptive-Mobile'
+page.scss:162
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/stack.rb:98:in `block in with_mixin'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/stack.rb:115:in `with_frame'
@@ -71,4 +71,4 @@ C:/Ruby200-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'Adaptive-Mobile'.\A         on line 154 of page.scss, in `Adaptive-Mobile'\A         from line 154 of page.scss\A \A 149: 	margin-top: -1px;\A 150: 	margin-right: -9px;\A 151: \A 152: 	@extend %Content;\A 153: 	@extend %BorderBox;\A 154: 	@include Adaptive-Mobile\A 155: 	{\A 156: 		width: 100%;\A 157: 	}\A 158: 	@include Adaptive($Viewport-XS)\A 159: 	{"; }
+  content: "Error: Undefined mixin 'Adaptive-Mobile'.\A         on line 162 of page.scss, in `Adaptive-Mobile'\A         from line 162 of page.scss\A \A 157: 	margin-top: -1px;\A 158: 	margin-right: -9px;\A 159: \A 160: 	@extend %Content;\A 161: 	@extend %BorderBox;\A 162: 	@include Adaptive-Mobile\A 163: 	{\A 164: 		width: 100%;\A 165: 	}\A 166: 	@include Adaptive($Viewport-XS)\A 167: 	{"; }

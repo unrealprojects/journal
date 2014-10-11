@@ -16,15 +16,19 @@
 		margin: 50px 0 0;
 		padding: 0;
 		list-style: none;
-		.left_nav_item
+		li
 		{
-			display: block;
-			padding: 10px 50px;
-			@include Transitions(#{background-color .3s});
-			&:hover
+			a
 			{
-				background-color: $Nav-Background-Color-Hover;
+				display: block;
+				padding: 10px 50px;
+				@include Transitions(#{background-color .3s});
+				&:hover
+				{
+					background-color: $Nav-Background-Color-Hover;
+				}
 			}
 		}
+
 	}
 }

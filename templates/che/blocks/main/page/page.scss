@@ -18,13 +18,21 @@
 	float: left;
 	padding: 15px;
 
+	article.item
+	{
+		display: none;
+	}
+	article:first-of-type
+	{
+		display: block;
+	}
+
 	img
 	{
 		float: right;
 		width: 60%;
 		height: auto;
 	}
-
 	a
 	{
 		text-decoration: none;
@@ -73,7 +81,7 @@
 	{
 		text-decoration: none;
 		color: black;
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 300;
 	}
 }
@@ -224,4 +232,48 @@ p.title
 .element h3
 {
 	@extend %Heading;
+}
+
+.zoo-list
+{
+	li
+	{
+		margin: 0!important;
+		padding: 0!important;
+		a
+		{
+			color: #424445;
+			padding: 5px 15px;
+		}
+	}
+	li:nth-child(odd) a
+	{
+		display: block;
+		background-color: #eee;
+	}
+
+}
+
+.Projects
+{
+	.Projects-Header
+	{
+		@extend %Heading;
+	}
+	.custom
+	{
+		@extend %Content;
+		margin-bottom: $size-l;
+		.Slide-Item
+		{
+			float: left;
+			width: 33.33%;
+			img
+			{
+				display: block;
+				width: 216px;
+				margin: 0 auto;
+			}
+		}
+	}
 }

@@ -49,7 +49,7 @@ $Viewports-Count: 		length($Viewports-List);
 ol[class*='#{$Grid-Name}'] > li,
 ul[class*='#{$Grid-Name}'] > li
 {
-	@extend ._No-Bullets;
+	@extend %Unstyle;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
