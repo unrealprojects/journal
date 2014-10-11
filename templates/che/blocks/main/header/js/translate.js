@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $('.skiptranslate span').remove();
-})
+jQuery(document).ready(function(){
+    jQuery('.skiptranslate span').remove();
+});
 
 
