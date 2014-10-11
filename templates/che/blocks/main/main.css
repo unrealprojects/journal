@@ -1799,6 +1799,9 @@ p.title {
   border-top: 3px solid #0FC53B;
   margin-bottom: 30px; }
 
+body {
+  min-width: 1020px; }
+
 .main {
   border-top: 5px solid #1a90ff;
   padding-left: 400px;

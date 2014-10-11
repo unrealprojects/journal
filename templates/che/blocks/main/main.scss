@@ -8,6 +8,10 @@
 @import 'nav/nav';
 @import 'footer/footer';
 
+body {
+	min-width: 1020px;
+}
+
 .main
 {
 	border-top: 5px solid #1a90ff;
