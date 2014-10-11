@@ -54,7 +54,20 @@
 		}
 	}
 }
-
+.menu_bot
+{
+	li
+	{
+		a
+		{
+			border: 0;
+			&:hover
+			{
+				color: #0FC53B;
+			}
+		}
+	}
+}
 //Настройка формы поиска
 
 .top_nav > .search

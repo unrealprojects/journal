@@ -11,13 +11,9 @@
 
 //Блок заголовка журнала
 //
-.item > .pos-title
+.pos-title
 {
-
-	background: white;
-	float: left;
-	padding: 15px;
-
+	position: relative;
 	article.item
 	{
 		display: none;
@@ -25,7 +21,29 @@
 	article:first-of-type
 	{
 		display: block;
+		a
+		{
+			top: 10px;
+			left: 10px;
+			position: absolute;
+			padding: 5px 10px!important;
+			line-height: 13px;
+			border-radius: 4px;
+			font-size: 13px;
+			color: white;
+			letter-spacing: 0!important;
+			background-color: red;
+
+		}
 	}
+}
+.item > .pos-title
+{
+
+	background: white;
+	float: left;
+	padding: 15px;
+
 
 	img
 	{
@@ -154,8 +172,6 @@ p.title
 	font-size: 14px;
 	vertical-align: top;
 	margin: 0px;
-	margin-top: -1px;
-	margin-right: -9px;
 
 	@extend %Content;
 	@extend %BorderBox;
@@ -166,20 +182,6 @@ p.title
 	@include Adaptive($Viewport-XS)
 	{
 		width: 50%;
-		min-height: 300px;
-	}
-	@include Adaptive($Viewport-SM)
-	{
-		min-height: 300px;
-	}
-	@include Adaptive($Viewport-MD)
-	{
-		min-height: 375px;
-	}
-	@include Adaptive($Viewport-LR)
-	{
-		width: 33.33%;
-		min-height: 350px;
 	}
 	&:hover
 	{
@@ -190,7 +192,7 @@ p.title
 		width: 100%;
 	}
 
-	a
+	.pos-title > a
 	{
 		text-decoration: none;
 		font-size: 18px;
@@ -276,4 +278,18 @@ p.title
 			}
 		}
 	}
+}
+.pos-bottom
+{
+	.element.last
+	{
+		.custom
+		{
+			@extend %Content;
+		}
+	}
+}
+.item-page
+{
+	@extend %Content;
 }

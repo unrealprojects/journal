@@ -42,7 +42,7 @@ $block-6: $block-1*6;
 {
 	//блок занимающий 60% от ширины родительского блока
 	@extend .block;
-	width: $block-6;
+	width: $block-6; 
 }
 %Content
 {
