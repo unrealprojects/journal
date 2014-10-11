@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.2.0
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Окт 04 2014 г., 13:31
--- Версия сервера: 5.5.38-0ubuntu0.14.04.1
--- Версия PHP: 5.5.9-1ubuntu4.4
+-- Хост: 127.0.0.1
+-- Время создания: Окт 11 2014 г., 09:35
+-- Версия сервера: 5.6.17
+-- Версия PHP: 5.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,8 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_config` (
   `namekey` varchar(200) NOT NULL,
-  `value` text,
-  PRIMARY KEY (`namekey`)
+  `value` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -122,7 +121,7 @@ INSERT INTO `f8ad7_acymailing_config` (`namekey`, `value`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_fields` (
-  `fieldid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+`fieldid` smallint(5) unsigned NOT NULL,
   `fieldname` varchar(250) NOT NULL,
   `namekey` varchar(50) NOT NULL,
   `type` varchar(50) DEFAULT NULL,
@@ -139,10 +138,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_fields` (
   `frontlisting` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `frontjoomlaprofile` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `frontjoomlaregistration` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `joomlaprofile` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`fieldid`),
-  UNIQUE KEY `namekey` (`namekey`),
-  KEY `orderingindex` (`published`,`ordering`)
+  `joomlaprofile` tinyint(3) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
@@ -161,7 +157,7 @@ INSERT INTO `f8ad7_acymailing_fields` (`fieldid`, `fieldname`, `namekey`, `type`
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_filter` (
-  `filid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+`filid` mediumint(8) unsigned NOT NULL,
   `name` varchar(250) DEFAULT NULL,
   `description` text,
   `published` tinyint(3) unsigned DEFAULT NULL,
@@ -169,8 +165,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_filter` (
   `trigger` text,
   `report` text,
   `action` text,
-  `filter` text,
-  PRIMARY KEY (`filid`)
+  `filter` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -180,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_filter` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_geolocation` (
-  `geolocation_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`geolocation_id` int(10) unsigned NOT NULL,
   `geolocation_subid` int(10) unsigned NOT NULL DEFAULT '0',
   `geolocation_type` varchar(255) NOT NULL DEFAULT 'subscription',
   `geolocation_ip` varchar(255) NOT NULL DEFAULT '',
@@ -192,9 +187,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_geolocation` (
   `geolocation_country_code` varchar(255) NOT NULL DEFAULT '',
   `geolocation_state` varchar(255) NOT NULL DEFAULT '',
   `geolocation_state_code` varchar(255) NOT NULL DEFAULT '',
-  `geolocation_city` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`geolocation_id`),
-  KEY `geolocation_type` (`geolocation_subid`,`geolocation_type`)
+  `geolocation_city` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -210,10 +203,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_history` (
   `action` varchar(50) NOT NULL COMMENT 'different actions: created,modified,confirmed',
   `data` text,
   `source` text,
-  `mailid` mediumint(8) unsigned DEFAULT NULL,
-  KEY `subid` (`subid`,`date`),
-  KEY `dateindex` (`date`),
-  KEY `actionindex` (`action`,`mailid`)
+  `mailid` mediumint(8) unsigned DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -226,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_list` (
   `name` varchar(250) NOT NULL,
   `description` text,
   `ordering` smallint(5) unsigned DEFAULT '0',
-  `listid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+`listid` smallint(5) unsigned NOT NULL,
   `published` tinyint(4) DEFAULT NULL,
   `userid` int(10) unsigned DEFAULT NULL,
   `alias` varchar(250) DEFAULT NULL,
@@ -238,11 +228,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_list` (
   `access_sub` varchar(250) NOT NULL DEFAULT 'all',
   `access_manage` varchar(250) NOT NULL DEFAULT 'none',
   `languages` varchar(250) NOT NULL DEFAULT 'all',
-  `startrule` varchar(50) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`listid`),
-  KEY `typeorderingindex` (`type`,`ordering`),
-  KEY `useridindex` (`userid`),
-  KEY `typeuseridindex` (`type`,`userid`)
+  `startrule` varchar(50) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
@@ -260,8 +246,7 @@ INSERT INTO `f8ad7_acymailing_list` (`name`, `description`, `ordering`, `listid`
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_listcampaign` (
   `campaignid` smallint(5) unsigned NOT NULL,
-  `listid` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`campaignid`,`listid`)
+  `listid` smallint(5) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -272,8 +257,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_listcampaign` (
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_listmail` (
   `listid` smallint(5) unsigned NOT NULL,
-  `mailid` mediumint(8) unsigned NOT NULL,
-  PRIMARY KEY (`listid`,`mailid`)
+  `mailid` mediumint(8) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -287,10 +271,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_listsub` (
   `subid` int(10) unsigned NOT NULL,
   `subdate` int(10) unsigned DEFAULT NULL,
   `unsubdate` int(10) unsigned DEFAULT NULL,
-  `status` tinyint(4) NOT NULL,
-  PRIMARY KEY (`listid`,`subid`),
-  KEY `subidindex` (`subid`),
-  KEY `listidstatusindex` (`listid`,`status`)
+  `status` tinyint(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -307,7 +288,7 @@ INSERT INTO `f8ad7_acymailing_listsub` (`listid`, `subid`, `subdate`, `unsubdate
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_mail` (
-  `mailid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+`mailid` mediumint(8) unsigned NOT NULL,
   `subject` varchar(250) NOT NULL,
   `body` longtext NOT NULL,
   `altbody` longtext NOT NULL,
@@ -332,11 +313,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_mail` (
   `metakey` text,
   `metadesc` text,
   `filter` text,
-  `language` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`mailid`),
-  KEY `senddate` (`senddate`),
-  KEY `typemailidindex` (`type`,`mailid`),
-  KEY `useridindex` (`userid`)
+  `language` varchar(50) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
@@ -366,11 +343,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_queue` (
   `mailid` mediumint(8) unsigned NOT NULL,
   `priority` tinyint(3) unsigned DEFAULT '3',
   `try` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `paramqueue` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`subid`,`mailid`),
-  KEY `listingindex` (`senddate`,`subid`),
-  KEY `mailidindex` (`mailid`),
-  KEY `orderingindex` (`priority`,`senddate`,`subid`)
+  `paramqueue` varchar(250) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -380,16 +353,14 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_queue` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_rules` (
-  `ruleid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+`ruleid` smallint(5) unsigned NOT NULL,
   `name` varchar(250) NOT NULL,
   `ordering` smallint(6) DEFAULT NULL,
   `regex` text NOT NULL,
   `executed_on` text NOT NULL,
   `action_message` text NOT NULL,
   `action_user` text NOT NULL,
-  `published` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`ruleid`),
-  KEY `ordering` (`published`,`ordering`)
+  `published` tinyint(3) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -411,9 +382,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_stats` (
   `clickunique` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `unsub` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `forward` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `bouncedetails` text,
-  PRIMARY KEY (`mailid`),
-  KEY `senddateindex` (`senddate`)
+  `bouncedetails` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -423,7 +392,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_stats` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_subscriber` (
-  `subid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`subid` int(10) unsigned NOT NULL,
   `email` varchar(200) NOT NULL,
   `userid` int(10) unsigned NOT NULL DEFAULT '0',
   `name` varchar(250) NOT NULL DEFAULT '',
@@ -439,11 +408,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_subscriber` (
   `lastopen_date` int(10) unsigned NOT NULL DEFAULT '0',
   `lastopen_ip` varchar(100) DEFAULT NULL,
   `lastclick_date` int(10) unsigned NOT NULL DEFAULT '0',
-  `lastsent_date` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`subid`),
-  UNIQUE KEY `email` (`email`),
-  KEY `userid` (`userid`),
-  KEY `queueindex` (`enabled`,`accept`,`confirmed`)
+  `lastsent_date` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
@@ -460,7 +425,7 @@ INSERT INTO `f8ad7_acymailing_subscriber` (`subid`, `email`, `userid`, `name`, `
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_template` (
-  `tempid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+`tempid` smallint(5) unsigned NOT NULL,
   `name` varchar(250) DEFAULT NULL,
   `description` text,
   `body` longtext,
@@ -479,10 +444,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_template` (
   `replyemail` varchar(250) DEFAULT NULL,
   `thumb` varchar(250) DEFAULT NULL,
   `readmore` varchar(250) DEFAULT NULL,
-  `access` varchar(250) NOT NULL DEFAULT 'all',
-  PRIMARY KEY (`tempid`),
-  UNIQUE KEY `namekey` (`namekey`),
-  KEY `orderingindex` (`ordering`)
+  `access` varchar(250) NOT NULL DEFAULT 'all'
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
@@ -502,11 +464,9 @@ INSERT INTO `f8ad7_acymailing_template` (`tempid`, `name`, `description`, `body`
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_url` (
-  `urlid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`urlid` int(10) unsigned NOT NULL,
   `name` varchar(250) NOT NULL,
-  `url` text NOT NULL,
-  PRIMARY KEY (`urlid`),
-  KEY `url` (`url`(250))
+  `url` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -521,11 +481,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_urlclick` (
   `click` smallint(5) unsigned NOT NULL DEFAULT '0',
   `subid` int(10) unsigned NOT NULL,
   `date` int(10) unsigned NOT NULL,
-  `ip` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`urlid`,`mailid`,`subid`),
-  KEY `dateindex` (`date`),
-  KEY `mailidindex` (`mailid`),
-  KEY `subidindex` (`subid`)
+  `ip` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -549,10 +505,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_userstats` (
   `browser_version` tinyint(3) unsigned DEFAULT NULL,
   `is_mobile` tinyint(3) unsigned DEFAULT NULL,
   `mobile_os` varchar(255) DEFAULT NULL,
-  `user_agent` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`mailid`,`subid`),
-  KEY `senddateindex` (`senddate`),
-  KEY `subidindex` (`subid`)
+  `user_agent` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -562,18 +515,14 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_userstats` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_assets` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+`id` int(10) unsigned NOT NULL COMMENT 'Primary Key',
   `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
   `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
   `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
   `level` int(10) unsigned NOT NULL COMMENT 'The cached level in the nested tree.',
   `name` varchar(50) NOT NULL COMMENT 'The unique name for the asset.\n',
   `title` varchar(100) NOT NULL COMMENT 'The descriptive title for the asset.',
-  `rules` varchar(5120) NOT NULL COMMENT 'JSON encoded access control.',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_asset_name` (`name`),
-  KEY `idx_lft_rgt` (`lft`,`rgt`),
-  KEY `idx_parent_id` (`parent_id`)
+  `rules` varchar(5120) NOT NULL COMMENT 'JSON encoded access control.'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=304 ;
 
 --
@@ -863,7 +812,7 @@ INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (296, 18, 396, 397, 2, 'com_modules.module.125', 'Logo', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (297, 18, 398, 399, 2, 'com_modules.module.126', 'Поиск', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (298, 18, 400, 401, 2, 'com_modules.module.127', 'fdhgdfgh', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(299, 18, 402, 403, 2, 'com_modules.module.128', 'Теги тест', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(299, 18, 402, 403, 2, 'com_modules.module.128', 'Рубрики журнала', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (300, 18, 404, 405, 2, 'com_modules.module.129', 'Топ за неделю', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (301, 276, 564, 565, 2, 'com_zoo.application.3.article.2', 'journal (Article-2)', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (302, 276, 566, 567, 2, 'com_zoo.application.3.article', 'journal (Article)', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
@@ -878,9 +827,7 @@ INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 CREATE TABLE IF NOT EXISTS `f8ad7_associations` (
   `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
   `context` varchar(50) NOT NULL COMMENT 'The context of the associated item.',
-  `key` char(32) NOT NULL COMMENT 'The key for the association computed from an md5 on associated ids.',
-  PRIMARY KEY (`context`,`id`),
-  KEY `idx_key` (`key`)
+  `key` char(32) NOT NULL COMMENT 'The key for the association computed from an md5 on associated ids.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -890,7 +837,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_associations` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_banners` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `cid` int(11) NOT NULL DEFAULT '0',
   `type` int(11) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -923,13 +870,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_banners` (
   `created_by_alias` varchar(255) NOT NULL DEFAULT '',
   `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_by` int(10) unsigned NOT NULL DEFAULT '0',
-  `version` int(10) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `idx_state` (`state`),
-  KEY `idx_own_prefix` (`own_prefix`),
-  KEY `idx_metakey_prefix` (`metakey_prefix`),
-  KEY `idx_banner_catid` (`catid`),
-  KEY `idx_language` (`language`)
+  `version` int(10) unsigned NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
@@ -947,7 +888,7 @@ INSERT INTO `f8ad7_banners` (`id`, `cid`, `type`, `name`, `alias`, `imptotal`, `
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_banner_clients` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `contact` varchar(255) NOT NULL DEFAULT '',
   `email` varchar(255) NOT NULL DEFAULT '',
@@ -960,10 +901,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_banner_clients` (
   `metakey_prefix` varchar(255) NOT NULL DEFAULT '',
   `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
   `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
-  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
-  PRIMARY KEY (`id`),
-  KEY `idx_own_prefix` (`own_prefix`),
-  KEY `idx_metakey_prefix` (`metakey_prefix`)
+  `track_impressions` tinyint(4) NOT NULL DEFAULT '-1'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
@@ -984,11 +922,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_banner_tracks` (
   `track_date` datetime NOT NULL,
   `track_type` int(10) unsigned NOT NULL,
   `banner_id` int(10) unsigned NOT NULL,
-  `count` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
-  KEY `idx_track_date` (`track_date`),
-  KEY `idx_track_type` (`track_type`),
-  KEY `idx_banner_id` (`banner_id`)
+  `count` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1010,7 +944,7 @@ INSERT INTO `f8ad7_banner_tracks` (`track_date`, `track_type`, `banner_id`, `cou
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
   `lft` int(11) NOT NULL DEFAULT '0',
@@ -1036,15 +970,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_categories` (
   `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `hits` int(10) unsigned NOT NULL DEFAULT '0',
   `language` char(7) NOT NULL,
-  `version` int(10) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `cat_idx` (`extension`,`published`,`access`),
-  KEY `idx_access` (`access`),
-  KEY `idx_checkout` (`checked_out`),
-  KEY `idx_path` (`path`),
-  KEY `idx_left_right` (`lft`,`rgt`),
-  KEY `idx_alias` (`alias`),
-  KEY `idx_language` (`language`)
+  `version` int(10) unsigned NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
@@ -1086,7 +1012,7 @@ INSERT INTO `f8ad7_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `le
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_contact_details` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `alias` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '',
   `con_position` varchar(255) DEFAULT NULL,
@@ -1128,16 +1054,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_contact_details` (
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `version` int(10) unsigned NOT NULL DEFAULT '1',
-  `hits` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `idx_access` (`access`),
-  KEY `idx_checkout` (`checked_out`),
-  KEY `idx_state` (`published`),
-  KEY `idx_catid` (`catid`),
-  KEY `idx_createdby` (`created_by`),
-  KEY `idx_featured_catid` (`featured`,`catid`),
-  KEY `idx_language` (`language`),
-  KEY `idx_xreference` (`xreference`)
+  `hits` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -1147,7 +1064,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_contact_details` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_content` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
   `title` varchar(255) NOT NULL DEFAULT '',
   `alias` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -1176,16 +1093,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_content` (
   `metadata` text NOT NULL,
   `featured` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Set if article is featured.',
   `language` char(7) NOT NULL COMMENT 'The language code for the article.',
-  `xreference` varchar(50) NOT NULL COMMENT 'A reference to enable linkages to external data sets.',
-  PRIMARY KEY (`id`),
-  KEY `idx_access` (`access`),
-  KEY `idx_checkout` (`checked_out`),
-  KEY `idx_state` (`state`),
-  KEY `idx_catid` (`catid`),
-  KEY `idx_createdby` (`created_by`),
-  KEY `idx_featured_catid` (`featured`,`catid`),
-  KEY `idx_language` (`language`),
-  KEY `idx_xreference` (`xreference`)
+  `xreference` varchar(50) NOT NULL COMMENT 'A reference to enable linkages to external data sets.'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=108 ;
 
 --
@@ -1324,13 +1232,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_contentitem_tag_map` (
   `content_item_id` int(11) NOT NULL COMMENT 'PK from the content type table',
   `tag_id` int(10) unsigned NOT NULL COMMENT 'PK from the tag table',
   `tag_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Date of most recent save for this tag-item',
-  `type_id` mediumint(8) NOT NULL COMMENT 'PK from the content_type table',
-  UNIQUE KEY `uc_ItemnameTagid` (`type_id`,`content_item_id`,`tag_id`),
-  KEY `idx_tag_type` (`tag_id`,`type_id`),
-  KEY `idx_date_id` (`tag_date`,`tag_id`),
-  KEY `idx_tag` (`tag_id`),
-  KEY `idx_type` (`type_id`),
-  KEY `idx_core_content_id` (`core_content_id`)
+  `type_id` mediumint(8) NOT NULL COMMENT 'PK from the content_type table'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Maps items from content tables to tags';
 
 --
@@ -1469,8 +1371,7 @@ INSERT INTO `f8ad7_contentitem_tag_map` (`type_alias`, `core_content_id`, `conte
 
 CREATE TABLE IF NOT EXISTS `f8ad7_content_frontpage` (
   `content_id` int(11) NOT NULL DEFAULT '0',
-  `ordering` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`content_id`)
+  `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1493,8 +1394,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_content_rating` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `rating_sum` int(10) unsigned NOT NULL DEFAULT '0',
   `rating_count` int(10) unsigned NOT NULL DEFAULT '0',
-  `lastip` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`content_id`)
+  `lastip` varchar(50) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -1504,16 +1404,14 @@ CREATE TABLE IF NOT EXISTS `f8ad7_content_rating` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_content_types` (
-  `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`type_id` int(10) unsigned NOT NULL,
   `type_title` varchar(255) NOT NULL DEFAULT '',
   `type_alias` varchar(255) NOT NULL DEFAULT '',
   `table` varchar(255) NOT NULL DEFAULT '',
   `rules` text NOT NULL,
   `field_mappings` text NOT NULL,
   `router` varchar(255) NOT NULL DEFAULT '',
-  `content_history_options` varchar(5120) DEFAULT NULL COMMENT 'JSON string for com_contenthistory options',
-  PRIMARY KEY (`type_id`),
-  KEY `idx_alias` (`type_alias`)
+  `content_history_options` varchar(5120) DEFAULT NULL COMMENT 'JSON string for com_contenthistory options'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
@@ -1555,7 +1453,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_core_log_searches` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_djimageslider` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `catid` int(10) unsigned NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL DEFAULT '',
@@ -1567,9 +1465,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_djimageslider` (
   `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ordering` int(11) NOT NULL DEFAULT '0',
-  `params` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `catid` (`catid`,`published`)
+  `params` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
@@ -1587,7 +1483,7 @@ INSERT INTO `f8ad7_djimageslider` (`id`, `catid`, `title`, `alias`, `image`, `de
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_extensions` (
-  `extension_id` int(11) NOT NULL AUTO_INCREMENT,
+`extension_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `type` varchar(20) NOT NULL,
   `element` varchar(100) NOT NULL,
@@ -1603,11 +1499,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_extensions` (
   `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ordering` int(11) DEFAULT '0',
-  `state` int(11) DEFAULT '0',
-  PRIMARY KEY (`extension_id`),
-  KEY `element_clientid` (`element`,`client_id`),
-  KEY `element_folder_clientid` (`element`,`folder`,`client_id`),
-  KEY `extension` (`type`,`element`,`folder`,`client_id`)
+  `state` int(11) DEFAULT '0'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10092 ;
 
 --
@@ -1834,7 +1726,7 @@ INSERT INTO `f8ad7_extensions` (`extension_id`, `name`, `type`, `element`, `fold
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_filters` (
-  `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`filter_id` int(10) unsigned NOT NULL,
   `title` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
   `state` tinyint(1) NOT NULL DEFAULT '1',
@@ -1847,8 +1739,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_filters` (
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `map_count` int(10) unsigned NOT NULL DEFAULT '0',
   `data` text NOT NULL,
-  `params` mediumtext,
-  PRIMARY KEY (`filter_id`)
+  `params` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -1858,7 +1749,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_filters` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links` (
-  `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`link_id` int(10) unsigned NOT NULL,
   `url` varchar(255) NOT NULL,
   `route` varchar(255) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
@@ -1876,15 +1767,8 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links` (
   `list_price` double unsigned NOT NULL DEFAULT '0',
   `sale_price` double unsigned NOT NULL DEFAULT '0',
   `type_id` int(11) NOT NULL,
-  `object` mediumblob NOT NULL,
-  PRIMARY KEY (`link_id`),
-  KEY `idx_type` (`type_id`),
-  KEY `idx_title` (`title`),
-  KEY `idx_md5` (`md5sum`),
-  KEY `idx_url` (`url`(75)),
-  KEY `idx_published_list` (`published`,`state`,`access`,`publish_start_date`,`publish_end_date`,`list_price`),
-  KEY `idx_published_sale` (`published`,`state`,`access`,`publish_start_date`,`publish_end_date`,`sale_price`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57 ;
+  `object` mediumblob NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=69 ;
 
 --
 -- Дамп данных таблицы `f8ad7_finder_links`
@@ -1897,7 +1781,12 @@ INSERT INTO `f8ad7_finder_links` (`link_id`, `url`, `route`, `title`, `descripti
 (53, 'index.php?option=com_zoo&view=item&id=9', 'index.php?option=com_zoo&task=item&item_id=9', 'Препарат компании Arena  Pharmaceuticals для лечения  легочной артериальной  гипертензии получил в США статус орфанного (Copy)', '', '2014-10-04 11:24:44', '01d72e1ab1d4c6cce11881ed53f00162', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2239223b733a353a22616c696173223b733a32333a22726773656664677364666764662d636f70792d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d30342030383a32333a3230223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a34323a22636f6d706f6e656e742f7a6f6f2f6974656d2f726773656664677364666764662d636f70792d636f7079223b733a31323a22656c656d656e745f64617461223b613a323a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b693a313b733a333a22302e30223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d39223b733a353a22726f757465223b733a34343a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d39223b733a353a227469746c65223b733a3230393a22d09fd180d0b5d0bfd0b0d180d0b0d18220d0bad0bed0bcd0bfd0b0d0bdd0b8d0b8204172656e612020506861726d61636575746963616c7320d0b4d0bbd18f20d0bbd0b5d187d0b5d0bdd0b8d18f2020d0bbd0b5d0b3d0bed187d0bdd0bed0b920d0b0d180d182d0b5d180d0b8d0b0d0bbd18cd0bdd0bed0b92020d0b3d0b8d0bfd0b5d180d182d0b5d0bdd0b7d0b8d0b820d0bfd0bed0bbd183d187d0b8d0bb20d0b220d0a1d0a8d09020d181d182d0b0d182d183d18120d0bed180d184d0b0d0bdd0bdd0bed0b3d0be2028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
 (54, 'index.php?option=com_zoo&view=item&id=8', 'index.php?option=com_zoo&task=item&item_id=8', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС (Copy)', '', '2014-10-04 11:24:46', '4a3094a1e4516fedfdb27b2f61a0e666', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2238223b733a353a22616c696173223b733a32353a22726773656664677364666764662d636f70792d322d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d30342030383a32333a3230223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a34343a22636f6d706f6e656e742f7a6f6f2f6974656d2f726773656664677364666764662d636f70792d322d636f7079223b733a31323a22656c656d656e745f64617461223b613a323a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b693a313b733a333a22302e30223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a333a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a333a22546167223b613a313a7b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d38223b733a353a22726f757465223b733a34343a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d38223b733a353a227469746c65223b733a3132383a22d09cd0b8d0bdd0bfd180d0bed0bcd182d0bed180d0b320d180d0b0d0b7d18ad18fd181d0bdd0b8d0bb2c2020d0bad0b0d0bad0b8d0b520d0bed0b3d180d0b0d0bdd0b8d187d0b5d0bdd0b8d18f2020d0b7d0b0d182d180d0bed0bdd183d18220d0b7d0b0d180d183d0b1d0b5d0b6d0bdd18bd0b520d09bd0a12028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
 (55, 'index.php?option=com_zoo&view=item&id=10', 'index.php?option=com_zoo&task=item&item_id=10', '26-летняя москвичка  переписала  книгу рекордов US Open (Copy)', '', '2014-10-04 11:24:46', 'e0cffe1597dc7e306239b15b7888ff4e', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223130223b733a353a22616c696173223b733a32303a22726773656664677364666764662d636f70792d33223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d30342030383a32333a3230223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a33393a22636f6d706f6e656e742f7a6f6f2f6974656d2f726773656664677364666764662d636f70792d33223b733a31323a22656c656d656e745f64617461223b613a323a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b693a313b733a333a22352e30223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a333a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a333a22546167223b613a353a7b733a33333a22d090d0bad182d183d0b0d0bbd18cd0bdd18bd0b520d0bed0b1d0b7d0bed180d18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33333a22d090d0bad182d183d0b0d0bbd18cd0bdd18bd0b520d0bed0b1d0b7d0bed180d18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31343a22d09dd0bed0b2d0bed181d182d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34393a22d09ed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34393a22d09ed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a35353a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a35353a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3130223b733a353a22726f757465223b733a34353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3130223b733a353a227469746c65223b733a3130303a2232362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b02020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b02020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
-(56, 'index.php?option=com_zoo&view=item&id=2', 'index.php?option=com_zoo&view=item&layout=item&Itemid=101', 'Фармакогенетика и фармакогеномика', '', '2014-10-04 11:44:14', 'ac0ff9ea2e88267242fc6d1ee6e7b4a5', 1, 1, 1, '*', '2014-09-16 11:29:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2232223b733a353a22616c696173223b733a363a22786465627567223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d30342030383a34343a3132223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a303a22223b733a31323a22656c656d656e745f64617461223b613a323a7b693a303b733a3137313a22d09dd0b0d183d187d0bdd0be2dd0bfd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd181d0bad0b8d0b920d0b6d183d180d0bdd0b0d0bb20c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0b8d0b7d0b4d0b0d191d182d181d18f20d181203230313420d0b32e223b693a313b733a3534363a22c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a313a7b733a343a2254797065223b613a313a7b733a373a224a6f75726e616c223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a224a6f75726e616c223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d32223b733a353a22726f757465223b733a35373a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d266c61796f75743d6974656d264974656d69643d313031223b733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a32393a3138223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d);
+(60, 'index.php?option=com_zoo&view=item&id=11', 'index.php?option=com_zoo&task=item&item_id=11', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС (Copy) (Copy)', '', '2014-10-11 10:24:50', '9393b251dc8cabc5efc9bdf785a78280', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223131223b733a353a22616c696173223b733a33303a22726773656664677364666764662d636f70792d322d636f70792d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31312030373a31383a3537223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a34393a22636f6d706f6e656e742f7a6f6f2f6974656d2f726773656664677364666764662d636f70792d322d636f70792d636f7079223b733a31323a22656c656d656e745f64617461223b613a323a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b693a313b733a333a22302e30223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a333a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a333a22546167223b613a313a7b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3131223b733a353a22726f757465223b733a34353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3131223b733a353a227469746c65223b733a3133353a22d09cd0b8d0bdd0bfd180d0bed0bcd182d0bed180d0b320d180d0b0d0b7d18ad18fd181d0bdd0b8d0bb2c2020d0bad0b0d0bad0b8d0b520d0bed0b3d180d0b0d0bdd0b8d187d0b5d0bdd0b8d18f2020d0b7d0b0d182d180d0bed0bdd183d18220d0b7d0b0d180d183d0b1d0b5d0b6d0bdd18bd0b520d09bd0a12028436f7079292028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d);
+INSERT INTO `f8ad7_finder_links` (`link_id`, `url`, `route`, `title`, `description`, `indexdate`, `md5sum`, `published`, `state`, `access`, `language`, `publish_start_date`, `publish_end_date`, `start_date`, `end_date`, `list_price`, `sale_price`, `type_id`, `object`) VALUES
+(61, 'index.php?option=com_zoo&view=item&id=12', 'index.php?option=com_zoo&task=item&item_id=12', '26-летняя москвичка  переписала  книгу рекордов US Open (Copy) (Copy)', '', '2014-10-11 10:24:51', '99e296613d650c5948962b43d472fb61', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223132223b733a353a22616c696173223b733a32353a22726773656664677364666764662d636f70792d332d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31312030373a32333a3037223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a34343a22636f6d706f6e656e742f7a6f6f2f6974656d2f726773656664677364666764662d636f70792d332d636f7079223b733a31323a22656c656d656e745f64617461223b613a323a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b693a313b733a333a22302e30223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a333a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a333a22546167223b613a32333a7b733a33333a22d090d0bad182d183d0b0d0bbd18cd0bdd18bd0b520d0bed0b1d0b7d0bed180d18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33333a22d090d0bad182d183d0b0d0bbd18cd0bdd18bd0b520d0bed0b1d0b7d0bed180d18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34313a22d091d0b5d0b7d0bed0bfd0b0d181d0bdd0bed181d182d18c20d0bbd0b5d0bad0b0d180d181d182d0b2223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34313a22d091d0b5d0b7d0bed0bfd0b0d181d0bdd0bed181d182d18c20d0bbd0b5d0bad0b0d180d181d182d0b2223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a32373a22d093d0b5d0bdd0bdd0b0d18f20d182d0b5d180d0b0d0bfd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32373a22d093d0b5d0bdd0bdd0b0d18f20d182d0b5d180d0b0d0bfd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a33303a22d093d0b5d0bdd0bed0b4d0b8d0b0d0b3d0bdd0bed181d182d0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33303a22d093d0b5d0bdd0bed0b4d0b8d0b0d0b3d0bdd0bed181d182d0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a35313a22d09ad0bed0bcd0bfd18cd18ed182d0b5d180d0bdd0bed0b520d0bcd0bed0b4d0b5d0bbd0b8d180d0bed0b2d0b0d0bdd0b8d0b5223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a35313a22d09ad0bed0bcd0bfd18cd18ed182d0b5d180d0bdd0bed0b520d0bcd0bed0b4d0b5d0bbd0b8d180d0bed0b2d0b0d0bdd0b8d0b5223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31323a22d09bd0b5d0bad186d0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31323a22d09bd0b5d0bad186d0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a32393a22d09cd0bdd0b5d0bdd0b8d0b520d18dd0bad181d0bfd0b5d180d182d0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32393a22d09cd0bdd0b5d0bdd0b8d0b520d18dd0bad181d0bfd0b5d180d182d0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a35313a22d09cd0bed0bbd0b5d0bad183d0bbd18fd180d0bdd0b0d18f20d0b1d0b8d0bed182d0b5d185d0bdd0bed0bbd0bed0b3d0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a35313a22d09cd0bed0bbd0b5d0bad183d0bbd18fd180d0bdd0b0d18f20d0b1d0b8d0bed182d0b5d185d0bdd0bed0bbd0bed0b3d0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31343a22d09dd0bed0b2d0bed181d182d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a33393a22d09dd0bed0b2d0bed181d182d0b820d184d0b0d180d0bcd0bad0bed0bcd0bfd0b0d0bdd0b8d0b9223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33393a22d09dd0bed0b2d0bed181d182d0b820d184d0b0d180d0bcd0bad0bed0bcd0bfd0b0d0bdd0b8d0b9223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a33313a22d09dd0bed0b2d18bd0b520d182d0b5d185d0bdd0bed0bbd0bed0b3d0b8d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33313a22d09dd0bed0b2d18bd0b520d182d0b5d185d0bdd0bed0bbd0bed0b3d0b8d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34393a22d09ed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34393a22d09ed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a32383a22d09ed182d0b2d0b5d182d18b20d0bdd0b020d182d0b5d181d182d18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32383a22d09ed182d0b2d0b5d182d18b20d0bdd0b020d182d0b5d181d182d18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34393a22d09fd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b520d180d0b5d0bad0bed0bcd0b5d0bdd0b4d0b0d186d0b8d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34393a22d09fd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b520d180d0b5d0bad0bed0bcd0b5d0bdd0b4d0b0d186d0b8d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34353a22d09fd180d0bed0b3d180d0b0d0bcd0bcd0bdd0bed0b520d0bed0b1d0b5d181d0bfd0b5d187d0b5d0bdd0b8d0b5223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34353a22d09fd180d0bed0b3d180d0b0d0bcd0bcd0bdd0bed0b520d0bed0b1d0b5d181d0bfd0b5d187d0b5d0bdd0b8d0b5223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34323a22d0a2d0b5d181d182d18b20d0b4d0bbd18f20d181d0b0d0bcd0bed0bfd180d0bed0b2d0b5d180d0bad0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34323a22d0a2d0b5d181d182d18b20d0b4d0bbd18f20d181d0b0d0bcd0bed0bfd180d0bed0b2d0b5d180d0bad0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a32333a22d0a2d0bed187d0bad0b020d0b7d180d0b5d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32333a22d0a2d0bed187d0bad0b020d0b7d180d0b5d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a33323a22d0a4d0b0d180d0bcd0b0d0bad0bed18dd0bad0bed0bdd0bed0bcd0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33323a22d0a4d0b0d180d0bcd0b0d0bad0bed18dd0bad0bed0bdd0bed0bcd0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34303a22d0a4d0b0d180d0bcd0b0d0bad0bed18dd0bfd0b8d0b4d0b5d0bcd0b8d0bed0bbd0bed0b3d0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34303a22d0a4d0b0d180d0bcd0b0d0bad0bed18dd0bfd0b8d0b4d0b5d0bcd0b8d0bed0bbd0bed0b3d0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34333a22d0a4d0b0d180d0bcd0b0d186d0b5d0b2d182d0b8d187d0b5d181d0bad0b8d0b920d180d18bd0bdd0bed0ba223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34333a22d0a4d0b0d180d0bcd0b0d186d0b5d0b2d182d0b8d187d0b5d181d0bad0b8d0b920d180d18bd0bdd0bed0ba223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a36313a22d0add0bfd0b8d0b4d0b5d0bcd0b8d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36313a22d0add0bfd0b8d0b4d0b5d0bcd0b8d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31323a22d0aed0b1d0b8d0bbd0b5d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31323a22d0aed0b1d0b8d0bbd0b5d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3132223b733a353a22726f757465223b733a34353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3132223b733a353a227469746c65223b733a3130373a2232362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b02020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b02020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2028436f7079292028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
+(65, 'index.php?option=com_zoo&view=item&id=14', 'index.php?option=com_zoo&task=item&item_id=14', '26-летняя москвичка  переписала  книгу рекордов US Open (Copy) (Copy) (Copy)', '', '2014-10-11 10:26:31', 'afcc1f219ff357071248f672c694df2f', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223134223b733a353a22616c696173223b733a33303a22726773656664677364666764662d636f70792d332d636f70792d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31312030373a32363a3139223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a34393a22636f6d706f6e656e742f7a6f6f2f6974656d2f726773656664677364666764662d636f70792d332d636f70792d636f7079223b733a31323a22656c656d656e745f64617461223b613a323a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b693a313b733a333a22302e30223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a333a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a333a22546167223b613a32333a7b733a33333a22d090d0bad182d183d0b0d0bbd18cd0bdd18bd0b520d0bed0b1d0b7d0bed180d18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33333a22d090d0bad182d183d0b0d0bbd18cd0bdd18bd0b520d0bed0b1d0b7d0bed180d18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34313a22d091d0b5d0b7d0bed0bfd0b0d181d0bdd0bed181d182d18c20d0bbd0b5d0bad0b0d180d181d182d0b2223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34313a22d091d0b5d0b7d0bed0bfd0b0d181d0bdd0bed181d182d18c20d0bbd0b5d0bad0b0d180d181d182d0b2223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a32373a22d093d0b5d0bdd0bdd0b0d18f20d182d0b5d180d0b0d0bfd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32373a22d093d0b5d0bdd0bdd0b0d18f20d182d0b5d180d0b0d0bfd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a33303a22d093d0b5d0bdd0bed0b4d0b8d0b0d0b3d0bdd0bed181d182d0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33303a22d093d0b5d0bdd0bed0b4d0b8d0b0d0b3d0bdd0bed181d182d0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a35313a22d09ad0bed0bcd0bfd18cd18ed182d0b5d180d0bdd0bed0b520d0bcd0bed0b4d0b5d0bbd0b8d180d0bed0b2d0b0d0bdd0b8d0b5223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a35313a22d09ad0bed0bcd0bfd18cd18ed182d0b5d180d0bdd0bed0b520d0bcd0bed0b4d0b5d0bbd0b8d180d0bed0b2d0b0d0bdd0b8d0b5223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31323a22d09bd0b5d0bad186d0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31323a22d09bd0b5d0bad186d0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a32393a22d09cd0bdd0b5d0bdd0b8d0b520d18dd0bad181d0bfd0b5d180d182d0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32393a22d09cd0bdd0b5d0bdd0b8d0b520d18dd0bad181d0bfd0b5d180d182d0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a35313a22d09cd0bed0bbd0b5d0bad183d0bbd18fd180d0bdd0b0d18f20d0b1d0b8d0bed182d0b5d185d0bdd0bed0bbd0bed0b3d0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a35313a22d09cd0bed0bbd0b5d0bad183d0bbd18fd180d0bdd0b0d18f20d0b1d0b8d0bed182d0b5d185d0bdd0bed0bbd0bed0b3d0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31343a22d09dd0bed0b2d0bed181d182d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a33393a22d09dd0bed0b2d0bed181d182d0b820d184d0b0d180d0bcd0bad0bed0bcd0bfd0b0d0bdd0b8d0b9223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33393a22d09dd0bed0b2d0bed181d182d0b820d184d0b0d180d0bcd0bad0bed0bcd0bfd0b0d0bdd0b8d0b9223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a33313a22d09dd0bed0b2d18bd0b520d182d0b5d185d0bdd0bed0bbd0bed0b3d0b8d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33313a22d09dd0bed0b2d18bd0b520d182d0b5d185d0bdd0bed0bbd0bed0b3d0b8d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34393a22d09ed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34393a22d09ed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a32383a22d09ed182d0b2d0b5d182d18b20d0bdd0b020d182d0b5d181d182d18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32383a22d09ed182d0b2d0b5d182d18b20d0bdd0b020d182d0b5d181d182d18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34393a22d09fd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b520d180d0b5d0bad0bed0bcd0b5d0bdd0b4d0b0d186d0b8d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34393a22d09fd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b520d180d0b5d0bad0bed0bcd0b5d0bdd0b4d0b0d186d0b8d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34353a22d09fd180d0bed0b3d180d0b0d0bcd0bcd0bdd0bed0b520d0bed0b1d0b5d181d0bfd0b5d187d0b5d0bdd0b8d0b5223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34353a22d09fd180d0bed0b3d180d0b0d0bcd0bcd0bdd0bed0b520d0bed0b1d0b5d181d0bfd0b5d187d0b5d0bdd0b8d0b5223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34323a22d0a2d0b5d181d182d18b20d0b4d0bbd18f20d181d0b0d0bcd0bed0bfd180d0bed0b2d0b5d180d0bad0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34323a22d0a2d0b5d181d182d18b20d0b4d0bbd18f20d181d0b0d0bcd0bed0bfd180d0bed0b2d0b5d180d0bad0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a32333a22d0a2d0bed187d0bad0b020d0b7d180d0b5d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32333a22d0a2d0bed187d0bad0b020d0b7d180d0b5d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a33323a22d0a4d0b0d180d0bcd0b0d0bad0bed18dd0bad0bed0bdd0bed0bcd0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33323a22d0a4d0b0d180d0bcd0b0d0bad0bed18dd0bad0bed0bdd0bed0bcd0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34303a22d0a4d0b0d180d0bcd0b0d0bad0bed18dd0bfd0b8d0b4d0b5d0bcd0b8d0bed0bbd0bed0b3d0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34303a22d0a4d0b0d180d0bcd0b0d0bad0bed18dd0bfd0b8d0b4d0b5d0bcd0b8d0bed0bbd0bed0b3d0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34333a22d0a4d0b0d180d0bcd0b0d186d0b5d0b2d182d0b8d187d0b5d181d0bad0b8d0b920d180d18bd0bdd0bed0ba223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34333a22d0a4d0b0d180d0bcd0b0d186d0b5d0b2d182d0b8d187d0b5d181d0bad0b8d0b920d180d18bd0bdd0bed0ba223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a36313a22d0add0bfd0b8d0b4d0b5d0bcd0b8d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36313a22d0add0bfd0b8d0b4d0b5d0bcd0b8d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31323a22d0aed0b1d0b8d0bbd0b5d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31323a22d0aed0b1d0b8d0bbd0b5d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3134223b733a353a22726f757465223b733a34353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3134223b733a353a227469746c65223b733a3131343a2232362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b02020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b02020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2028436f7079292028436f7079292028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
+(66, 'index.php?option=com_zoo&view=item&id=13', 'index.php?option=com_zoo&task=item&item_id=13', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС (Copy) (Copy) (Copy)', '', '2014-10-11 10:33:07', 'fde7f4e29d855b1350fed626b5645421', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223133223b733a353a22616c696173223b733a33353a22726773656664677364666764662d636f70792d322d636f70792d636f70792d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31312030373a33333a3036223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a35343a22636f6d706f6e656e742f7a6f6f2f6974656d2f726773656664677364666764662d636f70792d322d636f70792d636f70792d636f7079223b733a31323a22656c656d656e745f64617461223b613a323a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b693a313b733a333a22302e30223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a333a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a333a22546167223b613a323a7b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3133223b733a353a22726f757465223b733a34353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3133223b733a353a227469746c65223b733a3134323a22d09cd0b8d0bdd0bfd180d0bed0bcd182d0bed180d0b320d180d0b0d0b7d18ad18fd181d0bdd0b8d0bb2c2020d0bad0b0d0bad0b8d0b520d0bed0b3d180d0b0d0bdd0b8d187d0b5d0bdd0b8d18f2020d0b7d0b0d182d180d0bed0bdd183d18220d0b7d0b0d180d183d0b1d0b5d0b6d0bdd18bd0b520d09bd0a12028436f7079292028436f7079292028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
+(68, 'index.php?option=com_zoo&view=item&id=2', 'index.php?option=com_zoo&view=item&layout=item&Itemid=101', 'Фармакогенетика и фармакогеномика', '', '2014-10-11 10:39:31', '2bf28e2bff9fe86b44b7598bb256f304', 1, 1, 1, '*', '2014-09-16 11:29:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2232223b733a353a22616c696173223b733a363a22786465627567223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31312030373a33393a3330223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a303a22223b733a31323a22656c656d656e745f64617461223b613a323a7b693a303b733a3137313a22d09dd0b0d183d187d0bdd0be2dd0bfd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd181d0bad0b8d0b920d0b6d183d180d0bdd0b0d0bb20c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0b8d0b7d0b4d0b0d191d182d181d18f20d181203230313420d0b32e223b693a313b733a3534363a22c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a313a7b733a343a2254797065223b613a313a7b733a373a224a6f75726e616c223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a224a6f75726e616c223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d32223b733a353a22726f757465223b733a35373a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d266c61796f75743d6974656d264974656d69643d313031223b733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a32393a3138223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d);
 
 -- --------------------------------------------------------
 
@@ -1908,10 +1797,7 @@ INSERT INTO `f8ad7_finder_links` (`link_id`, `url`, `route`, `title`, `descripti
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms0` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1923,6 +1809,10 @@ INSERT INTO `f8ad7_finder_links_terms0` (`link_id`, `term_id`, `weight`) VALUES
 (46, 139, 0.56004),
 (47, 139, 0.56004),
 (53, 139, 0.56004),
+(60, 139, 0.56004),
+(61, 139, 0.56004),
+(65, 139, 0.56004),
+(66, 139, 0.56004),
 (54, 139, 1.12008),
 (42, 693, 0.56661),
 (53, 693, 0.56661),
@@ -1940,10 +1830,7 @@ INSERT INTO `f8ad7_finder_links_terms0` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms1` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1964,9 +1851,19 @@ INSERT INTO `f8ad7_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
 (42, 719, 3.34339),
 (53, 719, 3.34339),
 (47, 887, 0.22661),
-(56, 1231, 0.48),
-(56, 1232, 1.8),
-(56, 1233, 2.28);
+(60, 887, 0.22661),
+(66, 887, 0.22661),
+(60, 1384, 2.09661),
+(66, 1384, 2.09661),
+(60, 1385, 2.38),
+(66, 1385, 2.38),
+(61, 1404, 0.63996),
+(65, 1404, 0.63996),
+(61, 1405, 0.48),
+(65, 1405, 0.48),
+(68, 1626, 0.48),
+(68, 1627, 1.8),
+(68, 1628, 2.28);
 
 -- --------------------------------------------------------
 
@@ -1977,10 +1874,7 @@ INSERT INTO `f8ad7_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms2` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1992,26 +1886,44 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (46, 488, 1.2),
 (47, 488, 1.2),
 (53, 488, 1.2),
-(56, 488, 1.7),
+(60, 488, 1.2),
+(61, 488, 1.2),
+(65, 488, 1.2),
+(66, 488, 1.2),
+(68, 488, 1.7),
 (54, 488, 2.4),
+(60, 489, 1.88004),
+(61, 489, 1.88004),
+(65, 489, 1.88004),
+(66, 489, 1.88004),
 (42, 489, 1.88004),
 (46, 489, 1.88004),
 (47, 489, 1.88004),
 (53, 489, 1.88004),
-(56, 489, 2.66339),
+(68, 489, 2.66339),
 (54, 489, 3.76008),
 (42, 490, 2.4),
 (46, 490, 2.4),
 (47, 490, 2.4),
 (53, 490, 2.4),
-(56, 490, 3.4),
+(60, 490, 2.4),
+(61, 490, 2.4),
+(65, 490, 2.4),
+(66, 490, 2.4),
+(68, 490, 3.4),
 (54, 490, 4.8),
 (42, 491, 1.2),
 (46, 491, 1.2),
 (47, 491, 1.2),
 (53, 491, 1.2),
-(56, 491, 1.7),
+(60, 491, 1.2),
+(61, 491, 1.2),
+(65, 491, 1.2),
+(66, 491, 1.2),
+(68, 491, 1.7),
 (54, 491, 2.4),
+(61, 708, 0.24),
+(65, 708, 0.24),
 (42, 708, 0.34),
 (53, 708, 0.34),
 (42, 709, 2.32339),
@@ -2019,17 +1931,37 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (42, 710, 2.83339),
 (53, 710, 2.83339),
 (46, 870, 1.2),
+(61, 870, 1.2),
+(65, 870, 1.2),
+(66, 870, 1.2),
 (46, 871, 2.4),
+(61, 871, 2.4),
+(65, 871, 2.4),
+(66, 871, 2.4),
 (46, 872, 1.2),
 (46, 873, 2.31996),
-(56, 1286, 2.4),
-(56, 1287, 2.19996),
-(56, 1288, 2.28),
-(56, 1289, 2.24004),
-(56, 1290, 2.4),
-(56, 1291, 1.2),
-(56, 1292, 2.12004),
-(56, 1293, 2.4);
+(61, 1400, 1.83996),
+(65, 1400, 1.83996),
+(61, 1434, 1.2),
+(65, 1434, 1.2),
+(61, 1435, 1.2),
+(65, 1435, 1.2),
+(61, 1436, 1.2),
+(65, 1436, 1.2),
+(61, 1437, 2.07996),
+(65, 1437, 2.07996),
+(61, 1438, 0.96),
+(65, 1438, 0.96),
+(61, 1442, 0.48),
+(65, 1442, 0.48),
+(68, 1681, 2.4),
+(68, 1682, 2.19996),
+(68, 1683, 2.28),
+(68, 1684, 2.24004),
+(68, 1685, 2.4),
+(68, 1686, 1.2),
+(68, 1687, 2.12004),
+(68, 1688, 2.4);
 
 -- --------------------------------------------------------
 
@@ -2040,10 +1972,7 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms3` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2051,7 +1980,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms3` (
 --
 
 INSERT INTO `f8ad7_finder_links_terms3` (`link_id`, `term_id`, `weight`) VALUES
-(56, 1194, 0.56004);
+(68, 1589, 0.56004);
 
 -- --------------------------------------------------------
 
@@ -2062,10 +1991,7 @@ INSERT INTO `f8ad7_finder_links_terms3` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms4` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2077,50 +2003,109 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (46, 95, 1.2),
 (47, 95, 1.2),
 (53, 95, 1.2),
+(60, 95, 1.2),
+(61, 95, 1.2),
+(65, 95, 1.2),
+(66, 95, 1.2),
 (42, 96, 2.8666),
 (46, 96, 2.8666),
 (47, 96, 2.8666),
 (53, 96, 2.8666),
+(60, 96, 2.8666),
+(61, 96, 2.8666),
+(65, 96, 2.8666),
+(66, 96, 2.8666),
 (42, 97, 3.2),
 (46, 97, 3.2),
 (47, 97, 3.2),
 (53, 97, 3.2),
+(60, 97, 3.2),
+(61, 97, 3.2),
+(65, 97, 3.2),
+(66, 97, 3.2),
 (42, 142, 3.4668),
 (46, 142, 3.4668),
 (47, 142, 3.4668),
 (53, 142, 3.4668),
+(60, 142, 3.4668),
+(61, 142, 3.4668),
+(65, 142, 3.4668),
+(66, 142, 3.4668),
 (42, 236, 1.0668),
 (47, 236, 1.0668),
 (53, 236, 2.58699),
+(61, 236, 3.04038),
+(60, 236, 4.10718),
+(65, 236, 4.56057),
+(66, 236, 5.62737),
 (42, 238, 6.4),
 (47, 238, 6.4),
 (53, 238, 6.4),
+(60, 238, 6.4),
+(61, 238, 6.4),
+(65, 238, 6.4),
+(66, 238, 6.4),
 (42, 413, 0.08004),
 (46, 413, 0.08004),
 (47, 413, 0.08004),
 (53, 413, 0.08004),
+(60, 413, 0.08004),
+(61, 413, 0.08004),
+(65, 413, 0.08004),
+(66, 413, 0.08004),
 (54, 413, 0.16008),
-(56, 413, 0.35351),
+(68, 413, 0.35351),
+(60, 414, 1.88004),
+(61, 414, 1.88004),
+(65, 414, 1.88004),
+(66, 414, 1.88004),
 (42, 414, 1.88004),
 (46, 414, 1.88004),
 (47, 414, 1.88004),
 (53, 414, 1.88004),
-(56, 414, 2.66339),
+(68, 414, 2.66339),
 (54, 414, 3.76008),
 (47, 532, 4.8),
+(60, 532, 4.8),
+(66, 532, 4.8),
 (47, 533, 6.6668),
+(60, 533, 6.6668),
+(66, 533, 6.6668),
+(66, 856, 0.96),
 (46, 856, 2.88),
+(61, 856, 2.88),
+(65, 856, 2.88),
 (53, 1185, 0.17),
+(61, 1186, 2.21),
 (53, 1186, 5.2),
+(60, 1186, 7.41),
+(65, 1186, 9.62),
+(66, 1186, 14.82),
 (53, 1187, 7.0668),
-(56, 1215, 3.84),
-(56, 1216, 2.28),
-(56, 1217, 2.31996),
-(56, 1218, 1.88004),
-(56, 1219, 2.19996),
-(56, 1220, 0.63996),
-(56, 1221, 1.59996),
-(56, 1222, 1.8);
+(60, 1382, 5.4668),
+(66, 1382, 5.4668),
+(61, 1388, 4.8),
+(65, 1388, 4.8),
+(61, 1389, 5.4668),
+(65, 1389, 5.4668),
+(61, 1392, 6.6668),
+(65, 1392, 6.6668),
+(61, 1394, 0.96),
+(65, 1394, 0.96),
+(61, 1395, 2.04),
+(65, 1395, 2.04),
+(61, 1396, 1.04004),
+(65, 1396, 1.04004),
+(65, 1450, 2.49339),
+(66, 1450, 8.36019),
+(68, 1610, 3.84),
+(68, 1611, 2.28),
+(68, 1612, 2.31996),
+(68, 1613, 1.88004),
+(68, 1614, 2.19996),
+(68, 1615, 0.63996),
+(68, 1616, 1.59996),
+(68, 1617, 1.8);
 
 -- --------------------------------------------------------
 
@@ -2131,10 +2116,7 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms5` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2149,25 +2131,55 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (42, 713, 3.4),
 (53, 713, 3.4),
 (46, 857, 0.56661),
+(61, 857, 0.56661),
+(65, 857, 0.56661),
+(61, 858, 2.49339),
+(65, 858, 2.49339),
 (46, 858, 2.49339),
 (46, 859, 2.66339),
+(61, 859, 2.66339),
+(65, 859, 2.66339),
 (47, 884, 0.56661),
+(60, 884, 0.56661),
+(66, 884, 0.56661),
 (47, 885, 2.66339),
+(60, 885, 2.66339),
+(66, 885, 2.66339),
 (47, 886, 3.17339),
-(56, 1196, 2.4),
-(56, 1197, 3.84),
-(56, 1198, 4.8),
-(56, 1223, 1.2),
-(56, 1224, 2.28),
-(56, 1225, 2.4),
-(56, 1226, 1.75992),
-(56, 1227, 2.4),
-(56, 1228, 2.4),
-(56, 1229, 1.95996),
-(56, 1230, 2.04),
-(56, 1283, 0.39996),
-(56, 1284, 2.04),
-(56, 1285, 2.4);
+(60, 886, 3.17339),
+(66, 886, 3.17339),
+(61, 1402, 0.96),
+(65, 1402, 0.96),
+(61, 1403, 2.24004),
+(65, 1403, 2.24004),
+(61, 1427, 0.56004),
+(65, 1427, 0.56004),
+(61, 1428, 0.79992),
+(65, 1428, 0.79992),
+(61, 1429, 1.56),
+(65, 1429, 1.56),
+(61, 1430, 2.07996),
+(65, 1430, 2.07996),
+(61, 1431, 0.80004),
+(65, 1431, 0.80004),
+(61, 1432, 0.39996),
+(65, 1432, 0.39996),
+(61, 1433, 1.68),
+(65, 1433, 1.68),
+(68, 1591, 2.4),
+(68, 1592, 3.84),
+(68, 1593, 4.8),
+(68, 1618, 1.2),
+(68, 1619, 2.28),
+(68, 1620, 2.4),
+(68, 1621, 1.75992),
+(68, 1622, 2.4),
+(68, 1623, 2.4),
+(68, 1624, 1.95996),
+(68, 1625, 2.04),
+(68, 1678, 0.39996),
+(68, 1679, 2.04),
+(68, 1680, 2.4);
 
 -- --------------------------------------------------------
 
@@ -2178,10 +2190,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms6` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2193,10 +2202,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms6` (
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms7` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2217,24 +2223,44 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (42, 726, 3.00339),
 (53, 726, 3.00339),
 (46, 852, 0.22661),
+(61, 852, 0.22661),
+(65, 852, 0.22661),
+(61, 853, 2.09661),
+(65, 853, 2.09661),
 (46, 853, 2.09661),
 (46, 864, 1.13339),
+(61, 864, 1.13339),
+(65, 864, 1.13339),
 (46, 865, 2.60661),
+(61, 865, 2.60661),
+(65, 865, 2.60661),
 (46, 866, 3.11661),
-(56, 1257, 1.2),
-(56, 1258, 2.28),
-(56, 1259, 0.15996),
-(56, 1260, 1.47996),
-(56, 1261, 1.92),
-(56, 1262, 0.72),
-(56, 1263, 2.31996),
-(56, 1264, 2.4),
-(56, 1265, 0.87996),
-(56, 1266, 2.12004),
-(56, 1267, 2.4),
-(56, 1268, 0.72),
-(56, 1269, 2.07996),
-(56, 1270, 2.36004);
+(61, 866, 3.11661),
+(65, 866, 3.11661),
+(61, 1393, 2.38),
+(65, 1393, 2.38),
+(61, 1420, 0.96),
+(65, 1420, 0.96),
+(61, 1421, 2.19996),
+(65, 1421, 2.19996),
+(61, 1422, 0.87996),
+(65, 1422, 0.87996),
+(61, 1423, 2.12004),
+(65, 1423, 2.12004),
+(68, 1652, 1.2),
+(68, 1653, 2.28),
+(68, 1654, 0.15996),
+(68, 1655, 1.47996),
+(68, 1656, 1.92),
+(68, 1657, 0.72),
+(68, 1658, 2.31996),
+(68, 1659, 2.4),
+(68, 1660, 0.87996),
+(68, 1661, 2.12004),
+(68, 1662, 2.4),
+(68, 1663, 0.72),
+(68, 1664, 2.07996),
+(68, 1665, 2.36004);
 
 -- --------------------------------------------------------
 
@@ -2245,10 +2271,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms8` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2260,19 +2283,37 @@ INSERT INTO `f8ad7_finder_links_terms8` (`link_id`, `term_id`, `weight`) VALUES
 (46, 140, 0.5334),
 (47, 140, 0.5334),
 (53, 140, 0.5334),
+(60, 140, 0.5334),
+(61, 140, 0.5334),
+(65, 140, 0.5334),
+(66, 140, 0.5334),
 (42, 141, 3.2),
 (46, 141, 3.2),
 (47, 141, 3.2),
 (53, 141, 3.2),
+(60, 141, 3.2),
+(61, 141, 3.2),
+(65, 141, 3.2),
+(66, 141, 3.2),
 (42, 237, 3.5334),
 (47, 237, 3.5334),
 (53, 237, 3.5334),
+(60, 237, 3.5334),
+(61, 237, 3.5334),
+(65, 237, 3.5334),
+(66, 237, 3.5334),
 (42, 696, 1.7),
 (53, 696, 1.7),
 (42, 697, 2.77661),
 (53, 697, 2.77661),
 (42, 698, 3.23),
-(53, 698, 3.23);
+(53, 698, 3.23),
+(61, 1439, 0.63996),
+(65, 1439, 0.63996),
+(61, 1440, 1.2),
+(65, 1440, 1.2),
+(61, 1441, 2.4),
+(65, 1441, 2.4);
 
 -- --------------------------------------------------------
 
@@ -2283,10 +2324,7 @@ INSERT INTO `f8ad7_finder_links_terms8` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms9` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2295,9 +2333,13 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms9` (
 
 INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (46, 623, 0.48),
-(56, 623, 0.48),
+(61, 623, 0.48),
+(65, 623, 0.48),
+(68, 623, 0.48),
 (46, 629, 0.96),
-(56, 629, 0.96),
+(61, 629, 0.96),
+(65, 629, 0.96),
+(68, 629, 0.96),
 (42, 705, 1.24661),
 (42, 706, 2.77661),
 (42, 707, 2.89),
@@ -2308,30 +2350,54 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (42, 730, 2.26661),
 (42, 731, 2.83339),
 (46, 863, 2.19996),
+(61, 863, 2.19996),
+(65, 863, 2.19996),
+(60, 891, 1.24661),
+(66, 891, 1.24661),
 (47, 891, 1.24661),
 (47, 892, 2.83339),
+(60, 892, 2.83339),
+(66, 892, 2.83339),
 (47, 893, 3.4),
-(56, 1195, 0.8),
-(56, 1211, 0.08004),
-(56, 1247, 0.08004),
-(56, 1248, 1.71996),
-(56, 1249, 2.19996),
-(56, 1250, 1.71996),
-(56, 1251, 2.07996),
-(56, 1252, 0.63996),
-(56, 1253, 2.00004),
-(56, 1254, 2.31996),
-(56, 1255, 1.95996),
-(56, 1256, 2.04),
-(56, 1274, 0.08004),
-(56, 1275, 1.44),
-(56, 1276, 1.52004),
-(56, 1277, 0.56004),
-(56, 1278, 1.56),
-(56, 1279, 1.8),
-(56, 1280, 0.48),
-(56, 1281, 1.52004),
-(56, 1282, 2.00004);
+(60, 893, 3.4),
+(66, 893, 3.4),
+(61, 1397, 0.48),
+(65, 1397, 0.48),
+(61, 1398, 1.76004),
+(65, 1398, 1.76004),
+(61, 1399, 1.2),
+(65, 1399, 1.2),
+(61, 1416, 0.87996),
+(65, 1416, 0.87996),
+(61, 1417, 0.48),
+(65, 1417, 0.48),
+(61, 1418, 1.56),
+(65, 1418, 1.56),
+(61, 1419, 1.8),
+(65, 1419, 1.8),
+(61, 1426, 0.96),
+(65, 1426, 0.96),
+(68, 1590, 0.8),
+(68, 1606, 0.08004),
+(68, 1642, 0.08004),
+(68, 1643, 1.71996),
+(68, 1644, 2.19996),
+(68, 1645, 1.71996),
+(68, 1646, 2.07996),
+(68, 1647, 0.63996),
+(68, 1648, 2.00004),
+(68, 1649, 2.31996),
+(68, 1650, 1.95996),
+(68, 1651, 2.04),
+(68, 1669, 0.08004),
+(68, 1670, 1.44),
+(68, 1671, 1.52004),
+(68, 1672, 0.56004),
+(68, 1673, 1.56),
+(68, 1674, 1.8),
+(68, 1675, 0.48),
+(68, 1676, 1.52004),
+(68, 1677, 2.00004);
 
 -- --------------------------------------------------------
 
@@ -2342,10 +2408,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsa` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2355,18 +2418,40 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsa` (
 INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 (42, 692, 0.17),
 (46, 860, 1.02),
+(61, 860, 1.02),
+(65, 860, 1.02),
 (46, 861, 2.83339),
+(61, 861, 2.83339),
+(65, 861, 2.83339),
 (46, 862, 3.17339),
+(61, 862, 3.17339),
+(65, 862, 3.17339),
+(60, 888, 1.24661),
+(66, 888, 1.24661),
 (47, 888, 1.24661),
 (47, 889, 2.89),
+(60, 889, 2.89),
+(66, 889, 2.89),
 (47, 890, 3.23),
-(56, 1234, 0.72),
-(56, 1235, 1.68),
-(56, 1236, 1.88004),
-(56, 1237, 0.87996),
-(56, 1238, 1.92),
-(56, 1239, 2.4),
-(56, 1240, 0.63996);
+(60, 890, 3.23),
+(66, 890, 3.23),
+(61, 1406, 0.48),
+(65, 1406, 0.48),
+(61, 1407, 1.8),
+(65, 1407, 1.8),
+(61, 1408, 1.04004),
+(65, 1408, 1.04004),
+(61, 1409, 0.96),
+(65, 1409, 0.96),
+(61, 1410, 2.24004),
+(65, 1410, 2.24004),
+(68, 1629, 0.72),
+(68, 1630, 1.68),
+(68, 1631, 1.88004),
+(68, 1632, 0.87996),
+(68, 1633, 1.92),
+(68, 1634, 2.4),
+(68, 1635, 0.63996);
 
 -- --------------------------------------------------------
 
@@ -2377,10 +2462,7 @@ INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsb` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2391,15 +2473,19 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (42, 146, 1.2),
 (46, 146, 1.2),
 (47, 146, 1.2),
+(60, 146, 1.2),
+(61, 146, 1.2),
+(65, 146, 1.2),
+(66, 146, 1.2),
 (42, 702, 0.11339),
 (42, 703, 1.98339),
 (42, 704, 2.38),
-(56, 1205, 0.32004),
-(56, 1206, 1.8),
-(56, 1207, 2.19996),
-(56, 1208, 1.2),
-(56, 1209, 2.19996),
-(56, 1210, 2.31996);
+(68, 1600, 0.32004),
+(68, 1601, 1.8),
+(68, 1602, 2.19996),
+(68, 1603, 1.2),
+(68, 1604, 2.19996),
+(68, 1605, 2.31996);
 
 -- --------------------------------------------------------
 
@@ -2410,10 +2496,7 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsc` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2423,24 +2506,48 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsc` (
 INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (42, 137, 0.36),
 (47, 137, 0.36),
-(56, 389, 0.17),
+(60, 137, 0.36),
+(61, 137, 0.36),
+(65, 137, 0.36),
+(66, 137, 0.36),
+(68, 389, 0.17),
 (47, 389, 0.4),
+(60, 389, 0.4),
+(66, 389, 0.4),
 (42, 699, 1.36),
 (42, 700, 3.06),
 (42, 701, 3.4),
 (46, 848, 1.02),
+(61, 848, 1.02),
+(65, 848, 1.02),
 (46, 849, 2.77661),
+(61, 849, 2.77661),
+(65, 849, 2.77661),
 (46, 850, 3.4),
+(61, 850, 3.4),
+(65, 850, 3.4),
 (46, 854, 0.80004),
+(61, 854, 0.80004),
+(65, 854, 0.80004),
+(61, 855, 1.88004),
+(65, 855, 1.88004),
 (46, 855, 1.88004),
-(56, 1192, 0.48),
-(56, 1193, 1.44),
-(56, 1199, 0.08004),
-(56, 1200, 1.47996),
-(56, 1201, 2.12004),
-(56, 1202, 0.80004),
-(56, 1203, 2.00004),
-(56, 1204, 2.4);
+(60, 1379, 0.34),
+(60, 1380, 4.8),
+(66, 1380, 4.8),
+(60, 1381, 5.4668),
+(66, 1381, 5.4668),
+(61, 1386, 0.34),
+(65, 1456, 0.34),
+(66, 1459, 0.34),
+(68, 1587, 0.48),
+(68, 1588, 1.44),
+(68, 1594, 0.08004),
+(68, 1595, 1.47996),
+(68, 1596, 2.12004),
+(68, 1597, 0.80004),
+(68, 1598, 2.00004),
+(68, 1599, 2.4);
 
 -- --------------------------------------------------------
 
@@ -2451,10 +2558,7 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsd` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2465,16 +2569,36 @@ INSERT INTO `f8ad7_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 (46, 517, 0.56004),
 (47, 517, 0.56004),
 (54, 517, 0.56004),
+(60, 517, 0.56004),
+(66, 517, 0.56004),
+(61, 517, 1.12008),
+(65, 517, 1.12008),
 (46, 851, 0.45339),
-(56, 1212, 0.48),
-(56, 1213, 2.12004),
-(56, 1214, 2.19996),
-(56, 1241, 1.2),
-(56, 1242, 2.4),
-(56, 1243, 2.4),
-(56, 1244, 0.56004),
-(56, 1245, 1.8),
-(56, 1246, 2.07996);
+(61, 851, 0.45339),
+(65, 851, 0.45339),
+(61, 1390, 2.21),
+(65, 1390, 2.21),
+(61, 1391, 2.49339),
+(65, 1391, 2.49339),
+(61, 1411, 0.15996),
+(65, 1411, 0.15996),
+(61, 1412, 1.52004),
+(65, 1412, 1.52004),
+(61, 1413, 2.00004),
+(65, 1413, 2.00004),
+(61, 1414, 0.39996),
+(65, 1414, 0.39996),
+(61, 1415, 1.83996),
+(65, 1415, 1.83996),
+(68, 1607, 0.48),
+(68, 1608, 2.12004),
+(68, 1609, 2.19996),
+(68, 1636, 1.2),
+(68, 1637, 2.4),
+(68, 1638, 2.4),
+(68, 1639, 0.56004),
+(68, 1640, 1.8),
+(68, 1641, 2.07996);
 
 -- --------------------------------------------------------
 
@@ -2485,10 +2609,7 @@ INSERT INTO `f8ad7_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termse` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2497,22 +2618,57 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termse` (
 
 INSERT INTO `f8ad7_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
 (46, 138, 0.17),
+(61, 138, 0.4),
+(65, 138, 0.4),
 (46, 516, 0.36),
 (47, 531, 0.17),
+(61, 867, 0.90661),
+(65, 867, 0.90661),
 (46, 867, 0.90661),
 (46, 868, 2.32339),
+(61, 868, 2.32339),
+(65, 868, 2.32339),
 (46, 869, 2.60661),
+(61, 869, 2.60661),
+(65, 869, 2.60661),
 (47, 879, 1.13339),
+(60, 879, 1.13339),
+(66, 879, 1.13339),
 (47, 880, 2.43661),
+(60, 880, 2.43661),
+(66, 880, 2.43661),
+(60, 881, 0.90661),
+(66, 881, 0.90661),
 (47, 881, 0.90661),
 (47, 882, 2.77661),
+(60, 882, 2.77661),
+(66, 882, 2.77661),
 (47, 883, 2.94661),
+(60, 883, 2.94661),
+(66, 883, 2.94661),
 (47, 894, 1.02),
+(60, 894, 1.02),
+(66, 894, 1.02),
 (47, 895, 2.55),
+(60, 895, 2.55),
+(66, 895, 2.55),
 (47, 896, 3.23),
-(56, 1271, 0.56004),
-(56, 1272, 1.76004),
-(56, 1273, 2.04);
+(60, 896, 3.23),
+(66, 896, 3.23),
+(60, 1383, 2.72),
+(66, 1383, 2.72),
+(61, 1387, 4.8),
+(65, 1387, 4.8),
+(61, 1401, 0.48),
+(65, 1401, 0.48),
+(61, 1424, 0.96),
+(65, 1424, 0.96),
+(61, 1425, 0.39996),
+(65, 1425, 0.39996),
+(65, 1457, 5.4668),
+(68, 1666, 0.56004),
+(68, 1667, 1.76004),
+(68, 1668, 2.04);
 
 -- --------------------------------------------------------
 
@@ -2523,10 +2679,7 @@ INSERT INTO `f8ad7_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsf` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`term_id`),
-  KEY `idx_term_weight` (`term_id`,`weight`),
-  KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`)
+  `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2537,12 +2690,24 @@ INSERT INTO `f8ad7_finder_links_termsf` (`link_id`, `term_id`, `weight`) VALUES
 (42, 143, 0.4),
 (46, 143, 0.4),
 (47, 143, 0.4),
+(60, 143, 0.4),
+(61, 143, 0.4),
+(65, 143, 0.4),
+(66, 143, 0.4),
 (42, 144, 2.5334),
 (46, 144, 2.5334),
 (47, 144, 2.5334),
+(60, 144, 2.5334),
+(61, 144, 2.5334),
+(65, 144, 2.5334),
+(66, 144, 2.5334),
 (42, 145, 3.4666),
 (46, 145, 3.4666),
-(47, 145, 3.4666);
+(47, 145, 3.4666),
+(60, 145, 3.4666),
+(61, 145, 3.4666),
+(65, 145, 3.4666),
+(66, 145, 3.4666);
 
 -- --------------------------------------------------------
 
@@ -2551,19 +2716,13 @@ INSERT INTO `f8ad7_finder_links_termsf` (`link_id`, `term_id`, `weight`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_taxonomy` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
   `state` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `access` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `ordering` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `parent_id` (`parent_id`),
-  KEY `state` (`state`),
-  KEY `ordering` (`ordering`),
-  KEY `access` (`access`),
-  KEY `idx_parent_published` (`parent_id`,`state`,`access`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=70 ;
+  `ordering` tinyint(1) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=110 ;
 
 --
 -- Дамп данных таблицы `f8ad7_finder_taxonomy`
@@ -2581,7 +2740,26 @@ INSERT INTO `f8ad7_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 (64, 4, 'Оригинальные исследования', 1, 1, 0),
 (65, 4, 'Фармакогенетические исследования', 1, 1, 0),
 (66, 4, 'Фармакогеномные исследования', 1, 1, 0),
-(69, 2, 'Journal', 1, 1, 0);
+(89, 4, 'Безопасность лекарств', 1, 1, 0),
+(90, 4, 'Генная терапия', 1, 1, 0),
+(91, 4, 'Генодиагностика', 1, 1, 0),
+(92, 4, 'Компьютерное моделирование', 1, 1, 0),
+(93, 4, 'Лекция', 1, 1, 0),
+(94, 4, 'Мнение эксперта', 1, 1, 0),
+(95, 4, 'Молекулярная биотехнология', 1, 1, 0),
+(96, 4, 'Новости фармкомпаний', 1, 1, 0),
+(97, 4, 'Новые технологии', 1, 1, 0),
+(98, 4, 'Ответы на тесты', 1, 1, 0),
+(99, 4, 'Практические рекомендации', 1, 1, 0),
+(100, 4, 'Программное обеспечение', 1, 1, 0),
+(101, 4, 'Тесты для самопроверки', 1, 1, 0),
+(102, 4, 'Точка зрения', 1, 1, 0),
+(103, 4, 'Фармакоэкономика', 1, 1, 0),
+(104, 4, 'Фармакоэпидемиология', 1, 1, 0),
+(105, 4, 'Фармацевтический рынок', 1, 1, 0),
+(106, 4, 'Эпидемиологические исследования', 1, 1, 0),
+(107, 4, 'Юбилеи', 1, 1, 0),
+(109, 2, 'Journal', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -2591,10 +2769,7 @@ INSERT INTO `f8ad7_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_taxonomy_map` (
   `link_id` int(10) unsigned NOT NULL,
-  `node_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`link_id`,`node_id`),
-  KEY `link_id` (`link_id`),
-  KEY `node_id` (`node_id`)
+  `node_id` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2626,7 +2801,64 @@ INSERT INTO `f8ad7_finder_taxonomy_map` (`link_id`, `node_id`) VALUES
 (55, 64),
 (55, 65),
 (55, 66),
-(56, 69);
+(60, 21),
+(60, 54),
+(60, 55),
+(61, 21),
+(61, 54),
+(61, 55),
+(61, 63),
+(61, 64),
+(61, 65),
+(61, 89),
+(61, 90),
+(61, 91),
+(61, 92),
+(61, 93),
+(61, 94),
+(61, 95),
+(61, 96),
+(61, 97),
+(61, 98),
+(61, 99),
+(61, 100),
+(61, 101),
+(61, 102),
+(61, 103),
+(61, 104),
+(61, 105),
+(61, 106),
+(61, 107),
+(65, 21),
+(65, 54),
+(65, 55),
+(65, 63),
+(65, 64),
+(65, 65),
+(65, 89),
+(65, 90),
+(65, 91),
+(65, 92),
+(65, 93),
+(65, 94),
+(65, 95),
+(65, 96),
+(65, 97),
+(65, 98),
+(65, 99),
+(65, 100),
+(65, 101),
+(65, 102),
+(65, 103),
+(65, 104),
+(65, 105),
+(65, 106),
+(65, 107),
+(66, 21),
+(66, 54),
+(66, 55),
+(66, 65),
+(68, 109);
 
 -- --------------------------------------------------------
 
@@ -2635,7 +2867,7 @@ INSERT INTO `f8ad7_finder_taxonomy_map` (`link_id`, `node_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_terms` (
-  `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`term_id` int(10) unsigned NOT NULL,
   `term` varchar(75) NOT NULL,
   `stem` varchar(75) NOT NULL,
   `common` tinyint(1) unsigned NOT NULL DEFAULT '0',
@@ -2643,49 +2875,44 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_terms` (
   `weight` float unsigned NOT NULL DEFAULT '0',
   `soundex` varchar(75) NOT NULL,
   `links` int(10) NOT NULL DEFAULT '0',
-  `language` char(3) NOT NULL DEFAULT '',
-  PRIMARY KEY (`term_id`),
-  UNIQUE KEY `idx_term` (`term`),
-  KEY `idx_term_phrase` (`term`,`phrase`),
-  KEY `idx_stem_phrase` (`stem`,`phrase`),
-  KEY `idx_soundex_phrase` (`soundex`,`phrase`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1319 ;
+  `language` char(3) NOT NULL DEFAULT ''
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1714 ;
 
 --
 -- Дамп данных таблицы `f8ad7_finder_terms`
 --
 
 INSERT INTO `f8ad7_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`, `weight`, `soundex`, `links`, `language`) VALUES
-(95, 'component', 'component', 0, 0, 0.6, 'C5153', 5, '*'),
-(96, 'component zoo', 'component zoo', 0, 1, 1.4333, 'C51532', 5, '*'),
-(97, 'component zoo item', 'component zoo item', 0, 1, 1.6, 'C5153235', 5, '*'),
-(137, '0.0', '0.0', 0, 0, 0.3, '', 4, '*'),
-(138, '3', '3', 0, 0, 0.1, '', 2, '*'),
-(139, 'article', 'article', 0, 0, 0.4667, 'A6324', 7, '*'),
-(140, 'item', 'item', 0, 0, 0.2667, 'I350', 5, '*'),
-(141, 'item rgsefdgsdfgdf', 'item rgsefdgsdfgdf', 0, 1, 1.6, 'I356213231231', 5, '*'),
-(142, 'rgsefdgsdfgdf', 'rgsefdgsdfgdf', 0, 0, 0.8667, 'R213231231', 5, '*'),
-(143, 'zoo', 'zoo', 0, 0, 0.2, 'Z000', 6, '*'),
-(144, 'zoo item', 'zoo item', 0, 1, 1.2667, 'Z350', 6, '*'),
-(145, 'zoo item rgsefdgsdfgdf', 'zoo item rgsefdgsdfgdf', 0, 1, 1.7333, 'Z356213231231', 6, '*'),
-(146, 'іпкаівапівапфвкпфувкрфукарвіфарівер', 'іпкаівапівапфвкпфувкрфукарвіфарівер', 0, 0, 1, 'і000', 5, '*'),
-(236, 'copy', 'copy', 0, 0, 0.2667, 'C100', 3, '*'),
-(237, 'item rgsefdgsdfgdf copy', 'item rgsefdgsdfgdf copy', 0, 1, 1.7667, 'I35621323123121', 3, '*'),
-(238, 'rgsefdgsdfgdf copy', 'rgsefdgsdfgdf copy', 0, 1, 1.6, 'R21323123121', 3, '*'),
-(389, '2', '2', 0, 0, 0.1, '', 2, '*'),
-(413, 'и', 'и', 0, 0, 0.0667, 'и000', 7, '*'),
-(414, 'и фармакогеномика', 'и фармакогеномика', 0, 1, 1.5667, 'и000', 7, '*'),
-(488, 'фармакогенетика', 'фармакогенетика', 0, 0, 1, 'ф000', 7, '*'),
-(489, 'фармакогенетика и', 'фармакогенетика и', 0, 1, 1.5667, 'ф000', 7, '*'),
-(490, 'фармакогенетика и фармакогеномика', 'фармакогенетика и фармакогеномика', 0, 1, 2, 'ф000', 7, '*'),
-(491, 'фармакогеномика', 'фармакогеномика', 0, 0, 1, 'ф000', 7, '*'),
+(95, 'component', 'component', 0, 0, 0.6, 'C5153', 9, '*'),
+(96, 'component zoo', 'component zoo', 0, 1, 1.4333, 'C51532', 9, '*'),
+(97, 'component zoo item', 'component zoo item', 0, 1, 1.6, 'C5153235', 9, '*'),
+(137, '0.0', '0.0', 0, 0, 0.3, '', 8, '*'),
+(138, '3', '3', 0, 0, 0.1, '', 4, '*'),
+(139, 'article', 'article', 0, 0, 0.4667, 'A6324', 11, '*'),
+(140, 'item', 'item', 0, 0, 0.2667, 'I350', 9, '*'),
+(141, 'item rgsefdgsdfgdf', 'item rgsefdgsdfgdf', 0, 1, 1.6, 'I356213231231', 9, '*'),
+(142, 'rgsefdgsdfgdf', 'rgsefdgsdfgdf', 0, 0, 0.8667, 'R213231231', 9, '*'),
+(143, 'zoo', 'zoo', 0, 0, 0.2, 'Z000', 10, '*'),
+(144, 'zoo item', 'zoo item', 0, 1, 1.2667, 'Z350', 10, '*'),
+(145, 'zoo item rgsefdgsdfgdf', 'zoo item rgsefdgsdfgdf', 0, 1, 1.7333, 'Z356213231231', 10, '*'),
+(146, 'іпкаівапівапфвкпфувкрфукарвіфарівер', 'іпкаівапівапфвкпфувкрфукарвіфарівер', 0, 0, 1, 'і000', 9, '*'),
+(236, 'copy', 'copy', 0, 0, 0.2667, 'C100', 7, '*'),
+(237, 'item rgsefdgsdfgdf copy', 'item rgsefdgsdfgdf copy', 0, 1, 1.7667, 'I35621323123121', 7, '*'),
+(238, 'rgsefdgsdfgdf copy', 'rgsefdgsdfgdf copy', 0, 1, 1.6, 'R21323123121', 7, '*'),
+(389, '2', '2', 0, 0, 0.1, '', 4, '*'),
+(413, 'и', 'и', 0, 0, 0.0667, 'и000', 11, '*'),
+(414, 'и фармакогеномика', 'и фармакогеномика', 0, 1, 1.5667, 'и000', 11, '*'),
+(488, 'фармакогенетика', 'фармакогенетика', 0, 0, 1, 'ф000', 11, '*'),
+(489, 'фармакогенетика и', 'фармакогенетика и', 0, 1, 1.5667, 'ф000', 11, '*'),
+(490, 'фармакогенетика и фармакогеномика', 'фармакогенетика и фармакогеномика', 0, 1, 2, 'ф000', 11, '*'),
+(491, 'фармакогеномика', 'фармакогеномика', 0, 0, 1, 'ф000', 11, '*'),
 (516, '5.0', '5.0', 0, 0, 0.3, '', 1, '*'),
-(517, 'новости', 'новости', 0, 0, 0.4667, 'н000', 4, '*'),
+(517, 'новости', 'новости', 0, 0, 0.4667, 'н000', 8, '*'),
 (531, '5', '5', 0, 0, 0.1, '', 1, '*'),
-(532, 'copy 2', 'copy 2', 0, 1, 1.2, 'C100', 1, '*'),
-(533, 'rgsefdgsdfgdf copy 2', 'rgsefdgsdfgdf copy 2', 0, 1, 1.6667, 'R21323123121', 1, '*'),
-(623, 'обзоры', 'обзоры', 0, 0, 0.4, 'о000', 3, '*'),
-(629, 'оригинальные', 'оригинальные', 0, 0, 0.8, 'о000', 3, '*'),
+(532, 'copy 2', 'copy 2', 0, 1, 1.2, 'C100', 3, '*'),
+(533, 'rgsefdgsdfgdf copy 2', 'rgsefdgsdfgdf copy 2', 0, 1, 1.6667, 'R21323123121', 3, '*'),
+(623, 'обзоры', 'обзоры', 0, 0, 0.4, 'о000', 5, '*'),
+(629, 'оригинальные', 'оригинальные', 0, 0, 0.8, 'о000', 5, '*'),
 (692, '4', '4', 0, 0, 0.1, '', 1, '*'),
 (693, 'arena', 'arena', 0, 0, 0.3333, 'A650', 2, '*'),
 (694, 'arena pharmaceuticals', 'arena pharmaceuticals', 0, 1, 1.7, 'A6516523242', 2, '*'),
@@ -2702,7 +2929,7 @@ INSERT INTO `f8ad7_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`,
 (705, 'гипертензии', 'гипертензии', 0, 0, 0.7333, 'г000', 2, '*'),
 (706, 'гипертензии получил', 'гипертензии получил', 0, 1, 1.6333, 'г000', 2, '*'),
 (707, 'гипертензии получил в', 'гипертензии получил в', 0, 1, 1.7, 'г000', 2, '*'),
-(708, 'для', 'для', 0, 0, 0.2, 'д000', 2, '*'),
+(708, 'для', 'для', 0, 0, 0.2, 'д000', 4, '*'),
 (709, 'для лечения', 'для лечения', 0, 1, 1.3667, 'д000', 2, '*'),
 (710, 'для лечения легочной', 'для лечения легочной', 0, 1, 1.6667, 'д000', 2, '*'),
 (711, 'компании', 'компании', 0, 0, 0.5333, 'к000', 2, '*'),
@@ -2726,157 +2953,225 @@ INSERT INTO `f8ad7_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`,
 (729, 'сша', 'сша', 0, 0, 0.2, 'с000', 2, '*'),
 (730, 'сша статус', 'сша статус', 0, 1, 1.3333, 'с000', 2, '*'),
 (731, 'сша статус орфанного', 'сша статус орфанного', 0, 1, 1.6667, 'с000', 2, '*'),
-(848, '26-летняя', '26-летняя', 0, 0, 0.6, 'л000', 1, '*'),
-(849, '26-летняя москвичка', '26-летняя москвичка', 0, 1, 1.6333, 'л000', 1, '*'),
-(850, '26-летняя москвичка переписала', '26-летняя москвичка переписала', 0, 1, 2, 'л000', 1, '*'),
-(851, 'open', 'open', 0, 0, 0.2667, 'O150', 1, '*'),
-(852, 'us', 'us', 0, 0, 0.1333, 'U200', 1, '*'),
-(853, 'us open', 'us open', 0, 1, 1.2333, 'U215', 1, '*'),
-(854, 'актуальные', 'актуальные', 0, 0, 0.6667, 'а000', 2, '*'),
-(855, 'актуальные обзоры', 'актуальные обзоры', 0, 1, 1.5667, 'а000', 2, '*'),
-(856, 'исследования', 'исследования', 0, 0, 0.8, 'и000', 2, '*'),
-(857, 'книгу', 'книгу', 0, 0, 0.3333, 'к000', 1, '*'),
-(858, 'книгу рекордов', 'книгу рекордов', 0, 1, 1.4667, 'к000', 1, '*'),
-(859, 'книгу рекордов us', 'книгу рекордов us', 0, 1, 1.5667, 'к200', 1, '*'),
-(860, 'москвичка', 'москвичка', 0, 0, 0.6, 'м000', 1, '*'),
-(861, 'москвичка переписала', 'москвичка переписала', 0, 1, 1.6667, 'м000', 1, '*'),
-(862, 'москвичка переписала книгу', 'москвичка переписала книгу', 0, 1, 1.8667, 'м000', 1, '*'),
-(863, 'оригинальные исследования', 'оригинальные исследования', 0, 1, 1.8333, 'о000', 2, '*'),
-(864, 'переписала', 'переписала', 0, 0, 0.6667, 'п000', 1, '*'),
-(865, 'переписала книгу', 'переписала книгу', 0, 1, 1.5333, 'п000', 1, '*'),
-(866, 'переписала книгу рекордов', 'переписала книгу рекордов', 0, 1, 1.8333, 'п000', 1, '*'),
-(867, 'рекордов', 'рекордов', 0, 0, 0.5333, 'р000', 1, '*'),
-(868, 'рекордов us', 'рекордов us', 0, 1, 1.3667, 'р200', 1, '*'),
-(869, 'рекордов us open', 'рекордов us open', 0, 1, 1.5333, 'р215', 1, '*'),
-(870, 'фармакогенетические', 'фармакогенетические', 0, 0, 1, 'ф000', 2, '*'),
-(871, 'фармакогенетические исследования', 'фармакогенетические исследования', 0, 1, 2, 'ф000', 2, '*'),
+(848, '26-летняя', '26-летняя', 0, 0, 0.6, 'л000', 3, '*'),
+(849, '26-летняя москвичка', '26-летняя москвичка', 0, 1, 1.6333, 'л000', 3, '*'),
+(850, '26-летняя москвичка переписала', '26-летняя москвичка переписала', 0, 1, 2, 'л000', 3, '*'),
+(851, 'open', 'open', 0, 0, 0.2667, 'O150', 3, '*'),
+(852, 'us', 'us', 0, 0, 0.1333, 'U200', 3, '*'),
+(853, 'us open', 'us open', 0, 1, 1.2333, 'U215', 3, '*'),
+(854, 'актуальные', 'актуальные', 0, 0, 0.6667, 'а000', 4, '*'),
+(855, 'актуальные обзоры', 'актуальные обзоры', 0, 1, 1.5667, 'а000', 4, '*'),
+(856, 'исследования', 'исследования', 0, 0, 0.8, 'и000', 5, '*'),
+(857, 'книгу', 'книгу', 0, 0, 0.3333, 'к000', 3, '*'),
+(858, 'книгу рекордов', 'книгу рекордов', 0, 1, 1.4667, 'к000', 3, '*'),
+(859, 'книгу рекордов us', 'книгу рекордов us', 0, 1, 1.5667, 'к200', 3, '*'),
+(860, 'москвичка', 'москвичка', 0, 0, 0.6, 'м000', 3, '*'),
+(861, 'москвичка переписала', 'москвичка переписала', 0, 1, 1.6667, 'м000', 3, '*'),
+(862, 'москвичка переписала книгу', 'москвичка переписала книгу', 0, 1, 1.8667, 'м000', 3, '*'),
+(863, 'оригинальные исследования', 'оригинальные исследования', 0, 1, 1.8333, 'о000', 4, '*'),
+(864, 'переписала', 'переписала', 0, 0, 0.6667, 'п000', 3, '*'),
+(865, 'переписала книгу', 'переписала книгу', 0, 1, 1.5333, 'п000', 3, '*'),
+(866, 'переписала книгу рекордов', 'переписала книгу рекордов', 0, 1, 1.8333, 'п000', 3, '*'),
+(867, 'рекордов', 'рекордов', 0, 0, 0.5333, 'р000', 3, '*'),
+(868, 'рекордов us', 'рекордов us', 0, 1, 1.3667, 'р200', 3, '*'),
+(869, 'рекордов us open', 'рекордов us open', 0, 1, 1.5333, 'р215', 3, '*'),
+(870, 'фармакогенетические', 'фармакогенетические', 0, 0, 1, 'ф000', 5, '*'),
+(871, 'фармакогенетические исследования', 'фармакогенетические исследования', 0, 1, 2, 'ф000', 5, '*'),
 (872, 'фармакогеномные', 'фармакогеномные', 0, 0, 1, 'ф000', 2, '*'),
 (873, 'фармакогеномные исследования', 'фармакогеномные исследования', 0, 1, 1.9333, 'ф000', 2, '*'),
-(879, 'зарубежные', 'зарубежные', 0, 0, 0.6667, 'з000', 1, '*'),
-(880, 'зарубежные лс', 'зарубежные лс', 0, 1, 1.4333, 'з000', 1, '*'),
-(881, 'затронут', 'затронут', 0, 0, 0.5333, 'з000', 1, '*'),
-(882, 'затронут зарубежные', 'затронут зарубежные', 0, 1, 1.6333, 'з000', 1, '*'),
-(883, 'затронут зарубежные лс', 'затронут зарубежные лс', 0, 1, 1.7333, 'з000', 1, '*'),
-(884, 'какие', 'какие', 0, 0, 0.3333, 'к000', 1, '*'),
-(885, 'какие ограничения', 'какие ограничения', 0, 1, 1.5667, 'к000', 1, '*'),
-(886, 'какие ограничения затронут', 'какие ограничения затронут', 0, 1, 1.8667, 'к000', 1, '*'),
-(887, 'лс', 'лс', 0, 0, 0.1333, 'л000', 1, '*'),
-(888, 'минпромторг', 'минпромторг', 0, 0, 0.7333, 'м000', 1, '*'),
-(889, 'минпромторг разъяснил', 'минпромторг разъяснил', 0, 1, 1.7, 'м000', 1, '*'),
-(890, 'минпромторг разъяснил какие', 'минпромторг разъяснил какие', 0, 1, 1.9, 'м000', 1, '*'),
-(891, 'ограничения', 'ограничения', 0, 0, 0.7333, 'о000', 1, '*'),
-(892, 'ограничения затронут', 'ограничения затронут', 0, 1, 1.6667, 'о000', 1, '*'),
-(893, 'ограничения затронут зарубежные', 'ограничения затронут зарубежные', 0, 1, 2, 'о000', 1, '*'),
-(894, 'разъяснил', 'разъяснил', 0, 0, 0.6, 'р000', 1, '*'),
-(895, 'разъяснил какие', 'разъяснил какие', 0, 1, 1.5, 'р000', 1, '*'),
-(896, 'разъяснил какие ограничения', 'разъяснил какие ограничения', 0, 1, 1.9, 'р000', 1, '*'),
+(879, 'зарубежные', 'зарубежные', 0, 0, 0.6667, 'з000', 3, '*'),
+(880, 'зарубежные лс', 'зарубежные лс', 0, 1, 1.4333, 'з000', 3, '*'),
+(881, 'затронут', 'затронут', 0, 0, 0.5333, 'з000', 3, '*'),
+(882, 'затронут зарубежные', 'затронут зарубежные', 0, 1, 1.6333, 'з000', 3, '*'),
+(883, 'затронут зарубежные лс', 'затронут зарубежные лс', 0, 1, 1.7333, 'з000', 3, '*'),
+(884, 'какие', 'какие', 0, 0, 0.3333, 'к000', 3, '*'),
+(885, 'какие ограничения', 'какие ограничения', 0, 1, 1.5667, 'к000', 3, '*'),
+(886, 'какие ограничения затронут', 'какие ограничения затронут', 0, 1, 1.8667, 'к000', 3, '*'),
+(887, 'лс', 'лс', 0, 0, 0.1333, 'л000', 3, '*'),
+(888, 'минпромторг', 'минпромторг', 0, 0, 0.7333, 'м000', 3, '*'),
+(889, 'минпромторг разъяснил', 'минпромторг разъяснил', 0, 1, 1.7, 'м000', 3, '*'),
+(890, 'минпромторг разъяснил какие', 'минпромторг разъяснил какие', 0, 1, 1.9, 'м000', 3, '*'),
+(891, 'ограничения', 'ограничения', 0, 0, 0.7333, 'о000', 3, '*'),
+(892, 'ограничения затронут', 'ограничения затронут', 0, 1, 1.6667, 'о000', 3, '*'),
+(893, 'ограничения затронут зарубежные', 'ограничения затронут зарубежные', 0, 1, 2, 'о000', 3, '*'),
+(894, 'разъяснил', 'разъяснил', 0, 0, 0.6, 'р000', 3, '*'),
+(895, 'разъяснил какие', 'разъяснил какие', 0, 1, 1.5, 'р000', 3, '*'),
+(896, 'разъяснил какие ограничения', 'разъяснил какие ограничения', 0, 1, 1.9, 'р000', 3, '*'),
 (1185, '9', '9', 0, 0, 0.1, '', 1, '*'),
-(1186, 'copy copy', 'copy copy', 0, 1, 1.3, 'C121', 1, '*'),
+(1186, 'copy copy', 'copy copy', 0, 1, 1.3, 'C121', 5, '*'),
 (1187, 'rgsefdgsdfgdf copy copy', 'rgsefdgsdfgdf copy copy', 0, 1, 1.7667, 'R2132312312121', 1, '*'),
 (1188, 'орфанного copy', 'орфанного copy', 0, 1, 1.4667, 'о210', 1, '*'),
 (1189, 'статус орфанного copy', 'статус орфанного copy', 0, 1, 1.7, 'с210', 1, '*'),
-(1192, '2014', '2014', 0, 0, 0.4, '', 1, '*'),
-(1193, '2014 г', '2014 г', 0, 1, 1.2, 'г000', 1, '*'),
-(1194, 'journal', 'journal', 0, 0, 0.4667, 'J654', 1, '*'),
-(1195, 'xdebug', 'xdebug', 0, 0, 0.4, 'X312', 1, '*'),
-(1196, '«фармакогенетика', '«фармакогенетика', 0, 0, 1, 'ф000', 1, '*'),
-(1197, '«фармакогенетика и', '«фармакогенетика и', 0, 1, 1.6, 'ф000', 1, '*'),
-(1198, '«фармакогенетика и фармакогеномика»', '«фармакогенетика и фармакогеномика»', 0, 1, 2, 'ф000', 1, '*'),
-(1199, 'а', 'а', 0, 0, 0.0667, 'а000', 1, '*'),
-(1200, 'а также', 'а также', 0, 1, 1.2333, 'а000', 1, '*'),
-(1201, 'а также вспомогательные', 'а также вспомогательные', 0, 1, 1.7667, 'а000', 1, '*'),
-(1202, 'актуальным', 'актуальным', 0, 0, 0.6667, 'а000', 1, '*'),
-(1203, 'актуальным проблемам', 'актуальным проблемам', 0, 1, 1.6667, 'а000', 1, '*'),
-(1204, 'актуальным проблемам персонаизированной', 'актуальным проблемам персонаизированной', 0, 1, 2, 'а000', 1, '*'),
-(1205, 'всем', 'всем', 0, 0, 0.2667, 'в000', 1, '*'),
-(1206, 'всем актуальным', 'всем актуальным', 0, 1, 1.5, 'в000', 1, '*'),
-(1207, 'всем актуальным проблемам', 'всем актуальным проблемам', 0, 1, 1.8333, 'в000', 1, '*'),
-(1208, 'вспомогательные', 'вспомогательные', 0, 0, 1, 'в000', 1, '*'),
-(1209, 'вспомогательные материалы', 'вспомогательные материалы', 0, 1, 1.8333, 'в000', 1, '*'),
-(1210, 'вспомогательные материалы по', 'вспомогательные материалы по', 0, 1, 1.9333, 'в000', 1, '*'),
-(1211, 'г', 'г', 0, 0, 0.0667, 'г000', 1, '*'),
-(1212, 'журнал', 'журнал', 0, 0, 0.4, 'ж000', 1, '*'),
-(1213, 'журнал «фармакогенетика', 'журнал «фармакогенетика', 0, 1, 1.7667, 'ж000', 1, '*'),
-(1214, 'журнал «фармакогенетика и', 'журнал «фармакогенетика и', 0, 1, 1.8333, 'ж000', 1, '*'),
-(1215, 'и фармакогеномика»', 'и фармакогеномика»', 0, 1, 1.6, 'и000', 1, '*'),
-(1216, 'и фармакогеномика» издаётся', 'и фармакогеномика» издаётся', 0, 1, 1.9, 'и000', 1, '*'),
-(1217, 'и фармакогеномика» публикует', 'и фармакогеномика» публикует', 0, 1, 1.9333, 'и000', 1, '*'),
-(1218, 'и фундаментальных', 'и фундаментальных', 0, 1, 1.5667, 'и000', 1, '*'),
-(1219, 'и фундаментальных научных', 'и фундаментальных научных', 0, 1, 1.8333, 'и000', 1, '*'),
-(1220, 'издаётся', 'издаётся', 0, 0, 0.5333, 'и000', 1, '*'),
-(1221, 'издаётся с', 'издаётся с', 0, 1, 1.3333, 'и000', 1, '*'),
-(1222, 'издаётся с 2014', 'издаётся с 2014', 0, 1, 1.5, 'и000', 1, '*'),
-(1223, 'клинико-экспериментальных', 'клинико-экспериментальных', 0, 0, 1, 'к000', 1, '*'),
-(1224, 'клинико-экспериментальных и', 'клинико-экспериментальных и', 0, 1, 1.9, 'к000', 1, '*'),
-(1225, 'клинико-экспериментальных и фундаментальных', 'клинико-экспериментальных и фундаментальных', 0, 1, 2, 'к000', 1, '*'),
-(1226, 'клинических', 'клинических', 0, 0, 0.7333, 'к000', 1, '*'),
-(1227, 'клинических клинико-экспериментальных', 'клинических клинико-экспериментальных', 0, 1, 2, 'к000', 1, '*'),
-(1228, 'клинических клинико-экспериментальных и', 'клинических клинико-экспериментальных и', 0, 1, 2, 'к000', 1, '*'),
-(1229, 'клинических случаев', 'клинических случаев', 0, 1, 1.6333, 'к000', 1, '*'),
-(1230, 'клинических случаев а', 'клинических случаев а', 0, 1, 1.7, 'к000', 1, '*'),
-(1231, 'лекции', 'лекции', 0, 0, 0.4, 'л000', 1, '*'),
-(1232, 'лекции описания', 'лекции описания', 0, 1, 1.5, 'л000', 1, '*'),
-(1233, 'лекции описания клинических', 'лекции описания клинических', 0, 1, 1.9, 'л000', 1, '*'),
-(1234, 'материалы', 'материалы', 0, 0, 0.6, 'м000', 1, '*'),
-(1235, 'материалы по', 'материалы по', 0, 1, 1.4, 'м000', 1, '*'),
-(1236, 'материалы по всем', 'материалы по всем', 0, 1, 1.5667, 'м000', 1, '*'),
-(1237, 'медицинский', 'медицинский', 0, 0, 0.7333, 'м000', 1, '*'),
-(1238, 'медицинский журнал', 'медицинский журнал', 0, 1, 1.6, 'м000', 1, '*'),
-(1239, 'медицинский журнал «фармакогенетика', 'медицинский журнал «фармакогенетика', 0, 1, 2, 'м000', 1, '*'),
-(1240, 'медицины', 'медицины', 0, 0, 0.5333, 'м000', 1, '*'),
-(1241, 'научно-практический', 'научно-практический', 0, 0, 1, 'н000', 1, '*'),
-(1242, 'научно-практический медицинский', 'научно-практический медицинский', 0, 1, 2, 'н000', 1, '*'),
-(1243, 'научно-практический медицинский журнал', 'научно-практический медицинский журнал', 0, 1, 2, 'н000', 1, '*'),
-(1244, 'научных', 'научных', 0, 0, 0.4667, 'н000', 1, '*'),
-(1245, 'научных работах', 'научных работах', 0, 1, 1.5, 'н000', 1, '*'),
-(1246, 'научных работах обзоры', 'научных работах обзоры', 0, 1, 1.7333, 'н000', 1, '*'),
-(1247, 'о', 'о', 0, 0, 0.0667, 'о000', 1, '*'),
-(1248, 'о проведённых', 'о проведённых', 0, 1, 1.4333, 'о000', 1, '*'),
-(1249, 'о проведённых клинических', 'о проведённых клинических', 0, 1, 1.8333, 'о000', 1, '*'),
-(1250, 'обзоры лекции', 'обзоры лекции', 0, 1, 1.4333, 'о000', 1, '*'),
-(1251, 'обзоры лекции описания', 'обзоры лекции описания', 0, 1, 1.7333, 'о000', 1, '*'),
-(1252, 'описания', 'описания', 0, 0, 0.5333, 'о000', 1, '*'),
-(1253, 'описания клинических', 'описания клинических', 0, 1, 1.6667, 'о000', 1, '*'),
-(1254, 'описания клинических случаев', 'описания клинических случаев', 0, 1, 1.9333, 'о000', 1, '*'),
-(1255, 'оригинальные статьи', 'оригинальные статьи', 0, 1, 1.6333, 'о000', 1, '*'),
-(1256, 'оригинальные статьи о', 'оригинальные статьи о', 0, 1, 1.7, 'о000', 1, '*'),
-(1257, 'персонаизированной', 'персонаизированной', 0, 0, 1, 'п000', 1, '*'),
-(1258, 'персонаизированной медицины', 'персонаизированной медицины', 0, 1, 1.9, 'п000', 1, '*'),
-(1259, 'по', 'по', 0, 0, 0.1333, 'п000', 1, '*'),
-(1260, 'по всем', 'по всем', 0, 1, 1.2333, 'п000', 1, '*'),
-(1261, 'по всем актуальным', 'по всем актуальным', 0, 1, 1.6, 'п000', 1, '*'),
-(1262, 'проблемам', 'проблемам', 0, 0, 0.6, 'п000', 1, '*'),
-(1263, 'проблемам персонаизированной', 'проблемам персонаизированной', 0, 1, 1.9333, 'п000', 1, '*'),
-(1264, 'проблемам персонаизированной медицины', 'проблемам персонаизированной медицины', 0, 1, 2, 'п000', 1, '*'),
-(1265, 'проведённых', 'проведённых', 0, 0, 0.7333, 'п000', 1, '*'),
-(1266, 'проведённых клинических', 'проведённых клинических', 0, 1, 1.7667, 'п000', 1, '*'),
-(1267, 'проведённых клинических клинико-экспериментальных', 'проведённых клинических клинико-экспериментальных', 0, 1, 2, 'п000', 1, '*'),
-(1268, 'публикует', 'публикует', 0, 0, 0.6, 'п000', 1, '*'),
-(1269, 'публикует оригинальные', 'публикует оригинальные', 0, 1, 1.7333, 'п000', 1, '*'),
-(1270, 'публикует оригинальные статьи', 'публикует оригинальные статьи', 0, 1, 1.9667, 'п000', 1, '*'),
-(1271, 'работах', 'работах', 0, 0, 0.4667, 'р000', 1, '*'),
-(1272, 'работах обзоры', 'работах обзоры', 0, 1, 1.4667, 'р000', 1, '*'),
-(1273, 'работах обзоры лекции', 'работах обзоры лекции', 0, 1, 1.7, 'р000', 1, '*'),
-(1274, 'с', 'с', 0, 0, 0.0667, 'с000', 1, '*'),
-(1275, 'с 2014', 'с 2014', 0, 1, 1.2, 'с000', 1, '*'),
-(1276, 'с 2014 г', 'с 2014 г', 0, 1, 1.2667, 'с000', 1, '*'),
-(1277, 'случаев', 'случаев', 0, 0, 0.4667, 'с000', 1, '*'),
-(1278, 'случаев а', 'случаев а', 0, 1, 1.3, 'с000', 1, '*'),
-(1279, 'случаев а также', 'случаев а также', 0, 1, 1.5, 'с000', 1, '*'),
-(1280, 'статьи', 'статьи', 0, 0, 0.4, 'с000', 1, '*'),
-(1281, 'статьи о', 'статьи о', 0, 1, 1.2667, 'с000', 1, '*'),
-(1282, 'статьи о проведённых', 'статьи о проведённых', 0, 1, 1.6667, 'с000', 1, '*'),
-(1283, 'также', 'также', 0, 0, 0.3333, 'т000', 1, '*'),
-(1284, 'также вспомогательные', 'также вспомогательные', 0, 1, 1.7, 'т000', 1, '*'),
-(1285, 'также вспомогательные материалы', 'также вспомогательные материалы', 0, 1, 2, 'т000', 1, '*'),
-(1286, 'фармакогеномика»', 'фармакогеномика»', 0, 0, 1, 'ф000', 1, '*'),
-(1287, 'фармакогеномика» издаётся', 'фармакогеномика» издаётся', 0, 1, 1.8333, 'ф000', 1, '*'),
-(1288, 'фармакогеномика» издаётся с', 'фармакогеномика» издаётся с', 0, 1, 1.9, 'ф000', 1, '*'),
-(1289, 'фармакогеномика» публикует', 'фармакогеномика» публикует', 0, 1, 1.8667, 'ф000', 1, '*'),
-(1290, 'фармакогеномика» публикует оригинальные', 'фармакогеномика» публикует оригинальные', 0, 1, 2, 'ф000', 1, '*'),
-(1291, 'фундаментальных', 'фундаментальных', 0, 0, 1, 'ф000', 1, '*'),
-(1292, 'фундаментальных научных', 'фундаментальных научных', 0, 1, 1.7667, 'ф000', 1, '*'),
-(1293, 'фундаментальных научных работах', 'фундаментальных научных работах', 0, 1, 2, 'ф000', 1, '*');
+(1379, '11', '11', 0, 0, 0.2, '', 1, '*'),
+(1380, '2 copy', '2 copy', 0, 1, 1.2, 'C100', 2, '*'),
+(1381, '2 copy copy', '2 copy copy', 0, 1, 1.3667, 'C121', 2, '*'),
+(1382, 'copy 2 copy', 'copy 2 copy', 0, 1, 1.3667, 'C121', 2, '*'),
+(1383, 'зарубежные лс copy', 'зарубежные лс copy', 0, 1, 1.6, 'з210', 2, '*'),
+(1384, 'лс copy', 'лс copy', 0, 1, 1.2333, 'л210', 2, '*'),
+(1385, 'лс copy copy', 'лс copy copy', 0, 1, 1.4, 'л2121', 2, '*'),
+(1386, '12', '12', 0, 0, 0.2, '', 1, '*'),
+(1387, '3 copy', '3 copy', 0, 1, 1.2, 'C100', 2, '*'),
+(1388, 'copy 3', 'copy 3', 0, 1, 1.2, 'C100', 2, '*'),
+(1389, 'copy 3 copy', 'copy 3 copy', 0, 1, 1.3667, 'C121', 2, '*'),
+(1390, 'open copy', 'open copy', 0, 1, 1.3, 'O1521', 2, '*'),
+(1391, 'open copy copy', 'open copy copy', 0, 1, 1.4667, 'O152121', 2, '*'),
+(1392, 'rgsefdgsdfgdf copy 3', 'rgsefdgsdfgdf copy 3', 0, 1, 1.6667, 'R21323123121', 2, '*'),
+(1393, 'us open copy', 'us open copy', 0, 1, 1.4, 'U21521', 2, '*'),
+(1394, 'безопасность', 'безопасность', 0, 0, 0.8, 'б000', 2, '*'),
+(1395, 'безопасность лекарств', 'безопасность лекарств', 0, 1, 1.7, 'б000', 2, '*'),
+(1396, 'биотехнология', 'биотехнология', 0, 0, 0.8667, 'б000', 2, '*'),
+(1397, 'генная', 'генная', 0, 0, 0.4, 'г000', 2, '*'),
+(1398, 'генная терапия', 'генная терапия', 0, 1, 1.4667, 'г000', 2, '*'),
+(1399, 'генодиагностика', 'генодиагностика', 0, 0, 1, 'г000', 2, '*'),
+(1400, 'для самопроверки', 'для самопроверки', 0, 1, 1.5333, 'д000', 2, '*'),
+(1401, 'зрения', 'зрения', 0, 0, 0.4, 'з000', 2, '*'),
+(1402, 'компьютерное', 'компьютерное', 0, 0, 0.8, 'к000', 2, '*'),
+(1403, 'компьютерное моделирование', 'компьютерное моделирование', 0, 1, 1.8667, 'к000', 2, '*'),
+(1404, 'лекарств', 'лекарств', 0, 0, 0.5333, 'л000', 2, '*'),
+(1405, 'лекция', 'лекция', 0, 0, 0.4, 'л000', 2, '*'),
+(1406, 'мнение', 'мнение', 0, 0, 0.4, 'м000', 2, '*'),
+(1407, 'мнение эксперта', 'мнение эксперта', 0, 1, 1.5, 'м000', 2, '*'),
+(1408, 'моделирование', 'моделирование', 0, 0, 0.8667, 'м000', 2, '*'),
+(1409, 'молекулярная', 'молекулярная', 0, 0, 0.8, 'м000', 2, '*'),
+(1410, 'молекулярная биотехнология', 'молекулярная биотехнология', 0, 1, 1.8667, 'м000', 2, '*'),
+(1411, 'на', 'на', 0, 0, 0.1333, 'н000', 2, '*'),
+(1412, 'на тесты', 'на тесты', 0, 1, 1.2667, 'н000', 2, '*'),
+(1413, 'новости фармкомпаний', 'новости фармкомпаний', 0, 1, 1.6667, 'н000', 2, '*'),
+(1414, 'новые', 'новые', 0, 0, 0.3333, 'н000', 2, '*'),
+(1415, 'новые технологии', 'новые технологии', 0, 1, 1.5333, 'н000', 2, '*'),
+(1416, 'обеспечение', 'обеспечение', 0, 0, 0.7333, 'о000', 2, '*'),
+(1417, 'ответы', 'ответы', 0, 0, 0.4, 'о000', 2, '*'),
+(1418, 'ответы на', 'ответы на', 0, 1, 1.3, 'о000', 2, '*'),
+(1419, 'ответы на тесты', 'ответы на тесты', 0, 1, 1.5, 'о000', 2, '*'),
+(1420, 'практические', 'практические', 0, 0, 0.8, 'п000', 2, '*'),
+(1421, 'практические рекомендации', 'практические рекомендации', 0, 1, 1.8333, 'п000', 2, '*'),
+(1422, 'программное', 'программное', 0, 0, 0.7333, 'п000', 2, '*'),
+(1423, 'программное обеспечение', 'программное обеспечение', 0, 1, 1.7667, 'п000', 2, '*'),
+(1424, 'рекомендации', 'рекомендации', 0, 0, 0.8, 'р000', 2, '*'),
+(1425, 'рынок', 'рынок', 0, 0, 0.3333, 'р000', 2, '*'),
+(1426, 'самопроверки', 'самопроверки', 0, 0, 0.8, 'с000', 2, '*'),
+(1427, 'терапия', 'терапия', 0, 0, 0.4667, 'т000', 2, '*'),
+(1428, 'тесты', 'тесты', 0, 0, 0.3333, 'т000', 2, '*'),
+(1429, 'тесты для', 'тесты для', 0, 1, 1.3, 'т000', 2, '*'),
+(1430, 'тесты для самопроверки', 'тесты для самопроверки', 0, 1, 1.7333, 'т000', 2, '*'),
+(1431, 'технологии', 'технологии', 0, 0, 0.6667, 'т000', 2, '*'),
+(1432, 'точка', 'точка', 0, 0, 0.3333, 'т000', 2, '*'),
+(1433, 'точка зрения', 'точка зрения', 0, 1, 1.4, 'т000', 2, '*'),
+(1434, 'фармакоэкономика', 'фармакоэкономика', 0, 0, 1, 'ф000', 2, '*'),
+(1435, 'фармакоэпидемиология', 'фармакоэпидемиология', 0, 0, 1, 'ф000', 2, '*'),
+(1436, 'фармацевтический', 'фармацевтический', 0, 0, 1, 'ф000', 2, '*'),
+(1437, 'фармацевтический рынок', 'фармацевтический рынок', 0, 1, 1.7333, 'ф000', 2, '*'),
+(1438, 'фармкомпаний', 'фармкомпаний', 0, 0, 0.8, 'ф000', 2, '*'),
+(1439, 'эксперта', 'эксперта', 0, 0, 0.5333, 'э000', 2, '*'),
+(1440, 'эпидемиологические', 'эпидемиологические', 0, 0, 1, 'э000', 2, '*'),
+(1441, 'эпидемиологические исследования', 'эпидемиологические исследования', 0, 1, 2, 'э000', 2, '*'),
+(1442, 'юбилеи', 'юбилеи', 0, 0, 0.4, 'ю000', 2, '*'),
+(1450, 'copy copy copy', 'copy copy copy', 0, 1, 1.4667, 'C12121', 2, '*'),
+(1456, '14', '14', 0, 0, 0.2, '', 1, '*'),
+(1457, '3 copy copy', '3 copy copy', 0, 1, 1.3667, 'C121', 1, '*'),
+(1459, '13', '13', 0, 0, 0.2, '', 1, '*'),
+(1587, '2014', '2014', 0, 0, 0.4, '', 1, '*'),
+(1588, '2014 г', '2014 г', 0, 1, 1.2, 'г000', 1, '*'),
+(1589, 'journal', 'journal', 0, 0, 0.4667, 'J654', 1, '*'),
+(1590, 'xdebug', 'xdebug', 0, 0, 0.4, 'X312', 1, '*'),
+(1591, '«фармакогенетика', '«фармакогенетика', 0, 0, 1, 'ф000', 1, '*'),
+(1592, '«фармакогенетика и', '«фармакогенетика и', 0, 1, 1.6, 'ф000', 1, '*'),
+(1593, '«фармакогенетика и фармакогеномика»', '«фармакогенетика и фармакогеномика»', 0, 1, 2, 'ф000', 1, '*'),
+(1594, 'а', 'а', 0, 0, 0.0667, 'а000', 1, '*'),
+(1595, 'а также', 'а также', 0, 1, 1.2333, 'а000', 1, '*'),
+(1596, 'а также вспомогательные', 'а также вспомогательные', 0, 1, 1.7667, 'а000', 1, '*'),
+(1597, 'актуальным', 'актуальным', 0, 0, 0.6667, 'а000', 1, '*'),
+(1598, 'актуальным проблемам', 'актуальным проблемам', 0, 1, 1.6667, 'а000', 1, '*'),
+(1599, 'актуальным проблемам персонаизированной', 'актуальным проблемам персонаизированной', 0, 1, 2, 'а000', 1, '*'),
+(1600, 'всем', 'всем', 0, 0, 0.2667, 'в000', 1, '*'),
+(1601, 'всем актуальным', 'всем актуальным', 0, 1, 1.5, 'в000', 1, '*'),
+(1602, 'всем актуальным проблемам', 'всем актуальным проблемам', 0, 1, 1.8333, 'в000', 1, '*'),
+(1603, 'вспомогательные', 'вспомогательные', 0, 0, 1, 'в000', 1, '*'),
+(1604, 'вспомогательные материалы', 'вспомогательные материалы', 0, 1, 1.8333, 'в000', 1, '*'),
+(1605, 'вспомогательные материалы по', 'вспомогательные материалы по', 0, 1, 1.9333, 'в000', 1, '*'),
+(1606, 'г', 'г', 0, 0, 0.0667, 'г000', 1, '*'),
+(1607, 'журнал', 'журнал', 0, 0, 0.4, 'ж000', 1, '*'),
+(1608, 'журнал «фармакогенетика', 'журнал «фармакогенетика', 0, 1, 1.7667, 'ж000', 1, '*'),
+(1609, 'журнал «фармакогенетика и', 'журнал «фармакогенетика и', 0, 1, 1.8333, 'ж000', 1, '*'),
+(1610, 'и фармакогеномика»', 'и фармакогеномика»', 0, 1, 1.6, 'и000', 1, '*'),
+(1611, 'и фармакогеномика» издаётся', 'и фармакогеномика» издаётся', 0, 1, 1.9, 'и000', 1, '*'),
+(1612, 'и фармакогеномика» публикует', 'и фармакогеномика» публикует', 0, 1, 1.9333, 'и000', 1, '*'),
+(1613, 'и фундаментальных', 'и фундаментальных', 0, 1, 1.5667, 'и000', 1, '*'),
+(1614, 'и фундаментальных научных', 'и фундаментальных научных', 0, 1, 1.8333, 'и000', 1, '*'),
+(1615, 'издаётся', 'издаётся', 0, 0, 0.5333, 'и000', 1, '*'),
+(1616, 'издаётся с', 'издаётся с', 0, 1, 1.3333, 'и000', 1, '*'),
+(1617, 'издаётся с 2014', 'издаётся с 2014', 0, 1, 1.5, 'и000', 1, '*'),
+(1618, 'клинико-экспериментальных', 'клинико-экспериментальных', 0, 0, 1, 'к000', 1, '*'),
+(1619, 'клинико-экспериментальных и', 'клинико-экспериментальных и', 0, 1, 1.9, 'к000', 1, '*'),
+(1620, 'клинико-экспериментальных и фундаментальных', 'клинико-экспериментальных и фундаментальных', 0, 1, 2, 'к000', 1, '*'),
+(1621, 'клинических', 'клинических', 0, 0, 0.7333, 'к000', 1, '*'),
+(1622, 'клинических клинико-экспериментальных', 'клинических клинико-экспериментальных', 0, 1, 2, 'к000', 1, '*'),
+(1623, 'клинических клинико-экспериментальных и', 'клинических клинико-экспериментальных и', 0, 1, 2, 'к000', 1, '*'),
+(1624, 'клинических случаев', 'клинических случаев', 0, 1, 1.6333, 'к000', 1, '*'),
+(1625, 'клинических случаев а', 'клинических случаев а', 0, 1, 1.7, 'к000', 1, '*'),
+(1626, 'лекции', 'лекции', 0, 0, 0.4, 'л000', 1, '*'),
+(1627, 'лекции описания', 'лекции описания', 0, 1, 1.5, 'л000', 1, '*'),
+(1628, 'лекции описания клинических', 'лекции описания клинических', 0, 1, 1.9, 'л000', 1, '*'),
+(1629, 'материалы', 'материалы', 0, 0, 0.6, 'м000', 1, '*'),
+(1630, 'материалы по', 'материалы по', 0, 1, 1.4, 'м000', 1, '*'),
+(1631, 'материалы по всем', 'материалы по всем', 0, 1, 1.5667, 'м000', 1, '*'),
+(1632, 'медицинский', 'медицинский', 0, 0, 0.7333, 'м000', 1, '*'),
+(1633, 'медицинский журнал', 'медицинский журнал', 0, 1, 1.6, 'м000', 1, '*'),
+(1634, 'медицинский журнал «фармакогенетика', 'медицинский журнал «фармакогенетика', 0, 1, 2, 'м000', 1, '*'),
+(1635, 'медицины', 'медицины', 0, 0, 0.5333, 'м000', 1, '*'),
+(1636, 'научно-практический', 'научно-практический', 0, 0, 1, 'н000', 1, '*'),
+(1637, 'научно-практический медицинский', 'научно-практический медицинский', 0, 1, 2, 'н000', 1, '*'),
+(1638, 'научно-практический медицинский журнал', 'научно-практический медицинский журнал', 0, 1, 2, 'н000', 1, '*'),
+(1639, 'научных', 'научных', 0, 0, 0.4667, 'н000', 1, '*'),
+(1640, 'научных работах', 'научных работах', 0, 1, 1.5, 'н000', 1, '*'),
+(1641, 'научных работах обзоры', 'научных работах обзоры', 0, 1, 1.7333, 'н000', 1, '*'),
+(1642, 'о', 'о', 0, 0, 0.0667, 'о000', 1, '*'),
+(1643, 'о проведённых', 'о проведённых', 0, 1, 1.4333, 'о000', 1, '*'),
+(1644, 'о проведённых клинических', 'о проведённых клинических', 0, 1, 1.8333, 'о000', 1, '*'),
+(1645, 'обзоры лекции', 'обзоры лекции', 0, 1, 1.4333, 'о000', 1, '*'),
+(1646, 'обзоры лекции описания', 'обзоры лекции описания', 0, 1, 1.7333, 'о000', 1, '*'),
+(1647, 'описания', 'описания', 0, 0, 0.5333, 'о000', 1, '*'),
+(1648, 'описания клинических', 'описания клинических', 0, 1, 1.6667, 'о000', 1, '*'),
+(1649, 'описания клинических случаев', 'описания клинических случаев', 0, 1, 1.9333, 'о000', 1, '*'),
+(1650, 'оригинальные статьи', 'оригинальные статьи', 0, 1, 1.6333, 'о000', 1, '*'),
+(1651, 'оригинальные статьи о', 'оригинальные статьи о', 0, 1, 1.7, 'о000', 1, '*'),
+(1652, 'персонаизированной', 'персонаизированной', 0, 0, 1, 'п000', 1, '*'),
+(1653, 'персонаизированной медицины', 'персонаизированной медицины', 0, 1, 1.9, 'п000', 1, '*'),
+(1654, 'по', 'по', 0, 0, 0.1333, 'п000', 1, '*'),
+(1655, 'по всем', 'по всем', 0, 1, 1.2333, 'п000', 1, '*'),
+(1656, 'по всем актуальным', 'по всем актуальным', 0, 1, 1.6, 'п000', 1, '*'),
+(1657, 'проблемам', 'проблемам', 0, 0, 0.6, 'п000', 1, '*'),
+(1658, 'проблемам персонаизированной', 'проблемам персонаизированной', 0, 1, 1.9333, 'п000', 1, '*'),
+(1659, 'проблемам персонаизированной медицины', 'проблемам персонаизированной медицины', 0, 1, 2, 'п000', 1, '*'),
+(1660, 'проведённых', 'проведённых', 0, 0, 0.7333, 'п000', 1, '*'),
+(1661, 'проведённых клинических', 'проведённых клинических', 0, 1, 1.7667, 'п000', 1, '*'),
+(1662, 'проведённых клинических клинико-экспериментальных', 'проведённых клинических клинико-экспериментальных', 0, 1, 2, 'п000', 1, '*'),
+(1663, 'публикует', 'публикует', 0, 0, 0.6, 'п000', 1, '*'),
+(1664, 'публикует оригинальные', 'публикует оригинальные', 0, 1, 1.7333, 'п000', 1, '*'),
+(1665, 'публикует оригинальные статьи', 'публикует оригинальные статьи', 0, 1, 1.9667, 'п000', 1, '*'),
+(1666, 'работах', 'работах', 0, 0, 0.4667, 'р000', 1, '*'),
+(1667, 'работах обзоры', 'работах обзоры', 0, 1, 1.4667, 'р000', 1, '*'),
+(1668, 'работах обзоры лекции', 'работах обзоры лекции', 0, 1, 1.7, 'р000', 1, '*'),
+(1669, 'с', 'с', 0, 0, 0.0667, 'с000', 1, '*'),
+(1670, 'с 2014', 'с 2014', 0, 1, 1.2, 'с000', 1, '*'),
+(1671, 'с 2014 г', 'с 2014 г', 0, 1, 1.2667, 'с000', 1, '*'),
+(1672, 'случаев', 'случаев', 0, 0, 0.4667, 'с000', 1, '*'),
+(1673, 'случаев а', 'случаев а', 0, 1, 1.3, 'с000', 1, '*'),
+(1674, 'случаев а также', 'случаев а также', 0, 1, 1.5, 'с000', 1, '*'),
+(1675, 'статьи', 'статьи', 0, 0, 0.4, 'с000', 1, '*'),
+(1676, 'статьи о', 'статьи о', 0, 1, 1.2667, 'с000', 1, '*'),
+(1677, 'статьи о проведённых', 'статьи о проведённых', 0, 1, 1.6667, 'с000', 1, '*'),
+(1678, 'также', 'также', 0, 0, 0.3333, 'т000', 1, '*'),
+(1679, 'также вспомогательные', 'также вспомогательные', 0, 1, 1.7, 'т000', 1, '*'),
+(1680, 'также вспомогательные материалы', 'также вспомогательные материалы', 0, 1, 2, 'т000', 1, '*'),
+(1681, 'фармакогеномика»', 'фармакогеномика»', 0, 0, 1, 'ф000', 1, '*'),
+(1682, 'фармакогеномика» издаётся', 'фармакогеномика» издаётся', 0, 1, 1.8333, 'ф000', 1, '*'),
+(1683, 'фармакогеномика» издаётся с', 'фармакогеномика» издаётся с', 0, 1, 1.9, 'ф000', 1, '*'),
+(1684, 'фармакогеномика» публикует', 'фармакогеномика» публикует', 0, 1, 1.8667, 'ф000', 1, '*'),
+(1685, 'фармакогеномика» публикует оригинальные', 'фармакогеномика» публикует оригинальные', 0, 1, 2, 'ф000', 1, '*'),
+(1686, 'фундаментальных', 'фундаментальных', 0, 0, 1, 'ф000', 1, '*'),
+(1687, 'фундаментальных научных', 'фундаментальных научных', 0, 1, 1.7667, 'ф000', 1, '*'),
+(1688, 'фундаментальных научных работах', 'фундаментальных научных работах', 0, 1, 2, 'ф000', 1, '*');
 
 -- --------------------------------------------------------
 
@@ -2886,9 +3181,7 @@ INSERT INTO `f8ad7_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`,
 
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_terms_common` (
   `term` varchar(75) NOT NULL,
-  `language` varchar(3) NOT NULL,
-  KEY `idx_word_lang` (`term`,`language`),
-  KEY `idx_lang` (`language`)
+  `language` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3025,9 +3318,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_tokens` (
   `phrase` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `weight` float unsigned NOT NULL DEFAULT '1',
   `context` tinyint(1) unsigned NOT NULL DEFAULT '2',
-  `language` char(3) NOT NULL DEFAULT '',
-  KEY `idx_word` (`term`),
-  KEY `idx_context` (`context`)
+  `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3047,9 +3338,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_tokens_aggregate` (
   `context` tinyint(1) unsigned NOT NULL DEFAULT '2',
   `context_weight` float unsigned NOT NULL,
   `total_weight` float unsigned NOT NULL,
-  `language` char(3) NOT NULL DEFAULT '',
-  KEY `token` (`term`),
-  KEY `keyword_id` (`term_id`)
+  `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3059,11 +3348,9 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_tokens_aggregate` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_types` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `title` varchar(100) NOT NULL,
-  `mime` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `title` (`title`)
+  `mime` varchar(100) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
@@ -3086,13 +3373,12 @@ INSERT INTO `f8ad7_finder_types` (`id`, `title`, `mime`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_jsecurelog` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `ip` varchar(16) NOT NULL,
   `userid` int(11) NOT NULL DEFAULT '0',
   `code` varchar(255) NOT NULL,
-  `change_variable` text NOT NULL,
-  PRIMARY KEY (`id`)
+  `change_variable` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3102,14 +3388,12 @@ CREATE TABLE IF NOT EXISTS `f8ad7_jsecurelog` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_attachments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `itemID` int(11) NOT NULL,
   `filename` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `titleAttribute` text NOT NULL,
-  `hits` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `itemID` (`itemID`)
+  `hits` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3119,7 +3403,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_attachments` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_categories` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(11) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
   `description` text NOT NULL,
@@ -3132,15 +3416,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_categories` (
   `params` text NOT NULL,
   `trash` smallint(6) NOT NULL DEFAULT '0',
   `plugins` text NOT NULL,
-  `language` char(7) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `category` (`published`,`access`,`trash`),
-  KEY `parent` (`parent`),
-  KEY `ordering` (`ordering`),
-  KEY `published` (`published`),
-  KEY `access` (`access`),
-  KEY `trash` (`trash`),
-  KEY `language` (`language`)
+  `language` char(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3150,7 +3426,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_categories` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `itemID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `userName` varchar(255) NOT NULL,
@@ -3158,12 +3434,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_comments` (
   `commentText` text NOT NULL,
   `commentEmail` varchar(255) NOT NULL,
   `commentURL` varchar(255) NOT NULL,
-  `published` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `itemID` (`itemID`),
-  KEY `userID` (`userID`),
-  KEY `published` (`published`),
-  KEY `latestComments` (`published`,`commentDate`)
+  `published` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3173,17 +3444,13 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_comments` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_extra_fields` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `value` text NOT NULL,
   `type` varchar(255) NOT NULL,
   `group` int(11) NOT NULL,
   `published` tinyint(4) NOT NULL,
-  `ordering` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `group` (`group`),
-  KEY `published` (`published`),
-  KEY `ordering` (`ordering`)
+  `ordering` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3193,9 +3460,8 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_extra_fields` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_extra_fields_groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
+`id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3205,7 +3471,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_extra_fields_groups` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_items` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `alias` varchar(255) DEFAULT NULL,
   `catid` int(11) NOT NULL,
@@ -3240,17 +3506,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_items` (
   `metadata` text NOT NULL,
   `metakey` text NOT NULL,
   `plugins` text NOT NULL,
-  `language` char(7) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `item` (`published`,`publish_up`,`publish_down`,`trash`,`access`),
-  KEY `catid` (`catid`),
-  KEY `created_by` (`created_by`),
-  KEY `ordering` (`ordering`),
-  KEY `featured` (`featured`),
-  KEY `featured_ordering` (`featured_ordering`),
-  KEY `hits` (`hits`),
-  KEY `created` (`created`),
-  KEY `language` (`language`)
+  `language` char(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3263,8 +3519,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_rating` (
   `itemID` int(11) NOT NULL DEFAULT '0',
   `rating_sum` int(11) unsigned NOT NULL DEFAULT '0',
   `rating_count` int(11) unsigned NOT NULL DEFAULT '0',
-  `lastip` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`itemID`)
+  `lastip` varchar(50) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3274,11 +3529,9 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_rating` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_tags` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `published` smallint(6) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `published` (`published`)
+  `published` smallint(6) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3288,12 +3541,9 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_tags` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_tags_xref` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `tagID` int(11) NOT NULL,
-  `itemID` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `tagID` (`tagID`),
-  KEY `itemID` (`itemID`)
+  `itemID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3303,7 +3553,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_tags_xref` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `userName` varchar(255) DEFAULT NULL,
   `gender` enum('m','f') NOT NULL DEFAULT 'm',
@@ -3314,10 +3564,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_users` (
   `plugins` text NOT NULL,
   `ip` varchar(15) NOT NULL,
   `hostname` varchar(255) NOT NULL,
-  `notes` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `userID` (`userID`),
-  KEY `group` (`group`)
+  `notes` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
@@ -3334,10 +3581,9 @@ INSERT INTO `f8ad7_k2_users` (`id`, `userID`, `userName`, `gender`, `description
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_user_groups` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
-  `permissions` text NOT NULL,
-  PRIMARY KEY (`id`)
+  `permissions` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3347,7 +3593,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_user_groups` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_languages` (
-  `lang_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+`lang_id` int(11) unsigned NOT NULL,
   `lang_code` char(7) NOT NULL,
   `title` varchar(50) NOT NULL,
   `title_native` varchar(50) NOT NULL,
@@ -3359,13 +3605,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_languages` (
   `sitename` varchar(1024) NOT NULL DEFAULT '',
   `published` int(11) NOT NULL DEFAULT '0',
   `access` int(10) unsigned NOT NULL DEFAULT '0',
-  `ordering` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`lang_id`),
-  UNIQUE KEY `idx_sef` (`sef`),
-  UNIQUE KEY `idx_image` (`image`),
-  UNIQUE KEY `idx_langcode` (`lang_code`),
-  KEY `idx_access` (`access`),
-  KEY `idx_ordering` (`ordering`)
+  `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
@@ -3383,7 +3623,7 @@ INSERT INTO `f8ad7_languages` (`lang_id`, `lang_code`, `title`, `title_native`, 
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_menu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `menutype` varchar(24) NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
   `title` varchar(255) NOT NULL COMMENT 'The display title of the menu item.',
   `alias` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'The SEF alias of the menu item.',
@@ -3406,15 +3646,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_menu` (
   `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
   `home` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Indicates if this menu item is the home or default page.',
   `language` char(7) NOT NULL DEFAULT '',
-  `client_id` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_client_id_parent_id_alias_language` (`client_id`,`parent_id`,`alias`,`language`),
-  KEY `idx_componentid` (`component_id`,`menutype`,`published`,`access`),
-  KEY `idx_menutype` (`menutype`),
-  KEY `idx_left_right` (`lft`,`rgt`),
-  KEY `idx_alias` (`alias`),
-  KEY `idx_path` (`path`(255)),
-  KEY `idx_language` (`language`)
+  `client_id` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=196 ;
 
 --
@@ -3446,7 +3678,7 @@ INSERT INTO `f8ad7_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (22, 'menu', 'com_joomlaupdate', 'Joomla! Update', '', 'Joomla! Update', 'index.php?option=com_joomlaupdate', 'component', 1, 1, 1, 28, 0, '0000-00-00 00:00:00', 0, 0, 'class:joomlaupdate', 0, '', 41, 42, 0, '*', 1),
 (23, 'main', 'com_tags', 'Tags', '', 'Tags', 'index.php?option=com_tags', 'component', 0, 1, 1, 29, 0, '0000-00-00 00:00:00', 0, 1, 'class:tags', 0, '', 43, 44, 0, '', 1),
 (24, 'main', 'com_postinstall', 'Post-installation messages', '', 'Post-installation messages', 'index.php?option=com_postinstall', 'component', 0, 1, 1, 32, 0, '0000-00-00 00:00:00', 0, 1, 'class:postinstall', 0, '', 45, 46, 0, '*', 1),
-(101, 'topmenu', 'Главная', 'home', '', 'home', 'index.php?option=com_zoo&view=item&layout=item', 'component', 1, 1, 1, 10031, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"item_id":"2","application":"3","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":1,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 47, 48, 1, '*', 0),
+(101, 'topmenu', 'Главная', 'home', '', 'home', 'index.php?option=com_zoo&view=item&layout=item', 'component', 1, 1, 1, 10031, 445, '2014-10-11 04:33:57', 0, 1, '', 0, '{"item_id":"2","application":"3","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":1,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 47, 48, 1, '*', 0),
 (102, 'main', 'COM_JSECURE_AUTHENTICATION', 'com-jsecure-authentication', '', 'com-jsecure-authentication', 'index.php?option=com_jsecure', 'component', 0, 1, 1, 10003, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_jsecure/images/jSecure_icon_16x16.png', 0, '', 49, 58, 0, '', 1),
 (103, 'main', 'BASIC_CONFIGURATION', 'basic-configuration', '', 'com-jsecure-authentication/basic-configuration', 'index.php?option=com_jsecure&task=basic', 'component', 0, 102, 2, 10003, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '', 50, 51, 0, '', 1),
 (104, 'main', 'ADVANCED_CONFIGURATION', 'advanced-configuration', '', 'com-jsecure-authentication/advanced-configuration', 'index.php?option=com_jsecure&task=advanced', 'component', 0, 102, 2, 10003, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '', 52, 53, 0, '', 1),
@@ -3509,12 +3741,10 @@ INSERT INTO `f8ad7_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_menu_types` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `menutype` varchar(24) NOT NULL,
   `title` varchar(48) NOT NULL,
-  `description` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_menutype` (`menutype`)
+  `description` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
@@ -3533,7 +3763,7 @@ INSERT INTO `f8ad7_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_messages` (
-  `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`message_id` int(10) unsigned NOT NULL,
   `user_id_from` int(10) unsigned NOT NULL DEFAULT '0',
   `user_id_to` int(10) unsigned NOT NULL DEFAULT '0',
   `folder_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -3541,9 +3771,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_messages` (
   `state` tinyint(1) NOT NULL DEFAULT '0',
   `priority` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `subject` varchar(255) NOT NULL DEFAULT '',
-  `message` text NOT NULL,
-  PRIMARY KEY (`message_id`),
-  KEY `useridto_state` (`user_id_to`,`state`)
+  `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3555,8 +3783,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_messages` (
 CREATE TABLE IF NOT EXISTS `f8ad7_messages_cfg` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
   `cfg_name` varchar(100) NOT NULL DEFAULT '',
-  `cfg_value` varchar(255) NOT NULL DEFAULT '',
-  UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`)
+  `cfg_value` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3566,7 +3793,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_messages_cfg` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_modules` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
   `title` varchar(100) NOT NULL DEFAULT '',
   `note` varchar(255) NOT NULL DEFAULT '',
@@ -3583,11 +3810,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_modules` (
   `showtitle` tinyint(3) unsigned NOT NULL DEFAULT '1',
   `params` text NOT NULL,
   `client_id` tinyint(4) NOT NULL DEFAULT '0',
-  `language` char(7) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `published` (`published`,`access`),
-  KEY `newsfeeds` (`module`,`published`),
-  KEY `idx_language` (`language`)
+  `language` char(7) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=131 ;
 
 --
@@ -3627,12 +3850,12 @@ INSERT INTO `f8ad7_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (106, 258, 'ZOO Tag', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_zootag', 1, 1, '', 0, '*'),
 (107, 259, 'Widgetkit', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_widgetkit', 1, 1, '', 0, '*'),
 (108, 260, 'Widgetkit Twitter', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_widgetkit_twitter', 1, 1, '', 0, '*'),
-(109, 271, 'trdgsergsergsed', '', '', 1, 'position-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zoocategory', 1, 1, '{"theme":"flatlist","category":"","application":"1","depth":"0","add_count":"1","menu_item":"","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(109, 271, 'trdgsergsergsed', '', '', 1, 'position-1', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_zoocategory', 1, 1, '{"theme":"flatlist","category":"","application":"1","depth":"0","add_count":"1","menu_item":"","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (110, 277, 'Left nav', '', '', 1, 'left_nav', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"left-nav","base":"","startLevel":"1","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"_left","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (113, 283, 'AcyMailing Module', '', '', 1, 'newsletter', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_acymailing', 1, 1, '{"effect":"mootools-slide","lists":"None","hiddenlists":"All","displaymode":"vertical","listschecked":"All","checkmode":"0","dropdown":"0","overlay":"0","link":"1","listposition":"before","customfields":"name,email","nametext":"","emailtext":"","fieldsize":"80%","displayfields":"0","introtext":"","finaltext":"","showsubscribe":"1","subscribetext":"","subscribetextreg":"","showunsubscribe":"0","unsubscribetext":"","redirectmode":"0","redirectlink":"","redirectlinkunsub":"","showterms":"0","showtermspopup":"1","termscontent":"0","mootoolsintro":"","mootoolsbutton":"","boxwidth":"250","boxheight":"200","moduleclass_sfx":"","textalign":"none","loggedin":"1","cache":"0","includejs":"header","itemid":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (114, 284, 'Top nav', '', '', 1, 'top_nav', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"top-nav","base":"","startLevel":"1","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"_top","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (115, 285, 'Bot nav ', '', '', 1, 'bot_nav', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"top-nav","base":"","startLevel":"1","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"_bot","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(116, 286, 'Google translate', '', '<div id="google_translate_element"></div>\r\n', 1, 'languages', 445, '2014-09-18 16:32:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(116, 286, 'Google translate', '', '<div id="google_translate_element"></div>\r\n', 1, 'languages', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (117, 288, 'K2 Comments', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_k2_comments', 1, 1, '', 0, '*'),
 (118, 289, 'K2 Content', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_k2_content', 1, 1, '', 0, '*'),
 (119, 290, 'K2 Tools', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_k2_tools', 1, 1, '', 0, '*'),
@@ -3641,10 +3864,10 @@ INSERT INTO `f8ad7_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (122, 293, 'K2 Quick Icons (admin)', '', '', 0, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_k2_quickicons', 1, 1, '', 1, '*'),
 (123, 294, 'K2 Stats (admin)', '', '', 0, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_k2_stats', 1, 1, '', 1, '*'),
 (124, 295, 'Вход', '', '', 1, 'authorization', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '{"pretext":"","posttext":"","login":"","logout":"","greeting":"0","name":"0","usesecure":"0","usetext":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(125, 296, 'Logo', '', '<img src="/templates/che/lib/img/logo.gif"><span>Фармакогенетика фармакогеномика</span>', 1, 'logo', 445, '2014-10-04 09:08:59', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(126, 297, 'Поиск', '', '', 1, 'search', 445, '2014-09-22 12:38:05', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_search', 1, 1, '{"label":"","width":"20","text":"","button":"1","button_pos":"right","imagebutton":"1","button_text":"","opensearch":"1","opensearch_title":"","set_itemid":"0","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"search_mod","style":"0"}', 0, '*'),
+(125, 296, 'Logo', '', '<img src="/templates/che/lib/img/logo.gif"><span>Фармакогенетика фармакогеномика</span>', 1, 'logo', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(126, 297, 'Поиск', '', '', 1, 'search', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_search', 1, 1, '{"label":"","width":"20","text":"","button":"1","button_pos":"right","imagebutton":"1","button_text":"","opensearch":"1","opensearch_title":"","set_itemid":"0","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"search_mod","style":"0"}', 0, '*'),
 (127, 298, 'fdhgdfgh', '', '', 1, 'bot_nav', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_zooitem', 1, 1, '{"theme":"list","layout":"default","media_position":"left","application":"3","mode":"item","type":"article-2","category":"","item_id":"2","subcategories":"0","count":"4","order":["_itemname","",""],"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(128, 299, 'Теги тест', '', '', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zootag', 1, 1, '{"theme":"cloud","mode":"all","type":"article","category":"","application":"3","subcategories":"0","count":"100","order":"acount","menu_item":"179","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(128, 299, 'Рубрики журнала', '', '', 1, 'before_component', 445, '2014-10-11 08:19:50', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zootag', 1, 1, '{"theme":"list","mode":"all","type":"article-2","category":"","application":"3","subcategories":"0","count":"100","order":"alpha","menu_item":"","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (129, 300, 'Топ за неделю', '', '', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zooitem', 1, 1, '{"theme":"list","layout":"default","media_position":"left","application":"3","mode":"categories","type":"article-2","category":"3","item_id":"3","subcategories":"0","count":"5","order":["_itemhits","","","_reversed"],"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (130, 303, 'Реклама', '', '<img class="ad" src="images/rek.jpg" alt="rek" />', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
 
@@ -3656,8 +3879,7 @@ INSERT INTO `f8ad7_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 
 CREATE TABLE IF NOT EXISTS `f8ad7_modules_menu` (
   `moduleid` int(11) NOT NULL DEFAULT '0',
-  `menuid` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`moduleid`,`menuid`)
+  `menuid` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3807,7 +4029,7 @@ INSERT INTO `f8ad7_modules_menu` (`moduleid`, `menuid`) VALUES
 
 CREATE TABLE IF NOT EXISTS `f8ad7_newsfeeds` (
   `catid` int(11) NOT NULL DEFAULT '0',
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `name` varchar(100) NOT NULL DEFAULT '',
   `alias` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '',
   `link` varchar(200) NOT NULL DEFAULT '',
@@ -3835,15 +4057,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_newsfeeds` (
   `description` text NOT NULL,
   `version` int(10) unsigned NOT NULL DEFAULT '1',
   `hits` int(10) unsigned NOT NULL DEFAULT '0',
-  `images` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idx_access` (`access`),
-  KEY `idx_checkout` (`checked_out`),
-  KEY `idx_state` (`published`),
-  KEY `idx_catid` (`catid`),
-  KEY `idx_createdby` (`created_by`),
-  KEY `idx_language` (`language`),
-  KEY `idx_xreference` (`xreference`)
+  `images` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3853,11 +4067,10 @@ CREATE TABLE IF NOT EXISTS `f8ad7_newsfeeds` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_overrider` (
-  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+`id` int(10) NOT NULL COMMENT 'Primary Key',
   `constant` varchar(255) NOT NULL,
   `string` text NOT NULL,
-  `file` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
+  `file` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3867,7 +4080,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_overrider` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_postinstall_messages` (
-  `postinstall_message_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`postinstall_message_id` bigint(20) unsigned NOT NULL,
   `extension_id` bigint(20) NOT NULL DEFAULT '700' COMMENT 'FK to #__extensions',
   `title_key` varchar(255) NOT NULL DEFAULT '' COMMENT 'Lang key for the title',
   `description_key` varchar(255) NOT NULL DEFAULT '' COMMENT 'Lang key for description',
@@ -3880,8 +4093,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_postinstall_messages` (
   `condition_file` varchar(255) DEFAULT NULL COMMENT 'RAD URI to file holding display condition method',
   `condition_method` varchar(255) DEFAULT NULL COMMENT 'Display condition method, must return boolean',
   `version_introduced` varchar(50) NOT NULL DEFAULT '3.2.0' COMMENT 'Version when this message was introduced',
-  `enabled` tinyint(3) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`postinstall_message_id`)
+  `enabled` tinyint(3) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
@@ -3901,7 +4113,7 @@ INSERT INTO `f8ad7_postinstall_messages` (`postinstall_message_id`, `extension_i
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_redirect_links` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `old_url` varchar(255) NOT NULL,
   `new_url` varchar(255) NOT NULL,
   `referer` varchar(150) NOT NULL,
@@ -3909,10 +4121,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_redirect_links` (
   `hits` int(10) unsigned NOT NULL DEFAULT '0',
   `published` tinyint(4) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_link_old` (`old_url`),
-  KEY `idx_link_modifed` (`modified_date`)
+  `modified_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -3923,8 +4132,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_redirect_links` (
 
 CREATE TABLE IF NOT EXISTS `f8ad7_schemas` (
   `extension_id` int(11) NOT NULL,
-  `version_id` varchar(20) NOT NULL,
-  PRIMARY KEY (`extension_id`,`version_id`)
+  `version_id` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3947,10 +4155,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_session` (
   `time` varchar(14) DEFAULT '',
   `data` mediumtext,
   `userid` int(11) DEFAULT '0',
-  `username` varchar(150) DEFAULT '',
-  PRIMARY KEY (`session_id`),
-  KEY `userid` (`userid`),
-  KEY `time` (`time`)
+  `username` varchar(150) DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -3958,12 +4163,8 @@ CREATE TABLE IF NOT EXISTS `f8ad7_session` (
 --
 
 INSERT INTO `f8ad7_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('bdgs14s2i5qn2cnhgvr4apdl86', 0, 1, '1412414523', '__default|a:8:{s:15:"session.counter";i:3;s:19:"session.timer.start";i:1412414500;s:18:"session.timer.last";i:1412414523;s:17:"session.timer.now";i:1412414523;s:22:"session.client.browser";s:76:"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:32.0) Gecko/20100101 Firefox/32.0";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}s:13:"session.token";s:32:"d092a7c0010c1babebcac50b0c60f674";}', 0, ''),
-('e0ih7shak1kqgpmg7re92268q2', 1, 0, '1412413974', '__default|a:8:{s:15:"session.counter";i:4;s:19:"session.timer.start";i:1412413962;s:18:"session.timer.last";i:1412413964;s:17:"session.timer.now";i:1412413968;s:22:"session.client.browser";s:133:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.94 Chrome/37.0.2062.94 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":2:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}}}s:4:"user";O:5:"JUser":29:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"445";s:4:"name";s:10:"Super User";s:8:"username";s:4:"root";s:5:"email";s:18:"chevil92@gmail.com";s:8:"password";s:60:"$2y$10$71M5MHRnZkrN/brxhgzzIOLyNwyCG33qwnZPi66.Hv3NYiwN/638i";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-15 13:41:46";s:13:"lastvisitDate";s:19:"2014-10-04 08:22:27";s:10:"activation";s:1:"0";s:6:"params";s:0:"";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";s:10:"superadmin";b:1;s:3:"gid";i:1000;}s:13:"session.token";s:32:"d48b4da22858c79e106ee3c2dfcb3972";}__wf|a:1:{s:13:"session.token";s:32:"2e7a47dc95d91e3836c52bd8d6355b21";}', 445, 'root'),
-('fki6m37brg2t7j7be9e76u8cj4', 0, 1, '1412413784', '__default|a:8:{s:15:"session.counter";i:118;s:19:"session.timer.start";i:1412344576;s:18:"session.timer.last";i:1412413765;s:17:"session.timer.now";i:1412413784;s:22:"session.client.browser";s:133:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.94 Chrome/37.0.2062.94 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}s:13:"session.token";s:32:"74cba765a4335a9e987cd1de87652102";}', 0, ''),
-('m1rh959d6khvbsgr5olauo52v5', 1, 1, '1412413962', '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1412413961;s:18:"session.timer.last";i:1412413961;s:17:"session.timer.now";i:1412413961;s:22:"session.client.browser";s:133:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.94 Chrome/37.0.2062.94 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\\0\\0\\0isRoot";N;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";N;s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}s:13:"session.token";s:32:"19354e19fff8ffed991a955d43108a48";}', 0, ''),
-('n07feuaopq5kg2d110l0dlsq93', 0, 1, '1412414988', '__default|a:8:{s:15:"session.counter";i:14;s:19:"session.timer.start";i:1412413864;s:18:"session.timer.last";i:1412414913;s:17:"session.timer.now";i:1412414987;s:22:"session.client.browser";s:133:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.94 Chrome/37.0.2062.94 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}s:13:"session.token";s:32:"7baaace7fa8899cf93b7c463af2a451c";}', 0, ''),
-('pf56ncskl1ab8oqgu155t2ki94', 1, 0, '1412413740', '__default|a:8:{s:15:"session.counter";i:83;s:19:"session.timer.start";i:1412410941;s:18:"session.timer.last";i:1412413739;s:17:"session.timer.now";i:1412413739;s:22:"session.client.browser";s:133:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.94 Chrome/37.0.2062.94 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":4:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:18:"com_zooapplication";i:3;s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:1:{i:0;i:125;}}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}}}s:4:"user";O:5:"JUser":29:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"445";s:4:"name";s:10:"Super User";s:8:"username";s:4:"root";s:5:"email";s:18:"chevil92@gmail.com";s:8:"password";s:60:"$2y$10$71M5MHRnZkrN/brxhgzzIOLyNwyCG33qwnZPi66.Hv3NYiwN/638i";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-15 13:41:46";s:13:"lastvisitDate";s:19:"2014-10-03 13:51:18";s:10:"activation";s:1:"0";s:6:"params";s:0:"";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";s:10:"superadmin";b:1;s:3:"gid";i:1000;}s:13:"session.token";s:32:"0e6a63b216986bdf8602774893f07fb4";}__wf|a:1:{s:13:"session.token";s:32:"683a79be6f05c2294b5892113d201d70";}', 445, 'root');
+('jhtjf6255723t71kkc7dk5lia6', 1, 0, '1413015729', '__default|a:8:{s:15:"session.counter";i:161;s:19:"session.timer.start";i:1413011382;s:18:"session.timer.last";i:1413015721;s:17:"session.timer.now";i:1413015724;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":7:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:2:{i:0;i:109;i:1;i:128;}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:18:"com_zooapplication";i:3;s:9:"com_zoo_3";O:8:"stdClass":2:{s:4:"item";O:8:"stdClass":7:{s:18:"filter_category_id";s:2:"-1";s:11:"filter_type";s:1:"0";s:16:"filter_author_id";i:0;s:6:"search";s:0:"";s:12:"filter_order";s:9:"a.created";s:16:"filter_order_Dir";s:4:"desc";s:10:"limitstart";i:0;}s:7:"element";O:8:"stdClass":6:{s:12:"filter_order";s:9:"a.created";s:16:"filter_order_Dir";s:4:"desc";s:18:"filter_category_id";s:1:"3";s:10:"limitstart";i:0;s:16:"filter_author_id";i:0;s:6:"search";s:0:"";}}s:9:"com_menus";O:8:"stdClass":2:{s:5:"items";O:8:"stdClass":3:{s:8:"menutype";s:7:"topmenu";s:10:"limitstart";i:0;s:4:"list";a:4:{s:9:"direction";s:3:"asc";s:5:"limit";s:2:"20";s:8:"ordering";s:5:"a.lft";s:5:"start";d:0;}}s:4:"edit";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":4:{s:2:"id";a:1:{i:0;i:101;}s:4:"data";N;s:4:"type";N;s:4:"link";N;}}}s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:20;}}}}s:4:"user";O:5:"JUser":29:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"445";s:4:"name";s:10:"Super User";s:8:"username";s:4:"root";s:5:"email";s:18:"chevil92@gmail.com";s:8:"password";s:60:"$2y$10$71M5MHRnZkrN/brxhgzzIOLyNwyCG33qwnZPi66.Hv3NYiwN/638i";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-15 13:41:46";s:13:"lastvisitDate";s:19:"2014-10-04 09:12:44";s:10:"activation";s:1:"0";s:6:"params";s:0:"";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";s:10:"superadmin";b:1;s:3:"gid";i:1000;}s:13:"session.token";s:32:"22f2f225c3313e604254bbc8d5fd5f15";}__wf|a:1:{s:13:"session.token";s:32:"c20193e42bb2645ddb23644d7c4ebfb7";}', 445, 'root'),
+('lqbirqg8kjo8geobe6fu4tcsi1', 0, 1, '1413016397', '__default|a:9:{s:15:"session.counter";i:62;s:19:"session.timer.start";i:1413010655;s:18:"session.timer.last";i:1413016364;s:17:"session.timer.now";i:1413016396;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}s:13:"session.token";s:32:"cf1d4850b649aca06cc803e7744c86e0";s:17:"application.queue";a:1:{i:0;a:2:{s:7:"message";N;s:4:"type";s:7:"message";}}}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -3972,7 +4173,7 @@ INSERT INTO `f8ad7_session` (`session_id`, `client_id`, `guest`, `time`, `data`,
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_tags` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
   `lft` int(11) NOT NULL DEFAULT '0',
   `rgt` int(11) NOT NULL DEFAULT '0',
@@ -4001,15 +4202,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_tags` (
   `language` char(7) NOT NULL,
   `version` int(10) unsigned NOT NULL DEFAULT '1',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  KEY `tag_idx` (`published`,`access`),
-  KEY `idx_access` (`access`),
-  KEY `idx_checkout` (`checked_out`),
-  KEY `idx_path` (`path`),
-  KEY `idx_left_right` (`lft`,`rgt`),
-  KEY `idx_alias` (`alias`),
-  KEY `idx_language` (`language`)
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
@@ -4037,15 +4230,12 @@ INSERT INTO `f8ad7_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `tit
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_template_styles` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `template` varchar(50) NOT NULL DEFAULT '',
   `client_id` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `home` char(7) NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL DEFAULT '',
-  `params` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idx_template` (`template`),
-  KEY `idx_home` (`home`)
+  `params` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
@@ -4072,11 +4262,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_base` (
   `ucm_id` int(10) unsigned NOT NULL,
   `ucm_item_id` int(10) NOT NULL,
   `ucm_type_id` int(11) NOT NULL,
-  `ucm_language_id` int(11) NOT NULL,
-  PRIMARY KEY (`ucm_id`),
-  KEY `idx_ucm_item_id` (`ucm_item_id`),
-  KEY `idx_ucm_type_id` (`ucm_type_id`),
-  KEY `idx_ucm_language_id` (`ucm_language_id`)
+  `ucm_language_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4086,7 +4272,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_base` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_ucm_content` (
-  `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`core_content_id` int(10) unsigned NOT NULL,
   `core_type_alias` varchar(255) NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
   `core_title` varchar(255) NOT NULL,
   `core_alias` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -4117,20 +4303,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_content` (
   `core_metadesc` text NOT NULL,
   `core_catid` int(10) unsigned NOT NULL DEFAULT '0',
   `core_xreference` varchar(50) NOT NULL COMMENT 'A reference to enable linkages to external data sets.',
-  `core_type_id` int(10) unsigned DEFAULT NULL,
-  PRIMARY KEY (`core_content_id`),
-  KEY `tag_idx` (`core_state`,`core_access`),
-  KEY `idx_access` (`core_access`),
-  KEY `idx_alias` (`core_alias`),
-  KEY `idx_language` (`core_language`),
-  KEY `idx_title` (`core_title`),
-  KEY `idx_modified_time` (`core_modified_time`),
-  KEY `idx_created_time` (`core_created_time`),
-  KEY `idx_content_type` (`core_type_alias`),
-  KEY `idx_core_modified_user_id` (`core_modified_user_id`),
-  KEY `idx_core_checked_out_user_id` (`core_checked_out_user_id`),
-  KEY `idx_core_created_user_id` (`core_created_user_id`),
-  KEY `idx_core_type_id` (`core_type_id`)
+  `core_type_id` int(10) unsigned DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Contains core content data in name spaced fields' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -4140,7 +4313,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_content` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_ucm_history` (
-  `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`version_id` int(10) unsigned NOT NULL,
   `ucm_item_id` int(10) unsigned NOT NULL,
   `ucm_type_id` int(10) unsigned NOT NULL,
   `version_note` varchar(255) NOT NULL DEFAULT '' COMMENT 'Optional version name',
@@ -4149,10 +4322,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_history` (
   `character_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Number of characters in this version.',
   `sha1_hash` varchar(50) NOT NULL DEFAULT '' COMMENT 'SHA1 hash of the version_data column.',
   `version_data` mediumtext NOT NULL COMMENT 'json-encoded string of version data',
-  `keep_forever` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0=auto delete; 1=keep',
-  PRIMARY KEY (`version_id`),
-  KEY `idx_ucm_item_id` (`ucm_type_id`,`ucm_item_id`),
-  KEY `idx_save_date` (`save_date`)
+  `keep_forever` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0=auto delete; 1=keep'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -4162,7 +4332,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_history` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_updates` (
-  `update_id` int(11) NOT NULL AUTO_INCREMENT,
+`update_id` int(11) NOT NULL,
   `update_site_id` int(11) DEFAULT '0',
   `extension_id` int(11) DEFAULT '0',
   `name` varchar(100) DEFAULT '',
@@ -4175,72 +4345,46 @@ CREATE TABLE IF NOT EXISTS `f8ad7_updates` (
   `data` text NOT NULL,
   `detailsurl` text NOT NULL,
   `infourl` text NOT NULL,
-  `extra_query` varchar(1000) DEFAULT '',
-  PRIMARY KEY (`update_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=58 ;
+  `extra_query` varchar(1000) DEFAULT ''
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=33 ;
 
 --
 -- Дамп данных таблицы `f8ad7_updates`
 --
 
 INSERT INTO `f8ad7_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `extra_query`) VALUES
-(1, 3, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.2.2.1', '', 'http://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
-(2, 3, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/fa-IR_details.xml', '', ''),
-(3, 3, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
-(4, 3, 0, 'Portuguese', '', 'pkg_pt-PT', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/pt-PT_details.xml', '', ''),
-(5, 3, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/ru-RU_details.xml', '', ''),
-(6, 3, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.3.5.1', '', 'http://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
-(7, 3, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.3.3.3', '', 'http://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
-(8, 3, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
-(9, 3, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
-(10, 3, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
-(11, 3, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.3.5.1', '', 'http://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
-(12, 3, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
-(13, 3, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.3.3.15', '', 'http://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
-(14, 3, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
-(15, 3, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
-(16, 3, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
-(17, 3, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
-(18, 3, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
-(19, 3, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.0.2.1', '', 'http://update.joomla.org/language/details3/pt-BR_details.xml', '', ''),
-(20, 3, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.3.6.2', '', 'http://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
-(21, 3, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
-(22, 3, 0, 'Galician', '', 'pkg_gl-ES', 'package', '', 0, '3.3.1.2', '', 'http://update.joomla.org/language/details3/gl-ES_details.xml', '', ''),
-(23, 3, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
-(24, 3, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
-(25, 3, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
-(26, 3, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
-(27, 3, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
-(28, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
-(29, 3, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
-(30, 3, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
-(31, 3, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.3.0.2', '', 'http://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
-(32, 3, 0, 'EnglishAU', '', 'pkg_en-AU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
-(33, 3, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
-(34, 3, 0, 'EnglishUS', '', 'pkg_en-US', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-US_details.xml', '', ''),
-(35, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.3.5.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
-(36, 3, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
-(37, 3, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
-(38, 3, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.2.0.2', '', 'http://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
-(39, 3, 0, 'EnglishCA', '', 'pkg_en-CA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
-(40, 3, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
-(41, 3, 0, 'FrenchCA', '', 'pkg_fr-CA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
-(42, 3, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
-(43, 3, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
-(44, 3, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
-(45, 3, 0, 'Sinhala', '', 'pkg_si-LK', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/si-LK_details.xml', '', ''),
-(46, 3, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
-(47, 3, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
-(48, 3, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
-(49, 3, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.3.6.2', '', 'http://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
-(50, 3, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.3.5.1', '', 'http://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
-(51, 3, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
-(52, 3, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
-(53, 3, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
-(54, 3, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.2.3.1', '', 'http://update.joomla.org/language/details3/ko-KR_details.xml', '', ''),
-(55, 3, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
-(56, 3, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
-(57, 6, 10061, 'AcyMailing Starter', 'Latest version of AcyMailing Starter', 'com_acymailing', 'component', '', 1, '4.8.0', '', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 'http://www.acyba.com', '');
+(1, 3, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
+(2, 3, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
+(3, 3, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
+(4, 3, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
+(5, 3, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.3.6.2', '', 'http://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
+(6, 3, 0, 'Galician', '', 'pkg_gl-ES', 'package', '', 0, '3.3.1.2', '', 'http://update.joomla.org/language/details3/gl-ES_details.xml', '', ''),
+(7, 3, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
+(8, 3, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
+(9, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.2.3.1', '', 'http://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
+(10, 3, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
+(11, 3, 0, 'EnglishAU', '', 'pkg_en-AU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
+(12, 3, 0, 'EnglishUS', '', 'pkg_en-US', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-US_details.xml', '', ''),
+(13, 3, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
+(14, 3, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.2.0.2', '', 'http://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
+(15, 3, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
+(16, 3, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
+(17, 3, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
+(18, 3, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
+(19, 3, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
+(20, 3, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
+(21, 3, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
+(22, 3, 0, 'Portuguese', '', 'pkg_pt-PT', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/pt-PT_details.xml', '', ''),
+(23, 3, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/ru-RU_details.xml', '', ''),
+(24, 3, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
+(25, 3, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.3.3.3', '', 'http://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
+(26, 3, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
+(27, 3, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
+(28, 3, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
+(29, 3, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
+(30, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.2.3.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
+(31, 3, 0, 'FrenchCA', '', 'pkg_fr-CA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
+(32, 6, 10061, 'AcyMailing Starter', 'Latest version of AcyMailing Starter', 'com_acymailing', 'component', '', 1, '4.8.0', '', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 'http://www.acyba.com', '');
 
 -- --------------------------------------------------------
 
@@ -4249,14 +4393,13 @@ INSERT INTO `f8ad7_updates` (`update_id`, `update_site_id`, `extension_id`, `nam
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_update_sites` (
-  `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
+`update_site_id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT '',
   `type` varchar(20) DEFAULT '',
   `location` text NOT NULL,
   `enabled` int(11) DEFAULT '0',
   `last_check_timestamp` bigint(20) DEFAULT '0',
-  `extra_query` varchar(1000) DEFAULT '',
-  PRIMARY KEY (`update_site_id`)
+  `extra_query` varchar(1000) DEFAULT ''
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=8 ;
 
 --
@@ -4265,11 +4408,11 @@ CREATE TABLE IF NOT EXISTS `f8ad7_update_sites` (
 
 INSERT INTO `f8ad7_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
 (1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 0, ''),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1412413968, ''),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1412413968, ''),
-(4, 'WebInstaller Update Site', 'extension', 'http://appscdn.joomla.org/webapps/jedapps/webinstaller.xml', 1, 1412413968, ''),
-(6, 'AcyMailing', 'extension', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 1, 1412413968, ''),
-(7, 'K2 Updates', 'extension', 'http://getk2.org/update.xml', 1, 1412413968, '');
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1413011457, ''),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1413011457, ''),
+(4, 'WebInstaller Update Site', 'extension', 'http://appscdn.joomla.org/webapps/jedapps/webinstaller.xml', 1, 1413011455, ''),
+(6, 'AcyMailing', 'extension', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 1, 1413011455, ''),
+(7, 'K2 Updates', 'extension', 'http://getk2.org/update.xml', 1, 1413011457, '');
 
 -- --------------------------------------------------------
 
@@ -4279,8 +4422,7 @@ INSERT INTO `f8ad7_update_sites` (`update_site_id`, `name`, `type`, `location`, 
 
 CREATE TABLE IF NOT EXISTS `f8ad7_update_sites_extensions` (
   `update_site_id` int(11) NOT NULL DEFAULT '0',
-  `extension_id` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`update_site_id`,`extension_id`)
+  `extension_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Links extensions to update sites';
 
 --
@@ -4302,16 +4444,11 @@ INSERT INTO `f8ad7_update_sites_extensions` (`update_site_id`, `extension_id`) V
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_usergroups` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+`id` int(10) unsigned NOT NULL COMMENT 'Primary Key',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
   `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
   `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
-  `title` varchar(100) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_usergroup_parent_title_lookup` (`parent_id`,`title`),
-  KEY `idx_usergroup_title_lookup` (`title`),
-  KEY `idx_usergroup_adjacency_lookup` (`parent_id`),
-  KEY `idx_usergroup_nested_set_lookup` (`lft`,`rgt`) USING BTREE
+  `title` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
@@ -4336,7 +4473,7 @@ INSERT INTO `f8ad7_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '',
   `username` varchar(150) NOT NULL DEFAULT '',
   `email` varchar(100) NOT NULL DEFAULT '',
@@ -4350,12 +4487,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_users` (
   `lastResetTime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Date of last password reset',
   `resetCount` int(11) NOT NULL DEFAULT '0' COMMENT 'Count of password resets since lastResetTime',
   `otpKey` varchar(1000) NOT NULL DEFAULT '' COMMENT 'Two factor authentication encrypted keys',
-  `otep` varchar(1000) NOT NULL DEFAULT '' COMMENT 'One time emergency passwords',
-  PRIMARY KEY (`id`),
-  KEY `idx_name` (`name`),
-  KEY `idx_block` (`block`),
-  KEY `username` (`username`),
-  KEY `email` (`email`)
+  `otep` varchar(1000) NOT NULL DEFAULT '' COMMENT 'One time emergency passwords'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=446 ;
 
 --
@@ -4363,7 +4495,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_users` (
 --
 
 INSERT INTO `f8ad7_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`) VALUES
-(445, 'Super User', 'root', 'chevil92@gmail.com', '$2y$10$71M5MHRnZkrN/brxhgzzIOLyNwyCG33qwnZPi66.Hv3NYiwN/638i', 0, 1, '2014-09-15 13:41:46', '2014-10-04 09:12:44', '0', '', '0000-00-00 00:00:00', 0, '', '');
+(445, 'Super User', 'root', 'chevil92@gmail.com', '$2y$10$71M5MHRnZkrN/brxhgzzIOLyNwyCG33qwnZPi66.Hv3NYiwN/638i', 0, 1, '2014-09-15 13:41:46', '2014-10-11 07:10:51', '0', '', '0000-00-00 00:00:00', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -4372,18 +4504,13 @@ INSERT INTO `f8ad7_users` (`id`, `name`, `username`, `email`, `password`, `block
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_user_keys` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `user_id` varchar(255) NOT NULL,
   `token` varchar(255) NOT NULL,
   `series` varchar(255) NOT NULL,
   `invalid` tinyint(4) NOT NULL,
   `time` varchar(200) NOT NULL,
-  `uastring` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `series` (`series`),
-  UNIQUE KEY `series_2` (`series`),
-  UNIQUE KEY `series_3` (`series`),
-  KEY `user_id` (`user_id`)
+  `uastring` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -4393,7 +4520,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_user_keys` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_user_notes` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
   `catid` int(10) unsigned NOT NULL DEFAULT '0',
   `subject` varchar(100) NOT NULL DEFAULT '',
@@ -4407,10 +4534,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_user_notes` (
   `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_category_id` (`catid`)
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -4423,8 +4547,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_user_profiles` (
   `user_id` int(11) NOT NULL,
   `profile_key` varchar(100) NOT NULL,
   `profile_value` varchar(255) NOT NULL,
-  `ordering` int(11) NOT NULL DEFAULT '0',
-  UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`)
+  `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Simple user profile storage table';
 
 -- --------------------------------------------------------
@@ -4435,8 +4558,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_user_profiles` (
 
 CREATE TABLE IF NOT EXISTS `f8ad7_user_usergroup_map` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
-  `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
-  PRIMARY KEY (`user_id`,`group_id`)
+  `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -4453,12 +4575,10 @@ INSERT INTO `f8ad7_user_usergroup_map` (`user_id`, `group_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_viewlevels` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+`id` int(10) unsigned NOT NULL COMMENT 'Primary Key',
   `title` varchar(100) NOT NULL DEFAULT '',
   `ordering` int(11) NOT NULL DEFAULT '0',
-  `rules` varchar(5120) NOT NULL COMMENT 'JSON encoded access control.',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_assetgroup_title_lookup` (`title`)
+  `rules` varchar(5120) NOT NULL COMMENT 'JSON encoded access control.'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
@@ -4479,7 +4599,7 @@ INSERT INTO `f8ad7_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_weblinks` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`id` int(10) unsigned NOT NULL,
   `catid` int(11) NOT NULL DEFAULT '0',
   `title` varchar(250) NOT NULL DEFAULT '',
   `alias` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -4506,16 +4626,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_weblinks` (
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `version` int(10) unsigned NOT NULL DEFAULT '1',
-  `images` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idx_access` (`access`),
-  KEY `idx_checkout` (`checked_out`),
-  KEY `idx_state` (`state`),
-  KEY `idx_catid` (`catid`),
-  KEY `idx_createdby` (`created_by`),
-  KEY `idx_featured_catid` (`featured`,`catid`),
-  KEY `idx_language` (`language`),
-  KEY `idx_xreference` (`xreference`)
+  `images` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -4525,7 +4636,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_weblinks` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_wf_profiles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `users` text NOT NULL,
@@ -4539,8 +4650,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_wf_profiles` (
   `ordering` int(11) NOT NULL,
   `checked_out` tinyint(3) NOT NULL,
   `checked_out_time` datetime NOT NULL,
-  `params` text NOT NULL,
-  PRIMARY KEY (`id`)
+  `params` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
@@ -4560,14 +4670,13 @@ INSERT INTO `f8ad7_wf_profiles` (`id`, `name`, `description`, `users`, `types`, 
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_widgetkit_widget` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `type` varchar(255) NOT NULL,
   `style` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `content` longtext NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  `modified` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -4581,10 +4690,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_xmap_items` (
   `itemid` int(11) NOT NULL,
   `view` varchar(10) NOT NULL,
   `sitemap_id` int(11) NOT NULL,
-  `properties` varchar(300) DEFAULT NULL,
-  PRIMARY KEY (`uid`,`itemid`,`view`,`sitemap_id`),
-  KEY `uid` (`uid`,`itemid`),
-  KEY `view` (`view`)
+  `properties` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4594,7 +4700,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_xmap_items` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_xmap_sitemap` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   `alias` varchar(255) DEFAULT NULL,
   `introtext` text,
@@ -4612,8 +4718,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_xmap_sitemap` (
   `views_xml` int(11) DEFAULT NULL,
   `views_html` int(11) DEFAULT NULL,
   `lastvisit_xml` int(11) DEFAULT NULL,
-  `lastvisit_html` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `lastvisit_html` int(11) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
@@ -4630,14 +4735,13 @@ INSERT INTO `f8ad7_xmap_sitemap` (`id`, `title`, `alias`, `introtext`, `metadesc
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_application` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
   `name` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
   `application_group` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `params` text NOT NULL,
-  PRIMARY KEY (`id`)
+  `params` text NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
@@ -4654,7 +4758,7 @@ INSERT INTO `f8ad7_zoo_application` (`id`, `asset_id`, `name`, `alias`, `applica
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `application_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
@@ -4662,12 +4766,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_category` (
   `parent` int(11) NOT NULL,
   `ordering` int(11) NOT NULL,
   `published` tinyint(1) NOT NULL,
-  `params` text NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `ALIAS_INDEX` (`alias`),
-  KEY `PUBLISHED_INDEX` (`published`),
-  KEY `APPLICATIONID_ID_INDEX` (`application_id`,`published`,`id`),
-  KEY `APPLICATIONID_ID_INDEX2` (`application_id`,`id`)
+  `params` text NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
@@ -4685,10 +4784,7 @@ INSERT INTO `f8ad7_zoo_category` (`id`, `application_id`, `name`, `alias`, `desc
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_category_item` (
   `category_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL,
-  PRIMARY KEY (`category_id`,`item_id`),
-  KEY `ITEMID_INDEX` (`item_id`),
-  KEY `CATEGORYID_INDEX` (`category_id`)
+  `item_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -4701,7 +4797,11 @@ INSERT INTO `f8ad7_zoo_category_item` (`category_id`, `item_id`) VALUES
 (3, 5),
 (3, 8),
 (3, 9),
-(3, 10);
+(3, 10),
+(3, 11),
+(3, 12),
+(3, 13),
+(3, 14);
 
 -- --------------------------------------------------------
 
@@ -4710,7 +4810,7 @@ INSERT INTO `f8ad7_zoo_category_item` (`category_id`, `item_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_comment` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `parent_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
   `user_id` varchar(255) NOT NULL,
@@ -4721,13 +4821,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_comment` (
   `ip` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `content` text NOT NULL,
-  `state` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `STATE_INDEX` (`state`),
-  KEY `CREATED_INDEX` (`created`),
-  KEY `ITEMID_INDEX` (`item_id`),
-  KEY `AUTHOR_INDEX` (`author`),
-  KEY `ITEMID_STATE_INDEX` (`item_id`,`state`)
+  `state` tinyint(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -4737,7 +4831,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_comment` (
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_item` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `application_id` int(11) NOT NULL,
   `type` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -4755,34 +4849,25 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_item` (
   `created_by_alias` varchar(255) NOT NULL,
   `searchable` int(11) NOT NULL,
   `elements` longtext NOT NULL,
-  `params` longtext NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `ALIAS_INDEX` (`alias`),
-  KEY `PUBLISH_INDEX` (`publish_up`,`publish_down`),
-  KEY `STATE_INDEX` (`state`),
-  KEY `ACCESS_INDEX` (`access`),
-  KEY `CREATED_BY_INDEX` (`created_by`),
-  KEY `NAME_INDEX` (`name`),
-  KEY `APPLICATIONID_INDEX` (`application_id`),
-  KEY `TYPE_INDEX` (`type`),
-  KEY `MULTI_INDEX` (`application_id`,`access`,`state`,`publish_up`,`publish_down`),
-  KEY `MULTI_INDEX2` (`id`,`access`,`state`,`publish_up`,`publish_down`),
-  KEY `ID_APPLICATION_INDEX` (`id`,`application_id`),
-  FULLTEXT KEY `SEARCH_FULLTEXT` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+  `params` longtext NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Дамп данных таблицы `f8ad7_zoo_item`
 --
 
 INSERT INTO `f8ad7_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `created`, `modified`, `modified_by`, `publish_up`, `publish_down`, `priority`, `hits`, `state`, `access`, `created_by`, `created_by_alias`, `searchable`, `elements`, `params`) VALUES
-(2, 3, 'article', 'Фармакогенетика и фармакогеномика', 'xdebug', '2014-09-16 11:29:18', '2014-10-04 08:44:12', 445, '2014-09-16 11:29:18', '0000-00-00 00:00:00', 0, 613, 1, 1, 445, '', 1, ' {\n	"b96603c6-d06a-4d72-ac39-1e5b374d79ac":  {\n		"0":  {\n			"value": "<p>\\u041d\\u0430\\u0443\\u0447\\u043d\\u043e-\\u043f\\u0440\\u0430\\u043a\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u0438\\u0439 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b \\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u0438\\u0437\\u0434\\u0430\\u0451\\u0442\\u0441\\u044f \\u0441 2014 \\u0433.<\\/p>"\n		}\n	},\n	"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":  {\n		"0":  {\n			"value": "<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>"\n		}\n	},\n	"bf587f28-0a72-4be7-88a1-91a14e77039e":  {\n		"file": "images\\/logo_journal.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 519,\n		"height": 405\n	},\n	"1f398852-24ca-42e0-abf1-f9a3d91eba41":  {\n		"value": "128"\n	},\n	"ef09011d-e155-4af0-92c3-1c962e966248":  {\n		"value": "129"\n	},\n	"28f03c2c-57b1-4901-9554-fd9e8f52b08e":  {\n		"item":  {\n			"0": "4",\n			"1": "3",\n			"2": "5",\n			"3": "8",\n			"4": "10",\n			"5": "9"\n		}\n	},\n	"d0cbb42c-38fc-4beb-9480-2d4e82604557":  {\n		"value": "130"\n	},\n	"856b73ba-fe61-40d1-8b0a-ea0fb6e2018d":  {\n\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": ""\n}'),
+(2, 3, 'article', 'Фармакогенетика и фармакогеномика', 'xdebug', '2014-09-16 11:29:18', '2014-10-11 07:39:30', 445, '2014-09-16 11:29:18', '0000-00-00 00:00:00', 0, 672, 1, 1, 445, '', 1, ' {\n	"b96603c6-d06a-4d72-ac39-1e5b374d79ac":  {\n		"0":  {\n			"value": "<p>\\u041d\\u0430\\u0443\\u0447\\u043d\\u043e-\\u043f\\u0440\\u0430\\u043a\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u0438\\u0439 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b \\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u0438\\u0437\\u0434\\u0430\\u0451\\u0442\\u0441\\u044f \\u0441 2014 \\u0433.<\\/p>"\n		}\n	},\n	"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":  {\n		"0":  {\n			"value": "<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>"\n		}\n	},\n	"bf587f28-0a72-4be7-88a1-91a14e77039e":  {\n		"file": "images\\/logo_journal.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 519,\n		"height": 405\n	},\n	"1f398852-24ca-42e0-abf1-f9a3d91eba41":  {\n		"value": "128"\n	},\n	"ef09011d-e155-4af0-92c3-1c962e966248":  {\n		"value": "129"\n	},\n	"28f03c2c-57b1-4901-9554-fd9e8f52b08e":  {\n		"item":  {\n			"0": "4",\n			"1": "3",\n			"2": "5",\n			"3": "8",\n			"4": "10",\n			"5": "9",\n			"6": "13",\n			"7": "14",\n			"8": "11",\n			"9": "12"\n		}\n	},\n	"d0cbb42c-38fc-4beb-9480-2d4e82604557":  {\n		"value": "130"\n	},\n	"856b73ba-fe61-40d1-8b0a-ea0fb6e2018d":  {\n\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": ""\n}'),
 (3, 3, 'article-2', '26-летняя москвичка  переписала  книгу рекордов US Open', 'rgsefdgsdfgdf', '2014-09-16 11:30:03', '2014-10-03 14:38:45', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 24, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art1.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 233,\n		"height": 116\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": "1",\n		"value": "5.0000"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}'),
 (4, 3, 'article-2', 'Препарат компании Arena  Pharmaceuticals для лечения  легочной артериальной  гипертензии получил в США статус орфанного', 'rgsefdgsdfgdf-copy', '2014-09-27 16:03:16', '2014-10-03 08:59:55', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 2, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art2.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 239,\n		"height": 135\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": 0,\n		"value": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}'),
 (5, 3, 'article-2', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС', 'rgsefdgsdfgdf-copy-2', '2014-10-03 08:50:17', '2014-10-03 14:40:53', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 3, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art3.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 276,\n		"height": 128\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": 0,\n		"value": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}'),
 (9, 3, 'article-2', 'Препарат компании Arena  Pharmaceuticals для лечения  легочной артериальной  гипертензии получил в США статус орфанного (Copy)', 'rgsefdgsdfgdf-copy-copy', '2014-10-04 08:23:20', '2014-10-04 08:23:20', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art2.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 239,\n		"height": 135\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": 0,\n		"value": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}'),
 (8, 3, 'article-2', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС (Copy)', 'rgsefdgsdfgdf-copy-2-copy', '2014-10-04 08:23:20', '2014-10-04 08:23:20', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art3.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 276,\n		"height": 128\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": 0,\n		"value": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}'),
-(10, 3, 'article-2', '26-летняя москвичка  переписала  книгу рекордов US Open (Copy)', 'rgsefdgsdfgdf-copy-3', '2014-10-04 08:23:20', '2014-10-04 08:23:20', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art1.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 233,\n		"height": 116\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": "1",\n		"value": "5.0000"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}');
+(10, 3, 'article-2', '26-летняя москвичка  переписала  книгу рекордов US Open (Copy)', 'rgsefdgsdfgdf-copy-3', '2014-10-04 08:23:20', '2014-10-04 08:23:20', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art1.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 233,\n		"height": 116\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": "1",\n		"value": "5.0000"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}'),
+(11, 3, 'article-2', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС (Copy) (Copy)', 'rgsefdgsdfgdf-copy-2-copy-copy', '2014-10-11 07:18:57', '2014-10-11 07:18:57', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art3.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 276,\n		"height": 128\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": 0,\n		"value": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}'),
+(12, 3, 'article-2', '26-летняя москвичка  переписала  книгу рекордов US Open (Copy) (Copy)', 'rgsefdgsdfgdf-copy-3-copy', '2014-10-11 07:18:57', '2014-10-11 07:23:07', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art1.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 233,\n		"height": 116\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": 0,\n		"value": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}'),
+(13, 3, 'article-2', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС (Copy) (Copy) (Copy)', 'rgsefdgsdfgdf-copy-2-copy-copy-copy', '2014-10-11 07:26:19', '2014-10-11 07:33:06', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art3.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 276,\n		"height": 128\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": 0,\n		"value": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}'),
+(14, 3, 'article-2', '26-летняя москвичка  переписала  книгу рекордов US Open (Copy) (Copy) (Copy)', 'rgsefdgsdfgdf-copy-3-copy-copy', '2014-10-11 07:26:19', '2014-10-11 07:26:19', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art1.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 233,\n		"height": 116\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"b9bab2fd-a9cc-47ac-8473-71d232f2bfb6":  {\n		"votes": 0,\n		"value": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "3"\n}');
 
 -- --------------------------------------------------------
 
@@ -4791,14 +4876,13 @@ INSERT INTO `f8ad7_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_rating` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `item_id` int(11) DEFAULT NULL,
   `element_id` varchar(255) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `value` tinyint(4) DEFAULT NULL,
   `ip` varchar(255) DEFAULT NULL,
-  `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `created` datetime DEFAULT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
@@ -4817,9 +4901,7 @@ INSERT INTO `f8ad7_zoo_rating` (`id`, `item_id`, `element_id`, `user_id`, `value
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_search_index` (
   `item_id` int(11) NOT NULL,
   `element_id` varchar(255) NOT NULL,
-  `value` text NOT NULL,
-  PRIMARY KEY (`item_id`,`element_id`),
-  FULLTEXT KEY `SEARCH_FULLTEXT` (`value`)
+  `value` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -4827,7 +4909,6 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_search_index` (
 --
 
 INSERT INTO `f8ad7_zoo_search_index` (`item_id`, `element_id`, `value`) VALUES
-(2, 'b96603c6-d06a-4d72-ac39-1e5b374d79ac', 'Научно-практический медицинский журнал «Фармакогенетика и фармакогеномика» издаётся с 2014 г.'),
 (4, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
 (3, 'b9bab2fd-a9cc-47ac-8473-71d232f2bfb6', '5.0'),
 (4, 'b9bab2fd-a9cc-47ac-8473-71d232f2bfb6', '0.0'),
@@ -4840,7 +4921,16 @@ INSERT INTO `f8ad7_zoo_search_index` (`item_id`, `element_id`, `value`) VALUES
 (8, 'b9bab2fd-a9cc-47ac-8473-71d232f2bfb6', '0.0'),
 (5, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
 (3, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
-(10, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер');
+(10, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
+(11, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
+(12, 'b9bab2fd-a9cc-47ac-8473-71d232f2bfb6', '0.0'),
+(12, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
+(11, 'b9bab2fd-a9cc-47ac-8473-71d232f2bfb6', '0.0'),
+(13, 'b9bab2fd-a9cc-47ac-8473-71d232f2bfb6', '0.0'),
+(14, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
+(13, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
+(14, 'b9bab2fd-a9cc-47ac-8473-71d232f2bfb6', '0.0'),
+(2, 'b96603c6-d06a-4d72-ac39-1e5b374d79ac', 'Научно-практический медицинский журнал «Фармакогенетика и фармакогеномика» издаётся с 2014 г.');
 
 -- --------------------------------------------------------
 
@@ -4849,15 +4939,13 @@ INSERT INTO `f8ad7_zoo_search_index` (`item_id`, `element_id`, `value`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_submission` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `application_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
   `state` tinyint(3) NOT NULL,
   `access` int(11) NOT NULL,
-  `params` text NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `ALIAS_INDEX` (`alias`)
+  `params` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -4868,9 +4956,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_submission` (
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_tag` (
   `item_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  PRIMARY KEY (`item_id`,`name`),
-  UNIQUE KEY `NAME_ITEMID_INDEX` (`name`,`item_id`)
+  `name` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -4889,7 +4975,56 @@ INSERT INTO `f8ad7_zoo_tag` (`item_id`, `name`) VALUES
 (10, 'Новости'),
 (10, 'Оригинальные исследования'),
 (10, 'Фармакогенетические исследования'),
-(10, 'Фармакогеномные исследования');
+(10, 'Фармакогеномные исследования'),
+(11, 'Новости'),
+(12, 'Актуальные обзоры'),
+(12, 'Безопасность лекарств'),
+(12, 'Генная терапия'),
+(12, 'Генодиагностика'),
+(12, 'Компьютерное моделирование'),
+(12, 'Лекция'),
+(12, 'Мнение эксперта'),
+(12, 'Молекулярная биотехнология'),
+(12, 'Новости'),
+(12, 'Новости фармкомпаний'),
+(12, 'Новые технологии'),
+(12, 'Оригинальные исследования'),
+(12, 'Ответы на тесты'),
+(12, 'Практические рекомендации'),
+(12, 'Программное обеспечение'),
+(12, 'Тесты для самопроверки'),
+(12, 'Точка зрения'),
+(12, 'Фармакогенетические исследования'),
+(12, 'Фармакоэкономика'),
+(12, 'Фармакоэпидемиология'),
+(12, 'Фармацевтический рынок'),
+(12, 'Эпидемиологические исследования'),
+(12, 'Юбилеи'),
+(13, 'Новости'),
+(13, 'Фармакогенетические исследования'),
+(14, 'Актуальные обзоры'),
+(14, 'Безопасность лекарств'),
+(14, 'Генная терапия'),
+(14, 'Генодиагностика'),
+(14, 'Компьютерное моделирование'),
+(14, 'Лекция'),
+(14, 'Мнение эксперта'),
+(14, 'Молекулярная биотехнология'),
+(14, 'Новости'),
+(14, 'Новости фармкомпаний'),
+(14, 'Новые технологии'),
+(14, 'Оригинальные исследования'),
+(14, 'Ответы на тесты'),
+(14, 'Практические рекомендации'),
+(14, 'Программное обеспечение'),
+(14, 'Тесты для самопроверки'),
+(14, 'Точка зрения'),
+(14, 'Фармакогенетические исследования'),
+(14, 'Фармакоэкономика'),
+(14, 'Фармакоэпидемиология'),
+(14, 'Фармацевтический рынок'),
+(14, 'Эпидемиологические исследования'),
+(14, 'Юбилеи');
 
 -- --------------------------------------------------------
 
@@ -4908,6 +5043,1000 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_version` (
 INSERT INTO `f8ad7_zoo_version` (`version`) VALUES
 ('3.2.2');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `f8ad7_acymailing_config`
+--
+ALTER TABLE `f8ad7_acymailing_config`
+ ADD PRIMARY KEY (`namekey`);
+
+--
+-- Indexes for table `f8ad7_acymailing_fields`
+--
+ALTER TABLE `f8ad7_acymailing_fields`
+ ADD PRIMARY KEY (`fieldid`), ADD UNIQUE KEY `namekey` (`namekey`), ADD KEY `orderingindex` (`published`,`ordering`);
+
+--
+-- Indexes for table `f8ad7_acymailing_filter`
+--
+ALTER TABLE `f8ad7_acymailing_filter`
+ ADD PRIMARY KEY (`filid`);
+
+--
+-- Indexes for table `f8ad7_acymailing_geolocation`
+--
+ALTER TABLE `f8ad7_acymailing_geolocation`
+ ADD PRIMARY KEY (`geolocation_id`), ADD KEY `geolocation_type` (`geolocation_subid`,`geolocation_type`);
+
+--
+-- Indexes for table `f8ad7_acymailing_history`
+--
+ALTER TABLE `f8ad7_acymailing_history`
+ ADD KEY `subid` (`subid`,`date`), ADD KEY `dateindex` (`date`), ADD KEY `actionindex` (`action`,`mailid`);
+
+--
+-- Indexes for table `f8ad7_acymailing_list`
+--
+ALTER TABLE `f8ad7_acymailing_list`
+ ADD PRIMARY KEY (`listid`), ADD KEY `typeorderingindex` (`type`,`ordering`), ADD KEY `useridindex` (`userid`), ADD KEY `typeuseridindex` (`type`,`userid`);
+
+--
+-- Indexes for table `f8ad7_acymailing_listcampaign`
+--
+ALTER TABLE `f8ad7_acymailing_listcampaign`
+ ADD PRIMARY KEY (`campaignid`,`listid`);
+
+--
+-- Indexes for table `f8ad7_acymailing_listmail`
+--
+ALTER TABLE `f8ad7_acymailing_listmail`
+ ADD PRIMARY KEY (`listid`,`mailid`);
+
+--
+-- Indexes for table `f8ad7_acymailing_listsub`
+--
+ALTER TABLE `f8ad7_acymailing_listsub`
+ ADD PRIMARY KEY (`listid`,`subid`), ADD KEY `subidindex` (`subid`), ADD KEY `listidstatusindex` (`listid`,`status`);
+
+--
+-- Indexes for table `f8ad7_acymailing_mail`
+--
+ALTER TABLE `f8ad7_acymailing_mail`
+ ADD PRIMARY KEY (`mailid`), ADD KEY `senddate` (`senddate`), ADD KEY `typemailidindex` (`type`,`mailid`), ADD KEY `useridindex` (`userid`);
+
+--
+-- Indexes for table `f8ad7_acymailing_queue`
+--
+ALTER TABLE `f8ad7_acymailing_queue`
+ ADD PRIMARY KEY (`subid`,`mailid`), ADD KEY `listingindex` (`senddate`,`subid`), ADD KEY `mailidindex` (`mailid`), ADD KEY `orderingindex` (`priority`,`senddate`,`subid`);
+
+--
+-- Indexes for table `f8ad7_acymailing_rules`
+--
+ALTER TABLE `f8ad7_acymailing_rules`
+ ADD PRIMARY KEY (`ruleid`), ADD KEY `ordering` (`published`,`ordering`);
+
+--
+-- Indexes for table `f8ad7_acymailing_stats`
+--
+ALTER TABLE `f8ad7_acymailing_stats`
+ ADD PRIMARY KEY (`mailid`), ADD KEY `senddateindex` (`senddate`);
+
+--
+-- Indexes for table `f8ad7_acymailing_subscriber`
+--
+ALTER TABLE `f8ad7_acymailing_subscriber`
+ ADD PRIMARY KEY (`subid`), ADD UNIQUE KEY `email` (`email`), ADD KEY `userid` (`userid`), ADD KEY `queueindex` (`enabled`,`accept`,`confirmed`);
+
+--
+-- Indexes for table `f8ad7_acymailing_template`
+--
+ALTER TABLE `f8ad7_acymailing_template`
+ ADD PRIMARY KEY (`tempid`), ADD UNIQUE KEY `namekey` (`namekey`), ADD KEY `orderingindex` (`ordering`);
+
+--
+-- Indexes for table `f8ad7_acymailing_url`
+--
+ALTER TABLE `f8ad7_acymailing_url`
+ ADD PRIMARY KEY (`urlid`), ADD KEY `url` (`url`(250));
+
+--
+-- Indexes for table `f8ad7_acymailing_urlclick`
+--
+ALTER TABLE `f8ad7_acymailing_urlclick`
+ ADD PRIMARY KEY (`urlid`,`mailid`,`subid`), ADD KEY `dateindex` (`date`), ADD KEY `mailidindex` (`mailid`), ADD KEY `subidindex` (`subid`);
+
+--
+-- Indexes for table `f8ad7_acymailing_userstats`
+--
+ALTER TABLE `f8ad7_acymailing_userstats`
+ ADD PRIMARY KEY (`mailid`,`subid`), ADD KEY `senddateindex` (`senddate`), ADD KEY `subidindex` (`subid`);
+
+--
+-- Indexes for table `f8ad7_assets`
+--
+ALTER TABLE `f8ad7_assets`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_asset_name` (`name`), ADD KEY `idx_lft_rgt` (`lft`,`rgt`), ADD KEY `idx_parent_id` (`parent_id`);
+
+--
+-- Indexes for table `f8ad7_associations`
+--
+ALTER TABLE `f8ad7_associations`
+ ADD PRIMARY KEY (`context`,`id`), ADD KEY `idx_key` (`key`);
+
+--
+-- Indexes for table `f8ad7_banners`
+--
+ALTER TABLE `f8ad7_banners`
+ ADD PRIMARY KEY (`id`), ADD KEY `idx_state` (`state`), ADD KEY `idx_own_prefix` (`own_prefix`), ADD KEY `idx_metakey_prefix` (`metakey_prefix`), ADD KEY `idx_banner_catid` (`catid`), ADD KEY `idx_language` (`language`);
+
+--
+-- Indexes for table `f8ad7_banner_clients`
+--
+ALTER TABLE `f8ad7_banner_clients`
+ ADD PRIMARY KEY (`id`), ADD KEY `idx_own_prefix` (`own_prefix`), ADD KEY `idx_metakey_prefix` (`metakey_prefix`);
+
+--
+-- Indexes for table `f8ad7_banner_tracks`
+--
+ALTER TABLE `f8ad7_banner_tracks`
+ ADD PRIMARY KEY (`track_date`,`track_type`,`banner_id`), ADD KEY `idx_track_date` (`track_date`), ADD KEY `idx_track_type` (`track_type`), ADD KEY `idx_banner_id` (`banner_id`);
+
+--
+-- Indexes for table `f8ad7_categories`
+--
+ALTER TABLE `f8ad7_categories`
+ ADD PRIMARY KEY (`id`), ADD KEY `cat_idx` (`extension`,`published`,`access`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_path` (`path`), ADD KEY `idx_left_right` (`lft`,`rgt`), ADD KEY `idx_alias` (`alias`), ADD KEY `idx_language` (`language`);
+
+--
+-- Indexes for table `f8ad7_contact_details`
+--
+ALTER TABLE `f8ad7_contact_details`
+ ADD PRIMARY KEY (`id`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_state` (`published`), ADD KEY `idx_catid` (`catid`), ADD KEY `idx_createdby` (`created_by`), ADD KEY `idx_featured_catid` (`featured`,`catid`), ADD KEY `idx_language` (`language`), ADD KEY `idx_xreference` (`xreference`);
+
+--
+-- Indexes for table `f8ad7_content`
+--
+ALTER TABLE `f8ad7_content`
+ ADD PRIMARY KEY (`id`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_state` (`state`), ADD KEY `idx_catid` (`catid`), ADD KEY `idx_createdby` (`created_by`), ADD KEY `idx_featured_catid` (`featured`,`catid`), ADD KEY `idx_language` (`language`), ADD KEY `idx_xreference` (`xreference`);
+
+--
+-- Indexes for table `f8ad7_contentitem_tag_map`
+--
+ALTER TABLE `f8ad7_contentitem_tag_map`
+ ADD UNIQUE KEY `uc_ItemnameTagid` (`type_id`,`content_item_id`,`tag_id`), ADD KEY `idx_tag_type` (`tag_id`,`type_id`), ADD KEY `idx_date_id` (`tag_date`,`tag_id`), ADD KEY `idx_tag` (`tag_id`), ADD KEY `idx_type` (`type_id`), ADD KEY `idx_core_content_id` (`core_content_id`);
+
+--
+-- Indexes for table `f8ad7_content_frontpage`
+--
+ALTER TABLE `f8ad7_content_frontpage`
+ ADD PRIMARY KEY (`content_id`);
+
+--
+-- Indexes for table `f8ad7_content_rating`
+--
+ALTER TABLE `f8ad7_content_rating`
+ ADD PRIMARY KEY (`content_id`);
+
+--
+-- Indexes for table `f8ad7_content_types`
+--
+ALTER TABLE `f8ad7_content_types`
+ ADD PRIMARY KEY (`type_id`), ADD KEY `idx_alias` (`type_alias`);
+
+--
+-- Indexes for table `f8ad7_djimageslider`
+--
+ALTER TABLE `f8ad7_djimageslider`
+ ADD PRIMARY KEY (`id`), ADD KEY `catid` (`catid`,`published`);
+
+--
+-- Indexes for table `f8ad7_extensions`
+--
+ALTER TABLE `f8ad7_extensions`
+ ADD PRIMARY KEY (`extension_id`), ADD KEY `element_clientid` (`element`,`client_id`), ADD KEY `element_folder_clientid` (`element`,`folder`,`client_id`), ADD KEY `extension` (`type`,`element`,`folder`,`client_id`);
+
+--
+-- Indexes for table `f8ad7_finder_filters`
+--
+ALTER TABLE `f8ad7_finder_filters`
+ ADD PRIMARY KEY (`filter_id`);
+
+--
+-- Indexes for table `f8ad7_finder_links`
+--
+ALTER TABLE `f8ad7_finder_links`
+ ADD PRIMARY KEY (`link_id`), ADD KEY `idx_type` (`type_id`), ADD KEY `idx_title` (`title`), ADD KEY `idx_md5` (`md5sum`), ADD KEY `idx_url` (`url`(75)), ADD KEY `idx_published_list` (`published`,`state`,`access`,`publish_start_date`,`publish_end_date`,`list_price`), ADD KEY `idx_published_sale` (`published`,`state`,`access`,`publish_start_date`,`publish_end_date`,`sale_price`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms0`
+--
+ALTER TABLE `f8ad7_finder_links_terms0`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms1`
+--
+ALTER TABLE `f8ad7_finder_links_terms1`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms2`
+--
+ALTER TABLE `f8ad7_finder_links_terms2`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms3`
+--
+ALTER TABLE `f8ad7_finder_links_terms3`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms4`
+--
+ALTER TABLE `f8ad7_finder_links_terms4`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms5`
+--
+ALTER TABLE `f8ad7_finder_links_terms5`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms6`
+--
+ALTER TABLE `f8ad7_finder_links_terms6`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms7`
+--
+ALTER TABLE `f8ad7_finder_links_terms7`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms8`
+--
+ALTER TABLE `f8ad7_finder_links_terms8`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_terms9`
+--
+ALTER TABLE `f8ad7_finder_links_terms9`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_termsa`
+--
+ALTER TABLE `f8ad7_finder_links_termsa`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_termsb`
+--
+ALTER TABLE `f8ad7_finder_links_termsb`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_termsc`
+--
+ALTER TABLE `f8ad7_finder_links_termsc`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_termsd`
+--
+ALTER TABLE `f8ad7_finder_links_termsd`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_termse`
+--
+ALTER TABLE `f8ad7_finder_links_termse`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_links_termsf`
+--
+ALTER TABLE `f8ad7_finder_links_termsf`
+ ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
+
+--
+-- Indexes for table `f8ad7_finder_taxonomy`
+--
+ALTER TABLE `f8ad7_finder_taxonomy`
+ ADD PRIMARY KEY (`id`), ADD KEY `parent_id` (`parent_id`), ADD KEY `state` (`state`), ADD KEY `ordering` (`ordering`), ADD KEY `access` (`access`), ADD KEY `idx_parent_published` (`parent_id`,`state`,`access`);
+
+--
+-- Indexes for table `f8ad7_finder_taxonomy_map`
+--
+ALTER TABLE `f8ad7_finder_taxonomy_map`
+ ADD PRIMARY KEY (`link_id`,`node_id`), ADD KEY `link_id` (`link_id`), ADD KEY `node_id` (`node_id`);
+
+--
+-- Indexes for table `f8ad7_finder_terms`
+--
+ALTER TABLE `f8ad7_finder_terms`
+ ADD PRIMARY KEY (`term_id`), ADD UNIQUE KEY `idx_term` (`term`), ADD KEY `idx_term_phrase` (`term`,`phrase`), ADD KEY `idx_stem_phrase` (`stem`,`phrase`), ADD KEY `idx_soundex_phrase` (`soundex`,`phrase`);
+
+--
+-- Indexes for table `f8ad7_finder_terms_common`
+--
+ALTER TABLE `f8ad7_finder_terms_common`
+ ADD KEY `idx_word_lang` (`term`,`language`), ADD KEY `idx_lang` (`language`);
+
+--
+-- Indexes for table `f8ad7_finder_tokens`
+--
+ALTER TABLE `f8ad7_finder_tokens`
+ ADD KEY `idx_word` (`term`), ADD KEY `idx_context` (`context`);
+
+--
+-- Indexes for table `f8ad7_finder_tokens_aggregate`
+--
+ALTER TABLE `f8ad7_finder_tokens_aggregate`
+ ADD KEY `token` (`term`), ADD KEY `keyword_id` (`term_id`);
+
+--
+-- Indexes for table `f8ad7_finder_types`
+--
+ALTER TABLE `f8ad7_finder_types`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `title` (`title`);
+
+--
+-- Indexes for table `f8ad7_jsecurelog`
+--
+ALTER TABLE `f8ad7_jsecurelog`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `f8ad7_k2_attachments`
+--
+ALTER TABLE `f8ad7_k2_attachments`
+ ADD PRIMARY KEY (`id`), ADD KEY `itemID` (`itemID`);
+
+--
+-- Indexes for table `f8ad7_k2_categories`
+--
+ALTER TABLE `f8ad7_k2_categories`
+ ADD PRIMARY KEY (`id`), ADD KEY `category` (`published`,`access`,`trash`), ADD KEY `parent` (`parent`), ADD KEY `ordering` (`ordering`), ADD KEY `published` (`published`), ADD KEY `access` (`access`), ADD KEY `trash` (`trash`), ADD KEY `language` (`language`);
+
+--
+-- Indexes for table `f8ad7_k2_comments`
+--
+ALTER TABLE `f8ad7_k2_comments`
+ ADD PRIMARY KEY (`id`), ADD KEY `itemID` (`itemID`), ADD KEY `userID` (`userID`), ADD KEY `published` (`published`), ADD KEY `latestComments` (`published`,`commentDate`);
+
+--
+-- Indexes for table `f8ad7_k2_extra_fields`
+--
+ALTER TABLE `f8ad7_k2_extra_fields`
+ ADD PRIMARY KEY (`id`), ADD KEY `group` (`group`), ADD KEY `published` (`published`), ADD KEY `ordering` (`ordering`);
+
+--
+-- Indexes for table `f8ad7_k2_extra_fields_groups`
+--
+ALTER TABLE `f8ad7_k2_extra_fields_groups`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `f8ad7_k2_items`
+--
+ALTER TABLE `f8ad7_k2_items`
+ ADD PRIMARY KEY (`id`), ADD KEY `item` (`published`,`publish_up`,`publish_down`,`trash`,`access`), ADD KEY `catid` (`catid`), ADD KEY `created_by` (`created_by`), ADD KEY `ordering` (`ordering`), ADD KEY `featured` (`featured`), ADD KEY `featured_ordering` (`featured_ordering`), ADD KEY `hits` (`hits`), ADD KEY `created` (`created`), ADD KEY `language` (`language`);
+
+--
+-- Indexes for table `f8ad7_k2_rating`
+--
+ALTER TABLE `f8ad7_k2_rating`
+ ADD PRIMARY KEY (`itemID`);
+
+--
+-- Indexes for table `f8ad7_k2_tags`
+--
+ALTER TABLE `f8ad7_k2_tags`
+ ADD PRIMARY KEY (`id`), ADD KEY `published` (`published`);
+
+--
+-- Indexes for table `f8ad7_k2_tags_xref`
+--
+ALTER TABLE `f8ad7_k2_tags_xref`
+ ADD PRIMARY KEY (`id`), ADD KEY `tagID` (`tagID`), ADD KEY `itemID` (`itemID`);
+
+--
+-- Indexes for table `f8ad7_k2_users`
+--
+ALTER TABLE `f8ad7_k2_users`
+ ADD PRIMARY KEY (`id`), ADD KEY `userID` (`userID`), ADD KEY `group` (`group`);
+
+--
+-- Indexes for table `f8ad7_k2_user_groups`
+--
+ALTER TABLE `f8ad7_k2_user_groups`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `f8ad7_languages`
+--
+ALTER TABLE `f8ad7_languages`
+ ADD PRIMARY KEY (`lang_id`), ADD UNIQUE KEY `idx_sef` (`sef`), ADD UNIQUE KEY `idx_image` (`image`), ADD UNIQUE KEY `idx_langcode` (`lang_code`), ADD KEY `idx_access` (`access`), ADD KEY `idx_ordering` (`ordering`);
+
+--
+-- Indexes for table `f8ad7_menu`
+--
+ALTER TABLE `f8ad7_menu`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_client_id_parent_id_alias_language` (`client_id`,`parent_id`,`alias`,`language`), ADD KEY `idx_componentid` (`component_id`,`menutype`,`published`,`access`), ADD KEY `idx_menutype` (`menutype`), ADD KEY `idx_left_right` (`lft`,`rgt`), ADD KEY `idx_alias` (`alias`), ADD KEY `idx_path` (`path`(255)), ADD KEY `idx_language` (`language`);
+
+--
+-- Indexes for table `f8ad7_menu_types`
+--
+ALTER TABLE `f8ad7_menu_types`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_menutype` (`menutype`);
+
+--
+-- Indexes for table `f8ad7_messages`
+--
+ALTER TABLE `f8ad7_messages`
+ ADD PRIMARY KEY (`message_id`), ADD KEY `useridto_state` (`user_id_to`,`state`);
+
+--
+-- Indexes for table `f8ad7_messages_cfg`
+--
+ALTER TABLE `f8ad7_messages_cfg`
+ ADD UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`);
+
+--
+-- Indexes for table `f8ad7_modules`
+--
+ALTER TABLE `f8ad7_modules`
+ ADD PRIMARY KEY (`id`), ADD KEY `published` (`published`,`access`), ADD KEY `newsfeeds` (`module`,`published`), ADD KEY `idx_language` (`language`);
+
+--
+-- Indexes for table `f8ad7_modules_menu`
+--
+ALTER TABLE `f8ad7_modules_menu`
+ ADD PRIMARY KEY (`moduleid`,`menuid`);
+
+--
+-- Indexes for table `f8ad7_newsfeeds`
+--
+ALTER TABLE `f8ad7_newsfeeds`
+ ADD PRIMARY KEY (`id`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_state` (`published`), ADD KEY `idx_catid` (`catid`), ADD KEY `idx_createdby` (`created_by`), ADD KEY `idx_language` (`language`), ADD KEY `idx_xreference` (`xreference`);
+
+--
+-- Indexes for table `f8ad7_overrider`
+--
+ALTER TABLE `f8ad7_overrider`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `f8ad7_postinstall_messages`
+--
+ALTER TABLE `f8ad7_postinstall_messages`
+ ADD PRIMARY KEY (`postinstall_message_id`);
+
+--
+-- Indexes for table `f8ad7_redirect_links`
+--
+ALTER TABLE `f8ad7_redirect_links`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_link_old` (`old_url`), ADD KEY `idx_link_modifed` (`modified_date`);
+
+--
+-- Indexes for table `f8ad7_schemas`
+--
+ALTER TABLE `f8ad7_schemas`
+ ADD PRIMARY KEY (`extension_id`,`version_id`);
+
+--
+-- Indexes for table `f8ad7_session`
+--
+ALTER TABLE `f8ad7_session`
+ ADD PRIMARY KEY (`session_id`), ADD KEY `userid` (`userid`), ADD KEY `time` (`time`);
+
+--
+-- Indexes for table `f8ad7_tags`
+--
+ALTER TABLE `f8ad7_tags`
+ ADD PRIMARY KEY (`id`), ADD KEY `tag_idx` (`published`,`access`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_path` (`path`), ADD KEY `idx_left_right` (`lft`,`rgt`), ADD KEY `idx_alias` (`alias`), ADD KEY `idx_language` (`language`);
+
+--
+-- Indexes for table `f8ad7_template_styles`
+--
+ALTER TABLE `f8ad7_template_styles`
+ ADD PRIMARY KEY (`id`), ADD KEY `idx_template` (`template`), ADD KEY `idx_home` (`home`);
+
+--
+-- Indexes for table `f8ad7_ucm_base`
+--
+ALTER TABLE `f8ad7_ucm_base`
+ ADD PRIMARY KEY (`ucm_id`), ADD KEY `idx_ucm_item_id` (`ucm_item_id`), ADD KEY `idx_ucm_type_id` (`ucm_type_id`), ADD KEY `idx_ucm_language_id` (`ucm_language_id`);
+
+--
+-- Indexes for table `f8ad7_ucm_content`
+--
+ALTER TABLE `f8ad7_ucm_content`
+ ADD PRIMARY KEY (`core_content_id`), ADD KEY `tag_idx` (`core_state`,`core_access`), ADD KEY `idx_access` (`core_access`), ADD KEY `idx_alias` (`core_alias`), ADD KEY `idx_language` (`core_language`), ADD KEY `idx_title` (`core_title`), ADD KEY `idx_modified_time` (`core_modified_time`), ADD KEY `idx_created_time` (`core_created_time`), ADD KEY `idx_content_type` (`core_type_alias`), ADD KEY `idx_core_modified_user_id` (`core_modified_user_id`), ADD KEY `idx_core_checked_out_user_id` (`core_checked_out_user_id`), ADD KEY `idx_core_created_user_id` (`core_created_user_id`), ADD KEY `idx_core_type_id` (`core_type_id`);
+
+--
+-- Indexes for table `f8ad7_ucm_history`
+--
+ALTER TABLE `f8ad7_ucm_history`
+ ADD PRIMARY KEY (`version_id`), ADD KEY `idx_ucm_item_id` (`ucm_type_id`,`ucm_item_id`), ADD KEY `idx_save_date` (`save_date`);
+
+--
+-- Indexes for table `f8ad7_updates`
+--
+ALTER TABLE `f8ad7_updates`
+ ADD PRIMARY KEY (`update_id`);
+
+--
+-- Indexes for table `f8ad7_update_sites`
+--
+ALTER TABLE `f8ad7_update_sites`
+ ADD PRIMARY KEY (`update_site_id`);
+
+--
+-- Indexes for table `f8ad7_update_sites_extensions`
+--
+ALTER TABLE `f8ad7_update_sites_extensions`
+ ADD PRIMARY KEY (`update_site_id`,`extension_id`);
+
+--
+-- Indexes for table `f8ad7_usergroups`
+--
+ALTER TABLE `f8ad7_usergroups`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_usergroup_parent_title_lookup` (`parent_id`,`title`), ADD KEY `idx_usergroup_title_lookup` (`title`), ADD KEY `idx_usergroup_adjacency_lookup` (`parent_id`), ADD KEY `idx_usergroup_nested_set_lookup` (`lft`,`rgt`) USING BTREE;
+
+--
+-- Indexes for table `f8ad7_users`
+--
+ALTER TABLE `f8ad7_users`
+ ADD PRIMARY KEY (`id`), ADD KEY `idx_name` (`name`), ADD KEY `idx_block` (`block`), ADD KEY `username` (`username`), ADD KEY `email` (`email`);
+
+--
+-- Indexes for table `f8ad7_user_keys`
+--
+ALTER TABLE `f8ad7_user_keys`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `series` (`series`), ADD UNIQUE KEY `series_2` (`series`), ADD UNIQUE KEY `series_3` (`series`), ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `f8ad7_user_notes`
+--
+ALTER TABLE `f8ad7_user_notes`
+ ADD PRIMARY KEY (`id`), ADD KEY `idx_user_id` (`user_id`), ADD KEY `idx_category_id` (`catid`);
+
+--
+-- Indexes for table `f8ad7_user_profiles`
+--
+ALTER TABLE `f8ad7_user_profiles`
+ ADD UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`);
+
+--
+-- Indexes for table `f8ad7_user_usergroup_map`
+--
+ALTER TABLE `f8ad7_user_usergroup_map`
+ ADD PRIMARY KEY (`user_id`,`group_id`);
+
+--
+-- Indexes for table `f8ad7_viewlevels`
+--
+ALTER TABLE `f8ad7_viewlevels`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_assetgroup_title_lookup` (`title`);
+
+--
+-- Indexes for table `f8ad7_weblinks`
+--
+ALTER TABLE `f8ad7_weblinks`
+ ADD PRIMARY KEY (`id`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_state` (`state`), ADD KEY `idx_catid` (`catid`), ADD KEY `idx_createdby` (`created_by`), ADD KEY `idx_featured_catid` (`featured`,`catid`), ADD KEY `idx_language` (`language`), ADD KEY `idx_xreference` (`xreference`);
+
+--
+-- Indexes for table `f8ad7_wf_profiles`
+--
+ALTER TABLE `f8ad7_wf_profiles`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `f8ad7_widgetkit_widget`
+--
+ALTER TABLE `f8ad7_widgetkit_widget`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `f8ad7_xmap_items`
+--
+ALTER TABLE `f8ad7_xmap_items`
+ ADD PRIMARY KEY (`uid`,`itemid`,`view`,`sitemap_id`), ADD KEY `uid` (`uid`,`itemid`), ADD KEY `view` (`view`);
+
+--
+-- Indexes for table `f8ad7_xmap_sitemap`
+--
+ALTER TABLE `f8ad7_xmap_sitemap`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `f8ad7_zoo_application`
+--
+ALTER TABLE `f8ad7_zoo_application`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `f8ad7_zoo_category`
+--
+ALTER TABLE `f8ad7_zoo_category`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `ALIAS_INDEX` (`alias`), ADD KEY `PUBLISHED_INDEX` (`published`), ADD KEY `APPLICATIONID_ID_INDEX` (`application_id`,`published`,`id`), ADD KEY `APPLICATIONID_ID_INDEX2` (`application_id`,`id`);
+
+--
+-- Indexes for table `f8ad7_zoo_category_item`
+--
+ALTER TABLE `f8ad7_zoo_category_item`
+ ADD PRIMARY KEY (`category_id`,`item_id`), ADD KEY `ITEMID_INDEX` (`item_id`), ADD KEY `CATEGORYID_INDEX` (`category_id`);
+
+--
+-- Indexes for table `f8ad7_zoo_comment`
+--
+ALTER TABLE `f8ad7_zoo_comment`
+ ADD PRIMARY KEY (`id`), ADD KEY `STATE_INDEX` (`state`), ADD KEY `CREATED_INDEX` (`created`), ADD KEY `ITEMID_INDEX` (`item_id`), ADD KEY `AUTHOR_INDEX` (`author`), ADD KEY `ITEMID_STATE_INDEX` (`item_id`,`state`);
+
+--
+-- Indexes for table `f8ad7_zoo_item`
+--
+ALTER TABLE `f8ad7_zoo_item`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `ALIAS_INDEX` (`alias`), ADD KEY `PUBLISH_INDEX` (`publish_up`,`publish_down`), ADD KEY `STATE_INDEX` (`state`), ADD KEY `ACCESS_INDEX` (`access`), ADD KEY `CREATED_BY_INDEX` (`created_by`), ADD KEY `NAME_INDEX` (`name`), ADD KEY `APPLICATIONID_INDEX` (`application_id`), ADD KEY `TYPE_INDEX` (`type`), ADD KEY `MULTI_INDEX` (`application_id`,`access`,`state`,`publish_up`,`publish_down`), ADD KEY `MULTI_INDEX2` (`id`,`access`,`state`,`publish_up`,`publish_down`), ADD KEY `ID_APPLICATION_INDEX` (`id`,`application_id`), ADD FULLTEXT KEY `SEARCH_FULLTEXT` (`name`);
+
+--
+-- Indexes for table `f8ad7_zoo_rating`
+--
+ALTER TABLE `f8ad7_zoo_rating`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `f8ad7_zoo_search_index`
+--
+ALTER TABLE `f8ad7_zoo_search_index`
+ ADD PRIMARY KEY (`item_id`,`element_id`), ADD FULLTEXT KEY `SEARCH_FULLTEXT` (`value`);
+
+--
+-- Indexes for table `f8ad7_zoo_submission`
+--
+ALTER TABLE `f8ad7_zoo_submission`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `ALIAS_INDEX` (`alias`);
+
+--
+-- Indexes for table `f8ad7_zoo_tag`
+--
+ALTER TABLE `f8ad7_zoo_tag`
+ ADD PRIMARY KEY (`item_id`,`name`), ADD UNIQUE KEY `NAME_ITEMID_INDEX` (`name`,`item_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `f8ad7_acymailing_fields`
+--
+ALTER TABLE `f8ad7_acymailing_fields`
+MODIFY `fieldid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `f8ad7_acymailing_filter`
+--
+ALTER TABLE `f8ad7_acymailing_filter`
+MODIFY `filid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_acymailing_geolocation`
+--
+ALTER TABLE `f8ad7_acymailing_geolocation`
+MODIFY `geolocation_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_acymailing_list`
+--
+ALTER TABLE `f8ad7_acymailing_list`
+MODIFY `listid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `f8ad7_acymailing_mail`
+--
+ALTER TABLE `f8ad7_acymailing_mail`
+MODIFY `mailid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `f8ad7_acymailing_rules`
+--
+ALTER TABLE `f8ad7_acymailing_rules`
+MODIFY `ruleid` smallint(5) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_acymailing_subscriber`
+--
+ALTER TABLE `f8ad7_acymailing_subscriber`
+MODIFY `subid` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `f8ad7_acymailing_template`
+--
+ALTER TABLE `f8ad7_acymailing_template`
+MODIFY `tempid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `f8ad7_acymailing_url`
+--
+ALTER TABLE `f8ad7_acymailing_url`
+MODIFY `urlid` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_assets`
+--
+ALTER TABLE `f8ad7_assets`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=304;
+--
+-- AUTO_INCREMENT for table `f8ad7_banners`
+--
+ALTER TABLE `f8ad7_banners`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `f8ad7_banner_clients`
+--
+ALTER TABLE `f8ad7_banner_clients`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `f8ad7_categories`
+--
+ALTER TABLE `f8ad7_categories`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `f8ad7_contact_details`
+--
+ALTER TABLE `f8ad7_contact_details`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_content`
+--
+ALTER TABLE `f8ad7_content`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=108;
+--
+-- AUTO_INCREMENT for table `f8ad7_content_types`
+--
+ALTER TABLE `f8ad7_content_types`
+MODIFY `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `f8ad7_djimageslider`
+--
+ALTER TABLE `f8ad7_djimageslider`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `f8ad7_extensions`
+--
+ALTER TABLE `f8ad7_extensions`
+MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10092;
+--
+-- AUTO_INCREMENT for table `f8ad7_finder_filters`
+--
+ALTER TABLE `f8ad7_finder_filters`
+MODIFY `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_finder_links`
+--
+ALTER TABLE `f8ad7_finder_links`
+MODIFY `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+--
+-- AUTO_INCREMENT for table `f8ad7_finder_taxonomy`
+--
+ALTER TABLE `f8ad7_finder_taxonomy`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=110;
+--
+-- AUTO_INCREMENT for table `f8ad7_finder_terms`
+--
+ALTER TABLE `f8ad7_finder_terms`
+MODIFY `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1714;
+--
+-- AUTO_INCREMENT for table `f8ad7_finder_types`
+--
+ALTER TABLE `f8ad7_finder_types`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `f8ad7_jsecurelog`
+--
+ALTER TABLE `f8ad7_jsecurelog`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_attachments`
+--
+ALTER TABLE `f8ad7_k2_attachments`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_categories`
+--
+ALTER TABLE `f8ad7_k2_categories`
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_comments`
+--
+ALTER TABLE `f8ad7_k2_comments`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_extra_fields`
+--
+ALTER TABLE `f8ad7_k2_extra_fields`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_extra_fields_groups`
+--
+ALTER TABLE `f8ad7_k2_extra_fields_groups`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_items`
+--
+ALTER TABLE `f8ad7_k2_items`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_tags`
+--
+ALTER TABLE `f8ad7_k2_tags`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_tags_xref`
+--
+ALTER TABLE `f8ad7_k2_tags_xref`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_users`
+--
+ALTER TABLE `f8ad7_k2_users`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `f8ad7_k2_user_groups`
+--
+ALTER TABLE `f8ad7_k2_user_groups`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_languages`
+--
+ALTER TABLE `f8ad7_languages`
+MODIFY `lang_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `f8ad7_menu`
+--
+ALTER TABLE `f8ad7_menu`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=196;
+--
+-- AUTO_INCREMENT for table `f8ad7_menu_types`
+--
+ALTER TABLE `f8ad7_menu_types`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `f8ad7_messages`
+--
+ALTER TABLE `f8ad7_messages`
+MODIFY `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_modules`
+--
+ALTER TABLE `f8ad7_modules`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=131;
+--
+-- AUTO_INCREMENT for table `f8ad7_newsfeeds`
+--
+ALTER TABLE `f8ad7_newsfeeds`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_overrider`
+--
+ALTER TABLE `f8ad7_overrider`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
+--
+-- AUTO_INCREMENT for table `f8ad7_postinstall_messages`
+--
+ALTER TABLE `f8ad7_postinstall_messages`
+MODIFY `postinstall_message_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `f8ad7_redirect_links`
+--
+ALTER TABLE `f8ad7_redirect_links`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_tags`
+--
+ALTER TABLE `f8ad7_tags`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `f8ad7_template_styles`
+--
+ALTER TABLE `f8ad7_template_styles`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `f8ad7_ucm_content`
+--
+ALTER TABLE `f8ad7_ucm_content`
+MODIFY `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_ucm_history`
+--
+ALTER TABLE `f8ad7_ucm_history`
+MODIFY `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_updates`
+--
+ALTER TABLE `f8ad7_updates`
+MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
+--
+-- AUTO_INCREMENT for table `f8ad7_update_sites`
+--
+ALTER TABLE `f8ad7_update_sites`
+MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `f8ad7_usergroups`
+--
+ALTER TABLE `f8ad7_usergroups`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `f8ad7_users`
+--
+ALTER TABLE `f8ad7_users`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=446;
+--
+-- AUTO_INCREMENT for table `f8ad7_user_keys`
+--
+ALTER TABLE `f8ad7_user_keys`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_user_notes`
+--
+ALTER TABLE `f8ad7_user_notes`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_viewlevels`
+--
+ALTER TABLE `f8ad7_viewlevels`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `f8ad7_weblinks`
+--
+ALTER TABLE `f8ad7_weblinks`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_wf_profiles`
+--
+ALTER TABLE `f8ad7_wf_profiles`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `f8ad7_widgetkit_widget`
+--
+ALTER TABLE `f8ad7_widgetkit_widget`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_xmap_sitemap`
+--
+ALTER TABLE `f8ad7_xmap_sitemap`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `f8ad7_zoo_application`
+--
+ALTER TABLE `f8ad7_zoo_application`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `f8ad7_zoo_category`
+--
+ALTER TABLE `f8ad7_zoo_category`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `f8ad7_zoo_comment`
+--
+ALTER TABLE `f8ad7_zoo_comment`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `f8ad7_zoo_item`
+--
+ALTER TABLE `f8ad7_zoo_item`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `f8ad7_zoo_rating`
+--
+ALTER TABLE `f8ad7_zoo_rating`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `f8ad7_zoo_submission`
+--
+ALTER TABLE `f8ad7_zoo_submission`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
