@@ -16,6 +16,7 @@
 
 <div id="slideshow-<?php echo $widget_id; ?>" class="wk-slideshow wk-slideshow-default" data-widgetkit="slideshow" data-options='<?php echo json_encode($settings); ?>'>
 	<div>
+        <?php if ($settings['buttons']): ?><div class="prev"></div><?php endif; ?>
 		<ul class="slides">
 
 			<?php foreach ($widget->items as $key => $item) : ?>
@@ -32,7 +33,7 @@
 			<?php $i=$i+1;?>
 			<?php endforeach; ?>
 		</ul>
-		<?php if ($settings['buttons']): ?><div class="next"></div><div class="prev"></div><?php endif; ?>
+		<?php if ($settings['buttons']): ?><div class="next"></div><?php endif; ?>
 		<div class="caption"></div><ul class="captions"><?php echo implode('', $captions);?></ul>
 	</div>
 	<?php echo ($settings['navigation'] && count($navigation)) ? '<ul class="nav">'.implode('', $navigation).'</ul>' : '';?>
