@@ -43,7 +43,20 @@
 		clear: 			both;
 	}
 }
-
+%Unstyle
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+%Inline
+{
+	@extend 			%Fix;
+	& > *
+	{
+		float: 			left;
+	}
+}
 %Content-Block
 {
 	padding:			20px;
@@ -85,6 +98,21 @@
 	box-shadow:			0 2px 3px rgba(0, 0, 0, 0.3);
 }
 
+%Navigation-Inline
+{
+	@extend 			%Inline;
+	@extend 			%Unstyle;
+	li
+	{
+		a
+		{
+			display: 	block;
+			font-weight: bold;
+			@extend 	%Uppercase;
+		}
+	}
+}
+
 %System-Link
 {
 	display: 			inline-block;
@@ -108,22 +136,13 @@
 	@extend 			%Unselectable;
 }
 
+%Content-Spacing
+{
+	padding-left:		$Content-Spacing;
+	padding-right:		$Content-Spacing;
+}
 
 
-%Unstyle
-{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-%Inline
-{
-	@extend 			%Fix;
-	& > *
-	{
-		float: 			left;
-	}
-}
 %Animated
 {
 	@include 			Transitions(#{color .4s, background-color .4s, border-color .4s});

@@ -1374,21 +1374,30 @@ button {
 .Page-Sidebar nav.Site-Navigation .nav.menu_left li a {
   width: 100%; }
 
-[class*='Grid']:before, ul.Pagination:before, .page:before, .pos-bottom .element:before, .Projects:before, .content:before, .top_nav:before, .menu_top:before, .menu_bot:before, section.Header .toolbar:before, [class*='Grid']:after, ul.Pagination:after, .page:after, .pos-bottom .element:after, .Projects:after, .content:after, .top_nav:after, .menu_top:after, .menu_bot:after, section.Header .toolbar:after {
+[class*='Grid']:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:before, ul.Pagination:before, .page:before, .pos-bottom .element:before, .Projects:before, .content:before, section.Header .toolbar:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary:before, [class*='Grid']:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, ul.Pagination:after, .page:after, .pos-bottom .element:after, .Projects:after, .content:after, section.Header .toolbar:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   content: " ";
   display: table; }
-[class*='Grid']:after, ul.Pagination:after, .page:after, .pos-bottom .element:after, .Projects:after, .content:after, .top_nav:after, .menu_top:after, .menu_bot:after, section.Header .toolbar:after {
+[class*='Grid']:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, ul.Pagination:after, .page:after, .pos-bottom .element:after, .Projects:after, .content:after, section.Header .toolbar:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   clear: both; }
+
+ol[class*='Grid'] > li,
+ul[class*='Grid'] > li, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul, .Page-Sidebar nav.Site-Navigation .nav.menu_left, section.Header .toolbar .authorization, section.Header .toolbar .authorization ul, section.Header .toolbar .authorization ul li, ul.Pagination {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+footer[role='contentinfo'] nav.Site-Navigation.Secondary ul > *, ul.Pagination > * {
+  float: left; }
 
 .floatbox > .pos-content .pos-item, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search, .pos-top, .pos-item, section.Header .toolbar .authorization .userdata {
   padding: 20px;
   border: 1px solid #efeff3;
   background-color: white; }
 
-.Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription {
+footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription {
   text-transform: uppercase; }
 
-#search-searchword, #mod-search-searchword, #searchForm button.btn, input,
+#search-searchword, input,
 select,
 textarea,
 button {
@@ -1399,7 +1408,7 @@ button {
   font-size: 13px;
   background-color: white;
   outline: 0; }
-  #search-searchword:focus, #mod-search-searchword:focus, #searchForm button.btn:focus, input:focus,
+  #search-searchword:focus, input:focus,
   select:focus,
   textarea:focus,
   button:focus {
@@ -1408,6 +1417,10 @@ button {
 .Page-Sidebar .Feed-Subscription {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
 
+footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
+  display: block;
+  font-weight: bold; }
+
 .element h3, .Projects .Projects-Header, h1.title, .pos-top .element-itemname a {
   font-family: 'PT Serif Caption', 'PT Serif', serif;
   font-size: 32px;
@@ -1415,16 +1428,11 @@ button {
   line-height: 32px;
   color: black; }
 
-ol[class*='Grid'] > li,
-ul[class*='Grid'] > li, .Page-Sidebar nav.Site-Navigation .nav.menu_left, section.Header .toolbar .authorization, section.Header .toolbar .authorization ul, section.Header .toolbar .authorization ul li, ul.Pagination {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
+footer[role='contentinfo'] nav.Site-Navigation.Secondary, footer[role='contentinfo'] article.Copyright {
+  padding-left: 125px;
+  padding-right: 125px; }
 
-ul.Pagination > * {
-  float: left; }
-
-.Page-Sidebar nav.Site-Navigation .nav.menu_left li a, ul.Pagination li a {
+.Page-Sidebar nav.Site-Navigation .nav.menu_left li a, ul.Pagination li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
   -webkit-transition: color 0.4s, background-color 0.4s, border-color 0.4s;
   -moz-transition: color 0.4s, background-color 0.4s, border-color 0.4s;
   transition: color 0.4s, background-color 0.4s, border-color 0.4s; }
@@ -1623,84 +1631,6 @@ fieldset.only {
     padding: 10px 0;
     font-weight: bold; }
 
-.nav_prototype, .top_nav, .bot_nav {
-  border-top: 1px solid #E0DCDC;
-  float: left;
-  width: 100%; }
-
-.top_nav {
-  position: relative;
-  margin-bottom: 10px; }
-
-.menu_top, .menu_bot {
-  margin: 0;
-  padding: 0px;
-  float: left; }
-  .menu_top li, .menu_bot li {
-    float: left; }
-    .menu_top li:first-child a, .menu_bot li:first-child a {
-      padding-left: 0; }
-  .menu_top a, .menu_bot a {
-    border-top: 1px solid #E0DCDC;
-    display: block;
-    margin-top: -1px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    -webkit-transition: color 0.4s, border-color 0.4s;
-    -moz-transition: color 0.4s, border-color 0.4s;
-    transition: color 0.4s, border-color 0.4s;
-    padding: 20px 10px; }
-    @media screen and (min-width: 1260px) {
-      .menu_top a, .menu_bot a {
-        padding: 20px; } }
-    @media screen and (min-width: 1880px) {
-      .menu_top a, .menu_bot a {
-        padding: 20px 30px; } }
-    .menu_top a:hover, .menu_bot a:hover {
-      border-color: #c82222;
-      color: #c82222; }
-
-.menu_bot li a {
-  border: 0; }
-  .menu_bot li a:hover {
-    color: #0FC53B; }
-
-.top_nav > .search {
-  position: absolute;
-  right: 0px; }
-
-.search > form {
-  display: block;
-  padding-top: 10px; }
-
-#searchForm button.btn {
-  font-size: 14px;
-  color: black;
-  min-width: 60px;
-  min-height: 20px; }
-  #searchForm button.btn span {
-    position: relative !important; }
-
-.Search-Form .search {
-  float: right; }
-  .Search-Form .search form {
-    padding-top: 15px !important; }
-
-.footer {
-  float: left; }
-
-.copyright {
-  color: #747474;
-  font-size: 11px;
-  margin-bottom: 30px; }
-
-.bot_nav {
-  border-top: 3px solid #0FC53B;
-  margin-bottom: 30px; }
-
 * {
   margin: 0;
   padding: 0;
@@ -1719,11 +1649,7 @@ a {
   color: black; }
 
 .main {
-  padding-left: 290px;
-  max-width: 1440px; }
-  @media screen and (min-width: 1024px) {
-    .main {
-      padding-left: 400px; } }
+  padding-left: 235px; }
 
 .pos-top .element-image {
   float: right;
@@ -1939,5 +1865,30 @@ ul.Pagination li a {
 ul.Pagination li span {
   background-color: black;
   color: white; }
+
+footer[role='contentinfo'] nav.Site-Navigation.Secondary {
+  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 5px solid #77972b;
+  border-bottom: 1px solid #e9ebec; }
+  footer[role='contentinfo'] nav.Site-Navigation.Secondary ul {
+    width: auto;
+    float: left; }
+    footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
+      display: block;
+      padding: 0 15px; }
+      footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a:hover {
+        color: #77972b; }
+    footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li:first-child a {
+      padding-left: 0; }
+  footer[role='contentinfo'] nav.Site-Navigation.Secondary div.Metrics {
+    margin-top: -4px;
+    float: right; }
+footer[role='contentinfo'] article.Copyright {
+  margin-bottom: 40px;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #b8babc; }
 
 /*# sourceMappingURL=style.css.map */

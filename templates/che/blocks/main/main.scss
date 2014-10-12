@@ -1,7 +1,5 @@
-@import 'header/header';
 @import 'page/page';
-@import 'nav/nav';
-@import 'footer/footer';
+
 
 *
 {
@@ -36,13 +34,7 @@ button
 }
 .main
 {
-	padding-left: ($Nav-Width - 60px) + ($Nav-Spacing / 2);
-	@include Adaptive($Viewport-SM)
-	{
-		padding-left: $Nav-Width + $Nav-Spacing;
-	}
-
-	max-width: 1440px;
+	padding-left: 235px;
 }
 .pos-top
 {
@@ -128,7 +120,7 @@ button
 {
 	position: 					fixed;
 	background-color: 			#4a4f5a;
-	width:						235px;
+	width:						$Sidebar-Width;
 	left: 						0;
 	top:						0;
 	bottom: 					0;
@@ -408,6 +400,62 @@ ul.Pagination
 			background-color: black;
 			color: white;
 		}
+	}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Page Footer
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+footer[role='contentinfo']
+{
+	nav.Site-Navigation.Secondary
+	{
+		margin-bottom:		40px;
+		padding-top: 		40px;
+		padding-bottom:		40px;
+		border-top:			5px solid #77972b;
+		border-bottom:		1px solid #e9ebec;
+		@extend 			%Fix;
+		@extend 			%Content-Spacing;
+		ul
+		{
+			width: 			auto;
+			float: 			left;
+			@extend 		%Navigation-Inline;
+			li
+			{
+				a
+				{
+					display: 		block;
+					padding: 		0 15px;
+					@extend 		%Animated;
+					&:hover
+					{
+						color: 		#77972b;
+					}
+				}
+				&:first-child a
+				{
+					padding-left:	0;
+				}
+			}
+		}
+		div.Metrics
+		{
+			margin-top: -4px;
+			float: right;
+		}
+	}
+	article.Copyright
+	{
+		margin-bottom: 		40px;
+		font-size:			10px;
+		line-height: 		1.45;
+		color: 				#b8babc;
+		@extend 			%Content-Spacing;
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
