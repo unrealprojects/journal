@@ -2,32 +2,38 @@
 
     <div class="Grid Split">
 
-        <?php  if ($this->countModules('tags') || $this->countModules('popular')) : ?>
-            <div class="Before-Component  Node-XXS-3">
-                <div class="Tags">
-                    <h3>Рубрики журнала</h3>
-                    <jdoc:include type="modules" name="tags" />
-                </div>
+        <?php  if ($this->countModules('tags') || $this->countModules('popular') || $this->countModules('adv')) : ?>
 
-                <div class="Top-Five">
-                    <div class="header">
-                    <h3>Топ 5 за неделю</h3>
+            <div class="Before-Component  Node-XXS-3">
+
+                <?php  if( $this->countModules('tags') ) : ?>
+                    <div class="Tags">
+                        <h3>Рубрики журнала</h3>
+                        <jdoc:include type="modules" name="tags" />
+                    </div>
+                <?php endif;?>
+
+                <?php  if( $this->countModules('popular') ) : ?>
+                    <div class="Top-Five">
                         <div class="Dropdown Expanded">
-                            <div class="Dropdown-Title">upf<span class="Dropdown-Toggle fa fa-angle-down"></span></div>
+                            <div class="Dropdown-Title">Топ 5 за неделю<span class="Dropdown-Toggle"></span></div>
                             <ul class="Dropdown-Content" style="display: block;">
-                                <li class="Icon"><a href="#">За неделю</a></li>
                                 <li class="Icon"><a href="#">За все время</a></li>
+                                <li class="Icon"><a href="#">За месяц</a></li>
                                 <li class="Icon"><a href="#">За неделю</a></li>
                             </ul>
                         </div>
+                        <div class="Popular">
+                            <jdoc:include type="modules" name="popular" />
+                        </div>
                     </div>
-                    <div class="Popular">
-                        <jdoc:include type="modules" name="popular" />
-                    </div>
+                <?php endif;?>
+
+                <?php  if( $this->countModules('adv') ) : ?>
                     <div class="Adv">
                         <jdoc:include type="modules" name="adv" />
                     </div>
-                </div>
+                <?php endif; ?>
 
             </div>
         <?php  endif; ?>
@@ -35,7 +41,6 @@
 
 
 
-        <jdoc:include type="modules" name="popular_right" />
             <div class="Component Node-XXS-9">
                 <?php  if ($this->countModules('journal_header')) : ?>
                     <jdoc:include type="modules" name="journal_header" />
@@ -46,11 +51,36 @@
 
 
 
-        <?php if($this->countModules('after_component')) : ?>
-            <div class="Before-Component Node-XSS-3">
-                <jdoc:include type="modules" name="after_component" />
+
+
+        <?php  if ( $this->countModules('popular_right') || $this->countModules('adv_right')) : ?>
+
+            <div class="Before-Component  Node-XXS-3">
+
+                <?php  if( $this->countModules('popular_right') ) : ?>
+                    <div class="Top-Five">
+                        <div class="Dropdown Expanded">
+                            <div class="Dropdown-Title">Топ 5 за неделю<span class="Dropdown-Toggle"></span></div>
+                            <ul class="Dropdown-Content" style="display: block;">
+                                <li class="Icon"><a href="#">За все время</a></li>
+                                <li class="Icon"><a href="#">За месяц</a></li>
+                                <li class="Icon"><a href="#">За неделю</a></li>
+                            </ul>
+                        </div>
+                        <div class="Popular">
+                            <jdoc:include type="modules" name="popular" />
+                        </div>
+                    </div>
+                <?php endif;?>
+
+                <?php  if( $this->countModules('adv_right') ) : ?>
+                    <div class="Adv">
+                        <jdoc:include type="modules" name="adv" />
+                    </div>
+                <?php endif; ?>
+
             </div>
-        <?php endif; ?>
+        <?php  endif; ?>
 
 </div>
 
