@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Окт 12 2014 г., 17:01
+-- Время создания: Окт 12 2014 г., 22:07
 -- Версия сервера: 5.6.17
 -- Версия PHP: 5.4.28
 
@@ -533,14 +533,14 @@ CREATE TABLE IF NOT EXISTS `f8ad7_assets` (
   `name` varchar(50) NOT NULL COMMENT 'The unique name for the asset.\n',
   `title` varchar(100) NOT NULL COMMENT 'The descriptive title for the asset.',
   `rules` varchar(5120) NOT NULL COMMENT 'JSON encoded access control.'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=332 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=340 ;
 
 --
 -- Дамп данных таблицы `f8ad7_assets`
 --
 
 INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 0, 594, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 0, 610, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
@@ -557,27 +557,27 @@ INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (15, 1, 293, 294, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
 (16, 1, 295, 296, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (17, 1, 297, 298, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
-(18, 1, 299, 426, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(19, 1, 427, 430, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(20, 1, 431, 432, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
-(21, 1, 433, 434, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
-(22, 1, 435, 436, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(23, 1, 437, 438, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(24, 1, 439, 442, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(25, 1, 443, 446, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(26, 1, 447, 448, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(18, 1, 299, 438, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(19, 1, 439, 442, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(20, 1, 443, 444, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
+(21, 1, 445, 446, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
+(22, 1, 447, 448, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(23, 1, 449, 450, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(24, 1, 451, 454, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(25, 1, 455, 458, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(26, 1, 459, 460, 1, 'com_wrapper', 'com_wrapper', '{}'),
 (27, 8, 18, 29, 2, 'com_content.category.2', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(30, 19, 428, 429, 2, 'com_newsfeeds.category.5', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(31, 25, 444, 445, 2, 'com_weblinks.category.6', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(32, 24, 440, 441, 1, 'com_users.category.7', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(33, 1, 449, 450, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(34, 1, 451, 452, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(35, 1, 453, 454, 1, 'com_tags', 'com_tags', '{"core.admin":[],"core.manage":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(36, 1, 455, 456, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
-(37, 1, 457, 458, 1, 'com_ajax', 'com_ajax', '{}'),
-(38, 1, 459, 460, 1, 'com_postinstall', 'com_postinstall', '{}'),
+(30, 19, 440, 441, 2, 'com_newsfeeds.category.5', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(31, 25, 456, 457, 2, 'com_weblinks.category.6', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(32, 24, 452, 453, 1, 'com_users.category.7', 'Без категории', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(33, 1, 461, 462, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(34, 1, 463, 464, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(35, 1, 465, 466, 1, 'com_tags', 'com_tags', '{"core.admin":[],"core.manage":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(36, 1, 467, 468, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
+(37, 1, 469, 470, 1, 'com_ajax', 'com_ajax', '{}'),
+(38, 1, 471, 472, 1, 'com_postinstall', 'com_postinstall', '{}'),
 (39, 18, 300, 301, 2, 'com_modules.module.1', 'Главное меню', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (40, 18, 302, 303, 2, 'com_modules.module.2', 'Вход', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (41, 18, 304, 305, 2, 'com_modules.module.3', 'Популярные статьи', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
@@ -593,12 +593,12 @@ INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (51, 18, 324, 325, 2, 'com_modules.module.17', 'Хлебные крошки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (52, 18, 326, 327, 2, 'com_modules.module.79', 'Мультиязычность', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (53, 18, 328, 329, 2, 'com_modules.module.86', 'Версия Joomla', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(54, 1, 461, 462, 1, 'com_jsecure', 'jsecure', '{}'),
-(55, 1, 463, 464, 1, 'com_jce', 'jce', '{}'),
-(56, 1, 465, 466, 1, 'com_xmap', 'com_xmap', '{}'),
-(57, 1, 467, 470, 1, 'com_djimageslider', 'com_djimageslider', '{}'),
+(54, 1, 473, 474, 1, 'com_jsecure', 'jsecure', '{}'),
+(55, 1, 475, 476, 1, 'com_jce', 'jce', '{}'),
+(56, 1, 477, 478, 1, 'com_xmap', 'com_xmap', '{}'),
+(57, 1, 479, 482, 1, 'com_djimageslider', 'com_djimageslider', '{}'),
 (58, 18, 330, 331, 2, 'com_modules.module.87', 'Слайдер', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(59, 57, 468, 469, 2, 'com_djimageslider.category.8', 'Без категории', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(59, 57, 480, 481, 2, 'com_djimageslider.category.8', 'Без категории', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (60, 8, 30, 171, 2, 'com_content.category.9', 'Информация о Joomla!', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (61, 60, 31, 146, 3, 'com_content.category.10', 'Расширения', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (62, 61, 32, 55, 4, 'com_content.category.11', 'Компоненты', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
@@ -630,107 +630,107 @@ INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (88, 60, 167, 168, 3, 'com_content.article.11', 'Joomla! в действии', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (89, 60, 169, 170, 3, 'com_content.article.12', 'Joomla! - система управления сайтом', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (90, 62, 33, 34, 5, 'com_content.article.13', 'Ссылки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(91, 1, 471, 472, 1, '#__ucm_content.1', '#__ucm_content.1', '[]'),
+(91, 1, 483, 484, 1, '#__ucm_content.1', '#__ucm_content.1', '[]'),
 (92, 62, 35, 36, 5, 'com_content.article.14', 'Пользователи', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(93, 1, 473, 474, 1, '#__ucm_content.2', '#__ucm_content.2', '[]'),
+(93, 1, 485, 486, 1, '#__ucm_content.2', '#__ucm_content.2', '[]'),
 (94, 62, 37, 38, 5, 'com_content.article.15', 'Поиск', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(95, 1, 475, 476, 1, '#__ucm_content.3', '#__ucm_content.3', '[]'),
+(95, 1, 487, 488, 1, '#__ucm_content.3', '#__ucm_content.3', '[]'),
 (96, 62, 39, 40, 5, 'com_content.article.16', 'Ленты новостей', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(97, 1, 477, 478, 1, '#__ucm_content.4', '#__ucm_content.4', '[]'),
+(97, 1, 489, 490, 1, '#__ucm_content.4', '#__ucm_content.4', '[]'),
 (98, 62, 41, 42, 5, 'com_content.article.17', 'Контент', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(99, 1, 479, 480, 1, '#__ucm_content.5', '#__ucm_content.5', '[]'),
+(99, 1, 491, 492, 1, '#__ucm_content.5', '#__ucm_content.5', '[]'),
 (100, 62, 43, 44, 5, 'com_content.article.18', 'Контакт', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(101, 1, 481, 482, 1, '#__ucm_content.6', '#__ucm_content.6', '[]'),
+(101, 1, 493, 494, 1, '#__ucm_content.6', '#__ucm_content.6', '[]'),
 (102, 62, 45, 46, 5, 'com_content.article.19', 'Компоненты панели управления', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(103, 1, 483, 484, 1, '#__ucm_content.7', '#__ucm_content.7', '[]'),
+(103, 1, 495, 496, 1, '#__ucm_content.7', '#__ucm_content.7', '[]'),
 (104, 64, 58, 59, 6, 'com_content.article.20', 'Самое популярное', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(105, 1, 485, 486, 1, '#__ucm_content.8', '#__ucm_content.8', '[]'),
+(105, 1, 497, 498, 1, '#__ucm_content.8', '#__ucm_content.8', '[]'),
 (106, 64, 60, 61, 6, 'com_content.article.21', 'Новости', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(107, 1, 487, 488, 1, '#__ucm_content.9', '#__ucm_content.9', '[]'),
+(107, 1, 499, 500, 1, '#__ucm_content.9', '#__ucm_content.9', '[]'),
 (108, 64, 62, 63, 6, 'com_content.article.22', 'Модуль - Связанные Материалы', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(109, 1, 489, 490, 1, '#__ucm_content.10', '#__ucm_content.10', '[]'),
+(109, 1, 501, 502, 1, '#__ucm_content.10', '#__ucm_content.10', '[]'),
 (110, 64, 64, 65, 6, 'com_content.article.23', 'Модуль - Новые статьи', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(111, 1, 491, 492, 1, '#__ucm_content.11', '#__ucm_content.11', '[]'),
+(111, 1, 503, 504, 1, '#__ucm_content.11', '#__ucm_content.11', '[]'),
 (112, 64, 66, 67, 6, 'com_content.article.24', 'Модуль - Материалы в категории', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(113, 1, 493, 494, 1, '#__ucm_content.12', '#__ucm_content.12', '[]'),
+(113, 1, 505, 506, 1, '#__ucm_content.12', '#__ucm_content.12', '[]'),
 (114, 64, 68, 69, 6, 'com_content.article.25', 'Модуль - Категории Материалов', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(115, 1, 495, 496, 1, '#__ucm_content.13', '#__ucm_content.13', '[]'),
+(115, 1, 507, 508, 1, '#__ucm_content.13', '#__ucm_content.13', '[]'),
 (116, 64, 70, 71, 6, 'com_content.article.26', 'Модуль - Архив', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(117, 1, 497, 498, 1, '#__ucm_content.14', '#__ucm_content.14', '[]'),
+(117, 1, 509, 510, 1, '#__ucm_content.14', '#__ucm_content.14', '[]'),
 (118, 65, 74, 75, 6, 'com_content.article.27', 'Модуль - Новые Пользователи', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(119, 1, 499, 500, 1, '#__ucm_content.15', '#__ucm_content.15', '[]'),
+(119, 1, 511, 512, 1, '#__ucm_content.15', '#__ucm_content.15', '[]'),
 (120, 65, 76, 77, 6, 'com_content.article.28', 'Модуль - Вход на сайт', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(121, 1, 501, 502, 1, '#__ucm_content.16', '#__ucm_content.16', '[]'),
+(121, 1, 513, 514, 1, '#__ucm_content.16', '#__ucm_content.16', '[]'),
 (122, 65, 78, 79, 6, 'com_content.article.29', 'Кто на сайте', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(123, 1, 503, 504, 1, '#__ucm_content.17', '#__ucm_content.17', '[]'),
+(123, 1, 515, 516, 1, '#__ucm_content.17', '#__ucm_content.17', '[]'),
 (124, 66, 82, 83, 6, 'com_content.article.30', 'Ссылка на ленту новостей', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(125, 1, 505, 506, 1, '#__ucm_content.18', '#__ucm_content.18', '[]'),
+(125, 1, 517, 518, 1, '#__ucm_content.18', '#__ucm_content.18', '[]'),
 (126, 66, 84, 85, 6, 'com_content.article.31', 'Модуль - Ссылки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(127, 1, 507, 508, 1, '#__ucm_content.19', '#__ucm_content.19', '[]'),
+(127, 1, 519, 520, 1, '#__ucm_content.19', '#__ucm_content.19', '[]'),
 (128, 66, 86, 87, 6, 'com_content.article.32', 'Модуль - Случайное изображение', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(129, 1, 509, 510, 1, '#__ucm_content.20', '#__ucm_content.20', '[]'),
+(129, 1, 521, 522, 1, '#__ucm_content.20', '#__ucm_content.20', '[]'),
 (130, 66, 88, 89, 6, 'com_content.article.33', 'Модуль - Сторонний HTML-код', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(131, 1, 511, 512, 1, '#__ucm_content.21', '#__ucm_content.21', '[]'),
+(131, 1, 523, 524, 1, '#__ucm_content.21', '#__ucm_content.21', '[]'),
 (132, 66, 90, 91, 6, 'com_content.article.34', 'Модуль - Нижний блок', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(133, 1, 513, 514, 1, '#__ucm_content.22', '#__ucm_content.22', '[]'),
+(133, 1, 525, 526, 1, '#__ucm_content.22', '#__ucm_content.22', '[]'),
 (134, 66, 92, 93, 6, 'com_content.article.35', 'Модуль - Баннер', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(135, 1, 515, 516, 1, '#__ucm_content.23', '#__ucm_content.23', '[]'),
+(135, 1, 527, 528, 1, '#__ucm_content.23', '#__ucm_content.23', '[]'),
 (136, 67, 96, 97, 6, 'com_content.article.36', 'Умный поиск', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(137, 1, 517, 518, 1, '#__ucm_content.24', '#__ucm_content.24', '[]'),
+(137, 1, 529, 530, 1, '#__ucm_content.24', '#__ucm_content.24', '[]'),
 (138, 67, 98, 99, 6, 'com_content.article.37', 'Переключение языков', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(139, 1, 519, 520, 1, '#__ucm_content.25', '#__ucm_content.25', '[]'),
+(139, 1, 531, 532, 1, '#__ucm_content.25', '#__ucm_content.25', '[]'),
 (140, 67, 100, 101, 6, 'com_content.article.38', 'Модуль - Статистика', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(141, 1, 521, 522, 1, '#__ucm_content.26', '#__ucm_content.26', '[]'),
+(141, 1, 533, 534, 1, '#__ucm_content.26', '#__ucm_content.26', '[]'),
 (142, 67, 102, 103, 6, 'com_content.article.39', 'Модуль - Рассылки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(143, 1, 523, 524, 1, '#__ucm_content.27', '#__ucm_content.27', '[]'),
+(143, 1, 535, 536, 1, '#__ucm_content.27', '#__ucm_content.27', '[]'),
 (144, 67, 104, 105, 6, 'com_content.article.40', 'Модуль - Поиск', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(145, 1, 525, 526, 1, '#__ucm_content.28', '#__ucm_content.28', '[]'),
+(145, 1, 537, 538, 1, '#__ucm_content.28', '#__ucm_content.28', '[]'),
 (146, 67, 106, 107, 6, 'com_content.article.41', 'Модуль - Обёртка (Wrapper)', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(147, 1, 527, 528, 1, '#__ucm_content.29', '#__ucm_content.29', '[]'),
+(147, 1, 539, 540, 1, '#__ucm_content.29', '#__ucm_content.29', '[]'),
 (148, 68, 110, 111, 6, 'com_content.article.42', 'Модуль - Меню', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(149, 1, 529, 530, 1, '#__ucm_content.30', '#__ucm_content.30', '[]'),
+(149, 1, 541, 542, 1, '#__ucm_content.30', '#__ucm_content.30', '[]'),
 (150, 68, 112, 113, 6, 'com_content.article.43', 'Модуль "Хлебные крошки"', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(151, 1, 531, 532, 1, '#__ucm_content.31', '#__ucm_content.31', '[]'),
+(151, 1, 543, 544, 1, '#__ucm_content.31', '#__ucm_content.31', '[]'),
 (152, 69, 117, 118, 5, 'com_content.article.44', 'Типографика', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (153, 70, 121, 122, 5, 'com_content.article.45', 'Шаблон RSMetro', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (154, 72, 127, 128, 5, 'com_content.article.46', 'Система', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(155, 1, 533, 534, 1, '#__ucm_content.32', '#__ucm_content.32', '[]'),
+(155, 1, 545, 546, 1, '#__ucm_content.32', '#__ucm_content.32', '[]'),
 (156, 72, 129, 130, 5, 'com_content.article.47', 'Редакторы', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(157, 1, 535, 536, 1, '#__ucm_content.33', '#__ucm_content.33', '[]'),
+(157, 1, 547, 548, 1, '#__ucm_content.33', '#__ucm_content.33', '[]'),
 (158, 72, 131, 132, 5, 'com_content.article.48', 'Пользователь', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(159, 1, 537, 538, 1, '#__ucm_content.34', '#__ucm_content.34', '[]'),
+(159, 1, 549, 550, 1, '#__ucm_content.34', '#__ucm_content.34', '[]'),
 (160, 72, 133, 134, 5, 'com_content.article.49', 'Поиск', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(161, 1, 539, 540, 1, '#__ucm_content.35', '#__ucm_content.35', '[]'),
+(161, 1, 551, 552, 1, '#__ucm_content.35', '#__ucm_content.35', '[]'),
 (162, 72, 135, 136, 5, 'com_content.article.50', 'Контент', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(163, 1, 541, 542, 1, '#__ucm_content.36', '#__ucm_content.36', '[]'),
+(163, 1, 553, 554, 1, '#__ucm_content.36', '#__ucm_content.36', '[]'),
 (164, 72, 137, 138, 5, 'com_content.article.51', 'Капча', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(165, 1, 543, 544, 1, '#__ucm_content.37', '#__ucm_content.37', '[]'),
+(165, 1, 555, 556, 1, '#__ucm_content.37', '#__ucm_content.37', '[]'),
 (166, 72, 139, 140, 5, 'com_content.article.52', 'Дополнения к редакторам', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(167, 1, 545, 546, 1, '#__ucm_content.38', '#__ucm_content.38', '[]'),
+(167, 1, 557, 558, 1, '#__ucm_content.38', '#__ucm_content.38', '[]'),
 (168, 72, 141, 142, 5, 'com_content.article.53', 'Быстрый доступ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(169, 1, 547, 548, 1, '#__ucm_content.39', '#__ucm_content.39', '[]'),
+(169, 1, 559, 560, 1, '#__ucm_content.39', '#__ucm_content.39', '[]'),
 (170, 72, 143, 144, 5, 'com_content.article.54', 'Аутентификация', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(171, 1, 549, 550, 1, '#__ucm_content.40', '#__ucm_content.40', '[]'),
+(171, 1, 561, 562, 1, '#__ucm_content.40', '#__ucm_content.40', '[]'),
 (172, 73, 173, 174, 3, 'com_content.article.55', 'Сообщество Joomla.org', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(173, 1, 551, 552, 1, '#__ucm_content.41', '#__ucm_content.41', '[]'),
+(173, 1, 563, 564, 1, '#__ucm_content.41', '#__ucm_content.41', '[]'),
 (174, 73, 175, 176, 3, 'com_content.article.56', 'Сайт компании Scarlett', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(175, 1, 553, 554, 1, '#__ucm_content.42', '#__ucm_content.42', '[]'),
+(175, 1, 565, 566, 1, '#__ucm_content.42', '#__ucm_content.42', '[]'),
 (176, 73, 177, 178, 3, 'com_content.article.57', 'Сайт компании Danone', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(177, 1, 555, 556, 1, '#__ucm_content.43', '#__ucm_content.43', '[]'),
+(177, 1, 567, 568, 1, '#__ucm_content.43', '#__ucm_content.43', '[]'),
 (178, 73, 179, 180, 3, 'com_content.article.58', 'Сайт компании Cigar Clan', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(179, 1, 557, 558, 1, '#__ucm_content.44', '#__ucm_content.44', '[]'),
+(179, 1, 569, 570, 1, '#__ucm_content.44', '#__ucm_content.44', '[]'),
 (180, 75, 211, 212, 3, 'com_content.article.59', 'Сайт компании Транспаренси', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(181, 1, 559, 560, 1, '#__ucm_content.45', '#__ucm_content.45', '[]'),
+(181, 1, 571, 572, 1, '#__ucm_content.45', '#__ucm_content.45', '[]'),
 (182, 73, 181, 182, 3, 'com_content.article.60', 'Сайт компании Joomla.ru', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(183, 1, 561, 562, 1, '#__ucm_content.46', '#__ucm_content.46', '[]'),
+(183, 1, 573, 574, 1, '#__ucm_content.46', '#__ucm_content.46', '[]'),
 (184, 73, 183, 184, 3, 'com_content.article.61', 'Сайт компании Art-mania', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(185, 1, 563, 564, 1, '#__ucm_content.47', '#__ucm_content.47', '[]'),
+(185, 1, 575, 576, 1, '#__ucm_content.47', '#__ucm_content.47', '[]'),
 (186, 73, 185, 186, 3, 'com_content.article.62', 'Сайт компании Portal-HR', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(187, 1, 565, 566, 1, '#__ucm_content.48', '#__ucm_content.48', '[]'),
+(187, 1, 577, 578, 1, '#__ucm_content.48', '#__ucm_content.48', '[]'),
 (188, 73, 187, 188, 3, 'com_content.article.63', 'Промо-сайт MTV', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(189, 1, 567, 568, 1, '#__ucm_content.49', '#__ucm_content.49', '[]'),
+(189, 1, 579, 580, 1, '#__ucm_content.49', '#__ucm_content.49', '[]'),
 (190, 73, 189, 190, 3, 'com_content.article.64', 'Промо-сайт Peugeot', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(191, 1, 569, 570, 1, '#__ucm_content.50', '#__ucm_content.50', '[]'),
+(191, 1, 581, 582, 1, '#__ucm_content.50', '#__ucm_content.50', '[]'),
 (192, 74, 193, 194, 3, 'com_content.article.65', 'Хостинг', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (193, 74, 195, 196, 3, 'com_content.article.66', 'Создание сайтов', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (194, 74, 197, 198, 3, 'com_content.article.67', 'Создание интернет магазина', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
@@ -771,13 +771,13 @@ INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (229, 77, 275, 276, 3, 'com_content.article.102', '2.  Скачивание и установка Joomla', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (230, 77, 277, 278, 3, 'com_content.article.103', '1.  Что такое Joomla?', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (231, 62, 47, 48, 5, 'com_content.article.104', 'Баннеры', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(232, 1, 571, 572, 1, '#__ucm_content.51', '#__ucm_content.51', '[]'),
+(232, 1, 583, 584, 1, '#__ucm_content.51', '#__ucm_content.51', '[]'),
 (233, 62, 49, 50, 5, 'com_content.article.105', 'Метки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(234, 1, 573, 574, 1, '#__ucm_content.52', '#__ucm_content.52', '[]'),
+(234, 1, 585, 586, 1, '#__ucm_content.52', '#__ucm_content.52', '[]'),
 (235, 62, 51, 52, 5, 'com_content.article.106', 'Умный поиск', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(236, 1, 575, 576, 1, '#__ucm_content.53', '#__ucm_content.53', '[]'),
+(236, 1, 587, 588, 1, '#__ucm_content.53', '#__ucm_content.53', '[]'),
 (237, 62, 53, 54, 5, 'com_content.article.107', 'Обновление Joomla!', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(238, 1, 577, 578, 1, '#__ucm_content.54', '#__ucm_content.54', '[]'),
+(238, 1, 589, 590, 1, '#__ucm_content.54', '#__ucm_content.54', '[]'),
 (239, 18, 332, 333, 2, 'com_modules.module.88', 'Верхнее меню', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (240, 18, 334, 335, 2, 'com_modules.module.89', 'Верхнее меню (2)', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (241, 18, 336, 337, 2, 'com_modules.module.90', 'Футер меню', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
@@ -799,18 +799,18 @@ INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (258, 18, 368, 369, 2, 'com_modules.module.106', 'ZOO Tag', ''),
 (259, 18, 370, 371, 2, 'com_modules.module.107', 'Widgetkit', ''),
 (260, 18, 372, 373, 2, 'com_modules.module.108', 'Widgetkit Twitter', ''),
-(261, 1, 579, 580, 1, 'com_widgetkit', 'widgetkit', '{}'),
+(261, 1, 591, 592, 1, 'com_widgetkit', 'widgetkit', '{}'),
 (271, 18, 374, 375, 2, 'com_modules.module.109', 'trdgsergsergsed', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(276, 1, 581, 588, 1, 'com_zoo.application.3', 'Формакогенетика', '{"core.admin":{"8":1},"core.manage":{"7":1},"zoo.categories.manage":[],"zoo.comments.manage":[],"zoo.frontpage.manage":[],"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(276, 1, 593, 600, 1, 'com_zoo.application.3', 'Формакогенетика', '{"core.admin":{"8":1},"core.manage":{"7":1},"zoo.categories.manage":[],"zoo.comments.manage":[],"zoo.frontpage.manage":[],"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (277, 18, 376, 377, 2, 'com_modules.module.110', 'Left nav', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (279, 18, 378, 379, 2, 'com_modules.module.111', 'AcyMailing Module', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (281, 18, 380, 381, 2, 'com_modules.module.112', 'Mailjet', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(282, 1, 590, 591, 1, 'com_acymailing', 'acymailing', '{}'),
+(282, 1, 602, 603, 1, 'com_acymailing', 'acymailing', '{}'),
 (283, 18, 382, 383, 2, 'com_modules.module.113', 'AcyMailing Module', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (284, 18, 384, 385, 2, 'com_modules.module.114', 'Top nav', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (285, 18, 386, 387, 2, 'com_modules.module.115', 'Bot nav ', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (286, 18, 388, 389, 2, 'com_modules.module.116', 'Google translate', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(287, 1, 592, 593, 1, 'com_k2', 'com_k2', '{}'),
+(287, 1, 604, 605, 1, 'com_k2', 'com_k2', '{}'),
 (288, 18, 390, 391, 2, 'com_modules.module.117', 'K2 Comments', ''),
 (289, 18, 392, 393, 2, 'com_modules.module.118', 'K2 Content', ''),
 (290, 18, 394, 395, 2, 'com_modules.module.119', 'K2 Tools', ''),
@@ -824,19 +824,27 @@ INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (298, 18, 410, 411, 2, 'com_modules.module.127', 'fdhgdfgh', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (299, 18, 412, 413, 2, 'com_modules.module.128', 'Рубрики журнала', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (300, 18, 414, 415, 2, 'com_modules.module.129', 'Топ за неделю', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(301, 276, 582, 583, 2, 'com_zoo.application.3.article.2', 'Формакогенетика (Article-2)', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
-(302, 276, 584, 585, 2, 'com_zoo.application.3.article', 'Формакогенетика (Article)', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(301, 276, 594, 595, 2, 'com_zoo.application.3.article.2', 'Формакогенетика (Article-2)', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(302, 276, 596, 597, 2, 'com_zoo.application.3.article', 'Формакогенетика (Article)', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (303, 18, 416, 417, 2, 'com_modules.module.130', 'Реклама', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (304, 18, 418, 419, 2, 'com_modules.module.131', 'Наши проекты', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (305, 27, 19, 20, 3, 'com_content.article.108', 'Редколлегия', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (306, 27, 21, 22, 3, 'com_content.article.109', 'Спонсорам', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (307, 27, 23, 24, 3, 'com_content.article.110', 'Контакты', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(322, 276, 586, 587, 2, 'com_zoo.application.3.author', 'Формакогенетика (Author)', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(322, 276, 598, 599, 2, 'com_zoo.application.3.author', 'Формакогенетика (Author)', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (323, 18, 420, 421, 2, 'com_modules.module.132', 'Топ Библиотеки', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (326, 18, 422, 423, 2, 'com_modules.module.133', 'Подписка', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (327, 27, 25, 26, 3, 'com_content.article.111', 'Подписка', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (330, 27, 27, 28, 3, 'com_content.article.112', 'Ссылки', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(331, 18, 424, 425, 2, 'com_modules.module.134', 'ZOOitem Pro', '');
+(331, 18, 424, 425, 2, 'com_modules.module.134', 'Топ за всё время', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(332, 18, 426, 427, 2, 'com_modules.module.135', 'Главная :: Топ 5 за все время', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(333, 18, 428, 429, 2, 'com_modules.module.136', 'Главная :: Топ 5 за неделю', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(334, 18, 430, 431, 2, 'com_modules.module.137', 'Главная :: Топ 5 за месяц', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(335, 18, 432, 433, 2, 'com_modules.module.138', 'Главная :: Топ 5 за неделю (2)', ''),
+(336, 18, 434, 435, 2, 'com_modules.module.139', 'Главная :: Топ 5 за все время (2)', ''),
+(337, 18, 436, 437, 2, 'com_modules.module.140', 'Главная :: Топ 5 за месяц (2)', ''),
+(338, 1, 606, 607, 1, 'com_zlmanager', 'zlmanager', '{}'),
+(339, 1, 608, 609, 1, 'com_zoolanders', 'zoolanders', '{}');
 
 -- --------------------------------------------------------
 
@@ -1239,7 +1247,7 @@ INSERT INTO `f8ad7_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `f
 (105, 233, 'Метки', 'tags', '<p>Компонент Теги позволяет создавать новые разделы сайта, куда будут относиться определенные материалы. В данном случае его можно сравнить с компонентом категории. Да именно так: материалы будут разделяться на определенные категории, но в случае с тегами этих категорий можно выбрать любое количество. Это значит, что один материал может относиться к разделу (тегу) "Шаблон" и например "CSS". Затем во всех заданных материалов, будут отображаться данные метки. По этим меткам можно осуществлять переход на другие материалы с этими тегами.</p>', '', -2, 11, '2014-03-15 22:53:14', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-15 22:53:14', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 2, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (106, 235, 'Умный поиск', 'smart-search', '<p>«Умный поиск» — новый поисковый компонент в составе исходной комплектации Joomla. В его основе — более гибкий и более быстрый алгоритм. Среди возможностей компонента — автоматическое дополнение поисковых запросов и использующая стемминг функция «Возможно, вы имели в виду...».</p>\r\n<p>Стемминг?</p>\r\n<p>Благодаря стеммингу поисковая система, анализируя слово «коты», выделяет из него основу [прим. перев.: необязательно морфологическую] «кот». Подобную основу она найдет в словах «котенок», «котик». В словах «рыбалка», «рыба», «рыбак» она выделит основу «рыб». Подробнее о стемминге — в соответствующей <a href="http://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BC%D0%BC%D0%B8%D0%BD%D0%B3">статье в Википедии.</a></p>\r\n', '\r\n<p>«Умный поиск» использует два алгоритма стемминга. Один предназначен исключительно для английского языка. Другой, так называемый «Snowball» [в окне настроек — «Снежок»], помимо английского, поддерживает: русский, датский, немецкий, испанский, финский, французский, венгерский, итальянский, норвежский, голландский, португальский, румынский, турецкий. Для работы «Snowball» необходимо специальное расширение интерпретатора <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> для стемминга.</p>\r\n<p>Гибкость и скорость «Умного поиска» не будут доступны без индексации контента.</p>\r\n<p><img title="«Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска" src="images/sampledata/joomla/smart_search_1.jpg" alt="«Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска" width="500" height="363" /></p>\r\n<p>Рис. 1. «Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска.</p>\r\n<h4>Активация</h4>\r\n<p>По умолчанию компонент «Умный поиск» выключен. Для его активации необходимо включить одноименный плагин, относящийся к группе «content», а также пять плагинов, относящихся к группе «finder» [группы выбираются при помощи выпадающего списка на странице менеджера плагинов] (рис. 2). Название группы [как и название компонента, «com_finder»] происходит от названия стороннего расширения для Joomla, «Finder», после включения в исходную комплектацию превратившегося в «Умный поиск» [по англ. — «Smart Search»].</p>\r\n<p><img title="Плагины «Умного поиска»" src="images/sampledata/joomla/smart_search_2.jpg" alt="Плагины «Умного поиска»" width="500" height="291" /></p>\r\n<p>Рис. 2. Плагины «Умного поиска».</p>\r\n<h4>Индексация</h4>\r\n<p>Для работы «Умного поиска» необходима индексация контента. Она производится автоматически во время сохранения статей, категорий, контактных данных, лент новостей и т. д. Первоначальную индексацию можно провести, кликнув по пиктограмме «Индексировать» на панели инструментов, на странице компонента: текстовое меню административного раздела → пункт «Компоненты» → подпункт «Умный поиск».</p>\r\n<p><img title="Индексация" src="images/sampledata/joomla/smart_search_3.jpg" alt="Индексация" width="500" height="355" /></p>\r\n<p>Рис. 3. Индексация.</p>\r\n<h4>Настройка под сайт</h4>\r\n<p>После активации и индексации необходимо решить как реализовать интерфейс «Умного поиска» на стороне посетителей: при помощи модуля, при помощи ссылки на страницу компонента или при помощи того и другого. Автоматическое дополнение поисковых запросов и использующая стемминг функция «Возможно, вы имели в виду...» будут доступны в обоих случаях (рис. 4 и 5).</p>\r\n<p><img title="«Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска" src="images/sampledata/joomla/smart_search_4.jpg" alt="«Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска" width="500" height="363" /></p>\r\n<p>Рис. 4. Автоматическое дополнение поисковых запросов.</p>\r\n<p><img title="Функция «Возможно, вы имели в виду…»" src="images/sampledata/joomla/smart_search_5.jpg" alt="Функция «Возможно, вы имели в виду…»" width="500" height="449" /></p>\r\n<p>Рис. 5. Использующая стемминг функция «Возможно, вы имели в виду...».</p>\r\n<p>«Умный поиск» — поставляется настроенным. Благодаря контекстным окнам указателя (тултипам) есть возможность ознакомиться с его параметрами. Подробнее о настройках компонента — в соответствующей <a href="http://docs.joomla.org/Smart_Search_configuration_options">статье на сайте документации Joomla [на англ.].</a></p>\r\n<h4>Отключение традиционного поискового компонента</h4>\r\n<p>Для отключения традиционного поискового компонента необходимо:</p>\r\n<ul>\r\n<li>отключить или удалить все модули типа «Поиск» (текстовое меню административного раздела → пункт «Расширения» → подпункт «Менеджер модулей» → выпадающий список «Выбор типа» → значение «Поиск»);</li>\r\n<li>отключить или удалить все плагины типа «search» (текстовое меню административного раздела → пункт «Расширения» → подпункт «Менеджер плагинов» → выпадающий список «Выбор типа» → значение «search»);</li>\r\n<li>удалить из меню ссылки, относящиеся к традиционному поисковому компоненту.</li>\r\n</ul>', -2, 11, '2014-03-15 22:53:39', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-15 22:53:39', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 1, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (107, 237, 'Обновление Joomla!', 'update-joomla', '<p>В последних версиях Joomla разработчики очень много времени и внимания уделили системе обновления Joomla и расширений для нее. Они сделали все возможное, что бы как можно больше упростить процесс обновления до так называемого "одного клика". Т.е. для того что бы обновить версию Joomla достаточно одного-два клика мыши.</p>\r\n', '\r\n<p><img src="images/sampledata/joomla/update_joomla_1.jpg" alt="Быстрые значки проверки актуальности joomla! И расширений" /></p>\r\n<p>Рис. 1. Быстрые значки проверки актуальности joomla! И расширений.</p>\r\n<p><img src="images/sampledata/joomla/update_joomla_2.jpg" alt="Обновление joomla!" /></p>\r\n<p>Рис. 2. Обновление joomla!.</p>\r\n<p><img src="images/sampledata/joomla/update_joomla_3.jpg" alt="Обновление расширений" /></p>\r\n<p>Рис. 3. Обновление расширений.</p>', -2, 11, '2014-03-15 22:54:02', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-15 22:54:02', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(108, 305, 'Редколлегия', 'redkollegiya', '<p>Экономические науки</p>\r\n<p>Воронкова Ольга Васильевна&nbsp;— главный редактор журнала, председатель редколлегии, д.э.н., профессор, член-корреспондент РАЕН.</p>\r\n<p>Тел.:&nbsp;8 (4752) 638780;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:voronkova@tambov-konfcentr.ru">voronkova@tambov-konfcentr.ru</a></p>\r\n<p>Кузнецов Юрий Викторович&nbsp;— д.э.н., профессор, заведующий кафедрой управления и планирования социально-экономических процессов Санкт-Петербургского государственного университета, заслуженный работник высшей школы РФ, почетный Президент Национальной академии туризма.</p>\r\n<p>Тел.:&nbsp;8 (812) 2737527;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:tour@econ.pu.ru">tour@econ.pu.ru</a></p>\r\n<p>История, философия и социология</p>\r\n<p>Скворцов Николай Генрихович&nbsp;— д.с.н., профессор, проректор по научной работе Санкт-Петербургского государственного университета.</p>\r\n<p>Тел.:&nbsp;8 (812) 3241258;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:n.skvortsov@spbu.ru">n.skvortsov@spbu.ru</a></p>\r\n<p>История науки</p>\r\n<p>Тютюнник Вячеслав Михайлович&nbsp;— д.т.н., к.х.н., профессор, директор Тамбовского филиала Московского государственного университета культуры и искусств, президент Международного Информационного Нобелевского Центра, академик РАЕН.</p>\r\n<p>Тел.:&nbsp;8 (4752)50-46-00;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:vmt@tmb.ru">vmt@tmb.ru</a></p>\r\n<p>Педагогика и психология</p>\r\n<p>Ляшенко Татьяна Васильевна&nbsp;— д.пед.н, профессор, декан факультета информационных технологий и медиадизайна Санкт-Петербургского государственного университета культуры и искусств.</p>\r\n<p>Тел.:&nbsp;8 (812)9525781;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:decanat@fitim.ru">decanat@fitim.ru</a></p>\r\n<p>Серых Анна Борисовна&nbsp;— д.пед.н, д.п.н., профессор, заведующий кафедрой специальных психолого-педагогических дисциплин Балтийского федерального университета имени И. Канта.</p>\r\n<p>Тел.:&nbsp;8 (911)4511091</p>\r\n<p>E-mail:&nbsp;<a href="mailto:serykh@baltnet.ru">serykh@baltnet.ru</a></p>', '', 1, 2, '2014-10-11 15:12:43', 445, '', '2014-10-11 15:12:55', 445, 0, '0000-00-00 00:00:00', '2014-10-11 15:12:43', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 4, '', '', 1, 10, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(108, 305, 'Редколлегия', 'redkollegiya', '<p>Экономические науки</p>\r\n<p>Воронкова Ольга Васильевна&nbsp;— главный редактор журнала, председатель редколлегии, д.э.н., профессор, член-корреспондент РАЕН.</p>\r\n<p>Тел.:&nbsp;8 (4752) 638780;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:voronkova@tambov-konfcentr.ru">voronkova@tambov-konfcentr.ru</a></p>\r\n<p>Кузнецов Юрий Викторович&nbsp;— д.э.н., профессор, заведующий кафедрой управления и планирования социально-экономических процессов Санкт-Петербургского государственного университета, заслуженный работник высшей школы РФ, почетный Президент Национальной академии туризма.</p>\r\n<p>Тел.:&nbsp;8 (812) 2737527;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:tour@econ.pu.ru">tour@econ.pu.ru</a></p>\r\n<p>История, философия и социология</p>\r\n<p>Скворцов Николай Генрихович&nbsp;— д.с.н., профессор, проректор по научной работе Санкт-Петербургского государственного университета.</p>\r\n<p>Тел.:&nbsp;8 (812) 3241258;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:n.skvortsov@spbu.ru">n.skvortsov@spbu.ru</a></p>\r\n<p>История науки</p>\r\n<p>Тютюнник Вячеслав Михайлович&nbsp;— д.т.н., к.х.н., профессор, директор Тамбовского филиала Московского государственного университета культуры и искусств, президент Международного Информационного Нобелевского Центра, академик РАЕН.</p>\r\n<p>Тел.:&nbsp;8 (4752)50-46-00;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:vmt@tmb.ru">vmt@tmb.ru</a></p>\r\n<p>Педагогика и психология</p>\r\n<p>Ляшенко Татьяна Васильевна&nbsp;— д.пед.н, профессор, декан факультета информационных технологий и медиадизайна Санкт-Петербургского государственного университета культуры и искусств.</p>\r\n<p>Тел.:&nbsp;8 (812)9525781;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:decanat@fitim.ru">decanat@fitim.ru</a></p>\r\n<p>Серых Анна Борисовна&nbsp;— д.пед.н, д.п.н., профессор, заведующий кафедрой специальных психолого-педагогических дисциплин Балтийского федерального университета имени И. Канта.</p>\r\n<p>Тел.:&nbsp;8 (911)4511091</p>\r\n<p>E-mail:&nbsp;<a href="mailto:serykh@baltnet.ru">serykh@baltnet.ru</a></p>', '', 1, 2, '2014-10-11 15:12:43', 445, '', '2014-10-11 15:12:55', 445, 0, '0000-00-00 00:00:00', '2014-10-11 15:12:43', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 4, '', '', 1, 13, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (109, 306, 'Спонсорам', 'sponsoram', '<p>1. Игровая форма</p>\r\n<p>Спонсору предоставляется право на размещение своего логотипа на игровой форме основного состава команды во время официальных матчей Суперлиги, а так же на матчах Еврокубков.</p>\r\n<p>Размещение логотипа спонсора на игровой форме баскетболистов подчеркивает особый статус партнерства. Реклама на игровой форме отличается эксклюзивностью; она обеспечивает большой охват аудитории (игры широко освещаются в прессе, в сети Интернет, по ТВ) и присутствие информации о спонсоре не только на домашних, но и на гостевых матчах клуба.</p>\r\n<p>2.&nbsp;Пресс-баннер</p>\r\n<p>Спонсору предоставляется право на размещение своего логотипа на рекламном щите в&nbsp;пресс-центре.</p>\r\n<p>Размещение логотипа спонсора на специальном заднике за спинами тренеров в поле зрения фото- и телекамер обеспечивает присутствие информации о компании во время проведения пресс-конференций. Пресс-конференции проходят после каждого сыгранного матча с участием главных тренеров команд и журналистов, аккредитованных клубом для освещения матчей.</p>\r\n<p>3. Билеты и абонементы на матч</p>\r\n<p>Спонсору предоставляется право на размещение своего логотипа на лицевой стороне билетов к каждому домашнему матчу клуба, а также на обложке сезонных абонементов.</p>\r\n<p>Билеты и абонементы являются для каждого болельщика одними из наиболее ценных атрибутов футбольного сезона. Абонемент хранится в течение всего сезона, поэтому логотип Вашей компании неоднократно попадает в поле зрения болельщиков. Билеты на баскетбол периодически участвуют в розыгрыше призов, что также позволяет привлечь дополнительное внимание болельщиков к Вашей компании.</p>\r\n<p>4. Официальные программки к матчам</p>\r\n<p>Спонсору предоставляется право размещения логотипа или рекламной полосы формата А5 в официальных программках к каждому домашнему матчу.</p>\r\n<p>Программка, представляющая собой яркое, красочное и информативное издание, является действенным маркетинговым инструментом, способным повысить популярность и узнаваемость Вашей торговой марки и привлечь внимание значительной аудитории футбольных болельщиков – Ваших потенциальных клиентов.</p>\r\n<p>5. Афиши на матчи</p>\r\n<p>Спонсору предоставляется право размещения логотипа на афишах формата А1.</p>\r\n<p>Афиши с анонсами домашних матчей команды развешиваются за&nbsp;3 дня&nbsp;до каждого матча в&nbsp;30 наиболее&nbsp;оживленных точках города. Благодаря яркому дизайну афиши неизменно привлекают внимание тысяч болельщиков, и, соответственно, в поле их зрения попадает логотип Вашей компании.</p>\r\n<p>6. Клубный автобус</p>\r\n<p>Спонсору предоставляется право на размещение логотипа на клубном автобусе.</p>\r\n<p>Автобус служит для перевозки игроков команды в те или иные регионы для участия ее в очередных играх Суперлиги.</p>\r\n<p>Варианты размещения: левый и правый борт автобуса.</p>\r\n<p>7.&nbsp;Промо-акции</p>\r\n<p>Спонсору предоставляется право на проведение&nbsp;промоушн-акций&nbsp;в холле в дни домашних матчей, а также на организацию совместно с&nbsp;промоушн-акций&nbsp;в рамках общегородских мероприятий.</p>\r\n<p>Все PR-мероприятия, проводимые, направлены на укрепление положительного образа нашего партнера, способствуют его максимальной узнаваемости, а также наиболее эффективному продвижению его бренда.</p>\r\n<p>Варианты проведения&nbsp;промо-акций:</p>\r\n<p>- вручение призов/подарков (лучшему игроку, ветеранам и т.д.);</p>\r\n<p>- проведение конкурсов;</p>\r\n<p>- распространение рекламной полиграфической продукции спонсора.</p>\r\n<p>8. Баннеры на страницах&nbsp;интернет-сайтов</p>\r\n<p>Баннерная&nbsp;реклама —&nbsp;реклама&nbsp;веб-сайта&nbsp;пользователя, странички, логотипа и т.д. путем размещением баннеров на наших сайтах. Один из самых популярных способов рекламы в Интернете, позволяющий эффективно увеличить посещаемость&nbsp;веб-сайтов&nbsp;наших спонсоров.</p>', '', 1, 2, '2014-10-11 15:14:26', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-10-11 15:14:26', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 3, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
 INSERT INTO `f8ad7_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
 (110, 307, 'Контакты', 'kontakty', '<p>Татьяна Оберемова</p>\r\n<address>\r\n<p>Менеджер по связям с общественностью Nokia в России<br />Ленинградское шоссе, 16а, строение 2<br />125171, Москва, Россия</p>\r\n</address>\r\n<div>&nbsp;</div>\r\n<address>\r\n<p>Андрей Орлов<br />Менеджер по связям с общественностью Nokia , Украина и Юг СНГ<br />Ленинградское шоссе, 16а, строение 2<br />125171, Москва, Россия</p>\r\n</address>\r\n<div>&nbsp;</div>\r\n<address>\r\n<p>Александр Пахотенко<br />Менеджер по работе с социальными сетями Nokia в Евразии (русскоязычный сегмент)<br />Ленинградское шоссе, 16а, строение 2<br />125171, Москва, Россия</p>\r\n</address>\r\n<div>&nbsp;</div>\r\n<address>\r\n<p>Тел.: +358 7180 34900<br />Пн-Пт 9:00 до 17:00 (CET+1)</p>\r\n<p>Keilalahdentie 2-4 FIN-02150 ESPOO<br />P.O. Box 226 FIN-00045 ФИНЛЯНДИЯ</p>\r\n</address>', '', 1, 2, '2014-10-11 16:06:22', 445, '', '2014-10-11 16:08:56', 445, 0, '0000-00-00 00:00:00', '2014-10-11 16:06:22', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 2, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -1526,7 +1534,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_extensions` (
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ordering` int(11) DEFAULT '0',
   `state` int(11) DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10095 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10099 ;
 
 --
 -- Дамп данных таблицы `f8ad7_extensions`
@@ -1567,7 +1575,7 @@ INSERT INTO `f8ad7_extensions` (`extension_id`, `name`, `type`, `element`, `fold
 (100, 'PHPMailer', 'library', 'phpmailer', '', 0, 1, 1, 1, '{"name":"PHPMailer","type":"library","creationDate":"2001","author":"PHPMailer","copyright":"(c) 2001-2003, Brent R. Matzelle, (c) 2004-2009, Andy Prevost. All Rights Reserved., (c) 2010-2013, Jim Jagielski. All Rights Reserved.","authorEmail":"jimjag@gmail.com","authorUrl":"https:\\/\\/github.com\\/PHPMailer\\/PHPMailer","version":"5.2.6","description":"LIB_PHPMAILER_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (101, 'SimplePie', 'library', 'simplepie', '', 0, 1, 1, 1, '{"name":"SimplePie","type":"library","creationDate":"2004","author":"SimplePie","copyright":"Copyright (c) 2004-2009, Ryan Parman and Geoffrey Sneddon","authorEmail":"","authorUrl":"http:\\/\\/simplepie.org\\/","version":"1.2","description":"LIB_SIMPLEPIE_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (102, 'phputf8', 'library', 'phputf8', '', 0, 1, 1, 1, '{"name":"phputf8","type":"library","creationDate":"2006","author":"Harry Fuecks","copyright":"Copyright various authors","authorEmail":"hfuecks@gmail.com","authorUrl":"http:\\/\\/sourceforge.net\\/projects\\/phputf8","version":"0.5","description":"LIB_PHPUTF8_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(103, 'Joomla! Platform', 'library', 'joomla', '', 0, 1, 1, 1, '{"name":"Joomla! Platform","type":"library","creationDate":"2008","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"http:\\/\\/www.joomla.org","version":"13.1","description":"LIB_JOOMLA_XML_DESCRIPTION","group":""}', '{"mediaversion":"38becbf2b10f7684b7b5df157b426621"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(103, 'Joomla! Platform', 'library', 'joomla', '', 0, 1, 1, 1, '{"name":"Joomla! Platform","type":"library","creationDate":"2008","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"http:\\/\\/www.joomla.org","version":"13.1","description":"LIB_JOOMLA_XML_DESCRIPTION","group":""}', '{"mediaversion":"877f977e64fe6f2473f672730055f682"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (104, 'IDNA Convert', 'library', 'idna_convert', '', 0, 1, 1, 1, '{"name":"IDNA Convert","type":"library","creationDate":"2004","author":"phlyLabs","copyright":"2004-2011 phlyLabs Berlin, http:\\/\\/phlylabs.de","authorEmail":"phlymail@phlylabs.de","authorUrl":"http:\\/\\/phlylabs.de","version":"0.8.0","description":"LIB_IDNA_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (105, 'FOF', 'library', 'fof', '', 0, 1, 1, 1, '{"name":"FOF","type":"library","creationDate":"2013-12-14","author":"Nicholas K. Dionysopoulos \\/ Akeeba Ltd","copyright":"(C)2011-2013 Nicholas K. Dionysopoulos","authorEmail":"nicholas@akeebabackup.com","authorUrl":"https:\\/\\/www.akeebabackup.com","version":"2.1.1","description":"LIB_FOF_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (106, 'PHPass', 'library', 'phpass', '', 0, 1, 1, 1, '{"name":"PHPass","type":"library","creationDate":"2004-2006","author":"Solar Designer","copyright":"","authorEmail":"solar@openwall.com","authorUrl":"http:\\/\\/www.openwall.com\\/phpass\\/","version":"0.3","description":"LIB_PHPASS_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -1744,9 +1752,13 @@ INSERT INTO `f8ad7_extensions` (`extension_id`, `name`, `type`, `element`, `fold
 (10089, 'K2 User', 'module', 'mod_k2_user', '', 0, 1, 0, 0, '{"name":"K2 User","type":"module","creationDate":"February 28th, 2014","author":"JoomlaWorks","copyright":"Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.","authorEmail":"please-use-the-contact-form@joomlaworks.net","authorUrl":"www.joomlaworks.net","version":"2.6.8","description":"K2_MOD_K2_USER_DESCRIPTION","group":""}', '{"moduleclass_sfx":"","pretext":"","":"K2_LOGIN_LOGOUT_REDIRECTION","name":"1","userAvatar":"1","userAvatarWidthSelect":"custom","userAvatarWidth":"50","menu":"","login":"","logout":"","usesecure":"0","cache":"0","cache_time":"900"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10090, 'K2 Quick Icons (admin)', 'module', 'mod_k2_quickicons', '', 1, 1, 2, 0, '{"name":"K2 Quick Icons (admin)","type":"module","creationDate":"February 28th, 2014","author":"JoomlaWorks","copyright":"Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.","authorEmail":"please-use-the-contact-form@joomlaworks.net","authorUrl":"www.joomlaworks.net","version":"2.6.8","description":"K2_QUICKICONS_FOR_USE_IN_THE_JOOMLA_CONTROL_PANEL_DASHBOARD_PAGE","group":""}', '{"modCSSStyling":"1","modLogo":"1","cache":"0","cache_time":"900"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10091, 'K2 Stats (admin)', 'module', 'mod_k2_stats', '', 1, 1, 2, 0, '{"name":"K2 Stats (admin)","type":"module","creationDate":"February 28th, 2014","author":"JoomlaWorks","copyright":"Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.","authorEmail":"please-use-the-contact-form@joomlaworks.net","authorUrl":"www.joomlaworks.net","version":"2.6.8","description":"K2_STATS_FOR_USE_IN_THE_K2_DASHBOARD_PAGE","group":""}', '{"latestItems":"1","popularItems":"1","mostCommentedItems":"1","latestComments":"1","statistics":"1","cache":"0","cache_time":"900"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10092, 'ZL Framework', 'plugin', 'zlframework', 'system', 0, 1, 1, 0, '{"name":"ZL Framework","type":"plugin","creationDate":"December 2011","author":"ZOOlanders","copyright":"Copyright (C) 2011 JOOlanders, SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.1.17","description":"PLG_ZLFRAMEWORK_SYS_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10092, 'ZL Framework', 'plugin', 'zlframework', 'system', 0, 1, 1, 0, '{"name":"ZL Framework","type":"plugin","creationDate":"December 2011","author":"ZOOlanders","copyright":"Copyright (C) 2011 JOOlanders, SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.2.1","description":"PLG_ZLFRAMEWORK_SYS_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10093, 'ZOOmailing', 'plugin', 'zoomailing', 'acymailing', 0, 1, 1, 0, '{"name":"ZOOmailing","type":"plugin","creationDate":"November 2010","author":"ZOOlanders","copyright":"Copyright (C) JOOlanders SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.1.2","description":"PLG_ZOOMAILING_SYS_DESCRIPTION","group":""}', '{"debug":"0","displayzoo":"all","removepictures":"no","removejs":"yes","zooaccess":"all"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10094, 'ZOOitem Pro', 'module', 'mod_zooitempro', '', 0, 1, 0, 0, '{"name":"ZOOitem Pro","type":"module","creationDate":"Juny 2012","author":"ZOOlanders","copyright":"Copyright (C) JOOlanders SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.1.4","description":"Item Pro module for ZOO developed by ZOOlanders (http:\\/\\/www.zoolanders.com)","group":""}', '[]', '', '', 0, '0000-00-00 00:00:00', 0, 0);
+(10094, 'ZOOitem Pro', 'module', 'mod_zooitempro', '', 0, 1, 0, 0, '{"name":"ZOOitem Pro","type":"module","creationDate":"Juny 2012","author":"ZOOlanders","copyright":"Copyright (C) JOOlanders SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.1.4","description":"Item Pro module for ZOO developed by ZOOlanders (http:\\/\\/www.zoolanders.com)","group":""}', '[]', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10095, 'zlmanager', 'component', 'com_zlmanager', '', 1, 1, 0, 0, '{"name":"ZLManager","type":"component","creationDate":"2011-12-19","author":"ZOOlanders","copyright":"Copyright (c)2011 JOOlanders SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"1.3.3","description":"ZOOlanders Extensions Manager","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10096, 'zoolanders', 'component', 'com_zoolanders', '', 1, 1, 0, 0, '{"name":"ZOOlanders","type":"component","creationDate":"December 2013","author":"ZOOlanders","copyright":"Copyright (c)2011 JOOlanders SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.2.1","description":"ZOOlanders Extension","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10097, 'zoolanders', 'package', 'pkg_zoolanders', '', 0, 1, 1, 0, '{"name":"ZOOlanders Package","type":"package","creationDate":"May 2014","author":"ZOOlanders","copyright":"Copyright (C) 2011 JOOlanders, SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.2","description":"ZOOlanders packager (http:\\/\\/www.zoolanders.com)","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10098, 'ZOOtools', 'plugin', 'zootools', 'system', 0, 1, 1, 0, '{"name":"ZOOtools","type":"plugin","creationDate":"November 2012","author":"ZOOlanders","copyright":"Copyright (C) 2012 JOOlanders SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.1","description":"PLG_ZOOTOOLS_SYS_DESCRIPTION","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -1797,7 +1809,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links` (
   `sale_price` double unsigned NOT NULL DEFAULT '0',
   `type_id` int(11) NOT NULL,
   `object` mediumblob NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=130 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=131 ;
 
 --
 -- Дамп данных таблицы `f8ad7_finder_links`
@@ -1820,7 +1832,7 @@ INSERT INTO `f8ad7_finder_links` (`link_id`, `url`, `route`, `title`, `descripti
 (126, 'index.php?option=com_zoo&view=item&id=5', 'index.php?option=com_zoo&task=item&item_id=5&Itemid=179', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС', '', '2014-10-12 18:29:49', 'e6744b73cb06f60bbfa8732c53e58804', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2235223b733a353a22616c696173223b733a32303a22726773656664677364666764662d636f70792d32223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322031353a32393a3439223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a32353a226974656d2f726773656664677364666764662d636f70792d32223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a333a22546167223b613a313a7b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d35223b733a353a22726f757465223b733a35353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d35264974656d69643d313739223b733a353a227469746c65223b733a3132313a22d09cd0b8d0bdd0bfd180d0bed0bcd182d0bed180d0b320d180d0b0d0b7d18ad18fd181d0bdd0b8d0bb2c2020d0bad0b0d0bad0b8d0b520d0bed0b3d180d0b0d0bdd0b8d187d0b5d0bdd0b8d18f2020d0b7d0b0d182d180d0bed0bdd183d18220d0b7d0b0d180d183d0b1d0b5d0b6d0bdd18bd0b520d09bd0a1223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
 (127, 'index.php?option=com_zoo&view=item&id=4', 'index.php?option=com_zoo&task=item&item_id=4&Itemid=179', 'Препарат компании Arena  Pharmaceuticals для лечения  легочной артериальной  гипертензии получил в США статус орфанного', '', '2014-10-12 18:29:57', '33b227389dab492ad2b7562d9275266b', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2234223b733a353a22616c696173223b733a31383a22726773656664677364666764662d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322031353a32393a3536223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a32333a226974656d2f726773656664677364666764662d636f7079223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a313a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d34223b733a353a22726f757465223b733a35353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d34264974656d69643d313739223b733a353a227469746c65223b733a3230323a22d09fd180d0b5d0bfd0b0d180d0b0d18220d0bad0bed0bcd0bfd0b0d0bdd0b8d0b8204172656e612020506861726d61636575746963616c7320d0b4d0bbd18f20d0bbd0b5d187d0b5d0bdd0b8d18f2020d0bbd0b5d0b3d0bed187d0bdd0bed0b920d0b0d180d182d0b5d180d0b8d0b0d0bbd18cd0bdd0bed0b92020d0b3d0b8d0bfd0b5d180d182d0b5d0bdd0b7d0b8d0b820d0bfd0bed0bbd183d187d0b8d0bb20d0b220d0a1d0a8d09020d181d182d0b0d182d183d18120d0bed180d184d0b0d0bdd0bdd0bed0b3d0be223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
 (128, 'index.php?option=com_zoo&view=item&id=3', 'index.php?option=com_zoo&task=item&item_id=3&Itemid=179', '26-летняя москвичка  переписала  книгу рекордов US Open', '', '2014-10-12 18:30:02', '64e1e79dd196cd63b2af3fe84a9a08b1', 1, 1, 1, '*', '2014-09-16 11:30:03', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2233223b733a353a22616c696173223b733a31333a2272677365666467736466676466223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322031353a33303a3031223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a31383a226974656d2f72677365666467736466676466223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a37303a22d196d0bfd0bad0b0d196d0b2d0b0d0bfd196d0b2d0b0d0bfd184d0b2d0bad0bfd184d183d0b2d0bad180d184d183d0bad0b0d180d0b2d196d184d0b0d180d196d0b2d0b5d180223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a333a22546167223b613a353a7b733a33333a22d090d0bad182d183d0b0d0bbd18cd0bdd18bd0b520d0bed0b1d0b7d0bed180d18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a33333a22d090d0bad182d183d0b0d0bbd18cd0bdd18bd0b520d0bed0b1d0b7d0bed180d18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31343a22d09dd0bed0b2d0bed181d182d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d09dd0bed0b2d0bed181d182d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34393a22d09ed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34393a22d09ed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a36333a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d187d0b5d181d0bad0b8d0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a35353a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a35353a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0bdd18bd0b520d0b8d181d181d0bbd0b5d0b4d0bed0b2d0b0d0bdd0b8d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d33223b733a353a22726f757465223b733a35353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d33264974656d69643d313739223b733a353a227469746c65223b733a39333a2232362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b02020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b02020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a33303a3033223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
-(129, 'index.php?option=com_zoo&view=item&id=2', 'index.php?option=com_zoo&task=item&item_id=2&Itemid=179', 'Фармакогенетика и фармакогеномика', '', '2014-10-12 18:30:10', '5f98bccb72b8d03eb87bc88d5e4e4c63', 1, 1, 1, '*', '2014-09-16 11:29:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2232223b733a353a22616c696173223b733a363a22786465627567223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322031353a33303a3130223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a31313a226974656d2f786465627567223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a3534363a22c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a373a224a6f75726e616c223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a224a6f75726e616c223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a31343a22d096d183d180d0bdd0b0d0bbd18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d096d183d180d0bdd0b0d0bbd18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d32223b733a353a22726f757465223b733a35353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d32264974656d69643d313739223b733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a32393a3138223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d);
+(130, 'index.php?option=com_zoo&view=item&id=2', 'index.php?option=com_zoo&task=item&item_id=2&Itemid=179', 'Фармакогенетика и фармакогеномика', '', '2014-10-12 20:11:04', '4f04bb527b5a28c48e00949266f3dc0f', 1, 1, 1, '*', '2014-09-16 11:29:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a313a2232223b733a353a22616c696173223b733a363a22786465627567223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322031373a31313a3034223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a31313a226974656d2f786465627567223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a3534363a22c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a373a224a6f75726e616c223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a224a6f75726e616c223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a323a7b733a31323a22d0a1d182d0b0d182d18cd0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31323a22d0a1d182d0b0d182d18cd0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a33393a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d32223b733a353a22726f757465223b733a35353a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d32264974656d69643d313739223b733a353a227469746c65223b733a36343a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a32393a3138223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d);
 
 -- --------------------------------------------------------
 
@@ -1935,11 +1947,11 @@ INSERT INTO `f8ad7_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
 (120, 1405, 0.48),
 (122, 1405, 0.48),
 (112, 3268, 0.48),
-(129, 3268, 0.48),
+(130, 3268, 0.48),
 (112, 3269, 1.8),
-(129, 3269, 1.8),
+(130, 3269, 1.8),
 (112, 3270, 2.28),
-(129, 3270, 2.28);
+(130, 3270, 2.28);
 
 -- --------------------------------------------------------
 
@@ -1959,17 +1971,17 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms2` (
 
 INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (112, 488, 1.7),
-(129, 488, 1.7),
+(130, 488, 1.7),
 (112, 489, 2.66339),
-(129, 489, 2.66339),
+(130, 489, 2.66339),
 (112, 490, 3.4),
-(129, 490, 3.4),
+(130, 490, 3.4),
 (113, 491, 1.2),
 (114, 491, 1.2),
 (115, 491, 1.2),
 (116, 491, 1.2),
 (112, 491, 1.7),
-(129, 491, 1.7),
+(130, 491, 1.7),
 (120, 708, 0.24),
 (122, 708, 0.24),
 (123, 708, 0.34),
@@ -2015,17 +2027,17 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (115, 3170, 2.4),
 (116, 3170, 2.4),
 (112, 3321, 1.2),
-(129, 3321, 1.2),
+(130, 3321, 1.2),
 (112, 3324, 2.24004),
-(129, 3324, 2.24004),
+(130, 3324, 2.24004),
 (112, 3325, 2.4),
-(129, 3325, 2.4),
+(130, 3325, 2.4),
 (112, 3326, 1.2),
-(129, 3326, 1.2),
+(130, 3326, 1.2),
 (112, 3327, 2.12004),
-(129, 3327, 2.12004),
+(130, 3327, 2.12004),
 (112, 3328, 2.4),
-(129, 3328, 2.4),
+(130, 3328, 2.4),
 (112, 3392, 2.83339);
 
 -- --------------------------------------------------------
@@ -2046,7 +2058,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms3` (
 
 INSERT INTO `f8ad7_finder_links_terms3` (`link_id`, `term_id`, `weight`) VALUES
 (112, 3231, 0.56004),
-(129, 3231, 0.56004);
+(130, 3231, 0.56004);
 
 -- --------------------------------------------------------
 
@@ -2098,9 +2110,9 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (126, 238, 6.4),
 (127, 238, 6.4),
 (112, 413, 0.27347),
-(129, 413, 0.27347),
+(130, 413, 0.27347),
 (112, 414, 2.66339),
-(129, 414, 2.66339),
+(130, 414, 2.66339),
 (114, 532, 4.8),
 (119, 532, 4.8),
 (121, 532, 4.8),
@@ -2153,13 +2165,13 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (115, 3165, 2.04),
 (116, 3165, 2.04),
 (112, 3252, 1.92),
-(129, 3252, 1.92),
+(130, 3252, 1.92),
 (112, 3254, 2.31996),
-(129, 3254, 2.31996),
+(130, 3254, 2.31996),
 (112, 3255, 1.88004),
-(129, 3255, 1.88004),
+(130, 3255, 1.88004),
 (112, 3256, 2.19996),
-(129, 3256, 2.19996),
+(130, 3256, 2.19996),
 (112, 3391, 2.94661),
 (123, 3411, 0.17),
 (123, 3412, 7.0668);
@@ -2230,33 +2242,33 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (120, 1433, 1.68),
 (122, 1433, 1.68),
 (112, 3233, 1.2),
-(129, 3233, 1.2),
+(130, 3233, 1.2),
 (112, 3234, 1.92),
-(129, 3234, 1.92),
+(130, 3234, 1.92),
 (112, 3235, 2.4),
-(129, 3235, 2.4),
+(130, 3235, 2.4),
 (112, 3260, 1.2),
-(129, 3260, 1.2),
+(130, 3260, 1.2),
 (112, 3261, 2.28),
-(129, 3261, 2.28),
+(130, 3261, 2.28),
 (112, 3262, 2.4),
-(129, 3262, 2.4),
+(130, 3262, 2.4),
 (112, 3263, 1.75992),
-(129, 3263, 1.75992),
+(130, 3263, 1.75992),
 (112, 3264, 2.4),
-(129, 3264, 2.4),
+(130, 3264, 2.4),
 (112, 3265, 2.4),
-(129, 3265, 2.4),
+(130, 3265, 2.4),
 (112, 3266, 1.95996),
-(129, 3266, 1.95996),
+(130, 3266, 1.95996),
 (112, 3267, 2.04),
-(129, 3267, 2.04),
+(130, 3267, 2.04),
 (112, 3318, 0.39996),
-(129, 3318, 0.39996),
+(130, 3318, 0.39996),
 (112, 3319, 2.04),
-(129, 3319, 2.04),
+(130, 3319, 2.04),
 (112, 3320, 2.4),
-(129, 3320, 2.4);
+(130, 3320, 2.4);
 
 -- --------------------------------------------------------
 
@@ -2331,33 +2343,33 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (120, 1423, 2.12004),
 (122, 1423, 2.12004),
 (112, 3294, 1.2),
-(129, 3294, 1.2),
+(130, 3294, 1.2),
 (112, 3295, 2.28),
-(129, 3295, 2.28),
+(130, 3295, 2.28),
 (112, 3296, 0.15996),
-(129, 3296, 0.15996),
+(130, 3296, 0.15996),
 (112, 3297, 1.47996),
-(129, 3297, 1.47996),
+(130, 3297, 1.47996),
 (112, 3298, 1.92),
-(129, 3298, 1.92),
+(130, 3298, 1.92),
 (112, 3299, 0.72),
-(129, 3299, 0.72),
+(130, 3299, 0.72),
 (112, 3300, 2.31996),
-(129, 3300, 2.31996),
+(130, 3300, 2.31996),
 (112, 3301, 2.4),
-(129, 3301, 2.4),
+(130, 3301, 2.4),
 (112, 3302, 0.87996),
-(129, 3302, 0.87996),
+(130, 3302, 0.87996),
 (112, 3303, 2.12004),
-(129, 3303, 2.12004),
+(130, 3303, 2.12004),
 (112, 3304, 2.4),
-(129, 3304, 2.4),
+(130, 3304, 2.4),
 (112, 3305, 0.72),
-(129, 3305, 0.72),
+(130, 3305, 0.72),
 (112, 3306, 2.07996),
-(129, 3306, 2.07996),
+(130, 3306, 2.07996),
 (112, 3307, 2.36004),
-(129, 3307, 2.36004);
+(130, 3307, 2.36004);
 
 -- --------------------------------------------------------
 
@@ -2391,7 +2403,7 @@ INSERT INTO `f8ad7_finder_links_terms8` (`link_id`, `term_id`, `weight`) VALUES
 (126, 140, 0.5334),
 (127, 140, 0.5334),
 (128, 140, 0.5334),
-(129, 140, 0.5334),
+(130, 140, 0.5334),
 (119, 141, 3.2),
 (120, 141, 3.2),
 (121, 141, 3.2),
@@ -2432,7 +2444,7 @@ INSERT INTO `f8ad7_finder_links_terms8` (`link_id`, `term_id`, `weight`) VALUES
 (115, 3146, 3.4),
 (116, 3146, 3.4),
 (112, 3387, 2.7334),
-(129, 3387, 2.7334),
+(130, 3387, 2.7334),
 (112, 3388, 3.0666);
 
 -- --------------------------------------------------------
@@ -2457,13 +2469,13 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (122, 623, 0.48),
 (125, 623, 0.48),
 (128, 623, 0.48),
-(129, 623, 0.48),
+(130, 623, 0.48),
 (112, 629, 0.96),
 (120, 629, 0.96),
 (122, 629, 0.96),
 (125, 629, 0.96),
 (128, 629, 0.96),
-(129, 629, 0.96),
+(130, 629, 0.96),
 (123, 705, 1.24661),
 (127, 705, 1.24661),
 (123, 706, 2.77661),
@@ -2519,7 +2531,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (112, 1675, 0.48),
 (119, 1675, 0.48),
 (120, 1675, 0.48),
-(129, 1675, 0.48),
+(130, 1675, 0.96),
 (113, 3166, 0.32004),
 (114, 3166, 0.32004),
 (115, 3166, 0.32004),
@@ -2533,39 +2545,40 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (115, 3168, 1.92),
 (116, 3168, 1.92),
 (112, 3232, 1.6),
-(129, 3232, 1.6),
+(130, 3232, 1.6),
 (112, 3284, 0.08004),
-(129, 3284, 0.08004),
+(130, 3284, 0.08004),
 (112, 3285, 1.71996),
-(129, 3285, 1.71996),
+(130, 3285, 1.71996),
 (112, 3286, 2.19996),
-(129, 3286, 2.19996),
+(130, 3286, 2.19996),
 (112, 3287, 1.71996),
-(129, 3287, 1.71996),
+(130, 3287, 1.71996),
 (112, 3288, 2.07996),
-(129, 3288, 2.07996),
+(130, 3288, 2.07996),
 (112, 3289, 0.63996),
-(129, 3289, 0.63996),
+(130, 3289, 0.63996),
 (112, 3290, 2.00004),
-(129, 3290, 2.00004),
+(130, 3290, 2.00004),
 (112, 3291, 2.31996),
-(129, 3291, 2.31996),
+(130, 3291, 2.31996),
 (112, 3292, 1.95996),
-(129, 3292, 1.95996),
+(130, 3292, 1.95996),
 (112, 3293, 2.04),
-(129, 3293, 2.04),
+(130, 3293, 2.04),
 (112, 3313, 0.56004),
-(129, 3313, 0.56004),
+(130, 3313, 0.56004),
 (112, 3314, 1.56),
-(129, 3314, 1.56),
+(130, 3314, 1.56),
 (112, 3315, 1.8),
-(129, 3315, 1.8),
+(130, 3315, 1.8),
 (112, 3316, 1.52004),
-(129, 3316, 1.52004),
+(130, 3316, 1.52004),
 (112, 3317, 2.00004),
-(129, 3317, 2.00004),
+(130, 3317, 2.00004),
 (112, 3389, 5.4668),
-(119, 3404, 0.56004);
+(119, 3404, 0.56004),
+(130, 3404, 0.56004);
 
 -- --------------------------------------------------------
 
@@ -2619,13 +2632,13 @@ INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 (120, 1410, 2.24004),
 (122, 1410, 2.24004),
 (112, 3271, 0.72),
-(129, 3271, 0.72),
+(130, 3271, 0.72),
 (112, 3272, 1.68),
-(129, 3272, 1.68),
+(130, 3272, 1.68),
 (112, 3273, 1.88004),
-(129, 3273, 1.88004),
+(130, 3273, 1.88004),
 (112, 3277, 0.63996),
-(129, 3277, 0.63996),
+(130, 3277, 0.63996),
 (127, 3417, 0.17);
 
 -- --------------------------------------------------------
@@ -2674,17 +2687,17 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (115, 3159, 2.24004),
 (116, 3159, 2.24004),
 (112, 3242, 0.32004),
-(129, 3242, 0.32004),
+(130, 3242, 0.32004),
 (112, 3243, 1.8),
-(129, 3243, 1.8),
+(130, 3243, 1.8),
 (112, 3244, 2.19996),
-(129, 3244, 2.19996),
+(130, 3244, 2.19996),
 (112, 3245, 1.2),
-(129, 3245, 1.2),
+(130, 3245, 1.2),
 (112, 3246, 2.19996),
-(129, 3246, 2.19996),
+(130, 3246, 2.19996),
 (112, 3247, 2.31996),
-(129, 3247, 2.31996);
+(130, 3247, 2.31996);
 
 -- --------------------------------------------------------
 
@@ -2703,7 +2716,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsc` (
 --
 
 INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
-(129, 389, 0.17),
+(130, 389, 0.17),
 (114, 389, 0.4),
 (119, 389, 0.4),
 (121, 389, 0.4),
@@ -2788,17 +2801,17 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (115, 3201, 2.94661),
 (114, 3218, 0.34),
 (112, 3236, 0.08004),
-(129, 3236, 0.08004),
+(130, 3236, 0.08004),
 (112, 3237, 1.47996),
-(129, 3237, 1.47996),
+(130, 3237, 1.47996),
 (112, 3238, 2.12004),
-(129, 3238, 2.12004),
+(130, 3238, 2.12004),
 (112, 3239, 0.80004),
-(129, 3239, 0.80004),
+(130, 3239, 0.80004),
 (112, 3240, 2.00004),
-(129, 3240, 2.00004),
+(130, 3240, 2.00004),
 (112, 3241, 2.4),
-(129, 3241, 2.4),
+(130, 3241, 2.4),
 (112, 3386, 0.34),
 (113, 3393, 0.34),
 (113, 3394, 2.66339),
@@ -2868,13 +2881,12 @@ INSERT INTO `f8ad7_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 (115, 3162, 2.4),
 (116, 3162, 2.4),
 (112, 3281, 0.56004),
-(129, 3281, 0.56004),
+(130, 3281, 0.56004),
 (112, 3282, 1.8),
-(129, 3282, 1.8),
+(130, 3282, 1.8),
 (112, 3283, 2.07996),
-(129, 3283, 2.07996),
-(112, 3390, 0.56004),
-(129, 3390, 0.56004);
+(130, 3283, 2.07996),
+(112, 3390, 0.56004);
 
 -- --------------------------------------------------------
 
@@ -2953,11 +2965,11 @@ INSERT INTO `f8ad7_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
 (120, 1425, 0.39996),
 (122, 1425, 0.39996),
 (112, 3308, 0.56004),
-(129, 3308, 0.56004),
+(130, 3308, 0.56004),
 (112, 3309, 1.76004),
-(129, 3309, 1.76004),
+(130, 3309, 1.76004),
 (112, 3310, 2.04),
-(129, 3310, 2.04),
+(130, 3310, 2.04),
 (120, 3407, 5.4668),
 (126, 3416, 0.17);
 
@@ -3129,8 +3141,9 @@ INSERT INTO `f8ad7_finder_taxonomy_map` (`link_id`, `node_id`) VALUES
 (128, 64),
 (128, 65),
 (128, 66),
-(129, 133),
-(129, 135);
+(130, 133),
+(130, 138),
+(130, 139);
 
 -- --------------------------------------------------------
 
@@ -3456,7 +3469,7 @@ INSERT INTO `f8ad7_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`,
 (3387, 'item xdebug', 'item xdebug', 0, 1, 1.3667, 'I352312', 2, '*'),
 (3388, 'item xdebug copy', 'item xdebug copy', 0, 1, 1.5333, 'I3523121', 1, '*'),
 (3389, 'xdebug copy', 'xdebug copy', 0, 1, 1.3667, 'X3121', 1, '*'),
-(3390, 'журналы', 'журналы', 0, 0, 0.4667, 'ж000', 2, '*'),
+(3390, 'журналы', 'журналы', 0, 0, 0.4667, 'ж000', 1, '*'),
 (3391, 'и фармакогеномика copy', 'и фармакогеномика copy', 0, 1, 1.7333, 'и210', 1, '*'),
 (3392, 'фармакогеномика copy', 'фармакогеномика copy', 0, 1, 1.6667, 'ф210', 1, '*'),
 (3393, '26', '26', 0, 0, 0.2, '', 1, '*'),
@@ -3465,7 +3478,7 @@ INSERT INTO `f8ad7_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`,
 (3397, '25', '25', 0, 0, 0.2, '', 1, '*'),
 (3398, '24', '24', 0, 0, 0.2, '', 1, '*'),
 (3403, '13', '13', 0, 0, 0.2, '', 1, '*'),
-(3404, 'главная', 'главная', 0, 0, 0.4667, 'г000', 1, '*'),
+(3404, 'главная', 'главная', 0, 0, 0.4667, 'г000', 2, '*'),
 (3406, '14', '14', 0, 0, 0.2, '', 1, '*'),
 (3407, '3 copy copy', '3 copy copy', 0, 1, 1.3667, 'C121', 1, '*'),
 (3409, '11', '11', 0, 0, 0.2, '', 1, '*'),
@@ -3951,14 +3964,14 @@ CREATE TABLE IF NOT EXISTS `f8ad7_menu` (
   `home` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Indicates if this menu item is the home or default page.',
   `language` char(7) NOT NULL DEFAULT '',
   `client_id` tinyint(4) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=197 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=199 ;
 
 --
 -- Дамп данных таблицы `f8ad7_menu`
 --
 
 INSERT INTO `f8ad7_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 159, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 163, 0, '*', 0),
 (2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'menu', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -4034,7 +4047,9 @@ INSERT INTO `f8ad7_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (193, 'main', 'K2_EXTRA_FIELD_GROUPS', 'k2-extra-field-groups', '', 'com-k2/k2-extra-field-groups', 'index.php?option=com_k2&view=extrafieldsgroups', 'component', 0, 185, 2, 10014, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '', 152, 153, 0, '', 1),
 (194, 'main', 'K2_MEDIA_MANAGER', 'k2-media-manager', '', 'com-k2/k2-media-manager', 'index.php?option=com_k2&view=media', 'component', 0, 185, 2, 10014, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '', 154, 155, 0, '', 1),
 (195, 'main', 'K2_INFORMATION', 'k2-information', '', 'com-k2/k2-information', 'index.php?option=com_k2&view=info', 'component', 0, 185, 2, 10014, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '', 156, 157, 0, '', 1),
-(196, 'left-nav', 'Видео', 'video', '', 'video', 'index.php?option=com_zoo&view=category&layout=category', 'component', 1, 1, 1, 10031, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"category":"22","application":"3","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 19, 20, 0, '*', 0);
+(196, 'left-nav', 'Видео', 'video', '', 'video', 'index.php?option=com_zoo&view=category&layout=category', 'component', 1, 1, 1, 10031, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"category":"22","application":"3","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 19, 20, 0, '*', 0),
+(197, 'main', 'COM_ZLMANAGER', 'com-zlmanager', '', 'com-zlmanager', 'index.php?option=com_zlmanager', 'component', 0, 1, 1, 10095, 0, '0000-00-00 00:00:00', 0, 1, '../media/com_zlmanager/images/zlmanager-16.png', 0, '', 159, 160, 0, '', 1),
+(198, 'main', 'COM_ZOOLANDERS', 'com-zoolanders', '', 'com-zoolanders', 'index.php?option=com_zoolanders', 'component', 0, 1, 1, 10096, 0, '0000-00-00 00:00:00', 0, 1, '../media/com_zoolanders/img/zoolanders-16.png', 0, '', 161, 162, 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -4112,7 +4127,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_modules` (
   `params` text NOT NULL,
   `client_id` tinyint(4) NOT NULL DEFAULT '0',
   `language` char(7) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=135 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=141 ;
 
 --
 -- Дамп данных таблицы `f8ad7_modules`
@@ -4167,13 +4182,19 @@ INSERT INTO `f8ad7_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (125, 296, 'Logo', '', '<header><h2>Фармакогенетика<p>Фармакогеномика</p></h2></header>', 1, 'logo', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (126, 297, 'Поиск', '', '', 1, 'search', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_search', 1, 1, '{"label":"","width":"20","text":"","button":"1","button_pos":"right","imagebutton":"1","button_text":"","opensearch":"1","opensearch_title":"","set_itemid":"0","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"search_mod","style":"0"}', 0, '*'),
 (127, 298, 'fdhgdfgh', '', '', 1, 'bot_nav', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_zooitem', 1, 1, '{"theme":"list","layout":"default","media_position":"left","application":"3","mode":"item","type":"article-2","category":"","item_id":"2","subcategories":"0","count":"4","order":["_itemname","",""],"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(128, 299, 'Рубрики журнала', '', '', 1, 'before_component', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zootag', 1, 1, '{"theme":"list","mode":"all","type":"article-2","category":"","application":"3","subcategories":"0","count":"100","order":"alpha","menu_item":"","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(128, 299, 'Рубрики журнала', '', '', 1, 'tags', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zootag', 1, 1, '{"theme":"list","mode":"all","type":"article-2","category":"","application":"3","subcategories":"0","count":"100","order":"alpha","menu_item":"","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (129, 300, 'Топ за неделю', '', '', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_zooitem', 1, 1, '{"theme":"list","layout":"default","media_position":"left","application":"3","mode":"categories","type":"article-2","category":"6","item_id":"3","subcategories":"0","count":"5","order":["_itemhits","","","","_reversed"],"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (130, 303, 'Реклама', '', '<img class="ad" src="images/rek.jpg" alt="rek" />', 1, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (131, 304, 'Наши проекты', '', '[widgetkit id=1]', 1, 'projects', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"1","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (132, 323, 'Топ Библиотеки', '', '', 1, 'after_component', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_zooitem', 1, 1, '{"theme":"list","layout":"default","media_position":"left","application":"6","mode":"categories","type":"item","category":"7","item_id":"0","subcategories":"1","count":"5","order":["_itemhits","","_reversed"],"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (133, 326, 'Подписка', '', '', 1, 'subscription', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_acymailing', 1, 1, '{"effect":"normal","lists":"None","hiddenlists":"All","displaymode":"vertical","listschecked":"All","checkmode":"0","dropdown":"0","overlay":"0","link":"1","listposition":"before","customfields":"email","nametext":"","emailtext":"","fieldsize":"80%","displayfields":"0","introtext":"","finaltext":"","showsubscribe":"1","subscribetext":"","subscribetextreg":"","showunsubscribe":"1","unsubscribetext":"","redirectmode":"3","redirectlink":"","redirectlinkunsub":"","showterms":"0","showtermspopup":"1","termscontent":"0","mootoolsintro":"","mootoolsbutton":"","boxwidth":"250","boxheight":"200","moduleclass_sfx":"","textalign":"none","loggedin":"1","cache":"0","includejs":"header","itemid":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(134, 331, 'ZOOitem Pro', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_zooitempro', 1, 1, '', 0, '*');
+(134, 331, 'Топ за всё время', '', '', 1, 'popular', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_zooitempro', 1, 1, '{"layout":{"_layout":"default.php","renderer_layout":"default.php","cache_time":"10"},"media_position":"left","items":{"_chosenapps":["3"],"_chosencats":["0","15","14","6","5","4","18","17","16","20","19","21","22"],"_chosentypes":["article-2","article","author","item"],"itemfilter":{"_created_by":"","_state":"1","_frontpage":"","_offset":"0","_limit":"10","dates":{"created":{"_filter":"1","type":"period","period_mode":"dynamic","value":"","value_to":"","interval":"1","interval_unit":"YEAR"},"modified":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published_down":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"}},"elements":{"89335a61-ea45-4fad-b16f-488154d4f8e2":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"b3cf5464-43d7-415a-a378-9acd60da43ba":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"f0541003-23b2-44b7-abe8-b69c07224135":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"}}},"itemorder":{"_reversed":"_reversed","_core":"_itemhits","_article-2":"","_article":"","_author":"","_item":""}},"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(135, 332, 'Главная :: Топ 5 за все время', '', '', 1, 'popular', 445, '2014-10-12 21:01:57', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zooitempro', 1, 1, '{"layout":{"_layout":"default.php","renderer_layout":"default.php","cache_time":"3600"},"media_position":"left","items":{"_chosenapps":["3"],"itemfilter":{"_created_by":"","_state":"1","_frontpage":"","_offset":"","_limit":"5","dates":{"created":{"type":"period","period_mode":"dynamic","value":"","value_to":"","interval":"365","interval_unit":"YEAR"},"modified":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published_down":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"}},"elements":{"89335a61-ea45-4fad-b16f-488154d4f8e2":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"b3cf5464-43d7-415a-a378-9acd60da43ba":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"f0541003-23b2-44b7-abe8-b69c07224135":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"}}},"itemorder":{"_reversed":"_reversed","_core":"_itemhits","_article-2":"","_article":"","_author":"","_item":""}},"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(136, 333, 'Главная :: Топ 5 за неделю', '', '', 1, 'popular', 445, '2014-10-12 21:03:52', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zooitempro', 1, 1, '{"layout":{"_layout":"default.php","renderer_layout":"default.php","cache_time":"3600"},"media_position":"left","items":{"_chosenapps":["3"],"_chosencats":["0","15","14","6","5","4","18","17","16","20","19","21","22"],"_chosentypes":["article-2","article","author","item"],"itemfilter":{"_created_by":"","_state":"1","_frontpage":"","_offset":"","_limit":"5","dates":{"created":{"_filter":"1","type":"period","period_mode":"dynamic","value":"2014-10-10 00:00:00","value_to":"","interval":"1","interval_unit":"WEEK"},"modified":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published":{"type":"period","period_mode":"dynamic","value":"2014-10-12 00:00:00","value_to":"","interval":"1","interval_unit":"YEAR"},"published_down":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"}},"elements":{"89335a61-ea45-4fad-b16f-488154d4f8e2":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"b3cf5464-43d7-415a-a378-9acd60da43ba":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"f0541003-23b2-44b7-abe8-b69c07224135":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"}}},"itemorder":{"_reversed":"_reversed","_core":"_itemhits","_article-2":"","_article":"","_author":"","_item":""}},"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(137, 334, 'Главная :: Топ 5 за месяц', '', '', 1, 'popular', 445, '2014-10-12 21:05:59', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zooitempro', 1, 1, '{"layout":{"_layout":"default.php","renderer_layout":"default.php","cache_time":"3600"},"media_position":"left","items":{"_chosenapps":["3"],"itemfilter":{"_created_by":"","_state":"1","_frontpage":"","_offset":"","_limit":"5","dates":{"created":{"_filter":"1","type":"period","period_mode":"dynamic","value":"2014-10-10 00:00:00","value_to":"","interval":"1","interval_unit":"MONTH"},"modified":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published_down":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"}},"elements":{"89335a61-ea45-4fad-b16f-488154d4f8e2":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"b3cf5464-43d7-415a-a378-9acd60da43ba":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"f0541003-23b2-44b7-abe8-b69c07224135":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"}}},"itemorder":{"_reversed":"_reversed","_core":"_itemhits","_article-2":"","_article":"","_author":"","_item":""}},"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(138, 335, 'Главная :: Топ 5 за неделю (2)', '', '', 1, 'popular', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_zooitempro', 1, 1, '{"layout":{"_layout":"default.php","renderer_layout":"default.php","cache_time":"3600"},"media_position":"left","items":{"_chosenapps":["3"],"itemfilter":{"_created_by":"","_state":"1","_frontpage":"","_offset":"","_limit":"5","dates":{"created":{"_filter":"1","type":"period","period_mode":"dynamic","value":"2014-10-10","value_to":"","interval":"1","interval_unit":"WEEK"},"modified":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published_down":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"}},"elements":{"89335a61-ea45-4fad-b16f-488154d4f8e2":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"b3cf5464-43d7-415a-a378-9acd60da43ba":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"f0541003-23b2-44b7-abe8-b69c07224135":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"}}},"itemorder":{"_core":"_itemaccess","_article-2":"","_article":"","_author":"","_item":""}},"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(139, 336, 'Главная :: Топ 5 за все время (2)', '', '', 1, 'popular', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_zooitempro', 1, 1, '{"layout":{"_layout":"default.php","renderer_layout":"default.php","cache_time":"3600"},"media_position":"left","items":{"_chosenapps":["3"],"itemfilter":{"_created_by":"","_state":"1","_frontpage":"","_offset":"","_limit":"5","dates":{"created":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"modified":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published_down":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"}},"elements":{"89335a61-ea45-4fad-b16f-488154d4f8e2":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"b3cf5464-43d7-415a-a378-9acd60da43ba":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"f0541003-23b2-44b7-abe8-b69c07224135":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"}}},"itemorder":{"_core":"_itemaccess","_article-2":"","_article":"","_author":"","_item":""}},"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(140, 337, 'Главная :: Топ 5 за месяц (2)', '', '', 1, 'popular', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_zooitempro', 1, 1, '{"layout":{"_layout":"default.php","renderer_layout":"default.php","cache_time":"3600"},"media_position":"left","items":{"_chosenapps":["3"],"itemfilter":{"_created_by":"","_state":"1","_frontpage":"","_offset":"","_limit":"5","dates":{"created":{"_filter":"1","type":"period","period_mode":"dynamic","value":"2014-10-10 00:00:00","value_to":"","interval":"1","interval_unit":"MONTH"},"modified":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published_down":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"}},"elements":{"89335a61-ea45-4fad-b16f-488154d4f8e2":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"b3cf5464-43d7-415a-a378-9acd60da43ba":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"f0541003-23b2-44b7-abe8-b69c07224135":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"}}},"itemorder":{"_core":"_itemaccess","_article-2":"","_article":"","_author":"","_item":""}},"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -4327,7 +4348,13 @@ INSERT INTO `f8ad7_modules_menu` (`moduleid`, `menuid`) VALUES
 (130, 0),
 (131, 0),
 (132, 182),
-(133, 0);
+(133, 0),
+(135, 0),
+(136, 0),
+(137, 0),
+(138, 0),
+(139, 0),
+(140, 0);
 
 -- --------------------------------------------------------
 
@@ -4448,7 +4475,8 @@ CREATE TABLE IF NOT EXISTS `f8ad7_schemas` (
 --
 
 INSERT INTO `f8ad7_schemas` (`extension_id`, `version_id`) VALUES
-(700, '3.3.0-2014-04-02');
+(700, '3.3.0-2014-04-02'),
+(10096, '0.0.1');
 
 -- --------------------------------------------------------
 
@@ -4471,8 +4499,8 @@ CREATE TABLE IF NOT EXISTS `f8ad7_session` (
 --
 
 INSERT INTO `f8ad7_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('jhtjf6255723t71kkc7dk5lia6', 1, 0, '1413127815', '__default|a:9:{s:15:"session.counter";i:539;s:19:"session.timer.start";i:1413113299;s:18:"session.timer.last";i:1413127805;s:17:"session.timer.now";i:1413127810;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":9:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:2:{i:0;i:129;i:1;i:134;}}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:13:"com_installer";O:8:"stdClass":3:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";s:12:"redirect_url";N;}s:14:"com_acymailing";O:8:"stdClass":2:{s:3:"tag";s:25:"acymailingzoomailing_show";s:10:"zoomailing";O:8:"stdClass":8:{s:12:"filter_order";s:4:"a.id";s:16:"filter_order_Dir";s:4:"desc";s:6:"search";s:0:"";s:10:"filter_app";i:6;s:11:"filter_type";N;s:10:"filter_cat";N;s:10:"filter_tag";N;s:10:"limitstart";i:0;}}s:11:"com_plugins";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:6:"plugin";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}}s:9:"com_menus";O:8:"stdClass":2:{s:5:"items";O:8:"stdClass":3:{s:8:"menutype";s:7:"top-nav";s:10:"limitstart";i:0;s:4:"list";a:4:{s:9:"direction";s:3:"asc";s:5:"limit";s:2:"20";s:8:"ordering";s:5:"a.lft";s:5:"start";d:0;}}s:4:"edit";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":4:{s:2:"id";a:2:{i:1;i:181;i:2;i:147;}s:4:"data";N;s:4:"type";N;s:4:"link";N;}}}s:11:"com_content";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:7:"article";O:8:"stdClass":1:{s:4:"data";N;}}}s:18:"com_zooapplication";i:3;s:20:"plg_zlfw_zlfieldtype";s:4:"item";}}s:4:"user";O:5:"JUser":28:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"445";s:4:"name";s:10:"Super User";s:8:"username";s:4:"root";s:5:"email";s:18:"chevil92@gmail.com";s:8:"password";s:60:"$2y$10$71M5MHRnZkrN/brxhgzzIOLyNwyCG33qwnZPi66.Hv3NYiwN/638i";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-15 13:41:46";s:13:"lastvisitDate";s:19:"2014-10-11 13:55:32";s:10:"activation";s:1:"0";s:6:"params";s:0:"";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";s:10:"superadmin";b:1;}s:13:"session.token";s:32:"2a95493636de7b695a49b550561f0d52";s:20:"com_media.return_url";s:99:"index.php?option=com_media&view=images&tmpl=component&fieldid=&e_name=image-select-0&asset=&author=";}__wf|a:1:{s:13:"session.token";s:32:"f28733bab5085d4c387a8eaaf8f1248b";}', 445, 'root'),
-('lqbirqg8kjo8geobe6fu4tcsi1', 0, 1, '1413129447', '__default|a:9:{s:15:"session.counter";i:119;s:19:"session.timer.start";i:1413113310;s:18:"session.timer.last";i:1413129171;s:17:"session.timer.now";i:1413129445;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}s:13:"session.token";s:32:"5109628885232d78e902bd905faffdc8";s:17:"application.queue";a:3:{i:0;a:2:{s:7:"message";N;s:4:"type";s:7:"message";}i:1;a:2:{s:7:"message";N;s:4:"type";s:7:"message";}i:2;a:2:{s:7:"message";N;s:4:"type";s:7:"message";}}}', 0, '');
+('jhtjf6255723t71kkc7dk5lia6', 1, 0, '1413147963', '__default|a:9:{s:15:"session.counter";i:833;s:19:"session.timer.start";i:1413113299;s:18:"session.timer.last";i:1413147959;s:17:"session.timer.now";i:1413147960;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":10:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:4:{i:0;i:129;i:3;i:136;i:4;i:135;i:5;i:137;}}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:13:"com_installer";O:8:"stdClass":3:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";s:12:"redirect_url";N;}s:14:"com_acymailing";O:8:"stdClass":2:{s:3:"tag";s:25:"acymailingzoomailing_show";s:10:"zoomailing";O:8:"stdClass":8:{s:12:"filter_order";s:4:"a.id";s:16:"filter_order_Dir";s:4:"desc";s:6:"search";s:0:"";s:10:"filter_app";i:6;s:11:"filter_type";N;s:10:"filter_cat";N;s:10:"filter_tag";N;s:10:"limitstart";i:0;}}s:11:"com_plugins";O:8:"stdClass":2:{s:4:"edit";O:8:"stdClass":1:{s:6:"plugin";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}s:7:"plugins";O:8:"stdClass":4:{s:6:"filter";O:8:"stdClass":4:{s:6:"search";s:0:"";s:6:"access";i:0;s:7:"enabled";s:0:"";s:6:"folder";s:0:"";}s:8:"ordercol";s:6:"folder";s:9:"orderdirn";s:3:"asc";s:10:"limitstart";s:1:"0";}}s:9:"com_menus";O:8:"stdClass":2:{s:5:"items";O:8:"stdClass":3:{s:8:"menutype";s:7:"top-nav";s:10:"limitstart";i:0;s:4:"list";a:4:{s:9:"direction";s:3:"asc";s:5:"limit";s:2:"20";s:8:"ordering";s:5:"a.lft";s:5:"start";d:0;}}s:4:"edit";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":4:{s:2:"id";a:2:{i:1;i:181;i:2;i:147;}s:4:"data";N;s:4:"type";N;s:4:"link";N;}}}s:11:"com_content";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:7:"article";O:8:"stdClass":1:{s:4:"data";N;}}}s:18:"com_zooapplication";i:3;s:20:"plg_zlfw_zlfieldtype";s:7:"article";s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:0;}}}}s:4:"user";O:5:"JUser":29:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"445";s:4:"name";s:10:"Super User";s:8:"username";s:4:"root";s:5:"email";s:18:"chevil92@gmail.com";s:8:"password";s:60:"$2y$10$71M5MHRnZkrN/brxhgzzIOLyNwyCG33qwnZPi66.Hv3NYiwN/638i";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-15 13:41:46";s:13:"lastvisitDate";s:19:"2014-10-11 13:55:32";s:10:"activation";s:1:"0";s:6:"params";s:0:"";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";s:10:"superadmin";b:1;s:3:"gid";i:1000;}s:13:"session.token";s:32:"2a95493636de7b695a49b550561f0d52";s:20:"com_media.return_url";s:99:"index.php?option=com_media&view=images&tmpl=component&fieldid=&e_name=image-select-0&asset=&author=";}__wf|a:1:{s:13:"session.token";s:32:"f28733bab5085d4c387a8eaaf8f1248b";}', 445, 'root'),
+('lqbirqg8kjo8geobe6fu4tcsi1', 0, 1, '1413147970', '__default|a:9:{s:15:"session.counter";i:479;s:19:"session.timer.start";i:1413113310;s:18:"session.timer.last";i:1413147967;s:17:"session.timer.now";i:1413147970;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}s:13:"session.token";s:32:"5109628885232d78e902bd905faffdc8";s:17:"application.queue";a:5:{i:0;a:2:{s:7:"message";N;s:4:"type";s:7:"message";}i:1;a:2:{s:7:"message";N;s:4:"type";s:7:"message";}i:2;a:2:{s:7:"message";N;s:4:"type";s:7:"message";}i:3;a:2:{s:7:"message";N;s:4:"type";s:7:"message";}i:4;a:2:{s:7:"message";N;s:4:"type";s:7:"message";}}}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -4674,63 +4702,63 @@ CREATE TABLE IF NOT EXISTS `f8ad7_updates` (
 --
 
 INSERT INTO `f8ad7_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `extra_query`) VALUES
-(1, 3, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
-(2, 3, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
-(3, 3, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
-(4, 3, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
-(5, 3, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.3.6.2', '', 'http://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
-(6, 3, 0, 'Galician', '', 'pkg_gl-ES', 'package', '', 0, '3.3.1.2', '', 'http://update.joomla.org/language/details3/gl-ES_details.xml', '', ''),
-(7, 3, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
-(8, 3, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
-(9, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
-(10, 3, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
-(11, 3, 0, 'EnglishAU', '', 'pkg_en-AU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
-(12, 3, 0, 'EnglishUS', '', 'pkg_en-US', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-US_details.xml', '', ''),
-(13, 3, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
-(14, 3, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.2.0.2', '', 'http://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
-(15, 3, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
-(16, 3, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
-(17, 3, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
-(18, 3, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
-(19, 3, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
-(20, 3, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
-(21, 3, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.3.6.2', '', 'http://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
-(22, 3, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.3.5.1', '', 'http://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
-(23, 3, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
-(24, 3, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
-(25, 3, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
-(26, 3, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.2.3.1', '', 'http://update.joomla.org/language/details3/ko-KR_details.xml', '', ''),
-(27, 3, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
-(28, 3, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
-(29, 3, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.2.2.1', '', 'http://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
-(30, 3, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/fa-IR_details.xml', '', ''),
-(31, 3, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
-(32, 3, 0, 'Portuguese', '', 'pkg_pt-PT', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/pt-PT_details.xml', '', ''),
-(33, 3, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/ru-RU_details.xml', '', ''),
-(34, 3, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
-(35, 3, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.3.3.3', '', 'http://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
-(36, 3, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
-(37, 3, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
-(38, 3, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
-(39, 3, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.3.5.1', '', 'http://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
-(40, 3, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.3.3.15', '', 'http://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
-(41, 3, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
-(42, 3, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
-(43, 3, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.0.2.1', '', 'http://update.joomla.org/language/details3/pt-BR_details.xml', '', ''),
-(44, 3, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
-(45, 3, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
-(46, 3, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
-(47, 3, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
-(48, 3, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
-(49, 3, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.3.0.2', '', 'http://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
-(50, 3, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
-(51, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
-(52, 3, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
-(53, 3, 0, 'EnglishCA', '', 'pkg_en-CA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
-(54, 3, 0, 'FrenchCA', '', 'pkg_fr-CA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
-(55, 3, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
-(56, 3, 0, 'Sinhala', '', 'pkg_si-LK', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/si-LK_details.xml', '', ''),
-(57, 6, 10061, 'AcyMailing Starter', 'Latest version of AcyMailing Starter', 'com_acymailing', 'component', '', 1, '4.8.0', '', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 'http://www.acyba.com', '');
+(1, 6, 10061, 'AcyMailing Starter', 'Latest version of AcyMailing Starter', 'com_acymailing', 'component', '', 1, '4.8.0', '', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 'http://www.acyba.com', ''),
+(2, 3, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
+(3, 3, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
+(4, 3, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
+(5, 3, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
+(6, 3, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.3.6.2', '', 'http://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
+(7, 3, 0, 'Galician', '', 'pkg_gl-ES', 'package', '', 0, '3.3.1.2', '', 'http://update.joomla.org/language/details3/gl-ES_details.xml', '', ''),
+(8, 3, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
+(9, 3, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
+(10, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
+(11, 3, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
+(12, 3, 0, 'EnglishAU', '', 'pkg_en-AU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
+(13, 3, 0, 'EnglishUS', '', 'pkg_en-US', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-US_details.xml', '', ''),
+(14, 3, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
+(15, 3, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.2.0.2', '', 'http://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
+(16, 3, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
+(17, 3, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
+(18, 3, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
+(19, 3, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
+(20, 3, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
+(21, 3, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
+(22, 3, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.3.6.2', '', 'http://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
+(23, 3, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.3.5.1', '', 'http://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
+(24, 3, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
+(25, 3, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
+(26, 3, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
+(27, 3, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.2.3.1', '', 'http://update.joomla.org/language/details3/ko-KR_details.xml', '', ''),
+(28, 3, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
+(29, 3, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
+(30, 3, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.2.2.1', '', 'http://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
+(31, 3, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/fa-IR_details.xml', '', ''),
+(32, 3, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
+(33, 3, 0, 'Portuguese', '', 'pkg_pt-PT', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/pt-PT_details.xml', '', ''),
+(34, 3, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/ru-RU_details.xml', '', ''),
+(35, 3, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
+(36, 3, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.3.3.3', '', 'http://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
+(37, 3, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
+(38, 3, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
+(39, 3, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
+(40, 3, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.3.5.1', '', 'http://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
+(41, 3, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.3.3.15', '', 'http://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
+(42, 3, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
+(43, 3, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
+(44, 3, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.0.2.1', '', 'http://update.joomla.org/language/details3/pt-BR_details.xml', '', ''),
+(45, 3, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
+(46, 3, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
+(47, 3, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
+(48, 3, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
+(49, 3, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
+(50, 3, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.3.0.2', '', 'http://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
+(51, 3, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.3.4.1', '', 'http://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
+(52, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
+(53, 3, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
+(54, 3, 0, 'EnglishCA', '', 'pkg_en-CA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
+(55, 3, 0, 'FrenchCA', '', 'pkg_fr-CA', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
+(56, 3, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
+(57, 3, 0, 'Sinhala', '', 'pkg_si-LK', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/si-LK_details.xml', '', '');
 
 -- --------------------------------------------------------
 
@@ -4754,11 +4782,11 @@ CREATE TABLE IF NOT EXISTS `f8ad7_update_sites` (
 
 INSERT INTO `f8ad7_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
 (1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 0, ''),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1413056105, ''),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1413056105, ''),
-(4, 'WebInstaller Update Site', 'extension', 'http://appscdn.joomla.org/webapps/jedapps/webinstaller.xml', 1, 1413056105, ''),
-(6, 'AcyMailing', 'extension', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 1, 1413056105, ''),
-(7, 'K2 Updates', 'extension', 'http://getk2.org/update.xml', 1, 1413056105, '');
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1413140266, ''),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1413140266, ''),
+(4, 'WebInstaller Update Site', 'extension', 'http://appscdn.joomla.org/webapps/jedapps/webinstaller.xml', 1, 1413140266, ''),
+(6, 'AcyMailing', 'extension', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 1, 1413140266, ''),
+(7, 'K2 Updates', 'extension', 'http://getk2.org/update.xml', 1, 1413140266, '');
 
 -- --------------------------------------------------------
 
@@ -5156,11 +5184,11 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_category_item` (
 --
 
 INSERT INTO `f8ad7_zoo_category_item` (`category_id`, `item_id`) VALUES
+(4, 2),
 (5, 24),
 (5, 25),
 (5, 26),
 (5, 27),
-(6, 2),
 (6, 3),
 (6, 4),
 (6, 5),
@@ -5243,7 +5271,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_item` (
 --
 
 INSERT INTO `f8ad7_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `created`, `modified`, `modified_by`, `publish_up`, `publish_down`, `priority`, `hits`, `state`, `access`, `created_by`, `created_by_alias`, `searchable`, `elements`, `params`) VALUES
-(2, 3, 'article', 'Фармакогенетика и фармакогеномика', 'xdebug', '2014-09-16 11:29:18', '2014-10-12 15:30:10', 445, '2014-09-16 11:29:18', '0000-00-00 00:00:00', 0, 789, 1, 1, 445, '', 1, ' {\n	"bf587f28-0a72-4be7-88a1-91a14e77039e":  {\n		"file": "images\\/logo_journal.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 519,\n		"height": 405\n	},\n	"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":  {\n		"0":  {\n			"value": "<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>"\n		}\n	},\n	"28f03c2c-57b1-4901-9554-fd9e8f52b08e":  {\n		"item":  {\n			"0": "4",\n			"1": "3",\n			"2": "5",\n			"3": "8",\n			"4": "10",\n			"5": "9",\n			"6": "13",\n			"7": "14",\n			"8": "11",\n			"9": "12"\n		}\n	},\n	"a5fdc953-00bc-454a-b7eb-1932d78c58e9":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
+(2, 3, 'article', 'Фармакогенетика и фармакогеномика', 'xdebug', '2014-09-16 11:29:18', '2014-10-12 17:11:04', 445, '2014-09-16 11:29:18', '0000-00-00 00:00:00', 0, 789, 1, 1, 445, '', 1, ' {\n	"bf587f28-0a72-4be7-88a1-91a14e77039e":  {\n		"file": "images\\/logo_journal.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 519,\n		"height": 405\n	},\n	"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":  {\n		"0":  {\n			"value": "<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>"\n		}\n	},\n	"28f03c2c-57b1-4901-9554-fd9e8f52b08e":  {\n		"item":  {\n			"0": "4",\n			"1": "3",\n			"2": "5",\n			"3": "8",\n			"4": "10",\n			"5": "9",\n			"6": "13",\n			"7": "14",\n			"8": "11",\n			"9": "12"\n		}\n	},\n	"a5fdc953-00bc-454a-b7eb-1932d78c58e9":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (3, 3, 'article-2', '26-летняя москвичка  переписала  книгу рекордов US Open', 'rgsefdgsdfgdf', '2014-09-16 11:30:03', '2014-10-12 15:30:01', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 24, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art1.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 233,\n		"height": 116\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"93201135-367c-40dc-b5a3-f11afe146908":  {\n		"value": "106"\n	},\n	"366ae034-034e-4f00-8ff6-cffabbca4e23":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	},\n	"6a6697aa-3af4-4701-839f-c53093196605":  {\n\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (4, 3, 'article-2', 'Препарат компании Arena  Pharmaceuticals для лечения  легочной артериальной  гипертензии получил в США статус орфанного', 'rgsefdgsdfgdf-copy', '2014-09-27 16:03:16', '2014-10-12 15:29:56', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 2, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art2.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 239,\n		"height": 135\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"93201135-367c-40dc-b5a3-f11afe146908":  {\n		"value": "106"\n	},\n	"366ae034-034e-4f00-8ff6-cffabbca4e23":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	},\n	"6a6697aa-3af4-4701-839f-c53093196605":  {\n\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (5, 3, 'article-2', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС', 'rgsefdgsdfgdf-copy-2', '2014-10-03 08:50:17', '2014-10-12 15:29:49', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 3, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art3.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 276,\n		"height": 128\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"93201135-367c-40dc-b5a3-f11afe146908":  {\n		"value": "106"\n	},\n	"366ae034-034e-4f00-8ff6-cffabbca4e23":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	},\n	"6a6697aa-3af4-4701-839f-c53093196605":  {\n\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
@@ -5300,6 +5328,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_search_index` (
 --
 
 INSERT INTO `f8ad7_zoo_search_index` (`item_id`, `element_id`, `value`) VALUES
+(2, 'c4e7ae4e-ff94-4e71-8d5d-b1fec7599585', '«Фармакогенетика и фармакогеномика» публикует оригинальные статьи о проведённых клинических, клинико-экспериментальных и фундаментальных научных работах, обзоры, лекции, описания клинических случаев, а также вспомогательные материалы по всем актуальным проблемам персонаизированной медицины'),
 (3, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
 (4, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
 (5, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
@@ -5310,7 +5339,6 @@ INSERT INTO `f8ad7_zoo_search_index` (`item_id`, `element_id`, `value`) VALUES
 (11, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
 (13, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
 (14, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
-(2, 'c4e7ae4e-ff94-4e71-8d5d-b1fec7599585', '«Фармакогенетика и фармакогеномика» публикует оригинальные статьи о проведённых клинических, клинико-экспериментальных и фундаментальных научных работах, обзоры, лекции, описания клинических случаев, а также вспомогательные материалы по всем актуальным проблемам персонаизированной медицины'),
 (24, 'b3cf5464-43d7-415a-a378-9acd60da43ba', 'Один из выдающихся авторов журнала Формакогенетика Фармакогеномика.'),
 (25, 'b3cf5464-43d7-415a-a378-9acd60da43ba', 'Один из выдающихся авторов журнала Формакогенетика Фармакогеномика.'),
 (26, 'b3cf5464-43d7-415a-a378-9acd60da43ba', 'Один из выдающихся авторов журнала Формакогенетика Фармакогеномика.'),
@@ -6151,7 +6179,7 @@ MODIFY `urlid` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `f8ad7_assets`
 --
 ALTER TABLE `f8ad7_assets`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=332;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=340;
 --
 -- AUTO_INCREMENT for table `f8ad7_banners`
 --
@@ -6191,7 +6219,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `f8ad7_extensions`
 --
 ALTER TABLE `f8ad7_extensions`
-MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10095;
+MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10099;
 --
 -- AUTO_INCREMENT for table `f8ad7_finder_filters`
 --
@@ -6201,7 +6229,7 @@ MODIFY `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `f8ad7_finder_links`
 --
 ALTER TABLE `f8ad7_finder_links`
-MODIFY `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=130;
+MODIFY `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=131;
 --
 -- AUTO_INCREMENT for table `f8ad7_finder_taxonomy`
 --
@@ -6281,7 +6309,7 @@ MODIFY `lang_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `f8ad7_menu`
 --
 ALTER TABLE `f8ad7_menu`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=197;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=199;
 --
 -- AUTO_INCREMENT for table `f8ad7_menu_types`
 --
@@ -6296,7 +6324,7 @@ MODIFY `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `f8ad7_modules`
 --
 ALTER TABLE `f8ad7_modules`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=135;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=141;
 --
 -- AUTO_INCREMENT for table `f8ad7_newsfeeds`
 --

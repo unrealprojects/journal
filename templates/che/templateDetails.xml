@@ -27,13 +27,14 @@
                 <position>authorization</position>
                 <position>search</position>
 
+
                 <position>before_component</position>
                 <position>after_component</position>
                 <position>projects</position>
                 <position>subscription</position>
 
                 <position>tags</position>
-                <position>popular_left</position>
+                <position>popular</position>
                 <position>popular_right</position>
         </positions>
 </extension>

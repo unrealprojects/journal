@@ -2,7 +2,7 @@
 
     <div class="content Grid Split">
 
-        <?php if ($this->countModules('tags') || $this->countModules('popular_left')) : ?>
+        <?php // if ($this->countModules('tags') || $this->countModules('popular_left')) : ?>
             <div class="Before-Component  Node-XXS-3">
                 <div class="Tags">
                     <h3>Рубрики журнала</h3>
@@ -21,16 +21,20 @@
                             </ul>
                         </div>
                     </div>
-
+                    <jdoc:include type="modules" name="popular"/>
                 </div>
 
             </div>
-        <?php endif; ?>
+        <?php // endif; ?>
 
-        <jdoc:include type="modules" name="popular_left" />
+
+
+        <jdoc:include type="modules" name="popular_right" />
             <div class="Component Node-XXS-9">
                 <jdoc:include type="component" />
             </div>
+
+
 
         <?php if($this->countModules('after_component')) : ?>
             <div class="Before-Component Node-XSS-3">
