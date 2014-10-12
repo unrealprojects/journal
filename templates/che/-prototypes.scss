@@ -1,16 +1,33 @@
+%Unselectable
+{
+	user-select:		none;
+	-ms-user-select:	none;
+	-moz-user-select:	none;
+	-webkit-user-select:none;
+}
+
+%Clickable
+{
+	cursor: 			pointer;
+}
 %Centrate
 {
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 		auto;
+	margin-right: 		auto;
 }
 %Left
 {
-	float: left;
+	float: 				left;
 }
 
 %Right
 {
-	float: right;
+	float: 				right;
+}
+
+%Fluid
+{
+	width: 				100%;
 }
 
 %Fix
@@ -18,12 +35,12 @@
 	&:before,
 	&:after
 	{
-		content: " ";
-		display: table;
+		content: 		" ";
+		display: 		table;
 	}
 	&:after
 	{
-		clear: both;
+		clear: 			both;
 	}
 }
 
@@ -47,6 +64,7 @@
 	line-height:		13px;
 	font-size:			13px;
 	background-color: 	white;
+	outline: 			0;
 	&:focus
 	{
 		border-color:	#c82222;
@@ -59,7 +77,12 @@
 	border:				1px solid;
 	line-height:		13px;
 	font-size:			13px;
+	font-family: 		'PT Serif', serif;
 	@extend 			%Uppercase;
+}
+%Button-Shadow
+{
+	box-shadow:			0 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 %System-Link
@@ -82,20 +105,10 @@
 	font-weight: 		100;
 	line-height: 		32px;
 	color:				black;
+	@extend 			%Unselectable;
 }
 
-%Unselectable
-{
-	user-select:		none;
-	-ms-user-select:	none;
-	-moz-user-select:	none;
-	-webkit-user-selet:	none;
-}
 
-%Clickable
-{
-	cursor: 			pointer;
-}
 
 %Unstyle
 {
@@ -105,14 +118,14 @@
 }
 %Inline
 {
-	@extend %Fix;
+	@extend 			%Fix;
 	& > *
 	{
-		float: left;
+		float: 			left;
 	}
 }
 %Animated
 {
-	@include Transitions(#{color .4s, background-color .4s, border-color .4s});
+	@include 			Transitions(#{color .4s, background-color .4s, border-color .4s});
 }
 

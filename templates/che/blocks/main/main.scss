@@ -1,13 +1,7 @@
-//Подключение стилей из блока Main
-@import '../../-variables';
-@import '../../-mixins';
-@import "-prototypes";
-@import '../../-grid';
 @import 'header/header';
 @import 'page/page';
 @import 'nav/nav';
 @import 'footer/footer';
-
 
 *
 {
@@ -32,7 +26,14 @@ a
 	@extend 			%Clickable;
 
 }
-
+input,
+select,
+textarea,
+button
+{
+	@extend 			%Control;
+	@extend 			%Clickable;
+}
 .main
 {
 	padding-left: ($Nav-Width - 60px) + ($Nav-Spacing / 2);
@@ -118,6 +119,70 @@ a
     }
 
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Sidebar
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.Page-Sidebar
+{
+	position: 					fixed;
+	background-color: 			#4a4f5a;
+	width:						235px;
+	left: 						0;
+	top:						0;
+	bottom: 					0;
+
+	nav.Site-Navigation
+	{
+		.nav.menu_left
+		{
+			margin-top:			50px;
+			@extend 			%Unstyle;
+			li
+			{
+				a
+				{
+					display: 	block;
+					padding: 	8px 50px;
+					color:		#dce0e5;
+					font-size:	14px;
+					@extend 	%Fluid;
+					@extend 	%Uppercase;
+					@extend 	%Animated;
+					&:hover
+					{
+						background-color: darken(#4a4f5a, 10%);
+						color: white;
+					}
+				}
+			}
+		}
+	}
+
+	.Feed-Subscription
+	{
+		display: 				block;
+		margin-top:				10px;
+		margin-left: 			35px;
+		padding: 				8px 15px;
+		border-radius: 			20px;
+		border:					0;
+		font-family: 			'PT Serif', serif;
+		font-size:				10px;
+		color:					white;
+		@include 				Gradient(#85aa2f, #73932a, to bottom);
+		@extend 				%Uppercase;
+		@extend 				%Button-Shadow;
+		&:hover
+		{
+			background: 	#73932a;
+		}
+	}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // HEADER
@@ -337,6 +402,11 @@ ul.Pagination
 				border-color: $C-Red-1;
 				color: white;
 			}
+		}
+		span
+		{
+			background-color: black;
+			color: white;
 		}
 	}
 }

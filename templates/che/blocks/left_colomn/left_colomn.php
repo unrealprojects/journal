@@ -1,7 +1,6 @@
-<div class="left_colomn">
-    <?php
-    include $parent_dir.'/left_colomn/left_nav/left_nav.php';
-    include $parent_dir.'/left_colomn/newsletters/newsletters.php';
-    ?>
-
-</div>
+<aside class="Page-Sidebar">
+    <nav class="Site-Navigation">
+        <jdoc:include type="modules" name="left_nav"/>
+    </nav>
+    <button class="Feed-Subscription">Подписка на сайт</button>
+</aside>
