@@ -122,3 +122,17 @@ $block-6: $block-1*6;
 {
 	@extend %Content;
 }
+
+
+
+
+/*** OlegBlud Styles***/
+
+.Subscription{
+  display:none;
+
+}
+
+.pos-content .pos-title{
+  min-height: 0px !important;
+}

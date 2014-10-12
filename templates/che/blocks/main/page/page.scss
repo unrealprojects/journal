@@ -23,16 +23,17 @@
 		display: block;
 		a
 		{
-			top: 10px;
+			bottom: 10px;
 			left: 10px;
 			position: absolute;
-			padding: 5px 10px!important;
+			padding: 5px 7px!important;
 			line-height: 13px;
-			border-radius: 4px;
+			border-radius: 3px;
 			font-size: 13px;
 			color: white;
 			letter-spacing: 0!important;
 			background-color: red;
+            font-weight: bold;
 
 		}
 	}
@@ -75,6 +76,8 @@
 {
 	width: 40%;
 	float: left;
+    clear: both;
+
 }
 
 //Рубрики
@@ -175,13 +178,13 @@ p.title
 	margin-top: -1px;
 	@extend %Content;
 	@extend %BorderBox;
-	@include Adaptive-Mobile
+	/*@include Adaptive-Mobile
 	{
 		width: 100%;
-	}
+	}*/
 	@include Adaptive($Viewport-XS)
 	{
-		width: 50%;
+      width: 50%;
 	}
 	&:hover
 	{

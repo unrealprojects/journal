@@ -1587,16 +1587,17 @@ table.Adaptive .Caption,
   .pos-title article:first-of-type {
     display: block; }
     .pos-title article:first-of-type a {
-      top: 10px;
+      bottom: 10px;
       left: 10px;
       position: absolute;
-      padding: 5px 10px !important;
+      padding: 5px 7px !important;
       line-height: 13px;
-      border-radius: 4px;
+      border-radius: 3px;
       font-size: 13px;
       color: white;
       letter-spacing: 0 !important;
-      background-color: red; }
+      background-color: red;
+      font-weight: bold; }
 
 .item > .pos-title {
   background: white;
@@ -1617,7 +1618,8 @@ table.Adaptive .Caption,
 
 .item > .pos-subtitle {
   width: 40%;
-  float: left; }
+  float: left;
+  clear: both; }
 
 .zoo-tagcloud {
   list-style: none;
@@ -1679,10 +1681,11 @@ p.title {
   font-size: 14px;
   vertical-align: top;
   margin: 0px;
-  margin-top: -1px; }
-  @media screen and (max-width: 768px) {
-    .floatbox > .pos-content .pos-item {
-      width: 100%; } }
+  margin-top: -1px;
+  /*@include Adaptive-Mobile
+  {
+  	width: 100%;
+  }*/ }
   @media screen and (min-width: 768px) {
     .floatbox > .pos-content .pos-item {
       width: 50%; } }
@@ -1886,5 +1889,12 @@ body {
 .pos-bottom {
   float: left;
   width: 33.33%; }
+
+/*** OlegBlud Styles***/
+.Subscription {
+  display: none; }
+
+.pos-content .pos-title {
+  min-height: 0px !important; }
 
 /*# sourceMappingURL=main.css.map */

@@ -30,5 +30,6 @@
                 <position>before_component</position>
                 <position>after_component</position>
                 <position>projects</position>
+                <position>subscription</position>
         </positions>
 </extension>

@@ -16,8 +16,11 @@
 
 
     </div>
-<!---->
-<!--    <script src="/templates/che/lib/js/jquery-1.11.1.js"></script>-->
+
+    <div class="Subscription">
+        <jdoc:include type="modules" name="subscription">
+    </div>
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
@@ -27,12 +30,38 @@
     <script src="/templates/che/blocks/main/header/js/translate.js"></script>
     <script src="/templates/che/lib/js/masonry.pkgd.js"></script>
     <script>
-        var container = document.querySelector('.element-relateditems ');
+        (function($){
+            $(document).ready(function(){
+                // Default Variables
+                var Blocks = $('.items');
+                var Selectors = '.teaser-item';
+
+                $(Blocks).masonry({
+                        itemSelector: Selectors,
+                        columnWidth: 200
+                });
+
+                //console.log($('.items'));
+              /*  var container = document.querySelector('.items');
+                var msnry =     new Masonry( container, {
+                    // options
+                    itemSelector: '.pos-item'
+                });*/
+            });
+        })(jQuery);
+
+            /*var container = document.querySelector('.items');
         var msnry =     new Masonry( container, {
             // options
             itemSelector: '.pos-item'
-        });
+        });*/
     </script>
 </body>
 
 </html>
+
+
+
+<!--
+        %d %b %Y
+-->
