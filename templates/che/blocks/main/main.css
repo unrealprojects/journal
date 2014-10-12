@@ -581,10 +581,10 @@ ul[class*='Grid'] > li, .authorization, .authorization ul, .authorization ul li 
   [class*='Grid'].Split > .Node-XS-5 {
     width: 38.75%; }
 
-  .Merge > .Node-XS-6 {
+  .Merge > .Node-XS-6, .Merge > .teaser-item {
     width: 50%; }
 
-  [class*='Grid'].Split > .Node-XS-6 {
+  [class*='Grid'].Split > .Node-XS-6, [class*='Grid'].Split > .teaser-item {
     width: 47.5%; }
 
   .Merge > .Node-XS-7 {
@@ -1065,10 +1065,10 @@ ul[class*='Grid'] > li, .authorization, .authorization ul, .authorization ul li 
   [class*='Grid'].Split > .Node-MD-3 {
     width: 21.25%; }
 
-  .Merge > .Node-MD-4 {
+  .Merge > .Node-MD-4, .Merge > .teaser-item {
     width: 33.33333%; }
 
-  [class*='Grid'].Split > .Node-MD-4 {
+  [class*='Grid'].Split > .Node-MD-4, [class*='Grid'].Split > .teaser-item {
     width: 30%; }
 
   .Merge > .Node-MD-5 {
@@ -1582,9 +1582,9 @@ table.Adaptive .Caption,
   position: relative; }
   .pos-title article.item {
     display: none; }
-  .pos-title article:first-of-type {
+  .pos-title article:last-of-type {
     display: block; }
-    .pos-title article:first-of-type a {
+    .pos-title article:last-of-type a {
       bottom: 10px;
       left: 10px;
       position: absolute;
@@ -1907,6 +1907,7 @@ body {
   margin-left: 20px; }
 
 .pos-content .pos-title img {
+  width: 100%;
   height: auto; }
 
 .item > .floatbox {
@@ -1923,5 +1924,9 @@ body {
 
 .pos-content .pos-title {
   min-height: 0px !important; }
+
+.teaser-item .pos-title img {
+  width: 100%;
+  height: auto; }
 
 /*# sourceMappingURL=main.css.map */

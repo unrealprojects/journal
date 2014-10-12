@@ -12,9 +12,9 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 
 <?php if ($pagination = $this->pagination->render($this->pagination_link)) : ?>
-	<div class="zoo-pagination">
-		<div class="pagination-bg">
+	<div class="Pagination-Wrapper">
+		<ul class="Pagination">
 			<?php echo $pagination; ?>
-		</div>
+		</ul>
 	</div>
 <?php endif;

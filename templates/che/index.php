@@ -35,24 +35,12 @@
                 var Selectors = '.teaser-item';
 
                 $(Blocks).masonry({
-                        itemSelector: Selectors,
-                        columnWidth: 200
+                     itemSelector: Selectors
                 });
 
-                //console.log($('.items'));
-              /*  var container = document.querySelector('.items');
-                var msnry =     new Masonry( container, {
-                    // options
-                    itemSelector: '.pos-item'
-                });*/
             });
         })(jQuery);
 
-            /*var container = document.querySelector('.items');
-        var msnry =     new Masonry( container, {
-            // options
-            itemSelector: '.pos-item'
-        });*/
     </script>
 
 </body>

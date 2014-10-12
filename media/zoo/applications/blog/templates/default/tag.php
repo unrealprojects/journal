@@ -22,7 +22,7 @@ $css_class = $this->application->getGroup().'-'.$this->template->name;
 <div id="yoo-zoo" class="yoo-zoo <?php echo $css_class; ?> <?php echo $css_class.'-tag'; ?>">
 
 	<?php if ($this->params->get('template.show_title')) : ?>
-	<h3 class="tag-title"><?php echo JText::_('Articles tagged with').': '.$this->tag; ?></h3>
+	<h3 class="tag-title"><?php echo $this->tag; ?></h3>
 	<?php endif; ?>
 
 	<?php

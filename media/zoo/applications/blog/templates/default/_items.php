@@ -47,7 +47,7 @@ if ($count) {
 	for ($j = 0; $j < $count; $j++) {
 		$first = ($j == 0) ? ' first' : null;
 		$last  = ($j == $count - 1) ? ' last' : null;
-		echo '<div class="width'.intval(100 / $count).$first.$last.'">'.$columns[$j].'</div>';
+		echo '<div class="Grid Merge width'.intval(100 / $count).$first.$last.'">'.$columns[$j].'</div>';
 	}
 	echo '</div>';
 }

@@ -209,26 +209,26 @@ class AppPagination {
 
             if ($this->_current > 1) {
                 $link  = $url;
-                $html .= '<a class="start" href="'.JRoute::_($link).'">&lt;&lt;</a>&nbsp;';
+                $html .= '<li rel="start"><a class="start" href="'.JRoute::_($link).'">&lt;&lt;</a></li>';
                 $link  = $this->_current - 1 == 1 ? $url : $this->link($url, $this->_name.'='.($this->_current - 1));
-                $html .= '<a class="previous" href="'.JRoute::_($link).'">&lt;</a>&nbsp;';
+                $html .= '<li rel="prev"><a class="previous" href="'.JRoute::_($link).'">&lt;</a></li>';
             }
 
             for ($i = $range_start; $i <= $range_end; $i++) {
                 if ($i == $this->_current) {
-                    $html .= '[<span>'.$i.'</span>]';
+                    $html .= '<li class="Active"><span>'.$i.'</span></li>';
                 } else {
                     $link  = $i == 1 ? $url : $this->link($url, $this->_name.'='.$i);
-                    $html .= '<a href="'.JRoute::_($link).'">'.$i.'</a>';
+                    $html .= '<li><a href="'.JRoute::_($link).'">'.$i.'</a></li>';
                 }
                 $html .= "&nbsp;";
             }
 
             if ($this->_current < $this->_pages) {
                 $link  = $this->link($url, $this->_name.'='.($this->_current + 1));
-                $html .= '<a class="next" href="'.JRoute::_($link).'">&gt;&nbsp;</a>&nbsp;';
+                $html .= '<li rel="next"><a class="next" href="'.JRoute::_($link).'">&gt;</a></li>';
                 $link  = $this->link($url, $this->_name.'='.($this->_pages));
-                $html .= '<a class="end" href="'.JRoute::_($link).'">&gt;&gt;&nbsp;</a>&nbsp;';
+                $html .= '<li rel="finish"><a class="end" href="'.JRoute::_($link).'">&gt;&gt;</a></li>';
             }
 
         }

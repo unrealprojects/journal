@@ -108,6 +108,7 @@ $block-6: $block-1*6;
 	{
 		img
 		{
+            width: 100%;
 			height: auto;
 		}
 	}
@@ -141,6 +142,22 @@ $block-6: $block-1*6;
 
 .pos-content .pos-title{
   min-height: 0px !important;
+}
+
+
+.items .width100{
+
+}
+
+.teaser-item{
+  @extend .Node-XS-6;
+  @extend .Node-MD-4;
+
+    .pos-title  img{
+        width:100%;
+        height: auto;
+    }
+
 }
 
 
