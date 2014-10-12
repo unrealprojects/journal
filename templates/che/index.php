@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -7,17 +8,36 @@
 </head>
 
 <body>
-    <div class="wrap">
-       <?php
-            $parent_dir = JPATH_BASE . "/templates/che/blocks";
-           include $parent_dir . '/left_colomn/left_colomn.php';
-           include $parent_dir . '/main/main.php';
-       ?>
-    </div>
+<aside class="Page-Sidebar">
+    <nav class="Site-Navigation">
+        <jdoc:include type="modules" name="left_nav"/>
+    </nav>
+    <button class="Feed-Subscription">Подписка на сайт</button>
+</aside>
+<?php
+    $parent_dir = JPATH_BASE . "/templates/che/blocks";
+    include $parent_dir . '/main/main.php';
+?>
+<footer role="contentinfo">
+    <nav class="Site-Navigation Secondary">
+        <jdoc:include type="modules" name="bot_nav"/>
+        <div class="Metrics">
+            <img src="templates/che/images/metrics.png" alt=""/>
+        </div>
+    </nav>
+    <article class="Copyright">
+        Редакция журнала «Качественная клиническая практика» не несёт ответственность за содержание и достоверность рекламных материалов. Перепечатка опубликованных
+        материалов разрешается только по письменному разрешению ООО «Издательство ОКИ» и согласованием с Редакцией журнала. Мнение Редакции может не всегда совпадать
+        с мнением авторов. При копировании на сайт статей из журнала "Качественная клиническая практика" активная ссылка на: http://www.clinvest.ru/ обязательна! Публикации
+        на clinvest.ru не должны использоваться для самостоятельной диагностики и лечения, не должны рассматриваться в качестве рекомендаций пациентам и не могут служить
+        заменой консультации врача.
+    </article>
+</footer>
 
     <div class="Subscription">
         <jdoc:include type="modules" name="subscription">
     </div>
+
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -42,7 +62,6 @@
         })(jQuery);
 
     </script>
-
 </body>
 
 </html>
