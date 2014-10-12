@@ -1,8 +1,8 @@
 <div class="page">
 
-    <div class="content Grid Split">
+    <div class="Grid Split">
 
-        <?php // if ($this->countModules('tags') || $this->countModules('popular_left')) : ?>
+        <?php  if ($this->countModules('tags') || $this->countModules('popular')) : ?>
             <div class="Before-Component  Node-XXS-3">
                 <div class="Tags">
                     <h3>Рубрики журнала</h3>
@@ -21,16 +21,26 @@
                             </ul>
                         </div>
                     </div>
-                    <jdoc:include type="modules" name="popular"/>
+                    <div class="Popular">
+                        <jdoc:include type="modules" name="popular" />
+                    </div>
+                    <div class="Adv">
+                        <jdoc:include type="modules" name="adv" />
+                    </div>
                 </div>
 
             </div>
-        <?php // endif; ?>
+        <?php  endif; ?>
+
 
 
 
         <jdoc:include type="modules" name="popular_right" />
             <div class="Component Node-XXS-9">
+                <?php  if ($this->countModules('journal_header')) : ?>
+                    <jdoc:include type="modules" name="journal_header" />
+                <?php endif; ?>
+
                 <jdoc:include type="component" />
             </div>
 
