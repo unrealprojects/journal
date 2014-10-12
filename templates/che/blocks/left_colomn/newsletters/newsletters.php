@@ -1,1 +1,0 @@
-<div class="newsletter">Подписка на сайт</div>
