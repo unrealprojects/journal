@@ -1,5 +1,5 @@
 <section class="header">
-
+    
     <div class="logo">
         <jdoc:include type="modules" name="logo"/>
     </div>

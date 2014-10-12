@@ -72,6 +72,18 @@ $block-6: $block-1*6;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
+%Control
+{
+	border: 1px solid $C-Grey-4;
+	border-radius: 10px;
+	padding: 5px 10px;
+	outline: none;
+	@extend %BorderBox;
+	&:focus
+	{
+		border-color: $C-Cyan-1;
+	}
+}
 .pos-top
 {
 	@extend %Content;
@@ -87,21 +99,13 @@ $block-6: $block-1*6;
 			@extend %Heading;
 		}
 	}
-	.element-textarea
-	{
-		font-weight: 800;
-		&.last
-		{
-			font-weight: 100;
-		}
-	}
+
 }
 
 .pos-content
 {
 	.pos-title
 	{
-		min-height: 300px;
 		img
 		{
 			height: auto;
@@ -126,6 +130,8 @@ $block-6: $block-1*6;
 
 
 
+
+
 /*** OlegBlud Styles***/
 
 .Subscription{
@@ -136,3 +142,6 @@ $block-6: $block-1*6;
 .pos-content .pos-title{
   min-height: 0px !important;
 }
+
+
+

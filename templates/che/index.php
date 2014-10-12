@@ -13,8 +13,6 @@
            include $parent_dir . '/left_colomn/left_colomn.php';
            include $parent_dir . '/main/main.php';
        ?>
-
-
     </div>
 
     <div class="Subscription">
@@ -56,6 +54,7 @@
             itemSelector: '.pos-item'
         });*/
     </script>
+
 </body>
 
 </html>

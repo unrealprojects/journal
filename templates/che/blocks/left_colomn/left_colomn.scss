@@ -36,3 +36,16 @@
 
 	}
 }
+
+.Menu-Icon
+{
+	float: right;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	background: url(./../che/images/menu_w.png) center center no-repeat;
+	&:hover
+	{
+		background-color: #2e313a;
+	}
+}

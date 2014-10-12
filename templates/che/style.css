@@ -54,6 +54,15 @@
       .left_colomn .nav.menu_left li a:hover {
         background-color: #2e313a; }
 
+.Menu-Icon {
+  float: right;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: url(./../che/images/menu_w.png) center center no-repeat; }
+  .Menu-Icon:hover {
+    background-color: #2e313a; }
+
 ._Centered {
   margin-left: auto;
   margin-right: auto; }
@@ -77,12 +86,15 @@
 ._Dev {
   outline: 1px red solid !important; }
 
-._Clearfix:before, ._Inline:before, [class*='Grid']:before, .toolbar:before, .Projects:before, .top_nav:before, .menu_top:before, .menu_bot:before, .authorization .userdata:before, .floatbox > .pos-content .pos-item:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .pos-top:before, .pos-item:before,
+._Clearfix:before, ._Inline:before, [class*='Grid']:before, .toolbar:before, .page:before, .pos-bottom .element:before, .Projects:before, .content:before, .top_nav:before, .menu_top:before, .menu_bot:before, .authorization .userdata:before, .floatbox > .pos-content .pos-item:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .content .search:before, .pos-top:before, .pos-item:before,
 ._Clearfix:after,
 ._Inline:after,
 [class*='Grid']:after,
 .toolbar:after,
+.page:after,
+.pos-bottom .element:after,
 .Projects:after,
+.content:after,
 .top_nav:after,
 .menu_top:after,
 .menu_bot:after,
@@ -91,12 +103,13 @@
 .Projects .custom:after,
 .pos-bottom .element.last .custom:after,
 .item-page:after,
+.content .search:after,
 .pos-top:after,
 .pos-item:after {
   content: " ";
   display: table; }
 
-._Clearfix:after, ._Inline:after, [class*='Grid']:after, .toolbar:after, .Projects:after, .top_nav:after, .menu_top:after, .menu_bot:after, .authorization .userdata:after, .floatbox > .pos-content .pos-item:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .pos-top:after, .pos-item:after {
+._Clearfix:after, ._Inline:after, [class*='Grid']:after, .toolbar:after, .page:after, .pos-bottom .element:after, .Projects:after, .content:after, .top_nav:after, .menu_top:after, .menu_bot:after, .authorization .userdata:after, .floatbox > .pos-content .pos-item:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, .pos-top:after, .pos-item:after {
   clear: both; }
 
 ._Inline > * {
@@ -1629,12 +1642,6 @@ table.Adaptive .Caption,
       display: inline-block;
       padding: 5px 0; }
 
-.page {
-  float: left; }
-
-.item {
-  float: left; }
-
 .pos-title {
   position: relative; }
   .pos-title article.item {
@@ -1653,6 +1660,21 @@ table.Adaptive .Caption,
       letter-spacing: 0 !important;
       background-color: red;
       font-weight: bold; }
+
+.pos-bottom .element {
+  background: none !important; }
+  .pos-bottom .element .zoo-list {
+    float: left;
+    width: 100%; }
+    .pos-bottom .element .zoo-list li {
+      margin: 0 !important;
+      padding: 0 !important; }
+      .pos-bottom .element .zoo-list li a {
+        color: #424445;
+        padding: 5px 15px; }
+    .pos-bottom .element .zoo-list li:nth-child(odd) a {
+      display: block;
+      background-color: #eee; }
 
 .item > .pos-title {
   background: white;
@@ -1704,7 +1726,6 @@ p.title {
   text-align: left;
   margin-bottom: 0px;
   margin-top: 0px;
-  width: 85%;
   background: white; }
   p.title img {
     width: 100%;
@@ -1782,16 +1803,6 @@ p.title {
   .pos-item > .floatbox .pos-media {
     float: right !important; }
 
-.zoo-list li {
-  margin: 0 !important;
-  padding: 0 !important; }
-  .zoo-list li a {
-    color: #424445;
-    padding: 5px 15px; }
-.zoo-list li:nth-child(odd) a {
-  display: block;
-  background-color: #eee; }
-
 .Projects {
   clear: both; }
   .Projects .custom {
@@ -1810,6 +1821,24 @@ p.title {
 
 .heading {
   border: 0 !important; }
+
+.content {
+  width: 100% !important; }
+
+.content .search {
+  float: right;
+  margin-left: 30px; }
+
+fieldset.phrases,
+fieldset.only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px; }
+  fieldset.phrases legend,
+  fieldset.only legend {
+    padding: 10px 0;
+    font-weight: bold; }
 
 .nav_prototype, .top_nav, .bot_nav {
   border-top: 1px solid #E0DCDC;
@@ -1864,13 +1893,18 @@ p.title {
   display: block;
   padding-top: 10px; }
 
-#mod-search-searchword {
-  border-radius: 90px;
-  padding: 3px; }
+#searchForm button.btn {
+  font-size: 14px;
+  color: black;
+  min-width: 60px;
+  min-height: 20px; }
+  #searchForm button.btn span {
+    position: relative !important; }
 
-#mod-search-searchword {
-  border: 1px solid #b7b7b7;
-  padding: 10px; }
+.Search-Form .search {
+  float: right; }
+  .Search-Form .search form {
+    padding-top: 15px !important; }
 
 .footer {
   float: left; }
@@ -1906,7 +1940,7 @@ body {
 .block_6 {
   width: 60%; }
 
-.authorization .userdata, .floatbox > .pos-content .pos-item, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .pos-top, .pos-item {
+.authorization .userdata, .floatbox > .pos-content .pos-item, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search, .pos-top, .pos-item {
   padding: 20px !important;
   border: 1px solid #e7e7e7;
   background-color: white; }
@@ -1920,22 +1954,24 @@ body {
   text-decoration: none;
   margin: 30px 0 20px !important; }
 
-.toolbar, .logo, .languages, .authorization, .floatbox > .pos-content .pos-item, .pos-item .pos-meta {
+.toolbar, .logo, .languages, .authorization, .floatbox > .pos-content .pos-item, .pos-item .pos-meta, #search-searchword, #mod-search-searchword, #searchForm button.btn {
   box-sizing: border-box;
   -moz-box-sizing: border-box; }
+
+#search-searchword, #mod-search-searchword, #searchForm button.btn {
+  border: 1px solid #b7b7b7;
+  border-radius: 10px;
+  padding: 5px 10px;
+  outline: none; }
+  #search-searchword:focus, #mod-search-searchword:focus, #searchForm button.btn:focus {
+    border-color: #00a4c6; }
 
 .pos-top .element-image {
   float: right;
   margin-left: 20px; }
-.pos-top .element-textarea {
-  font-weight: 800; }
-  .pos-top .element-textarea.last {
-    font-weight: 100; }
 
-.pos-content .pos-title {
-  min-height: 300px; }
-  .pos-content .pos-title img {
-    height: auto; }
+.pos-content .pos-title img {
+  height: auto; }
 
 .item > .floatbox {
   width: 66.66%;

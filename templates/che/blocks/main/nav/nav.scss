@@ -1,4 +1,5 @@
 
+
 .nav_prototype
 {
 	border-top: 1px solid #E0DCDC;
@@ -86,11 +87,32 @@
 
 #mod-search-searchword
 {
-	border-radius: 90px;
-	padding: 3px;
+	@extend %Control;
 }
-#mod-search-searchword
+#searchForm
 {
-	border: 1px solid $C-Grey-4;
-	padding: 10px;
+	button.btn
+	{
+		font-size: 14px;
+		color: black;
+		@extend %Control;
+		min-width: 60px;
+		min-height: 20px;
+		span
+		{
+			position: relative!important;
+		}
+
+	}
+}
+.Search-Form
+{
+	.search
+	{
+		float: right;
+		form
+		{
+			padding-top: 15px!important;
+		}
+	}
 }
