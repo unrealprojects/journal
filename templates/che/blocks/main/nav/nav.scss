@@ -12,7 +12,7 @@
 	position: relative;
 	margin-bottom: 10px;
 	@extend .nav_prototype;
-	@extend ._Clearfix;
+	@extend %Fix;
 }
 
 .menu_top
@@ -20,7 +20,7 @@
 	margin: 0;
 	padding: 0px;
 	float: left;
-	@extend ._Clearfix;
+	@extend %Fix;
 	li
 	{
 		float: left;

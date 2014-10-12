@@ -26,7 +26,7 @@
 			{
 				display: block;
 				padding: 10px 50px;
-				@include Transitions(#{background-color .3s});
+				@extend %Animated;
 				&:hover
 				{
 					background-color: $Nav-Background-Color-Hover;
@@ -39,11 +39,11 @@
 
 .Menu-Icon
 {
-	float: right;
+	float: left;
 	width: 50px;
 	height: 50px;
 	cursor: pointer;
-	background: url(./../che/images/menu_w.png) center center no-repeat;
+	background: #77787c url(./../che/images/menu_w.png) center center no-repeat;
 	&:hover
 	{
 		background-color: #2e313a;

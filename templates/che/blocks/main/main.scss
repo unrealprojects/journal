@@ -1,7 +1,7 @@
 //Подключение стилей из блока Main
 @import '../../-variables';
 @import '../../-mixins';
-@import '../../-modificators';
+@import "-prototypes";
 @import '../../-grid';
 @import 'header/header';
 @import 'page/page';
@@ -9,9 +9,28 @@
 @import 'footer/footer';
 
 
-body {
-	min-width: 1020px;
-	border-top: 5px solid #1a90ff;
+*
+{
+	margin: 			0;
+	padding: 			0;
+	box-sizing: 		border-box;
+	-moz-box-sizing: 	border-box;
+	cursor: 			default;
+}
+body
+{
+	min-width: 			1020px;
+	border-top: 		5px solid #1a90ff;
+	background: 		#F5F5F5;
+	font-family: 		'PT Serif', serif;
+}
+
+a
+{
+	text-decoration: 	none;
+	color: 				black;
+	@extend 			%Clickable;
+
 }
 
 .main
@@ -22,71 +41,11 @@ body {
 		padding-left: $Nav-Width + $Nav-Spacing;
 	}
 
-	max-width: 1200px;
-}
-
-/* Настройки блоков для адаптивной вер стки */
-$block-1: 100% /10;
-$block-2: $block-1*2;
-$block-6: $block-1*6;
-
-.block
-{
-	//прототип для наследования остальными блокамми
-	display: block;
-	float: left;
-}
-
-.block_2
-{
-	//блок занимающий 20% от ширины родительского блока
-	@extend .block;
-	width: $block-2;
-}
-
-.block_6
-{
-	//блок занимающий 60% от ширины родительского блока
-	@extend .block;
-	width: $block-6;
-}
-%Content
-{
-	padding: 20px!important;
-	border: 1px solid $C-Grey-5;
-	background-color: white;
-	@extend ._Clearfix;
-}
-%Heading
-{
-	font-family: 'PT Serif Caption', serif!important;
-	font-weight: 100;
-	font-size: 32px!important;
-	line-height: 32px!important;
-	color: #24282d;
-	text-decoration: none;
-	margin: $size-l 0 $size!important;
-}
-%BorderBox
-{
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-%Control
-{
-	border: 1px solid $C-Grey-4;
-	border-radius: 10px;
-	padding: 5px 10px;
-	outline: none;
-	@extend %BorderBox;
-	&:focus
-	{
-		border-color: $C-Cyan-1;
-	}
+	max-width: 1440px;
 }
 .pos-top
 {
-	@extend %Content;
+	@extend %Content-Block;
 	.element-image
 	{
 		float: right;
@@ -96,7 +55,7 @@ $block-6: $block-1*6;
 	{
 		a
 		{
-			@extend %Heading;
+			@extend %Heading-Section;
 		}
 	}
 
@@ -125,7 +84,7 @@ $block-6: $block-1*6;
 }
 .pos-item
 {
-	@extend %Content;
+	@extend %Content-Block;
 }
 
 
@@ -160,5 +119,225 @@ $block-6: $block-1*6;
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// HEADER
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+section.Header
+{
+	.logo
+	{
+		& > .custom
+		{
+			width: 400px;
+			img
+			{
+				float: left;
+			}
+
+			span
+			{
+				font-size: 30px;
+				margin-top: 30px;
+				display: block;
+				padding-top: 30px;
+			}
+		}
+		display: inline-block;
+		width: auto;
+		
+		header
+		{
+			margin-top: 20px;
+			position: relative;
+			background: url(./lib/img/logo.png) left top no-repeat;
+			min-height: 107px;
+			h2
+			{
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				bottom: 0;
+				left: 70px;
+				font-family: 'PT Serif Caption', serif;
+				font-weight: 100;
+				font-size: 28px;
+				text-align: right;
+				p
+				{
+					margin: 0;
+					padding: 0;
+					font-size: 31px;
+				}
+			}
+			span
+			{
+				display: block;
+			}
+
+		}
+	}
+	.toolbar
+	{
+		display: inline-block;
+		float: right;
+		width: auto;
+		padding: 60px 0;
+		
+		@extend %Fix;
+		.authorization
+		{
+			float: right;
+			@extend %Unstyle;
+			
+			ul
+			{
+				@extend %Unstyle;
+				li
+				{
+					@extend %Unstyle;
+					a
+					{
+						display: inline-block;
+						margin-right: 10px;
+						padding: 10px 20px;
+						text-transform: uppercase;
+						text-decoration: none;
+						color: black;
+						font-size: 12px;
+						font-weight: bold;
+						&:hover
+						{
+							color: $C-Red-2;
+						}
+					}
+					a.Button-Like
+					{
+						color: white;
+						border-radius: 30px;
+						box-shadow: 0 1px 2px rgba(0,0,0,.2);
+						@include Gradient($C-Red-3,$C-Red-2, to bottom);
+						&:hover
+						{
+							@include Gradient($C-Red-2,$C-Red-1, to bottom);
+						}
+					}
+				}
+			}
+			.userdata
+			{
+				@extend %Content-Block;
+				display: none;
+				.control-group + .control-group
+				{
+					margin-top: 10px;
+				}
+				.input-small
+				{
+					border: 1px solid #aaa;
+					border-radius: 6px;
+					padding: 5px;
+					outline: none;
+					&:focus
+					{
+						border-color: $C-Cyan-1;
+					}
+				}
+				.add-on
+				{
+					display: inline-block;
+					padding: 5px 0;
+				}
+			}
+		}
+		.languages
+		{
+			margin-top: 1px;
+			float: left;
+			
+			.custom
+			{
+				padding: 10px;
+			}
+		}
+	}
+
+}
+
+/*Настройки переводчика гугл*/
+.goog-te-gadget-simple
+{
+	background-color: transparent !important;
+	border: none !important;
+	font-size: 10px !important;
+	display: inline-block !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	cursor: pointer !important;
+	zoom: 1;
+	font-family: serif;
+	text-transform: uppercase;
+	font-weight: bold;
+
+	img
+	{
+		background-image: none !important;
+		position: absolute;
+	}
+
+	span
+	{
+		border-left-width: 0px !important;
+	}
+}
+.goog-te-menu-value
+{
+	margin: 0px !important;
+	margin-right: 10px;
+	span
+	{
+		font-size: 12px;
+		text-transform: uppercase;
+		padding-right: 5px;
+	}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PAGINATION
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ul.Pagination
+{
+	@extend %Unstyle;
+	@extend %Inline;
+	li
+	{
+		& + li
+		{
+			margin-left: 5px;
+		}
+
+		span,
+		a
+		{
+			display: block;
+			padding: 3px 8px;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+		a
+		{
+			border-color: #efeff3;
+			background-color: white;
+			@extend %Animated;
+			&:hover
+			{
+				background-color: $C-Red-2;
+				border-color: $C-Red-1;
+				color: white;
+			}
+		}
+	}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

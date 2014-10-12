@@ -33,7 +33,7 @@ $Viewports-Count: 		length($Viewports-List);
 [class*='#{$Grid-Name}']
 {
 	display: block;
-	@extend ._Clearfix;
+	@extend %Fix;
 }
 .#{$Grid-Name}-#{$Fixed-Grid-Width}
 {

@@ -1,6 +1,6 @@
 .page
 {
-	@extend ._Clearfix;
+	@extend %Fix;
 }
 .pos-title
 {
@@ -34,7 +34,7 @@
 	.element
 	{
 		background: none!important;
-		@extend ._Clearfix;
+		@extend %Fix;
 		.zoo-list
 		{
 			float: left;
@@ -195,12 +195,7 @@ p.title
 	vertical-align: top;
 	margin: 0px;
 	margin-top: -1px;
-	@extend %Content;
-	@extend %BorderBox;
-	/*@include Adaptive-Mobile
-	{
-		width: 100%;
-	}*/
+	@extend %Content-Block;
 	@include Adaptive($Viewport-XS)
 	{
       width: 50%;
@@ -247,7 +242,6 @@ p.title
 	background: url(./lib/img/views.png) left center no-repeat;
 	font-size: 12px;
 	color: #7c7e80;
-	@extend %BorderBox;
 }
 .pos-item > .floatbox
 {
@@ -265,7 +259,7 @@ p.title
 }
 .element h3
 {
-	@extend %Heading;
+	@extend %Heading-Section;
 }
 
 
@@ -273,14 +267,14 @@ p.title
 .Projects
 {
 	clear: both;
-	@extend ._Clearfix;
+	@extend %Fix;
 	.Projects-Header
 	{
-		@extend %Heading;
+		@extend %Heading-Section;
 	}
 	.custom
 	{
-		@extend %Content;
+		@extend %Content-Block;
 		margin-bottom: $size-l;
 		.Slide-Item
 		{
@@ -301,13 +295,13 @@ p.title
 	{
 		.custom
 		{
-			@extend %Content;
+			@extend %Content-Block;
 		}
 	}
 }
 .item-page
 {
-	@extend %Content;
+	@extend %Content-Block;
 }
 #yoo-zoo .item p.pos-meta
 {
@@ -320,18 +314,18 @@ p.title
 }
 h1.title
 {
-	@extend %Heading;
+	@extend %Heading-Section;
 }
 .content
 {
 	width: 100%!important;
-	@extend ._Clearfix;
+	@extend %Fix;
 }
 .content .search
 {
 	float: right;
 	margin-left: 30px;
-	@extend %Content;
+	@extend %Content-Block;
 }
 fieldset.phrases,
 fieldset.only
