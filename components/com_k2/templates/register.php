@@ -24,30 +24,30 @@ defined('_JEXEC') or die;
 				<div class="k2ProfileHeading">Регистрация</div>
 			</div>
 			<div class="Control-Group">
-				<label class="Node-XS-3" id="namemsg" for="name"><?php echo JText::_('K2_NAME'); ?></label>
+				<label class="Node-XS-3" id="namemsg" for="name">Имя</label>
 				<input type="text" name="<?php echo $this->nameFieldName; ?>" id="name" size="40" value="<?php echo $this->escape($this->user->get( 'name' )); ?>" class="inputbox required Node-XS-9" maxlength="50" />
 			</div>
 			<div class="Control-Group">
-				<label class="Node-XS-3" id="usernamemsg" for="username"><?php echo JText::_('K2_USER_NAME'); ?></label>
+				<label class="Node-XS-3" id="usernamemsg" for="username">Логин</label>
 				<input type="text" id="username" name="<?php echo $this->usernameFieldName; ?>" size="40" value="<?php echo $this->escape($this->user->get( 'username' )); ?>" class="inputbox required validate-username Node-XS-9" maxlength="25" />
 			</div>
 			<div class="Control-Group">
-				<label class="Node-XS-3" id="emailmsg" for="email"><?php echo JText::_('K2_EMAIL'); ?></label>
+				<label class="Node-XS-3" id="emailmsg" for="email">Email</label>
 				<input type="text" id="email" name="<?php echo $this->emailFieldName; ?>" size="40" value="<?php echo $this->escape($this->user->get( 'email' )); ?>" class="inputbox required validate-email Node-XS-9" maxlength="100" />
 			</div>
 
 			<?php if(version_compare(JVERSION, '1.6', 'ge')): ?>
 			<div class="Control-Group">
-				<label class="Node-XS-3" id="email2msg" for="email2"><?php echo JText::_('K2_CONFIRM_EMAIL'); ?></label>
+				<label class="Node-XS-3" id="email2msg" for="email2">Подтвердите Email</label>
 				<input type="text" id="email2" name="jform[email2]" size="40" value="" class="inputbox required validate-email Node-XS-9" maxlength="100" />
 			</div>
 			<?php endif; ?>
 			<div class="Control-Group">
-					<label class="Node-XS-3" id="pwmsg" for="password"><?php echo JText::_('K2_PASSWORD'); ?></label>
+					<label class="Node-XS-3" id="pwmsg" for="password">Пароль</label>
 					<input class="inputbox required validate-password Node-XS-9" type="password" id="password" name="<?php echo $this->passwordFieldName; ?>" size="40" value="" />
 			</div>
 			<div class="Control-Group">
-				<label class="Node-XS-3" id="pw2msg" for="password2"><?php echo JText::_('K2_VERIFY_PASSWORD'); ?></label>
+				<label class="Node-XS-3" id="pw2msg" for="password2">Подтвердите пароль</label>
 				<input class="inputbox required validate-passverify Node-XS-9" type="password" id="password2" name="<?php echo $this->passwordVerifyFieldName; ?>" size="40" value="" />
 			</div>
 			<div class="Control-Group">

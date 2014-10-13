@@ -21,7 +21,4 @@
 
 
 
-2 Смень кнопки Открытие - Закрытие меню (крестик)  Collapsed - Expended
-3 modbox - для подписаться на сайт
 4 ajax preload При прокрутки вниз лента должна быть бесконечной
-5 http://journal/component/users/?view=registration
