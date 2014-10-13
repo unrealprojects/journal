@@ -1,7 +1,12 @@
 <div class="page">
 
-    <div class="Grid Split">
+    <?php  if ($this->countModules('journal_header')) : ?>
+        <jdoc:include type="modules" name="journal_header" />
+    <?php endif; ?>
 
+
+
+    <div class="Grid Split"
         <?php  if ($this->countModules('tags') || $this->countModules('popular') || $this->countModules('adv')) : ?>
 
             <div class="Before-Component  Node-XXS-3">
@@ -42,14 +47,8 @@
 
 
             <div class="Component Node-XXS-9">
-                <?php  if ($this->countModules('journal_header')) : ?>
-                    <jdoc:include type="modules" name="journal_header" />
-                <?php endif; ?>
-
                 <jdoc:include type="component" />
             </div>
-
-
 
 
 
