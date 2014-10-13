@@ -42,8 +42,12 @@ window.upf.Page = {};
 
 
 
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 2 Toggle Menu
+// 2.1 Toggle Menu
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         upf.Menu.ToggleMenu = function(){
@@ -61,12 +65,12 @@ window.upf.Page = {};
 
                 if($Menu.css('left')!=PullWidth){
                     // Click to Show menu
-                    $(NavMenu).animate({'margin-left':PushWidth});
+                    $(NavMenu).animate({'margin-left':PushWidth}).toggleClass('Expanded Collapsed');
                     $SiteContent.animate({'margin-left':PushWidth});
                     $Menu.animate({'left':PullWidth,'opacity':1});
                 }else{
                     // Click to Hide menu
-                    $(NavMenu).animate({'margin-left':PullWidth});
+                    $(NavMenu).animate({'margin-left':PullWidth}).toggleClass('Expanded Collapsed');
                     $SiteContent.animate({'margin-left':PullWidth});
                     $Menu.animate({'left':'-'+PushWidth,'opacity':0});
                 }
@@ -102,6 +106,41 @@ window.upf.Page = {};
         }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 2.2 Scroll Top Menu
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    upf.Menu.ScrollMenu = function(){
+
+        // Default Variables
+        var NavMenu         =   '.Sidebar-Toggle',
+            NavHeight       =   5;
+
+
+        $(window).scroll(function(){
+            // Hide menu
+            if($(window).scrollTop() > 5){
+                $(NavMenu).animate({'top': '0px'},50);
+            }else{
+                $(NavMenu).animate({'top':NavHeight+'px'},100);
+
+            }
+        });
+
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 
@@ -163,6 +202,10 @@ upf.Page.Headers = function(){
 
 
 
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 4 LogIn
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -215,16 +258,24 @@ upf.Actions.Login = function(){
 
 
 
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Execute
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function(){
     upf.Menu.ToggleMenu();
+    upf.Menu.ScrollMenu();
     upf.Actions.Login();
     upf.Start.VerticalGrid();
     upf.Start.CategoryLinks();
 
+
+    $('.Feed-Subscription').upf_window('Good or Bad');
 });
 
 

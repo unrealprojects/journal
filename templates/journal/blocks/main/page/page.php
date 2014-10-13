@@ -55,7 +55,7 @@
 
         <?php  if ( $this->countModules('popular_right') || $this->countModules('adv_right')) : ?>
 
-            <div class="Before-Component  Node-XXS-3">
+            <div class="Before-Component  Node-XXS-4">
 
                 <?php  if( $this->countModules('popular_right') ) : ?>
                     <div class="Top-Five">

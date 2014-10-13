@@ -1,0 +1,51 @@
+%fixed
+{
+    position:   fixed;
+    z-index:    888888888;
+    top:        0px;
+    bottom:     0px;
+    left:       0px;
+    right:      0px;
+}
+
+
+.UPF-Window
+{
+    @extend %fixed;
+    display: none;
+
+        .UPF-Window-Wrapper
+        {
+            @extend %fixed;
+            background: rgba(0,0,0,0.2);
+
+
+        }
+
+        .UPF-Window-Content
+        {
+            width:      400px;
+            padding:    20px;
+            margin:     0 auto;
+            z-index:    8888888888;
+            position:   relative;
+
+            background: $C-Blue-2;
+            border:     4px solid $C-Blue-1;
+            color:      $C-Grey-6;
+        }
+
+        .UPF-Window-Close
+        {
+            position:   absolute;
+            top:        -15px;
+            right:      -15px;
+            font-size:  14px;
+
+
+            background:      $C-Red-2;
+            border:          4px solid $C-Red-1;
+            border-radius:   0px;
+            color:           $C-Grey-6;
+        }
+}

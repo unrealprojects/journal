@@ -1452,6 +1452,37 @@ button {
   -moz-transition: color 0.4s, background-color 0.4s, border-color 0.4s;
   transition: color 0.4s, background-color 0.4s, border-color 0.4s; }
 
+.UPF-Window, .UPF-Window .UPF-Window-Wrapper {
+  position: fixed;
+  z-index: 888888888;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px; }
+
+.UPF-Window {
+  display: none; }
+  .UPF-Window .UPF-Window-Wrapper {
+    background: rgba(0, 0, 0, 0.2); }
+  .UPF-Window .UPF-Window-Content {
+    width: 400px;
+    padding: 20px;
+    margin: 0 auto;
+    z-index: 8888888888;
+    position: relative;
+    background: #2782a4;
+    border: 4px solid #18637f;
+    color: #f9f9f9; }
+  .UPF-Window .UPF-Window-Close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 14px;
+    background: #e43f3f;
+    border: 4px solid #a02828;
+    border-radius: 0px;
+    color: #f9f9f9; }
+
 .Content-Wrapper {
   margin-left: 235px;
   padding-left: 40px;

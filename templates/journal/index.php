@@ -43,7 +43,7 @@
 </div>
 
 
-    <div>
+    <div class="Scripts">
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
@@ -53,17 +53,9 @@
         <script src="/templates/journal/blocks/main/header/js/translate.js"></script>
         <script src="/templates/journal/lib/js/masonry.pkgd.js"></script>
         <script src="/templates/journal/lib/js/grid.js"></script>
+        <script src="/templates/journal/lib/js/jquery.modbox.js"></script>
         <script src="/templates/journal/lib/js/animation.js"></script>
     </div>
 </body>
 
 </html>
-
-
-
-
-
-
-<!--
-            %d %b %Y
--->
