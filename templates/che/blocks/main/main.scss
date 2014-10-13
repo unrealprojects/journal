@@ -32,10 +32,6 @@ button
 	@extend 			%Control;
 	@extend 			%Clickable;
 }
-.main
-{
-	padding-left: 235px;
-}
 .pos-top
 {
 	@extend %Content-Block;
@@ -144,8 +140,8 @@ button
 					@extend 	%Animated;
 					&:hover
 					{
-						background-color: darken(#4a4f5a, 10%);
-						color: white;
+						background-color: 		darken(#4a4f5a, 10%);
+						color: 					white;
 					}
 				}
 			}
@@ -179,185 +175,144 @@ button
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // HEADER
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-section.Header
+header.Site-Header
 {
-	.logo
+	position: 					relative;
+	margin-right:				$Content-Spacing;
+	@extend 					%Fix;
+	@extend 					%Push-Left;
+	@extend 					%Content-Spacing;
+	.Sidebar-Toggle
 	{
-		& > .custom
+		position: 				absolute;
+		top: 					0;
+		left: 					0;
+		width: 					40px;
+		height: 				40px;
+		background: 			#77797c url(../../templates/che/images/menu_w.png) center center no-repeat;
+		@extend 				%Animated;
+		@extend 				%Clickable;
+		&:hover
 		{
-			width: 400px;
-			img
-			{
-				float: left;
-			}
-
-			span
-			{
-				font-size: 30px;
-				margin-top: 30px;
-				display: block;
-				padding-top: 30px;
-			}
-		}
-		display: inline-block;
-		width: auto;
-		
-		header
-		{
-			margin-top: 20px;
-			position: relative;
-			background: url(./lib/img/logo.png) left top no-repeat;
-			min-height: 107px;
-			h2
-			{
-				margin: 0;
-				padding: 0;
-				position: absolute;
-				bottom: 0;
-				left: 70px;
-				font-family: 'PT Serif Caption', serif;
-				font-weight: 100;
-				font-size: 28px;
-				text-align: right;
-				p
-				{
-					margin: 0;
-					padding: 0;
-					font-size: 31px;
-				}
-			}
-			span
-			{
-				display: block;
-			}
-
+			background-color: 	#1a90ff;
 		}
 	}
-	.toolbar
+	.Site-Logo
 	{
-		display: inline-block;
-		float: right;
-		width: auto;
-		padding: 60px 0;
-		
-		@extend %Fix;
-		.authorization
+		margin-top:				10px;
+		float: 					left;
+		height: 				107px;
+		background: 			url(../../templates/che/images/logo.png) left top no-repeat;
+		h2
 		{
-			float: right;
-			@extend %Unstyle;
-			
+			padding-top:		35px;
+			padding-left: 		100px;
+			font-family: 		'PT Serif Caption', 'PT Serif', serif;
+			font-weight: 		100;
+			font-size:			28px;
+			text-align: 		right;
+			span
+			{
+				display: 		block;
+				font-size:		31px;
+			}
+		}
+	}
+	.Toolbar
+	{
+		margin-top:				60px;
+		float:					right;
+		@extend 				%Fix;
+		.Languages
+		{
+			float: 				left;
+			.goog-te-menu-value
+			{
+				margin:			0!important;
+				color: 			black;
+				font-family: 	'PT Serif', serif;
+				letter-spacing: 0!important;
+				@extend 		%Uppercase;
+				&:hover
+				{
+					color:		#c82222;
+				}
+				span
+				{
+					@extend 			%Clickable;
+				}
+				[style*='border-left']
+				{
+					display: 		none!important;
+				}
+			}
+			.goog-te-gadget-icon
+			{
+				display: 		none!important;
+			}
+			.goog-te-gadget-simple
+			{
+				border:			0!important;
+				background: 	none!important;
+			}
+		}
+		.Authorization
+		{
+			float: 				right;
+			#login-form
+			{
+				display: 		none;
+			}
 			ul
 			{
-				@extend %Unstyle;
+				@extend 		%Inline;
+				@extend 		%Unstyle;
 				li
 				{
-					@extend %Unstyle;
 					a
 					{
-						display: inline-block;
-						margin-right: 10px;
-						padding: 10px 20px;
-						text-transform: uppercase;
-						text-decoration: none;
-						color: black;
-						font-size: 12px;
-						font-weight: bold;
-						&:hover
-						{
-							color: $C-Red-2;
-						}
+						@extend 	%Uppercase;
 					}
-					a.Button-Like
-					{
-						color: white;
-						border-radius: 30px;
-						box-shadow: 0 1px 2px rgba(0,0,0,.2);
-						@include Gradient($C-Red-3,$C-Red-2, to bottom);
-						&:hover
-						{
-							@include Gradient($C-Red-2,$C-Red-1, to bottom);
-						}
-					}
-				}
-			}
-			.userdata
-			{
-				@extend %Content-Block;
-				display: none;
-				.control-group + .control-group
-				{
-					margin-top: 10px;
-				}
-				.input-small
-				{
-					border: 1px solid #aaa;
-					border-radius: 6px;
-					padding: 5px;
-					outline: none;
-					&:focus
-					{
-						border-color: $C-Cyan-1;
-					}
-				}
-				.add-on
-				{
-					display: inline-block;
-					padding: 5px 0;
 				}
 			}
 		}
-		.languages
-		{
-			margin-top: 1px;
-			float: left;
-			
-			.custom
-			{
-				padding: 10px;
-			}
-		}
-	}
-
-}
-
-/*Настройки переводчика гугл*/
-.goog-te-gadget-simple
-{
-	background-color: transparent !important;
-	border: none !important;
-	font-size: 10px !important;
-	display: inline-block !important;
-	padding-top: 0px !important;
-	padding-bottom: 0px !important;
-	cursor: pointer !important;
-	zoom: 1;
-	font-family: serif;
-	text-transform: uppercase;
-	font-weight: bold;
-
-	img
-	{
-		background-image: none !important;
-		position: absolute;
-	}
-
-	span
-	{
-		border-left-width: 0px !important;
-	}
-}
-.goog-te-menu-value
-{
-	margin: 0px !important;
-	margin-right: 10px;
-	span
-	{
-		font-size: 12px;
-		text-transform: uppercase;
-		padding-right: 5px;
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Site Navigation: Primary
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.Site-Navigation.Primary
+{
+	margin-top:					20px;
+	padding-top: 				20px;
+	padding-bottom:				20px;
+	border-top:					1px solid #e9ebec;
+	border-bottom:				1px solid #e9ebec;
+	margin-left:				$Sidebar-Width + $Content-Spacing;
+	margin-right:				$Content-Spacing;
+	@extend 					%Push-Left;
+	nav
+	{
+		@extend 				%Fix;
+		ul
+		{
+			@extend 			%Navigation-Inline;
+			li
+			{
+				a
+				{
+
+				}
+			}
+		}
+	}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
@@ -411,6 +366,7 @@ ul.Pagination
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 footer[role='contentinfo']
 {
+	@extend 				%Push-Left;
 	nav.Site-Navigation.Secondary
 	{
 		margin-bottom:		40px;
@@ -429,9 +385,6 @@ footer[role='contentinfo']
 			{
 				a
 				{
-					display: 		block;
-					padding: 		0 15px;
-					@extend 		%Animated;
 					&:hover
 					{
 						color: 		#77972b;

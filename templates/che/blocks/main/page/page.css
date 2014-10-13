@@ -1,28 +1,21 @@
 /*
-Error: Undefined mixin 'Adaptive'.
-        on line 199 of page.scss, in `Adaptive'
-        from line 199 of page.scss
+Error: Undefined variable: "$Content-Spacing".
+        on line 3 of page.scss
 
-194: 	font-size: 14px;
-195: 	vertical-align: top;
-196: 	margin: 0px;
-197: 	margin-top: -1px;
-198: 	@extend %Content-Block;
-199: 	@include Adaptive($Viewport-XS)
-200: 	{
-201:       width: 50%;
-202: 	}
-203: 	&:hover
-204: 	{
+1: main
+2: {
+3: 	padding-left: 				$Content-Spacing;
+4: 	margin-right: 				$Content-Spacing;
+5: 	@extend 					%Push-Left;
+6: }
+7: 
+8: 
 
 Backtrace:
-page.scss:199:in `Adaptive'
-page.scss:199
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/stack.rb:98:in `block in with_mixin'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/stack.rb:98:in `with_mixin'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/tree/visitors/perform.rb:336:in `visit_mixin'
+page.scss:3
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/tree/visitors/perform.rb:384:in `visit_prop'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.4.3/lib/sass/stack.rb:79:in `block in with_base'
@@ -71,4 +64,4 @@ C:/Ruby200-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'Adaptive'.\A         on line 199 of page.scss, in `Adaptive'\A         from line 199 of page.scss\A \A 194: 	font-size: 14px;\A 195: 	vertical-align: top;\A 196: 	margin: 0px;\A 197: 	margin-top: -1px;\A 198: 	@extend %Content-Block;\A 199: 	@include Adaptive($Viewport-XS)\A 200: 	{\A 201:       width: 50%;\A 202: 	}\A 203: 	&:hover\A 204: 	{"; }
+  content: "Error: Undefined variable: \"$Content-Spacing\".\A         on line 3 of page.scss\A \A 1: main\A 2: {\A 3: 	padding-left: 				$Content-Spacing;\A 4: 	margin-right: 				$Content-Spacing;\A 5: 	@extend 					%Push-Left;\A 6: }\A 7: \A 8: "; }

@@ -1,3 +1,11 @@
+main
+{
+	padding-left: 				$Content-Spacing;
+	margin-right: 				$Content-Spacing;
+	@extend 					%Push-Left;
+}
+
+
 .page
 {
 	@extend %Fix;

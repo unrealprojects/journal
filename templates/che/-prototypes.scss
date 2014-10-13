@@ -8,7 +8,7 @@
 
 %Clickable
 {
-	cursor: 			pointer;
+	cursor: 			pointer!important;
 }
 %Centrate
 {
@@ -97,7 +97,10 @@
 {
 	box-shadow:			0 2px 3px rgba(0, 0, 0, 0.3);
 }
-
+%Push-Left
+{
+	margin-left:		$Sidebar-Width;
+}
 %Navigation-Inline
 {
 	@extend 			%Inline;
@@ -107,7 +110,8 @@
 		a
 		{
 			display: 	block;
-			font-weight: bold;
+			padding: 	0 15px;
+			@extend 	%Animated;
 			@extend 	%Uppercase;
 		}
 	}
