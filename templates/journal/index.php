@@ -38,7 +38,7 @@
     </footer>
 
     <div class="Subscription">
-        <jdoc:include type="modules" name="subscription">
+        <jdoc:include type="modules" name="subscription"/>
     </div>
 </div>
 

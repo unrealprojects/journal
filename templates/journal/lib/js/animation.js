@@ -33,7 +33,6 @@ window.upf.Page = {};
         Masonry = $(Blocks).masonry({
             itemSelector: Selectors
         });
-
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -125,13 +124,18 @@ window.upf.Page = {};
             NavHeight       =   5;
 
 
+        // Start position
+        if($(window).scrollTop() > 5){
+            $(NavMenu).css({'top': '0px'}   );
+        }
+
+        // When Scroll
         $(window).scroll(function(){
             // Hide menu
             if($(window).scrollTop() > 5){
                 $(NavMenu).animate({'top': '0px'},50);
             }else{
                 $(NavMenu).animate({'top':NavHeight+'px'},100);
-
             }
         });
 
@@ -274,8 +278,8 @@ $(document).ready(function(){
     upf.Start.VerticalGrid();
     upf.Start.CategoryLinks();
 
-
-    $('.Feed-Subscription').upf_window('Good or Bad');
+    $('.Feed-Subscription').upf_window($('.Subscription').html());
+    $('.Content-Wrapper  .Subscription').remove();
 });
 
 

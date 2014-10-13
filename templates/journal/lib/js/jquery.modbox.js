@@ -76,7 +76,6 @@ open: function(Content,UserOptions){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 show: function(e){
-    console.log(2);
 
     // Close Prev Window
     $(Selector_Window).hide(e.data.Settings.Duration,
@@ -102,7 +101,12 @@ show: function(e){
     });
 
     // Close By Click To Wrapper
-    $(Selector_WindowWrapper + ',' + Selector_WindowClose).bind( e.data.Settings.Event + Selector_Window,Methods.close);
+    $(Selector_WindowWrapper + ',' + Selector_WindowClose).bind(
+            e.data.Settings.Event + Selector_Window,
+            {
+                Settings:   e.data.Settings.Duration
+            },
+        Methods.close);
 
     return false;
 },
