@@ -1,15 +1,15 @@
 /*
-Error: Undefined variable: "$Content-Spacing".
+Error: Undefined variable: "$Sidebar-Width".
         on line 3 of page.scss
 
-1: main
+1: .Content-Wrapper
 2: {
-3: 	padding-left: 				$Content-Spacing;
-4: 	margin-right: 				$Content-Spacing;
-5: 	@extend 					%Push-Left;
-6: }
-7: 
-8: 
+3: 	margin-left:				$Sidebar-Width;
+4: 	padding-left:				$Content-Spacing - 85px;
+5: 	padding-right:				$Content-Spacing - 85px;
+6: 	@include 					Adaptive($Viewport-SM)
+7: 	{
+8: 		padding-left:				$Content-Spacing - 75px;
 
 Backtrace:
 page.scss:3
@@ -64,4 +64,4 @@ C:/Ruby200-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$Content-Spacing\".\A         on line 3 of page.scss\A \A 1: main\A 2: {\A 3: 	padding-left: 				$Content-Spacing;\A 4: 	margin-right: 				$Content-Spacing;\A 5: 	@extend 					%Push-Left;\A 6: }\A 7: \A 8: "; }
+  content: "Error: Undefined variable: \"$Sidebar-Width\".\A         on line 3 of page.scss\A \A 1: .Content-Wrapper\A 2: {\A 3: 	margin-left:				$Sidebar-Width;\A 4: 	padding-left:				$Content-Spacing - 85px;\A 5: 	padding-right:				$Content-Spacing - 85px;\A 6: 	@include 					Adaptive($Viewport-SM)\A 7: 	{\A 8: 		padding-left:				$Content-Spacing - 75px;"; }

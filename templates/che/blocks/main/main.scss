@@ -11,7 +11,7 @@
 }
 body
 {
-	min-width: 			1020px;
+	min-width: 			1000px;
 	border-top: 		5px solid #1a90ff;
 	background: 		#F5F5F5;
 	font-family: 		'PT Serif', serif;
@@ -49,18 +49,6 @@ button
 	}
 
 }
-
-.pos-content
-{
-	.pos-title
-	{
-		img
-		{
-            width: 100%;
-			height: auto;
-		}
-	}
-}
 .item > .floatbox
 {
 	width: 66.66%;
@@ -92,10 +80,6 @@ button
   min-height: 0px !important;
 }
 
-
-.items .width100{
-
-}
 
 .teaser-item{
   @extend .Node-XS-6;
@@ -178,10 +162,7 @@ button
 header.Site-Header
 {
 	position: 					relative;
-	margin-right:				$Content-Spacing;
 	@extend 					%Fix;
-	@extend 					%Push-Left;
-	@extend 					%Content-Spacing;
 	.Sidebar-Toggle
 	{
 		position: 				absolute;
@@ -225,12 +206,14 @@ header.Site-Header
 		@extend 				%Fix;
 		.Languages
 		{
+			margin-right: 		20px;
 			float: 				left;
 			.goog-te-menu-value
 			{
 				margin:			0!important;
 				color: 			black;
 				font-family: 	'PT Serif', serif;
+				font-size:		16px!important;
 				letter-spacing: 0!important;
 				@extend 		%Uppercase;
 				&:hover
@@ -239,11 +222,11 @@ header.Site-Header
 				}
 				span
 				{
-					@extend 			%Clickable;
+					@extend 	%Clickable;
 				}
 				[style*='border-left']
 				{
-					display: 		none!important;
+					display: 	none!important;
 				}
 			}
 			.goog-te-gadget-icon
@@ -252,6 +235,7 @@ header.Site-Header
 			}
 			.goog-te-gadget-simple
 			{
+				padding: 		10px!important;
 				border:			0!important;
 				background: 	none!important;
 			}
@@ -271,7 +255,31 @@ header.Site-Header
 				{
 					a
 					{
+						display: 	block;
+						padding: 	10px;
 						@extend 	%Uppercase;
+						&:hover
+						{
+							color:  #c82222;
+						}
+						&.Button-Like
+						{
+							display: 				block;
+							margin-top:				1px;
+							margin-left: 			35px;
+							padding: 				8px 15px;
+							border-radius: 			20px;
+							border:					0;
+							font-family: 			'PT Serif', serif;
+							color:					white;
+							@include 				Gradient(#e62727, #c82222, to bottom);
+							@extend 				%Uppercase;
+							@extend 				%Button-Shadow;
+							&:hover
+							{
+								background: 	#c82222;
+							}
+						}
 					}
 				}
 			}
@@ -292,9 +300,7 @@ header.Site-Header
 	padding-bottom:				20px;
 	border-top:					1px solid #e9ebec;
 	border-bottom:				1px solid #e9ebec;
-	margin-left:				$Sidebar-Width + $Content-Spacing;
-	margin-right:				$Content-Spacing;
-	@extend 					%Push-Left;
+	margin-bottom:				20px;
 	nav
 	{
 		@extend 				%Fix;
@@ -305,10 +311,57 @@ header.Site-Header
 			{
 				a
 				{
-
+					font-weight: bold;
+					&:hover
+					{
+						color:	#c82222;
+					}
 				}
 			}
+			li:first-child a
+			{
+				padding-left: 0;
+			}
+			li:last-child a
+			{
+				padding-right: 0;
+			}
 		}
+	}
+	.Search-Form
+	{
+		width: 					auto;
+		float: 					right;
+		form
+		{
+			margin-top: 	-3px;
+
+			#mod-search-searchword
+			{
+				width: 150px;
+				float: left;
+				@include 			Opacity(0);
+				&:focus
+				{
+					@include 		Opacity(1);
+				}
+			}
+			input[type='image']
+			{
+				border: 0;
+				background-color: transparent;
+			}
+		}
+		&:hover
+		{
+
+			#mod-search-searchword
+			{
+				@include 		Transition(opacity, .5s);
+				@include 		Opacity(1);
+			}
+		}
+
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -366,7 +419,6 @@ ul.Pagination
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 footer[role='contentinfo']
 {
-	@extend 				%Push-Left;
 	nav.Site-Navigation.Secondary
 	{
 		margin-bottom:		40px;
@@ -375,7 +427,6 @@ footer[role='contentinfo']
 		border-top:			5px solid #77972b;
 		border-bottom:		1px solid #e9ebec;
 		@extend 			%Fix;
-		@extend 			%Content-Spacing;
 		ul
 		{
 			width: 			auto;
@@ -389,10 +440,6 @@ footer[role='contentinfo']
 					{
 						color: 		#77972b;
 					}
-				}
-				&:first-child a
-				{
-					padding-left:	0;
 				}
 			}
 		}
@@ -408,7 +455,6 @@ footer[role='contentinfo']
 		font-size:			10px;
 		line-height: 		1.45;
 		color: 				#b8babc;
-		@extend 			%Content-Spacing;
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
