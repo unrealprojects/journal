@@ -1,40 +1,20 @@
--- phpMyAdmin SQL Dump
--- version 4.2.0
--- http://www.phpmyadmin.net
---
--- Хост: 127.0.0.1
--- Время создания: Окт 13 2014 г., 09:23
--- Версия сервера: 5.6.17
--- Версия PHP: 5.4.28
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
---
--- База данных: `journal`
---
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_config`
---
+CREATE DATABASE IF NOT EXISTS `journal` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `journal`;
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_config` (
   `namekey` varchar(200) NOT NULL,
   `value` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_acymailing_config`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_config`;
 INSERT INTO `f8ad7_acymailing_config` (`namekey`, `value`) VALUES
 ('level', 'Starter'),
 ('version', '4.7.2'),
@@ -115,12 +95,6 @@ INSERT INTO `f8ad7_acymailing_config` (`namekey`, `value`) VALUES
 ('module_redirect', '|journal'),
 ('last_maxexec_check', '1413056296');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_fields`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_fields` (
 `fieldid` smallint(5) unsigned NOT NULL,
   `fieldname` varchar(250) NOT NULL,
@@ -142,20 +116,11 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_fields` (
   `joomlaprofile` tinyint(3) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
---
--- Дамп данных таблицы `f8ad7_acymailing_fields`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_fields`;
 INSERT INTO `f8ad7_acymailing_fields` (`fieldid`, `fieldname`, `namekey`, `type`, `value`, `published`, `ordering`, `options`, `core`, `required`, `backend`, `frontcomp`, `default`, `listing`, `frontlisting`, `frontjoomlaprofile`, `frontjoomlaregistration`, `joomlaprofile`) VALUES
 (1, 'NAMECAPTION', 'name', 'text', '', 1, 1, '', 1, 1, 1, 1, '', 1, 1, 0, 0, 0),
 (2, 'EMAILCAPTION', 'email', 'text', '', 1, 2, '', 1, 1, 1, 1, '', 1, 1, 0, 0, 0),
 (3, 'RECEIVE', 'html', 'radio', '0::JOOMEXT_TEXT\n1::HTML', 1, 3, '', 1, 1, 1, 1, '1', 1, 0, 0, 0, 0);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_filter`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_filter` (
 `filid` mediumint(8) unsigned NOT NULL,
@@ -169,12 +134,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_filter` (
   `filter` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_geolocation`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_filter`;
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_geolocation` (
 `geolocation_id` int(10) unsigned NOT NULL,
   `geolocation_subid` int(10) unsigned NOT NULL DEFAULT '0',
@@ -191,12 +151,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_geolocation` (
   `geolocation_city` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_history`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_geolocation`;
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_history` (
   `subid` int(10) unsigned NOT NULL,
   `date` int(10) unsigned NOT NULL,
@@ -207,10 +162,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_history` (
   `mailid` mediumint(8) unsigned DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_acymailing_history`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_history`;
 INSERT INTO `f8ad7_acymailing_history` (`subid`, `date`, `ip`, `action`, `data`, `source`, `mailid`) VALUES
 (2, 1413115251, '127.0.0.1', 'created', '', 'HTTP_REFERER::http://journal/component/search/?searchword=&searchphrase=all&Itemid=179\nHTTP_USER_AGENT::Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36\nHTTP_HOST::journal\nSERVER_ADDR::127.0.0.1\nREMOTE_ADDR::127.0.0.1\nREQUEST_URI::/component/search/', 0),
 (3, 1413187777, '127.0.0.1', 'created', '', 'HTTP_REFERER::http://journal/component/users/?view=registration\nHTTP_USER_AGENT::Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36\nHTTP_HOST::journal\nSERVER_ADDR::127.0.0.1\nREMOTE_ADDR::127.0.0.1\nREQUEST_URI::/index.php', 0),
@@ -218,12 +170,6 @@ INSERT INTO `f8ad7_acymailing_history` (`subid`, `date`, `ip`, `action`, `data`,
 (5, 1413188176, '127.0.0.1', 'created', '', 'HTTP_REFERER::http://journal/1234\nHTTP_USER_AGENT::Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36\nHTTP_HOST::journal\nSERVER_ADDR::127.0.0.1\nREMOTE_ADDR::127.0.0.1\nREQUEST_URI::/index.php', 0),
 (6, 1413188363, '127.0.0.1', 'created', '', 'HTTP_REFERER::http://journal/1234\nHTTP_USER_AGENT::Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36\nHTTP_HOST::journal\nSERVER_ADDR::127.0.0.1\nREMOTE_ADDR::127.0.0.1\nREQUEST_URI::/index.php', 0),
 (7, 1413188422, '127.0.0.1', 'created', '', 'HTTP_REFERER::http://journal/1234\nHTTP_USER_AGENT::Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36\nHTTP_HOST::journal\nSERVER_ADDR::127.0.0.1\nREMOTE_ADDR::127.0.0.1\nREQUEST_URI::/index.php', 0);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_list`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_list` (
   `name` varchar(250) NOT NULL,
@@ -244,41 +190,22 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_list` (
   `startrule` varchar(50) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
---
--- Дамп данных таблицы `f8ad7_acymailing_list`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_list`;
 INSERT INTO `f8ad7_acymailing_list` (`name`, `description`, `ordering`, `listid`, `published`, `userid`, `alias`, `color`, `visible`, `welmailid`, `unsubmailid`, `type`, `access_sub`, `access_manage`, `languages`, `startrule`) VALUES
 ('Рассылка новостей', 'Receive our latest news', 1, 1, 1, 445, 'mailing-list', '#3366ff', 1, NULL, 0, 'list', 'all', 'none', 'all', '0');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_listcampaign`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_listcampaign` (
   `campaignid` smallint(5) unsigned NOT NULL,
   `listid` smallint(5) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_listmail`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_listcampaign`;
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_listmail` (
   `listid` smallint(5) unsigned NOT NULL,
   `mailid` mediumint(8) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_listsub`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_listmail`;
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_listsub` (
   `listid` smallint(5) unsigned NOT NULL,
   `subid` int(10) unsigned NOT NULL,
@@ -287,19 +214,10 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_listsub` (
   `status` tinyint(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_acymailing_listsub`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_listsub`;
 INSERT INTO `f8ad7_acymailing_listsub` (`listid`, `subid`, `subdate`, `unsubdate`, `status`) VALUES
 (1, 1, 1410952288, NULL, 1),
 (1, 2, 1413115251, 1413115268, -1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_mail`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_mail` (
 `mailid` mediumint(8) unsigned NOT NULL,
@@ -330,10 +248,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_mail` (
   `language` varchar(50) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
---
--- Дамп данных таблицы `f8ad7_acymailing_mail`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_mail`;
 INSERT INTO `f8ad7_acymailing_mail` (`mailid`, `subject`, `body`, `altbody`, `published`, `senddate`, `created`, `fromname`, `fromemail`, `replyname`, `replyemail`, `type`, `visible`, `userid`, `alias`, `attach`, `html`, `tempid`, `key`, `frequency`, `params`, `sentby`, `metakey`, `metadesc`, `filter`, `language`) VALUES
 (1, 'New Subscriber on your website : {user:email}', '<p>Hello {subtag:name},</p><p>A new user has been created in AcyMailing : </p><blockquote><p>Name : {user:name}</p><p>Email : {user:email}</p><p>IP : {user:ip} </p><p>Subscription : {user:subscription}</p></blockquote>', '', 1, NULL, NULL, NULL, NULL, NULL, NULL, 'notification', 0, NULL, 'notification_created', NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
 (2, 'A User unsubscribed from all your lists : {user:email}', '<p>Hello {subtag:name},</p><p>The user {user:name} : {user:email} unsubscribed from all your lists</p><p>Subscription : {user:subscription}</p><p>{survey}</p>', '', 1, NULL, NULL, NULL, NULL, NULL, NULL, 'notification', 0, NULL, 'notification_unsuball', NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
@@ -345,12 +260,6 @@ INSERT INTO `f8ad7_acymailing_mail` (`mailid`, `subject`, `body`, `altbody`, `pu
 (8, 'AcyMailing Cron Report {mainreport}', '<p>{report}</p><p>{detailreport}</p>', '', 1, NULL, NULL, NULL, NULL, NULL, NULL, 'notification', 0, NULL, 'report', NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
 (9, 'Modify your subscription', '<p>Hello {subtag:name}, </p><p>You requested some changes on your subscription,</p><p>Please {modify}click here{/modify} to be identified as the owner of this account and then modify your subscription.</p>', '', 1, NULL, NULL, NULL, NULL, NULL, NULL, 'notification', 0, NULL, 'modif', NULL, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_queue`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_queue` (
   `senddate` int(10) unsigned NOT NULL,
   `subid` int(10) unsigned NOT NULL,
@@ -360,12 +269,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_queue` (
   `paramqueue` varchar(250) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_rules`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_queue`;
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_rules` (
 `ruleid` smallint(5) unsigned NOT NULL,
   `name` varchar(250) NOT NULL,
@@ -377,12 +281,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_rules` (
   `published` tinyint(3) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_stats`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_rules`;
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_stats` (
   `mailid` mediumint(8) unsigned NOT NULL,
   `senthtml` int(10) unsigned NOT NULL DEFAULT '0',
@@ -399,12 +298,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_stats` (
   `bouncedetails` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_subscriber`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_stats`;
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_subscriber` (
 `subid` int(10) unsigned NOT NULL,
   `email` varchar(200) NOT NULL,
@@ -425,10 +319,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_subscriber` (
   `lastsent_date` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
---
--- Дамп данных таблицы `f8ad7_acymailing_subscriber`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_subscriber`;
 INSERT INTO `f8ad7_acymailing_subscriber` (`subid`, `email`, `userid`, `name`, `created`, `confirmed`, `enabled`, `accept`, `ip`, `html`, `key`, `confirmed_date`, `confirmed_ip`, `lastopen_date`, `lastopen_ip`, `lastclick_date`, `lastsent_date`) VALUES
 (1, 'chevil92@gmail.com', 445, 'Super User', 1410777706, 1, 1, 1, NULL, 1, NULL, 0, NULL, 0, NULL, 0, 0),
 (2, 'olegblud@gmail.com', 0, 'Olegblud', 1413115251, 0, 1, 1, '127.0.0.1', 1, 'MnBZnvxV2O2axp', 0, NULL, 0, NULL, 0, 0),
@@ -437,12 +328,6 @@ INSERT INTO `f8ad7_acymailing_subscriber` (`subid`, `email`, `userid`, `name`, `
 (5, 'qwert@asdf.rt', 448, 'qwert', 1413188176, 0, 0, 1, '127.0.0.1', 1, 'fioRXYTOcgXlsa', 0, NULL, 0, NULL, 0, 0),
 (6, 'qwerrr@qwer.er', 449, 'qwerr', 1413188363, 0, 0, 1, '127.0.0.1', 1, 'JifwUaDPiL5UCe', 0, NULL, 0, NULL, 0, 0),
 (7, 'shsrrd@sdf.er', 450, 'shsrrd', 1413188422, 0, 0, 1, '127.0.0.1', 1, 'XvH9QgpEwdfwsJ', 0, NULL, 0, NULL, 0, 0);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_template`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_template` (
 `tempid` smallint(5) unsigned NOT NULL,
@@ -467,21 +352,12 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_template` (
   `access` varchar(250) NOT NULL DEFAULT 'all'
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
---
--- Дамп данных таблицы `f8ad7_acymailing_template`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_template`;
 INSERT INTO `f8ad7_acymailing_template` (`tempid`, `name`, `description`, `body`, `altbody`, `created`, `published`, `premium`, `ordering`, `namekey`, `styles`, `subject`, `stylesheet`, `fromname`, `fromemail`, `replyname`, `replyemail`, `thumb`, `readmore`, `access`) VALUES
 (1, 'Notification template', '', '<div style="text-align: center; width: 100%; background-color:#ffffff;">\r\n<div class="acymailing_online acyeditor_delete acyeditor_text" style="text-align:center">{readonline}This email contains graphics, so if you don''t see them, view it in your browser{/readonline}</div>\r\n\r\n<table align="center" border="0" cellpadding="0" cellspacing="0" class="w600" style="text-align: justify; margin: auto; width:600px">\r\n	<tbody>\r\n		<tr style="line-height: 0px;" class="acyeditor_delete">\r\n			<td class="w600" colspan="5" style="background-color: #69b4c0;" valign="bottom" width="600"><img alt=" - - - " src="media/com_acymailing/templates/newsletter-4/images/top.png" /></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete">\r\n			<td class="w40" style="background-color: #ebebeb;" width="40"></td>\r\n			<td class="acyeditor_text w520" colspan="3" height="80" style="text-align: left; background-color: rgb(235, 235, 235);" width="520"><img alt="-" src="media/com_acymailing/templates/newsletter-4/images/message_icon.png" style="float:left; margin-right:10px;" />\r\n				<h3>Topic of your message</h3>\r\n\r\n				<h4>Subtitle for your message</h4>\r\n			</td>\r\n			<td class="acyeditor_picture w40" style="background-color: #ebebeb;" width="40"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="w40" style="background-color: #ebebeb;" width="40"></td>\r\n			<td class="w20" style="background-color: #fff;" width="20"></td>\r\n			<td class="w480" height="20" style="background-color:#fff;" width="480"></td>\r\n			<td class="w20" style="background-color: #fff;" width="20"></td>\r\n			<td class="w40" style="background-color: #ebebeb;" width="40"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="w40" style="background-color: #ebebeb;" width="40"></td>\r\n			<td class="w20" style="background-color: #fff;" width="20"></td>\r\n			<td class="acyeditor_text w480 pict" style="background-color:#fff; text-align: left;" width="480">\r\n			<h1>Dear {subtag:name},</h1>\r\n			Your message here...<br />\r\n			</td>\r\n			<td class="w20" style="background-color: #fff;" width="20"></td>\r\n			<td class="w40" style="background-color: #ebebeb;" width="40"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="w40" style="background-color: #ebebeb;" width="40"></td>\r\n			<td class="w20" style="background-color: #fff;" width="20"></td>\r\n			<td class="w480" height="20" style="background-color:#fff;" width="480"></td>\r\n			<td class="w20" style="background-color: #fff;" width="20"></td>\r\n			<td class="w40" style="background-color: #ebebeb;" width="40"></td>\r\n		</tr>\r\n		<tr style="line-height: 0px;" class="acyeditor_delete">\r\n			<td class="w600" colspan="5" style="background-color:#ebebeb;" width="600"><img alt=" - - - " src="media/com_acymailing/templates/newsletter-4/images/bottom.png" /></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<div class="acyeditor_delete acyeditor_text" style="text-align:center">Not interested any more? {unsubscribe}Unsubscribe{/unsubscribe}</div>\r\n</div>', '', NULL, 1, 0, 1, 'newsletter-4', 'a:10:{s:6:"tag_h1";s:76:"color:#393939 !important; font-size:14px; font-weight:bold; margin:10px 0px;";s:6:"tag_h2";s:106:"color: #309fb3 !important; font-size: 14px; font-weight: normal; text-align:left; margin:0px; padding:0px;";s:6:"tag_h3";s:144:"color: #393939 !important; font-size: 18px; font-weight: bold; text-align:left; margin:0px; padding-bottom:5px; border-bottom:1px solid #bdbdbd;";s:6:"tag_h4";s:117:"color: #309fb3 !important; font-size: 14px; font-weight: bold; text-align:left; margin:0px; padding: 5px 0px 0px 0px;";s:5:"tag_a";s:71:"color:#309FB3; text-decoration:none; font-style:italic; cursor:pointer;";s:19:"acymailing_readmore";s:90:"font-size: 12px; color: #fff; background-color:#309fb3; font-weight:bold; padding:3px 5px;";s:17:"acymailing_online";s:52:"color:#a3a3a3; text-decoration:none; font-size:11px;";s:16:"acymailing_unsub";s:52:"color:#a3a3a3; text-decoration:none; font-size:11px;";s:8:"color_bg";s:7:"#ffffff";s:18:"acymailing_content";s:19:"text-align:justify;";}', NULL, 'div,table,p{font-family: Verdana, Arial, Helvetica, sans-serif; font-size:12px; text-align:justify; color:#8c8c8c; margin:0px}\r\ndiv.info{text-align:center;padding:10px;font-size:11px;color:#a3a3a3;}\r\n\r\n@media (min-width:10px){\r\n	table[class=w600], td[class=w600] { width: 320px !important;}\r\n	table[class=w520], td[class=w520] { width: 280px !important;}\r\n	table[class=w480], td[class=w480] { width: 260px !important;}\r\n	td[class=w40] { width: 20px !important;}\r\n	td[class=w20] { width: 10px !important;}\r\n	.w600 img {max-width:320px; height:auto !important}\r\n	.w480 img {max-width:260px; height:auto !important;}\r\n}\r\n\r\n@media (min-width:480px) {\r\n	table[class=w600], td[class=w600] { width: 480px !important;}\r\n	table[class=w520], td[class=w520] { width: 440px !important;}\r\n	table[class=w480], td[class=w480] { width: 420px !important;}\r\n	td[class=w40] { width: 20px !important;}\r\n	td[class=w20] { width: 10px !important;}\r\n	.w600 img {max-width:480px; height:auto !important}\r\n	.w480 img {max-width:420px;  height:auto !important;}\r\n}\r\n@media (min-width:600px){\r\n	table[class=w600], td[class=w600] { width: 600px !important;}\r\n	table[class=w520], td[class=w520] { width: 520px !important;}\r\n	table[class=w480], td[class=w480] { width: 480px !important;}\r\n	td[class=w40] { width40px !important;}\r\n	td[class=w20] { width: 20px !important;}\r\n	.w600 img {max-width:600px; height:auto !important}\r\n	.w480 img {max-width:480px;  height:auto !important;}\r\n}\r\n', NULL, NULL, NULL, NULL, 'media/com_acymailing/templates/newsletter-4/newsletter-4.png', '', 'all'),
 (2, 'Newspaper', '', '<div align="center" style="width:100%; background-color:#454545; padding-bottom:20px; color:#ffffff;">\r\n<div class="acymailing_online acyeditor_delete acyeditor_text">{readonline}This e-mail contains graphics, if you don''t see them <strong>» view it online.</strong>{/readonline}</div>\r\n\r\n<table align="center" border="0" cellpadding="0" cellspacing="0" class="w600" style="margin:auto; background-color:#ffffff; color:#454545;" width="600">\r\n		<tr>\r\n			<td class="w600">\r\n			<table border="0" cellpadding="0" cellspacing="0" class="w600" width="600">\r\n					<tr class="acyeditor_delete" >\r\n						<td class="w30" style="background-color:#ffffff" width="30"></td>\r\n						<td class="acyeditor_text w540" style="font-family:Times New Roman, Times, serif; background-color:#ffffff; text-align:left" width="540">&nbsp;\r\n						<h1><img alt="logo" src="media/com_acymailing/templates/newsletter-5/images/logo.png" style="float: right; width: 107px; height: 70px;" /></h1>\r\n\r\n						<h1>Your title here</h1>\r\n\r\n						<h3>your subtitle</h3>\r\n						</td>\r\n						<td class="w30" style="line-height:0px; background-color:#ffffff" width="30"></td>\r\n					</tr>\r\n					<tr class="acyeditor_delete">\r\n						<td class="w600" colspan="3" style="line-height:0px; background-color:#e4e4e4" valign="top" width="600"><img alt="---" src="media/com_acymailing/templates/newsletter-5/images/header.png" /></td>\r\n					</tr>\r\n					<tr class="acyeditor_delete">\r\n						<td class="acyeditor_picture w600" colspan="3" style="line-height:0px; background-color:#ffffff" valign="top" width="600"><img alt="banner" src="media/com_acymailing/templates/newsletter-5/images/banner.png" /></td>\r\n					</tr>\r\n					<tr class="acyeditor_delete">\r\n						<td class="w600" colspan="3" style="line-height:0px;" valign="top" width="600"><img alt="---" src="media/com_acymailing/templates/newsletter-5/images/separator.png" /></td>\r\n					</tr>\r\n					<tr>\r\n						<td class="w30" style="background-color:#ffffff" width="30"></td>\r\n						<td class="acyeditor_text w540" style="text-align:justify; color:#575757; font-family:Times New Roman, Times, serif; font-size:13px; background-color:#ffffff" width="540">\r\n						<h2>Interviews and reports</h2>\r\n						<span class="dark">Lorem ipsum dolor sit amet, consectLorem ipsum dolor sit amet.</span><br />\r\n						consectetur adipiscing elit. Aenean sollicitudin orci sit amet urna lla pretium ut. Sed elementum convallis mi. Vivamus elementum.ed elementum convallis mi. <a href="#">Vivamus elementum</a>.Lorem ipsum dolor sit amet.<br />\r\n						<br />\r\n						cLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin orci sit amet urna lla pretium ut. Sed elementum convallis mi. Vivamus elementum.<br />\r\n						<br />\r\n						<span class="acymailing_readmore">Read More</span><br />\r\n						&nbsp;\r\n						<h2>Journalism around the world</h2>\r\n						<span class="dark">Lorem ipsum dolor sit amet, consectLorem. consectetur adipiscing elit. Aenean sollicitudin orci sit amet urna lla pretium ut. Sed elementum.</span> consectetur adipiscing elit. Aenean sollicitudin orci sit amet urna lla pretium ut. Sed elementum convallis mi. Vivamus elementum.ed elementum convallis mi.<br />\r\n						Vivamus elementum.<a href="#">Lorem ipsum dolor</a> sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />\r\n						<br />\r\n						<span class="acymailing_readmore">Read More</span></td>\r\n						<td class="w30" style="background-color:#ffffff" width="30"></td>\r\n					</tr>\r\n					<tr style="line-height: 0px;">\r\n						<td class="w600" colspan="3" style="background-color:#ffffff" width="600"><img alt="--" src="media/com_acymailing/templates/newsletter-5/images/footer1.png" width="600" /></td>\r\n					</tr>\r\n					<tr>\r\n						<td class="acyfooter acyeditor_text w600" colspan="3" height="25" style="text-align:center; background-color:#ebebeb;  color:#454545; font-family:Times New Roman, Times, serif; font-size:13px" width="600"><a href="#">www.mywebsite.com</a> | <a href="#">contact</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a></td>\r\n					</tr>\r\n					<tr style="line-height: 0px;">\r\n						<td class="w600" colspan="3" style="background-color:#454545;" width="600"><img alt="--" src="media/com_acymailing/templates/newsletter-5/images/footer2.png" width="600" /></td>\r\n					</tr>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n</table>\r\n\r\n<div class="acymailing_unsub acyeditor_delete acyeditor_text">{unsubscribe}If you''re not interested any more <strong>» unsubscribe</strong>{/unsubscribe}</div>\r\n</div>\r\n', '', NULL, 1, 0, 2, 'newsletter-5', 'a:10:{s:6:"tag_h1";s:71:"color:#454545 !important; font-size:24px; font-weight:bold; margin:0px;";s:6:"tag_h2";s:145:"color:#b20000 !important; font-size:18px; font-weight:bold; margin:0px; margin-bottom:10px; padding-bottom:4px; border-bottom: 1px solid #d6d6d6;";s:6:"tag_h3";s:76:"color:#b20101 !important; font-weight:bold; font-size:18px; margin:10px 0px;";s:6:"tag_h4";s:67:"color:#e52323 !important; font-weight:bold; margin:0px; padding:0px";s:5:"tag_a";s:65:"cursor:pointer; color:#9d0000; text-decoration:none; border:none;";s:19:"acymailing_readmore";s:152:"cursor:pointer; color:#ffffff; background-color:#9d0000; border-top:1px solid #9d0000; border-bottom:1px solid #9d0000; padding:3px 5px; font-size:13px;";s:17:"acymailing_online";s:148:"color:#dddddd; text-decoration:none; font-size:13px; margin:10px; text-align:center; font-family:Times New Roman, Times, serif; padding-bottom:10px;";s:8:"color_bg";s:7:"#454545";s:18:"acymailing_content";s:0:"";s:16:"acymailing_unsub";s:131:"color:#dddddd; text-decoration:none; font-size:13px; text-align:center; font-family:Times New Roman, Times, serif; padding-top:10px";}', NULL, '.acyfooter a{\r\n	color:#454545;\r\n}\r\n.dark{\r\n	color:#454545;\r\n	font-weight:bold;\r\n}\r\ndiv,table,p{font-family:"Times New Roman", Times, serif;font-size:13px;color:#575757;}\r\n\r\n\r\n\r\n@media (min-width:10px){\r\n	table[class=w600], td[class=w600] { width:320px !important; }\r\n	table[class=w540], td[class=w540] { width:260px !important; }\r\n	td[class=w30] { width:30px !important; }\r\n	.w600 img {max-width:320px; height:auto !important; }\r\n	.w540 img {max-width:260px; height:auto !important; }\r\n}\r\n\r\n@media (min-width: 480px){\r\n	table[class=w600], td[class=w600] { width:480px !important; }\r\n	table[class=w540], td[class=w540] { width:420px !important; }\r\n	td[class=w30] { width:30px !important; }\r\n	.w600 img {max-width:480px; height:auto !important; }\r\n	.w540 img {max-width:420px; height:auto !important; }\r\n}\r\n\r\n@media (min-width:600px){\r\n	table[class=w600], td[class=w600] { width:600px !important; }\r\n	table[class=w540], td[class=w540] { width:540px !important; }\r\n	td[class=w30] { width:30px !important; }\r\n	.w600 img     {max-width:600px; height:auto !important; }\r\n	.w540 img {max-width:540px; height:auto !important; }\r\n}\r\n', NULL, NULL, NULL, NULL, 'media/com_acymailing/templates/newsletter-5/newsletter-5.png', '', 'all'),
 (3, 'Build Bio', '', '<div align="center" style="width:100%; background-color:#3c3c3c; padding-bottom:20px; color:#ffffff;">\r\n<div class="acymailing_online acyeditor_delete acyeditor_text">{readonline}This e-mail contains graphics, if you don''t see them <strong>» view it online.</strong>{/readonline}</div>\r\n\r\n<table align="center" border="0" cellpadding="0" cellspacing="0" class="w600" style="margin:auto; background-color:#ffffff; color:#575757;" width="600">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<table border="0" cellpadding="0" cellspacing="0" class="w600" width="600">\r\n				<tr class="acyeditor_delete">\r\n					<td class="w600" colspan="3" style="line-height:0px; background-color:#eeeeee" valign="bottom" width="600"><img alt="mail" height="41" src="media/com_acymailing/templates/newsletter-6/images/header.png" width="600" /></td>\r\n				</tr>\r\n				<tr class="acyeditor_delete">\r\n					<td class="w30" style="color:#ffffff;" width="30"></td>\r\n					<td class="acyeditor_picture w540" style="line-height:0px; background-color:#ffffff; text-align:center" width="540"><img alt="" src="media/com_acymailing/templates/newsletter-6/images/banner.png" style="width: 540px; height: 122px;" /></td>\r\n					<td class="w30" height="122" style="background-color:#ffffff" width="30"></td>\r\n				</tr>\r\n				<tr class="acyeditor_delete">\r\n					<td class="w30" style="background-color:#b9cf00; color:#ffffff;" width="30"></td>\r\n					<td class="acyeditor_text w540" height="25" style="text-align:right; background-color:#b9cf00; color:#ffffff;" width="540"><span class="hide">Newsletter</span> {date:3}</td>\r\n					<td class="w30" style="background-color:#b9cf00; color:#ffffff;" width="30"></td>\r\n				</tr>\r\n				<tr>\r\n					<td class="w600" colspan="3" height="25" style="background-color:#ffffff" width="600"></td>\r\n				</tr>\r\n				<tr>\r\n					<td class="w30" style="background-color:#ffffff" width="30"></td>\r\n					<td class="acyeditor_text w540" style="text-align:justify; color:#575757; background-color:#ffffff" width="540"><span class="intro">Hello {subtag:name},</span><br />\r\n					<br />\r\n					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin orci sit amet urna lla pretium ut. Sed elementum Vivamus elementum. sollicitudin orci sit amet urna lla pretium ut. Sed elementum convallis mi.\r\n					<h2>Day One</h2>\r\n					<strong>Lorem ipsum dolor sit amet, consectLorem ipsum dolor sit amet.</strong><br />\r\n					consectetur adipiscing elit. Aenean sollicitudin orci sit amet urna lla pretium ut. Sed <a href="#">elementum convallis</a> mi. Vivamus elementum.ed elementum convallis mi. Vivamus elementum.Lorem ipsum dolor sit amet.<br />\r\n					<br />\r\n					cLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin orci sit amet urna lla pretium ut. Sed elementum convallis mi. Vivamus elementum.<br />\r\n					<br />\r\n					<span class="acymailing_readmore">Read More</span>\r\n\r\n					<h2>How to build a green house</h2>\r\n					<img alt="picture" height="160" src="media/com_acymailing/templates/newsletter-6/images/picture.png" style="float:left;" width="193" /> <strong>Lorem ipsum dolor sit amet, elit.</strong> Aenean sollicitudin orci sit amet . Sed <a href="#">elementum convallis</a> mi. Vivamus elementum.ed elementum convallis mi. Vivamus elementum.Lorem ipsum dolor sit amet.<br />\r\n					<br />\r\n					cLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sollicitudin orci sit amet urna lla pretium ut. Sed elementum convallis mi. Vivamus elementum.<br />\r\n					<br />\r\n					<span class="acymailing_readmore">Read More</span></td>\r\n					<td class="w30" style="background-color:#ffffff" width="30"></td>\r\n				</tr>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr class="acyeditor_delete">\r\n			<td>\r\n			<table border="0" cellpadding="0" cellspacing="0" class="w600" width="600">\r\n				<tr style="line-height: 0px;">\r\n					<td class="w600" colspan="3" style="line-height:0px; background-color:#efefef;" valign="top" width="600"><img alt="--" height="18" src="media/com_acymailing/templates/newsletter-6/images/footer1.png" width="600" /></td>\r\n				</tr>\r\n				<tr>\r\n					<td class="w30" height="20" style="line-height:0px; background-color:#efefef;" width="30"></td>\r\n					<td class="acyfooter acyeditor_text w540" style="text-align:right; background-color:#efefef; color:#575757;" width="540"><a href="#">www.mywebsite.com</a> | <a href="#">Contact</a><a href="#"><img alt="message" class="hide" src="media/com_acymailing/templates/newsletter-6/images/mail.png" style="border: medium none; width: 35px; height: 20px;" /></a></td>\r\n					<td class="w30" height="20" style="line-height:0px; background-color:#efefef;" width="30"></td>\r\n				</tr>\r\n				<tr style="line-height: 0px;">\r\n					<td class="w600" colspan="3" style="background-color:#efefef; line-height:0px;" valign="top" width="600"><img alt="--" height="24" src="media/com_acymailing/templates/newsletter-6/images/footer2.png" width="600" /></td>\r\n				</tr>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<div class="acymailing_unsub acyeditor_delete acyeditor_text" >{unsubscribe}If you''re not interested any more <strong>» unsubscribe</strong>{/unsubscribe}</div>\r\n</div>', '', NULL, 1, 0, 3, 'newsletter-6', 'a:9:{s:6:"tag_h1";s:69:"font-weight:bold; font-size:14px;color:#3c3c3c !important;margin:0px;";s:6:"tag_h2";s:129:"color:#b9cf00 !important; font-size:14px; font-weight:bold; margin-top:20px; border-bottom:1px solid #d6d6d6; padding-bottom:4px;";s:6:"tag_h3";s:149:"color:#7e7e7e !important; font-size:14px; font-weight:bold; margin:20px 0px 0px 0px; border-bottom:1px solid #d6d6d6; padding-bottom:0px 0px 4px 0px;";s:6:"tag_h4";s:84:"color:#879700 !important; font-size:12px; font-weight:bold; margin:0px; padding:0px;";s:8:"color_bg";s:7:"#3c3c3c";s:5:"tag_a";s:65:"cursor:pointer; color:#a2b500; text-decoration:none; border:none;";s:17:"acymailing_online";s:91:"color:#dddddd; text-decoration:none; font-size:11px; text-align:center; padding-bottom:10px";s:16:"acymailing_unsub";s:88:"color:#dddddd; text-decoration:none; font-size:11px; text-align:center; padding-top:10px";s:19:"acymailing_readmore";s:73:"cursor:pointer; color:#ffffff; background-color:#b9cf00; padding:3px 5px;";}', NULL, 'table, div, p{\r\n	font-family: Verdana, Arial, Helvetica, sans-serif;\r\n	font-size:11px;\r\n	color:#575757;\r\n}\r\n.intro{\r\n	font-weight:bold;\r\n	font-size:12px;}\r\n\r\n.acyfooter a{\r\n	color:#575757;}\r\n\r\n@media (min-width: 10px){\r\n	table[class=w600], td[class=w600]  { width:320px !important; }\r\n	table[class=w540], td[class=w540]  { width:260px !important; }\r\n	td[class=w30] { width:30px !important; }\r\n	.w600 img{max-width:320px; height:auto !important}\r\n	.w540 img{max-width:260px; height:auto !important}\r\n}\r\n\r\n@media (min-width: 480px){\r\n	table[class=w600], td[class=w600]  { width:480px !important; }\r\n	table[class=w540], td[class=w540]  { width:420px !important; }\r\n	td[class=w30] { width:30px !important; }\r\n	.w600 img{max-width:480px; height:auto !important}\r\n	.w540 img{max-width:420px; height:auto !important}\r\n}\r\n\r\n@media (min-width:600px){\r\n	table[class=w600], td[class=w600]  { width:600px !important; }\r\n	table[class=w540], td[class=w540]  { width:540px !important; }\r\n	td[class=w30] { width:30px !important; }\r\n	.w600 img{max-width:600px; height:auto !important}\r\n	.w540 img{max-width:540px; height:auto !important}\r\n}\r\n', NULL, NULL, NULL, NULL, 'media/com_acymailing/templates/newsletter-6/newsletter-6.png', '', 'all'),
 (4, 'Technology', '', '<div align="center" style="width:100%; background-color:#575757; padding-bottom:20px; color:#999999;">\r\n<table align="center" border="0" cellpadding="0" cellspacing="0" class="w600" style="background-color:#fff; color:#999999; margin:auto" width="600">\r\n	<tbody>\r\n		<tr class="acyeditor_delete">\r\n			<td class="w30" style="background-color:#575757" width="30"></td>\r\n			<td class="acyeditor_text w540" style="text-align:right; color:#d2d1d1; background-color:#575757" width="540"><span class="acymailing_online">{readonline}If you can''t see this e-mail properly, <span style="text-decoration:underline">view it online</span>{/readonline}</span></td>\r\n			<td class="w30" style="background-color:#575757" width="30"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete">\r\n			<td class="acyeditor_picture w600" colspan="3" style="line-height:0px; background-color:#575757" valign="bottom" width="600"><img alt="--" src="media/com_acymailing/templates/technology_resp/images/shadowtop.jpg" /></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete">\r\n			<td class="acyeditor_picture w600" colspan="3" style="line-height:0px; background-color:#f5f5f5" width="600"><img alt="--" src="media/com_acymailing/templates/technology_resp/images/top.jpg" /></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete">\r\n			<td class="w30" height="32" style="background-color:#f5f5f5; border-bottom:1px solid #ddd" width="30"></td>\r\n			<td class="acyeditor_text links w540" style="background-color:#f5f5f5; border-bottom:1px solid #ddd; text-align:right; color:#ababab" width="540"><a href="#"><img alt="mail" src="media/com_acymailing/templates/technology_resp/images/mail.jpg" style="float:right; border:none" /></a> Newsletter {mailid} | {date:%B %Y} |&nbsp; <a href="#">www.acyba.com</a> |</td>\r\n			<td class="w30" height="32" style="background-color:#f5f5f5; border-bottom:1px solid #ddd" width="30"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete">\r\n			<td class="w600" colspan="3" height="16" width="600"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete">\r\n			<td class="w30" width="30"></td>\r\n			<td class="acyeditor_text w540" width="540"><img alt="picture" src="media/com_acymailing/templates/technology_resp/images/pic1.jpg" style="float:right" />\r\n			<h1>Fresh and technologic news !</h1>\r\n\r\n			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa quam, eleifend at ornare.</h3>\r\n			Liget, volutpat esvft sem. Praesent auctor posuere orci, sit amet molee. Integer nec scelerisque quam. Lore uctor posum ipsum dolor sit amesent auctor.</td>\r\n			<td class="w30" width="30"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete">\r\n			<td class="w30" style="background-color:#fafafa" width="30"></td>\r\n			<td class="acyeditor_picture w540" style="background-color:#fafafa; line-height:0px" width="540"><img alt="---" src="media/com_acymailing/templates/technology_resp/images/separator1.jpg" /></td>\r\n			<td class="w30" style="background-color:#fafafa" width="30"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete">\r\n			<td class="w30" style="background-color:#fafafa" width="30"></td>\r\n			<td class="acyeditor_text w540" style="background-color:#fafafa; color:#999999" width="540">\r\n			<h2>Choose your smartphone</h2>\r\n			<img alt="picture" src="media/com_acymailing/templates/technology_resp/images/pic2.jpg" style="float:left" />\r\n			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa quam, eleifend at ornare.</h3>\r\n			Liget, volutpat esvft sem. Praesent auctor posuere orci, sit amet molee. Integer nec<a href="#"> scelerisque quam</a>. Lore uctor posum ipsum dolor sit amesent auctor.<br />\r\n			<br />\r\n			<img alt="buy this product" src="media/com_acymailing/templates/technology_resp/images/buyproduct.jpg" /><br />\r\n			<br />\r\n			<br />\r\n			&nbsp;\r\n			<h2>Choose your device</h2>\r\n			<img alt="picture" src="media/com_acymailing/templates/technology_resp/images/pic3.jpg" style="float:right" />\r\n			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa quam, eleifend at ornare.</h3>\r\n			Liget, volutpat esvft sem. Praesent auctor posuere orci, sit amet molee. Integer nec scelerisque quam. Lore uctor posum ipsum dolor sit amesent auctor.<br />\r\n			<br />\r\n			<img alt="buy this product" src="media/com_acymailing/templates/technology_resp/images/buyproduct.jpg" /></td>\r\n			<td class="w30" style="background-color:#fafafa" width="30"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="w30" style="background-color:#fafafa" width="30"></td>\r\n			<td class="acyeditor_picture w540" style="background-color:#fafafa; line-height:0px" width="540"><img alt="---" src="media/com_acymailing/templates/technology_resp/images/separator2.jpg" /></td>\r\n			<td class="w30" style="background-color:#fafafa" width="30"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="w600" colspan="3" height="16" width="600"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="w30" width="30"></td>\r\n			<td class="acyeditor_text special w540" style="color:#999999" width="540">\r\n			<h2>Best product of the month</h2>\r\n\r\n			<h3>Lorem ipsum dolor sit amet.</h3>\r\n			Liget, volutpat esvft sem. Praesent auctor posuere orci, sit amet molee. Integer nec scelerisque quam. Lore uctor posum ipsum doLiget, volutpat esvft sem. Praesent auctor posuere orci, sit amet molee. Integer nec scelerisque quam. Lore uctor posum ipsum dolor sit amesent.<br />\r\n			<br />\r\n			<img alt="read more" src="media/com_acymailing/templates/technology_resp/images/readmore.jpg" style="border:none" /></td>\r\n			<td class="w30" width="30"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="w600" colspan="3" height="16" width="600"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="w30" height="30" style="background-color:#f5f5f5; border-top:1px solid #ddd" width="30"></td>\r\n			<td class="acyeditor_text w540" height="30" style="background-color:#f5f5f5; border-top:1px solid #ddd; text-align:right; color:#ababab" valign="bottom" width="540">Follow us | <img alt="facebook" src="media/com_acymailing/templates/technology_resp/images/facebook.jpg" style="border:none" /> <img alt="twitter" src="media/com_acymailing/templates/technology_resp/images/twitter.jpg" style="border:none" /> <img alt="pinterest" src="media/com_acymailing/templates/technology_resp/images/pinterest.jpg" style="border:none" /> <img alt="rss" src="media/com_acymailing/templates/technology_resp/images/rss.jpg" style="border:none" /></td>\r\n			<td class="w30" height="30" style="background-color:#f5f5f5; border-top:1px solid #ddd" width="30"></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="acyeditor_picture w600" colspan="3" style="line-height:0px; background-color:#f5f5f5" width="600"><img alt="--" src="media/com_acymailing/templates/technology_resp/images/bottom.jpg" /></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="acyeditor_picture w600" colspan="3" style="line-height:0px; background-color:#575757" valign="bottom" width="600"><img alt="--" src="media/com_acymailing/templates/technology_resp/images/shadowbottom.jpg" /></td>\r\n		</tr>\r\n		<tr class="acyeditor_delete" >\r\n			<td class="w30" style="background-color:#575757" width="30"></td>\r\n			<td class="acyeditor_text w540" style="text-align:right; color:#d2d1d1; background-color:#575757" width="540"><span class="acymailing_unsub">{unsubscribe}If you don''t want to receive our news anymore, <span style="text-decoration:underline">unsubscribe</span>{/unsubscribe} </span></td>\r\n			<td class="w30" style="background-color:#575757" width="30"></td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n</div>', '', NULL, 1, 0, 4, 'technology_resp', 'a:9:{s:6:"tag_h1";s:104:"font-size:20px; margin:0px; margin-bottom:15px; padding:0px; font-weight:bold; color:#01bbe5 !important;";s:6:"tag_h2";s:165:"font-size:12px; font-weight:bold; color:#565656 !important; text-transform:uppercase; margin:10px 0px; padding:0px; padding-bottom:5px; border-bottom:1px solid #ddd;";s:6:"tag_h3";s:104:"color:#565656 !important; font-weight:bold; font-size:12px; margin:0px; margin-bottom:10px; padding:0px;";s:6:"tag_h4";s:0:"";s:8:"color_bg";s:7:"#575757";s:5:"tag_a";s:62:"cursor:pointer;color:#01bbe5;text-decoration:none;border:none;";s:17:"acymailing_online";s:30:"color:#d2d1d1; cursor:pointer;";s:16:"acymailing_unsub";s:30:"color:#d2d1d1; cursor:pointer;";s:19:"acymailing_readmore";s:88:"cursor:pointer; font-weight:bold; color:#fff; background-color:#01bbe5; padding:2px 5px;";}', NULL, 'table, div, p {\r\n	font-family:Arial, Helvetica, sans-serif;\r\n	font-size:12px;\r\n}\r\np{margin:0px; padding:0px}\r\n\r\n.special h2{font-size:18px;\r\n	margin:0px;\r\n	margin-bottom:15px;\r\n	padding:0px;\r\n	font-weight:bold;\r\n	color:#01bbe5 !important;\r\n	text-transform:none;\r\n	border:none}\r\n\r\n.links a{color:#ababab}\r\n\r\n@media (min-width:10px){\r\n	table[class=w600], td[class=w600] { width:320px !important;}\r\n	table[class=w540], td[class=w540] { width:260px !important;}\r\n	td[class=w30] { width:30px !important;}\r\n	.w600 img {max-width:320px; height:auto !important}\r\n	.w540 img {max-width:260px; height:auto !important}\r\n}\r\n\r\n@media (min-width: 480px){\r\n	table[class=w600], td[class=w600] { width:480px !important;}\r\n	table[class=w540], td[class=w540] { width:420px !important;}\r\n	td[class=w30] { width:30px !important;}\r\n	.w600 img {max-width:480px; height:auto !important}\r\n	.w540 img {max-width:420px; height:auto !important}\r\n}\r\n\r\n@media (min-width:600px){\r\n	table[class=w600], td[class=w600] { width:600px !important;}\r\n	table[class=w540], td[class=w540] { width:540px !important;}\r\n	td[class=w30] { width:30px !important;}\r\n	.w600 img {max-width:600px; height:auto !important}\r\n	.w540 img {max-width:540px; height:auto !important}\r\n}\r\n', NULL, NULL, NULL, NULL, 'media/com_acymailing/templates/technology_resp/thumb.jpg', '', 'all');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_url`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_url` (
 `urlid` int(10) unsigned NOT NULL,
@@ -489,12 +365,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_url` (
   `url` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_urlclick`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_url`;
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_urlclick` (
   `urlid` int(10) unsigned NOT NULL,
   `mailid` mediumint(8) unsigned NOT NULL,
@@ -504,12 +375,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_urlclick` (
   `ip` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_acymailing_userstats`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_urlclick`;
 CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_userstats` (
   `mailid` mediumint(8) unsigned NOT NULL,
   `subid` int(10) unsigned NOT NULL,
@@ -528,12 +394,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_acymailing_userstats` (
   `user_agent` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_assets`
---
-
+TRUNCATE TABLE `f8ad7_acymailing_userstats`;
 CREATE TABLE IF NOT EXISTS `f8ad7_assets` (
 `id` int(10) unsigned NOT NULL COMMENT 'Primary Key',
   `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
@@ -545,10 +406,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_assets` (
   `rules` varchar(5120) NOT NULL COMMENT 'JSON encoded access control.'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=355 ;
 
---
--- Дамп данных таблицы `f8ad7_assets`
---
-
+TRUNCATE TABLE `f8ad7_assets`;
 INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
 (1, 0, 0, 640, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
@@ -871,24 +729,13 @@ INSERT INTO `f8ad7_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (353, 18, 462, 463, 2, 'com_modules.module.153', 'Статьи :: Топ 5 за все время', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (354, 18, 464, 465, 2, 'com_modules.module.154', 'ZOOfilter Module', '');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_associations`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_associations` (
   `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
   `context` varchar(50) NOT NULL COMMENT 'The context of the associated item.',
   `key` char(32) NOT NULL COMMENT 'The key for the association computed from an md5 on associated ids.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_banners`
---
-
+TRUNCATE TABLE `f8ad7_associations`;
 CREATE TABLE IF NOT EXISTS `f8ad7_banners` (
 `id` int(11) NOT NULL,
   `cid` int(11) NOT NULL DEFAULT '0',
@@ -926,19 +773,10 @@ CREATE TABLE IF NOT EXISTS `f8ad7_banners` (
   `version` int(10) unsigned NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
---
--- Дамп данных таблицы `f8ad7_banners`
---
-
+TRUNCATE TABLE `f8ad7_banners`;
 INSERT INTO `f8ad7_banners` (`id`, `cid`, `type`, `name`, `alias`, `imptotal`, `impmade`, `clicks`, `clickurl`, `state`, `catid`, `description`, `custombannercode`, `sticky`, `ordering`, `metakey`, `params`, `own_prefix`, `metakey_prefix`, `purchase_type`, `track_clicks`, `track_impressions`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `reset`, `created`, `language`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `version`) VALUES
 (1, 1, 1, 'Редсофт', 'redsoft', 0, 5, 0, 'http://redsoft.ru/', 1, 3, '', '<div id="flashContent">\r\n<object width="978" height="98" id="banner_1" align="middle" data="/images/banners/redsoft.swf" style="vertical-align: middle;" type="application/x-shockwave-flash"><param name="movie" value="/images/banners/redsoft.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="play" value="true" /><param name="loop" value="true" /><param name="wmode" value="window" /><param name="scale" value="showall" /><param name="menu" value="true" /><param name="devicefont" value="false" /><param name="salign" value="" /><param name="allowScriptAccess" value="sameDomain" /><!--[if !IE]>-->\r\n<object type="application/x-shockwave-flash" data="/images/banners/redsoft.swf" width="978" height="98"><param name="movie" value="/images/banners/redsoft.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="play" value="true" /><param name="loop" value="true" /><param name="wmode" value="window" /><param name="scale" value="showall" /><param name="menu" value="true" /><param name="devicefont" value="false" /><param name="salign" value="" /><param name="allowScriptAccess" value="sameDomain" /></object>\r\n <a href="http://www.adobe.com/go/getflash"> <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /> </a><!--<![endif]--></object>\r\n <!--<![endif]--></div>', 1, 1, '', '{"imageurl":"","width":"","height":"","alt":""}', 0, '', -1, 1, 1, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2014-03-16 18:28:42', '*', 0, '', '2014-03-16 18:30:04', 869, 2),
 (2, 2, 0, 'Хостинг для joomla', 'khosting-dlya-joomla', 0, 5, 0, 'http://hostingjoomla.ru/', 1, 3, '', '', 0, 2, '', '{"imageurl":"images\\/banners\\/hosting.png","width":978,"height":156,"alt":"\\u0425\\u043e\\u0441\\u0442\\u0438\\u043d\\u0433 \\u0434\\u043b\\u044f joomla"}', 0, '', -1, 1, 1, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2014-03-16 18:31:14', '*', 0, '', '0000-00-00 00:00:00', 0, 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_banner_clients`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_banner_clients` (
 `id` int(11) NOT NULL,
@@ -957,19 +795,10 @@ CREATE TABLE IF NOT EXISTS `f8ad7_banner_clients` (
   `track_impressions` tinyint(4) NOT NULL DEFAULT '-1'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
---
--- Дамп данных таблицы `f8ad7_banner_clients`
---
-
+TRUNCATE TABLE `f8ad7_banner_clients`;
 INSERT INTO `f8ad7_banner_clients` (`id`, `name`, `contact`, `email`, `extrainfo`, `state`, `checked_out`, `checked_out_time`, `metakey`, `own_prefix`, `metakey_prefix`, `purchase_type`, `track_clicks`, `track_impressions`) VALUES
 (1, 'Редсофт', 'Редсофт', 'info@redsoft.ru', '', 1, 0, '0000-00-00 00:00:00', '', 0, '', -1, 1, 1),
 (2, 'Хостинг для joomla', 'Хостинг для joomla', 'info@hostingjoomla.ru', '', 1, 0, '0000-00-00 00:00:00', '', 0, '', -1, 1, 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_banner_tracks`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_banner_tracks` (
   `track_date` datetime NOT NULL,
@@ -978,10 +807,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_banner_tracks` (
   `count` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_banner_tracks`
---
-
+TRUNCATE TABLE `f8ad7_banner_tracks`;
 INSERT INTO `f8ad7_banner_tracks` (`track_date`, `track_type`, `banner_id`, `count`) VALUES
 ('2014-03-20 00:00:00', 1, 1, 1),
 ('2014-03-20 00:00:00', 1, 2, 1),
@@ -989,12 +815,6 @@ INSERT INTO `f8ad7_banner_tracks` (`track_date`, `track_type`, `banner_id`, `cou
 ('2014-09-15 13:00:00', 1, 2, 3),
 ('2014-09-15 14:00:00', 1, 1, 1),
 ('2014-09-15 14:00:00', 1, 2, 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_categories`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_categories` (
 `id` int(11) NOT NULL,
@@ -1026,10 +846,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_categories` (
   `version` int(10) unsigned NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
---
--- Дамп данных таблицы `f8ad7_categories`
---
-
+TRUNCATE TABLE `f8ad7_categories`;
 INSERT INTO `f8ad7_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `extension`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `modified_user_id`, `modified_time`, `hits`, `language`, `version`) VALUES
 (1, 0, 0, 0, 51, 0, '', 'system', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{}', '', '', '{}', 445, '2011-01-01 00:00:01', 0, '0000-00-00 00:00:00', 0, '*', 1),
 (2, 27, 1, 1, 2, 1, 'uncategorised', 'com_content', 'Без категории', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 445, '2011-01-01 00:00:01', 0, '0000-00-00 00:00:00', 0, '*', 1),
@@ -1057,12 +874,6 @@ INSERT INTO `f8ad7_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `le
 (24, 75, 1, 45, 46, 1, 'articles', 'com_content', 'Статьи', 'articles', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 445, '2014-03-16 18:23:00', 0, '0000-00-00 00:00:00', 0, '*', 1),
 (25, 76, 1, 47, 48, 1, 'books', 'com_content', 'Книги', 'books', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 445, '2014-03-16 18:23:10', 0, '0000-00-00 00:00:00', 0, '*', 1),
 (26, 77, 1, 49, 50, 1, 'docs', 'com_content', 'Руководства', 'docs', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 445, '2014-03-16 18:23:21', 0, '0000-00-00 00:00:00', 0, '*', 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_contact_details`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_contact_details` (
 `id` int(11) NOT NULL,
@@ -1110,19 +921,10 @@ CREATE TABLE IF NOT EXISTS `f8ad7_contact_details` (
   `hits` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
---
--- Дамп данных таблицы `f8ad7_contact_details`
---
-
+TRUNCATE TABLE `f8ad7_contact_details`;
 INSERT INTO `f8ad7_contact_details` (`id`, `name`, `alias`, `con_position`, `address`, `suburb`, `state`, `country`, `postcode`, `telephone`, `fax`, `misc`, `image`, `email_to`, `default_con`, `published`, `checked_out`, `checked_out_time`, `ordering`, `params`, `user_id`, `catid`, `access`, `mobile`, `webpage`, `sortname1`, `sortname2`, `sortname3`, `language`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `metakey`, `metadesc`, `metadata`, `featured`, `xreference`, `publish_up`, `publish_down`, `version`, `hits`) VALUES
 (1, 'qwerr', 'qwerr', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'qwerrr@qwer.er', 0, 0, 0, '0000-00-00 00:00:00', 0, '', 449, 34, 1, '', '', '', '', '', '*', '2014-10-13 08:19:23', 0, '', '0000-00-00 00:00:00', 0, '', '', '', 0, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 0),
 (2, 'shsrrd', 'shsrrd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'shsrrd@sdf.er', 0, 0, 0, '0000-00-00 00:00:00', 0, '', 450, 34, 1, '', '', '', '', '', '*', '2014-10-13 08:20:21', 0, '', '0000-00-00 00:00:00', 0, '', '', '', 0, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 0);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_content`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_content` (
 `id` int(10) unsigned NOT NULL,
@@ -1157,10 +959,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_content` (
   `xreference` varchar(50) NOT NULL COMMENT 'A reference to enable linkages to external data sets.'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=113 ;
 
---
--- Дамп данных таблицы `f8ad7_content`
---
-
+TRUNCATE TABLE `f8ad7_content`;
 INSERT INTO `f8ad7_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
 (1, 78, 'Сообщество пользователей Joomla!', 'the-joomla-community', '<p>Joomla! значит "Все вместе"+и это содружество людей+работающих и веселящихся вместе+что делает Joomla! возможной. Тысячи людей каждый год принимают участие в содружестве Joomla!+и мы надеемся+вы станете одним из них.</p>\r\n<p>Мы приглашаем присоединиться людей с любыми разнообразными способностями+со всего мира. Примите участие в семействе веб-сайтов Joomla.org (форум joomlaforum.ru — отличное место для начала). Приходите на Joomla! event — встречу единомышленников. Вступайте или создавайте группу пользователей Joomla! . Если вы разработчик+администратор сайта+дизайнер+пользователь или фанат+вы всегда можете принять участие и принести пользу.</p>', '', -2, 9, '2014-03-16 20:40:01', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-16 20:40:01', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 11, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (2, 79, 'Сайты-примеры', 'sample-sites', '<p>В установленной у вас системе имеются примеры контента различного рода для демонстрации основных возможностей системы. Помимо этого+для более наглядной демонстрации возможностей+в систему включено два "сайта в сайте".</p>\r\n<p>Для создания индивидуального стиля и дизайна сайта вам+возможно+понадобится установить сторонние расширения и создать или приобрести собственный "шаблон" оформления. Многие пользователи Joomla! для начала изменяют стандартный шаблон +который имеется в системе изначально. Они добавляют необходимые изображения и прочие элементы дизайна в соответствии с назначением сайта.</p>', '', -2, 9, '2014-03-16 20:41:13', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-16 20:41:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 10, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -1287,12 +1086,6 @@ INSERT INTO `f8ad7_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `f
 (111, 327, 'Подписка', 'subscribe', '<p style="margin: 0.8em 0px; padding: 0px; line-height: 1.5em; color: #2d2d2d; font-family: Tahoma, Arial, sans-serif; font-size: 12px;">После регистрации на нашем сайте вы можете оформлять подписки на любимые издания. Как только свежие выпуски будут появляться в продаже, они будут автоматически появляться в вашей личной библиотеке.</p>\r\n<p style="margin: 0.8em 0px; padding: 0px; line-height: 1.5em; color: #2d2d2d; font-family: Tahoma, Arial, sans-serif; font-size: 12px;">Помимо этого мы отправим вам уведомление о новом поступлении, чтобы вы могли быть одним из первых, кто ознакомиться со свежей прессой.</p>', '', 1, 2, '2014-10-12 12:27:40', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-10-12 12:27:40', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 1, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (112, 330, 'Ссылки', 'links', '<ul>\r\n<li>Новинка!<br /><a title="Лучшая биржа ссылок навсегда" href="http://kupilink.com/links/serv/gogettop.html">GoGetTop</a>&nbsp;–&nbsp;Автоматизированная покупка качественных вечных ссылок в рассрочку. Отличное качество ссылок. Ручное размещение. Удобный интерфейс.</li>\r\n<li><a title="Лучшая биржа ссылок навсегда" href="http://kupilink.com/gogetlinks.html">GoGetLinks</a>&nbsp;–&nbsp;Покупка качественных ссылок навсегда. Контекстные ссылки, ссылки в коротких заметках, ссылки-картинки. Ручное размещение.</li>\r\n<li><a title="Постоянные ссылки под Google" href="http://kupilink.com/links/serv/getgoodlinks.html">GetGoodLinks</a>&nbsp;– Аналог предыдущей биржи. Главное отличие - упор на продвижение в Google. Высокое качество - основная характеристика GetGoodLinks.</li>\r\n<li><a title="Лучшая биржа по размещению статей навсегда" href="http://kupilink.com/miralinks.html">MiraLinks</a>&nbsp;–&nbsp;Лучший сервис по размещению статей со ссылками навсегда. Ручное или автоматизированное размещение.</li>\r\n</ul>', '', 1, 2, '2014-10-12 12:42:30', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-10-12 12:42:30', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, '', '', 1, 1, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_contentitem_tag_map`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_contentitem_tag_map` (
   `type_alias` varchar(255) NOT NULL DEFAULT '',
   `core_content_id` int(10) unsigned NOT NULL COMMENT 'PK from the core content table',
@@ -1302,10 +1095,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_contentitem_tag_map` (
   `type_id` mediumint(8) NOT NULL COMMENT 'PK from the content_type table'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Maps items from content tables to tags';
 
---
--- Дамп данных таблицы `f8ad7_contentitem_tag_map`
---
-
+TRUNCATE TABLE `f8ad7_contentitem_tag_map`;
 INSERT INTO `f8ad7_contentitem_tag_map` (`type_alias`, `core_content_id`, `content_item_id`, `tag_id`, `tag_date`, `type_id`) VALUES
 ('com_content.article', 1, 13, 4, '2014-03-16 20:50:49', 1),
 ('com_content.article', 1, 13, 12, '2014-03-16 20:50:49', 1),
@@ -1430,32 +1220,17 @@ INSERT INTO `f8ad7_contentitem_tag_map` (`type_alias`, `core_content_id`, `conte
 ('com_content.article', 54, 107, 4, '2014-03-15 22:54:02', 1),
 ('com_content.article', 54, 107, 12, '2014-03-15 22:54:02', 1);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_content_frontpage`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_content_frontpage` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_content_frontpage`
---
-
+TRUNCATE TABLE `f8ad7_content_frontpage`;
 INSERT INTO `f8ad7_content_frontpage` (`content_id`, `ordering`) VALUES
 (5, 4),
 (8, 3),
 (10, 2),
 (12, 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_content_rating`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_content_rating` (
   `content_id` int(11) NOT NULL DEFAULT '0',
@@ -1464,12 +1239,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_content_rating` (
   `lastip` varchar(50) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_content_types`
---
-
+TRUNCATE TABLE `f8ad7_content_rating`;
 CREATE TABLE IF NOT EXISTS `f8ad7_content_types` (
 `type_id` int(10) unsigned NOT NULL,
   `type_title` varchar(255) NOT NULL DEFAULT '',
@@ -1481,10 +1251,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_content_types` (
   `content_history_options` varchar(5120) DEFAULT NULL COMMENT 'JSON string for com_contenthistory options'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
---
--- Дамп данных таблицы `f8ad7_content_types`
---
-
+TRUNCATE TABLE `f8ad7_content_types`;
 INSERT INTO `f8ad7_content_types` (`type_id`, `type_title`, `type_alias`, `table`, `rules`, `field_mappings`, `router`, `content_history_options`) VALUES
 (1, 'Article', 'com_content.article', '{"special":{"dbtable":"#__content","key":"id","type":"Content","prefix":"JTable","config":"array()"},"common":{"dbtable":"#__ucm_content","key":"ucm_id","type":"Corecontent","prefix":"JTable","config":"array()"}}', '', '{"common":{"core_content_item_id":"id","core_title":"title","core_state":"state","core_alias":"alias","core_created_time":"created","core_modified_time":"modified","core_body":"introtext", "core_hits":"hits","core_publish_up":"publish_up","core_publish_down":"publish_down","core_access":"access", "core_params":"attribs", "core_featured":"featured", "core_metadata":"metadata", "core_language":"language", "core_images":"images", "core_urls":"urls", "core_version":"version", "core_ordering":"ordering", "core_metakey":"metakey", "core_metadesc":"metadesc", "core_catid":"catid", "core_xreference":"xreference", "asset_id":"asset_id"}, "special":{"fulltext":"fulltext"}}', 'ContentHelperRoute::getArticleRoute', '{"formFile":"administrator\\/components\\/com_content\\/models\\/forms\\/article.xml", "hideFields":["asset_id","checked_out","checked_out_time","version"],"ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time", "version", "hits"],"convertToInt":["publish_up", "publish_down", "featured", "ordering"],"displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"} ]}'),
 (2, 'Weblink', 'com_weblinks.weblink', '{"special":{"dbtable":"#__weblinks","key":"id","type":"Weblink","prefix":"WeblinksTable","config":"array()"},"common":{"dbtable":"#__ucm_content","key":"ucm_id","type":"Corecontent","prefix":"JTable","config":"array()"}}', '', '{"common":{"core_content_item_id":"id","core_title":"title","core_state":"state","core_alias":"alias","core_created_time":"created","core_modified_time":"modified","core_body":"description", "core_hits":"hits","core_publish_up":"publish_up","core_publish_down":"publish_down","core_access":"access", "core_params":"params", "core_featured":"featured", "core_metadata":"metadata", "core_language":"language", "core_images":"images", "core_urls":"urls", "core_version":"version", "core_ordering":"ordering", "core_metakey":"metakey", "core_metadesc":"metadesc", "core_catid":"catid", "core_xreference":"xreference", "asset_id":"null"}, "special":{}}', 'WeblinksHelperRoute::getWeblinkRoute', '{"formFile":"administrator\\/components\\/com_weblinks\\/models\\/forms\\/weblink.xml", "hideFields":["asset_id","checked_out","checked_out_time","version","featured","images"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time", "version", "hits"], "convertToInt":["publish_up", "publish_down", "featured", "ordering"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"} ]}'),
@@ -1502,23 +1269,12 @@ INSERT INTO `f8ad7_content_types` (`type_id`, `type_title`, `type_alias`, `table
 (14, 'User Notes', 'com_users.note', '{"special":{"dbtable":"#__user_notes","key":"id","type":"Note","prefix":"UsersTable"}}', '', '', '', '{"formFile":"administrator\\/components\\/com_users\\/models\\/forms\\/note.xml", "hideFields":["checked_out","checked_out_time", "publish_up", "publish_down"],"ignoreChanges":["modified_user_id", "modified_time", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"],"displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"}, {"sourceColumn":"created_user_id","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}, {"sourceColumn":"user_id","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}, {"sourceColumn":"modified_user_id","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}'),
 (15, 'User Notes Category', 'com_users.category', '{"special":{"dbtable":"#__categories","key":"id","type":"Category","prefix":"JTable","config":"array()"},"common":{"dbtable":"#__ucm_content","key":"ucm_id","type":"Corecontent","prefix":"JTable","config":"array()"}}', '', '{"common":{"core_content_item_id":"id","core_title":"title","core_state":"published","core_alias":"alias","core_created_time":"created_time","core_modified_time":"modified_time","core_body":"description", "core_hits":"hits","core_publish_up":"null","core_publish_down":"null","core_access":"access", "core_params":"params", "core_featured":"null", "core_metadata":"metadata", "core_language":"language", "core_images":"null", "core_urls":"null", "core_version":"version", "core_ordering":"null", "core_metakey":"metakey", "core_metadesc":"metadesc", "core_catid":"parent_id", "core_xreference":"null", "asset_id":"asset_id"}, "special":{"parent_id":"parent_id","lft":"lft","rgt":"rgt","level":"level","path":"path","extension":"extension","note":"note"}}', '', '{"formFile":"administrator\\/components\\/com_categories\\/models\\/forms\\/category.xml", "hideFields":["checked_out","checked_out_time","version","lft","rgt","level","path","extension"], "ignoreChanges":["modified_user_id", "modified_time", "checked_out", "checked_out_time", "version", "hits", "path"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"created_user_id","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}, {"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_user_id","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"parent_id","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"}]}');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_core_log_searches`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_core_log_searches` (
   `search_term` varchar(128) NOT NULL DEFAULT '',
   `hits` int(10) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_djimageslider`
---
-
+TRUNCATE TABLE `f8ad7_core_log_searches`;
 CREATE TABLE IF NOT EXISTS `f8ad7_djimageslider` (
 `id` int(10) unsigned NOT NULL,
   `catid` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1535,19 +1291,10 @@ CREATE TABLE IF NOT EXISTS `f8ad7_djimageslider` (
   `params` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
---
--- Дамп данных таблицы `f8ad7_djimageslider`
---
-
+TRUNCATE TABLE `f8ad7_djimageslider`;
 INSERT INTO `f8ad7_djimageslider` (`id`, `catid`, `title`, `alias`, `image`, `description`, `published`, `publish_up`, `publish_down`, `checked_out`, `checked_out_time`, `ordering`, `params`) VALUES
 (1, 8, 'joomla org', 'joomla-org', 'images/sampledata/slider/joomla30.gif', '<h3>CMS Joomla!</h3>\r\n<h5>самая популярная система управления.</h5>\r\n<table border="0">\r\n<tbody>\r\n<tr>\r\n<td style="width: 25px;"><img style="float: left;" src="images/sampledata/slider/li.gif" alt="li" width="16" height="48" /></td>\r\n<td>\r\n<h5>Простая и удобная платформа</h5>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td style="width: 25px;"><img style="float: left;" src="images/sampledata/slider/li.gif" alt="li" width="16" height="48" /></td>\r\n<td>\r\n<h5>Более 35 миллионов загрузок</h5>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td style="width: 25px;"><img style="float: left;" src="images/sampledata/slider/li.gif" alt="li" width="16" height="48" /></td>\r\n<td>\r\n<h5>Тысячи шаблонов</h5>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td style="width: 25px;"><img style="float: left;" src="images/sampledata/slider/li.gif" alt="li" width="16" height="48" /></td>\r\n<td>\r\n<h5>Более 9000 расширений</h5>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<h5><a href="http://joomla.ru/downloads/joomla" target="_blank">Скачать joomla!</a></h5>', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 1, '{"link_type":"","link_menu":"101","link_url":"","link_article":"","link_target":""}'),
 (2, 8, 'Хостинг для Joomla от REG.RU', 'khosting-dlya-joomla-ot-reg-ru', 'images/sampledata/slider/regru.gif', '<h3>Хостинг для Joomla от REG.RU</h3>\r\n<p> </p>\r\n<table border="0">\r\n<tbody>\r\n<tr>\r\n<td style="width: 25px;"><img style="float: left;" src="images/sampledata/slider/li.gif" alt="li" width="16" height="48" /></td>\r\n<td>\r\n<h5>Скидка 15% на заказ хостинга и VPS</h5>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td style="width: 25px;"><img style="float: left;" src="images/sampledata/slider/li.gif" alt="li" width="16" height="48" /></td>\r\n<td>\r\n<h5>Скидка действует до 7 марта 2013 года.</h5>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td style="width: 25px;"><img style="float: left;" src="images/sampledata/slider/li.gif" alt="li" width="16" height="48" /></td>\r\n<td>\r\n<h5>Промокод купона JOOMLA-FEB-HOSTING-SALE</h5>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<h5><a href="http://hosting.reg.ru/hosting/joomla" target="_blank">Заказать хостинг</a></h5>', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 2, '{"link_type":"","link_menu":"101","link_url":"","link_article":"","link_target":""}');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_extensions`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_extensions` (
 `extension_id` int(11) NOT NULL,
@@ -1569,10 +1316,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_extensions` (
   `state` int(11) DEFAULT '0'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10104 ;
 
---
--- Дамп данных таблицы `f8ad7_extensions`
---
-
+TRUNCATE TABLE `f8ad7_extensions`;
 INSERT INTO `f8ad7_extensions` (`extension_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `manifest_cache`, `params`, `custom_data`, `system_data`, `checked_out`, `checked_out_time`, `ordering`, `state`) VALUES
 (1, 'com_mailto', 'component', 'com_mailto', '', 0, 1, 1, 1, '{"name":"com_mailto","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2014 Open Source Matters. All rights reserved.\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_MAILTO_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (2, 'com_wrapper', 'component', 'com_wrapper', '', 0, 1, 1, 1, '{"name":"com_wrapper","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2014 Open Source Matters. All rights reserved.\\n\\t","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_WRAPPER_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -1797,12 +1541,6 @@ INSERT INTO `f8ad7_extensions` (`extension_id`, `name`, `type`, `element`, `fold
 (10102, 'ZOOfilter Module', 'module', 'mod_zoofilter', '', 0, 1, 0, 0, '{"name":"ZOOfilter Module","type":"module","creationDate":"May 2011","author":"ZOOlanders","copyright":"Copyright (C) JOOlanders SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.1.3","description":"Item filtering for ZOO developed by ZOOlanders (http:\\/\\/zoolanders.com)","group":""}', '{"application":"","form_method":"get","show_ordering":"1","show_title":"0","show_submit":"1","show_clear":"0","show_permalink":"0","page_title":"Search Results:","columns":"2","items_per_page":"10","search_limit":"1000","page_layout":"search","ordering_layout":"default","result_layout":"default","module_layout":"default","Itemid":"","moduleclass_sfx":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10103, 'zoofilter', 'package', 'pkg_zoofilter', '', 0, 1, 1, 0, '{"name":"ZOOfilter Package","type":"package","creationDate":"January 2014","author":"ZOOlanders","copyright":"Copyright (C) 2011 JOOlanders, SL","authorEmail":"info@zoolanders.com","authorUrl":"http:\\/\\/www.zoolanders.com","version":"3.1","description":"ZOOorder for ZOO developed by ZOOlanders (http:\\/\\/www.zoolanders.com)","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_filters`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_filters` (
 `filter_id` int(10) unsigned NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -1820,12 +1558,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_filters` (
   `params` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links`
---
-
+TRUNCATE TABLE `f8ad7_finder_filters`;
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links` (
 `link_id` int(10) unsigned NOT NULL,
   `url` varchar(255) NOT NULL,
@@ -1848,10 +1581,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links` (
   `object` mediumblob NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=300 ;
 
---
--- Дамп данных таблицы `f8ad7_finder_links`
---
-
+TRUNCATE TABLE `f8ad7_finder_links`;
 INSERT INTO `f8ad7_finder_links` (`link_id`, `url`, `route`, `title`, `description`, `indexdate`, `md5sum`, `published`, `state`, `access`, `language`, `publish_start_date`, `publish_end_date`, `start_date`, `end_date`, `list_price`, `sale_price`, `type_id`, `object`) VALUES
 (113, 'index.php?option=com_zoo&view=item&id=26', 'index.php?option=com_zoo&task=item&item_id=26&Itemid=179', 'Антон Антонович Антонов (Copy) (Copy)', '', '2014-10-12 18:27:27', '176b99eef9bfbe2a9ccf4e4670f44813', 1, 1, 1, '*', '2014-10-12 13:21:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223236223b733a353a22616c696173223b733a33343a22616e746f6e2d616e746f6e6f766963682d616e746f6e6f762d636f70792d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322031353a32373a3237223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a33393a226974656d2f616e746f6e2d616e746f6e6f766963682d616e746f6e6f762d636f70792d636f7079223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a3132373a22d09ed0b4d0b8d0bd20d0b8d0b720d0b2d18bd0b4d0b0d18ed189d0b8d185d181d18f20d0b0d0b2d182d0bed180d0bed0b220d0b6d183d180d0bdd0b0d0bbd0b020d0a4d0bed180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b02e223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a363a22417574686f72223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a363a22417574686f72223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a31323a22d090d0b2d182d0bed180d18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31323a22d090d0b2d182d0bed180d18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3236223b733a353a22726f757465223b733a35363a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3236264974656d69643d313739223b733a353a227469746c65223b733a35383a22d090d0bdd182d0bed0bd20d090d0bdd182d0bed0bdd0bed0b2d0b8d18720d090d0bdd182d0bed0bdd0bed0b22028436f7079292028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d31302d31322031333a32313a3030223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
 (114, 'index.php?option=com_zoo&view=item&id=27', 'index.php?option=com_zoo&task=item&item_id=27&Itemid=179', 'Антон Антонович Антонов (Copy)', '', '2014-10-12 18:27:38', '8900b6222412f9a3dbb718c992407a69', 1, 1, 1, '*', '2014-10-12 13:21:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223237223b733a353a22616c696173223b733a33313a22616e746f6e2d616e746f6e6f766963682d616e746f6e6f762d636f70792d32223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322031353a32373a3338223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a33363a226974656d2f616e746f6e2d616e746f6e6f766963682d616e746f6e6f762d636f70792d32223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a3132373a22d09ed0b4d0b8d0bd20d0b8d0b720d0b2d18bd0b4d0b0d18ed189d0b8d185d181d18f20d0b0d0b2d182d0bed180d0bed0b220d0b6d183d180d0bdd0b0d0bbd0b020d0a4d0bed180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b02e223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a363a22417574686f72223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a363a22417574686f72223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a31323a22d090d0b2d182d0bed180d18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31323a22d090d0b2d182d0bed180d18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3237223b733a353a22726f757465223b733a35363a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3237264974656d69643d313739223b733a353a227469746c65223b733a35313a22d090d0bdd182d0bed0bd20d090d0bdd182d0bed0bdd0bed0b2d0b8d18720d090d0bdd182d0bed0bdd0bed0b22028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d31302d31322031333a32313a3030223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
@@ -1943,22 +1673,13 @@ INSERT INTO `f8ad7_finder_links` (`link_id`, `url`, `route`, `title`, `descripti
 (298, 'index.php?option=com_zoo&view=item&id=89', 'index.php?option=com_zoo&task=item&item_id=89&Itemid=179', 'Фармакогенетика и фармакогеномика (Copy) (Copy)', '', '2014-10-13 02:38:46', 'a5336320de19283e1bf97993346b0e87', 1, 1, 1, '*', '2014-09-16 11:29:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223839223b733a353a22616c696173223b733a31383a227864656275672d636f70792d322d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322032333a33383a3137223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a32333a226974656d2f7864656275672d636f70792d322d636f7079223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a3534363a22c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a373a224a6f75726e616c223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a224a6f75726e616c223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a323a7b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31343a22d096d183d180d0bdd0b0d0bbd18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d096d183d180d0bdd0b0d0bbd18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3839223b733a353a22726f757465223b733a35363a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3839264974656d69643d313739223b733a353a227469746c65223b733a37383a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b02028436f7079292028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a32393a3138223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
 (299, 'index.php?option=com_zoo&view=item&id=90', 'index.php?option=com_zoo&task=item&item_id=90&Itemid=179', 'Фармакогенетика и фармакогеномика (Copy) (Copy) (Copy)', '', '2014-10-13 02:38:47', '3d6b0d20e1cd1f8c9baa8b399bc18a9a', 1, 1, 1, '*', '2014-09-16 11:29:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223930223b733a353a22616c696173223b733a32313a227864656275672d636f70792d636f70792d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322032333a33383a3137223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a32363a226974656d2f7864656275672d636f70792d636f70792d636f7079223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a3534363a22c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a373a224a6f75726e616c223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a224a6f75726e616c223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a323a7b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31343a22d096d183d180d0bdd0b0d0bbd18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d096d183d180d0bdd0b0d0bbd18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3930223b733a353a22726f757465223b733a35363a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3930264974656d69643d313739223b733a353a227469746c65223b733a38353a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b02028436f7079292028436f7079292028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a32393a3138223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms0`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms0` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms0`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms0`;
 INSERT INTO `f8ad7_finder_links_terms0` (`link_id`, `term_id`, `weight`) VALUES
 (119, 139, 0.56004),
 (120, 139, 0.56004),
@@ -2250,22 +1971,13 @@ INSERT INTO `f8ad7_finder_links_terms0` (`link_id`, `term_id`, `weight`) VALUES
 (283, 3599, 6.8),
 (284, 3599, 6.8);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms1`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms1` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms1`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms1`;
 INSERT INTO `f8ad7_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
 (123, 714, 0.90661),
 (127, 714, 0.90661),
@@ -2438,22 +2150,13 @@ INSERT INTO `f8ad7_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
 (243, 3754, 0.34),
 (245, 3756, 0.34);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms2`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms2` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms2`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms2`;
 INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (286, 488, 1.7),
 (287, 488, 1.7),
@@ -2855,22 +2558,13 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (294, 3814, 6.23322),
 (295, 3814, 6.23322);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms3`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms3` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms3`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms3`;
 INSERT INTO `f8ad7_finder_links_terms3` (`link_id`, `term_id`, `weight`) VALUES
 (286, 3231, 0.56004),
 (287, 3231, 0.56004),
@@ -2881,22 +2575,13 @@ INSERT INTO `f8ad7_finder_links_terms3` (`link_id`, `term_id`, `weight`) VALUES
 (294, 3231, 2.24016),
 (295, 3231, 2.24016);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms4`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms4` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms4`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms4`;
 INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (119, 142, 3.4668),
 (120, 142, 3.4668),
@@ -3379,22 +3064,13 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (295, 3806, 5.89322),
 (299, 3827, 0.34);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms5`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms5` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms5`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms5`;
 INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (123, 711, 0.90661),
 (127, 711, 0.90661),
@@ -3730,22 +3406,13 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (283, 3786, 0.96),
 (284, 3786, 0.96);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms6`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms6` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms6`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms6`;
 INSERT INTO `f8ad7_finder_links_terms6` (`link_id`, `term_id`, `weight`) VALUES
 (172, 3611, 2.6668),
 (173, 3611, 2.6668),
@@ -3832,22 +3499,13 @@ INSERT INTO `f8ad7_finder_links_terms6` (`link_id`, `term_id`, `weight`) VALUES
 (285, 3613, 7.6),
 (276, 3613, 15.2);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms7`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms7` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms7`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms7`;
 INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (123, 721, 0.79339),
 (127, 721, 0.79339),
@@ -4377,22 +4035,13 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (266, 3757, 0.63996),
 (285, 3757, 0.63996);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms8`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms8` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms8`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms8`;
 INSERT INTO `f8ad7_finder_links_terms8` (`link_id`, `term_id`, `weight`) VALUES
 (113, 140, 0.5334),
 (114, 140, 0.5334),
@@ -5067,22 +4716,13 @@ INSERT INTO `f8ad7_finder_links_terms8` (`link_id`, `term_id`, `weight`) VALUES
 (294, 3803, 12.2664),
 (295, 3803, 12.2664);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_terms9`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms9` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_terms9`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_terms9`;
 INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (120, 623, 0.48),
 (122, 623, 0.48),
@@ -5714,22 +5354,13 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (295, 3813, 12.2664),
 (297, 3824, 5.7332);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_termsa`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsa` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_termsa`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_termsa`;
 INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 (120, 860, 1.02),
 (122, 860, 1.02),
@@ -5943,22 +5574,13 @@ INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 (278, 3714, 5.4668),
 (285, 3798, 3.17339);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_termsb`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsb` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_termsb`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_termsb`;
 INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (119, 146, 1.2),
 (120, 146, 1.2),
@@ -6149,22 +5771,13 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (283, 3541, 6.9332),
 (284, 3541, 6.9332);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_termsc`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsc` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_termsc`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_termsc`;
 INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (287, 389, 0.17),
 (114, 389, 0.4),
@@ -6666,22 +6279,13 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (297, 3823, 0.34),
 (298, 3826, 0.34);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_termsd`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsd` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_termsd`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_termsd`;
 INSERT INTO `f8ad7_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 (119, 517, 0.56004),
 (121, 517, 0.56004),
@@ -7024,22 +6628,13 @@ INSERT INTO `f8ad7_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 (294, 3805, 1.68012),
 (295, 3805, 1.68012);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_termse`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termse` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_links_termse`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_termse`;
 INSERT INTO `f8ad7_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
 (128, 138, 0.17),
 (120, 138, 0.4),
@@ -7331,24 +6926,13 @@ INSERT INTO `f8ad7_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
 (215, 3726, 0.34),
 (216, 3727, 0.34);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_links_termsf`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsf` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
   `weight` float unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_taxonomy`
---
-
+TRUNCATE TABLE `f8ad7_finder_links_termsf`;
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_taxonomy` (
 `id` int(10) unsigned NOT NULL,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -7358,10 +6942,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_taxonomy` (
   `ordering` tinyint(1) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=147 ;
 
---
--- Дамп данных таблицы `f8ad7_finder_taxonomy`
---
-
+TRUNCATE TABLE `f8ad7_finder_taxonomy`;
 INSERT INTO `f8ad7_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `access`, `ordering`) VALUES
 (1, 0, 'ROOT', 0, 0, 0),
 (2, 1, 'Type', 1, 1, 0),
@@ -7404,21 +6985,12 @@ INSERT INTO `f8ad7_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 (145, 7, 'Терминология', 1, 1, 0),
 (146, 7, 'Журналы', 1, 1, 0);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_taxonomy_map`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_taxonomy_map` (
   `link_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_taxonomy_map`
---
-
+TRUNCATE TABLE `f8ad7_finder_taxonomy_map`;
 INSERT INTO `f8ad7_finder_taxonomy_map` (`link_id`, `node_id`) VALUES
 (113, 130),
 (113, 131),
@@ -7750,12 +7322,6 @@ INSERT INTO `f8ad7_finder_taxonomy_map` (`link_id`, `node_id`) VALUES
 (299, 139),
 (299, 146);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_terms`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_terms` (
 `term_id` int(10) unsigned NOT NULL,
   `term` varchar(75) NOT NULL,
@@ -7768,10 +7334,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_terms` (
   `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3828 ;
 
---
--- Дамп данных таблицы `f8ad7_finder_terms`
---
-
+TRUNCATE TABLE `f8ad7_finder_terms`;
 INSERT INTO `f8ad7_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`, `weight`, `soundex`, `links`, `language`) VALUES
 (95, 'component', 'component', 0, 0, 0.6, 'C5153', 1, '*'),
 (96, 'component zoo', 'component zoo', 0, 1, 1.4333, 'C51532', 1, '*'),
@@ -8254,21 +7817,12 @@ INSERT INTO `f8ad7_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`,
 (3826, '89', '89', 0, 0, 0.2, '', 1, '*'),
 (3827, '90', '90', 0, 0, 0.2, '', 1, '*');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_terms_common`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_terms_common` (
   `term` varchar(75) NOT NULL,
   `language` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_finder_terms_common`
---
-
+TRUNCATE TABLE `f8ad7_finder_terms_common`;
 INSERT INTO `f8ad7_finder_terms_common` (`term`, `language`) VALUES
 ('a', 'en'),
 ('about', 'en'),
@@ -8386,12 +7940,6 @@ INSERT INTO `f8ad7_finder_terms_common` (`term`, `language`) VALUES
 ('your', 'en'),
 ('yours', 'en');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_tokens`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_tokens` (
   `term` varchar(75) NOT NULL,
   `stem` varchar(75) NOT NULL,
@@ -8402,12 +7950,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_tokens` (
   `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_tokens_aggregate`
---
-
+TRUNCATE TABLE `f8ad7_finder_tokens`;
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_tokens_aggregate` (
   `term_id` int(10) unsigned NOT NULL,
   `map_suffix` char(1) NOT NULL,
@@ -8422,22 +7965,14 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_tokens_aggregate` (
   `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_finder_types`
---
-
+TRUNCATE TABLE `f8ad7_finder_tokens_aggregate`;
 CREATE TABLE IF NOT EXISTS `f8ad7_finder_types` (
 `id` int(10) unsigned NOT NULL,
   `title` varchar(100) NOT NULL,
   `mime` varchar(100) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
---
--- Дамп данных таблицы `f8ad7_finder_types`
---
-
+TRUNCATE TABLE `f8ad7_finder_types`;
 INSERT INTO `f8ad7_finder_types` (`id`, `title`, `mime`) VALUES
 (1, 'ZOO Item', ''),
 (2, 'Tag', ''),
@@ -8448,12 +7983,6 @@ INSERT INTO `f8ad7_finder_types` (`id`, `title`, `mime`) VALUES
 (7, 'Web Link', ''),
 (8, 'K2 Item', '');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_jsecurelog`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_jsecurelog` (
 `id` int(11) NOT NULL,
   `date` datetime NOT NULL,
@@ -8463,12 +7992,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_jsecurelog` (
   `change_variable` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_attachments`
---
-
+TRUNCATE TABLE `f8ad7_jsecurelog`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_attachments` (
 `id` int(11) NOT NULL,
   `itemID` int(11) NOT NULL,
@@ -8478,12 +8002,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_attachments` (
   `hits` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_categories`
---
-
+TRUNCATE TABLE `f8ad7_k2_attachments`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_categories` (
 `id` int(11) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -8501,12 +8020,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_categories` (
   `language` char(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_comments`
---
-
+TRUNCATE TABLE `f8ad7_k2_categories`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_comments` (
 `id` int(11) NOT NULL,
   `itemID` int(11) NOT NULL,
@@ -8519,12 +8033,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_comments` (
   `published` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_extra_fields`
---
-
+TRUNCATE TABLE `f8ad7_k2_comments`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_extra_fields` (
 `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -8535,23 +8044,13 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_extra_fields` (
   `ordering` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_extra_fields_groups`
---
-
+TRUNCATE TABLE `f8ad7_k2_extra_fields`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_extra_fields_groups` (
 `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_items`
---
-
+TRUNCATE TABLE `f8ad7_k2_extra_fields_groups`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_items` (
 `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -8591,12 +8090,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_items` (
   `language` char(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_rating`
---
-
+TRUNCATE TABLE `f8ad7_k2_items`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_rating` (
   `itemID` int(11) NOT NULL DEFAULT '0',
   `rating_sum` int(11) unsigned NOT NULL DEFAULT '0',
@@ -8604,36 +8098,21 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_rating` (
   `lastip` varchar(50) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_tags`
---
-
+TRUNCATE TABLE `f8ad7_k2_rating`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_tags` (
 `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `published` smallint(6) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_tags_xref`
---
-
+TRUNCATE TABLE `f8ad7_k2_tags`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_tags_xref` (
 `id` int(11) NOT NULL,
   `tagID` int(11) NOT NULL,
   `itemID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_users`
---
-
+TRUNCATE TABLE `f8ad7_k2_tags_xref`;
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_users` (
 `id` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
@@ -8649,10 +8128,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_k2_users` (
   `notes` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
---
--- Дамп данных таблицы `f8ad7_k2_users`
---
-
+TRUNCATE TABLE `f8ad7_k2_users`;
 INSERT INTO `f8ad7_k2_users` (`id`, `userID`, `userName`, `gender`, `description`, `image`, `url`, `group`, `plugins`, `ip`, `hostname`, `notes`) VALUES
 (1, 445, 'Super User', 'm', '', NULL, NULL, 1, '', '127.0.0.1', 'localhost', ''),
 (2, 446, 'sadf', 'm', '', NULL, '', 1, '', '127.0.0.1', 'Blud', ''),
@@ -8661,24 +8137,13 @@ INSERT INTO `f8ad7_k2_users` (`id`, `userID`, `userName`, `gender`, `description
 (5, 449, 'qwerr', 'm', '', NULL, '', 1, '', '127.0.0.1', 'Blud', ''),
 (6, 450, 'shsrrd', 'm', '', NULL, '', 1, '', '127.0.0.1', 'Blud', '');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_k2_user_groups`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_k2_user_groups` (
 `id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `permissions` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_languages`
---
-
+TRUNCATE TABLE `f8ad7_k2_user_groups`;
 CREATE TABLE IF NOT EXISTS `f8ad7_languages` (
 `lang_id` int(11) unsigned NOT NULL,
   `lang_code` char(7) NOT NULL,
@@ -8695,19 +8160,10 @@ CREATE TABLE IF NOT EXISTS `f8ad7_languages` (
   `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
---
--- Дамп данных таблицы `f8ad7_languages`
---
-
+TRUNCATE TABLE `f8ad7_languages`;
 INSERT INTO `f8ad7_languages` (`lang_id`, `lang_code`, `title`, `title_native`, `sef`, `image`, `description`, `metakey`, `metadesc`, `sitename`, `published`, `access`, `ordering`) VALUES
 (1, 'en-GB', 'English (UK)', 'English (UK)', 'en', 'en', '', '', '', '', 1, 1, 1),
 (2, 'ru-RU', 'Russian', 'Russian', 'ru', 'ru', '', '', '', '', 1, 1, 0);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_menu`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_menu` (
 `id` int(11) NOT NULL,
@@ -8736,10 +8192,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_menu` (
   `client_id` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=200 ;
 
---
--- Дамп данных таблицы `f8ad7_menu`
---
-
+TRUNCATE TABLE `f8ad7_menu`;
 INSERT INTO `f8ad7_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
 (1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 165, 0, '*', 0),
 (2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
@@ -8822,12 +8275,6 @@ INSERT INTO `f8ad7_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (198, 'main', 'COM_ZOOLANDERS', 'com-zoolanders', '', 'com-zoolanders', 'index.php?option=com_zoolanders', 'component', 0, 1, 1, 10096, 0, '0000-00-00 00:00:00', 0, 1, '../media/com_zoolanders/img/zoolanders-16.png', 0, '', 161, 162, 0, '', 1),
 (199, 'hidden', '1234', '1234', '', '1234', 'index.php?option=com_users&view=registration', 'component', 1, 1, 1, 25, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 163, 164, 0, '*', 0);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_menu_types`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_menu_types` (
 `id` int(10) unsigned NOT NULL,
   `menutype` varchar(24) NOT NULL,
@@ -8835,20 +8282,11 @@ CREATE TABLE IF NOT EXISTS `f8ad7_menu_types` (
   `description` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
---
--- Дамп данных таблицы `f8ad7_menu_types`
---
-
+TRUNCATE TABLE `f8ad7_menu_types`;
 INSERT INTO `f8ad7_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
 (3, 'left-nav', 'Левое меню', ''),
 (4, 'top-nav', 'Верхнее меню', ''),
 (5, 'hidden', 'Скрытое', '');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_messages`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_messages` (
 `message_id` int(10) unsigned NOT NULL,
@@ -8862,10 +8300,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_messages` (
   `message` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
---
--- Дамп данных таблицы `f8ad7_messages`
---
-
+TRUNCATE TABLE `f8ad7_messages`;
 INSERT INTO `f8ad7_messages` (`message_id`, `user_id_from`, `user_id_to`, `folder_id`, `date_time`, `state`, `priority`, `subject`, `message`) VALUES
 (1, 0, 0, 0, '2014-10-13 08:09:38', 0, 0, 'Ошибка при отправке письма', 'При отправке письма c регистрационными данными пользователя произошла ошибка: Не удалось вызвать функцию mail. Пользователь, для которого отправлялось письмо: sdf'),
 (2, 0, 0, 0, '2014-10-13 08:10:21', 0, 0, 'Ошибка при отправке письма', 'При отправке письма c регистрационными данными пользователя произошла ошибка: Не удалось вызвать функцию mail. Пользователь, для которого отправлялось письмо: qwer'),
@@ -8873,24 +8308,13 @@ INSERT INTO `f8ad7_messages` (`message_id`, `user_id_from`, `user_id_to`, `folde
 (4, 0, 0, 0, '2014-10-13 08:19:25', 0, 0, 'Ошибка при отправке письма', 'При отправке письма c регистрационными данными пользователя произошла ошибка: Не удалось вызвать функцию mail. Пользователь, для которого отправлялось письмо: qwerrr'),
 (5, 0, 0, 0, '2014-10-13 08:20:23', 0, 0, 'Ошибка при отправке письма', 'При отправке письма c регистрационными данными пользователя произошла ошибка: Не удалось вызвать функцию mail. Пользователь, для которого отправлялось письмо: shsrrd');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_messages_cfg`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_messages_cfg` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
   `cfg_name` varchar(100) NOT NULL DEFAULT '',
   `cfg_value` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_modules`
---
-
+TRUNCATE TABLE `f8ad7_messages_cfg`;
 CREATE TABLE IF NOT EXISTS `f8ad7_modules` (
 `id` int(11) NOT NULL,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -8912,10 +8336,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_modules` (
   `language` char(7) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=155 ;
 
---
--- Дамп данных таблицы `f8ad7_modules`
---
-
+TRUNCATE TABLE `f8ad7_modules`;
 INSERT INTO `f8ad7_modules` (`id`, `asset_id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
 (2, 56, 'Вход', '', '', 1, 'login', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '', 1, '*'),
 (3, 57, 'Популярные статьи', '', '', 3, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_popular', 3, 1, '{"count":"5","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","automatic_title":"1"}', 1, '*'),
@@ -8994,21 +8415,12 @@ INSERT INTO `f8ad7_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (153, 353, 'Статьи :: Топ 5 за все время', '', '', 1, 'popular_right', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_zooitempro', 1, 1, '{"layout":{"_layout":"default.php","renderer_layout":"default.php","cache_time":"3600"},"media_position":"left","items":{"_chosenapps":["3"],"_chosencats":["6"],"itemfilter":{"_created_by":"","_state":"1","_frontpage":"","_offset":"","_limit":"5","dates":{"created":{"type":"period","period_mode":"dynamic","value":"","value_to":"","interval":"365","interval_unit":"YEAR"},"modified":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"},"published_down":{"type":"exact","period_mode":"static","value":"","value_to":"","interval":"","interval_unit":"YEAR"}},"elements":{"89335a61-ea45-4fad-b16f-488154d4f8e2":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"b3cf5464-43d7-415a-a378-9acd60da43ba":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"},"f0541003-23b2-44b7-abe8-b69c07224135":{"type":"exact","convert":"SIGNED","value":"","value_to":"","logic":"AND"}}},"itemorder":{"_reversed":"_reversed","_core":"_itemhits","_article-2":"","_article":"","_author":"","_item":""}},"moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (154, 354, 'ZOOfilter Module', '', '', 0, '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_zoofilter', 1, 1, '', 0, '*');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_modules_menu`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_modules_menu` (
   `moduleid` int(11) NOT NULL DEFAULT '0',
   `menuid` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_modules_menu`
---
-
+TRUNCATE TABLE `f8ad7_modules_menu`;
 INSERT INTO `f8ad7_modules_menu` (`moduleid`, `menuid`) VALUES
 (1, 0),
 (2, 0),
@@ -9184,12 +8596,6 @@ INSERT INTO `f8ad7_modules_menu` (`moduleid`, `menuid`) VALUES
 (152, 182),
 (153, 181);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_newsfeeds`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_newsfeeds` (
   `catid` int(11) NOT NULL DEFAULT '0',
 `id` int(10) unsigned NOT NULL,
@@ -9223,12 +8629,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_newsfeeds` (
   `images` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_overrider`
---
-
+TRUNCATE TABLE `f8ad7_newsfeeds`;
 CREATE TABLE IF NOT EXISTS `f8ad7_overrider` (
 `id` int(10) NOT NULL COMMENT 'Primary Key',
   `constant` varchar(255) NOT NULL,
@@ -9236,12 +8637,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_overrider` (
   `file` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_postinstall_messages`
---
-
+TRUNCATE TABLE `f8ad7_overrider`;
 CREATE TABLE IF NOT EXISTS `f8ad7_postinstall_messages` (
 `postinstall_message_id` bigint(20) unsigned NOT NULL,
   `extension_id` bigint(20) NOT NULL DEFAULT '700' COMMENT 'FK to #__extensions',
@@ -9259,21 +8655,12 @@ CREATE TABLE IF NOT EXISTS `f8ad7_postinstall_messages` (
   `enabled` tinyint(3) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
---
--- Дамп данных таблицы `f8ad7_postinstall_messages`
---
-
+TRUNCATE TABLE `f8ad7_postinstall_messages`;
 INSERT INTO `f8ad7_postinstall_messages` (`postinstall_message_id`, `extension_id`, `title_key`, `description_key`, `action_key`, `language_extension`, `language_client_id`, `type`, `action_file`, `action`, `condition_file`, `condition_method`, `version_introduced`, `enabled`) VALUES
 (1, 700, 'PLG_TWOFACTORAUTH_TOTP_POSTINSTALL_TITLE', 'PLG_TWOFACTORAUTH_TOTP_POSTINSTALL_BODY', 'PLG_TWOFACTORAUTH_TOTP_POSTINSTALL_ACTION', 'plg_twofactorauth_totp', 1, 'action', 'site://plugins/twofactorauth/totp/postinstall/actions.php', 'twofactorauth_postinstall_action', 'site://plugins/twofactorauth/totp/postinstall/actions.php', 'twofactorauth_postinstall_condition', '3.2.0', 1),
 (2, 700, 'COM_CPANEL_MSG_EACCELERATOR_TITLE', 'COM_CPANEL_MSG_EACCELERATOR_BODY', 'COM_CPANEL_MSG_EACCELERATOR_BUTTON', 'com_cpanel', 1, 'action', 'admin://components/com_admin/postinstall/eaccelerator.php', 'admin_postinstall_eaccelerator_action', 'admin://components/com_admin/postinstall/eaccelerator.php', 'admin_postinstall_eaccelerator_condition', '3.2.0', 1),
 (3, 700, 'COM_CPANEL_WELCOME_BEGINNERS_TITLE', 'COM_CPANEL_WELCOME_BEGINNERS_MESSAGE', '', 'com_cpanel', 1, 'message', '', '', '', '', '3.2.0', 1),
 (4, 700, 'COM_CPANEL_MSG_PHPVERSION_TITLE', 'COM_CPANEL_MSG_PHPVERSION_BODY', '', 'com_cpanel', 1, 'message', '', '', 'admin://components/com_admin/postinstall/phpversion.php', 'admin_postinstall_phpversion_condition', '3.2.2', 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_redirect_links`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_redirect_links` (
 `id` int(10) unsigned NOT NULL,
@@ -9287,30 +8674,16 @@ CREATE TABLE IF NOT EXISTS `f8ad7_redirect_links` (
   `modified_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_schemas`
---
-
+TRUNCATE TABLE `f8ad7_redirect_links`;
 CREATE TABLE IF NOT EXISTS `f8ad7_schemas` (
   `extension_id` int(11) NOT NULL,
   `version_id` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_schemas`
---
-
+TRUNCATE TABLE `f8ad7_schemas`;
 INSERT INTO `f8ad7_schemas` (`extension_id`, `version_id`) VALUES
 (700, '3.3.0-2014-04-02'),
 (10096, '0.0.1');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_session`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_session` (
   `session_id` varchar(200) NOT NULL DEFAULT '',
@@ -9322,19 +8695,10 @@ CREATE TABLE IF NOT EXISTS `f8ad7_session` (
   `username` varchar(150) DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_session`
---
-
+TRUNCATE TABLE `f8ad7_session`;
 INSERT INTO `f8ad7_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
 ('jhtjf6255723t71kkc7dk5lia6', 1, 0, '1413188301', '__default|a:8:{s:15:"session.counter";i:191;s:19:"session.timer.start";i:1413175822;s:18:"session.timer.last";i:1413188297;s:17:"session.timer.now";i:1413188298;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":10:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":3:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";s:12:"redirect_url";N;}s:13:"com_templates";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:5:"style";O:8:"stdClass":2:{s:2:"id";a:1:{i:0;i:11;}s:4:"data";N;}}}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":4:{s:6:"filter";O:8:"stdClass":8:{s:18:"client_id_previous";i:0;s:6:"search";s:0:"";s:6:"access";i:0;s:5:"state";s:0:"";s:8:"position";s:0:"";s:6:"module";s:0:"";s:9:"client_id";i:0;s:8:"language";s:0:"";}s:8:"ordercol";s:8:"position";s:9:"orderdirn";s:3:"asc";s:10:"limitstart";s:2:"20";}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:100;}}s:11:"com_plugins";O:8:"stdClass":2:{s:7:"plugins";O:8:"stdClass":4:{s:6:"filter";O:8:"stdClass":4:{s:6:"search";s:0:"";s:6:"access";i:0;s:7:"enabled";s:0:"";s:6:"folder";s:0:"";}s:8:"ordercol";s:6:"folder";s:9:"orderdirn";s:3:"asc";s:10:"limitstart";i:0;}s:4:"edit";O:8:"stdClass":1:{s:6:"plugin";O:8:"stdClass":2:{s:2:"id";a:3:{i:0;i:432;i:2;i:10028;i:3;i:401;}s:4:"data";N;}}}s:20:"plg_zlfw_zlfieldtype";s:4:"item";s:14:"com_categories";O:8:"stdClass":1:{s:10:"categories";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:9:"extension";s:9:"com_users";}}}s:9:"com_menus";O:8:"stdClass":2:{s:4:"edit";O:8:"stdClass":2:{s:4:"menu";O:8:"stdClass":1:{s:4:"data";N;}s:4:"item";O:8:"stdClass":4:{s:4:"data";N;s:4:"type";N;s:4:"link";N;s:2:"id";a:0:{}}}s:5:"items";O:8:"stdClass":3:{s:8:"menutype";s:6:"hidden";s:10:"limitstart";i:0;s:4:"list";a:4:{s:9:"direction";s:3:"asc";s:5:"limit";i:100;s:8:"ordering";s:5:"a.lft";s:5:"start";d:0;}}}s:4:"item";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:8:"menutype";s:6:"hidden";}}}}s:4:"user";O:5:"JUser":29:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"445";s:4:"name";s:10:"Super User";s:8:"username";s:4:"root";s:5:"email";s:18:"chevil92@gmail.com";s:8:"password";s:60:"$2y$10$71M5MHRnZkrN/brxhgzzIOLyNwyCG33qwnZPi66.Hv3NYiwN/638i";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-15 13:41:46";s:13:"lastvisitDate";s:19:"2014-10-12 11:28:28";s:10:"activation";s:1:"0";s:6:"params";s:0:"";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";s:10:"superadmin";b:1;s:3:"gid";i:1000;}s:13:"session.token";s:32:"d9636a309f61b0e0468704c05e33cada";}__wf|a:1:{s:13:"session.token";s:32:"27cee881cf29ac016a958071cded59ca";}', 445, 'root'),
 ('lqbirqg8kjo8geobe6fu4tcsi1', 0, 1, '1413188575', '__default|a:8:{s:15:"session.counter";i:1291;s:19:"session.timer.start";i:1413113310;s:18:"session.timer.last";i:1413188573;s:17:"session.timer.now";i:1413188575;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":3:{s:5:"users";O:8:"stdClass":1:{s:5:"login";O:8:"stdClass":1:{s:4:"form";O:8:"stdClass":2:{s:6:"return";s:20:"index.php?Itemid=179";s:4:"data";a:5:{s:6:"return";s:20:"index.php?Itemid=179";s:8:"username";s:0:"";s:8:"password";s:0:"";s:9:"secretkey";s:0:"";s:8:"remember";i:1;}}}}s:10:"com_search";O:8:"stdClass":1:{s:5:"limit";i:20;}s:9:"com_users";O:8:"stdClass":1:{s:12:"registration";O:8:"stdClass":1:{s:4:"data";a:6:{s:4:"name";s:6:"shsrrd";s:8:"username";s:6:"shsrrd";s:9:"password1";s:13:"shsrrd@sdf.er";s:9:"password2";s:13:"shsrrd@sdf.er";s:6:"email1";s:13:"shsrrd@sdf.er";s:6:"email2";s:13:"shsrrd@sdf.er";}}}}}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}s:13:"session.token";s:32:"5109628885232d78e902bd905faffdc8";}__wf|a:1:{s:13:"session.token";s:32:"4fb1d4fa44e6a860ae05a9d9276f8026";}', 0, '');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_tags`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_tags` (
 `id` int(10) unsigned NOT NULL,
@@ -9369,10 +8733,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_tags` (
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
---
--- Дамп данных таблицы `f8ad7_tags`
---
-
+TRUNCATE TABLE `f8ad7_tags`;
 INSERT INTO `f8ad7_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `created_by_alias`, `modified_user_id`, `modified_time`, `images`, `urls`, `hits`, `language`, `version`, `publish_up`, `publish_down`) VALUES
 (1, 0, 0, 23, 0, '', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '', '', '', '', 445, '2011-01-01 00:00:01', '', 0, '0000-00-00 00:00:00', '', '', 0, '*', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (2, 1, 1, 2, 1, 'sites', 'Портфолио', 'sites', '', '', 1, 445, '2014-09-21 12:32:04', 1, '{"tag_layout":"","tag_link_class":"label label-info","image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '', '', '{"author":"","robots":""}', 445, '2014-03-16 18:24:37', '', 0, '0000-00-00 00:00:00', '', '', 0, '*', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -9387,12 +8748,6 @@ INSERT INTO `f8ad7_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `tit
 (11, 1, 19, 20, 1, 'plugins', 'Плагины joomla!', 'plugins', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"tag_layout":"","tag_link_class":"label label-info","image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '', '', '{"author":"","robots":""}', 445, '2014-03-16 18:27:02', '', 0, '0000-00-00 00:00:00', '', '', 0, '*', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (12, 1, 21, 22, 1, 'extensions', 'Расширения joomla!', 'extensions', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"tag_layout":"","tag_link_class":"label label-info","image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '', '', '{"author":"","robots":""}', 445, '2014-03-16 18:27:11', '', 0, '0000-00-00 00:00:00', '', '', 1, '*', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_template_styles`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_template_styles` (
 `id` int(10) unsigned NOT NULL,
   `template` varchar(50) NOT NULL DEFAULT '',
@@ -9402,10 +8757,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_template_styles` (
   `params` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
---
--- Дамп данных таблицы `f8ad7_template_styles`
---
-
+TRUNCATE TABLE `f8ad7_template_styles`;
 INSERT INTO `f8ad7_template_styles` (`id`, `template`, `client_id`, `home`, `title`, `params`) VALUES
 (4, 'beez3', 0, '0', 'Beez3 - Default', '{"wrapperSmall":"53","wrapperLarge":"72","logo":"images\\/joomla_black.gif","sitetitle":"Joomla!","sitedescription":"Open Source Content Management","navposition":"left","templatecolor":"personal","html5":"0"}'),
 (5, 'hathor', 1, '0', 'Hathor - Default', '{"showSiteName":"0","colourChoice":"","boldText":"0"}'),
@@ -9415,12 +8767,6 @@ INSERT INTO `f8ad7_template_styles` (`id`, `template`, `client_id`, `home`, `tit
 (10, 'red_isis', 1, '1', 'red_isis - Default', '{"templateColor":"#13294A","headerColor":"#184A7D","sidebarColor":"#0088CC","logoFile":"","admin_menus":"1","displayHeader":"1","statusFixed":"1","stickyToolbar":"1"}'),
 (13, 'journal', 0, '1', 'protostar - Default', '');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_ucm_base`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_ucm_base` (
   `ucm_id` int(10) unsigned NOT NULL,
   `ucm_item_id` int(10) NOT NULL,
@@ -9428,12 +8774,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_base` (
   `ucm_language_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_ucm_content`
---
-
+TRUNCATE TABLE `f8ad7_ucm_base`;
 CREATE TABLE IF NOT EXISTS `f8ad7_ucm_content` (
 `core_content_id` int(10) unsigned NOT NULL,
   `core_type_alias` varchar(255) NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
@@ -9469,12 +8810,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_content` (
   `core_type_id` int(10) unsigned DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Contains core content data in name spaced fields' AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_ucm_history`
---
-
+TRUNCATE TABLE `f8ad7_ucm_content`;
 CREATE TABLE IF NOT EXISTS `f8ad7_ucm_history` (
 `version_id` int(10) unsigned NOT NULL,
   `ucm_item_id` int(10) unsigned NOT NULL,
@@ -9488,10 +8824,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_history` (
   `keep_forever` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0=auto delete; 1=keep'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
---
--- Дамп данных таблицы `f8ad7_ucm_history`
---
-
+TRUNCATE TABLE `f8ad7_ucm_history`;
 INSERT INTO `f8ad7_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `version_note`, `save_date`, `editor_user_id`, `character_count`, `sha1_hash`, `version_data`, `keep_forever`) VALUES
 (1, 108, 1, '', '2014-10-11 15:12:43', 445, 8910, 'c264216ed4ffca71d1d8d7dc4a3e9c2d6495875e', '{"id":108,"asset_id":305,"title":"\\u0420\\u0435\\u0434\\u043a\\u043e\\u043b\\u043b\\u0435\\u0433\\u0438\\u044f","alias":"redkollegiya","introtext":"<p>\\u042d\\u043a\\u043e\\u043d\\u043e\\u043c\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 \\u043d\\u0430\\u0443\\u043a\\u0438<\\/p>\\r\\n<p>\\u0412\\u043e\\u0440\\u043e\\u043d\\u043a\\u043e\\u0432\\u0430 \\u041e\\u043b\\u044c\\u0433\\u0430 \\u0412\\u0430\\u0441\\u0438\\u043b\\u044c\\u0435\\u0432\\u043d\\u0430&nbsp;\\u2014 \\u0433\\u043b\\u0430\\u0432\\u043d\\u044b\\u0439 \\u0440\\u0435\\u0434\\u0430\\u043a\\u0442\\u043e\\u0440 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0430, \\u043f\\u0440\\u0435\\u0434\\u0441\\u0435\\u0434\\u0430\\u0442\\u0435\\u043b\\u044c \\u0440\\u0435\\u0434\\u043a\\u043e\\u043b\\u043b\\u0435\\u0433\\u0438\\u0438, \\u0434.\\u044d.\\u043d., \\u043f\\u0440\\u043e\\u0444\\u0435\\u0441\\u0441\\u043e\\u0440, \\u0447\\u043b\\u0435\\u043d-\\u043a\\u043e\\u0440\\u0440\\u0435\\u0441\\u043f\\u043e\\u043d\\u0434\\u0435\\u043d\\u0442 \\u0420\\u0410\\u0415\\u041d.<\\/p>\\r\\n<p>\\u0422\\u0435\\u043b.:&nbsp;8 (4752) 638780;<\\/p>\\r\\n<p>E-mail:&nbsp;<a href=\\"mailto:voronkova@tambov-konfcentr.ru\\">voronkova@tambov-konfcentr.ru<\\/a><\\/p>\\r\\n<p>\\u041a\\u0443\\u0437\\u043d\\u0435\\u0446\\u043e\\u0432 \\u042e\\u0440\\u0438\\u0439 \\u0412\\u0438\\u043a\\u0442\\u043e\\u0440\\u043e\\u0432\\u0438\\u0447&nbsp;\\u2014 \\u0434.\\u044d.\\u043d., \\u043f\\u0440\\u043e\\u0444\\u0435\\u0441\\u0441\\u043e\\u0440, \\u0437\\u0430\\u0432\\u0435\\u0434\\u0443\\u044e\\u0449\\u0438\\u0439 \\u043a\\u0430\\u0444\\u0435\\u0434\\u0440\\u043e\\u0439 \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0438 \\u043f\\u043b\\u0430\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u043e\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e-\\u044d\\u043a\\u043e\\u043d\\u043e\\u043c\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u043f\\u0440\\u043e\\u0446\\u0435\\u0441\\u0441\\u043e\\u0432 \\u0421\\u0430\\u043d\\u043a\\u0442-\\u041f\\u0435\\u0442\\u0435\\u0440\\u0431\\u0443\\u0440\\u0433\\u0441\\u043a\\u043e\\u0433\\u043e \\u0433\\u043e\\u0441\\u0443\\u0434\\u0430\\u0440\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u043e\\u0433\\u043e \\u0443\\u043d\\u0438\\u0432\\u0435\\u0440\\u0441\\u0438\\u0442\\u0435\\u0442\\u0430, \\u0437\\u0430\\u0441\\u043b\\u0443\\u0436\\u0435\\u043d\\u043d\\u044b\\u0439 \\u0440\\u0430\\u0431\\u043e\\u0442\\u043d\\u0438\\u043a \\u0432\\u044b\\u0441\\u0448\\u0435\\u0439 \\u0448\\u043a\\u043e\\u043b\\u044b \\u0420\\u0424, \\u043f\\u043e\\u0447\\u0435\\u0442\\u043d\\u044b\\u0439 \\u041f\\u0440\\u0435\\u0437\\u0438\\u0434\\u0435\\u043d\\u0442 \\u041d\\u0430\\u0446\\u0438\\u043e\\u043d\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0430\\u043a\\u0430\\u0434\\u0435\\u043c\\u0438\\u0438 \\u0442\\u0443\\u0440\\u0438\\u0437\\u043c\\u0430.<\\/p>\\r\\n<p>\\u0422\\u0435\\u043b.:&nbsp;8 (812) 2737527;<\\/p>\\r\\n<p>E-mail:&nbsp;<a href=\\"mailto:tour@econ.pu.ru\\">tour@econ.pu.ru<\\/a><\\/p>\\r\\n<p>\\u0418\\u0441\\u0442\\u043e\\u0440\\u0438\\u044f, \\u0444\\u0438\\u043b\\u043e\\u0441\\u043e\\u0444\\u0438\\u044f \\u0438 \\u0441\\u043e\\u0446\\u0438\\u043e\\u043b\\u043e\\u0433\\u0438\\u044f<\\/p>\\r\\n<p>\\u0421\\u043a\\u0432\\u043e\\u0440\\u0446\\u043e\\u0432 \\u041d\\u0438\\u043a\\u043e\\u043b\\u0430\\u0439 \\u0413\\u0435\\u043d\\u0440\\u0438\\u0445\\u043e\\u0432\\u0438\\u0447&nbsp;\\u2014 \\u0434.\\u0441.\\u043d., \\u043f\\u0440\\u043e\\u0444\\u0435\\u0441\\u0441\\u043e\\u0440, \\u043f\\u0440\\u043e\\u0440\\u0435\\u043a\\u0442\\u043e\\u0440 \\u043f\\u043e \\u043d\\u0430\\u0443\\u0447\\u043d\\u043e\\u0439 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0435 \\u0421\\u0430\\u043d\\u043a\\u0442-\\u041f\\u0435\\u0442\\u0435\\u0440\\u0431\\u0443\\u0440\\u0433\\u0441\\u043a\\u043e\\u0433\\u043e \\u0433\\u043e\\u0441\\u0443\\u0434\\u0430\\u0440\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u043e\\u0433\\u043e \\u0443\\u043d\\u0438\\u0432\\u0435\\u0440\\u0441\\u0438\\u0442\\u0435\\u0442\\u0430.<\\/p>\\r\\n<p>\\u0422\\u0435\\u043b.:&nbsp;8 (812) 3241258;<\\/p>\\r\\n<p>E-mail:&nbsp;<a href=\\"mailto:n.skvortsov@spbu.ru\\">n.skvortsov@spbu.ru<\\/a><\\/p>\\r\\n<p>\\u0418\\u0441\\u0442\\u043e\\u0440\\u0438\\u044f \\u043d\\u0430\\u0443\\u043a\\u0438<\\/p>\\r\\n<p>\\u0422\\u044e\\u0442\\u044e\\u043d\\u043d\\u0438\\u043a \\u0412\\u044f\\u0447\\u0435\\u0441\\u043b\\u0430\\u0432 \\u041c\\u0438\\u0445\\u0430\\u0439\\u043b\\u043e\\u0432\\u0438\\u0447&nbsp;\\u2014 \\u0434.\\u0442.\\u043d., \\u043a.\\u0445.\\u043d., \\u043f\\u0440\\u043e\\u0444\\u0435\\u0441\\u0441\\u043e\\u0440, \\u0434\\u0438\\u0440\\u0435\\u043a\\u0442\\u043e\\u0440 \\u0422\\u0430\\u043c\\u0431\\u043e\\u0432\\u0441\\u043a\\u043e\\u0433\\u043e \\u0444\\u0438\\u043b\\u0438\\u0430\\u043b\\u0430 \\u041c\\u043e\\u0441\\u043a\\u043e\\u0432\\u0441\\u043a\\u043e\\u0433\\u043e \\u0433\\u043e\\u0441\\u0443\\u0434\\u0430\\u0440\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u043e\\u0433\\u043e \\u0443\\u043d\\u0438\\u0432\\u0435\\u0440\\u0441\\u0438\\u0442\\u0435\\u0442\\u0430 \\u043a\\u0443\\u043b\\u044c\\u0442\\u0443\\u0440\\u044b \\u0438 \\u0438\\u0441\\u043a\\u0443\\u0441\\u0441\\u0442\\u0432, \\u043f\\u0440\\u0435\\u0437\\u0438\\u0434\\u0435\\u043d\\u0442 \\u041c\\u0435\\u0436\\u0434\\u0443\\u043d\\u0430\\u0440\\u043e\\u0434\\u043d\\u043e\\u0433\\u043e \\u0418\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u043e\\u0433\\u043e \\u041d\\u043e\\u0431\\u0435\\u043b\\u0435\\u0432\\u0441\\u043a\\u043e\\u0433\\u043e \\u0426\\u0435\\u043d\\u0442\\u0440\\u0430, \\u0430\\u043a\\u0430\\u0434\\u0435\\u043c\\u0438\\u043a \\u0420\\u0410\\u0415\\u041d.<\\/p>\\r\\n<p>\\u0422\\u0435\\u043b.:&nbsp;8 (4752)50-46-00;<\\/p>\\r\\n<p>E-mail:&nbsp;<a href=\\"mailto:vmt@tmb.ru\\">vmt@tmb.ru<\\/a><\\/p>\\r\\n<p>\\u041f\\u0435\\u0434\\u0430\\u0433\\u043e\\u0433\\u0438\\u043a\\u0430 \\u0438 \\u043f\\u0441\\u0438\\u0445\\u043e\\u043b\\u043e\\u0433\\u0438\\u044f<\\/p>\\r\\n<p>\\u041b\\u044f\\u0448\\u0435\\u043d\\u043a\\u043e \\u0422\\u0430\\u0442\\u044c\\u044f\\u043d\\u0430 \\u0412\\u0430\\u0441\\u0438\\u043b\\u044c\\u0435\\u0432\\u043d\\u0430&nbsp;\\u2014 \\u0434.\\u043f\\u0435\\u0434.\\u043d, \\u043f\\u0440\\u043e\\u0444\\u0435\\u0441\\u0441\\u043e\\u0440, \\u0434\\u0435\\u043a\\u0430\\u043d \\u0444\\u0430\\u043a\\u0443\\u043b\\u044c\\u0442\\u0435\\u0442\\u0430 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u044b\\u0445 \\u0442\\u0435\\u0445\\u043d\\u043e\\u043b\\u043e\\u0433\\u0438\\u0439 \\u0438 \\u043c\\u0435\\u0434\\u0438\\u0430\\u0434\\u0438\\u0437\\u0430\\u0439\\u043d\\u0430 \\u0421\\u0430\\u043d\\u043a\\u0442-\\u041f\\u0435\\u0442\\u0435\\u0440\\u0431\\u0443\\u0440\\u0433\\u0441\\u043a\\u043e\\u0433\\u043e \\u0433\\u043e\\u0441\\u0443\\u0434\\u0430\\u0440\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u043e\\u0433\\u043e \\u0443\\u043d\\u0438\\u0432\\u0435\\u0440\\u0441\\u0438\\u0442\\u0435\\u0442\\u0430 \\u043a\\u0443\\u043b\\u044c\\u0442\\u0443\\u0440\\u044b \\u0438 \\u0438\\u0441\\u043a\\u0443\\u0441\\u0441\\u0442\\u0432.<\\/p>\\r\\n<p>\\u0422\\u0435\\u043b.:&nbsp;8 (812)9525781;<\\/p>\\r\\n<p>E-mail:&nbsp;<a href=\\"mailto:decanat@fitim.ru\\">decanat@fitim.ru<\\/a><\\/p>\\r\\n<p>\\u0421\\u0435\\u0440\\u044b\\u0445 \\u0410\\u043d\\u043d\\u0430 \\u0411\\u043e\\u0440\\u0438\\u0441\\u043e\\u0432\\u043d\\u0430&nbsp;\\u2014 \\u0434.\\u043f\\u0435\\u0434.\\u043d, \\u0434.\\u043f.\\u043d., \\u043f\\u0440\\u043e\\u0444\\u0435\\u0441\\u0441\\u043e\\u0440, \\u0437\\u0430\\u0432\\u0435\\u0434\\u0443\\u044e\\u0449\\u0438\\u0439 \\u043a\\u0430\\u0444\\u0435\\u0434\\u0440\\u043e\\u0439 \\u0441\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043f\\u0441\\u0438\\u0445\\u043e\\u043b\\u043e\\u0433\\u043e-\\u043f\\u0435\\u0434\\u0430\\u0433\\u043e\\u0433\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0434\\u0438\\u0441\\u0446\\u0438\\u043f\\u043b\\u0438\\u043d \\u0411\\u0430\\u043b\\u0442\\u0438\\u0439\\u0441\\u043a\\u043e\\u0433\\u043e \\u0444\\u0435\\u0434\\u0435\\u0440\\u0430\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u0443\\u043d\\u0438\\u0432\\u0435\\u0440\\u0441\\u0438\\u0442\\u0435\\u0442\\u0430 \\u0438\\u043c\\u0435\\u043d\\u0438 \\u0418. \\u041a\\u0430\\u043d\\u0442\\u0430.<\\/p>\\r\\n<p>\\u0422\\u0435\\u043b.:&nbsp;8 (911)4511091<\\/p>\\r\\n<p>E-mail:&nbsp;<a href=\\"mailto:serykh@baltnet.ru\\">serykh@baltnet.ru<\\/a><\\/p>","fulltext":"","state":1,"catid":"2","created":"2014-10-11 15:12:43","created_by":"445","created_by_alias":"","modified":"","modified_by":null,"checked_out":null,"checked_out_time":null,"publish_up":"2014-10-11 15:12:43","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":1,"ordering":null,"metakey":"","metadesc":"","access":"1","hits":null,"metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0),
 (2, 109, 1, '', '2014-10-11 15:14:26', 445, 20330, '0454a8e6543fe1470e0c49b47fda7b398b845469', '{"id":109,"asset_id":306,"title":"\\u0421\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0430\\u043c","alias":"sponsoram","introtext":"<p>1. \\u0418\\u0433\\u0440\\u043e\\u0432\\u0430\\u044f \\u0444\\u043e\\u0440\\u043c\\u0430<\\/p>\\r\\n<p>\\u0421\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0443 \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u044f\\u0435\\u0442\\u0441\\u044f \\u043f\\u0440\\u0430\\u0432\\u043e \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435 \\u0441\\u0432\\u043e\\u0435\\u0433\\u043e \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\\u0430 \\u043d\\u0430 \\u0438\\u0433\\u0440\\u043e\\u0432\\u043e\\u0439 \\u0444\\u043e\\u0440\\u043c\\u0435 \\u043e\\u0441\\u043d\\u043e\\u0432\\u043d\\u043e\\u0433\\u043e \\u0441\\u043e\\u0441\\u0442\\u0430\\u0432\\u0430 \\u043a\\u043e\\u043c\\u0430\\u043d\\u0434\\u044b \\u0432\\u043e \\u0432\\u0440\\u0435\\u043c\\u044f \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043c\\u0430\\u0442\\u0447\\u0435\\u0439 \\u0421\\u0443\\u043f\\u0435\\u0440\\u043b\\u0438\\u0433\\u0438, \\u0430 \\u0442\\u0430\\u043a \\u0436\\u0435 \\u043d\\u0430 \\u043c\\u0430\\u0442\\u0447\\u0430\\u0445 \\u0415\\u0432\\u0440\\u043e\\u043a\\u0443\\u0431\\u043a\\u043e\\u0432.<\\/p>\\r\\n<p>\\u0420\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435 \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\\u0430 \\u0441\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0430 \\u043d\\u0430 \\u0438\\u0433\\u0440\\u043e\\u0432\\u043e\\u0439 \\u0444\\u043e\\u0440\\u043c\\u0435 \\u0431\\u0430\\u0441\\u043a\\u0435\\u0442\\u0431\\u043e\\u043b\\u0438\\u0441\\u0442\\u043e\\u0432 \\u043f\\u043e\\u0434\\u0447\\u0435\\u0440\\u043a\\u0438\\u0432\\u0430\\u0435\\u0442 \\u043e\\u0441\\u043e\\u0431\\u044b\\u0439 \\u0441\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043f\\u0430\\u0440\\u0442\\u043d\\u0435\\u0440\\u0441\\u0442\\u0432\\u0430. \\u0420\\u0435\\u043a\\u043b\\u0430\\u043c\\u0430 \\u043d\\u0430 \\u0438\\u0433\\u0440\\u043e\\u0432\\u043e\\u0439 \\u0444\\u043e\\u0440\\u043c\\u0435 \\u043e\\u0442\\u043b\\u0438\\u0447\\u0430\\u0435\\u0442\\u0441\\u044f \\u044d\\u043a\\u0441\\u043a\\u043b\\u044e\\u0437\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c\\u044e; \\u043e\\u043d\\u0430 \\u043e\\u0431\\u0435\\u0441\\u043f\\u0435\\u0447\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0431\\u043e\\u043b\\u044c\\u0448\\u043e\\u0439 \\u043e\\u0445\\u0432\\u0430\\u0442 \\u0430\\u0443\\u0434\\u0438\\u0442\\u043e\\u0440\\u0438\\u0438 (\\u0438\\u0433\\u0440\\u044b \\u0448\\u0438\\u0440\\u043e\\u043a\\u043e \\u043e\\u0441\\u0432\\u0435\\u0449\\u0430\\u044e\\u0442\\u0441\\u044f \\u0432 \\u043f\\u0440\\u0435\\u0441\\u0441\\u0435, \\u0432 \\u0441\\u0435\\u0442\\u0438 \\u0418\\u043d\\u0442\\u0435\\u0440\\u043d\\u0435\\u0442, \\u043f\\u043e \\u0422\\u0412) \\u0438 \\u043f\\u0440\\u0438\\u0441\\u0443\\u0442\\u0441\\u0442\\u0432\\u0438\\u0435 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438 \\u043e \\u0441\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0435 \\u043d\\u0435 \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u043d\\u0430 \\u0434\\u043e\\u043c\\u0430\\u0448\\u043d\\u0438\\u0445, \\u043d\\u043e \\u0438 \\u043d\\u0430 \\u0433\\u043e\\u0441\\u0442\\u0435\\u0432\\u044b\\u0445 \\u043c\\u0430\\u0442\\u0447\\u0430\\u0445 \\u043a\\u043b\\u0443\\u0431\\u0430.<\\/p>\\r\\n<p>2.&nbsp;\\u041f\\u0440\\u0435\\u0441\\u0441-\\u0431\\u0430\\u043d\\u043d\\u0435\\u0440<\\/p>\\r\\n<p>\\u0421\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0443 \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u044f\\u0435\\u0442\\u0441\\u044f \\u043f\\u0440\\u0430\\u0432\\u043e \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435 \\u0441\\u0432\\u043e\\u0435\\u0433\\u043e \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\\u0430 \\u043d\\u0430 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u043e\\u043c \\u0449\\u0438\\u0442\\u0435 \\u0432&nbsp;\\u043f\\u0440\\u0435\\u0441\\u0441-\\u0446\\u0435\\u043d\\u0442\\u0440\\u0435.<\\/p>\\r\\n<p>\\u0420\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435 \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\\u0430 \\u0441\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0430 \\u043d\\u0430 \\u0441\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u043c \\u0437\\u0430\\u0434\\u043d\\u0438\\u043a\\u0435 \\u0437\\u0430 \\u0441\\u043f\\u0438\\u043d\\u0430\\u043c\\u0438 \\u0442\\u0440\\u0435\\u043d\\u0435\\u0440\\u043e\\u0432 \\u0432 \\u043f\\u043e\\u043b\\u0435 \\u0437\\u0440\\u0435\\u043d\\u0438\\u044f \\u0444\\u043e\\u0442\\u043e- \\u0438 \\u0442\\u0435\\u043b\\u0435\\u043a\\u0430\\u043c\\u0435\\u0440 \\u043e\\u0431\\u0435\\u0441\\u043f\\u0435\\u0447\\u0438\\u0432\\u0430\\u0435\\u0442 \\u043f\\u0440\\u0438\\u0441\\u0443\\u0442\\u0441\\u0442\\u0432\\u0438\\u0435 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438 \\u043e \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 \\u0432\\u043e \\u0432\\u0440\\u0435\\u043c\\u044f \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0435\\u043d\\u0438\\u044f \\u043f\\u0440\\u0435\\u0441\\u0441-\\u043a\\u043e\\u043d\\u0444\\u0435\\u0440\\u0435\\u043d\\u0446\\u0438\\u0439. \\u041f\\u0440\\u0435\\u0441\\u0441-\\u043a\\u043e\\u043d\\u0444\\u0435\\u0440\\u0435\\u043d\\u0446\\u0438\\u0438 \\u043f\\u0440\\u043e\\u0445\\u043e\\u0434\\u044f\\u0442 \\u043f\\u043e\\u0441\\u043b\\u0435 \\u043a\\u0430\\u0436\\u0434\\u043e\\u0433\\u043e \\u0441\\u044b\\u0433\\u0440\\u0430\\u043d\\u043d\\u043e\\u0433\\u043e \\u043c\\u0430\\u0442\\u0447\\u0430 \\u0441 \\u0443\\u0447\\u0430\\u0441\\u0442\\u0438\\u0435\\u043c \\u0433\\u043b\\u0430\\u0432\\u043d\\u044b\\u0445 \\u0442\\u0440\\u0435\\u043d\\u0435\\u0440\\u043e\\u0432 \\u043a\\u043e\\u043c\\u0430\\u043d\\u0434 \\u0438 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0438\\u0441\\u0442\\u043e\\u0432, \\u0430\\u043a\\u043a\\u0440\\u0435\\u0434\\u0438\\u0442\\u043e\\u0432\\u0430\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0443\\u0431\\u043e\\u043c \\u0434\\u043b\\u044f \\u043e\\u0441\\u0432\\u0435\\u0449\\u0435\\u043d\\u0438\\u044f \\u043c\\u0430\\u0442\\u0447\\u0435\\u0439.<\\/p>\\r\\n<p>3. \\u0411\\u0438\\u043b\\u0435\\u0442\\u044b \\u0438 \\u0430\\u0431\\u043e\\u043d\\u0435\\u043c\\u0435\\u043d\\u0442\\u044b \\u043d\\u0430 \\u043c\\u0430\\u0442\\u0447<\\/p>\\r\\n<p>\\u0421\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0443 \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u044f\\u0435\\u0442\\u0441\\u044f \\u043f\\u0440\\u0430\\u0432\\u043e \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435 \\u0441\\u0432\\u043e\\u0435\\u0433\\u043e \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\\u0430 \\u043d\\u0430 \\u043b\\u0438\\u0446\\u0435\\u0432\\u043e\\u0439 \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u0435 \\u0431\\u0438\\u043b\\u0435\\u0442\\u043e\\u0432 \\u043a \\u043a\\u0430\\u0436\\u0434\\u043e\\u043c\\u0443 \\u0434\\u043e\\u043c\\u0430\\u0448\\u043d\\u0435\\u043c\\u0443 \\u043c\\u0430\\u0442\\u0447\\u0443 \\u043a\\u043b\\u0443\\u0431\\u0430, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043d\\u0430 \\u043e\\u0431\\u043b\\u043e\\u0436\\u043a\\u0435 \\u0441\\u0435\\u0437\\u043e\\u043d\\u043d\\u044b\\u0445 \\u0430\\u0431\\u043e\\u043d\\u0435\\u043c\\u0435\\u043d\\u0442\\u043e\\u0432.<\\/p>\\r\\n<p>\\u0411\\u0438\\u043b\\u0435\\u0442\\u044b \\u0438 \\u0430\\u0431\\u043e\\u043d\\u0435\\u043c\\u0435\\u043d\\u0442\\u044b \\u044f\\u0432\\u043b\\u044f\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043a\\u0430\\u0436\\u0434\\u043e\\u0433\\u043e \\u0431\\u043e\\u043b\\u0435\\u043b\\u044c\\u0449\\u0438\\u043a\\u0430 \\u043e\\u0434\\u043d\\u0438\\u043c\\u0438 \\u0438\\u0437 \\u043d\\u0430\\u0438\\u0431\\u043e\\u043b\\u0435\\u0435 \\u0446\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0430\\u0442\\u0440\\u0438\\u0431\\u0443\\u0442\\u043e\\u0432 \\u0444\\u0443\\u0442\\u0431\\u043e\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u0441\\u0435\\u0437\\u043e\\u043d\\u0430. \\u0410\\u0431\\u043e\\u043d\\u0435\\u043c\\u0435\\u043d\\u0442 \\u0445\\u0440\\u0430\\u043d\\u0438\\u0442\\u0441\\u044f \\u0432 \\u0442\\u0435\\u0447\\u0435\\u043d\\u0438\\u0435 \\u0432\\u0441\\u0435\\u0433\\u043e \\u0441\\u0435\\u0437\\u043e\\u043d\\u0430, \\u043f\\u043e\\u044d\\u0442\\u043e\\u043c\\u0443 \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f \\u0412\\u0430\\u0448\\u0435\\u0439 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 \\u043d\\u0435\\u043e\\u0434\\u043d\\u043e\\u043a\\u0440\\u0430\\u0442\\u043d\\u043e \\u043f\\u043e\\u043f\\u0430\\u0434\\u0430\\u0435\\u0442 \\u0432 \\u043f\\u043e\\u043b\\u0435 \\u0437\\u0440\\u0435\\u043d\\u0438\\u044f \\u0431\\u043e\\u043b\\u0435\\u043b\\u044c\\u0449\\u0438\\u043a\\u043e\\u0432. \\u0411\\u0438\\u043b\\u0435\\u0442\\u044b \\u043d\\u0430 \\u0431\\u0430\\u0441\\u043a\\u0435\\u0442\\u0431\\u043e\\u043b \\u043f\\u0435\\u0440\\u0438\\u043e\\u0434\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438 \\u0443\\u0447\\u0430\\u0441\\u0442\\u0432\\u0443\\u044e\\u0442 \\u0432 \\u0440\\u043e\\u0437\\u044b\\u0433\\u0440\\u044b\\u0448\\u0435 \\u043f\\u0440\\u0438\\u0437\\u043e\\u0432, \\u0447\\u0442\\u043e \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0438\\u0432\\u043b\\u0435\\u0447\\u044c \\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0432\\u043d\\u0438\\u043c\\u0430\\u043d\\u0438\\u0435 \\u0431\\u043e\\u043b\\u0435\\u043b\\u044c\\u0449\\u0438\\u043a\\u043e\\u0432 \\u043a \\u0412\\u0430\\u0448\\u0435\\u0439 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438.<\\/p>\\r\\n<p>4. \\u041e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043f\\u0440\\u043e\\u0433\\u0440\\u0430\\u043c\\u043c\\u043a\\u0438 \\u043a \\u043c\\u0430\\u0442\\u0447\\u0430\\u043c<\\/p>\\r\\n<p>\\u0421\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0443 \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u044f\\u0435\\u0442\\u0441\\u044f \\u043f\\u0440\\u0430\\u0432\\u043e \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u044f \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\\u0430 \\u0438\\u043b\\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u043e\\u0439 \\u043f\\u043e\\u043b\\u043e\\u0441\\u044b \\u0444\\u043e\\u0440\\u043c\\u0430\\u0442\\u0430 \\u04105 \\u0432 \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043f\\u0440\\u043e\\u0433\\u0440\\u0430\\u043c\\u043c\\u043a\\u0430\\u0445 \\u043a \\u043a\\u0430\\u0436\\u0434\\u043e\\u043c\\u0443 \\u0434\\u043e\\u043c\\u0430\\u0448\\u043d\\u0435\\u043c\\u0443 \\u043c\\u0430\\u0442\\u0447\\u0443.<\\/p>\\r\\n<p>\\u041f\\u0440\\u043e\\u0433\\u0440\\u0430\\u043c\\u043c\\u043a\\u0430, \\u043f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u044f\\u044e\\u0449\\u0430\\u044f \\u0441\\u043e\\u0431\\u043e\\u0439 \\u044f\\u0440\\u043a\\u043e\\u0435, \\u043a\\u0440\\u0430\\u0441\\u043e\\u0447\\u043d\\u043e\\u0435 \\u0438 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0442\\u0438\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u0434\\u0430\\u043d\\u0438\\u0435, \\u044f\\u0432\\u043b\\u044f\\u0435\\u0442\\u0441\\u044f \\u0434\\u0435\\u0439\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u044b\\u043c \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u0438\\u043d\\u0433\\u043e\\u0432\\u044b\\u043c \\u0438\\u043d\\u0441\\u0442\\u0440\\u0443\\u043c\\u0435\\u043d\\u0442\\u043e\\u043c, \\u0441\\u043f\\u043e\\u0441\\u043e\\u0431\\u043d\\u044b\\u043c \\u043f\\u043e\\u0432\\u044b\\u0441\\u0438\\u0442\\u044c \\u043f\\u043e\\u043f\\u0443\\u043b\\u044f\\u0440\\u043d\\u043e\\u0441\\u0442\\u044c \\u0438 \\u0443\\u0437\\u043d\\u0430\\u0432\\u0430\\u0435\\u043c\\u043e\\u0441\\u0442\\u044c \\u0412\\u0430\\u0448\\u0435\\u0439 \\u0442\\u043e\\u0440\\u0433\\u043e\\u0432\\u043e\\u0439 \\u043c\\u0430\\u0440\\u043a\\u0438 \\u0438 \\u043f\\u0440\\u0438\\u0432\\u043b\\u0435\\u0447\\u044c \\u0432\\u043d\\u0438\\u043c\\u0430\\u043d\\u0438\\u0435 \\u0437\\u043d\\u0430\\u0447\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0430\\u0443\\u0434\\u0438\\u0442\\u043e\\u0440\\u0438\\u0438 \\u0444\\u0443\\u0442\\u0431\\u043e\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0431\\u043e\\u043b\\u0435\\u043b\\u044c\\u0449\\u0438\\u043a\\u043e\\u0432 \\u2013 \\u0412\\u0430\\u0448\\u0438\\u0445 \\u043f\\u043e\\u0442\\u0435\\u043d\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432.<\\/p>\\r\\n<p>5. \\u0410\\u0444\\u0438\\u0448\\u0438 \\u043d\\u0430 \\u043c\\u0430\\u0442\\u0447\\u0438<\\/p>\\r\\n<p>\\u0421\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0443 \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u044f\\u0435\\u0442\\u0441\\u044f \\u043f\\u0440\\u0430\\u0432\\u043e \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u044f \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\\u0430 \\u043d\\u0430 \\u0430\\u0444\\u0438\\u0448\\u0430\\u0445 \\u0444\\u043e\\u0440\\u043c\\u0430\\u0442\\u0430 \\u04101.<\\/p>\\r\\n<p>\\u0410\\u0444\\u0438\\u0448\\u0438 \\u0441 \\u0430\\u043d\\u043e\\u043d\\u0441\\u0430\\u043c\\u0438 \\u0434\\u043e\\u043c\\u0430\\u0448\\u043d\\u0438\\u0445 \\u043c\\u0430\\u0442\\u0447\\u0435\\u0439 \\u043a\\u043e\\u043c\\u0430\\u043d\\u0434\\u044b \\u0440\\u0430\\u0437\\u0432\\u0435\\u0448\\u0438\\u0432\\u0430\\u044e\\u0442\\u0441\\u044f \\u0437\\u0430&nbsp;3 \\u0434\\u043d\\u044f&nbsp;\\u0434\\u043e \\u043a\\u0430\\u0436\\u0434\\u043e\\u0433\\u043e \\u043c\\u0430\\u0442\\u0447\\u0430 \\u0432&nbsp;30 \\u043d\\u0430\\u0438\\u0431\\u043e\\u043b\\u0435\\u0435&nbsp;\\u043e\\u0436\\u0438\\u0432\\u043b\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0442\\u043e\\u0447\\u043a\\u0430\\u0445 \\u0433\\u043e\\u0440\\u043e\\u0434\\u0430. \\u0411\\u043b\\u0430\\u0433\\u043e\\u0434\\u0430\\u0440\\u044f \\u044f\\u0440\\u043a\\u043e\\u043c\\u0443 \\u0434\\u0438\\u0437\\u0430\\u0439\\u043d\\u0443 \\u0430\\u0444\\u0438\\u0448\\u0438 \\u043d\\u0435\\u0438\\u0437\\u043c\\u0435\\u043d\\u043d\\u043e \\u043f\\u0440\\u0438\\u0432\\u043b\\u0435\\u043a\\u0430\\u044e\\u0442 \\u0432\\u043d\\u0438\\u043c\\u0430\\u043d\\u0438\\u0435 \\u0442\\u044b\\u0441\\u044f\\u0447 \\u0431\\u043e\\u043b\\u0435\\u043b\\u044c\\u0449\\u0438\\u043a\\u043e\\u0432, \\u0438, \\u0441\\u043e\\u043e\\u0442\\u0432\\u0435\\u0442\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u043e, \\u0432 \\u043f\\u043e\\u043b\\u0435 \\u0438\\u0445 \\u0437\\u0440\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043f\\u0430\\u0434\\u0430\\u0435\\u0442 \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f \\u0412\\u0430\\u0448\\u0435\\u0439 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438.<\\/p>\\r\\n<p>6. \\u041a\\u043b\\u0443\\u0431\\u043d\\u044b\\u0439 \\u0430\\u0432\\u0442\\u043e\\u0431\\u0443\\u0441<\\/p>\\r\\n<p>\\u0421\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0443 \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u044f\\u0435\\u0442\\u0441\\u044f \\u043f\\u0440\\u0430\\u0432\\u043e \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435 \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\\u0430 \\u043d\\u0430 \\u043a\\u043b\\u0443\\u0431\\u043d\\u043e\\u043c \\u0430\\u0432\\u0442\\u043e\\u0431\\u0443\\u0441\\u0435.<\\/p>\\r\\n<p>\\u0410\\u0432\\u0442\\u043e\\u0431\\u0443\\u0441 \\u0441\\u043b\\u0443\\u0436\\u0438\\u0442 \\u0434\\u043b\\u044f \\u043f\\u0435\\u0440\\u0435\\u0432\\u043e\\u0437\\u043a\\u0438 \\u0438\\u0433\\u0440\\u043e\\u043a\\u043e\\u0432 \\u043a\\u043e\\u043c\\u0430\\u043d\\u0434\\u044b \\u0432 \\u0442\\u0435 \\u0438\\u043b\\u0438 \\u0438\\u043d\\u044b\\u0435 \\u0440\\u0435\\u0433\\u0438\\u043e\\u043d\\u044b \\u0434\\u043b\\u044f \\u0443\\u0447\\u0430\\u0441\\u0442\\u0438\\u044f \\u0435\\u0435 \\u0432 \\u043e\\u0447\\u0435\\u0440\\u0435\\u0434\\u043d\\u044b\\u0445 \\u0438\\u0433\\u0440\\u0430\\u0445 \\u0421\\u0443\\u043f\\u0435\\u0440\\u043b\\u0438\\u0433\\u0438.<\\/p>\\r\\n<p>\\u0412\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u044b \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u044f: \\u043b\\u0435\\u0432\\u044b\\u0439 \\u0438 \\u043f\\u0440\\u0430\\u0432\\u044b\\u0439 \\u0431\\u043e\\u0440\\u0442 \\u0430\\u0432\\u0442\\u043e\\u0431\\u0443\\u0441\\u0430.<\\/p>\\r\\n<p>7.&nbsp;\\u041f\\u0440\\u043e\\u043c\\u043e-\\u0430\\u043a\\u0446\\u0438\\u0438<\\/p>\\r\\n<p>\\u0421\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0443 \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u044f\\u0435\\u0442\\u0441\\u044f \\u043f\\u0440\\u0430\\u0432\\u043e \\u043d\\u0430 \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0435\\u043d\\u0438\\u0435&nbsp;\\u043f\\u0440\\u043e\\u043c\\u043e\\u0443\\u0448\\u043d-\\u0430\\u043a\\u0446\\u0438\\u0439&nbsp;\\u0432 \\u0445\\u043e\\u043b\\u043b\\u0435 \\u0432 \\u0434\\u043d\\u0438 \\u0434\\u043e\\u043c\\u0430\\u0448\\u043d\\u0438\\u0445 \\u043c\\u0430\\u0442\\u0447\\u0435\\u0439, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043d\\u0430 \\u043e\\u0440\\u0433\\u0430\\u043d\\u0438\\u0437\\u0430\\u0446\\u0438\\u044e \\u0441\\u043e\\u0432\\u043c\\u0435\\u0441\\u0442\\u043d\\u043e \\u0441&nbsp;\\u043f\\u0440\\u043e\\u043c\\u043e\\u0443\\u0448\\u043d-\\u0430\\u043a\\u0446\\u0438\\u0439&nbsp;\\u0432 \\u0440\\u0430\\u043c\\u043a\\u0430\\u0445 \\u043e\\u0431\\u0449\\u0435\\u0433\\u043e\\u0440\\u043e\\u0434\\u0441\\u043a\\u0438\\u0445 \\u043c\\u0435\\u0440\\u043e\\u043f\\u0440\\u0438\\u044f\\u0442\\u0438\\u0439.<\\/p>\\r\\n<p>\\u0412\\u0441\\u0435 PR-\\u043c\\u0435\\u0440\\u043e\\u043f\\u0440\\u0438\\u044f\\u0442\\u0438\\u044f, \\u043f\\u0440\\u043e\\u0432\\u043e\\u0434\\u0438\\u043c\\u044b\\u0435, \\u043d\\u0430\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u0443\\u043a\\u0440\\u0435\\u043f\\u043b\\u0435\\u043d\\u0438\\u0435 \\u043f\\u043e\\u043b\\u043e\\u0436\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u043e\\u0431\\u0440\\u0430\\u0437\\u0430 \\u043d\\u0430\\u0448\\u0435\\u0433\\u043e \\u043f\\u0430\\u0440\\u0442\\u043d\\u0435\\u0440\\u0430, \\u0441\\u043f\\u043e\\u0441\\u043e\\u0431\\u0441\\u0442\\u0432\\u0443\\u044e\\u0442 \\u0435\\u0433\\u043e \\u043c\\u0430\\u043a\\u0441\\u0438\\u043c\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0443\\u0437\\u043d\\u0430\\u0432\\u0430\\u0435\\u043c\\u043e\\u0441\\u0442\\u0438, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043d\\u0430\\u0438\\u0431\\u043e\\u043b\\u0435\\u0435 \\u044d\\u0444\\u0444\\u0435\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u043c\\u0443 \\u043f\\u0440\\u043e\\u0434\\u0432\\u0438\\u0436\\u0435\\u043d\\u0438\\u044e \\u0435\\u0433\\u043e \\u0431\\u0440\\u0435\\u043d\\u0434\\u0430.<\\/p>\\r\\n<p>\\u0412\\u0430\\u0440\\u0438\\u0430\\u043d\\u0442\\u044b \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0435\\u043d\\u0438\\u044f&nbsp;\\u043f\\u0440\\u043e\\u043c\\u043e-\\u0430\\u043a\\u0446\\u0438\\u0439:<\\/p>\\r\\n<p>- \\u0432\\u0440\\u0443\\u0447\\u0435\\u043d\\u0438\\u0435 \\u043f\\u0440\\u0438\\u0437\\u043e\\u0432\\/\\u043f\\u043e\\u0434\\u0430\\u0440\\u043a\\u043e\\u0432 (\\u043b\\u0443\\u0447\\u0448\\u0435\\u043c\\u0443 \\u0438\\u0433\\u0440\\u043e\\u043a\\u0443, \\u0432\\u0435\\u0442\\u0435\\u0440\\u0430\\u043d\\u0430\\u043c \\u0438 \\u0442.\\u0434.);<\\/p>\\r\\n<p>- \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0435\\u043d\\u0438\\u0435 \\u043a\\u043e\\u043d\\u043a\\u0443\\u0440\\u0441\\u043e\\u0432;<\\/p>\\r\\n<p>- \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0441\\u0442\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u0435 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u043e\\u0439 \\u043f\\u043e\\u043b\\u0438\\u0433\\u0440\\u0430\\u0444\\u0438\\u0447\\u0435\\u0441\\u043a\\u043e\\u0439 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u0438 \\u0441\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u0430.<\\/p>\\r\\n<p>8. \\u0411\\u0430\\u043d\\u043d\\u0435\\u0440\\u044b \\u043d\\u0430 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0430\\u0445&nbsp;\\u0438\\u043d\\u0442\\u0435\\u0440\\u043d\\u0435\\u0442-\\u0441\\u0430\\u0439\\u0442\\u043e\\u0432<\\/p>\\r\\n<p>\\u0411\\u0430\\u043d\\u043d\\u0435\\u0440\\u043d\\u0430\\u044f&nbsp;\\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u0430 \\u2014&nbsp;\\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u0430&nbsp;\\u0432\\u0435\\u0431-\\u0441\\u0430\\u0439\\u0442\\u0430&nbsp;\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f, \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0447\\u043a\\u0438, \\u043b\\u043e\\u0433\\u043e\\u0442\\u0438\\u043f\\u0430 \\u0438 \\u0442.\\u0434. \\u043f\\u0443\\u0442\\u0435\\u043c \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435\\u043c \\u0431\\u0430\\u043d\\u043d\\u0435\\u0440\\u043e\\u0432 \\u043d\\u0430 \\u043d\\u0430\\u0448\\u0438\\u0445 \\u0441\\u0430\\u0439\\u0442\\u0430\\u0445. \\u041e\\u0434\\u0438\\u043d \\u0438\\u0437 \\u0441\\u0430\\u043c\\u044b\\u0445 \\u043f\\u043e\\u043f\\u0443\\u043b\\u044f\\u0440\\u043d\\u044b\\u0445 \\u0441\\u043f\\u043e\\u0441\\u043e\\u0431\\u043e\\u0432 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b \\u0432 \\u0418\\u043d\\u0442\\u0435\\u0440\\u043d\\u0435\\u0442\\u0435, \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u044e\\u0449\\u0438\\u0439 \\u044d\\u0444\\u0444\\u0435\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e \\u0443\\u0432\\u0435\\u043b\\u0438\\u0447\\u0438\\u0442\\u044c \\u043f\\u043e\\u0441\\u0435\\u0449\\u0430\\u0435\\u043c\\u043e\\u0441\\u0442\\u044c&nbsp;\\u0432\\u0435\\u0431-\\u0441\\u0430\\u0439\\u0442\\u043e\\u0432&nbsp;\\u043d\\u0430\\u0448\\u0438\\u0445 \\u0441\\u043f\\u043e\\u043d\\u0441\\u043e\\u0440\\u043e\\u0432.<\\/p>","fulltext":"","state":1,"catid":"2","created":"2014-10-11 15:14:26","created_by":"445","created_by_alias":"","modified":"","modified_by":null,"checked_out":null,"checked_out_time":null,"publish_up":"2014-10-11 15:14:26","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":1,"ordering":null,"metakey":"","metadesc":"","access":"1","hits":null,"metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0),
@@ -9502,12 +8835,6 @@ INSERT INTO `f8ad7_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `ve
 (6, 112, 1, '', '2014-10-12 12:42:30', 445, 5273, '264bfd4c4b86195bddac46c84711d266b576d013', '{"id":112,"asset_id":330,"title":"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0438","alias":"links","introtext":"<ul>\\r\\n<li>\\u041d\\u043e\\u0432\\u0438\\u043d\\u043a\\u0430!<br \\/><a title=\\"\\u041b\\u0443\\u0447\\u0448\\u0430\\u044f \\u0431\\u0438\\u0440\\u0436\\u0430 \\u0441\\u0441\\u044b\\u043b\\u043e\\u043a \\u043d\\u0430\\u0432\\u0441\\u0435\\u0433\\u0434\\u0430\\" href=\\"http:\\/\\/kupilink.com\\/links\\/serv\\/gogettop.html\\">GoGetTop<\\/a>&nbsp;\\u2013&nbsp;\\u0410\\u0432\\u0442\\u043e\\u043c\\u0430\\u0442\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u0430\\u044f \\u043f\\u043e\\u043a\\u0443\\u043f\\u043a\\u0430 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0432\\u0435\\u0447\\u043d\\u044b\\u0445 \\u0441\\u0441\\u044b\\u043b\\u043e\\u043a \\u0432 \\u0440\\u0430\\u0441\\u0441\\u0440\\u043e\\u0447\\u043a\\u0443. \\u041e\\u0442\\u043b\\u0438\\u0447\\u043d\\u043e\\u0435 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u0441\\u0441\\u044b\\u043b\\u043e\\u043a. \\u0420\\u0443\\u0447\\u043d\\u043e\\u0435 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435. \\u0423\\u0434\\u043e\\u0431\\u043d\\u044b\\u0439 \\u0438\\u043d\\u0442\\u0435\\u0440\\u0444\\u0435\\u0439\\u0441.<\\/li>\\r\\n<li><a title=\\"\\u041b\\u0443\\u0447\\u0448\\u0430\\u044f \\u0431\\u0438\\u0440\\u0436\\u0430 \\u0441\\u0441\\u044b\\u043b\\u043e\\u043a \\u043d\\u0430\\u0432\\u0441\\u0435\\u0433\\u0434\\u0430\\" href=\\"http:\\/\\/kupilink.com\\/gogetlinks.html\\">GoGetLinks<\\/a>&nbsp;\\u2013&nbsp;\\u041f\\u043e\\u043a\\u0443\\u043f\\u043a\\u0430 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0441\\u0441\\u044b\\u043b\\u043e\\u043a \\u043d\\u0430\\u0432\\u0441\\u0435\\u0433\\u0434\\u0430. \\u041a\\u043e\\u043d\\u0442\\u0435\\u043a\\u0441\\u0442\\u043d\\u044b\\u0435 \\u0441\\u0441\\u044b\\u043b\\u043a\\u0438, \\u0441\\u0441\\u044b\\u043b\\u043a\\u0438 \\u0432 \\u043a\\u043e\\u0440\\u043e\\u0442\\u043a\\u0438\\u0445 \\u0437\\u0430\\u043c\\u0435\\u0442\\u043a\\u0430\\u0445, \\u0441\\u0441\\u044b\\u043b\\u043a\\u0438-\\u043a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0438. \\u0420\\u0443\\u0447\\u043d\\u043e\\u0435 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435.<\\/li>\\r\\n<li><a title=\\"\\u041f\\u043e\\u0441\\u0442\\u043e\\u044f\\u043d\\u043d\\u044b\\u0435 \\u0441\\u0441\\u044b\\u043b\\u043a\\u0438 \\u043f\\u043e\\u0434 Google\\" href=\\"http:\\/\\/kupilink.com\\/links\\/serv\\/getgoodlinks.html\\">GetGoodLinks<\\/a>&nbsp;\\u2013 \\u0410\\u043d\\u0430\\u043b\\u043e\\u0433 \\u043f\\u0440\\u0435\\u0434\\u044b\\u0434\\u0443\\u0449\\u0435\\u0439 \\u0431\\u0438\\u0440\\u0436\\u0438. \\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u043e\\u0442\\u043b\\u0438\\u0447\\u0438\\u0435 - \\u0443\\u043f\\u043e\\u0440 \\u043d\\u0430 \\u043f\\u0440\\u043e\\u0434\\u0432\\u0438\\u0436\\u0435\\u043d\\u0438\\u0435 \\u0432 Google. \\u0412\\u044b\\u0441\\u043e\\u043a\\u043e\\u0435 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e - \\u043e\\u0441\\u043d\\u043e\\u0432\\u043d\\u0430\\u044f \\u0445\\u0430\\u0440\\u0430\\u043a\\u0442\\u0435\\u0440\\u0438\\u0441\\u0442\\u0438\\u043a\\u0430 GetGoodLinks.<\\/li>\\r\\n<li><a title=\\"\\u041b\\u0443\\u0447\\u0448\\u0430\\u044f \\u0431\\u0438\\u0440\\u0436\\u0430 \\u043f\\u043e \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u044e \\u0441\\u0442\\u0430\\u0442\\u0435\\u0439 \\u043d\\u0430\\u0432\\u0441\\u0435\\u0433\\u0434\\u0430\\" href=\\"http:\\/\\/kupilink.com\\/miralinks.html\\">MiraLinks<\\/a>&nbsp;\\u2013&nbsp;\\u041b\\u0443\\u0447\\u0448\\u0438\\u0439 \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441 \\u043f\\u043e \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u044e \\u0441\\u0442\\u0430\\u0442\\u0435\\u0439 \\u0441\\u043e \\u0441\\u0441\\u044b\\u043b\\u043a\\u0430\\u043c\\u0438 \\u043d\\u0430\\u0432\\u0441\\u0435\\u0433\\u0434\\u0430. \\u0420\\u0443\\u0447\\u043d\\u043e\\u0435 \\u0438\\u043b\\u0438 \\u0430\\u0432\\u0442\\u043e\\u043c\\u0430\\u0442\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0435 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435.<\\/li>\\r\\n<\\/ul>","fulltext":"","state":1,"catid":"2","created":"2014-10-12 12:42:30","created_by":"445","created_by_alias":"","modified":"","modified_by":null,"checked_out":null,"checked_out_time":null,"publish_up":"2014-10-12 12:42:30","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":1,"ordering":null,"metakey":"","metadesc":"","access":"1","hits":null,"metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0),
 (7, 1, 3, '', '2014-10-13 08:19:23', 0, 757, 'e3d7efd51deae47c4658903ccec2effe39bc363a', '{"id":1,"name":"qwerr","alias":"qwerr","con_position":null,"address":null,"suburb":null,"state":null,"country":null,"postcode":null,"telephone":null,"fax":null,"misc":null,"image":null,"email_to":"qwerrr@qwer.er","default_con":0,"published":"0","checked_out":"0","checked_out_time":"0000-00-00 00:00:00","ordering":"0","params":null,"user_id":449,"catid":"34","access":1,"mobile":"","webpage":"","sortname1":null,"sortname2":null,"sortname3":null,"language":"*","created":"2014-10-13 08:19:23","created_by":0,"created_by_alias":"","modified":"0000-00-00 00:00:00","modified_by":"0","metakey":null,"metadesc":null,"metadata":null,"featured":"0","xreference":"","publish_up":"0000-00-00 00:00:00","publish_down":"0000-00-00 00:00:00","version":"1","hits":"0"}', 0),
 (8, 2, 3, '', '2014-10-13 08:20:21', 0, 758, 'df62efcc594f29952a7b8de3e119c1be03bcf0c8', '{"id":2,"name":"shsrrd","alias":"shsrrd","con_position":null,"address":null,"suburb":null,"state":null,"country":null,"postcode":null,"telephone":null,"fax":null,"misc":null,"image":null,"email_to":"shsrrd@sdf.er","default_con":0,"published":"0","checked_out":"0","checked_out_time":"0000-00-00 00:00:00","ordering":"0","params":null,"user_id":450,"catid":"34","access":1,"mobile":"","webpage":"","sortname1":null,"sortname2":null,"sortname3":null,"language":"*","created":"2014-10-13 08:20:21","created_by":0,"created_by_alias":"","modified":"0000-00-00 00:00:00","modified_by":"0","metakey":null,"metadesc":null,"metadata":null,"featured":"0","xreference":"","publish_up":"0000-00-00 00:00:00","publish_down":"0000-00-00 00:00:00","version":"1","hits":"0"}', 0);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_updates`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_updates` (
 `update_id` int(11) NOT NULL,
@@ -9526,10 +8853,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_updates` (
   `extra_query` varchar(1000) DEFAULT ''
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Available Updates' AUTO_INCREMENT=58 ;
 
---
--- Дамп данных таблицы `f8ad7_updates`
---
-
+TRUNCATE TABLE `f8ad7_updates`;
 INSERT INTO `f8ad7_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `extra_query`) VALUES
 (1, 3, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.3.3.1', '', 'http://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
 (2, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
@@ -9589,12 +8913,6 @@ INSERT INTO `f8ad7_updates` (`update_id`, `update_site_id`, `extension_id`, `nam
 (56, 3, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '3.3.6.1', '', 'http://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
 (57, 6, 10061, 'AcyMailing Starter', 'Latest version of AcyMailing Starter', 'com_acymailing', 'component', '', 1, '4.8.0', '', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 'http://www.acyba.com', '');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_update_sites`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_update_sites` (
 `update_site_id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT '',
@@ -9605,10 +8923,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_update_sites` (
   `extra_query` varchar(1000) DEFAULT ''
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Update Sites' AUTO_INCREMENT=8 ;
 
---
--- Дамп данных таблицы `f8ad7_update_sites`
---
-
+TRUNCATE TABLE `f8ad7_update_sites`;
 INSERT INTO `f8ad7_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
 (1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 0, ''),
 (2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1413175848, ''),
@@ -9617,21 +8932,12 @@ INSERT INTO `f8ad7_update_sites` (`update_site_id`, `name`, `type`, `location`, 
 (6, 'AcyMailing', 'extension', 'http://www.acyba.com/component/updateme/updatexml/component-acymailing/level-Starter/file-extension.xml', 1, 1413175846, ''),
 (7, 'K2 Updates', 'extension', 'http://getk2.org/update.xml', 1, 1413175848, '');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_update_sites_extensions`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_update_sites_extensions` (
   `update_site_id` int(11) NOT NULL DEFAULT '0',
   `extension_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Links extensions to update sites';
 
---
--- Дамп данных таблицы `f8ad7_update_sites_extensions`
---
-
+TRUNCATE TABLE `f8ad7_update_sites_extensions`;
 INSERT INTO `f8ad7_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
 (1, 700),
 (2, 700),
@@ -9639,12 +8945,6 @@ INSERT INTO `f8ad7_update_sites_extensions` (`update_site_id`, `extension_id`) V
 (4, 10019),
 (6, 10061),
 (7, 10078);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_usergroups`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_usergroups` (
 `id` int(10) unsigned NOT NULL COMMENT 'Primary Key',
@@ -9654,10 +8954,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_usergroups` (
   `title` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
---
--- Дамп данных таблицы `f8ad7_usergroups`
---
-
+TRUNCATE TABLE `f8ad7_usergroups`;
 INSERT INTO `f8ad7_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 (1, 0, 1, 18, 'Public'),
 (2, 1, 8, 15, 'Registered'),
@@ -9668,12 +8965,6 @@ INSERT INTO `f8ad7_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 (7, 6, 5, 6, 'Administrator'),
 (8, 1, 16, 17, 'Super Users'),
 (9, 1, 2, 3, 'Guest');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_users`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_users` (
 `id` int(11) NOT NULL,
@@ -9693,10 +8984,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_users` (
   `otep` varchar(1000) NOT NULL DEFAULT '' COMMENT 'One time emergency passwords'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=451 ;
 
---
--- Дамп данных таблицы `f8ad7_users`
---
-
+TRUNCATE TABLE `f8ad7_users`;
 INSERT INTO `f8ad7_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`) VALUES
 (445, 'Super User', 'root', 'chevil92@gmail.com', '$2y$10$71M5MHRnZkrN/brxhgzzIOLyNwyCG33qwnZPi66.Hv3NYiwN/638i', 0, 1, '2014-09-15 13:41:46', '2014-10-13 04:50:42', '0', '', '0000-00-00 00:00:00', 0, '', ''),
 (446, 'sadf', 'sdf', 'asdf@asdf.se', '$2y$10$a6Dn/7xKDmwCnZyKriSqEu/pe3DOCgu3E7OuYW7YeMUAIi0JXuD9O', 1, 0, '2014-10-13 08:09:37', '0000-00-00 00:00:00', '58f7200f7ed6763a1c481358a915edfb', '{}', '0000-00-00 00:00:00', 0, '', ''),
@@ -9704,12 +8992,6 @@ INSERT INTO `f8ad7_users` (`id`, `name`, `username`, `email`, `password`, `block
 (448, 'qwert', 'qwert', 'qwert@asdf.rt', '$2y$10$FWgktgiayNcLU1p.wy1mMuvS8UAar9.BohAuXj/SdcEsx7c1pqo52', 1, 0, '2014-10-13 08:16:16', '0000-00-00 00:00:00', '009c6cf5f119cc756d4bdfc73ea61212', '{}', '0000-00-00 00:00:00', 0, '', ''),
 (449, 'qwerr', 'qwerrr', 'qwerrr@qwer.er', '$2y$10$mMcKcoGC9UyJ8Y6K3shneOaFJQUlYqQoeqOZ/fBTMDjTNZkStfSry', 1, 0, '2014-10-13 08:19:23', '0000-00-00 00:00:00', '080f7cd92a6854108f9eb853a8d38e22', '{}', '0000-00-00 00:00:00', 0, '', ''),
 (450, 'shsrrd', 'shsrrd', 'shsrrd@sdf.er', '$2y$10$JXeEMpQyNsxK4QRZMhD0jeJ4jKGqfKW7pQ7O5qk0T6sWDqczixyii', 1, 0, '2014-10-13 08:20:21', '0000-00-00 00:00:00', '65179c034662bfd2e4215371d023aa9d', '{}', '0000-00-00 00:00:00', 0, '', '');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_user_keys`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_user_keys` (
 `id` int(10) unsigned NOT NULL,
@@ -9721,12 +9003,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_user_keys` (
   `uastring` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_user_notes`
---
-
+TRUNCATE TABLE `f8ad7_user_keys`;
 CREATE TABLE IF NOT EXISTS `f8ad7_user_notes` (
 `id` int(10) unsigned NOT NULL,
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -9745,12 +9022,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_user_notes` (
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_user_profiles`
---
-
+TRUNCATE TABLE `f8ad7_user_notes`;
 CREATE TABLE IF NOT EXISTS `f8ad7_user_profiles` (
   `user_id` int(11) NOT NULL,
   `profile_key` varchar(100) NOT NULL,
@@ -9758,21 +9030,13 @@ CREATE TABLE IF NOT EXISTS `f8ad7_user_profiles` (
   `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Simple user profile storage table';
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_user_usergroup_map`
---
-
+TRUNCATE TABLE `f8ad7_user_profiles`;
 CREATE TABLE IF NOT EXISTS `f8ad7_user_usergroup_map` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
   `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_user_usergroup_map`
---
-
+TRUNCATE TABLE `f8ad7_user_usergroup_map`;
 INSERT INTO `f8ad7_user_usergroup_map` (`user_id`, `group_id`) VALUES
 (445, 8),
 (446, 2),
@@ -9781,12 +9045,6 @@ INSERT INTO `f8ad7_user_usergroup_map` (`user_id`, `group_id`) VALUES
 (449, 2),
 (450, 2);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_viewlevels`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_viewlevels` (
 `id` int(10) unsigned NOT NULL COMMENT 'Primary Key',
   `title` varchar(100) NOT NULL DEFAULT '',
@@ -9794,22 +9052,13 @@ CREATE TABLE IF NOT EXISTS `f8ad7_viewlevels` (
   `rules` varchar(5120) NOT NULL COMMENT 'JSON encoded access control.'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
---
--- Дамп данных таблицы `f8ad7_viewlevels`
---
-
+TRUNCATE TABLE `f8ad7_viewlevels`;
 INSERT INTO `f8ad7_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 (1, 'Public', 0, '[1]'),
 (2, 'Registered', 1, '[6,2,8]'),
 (3, 'Special', 2, '[6,3,8]'),
 (5, 'Guest', 0, '[9]'),
 (6, 'Super Users', 0, '[8]');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_weblinks`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_weblinks` (
 `id` int(10) unsigned NOT NULL,
@@ -9842,12 +9091,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_weblinks` (
   `images` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_wf_profiles`
---
-
+TRUNCATE TABLE `f8ad7_weblinks`;
 CREATE TABLE IF NOT EXISTS `f8ad7_wf_profiles` (
 `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -9866,21 +9110,12 @@ CREATE TABLE IF NOT EXISTS `f8ad7_wf_profiles` (
   `params` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
---
--- Дамп данных таблицы `f8ad7_wf_profiles`
---
-
+TRUNCATE TABLE `f8ad7_wf_profiles`;
 INSERT INTO `f8ad7_wf_profiles` (`id`, `name`, `description`, `users`, `types`, `components`, `area`, `device`, `rows`, `plugins`, `published`, `ordering`, `checked_out`, `checked_out_time`, `params`) VALUES
 (1, 'Default', 'Default Profile for all users', '', '6,7,3,4,5,8', '', 0, 'desktop,tablet,phone', 'bold,italic,underline,strikethrough,justifyfull,justifycenter,justifyleft,justifyright,lists,formatselect,styleselect,link,unlink,anchor,article;fullscreen,preview,visualblocks,source,removeformat,cleanup,clipboard,table,imgmanager', 'lists,link,anchor,article,fullscreen,preview,visualblocks,source,cleanup,clipboard,table,imgmanager,browser,contextmenu,inlinepopups,media', 1, 1, 127, '2014-10-12 23:29:14', '{"editor":{"statusbar_location":"none","verify_html":"0","schema":"html5","validate_mimetype":"0","allow_javascript":"1","allow_css":"1","allow_php":"1"},"media":{"iframes":"1"}}'),
 (2, 'Front End', 'Sample Front-end Profile', '', '3,4,5', '', 1, 'desktop,tablet,phone', 'help,newdocument,undo,redo,spacer,bold,italic,underline,strikethrough,justifyfull,justifycenter,justifyleft,justifyright,spacer,formatselect,styleselect;clipboard,searchreplace,indent,outdent,lists,cleanup,charmap,removeformat,hr,sub,sup,textcase,nonbreaking,visualchars,visualblocks;fullscreen,preview,print,visualaid,style,xhtmlxtras,anchor,unlink,link,imgmanager,spellchecker,article', 'charmap,contextmenu,inlinepopups,help,clipboard,searchreplace,fullscreen,preview,print,style,textcase,nonbreaking,visualchars,visualblocks,xhtmlxtras,imgmanager,anchor,link,spellchecker,article,lists', 0, 2, 0, '0000-00-00 00:00:00', ''),
 (3, 'Blogger', 'Simple Blogging Profile', '', '3,4,5,6,8,7', '', 0, 'desktop,tablet,phone', 'bold,italic,strikethrough,lists,blockquote,spacer,justifyleft,justifycenter,justifyright,spacer,link,unlink,imgmanager,article,spellchecker,fullscreen,kitchensink;formatselect,underline,justifyfull,forecolor,clipboard,removeformat,charmap,indent,outdent,undo,redo,help', 'link,imgmanager,article,spellchecker,fullscreen,kitchensink,clipboard,contextmenu,inlinepopups,lists', 0, 3, 0, '0000-00-00 00:00:00', '{"editor":{"toggle":"0"}}'),
 (4, 'Mobile', 'Sample Mobile Profile', '', '3,4,5,6,8,7', '', 0, 'tablet,phone', 'undo,redo,spacer,bold,italic,underline,formatselect,spacer,justifyleft,justifycenter,justifyfull,justifyright,spacer,fullscreen,kitchensink;styleselect,lists,spellchecker,article,link,unlink', 'fullscreen,kitchensink,spellchecker,article,link,inlinepopups,lists', 0, 4, 0, '0000-00-00 00:00:00', '{"editor":{"toolbar_theme":"mobile","resizing":"0","resize_horizontal":"0","resizing_use_cookie":"0","toggle":"0","links":{"popups":{"default":"","jcemediabox":{"enable":"0"},"window":{"enable":"0"}}}}}');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_widgetkit_widget`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_widgetkit_widget` (
 `id` int(11) NOT NULL,
@@ -9892,18 +9127,9 @@ CREATE TABLE IF NOT EXISTS `f8ad7_widgetkit_widget` (
   `modified` datetime NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
---
--- Дамп данных таблицы `f8ad7_widgetkit_widget`
---
-
+TRUNCATE TABLE `f8ad7_widgetkit_widget`;
 INSERT INTO `f8ad7_widgetkit_widget` (`id`, `type`, `style`, `name`, `content`, `created`, `modified`) VALUES
 (1, 'slideshow', 'default', 'Наши проекты', '{"type":"slideshow","id":1,"name":"\\u041d\\u0430\\u0448\\u0438 \\u043f\\u0440\\u043e\\u0435\\u043a\\u0442\\u044b","settings":{"style":"default","autoplay":1,"interval":5000,"width":"auto","height":"auto","duration":500,"index":0,"order":"default","navigation":0,"buttons":1,"slices":20,"animated":"scroll","caption_animation_duration":500},"style":"default","items":{"54393f80a0211":{"title":"","content":"<div class=\\"Slide-Item\\"><img src=\\"images\\/banners\\/partner_1.jpg\\" alt=\\"partner 1\\" \\/><\\/div>\\r\\n<div class=\\"Slide-Item\\"><img src=\\"images\\/banners\\/partner_2.jpg\\" alt=\\"partner 1\\" \\/><\\/div>\\r\\n<div class=\\"Slide-Item\\"><img src=\\"images\\/banners\\/partner_3.jpg\\" alt=\\"partner 1\\" \\/><\\/div>","caption":""},"5439406b48a81":{"title":"","content":"<div class=\\"Slide-Item\\"><img src=\\"images\\/banners\\/partner_1.jpg\\" alt=\\"partner 1\\" \\/><\\/div>\\r\\n<div class=\\"Slide-Item\\"><img src=\\"images\\/banners\\/partner_2.jpg\\" alt=\\"partner 1\\" \\/><\\/div>\\r\\n<div class=\\"Slide-Item\\"><img src=\\"images\\/banners\\/partner_3.jpg\\" alt=\\"partner 1\\" \\/><\\/div>","caption":""}}}', '2014-10-11 14:33:12', '2014-10-12 22:14:19');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_xmap_items`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_xmap_items` (
   `uid` varchar(100) NOT NULL,
@@ -9913,12 +9139,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_xmap_items` (
   `properties` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_xmap_sitemap`
---
-
+TRUNCATE TABLE `f8ad7_xmap_items`;
 CREATE TABLE IF NOT EXISTS `f8ad7_xmap_sitemap` (
 `id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
@@ -9941,18 +9162,9 @@ CREATE TABLE IF NOT EXISTS `f8ad7_xmap_sitemap` (
   `lastvisit_html` int(11) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
---
--- Дамп данных таблицы `f8ad7_xmap_sitemap`
---
-
+TRUNCATE TABLE `f8ad7_xmap_sitemap`;
 INSERT INTO `f8ad7_xmap_sitemap` (`id`, `title`, `alias`, `introtext`, `metadesc`, `metakey`, `attribs`, `selections`, `excluded_items`, `is_default`, `state`, `access`, `created`, `count_xml`, `count_html`, `views_xml`, `views_html`, `lastvisit_xml`, `lastvisit_html`) VALUES
 (1, 'Карта сайта', 'map', '', NULL, NULL, '{"showintro":"1","show_menutitle":"0","classname":"","columns":"","exlinks":"img_blue.gif","compress_xml":"1","beautify_xml":"1","include_link":"1","news_publication_name":""}', '{"mainmenu":{"priority":"0.5","changefreq":"weekly","ordering":0}}', NULL, 1, 1, 1, '2014-03-09 18:34:55', 0, 0, 0, 0, 0, 0);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_application`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_application` (
 `id` int(11) NOT NULL,
@@ -9964,18 +9176,9 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_application` (
   `params` text NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
---
--- Дамп данных таблицы `f8ad7_zoo_application`
---
-
+TRUNCATE TABLE `f8ad7_zoo_application`;
 INSERT INTO `f8ad7_zoo_application` (`id`, `asset_id`, `name`, `alias`, `application_group`, `description`, `params`) VALUES
 (3, 276, 'Формакогенетика', 'journal', 'blog', '', ' {\n	"group": "blog",\n	"template": "default",\n	"global.config.items_per_page": "30",\n	"global.config.item_order":  {\n		"0": "_itemname",\n		"1": "",\n		"2": "",\n		"3": "",\n		"4": ""\n	},\n	"global.config.show_feed_link": "1",\n	"global.config.feed_title": "",\n	"global.config.alternate_feed_link": "",\n	"global.template.show_title": "1",\n	"global.template.show_description": "1",\n	"global.template.show_image": "1",\n	"global.template.alignment": "left",\n	"global.template.items_cols": "1",\n	"global.template.items_order": "0",\n	"global.template.teaseritem_media_alignment": "left",\n	"global.template.item_media_alignment": "left",\n	"global.comments.enable_comments": "0",\n	"global.comments.require_name_and_mail": "1",\n	"global.comments.registered_users_only": "0",\n	"global.comments.approved": "0",\n	"global.comments.time_between_user_posts": "120",\n	"global.comments.email_notification": "",\n	"global.comments.email_reply_notification": "0",\n	"global.comments.avatar": "1",\n	"global.comments.order": "ASC",\n	"global.comments.max_depth": "5",\n	"global.comments.facebook_enable": "0",\n	"global.comments.facebook_app_id": "",\n	"global.comments.facebook_app_secret": "",\n	"global.comments.twitter_enable": "0",\n	"global.comments.twitter_consumer_key": "",\n	"global.comments.twitter_consumer_secret": "",\n	"global.comments.akismet_enable": "0",\n	"global.comments.akismet_api_key": "",\n	"global.comments.mollom_enable": "0",\n	"global.comments.mollom_public_key": "",\n	"global.comments.mollom_private_key": "",\n	"global.comments.captcha_guest_only": "1",\n	"global.comments.blacklist": ""\n}');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_category`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_category` (
 `id` int(11) NOT NULL,
@@ -9989,10 +9192,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_category` (
   `params` text NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
---
--- Дамп данных таблицы `f8ad7_zoo_category`
---
-
+TRUNCATE TABLE `f8ad7_zoo_category`;
 INSERT INTO `f8ad7_zoo_category` (`id`, `application_id`, `name`, `alias`, `description`, `parent`, `ordering`, `published`, `params`) VALUES
 (15, 3, 'Главная', 'home', '', 0, 0, 1, ' {\n	"content.subtitle": "",\n	"content.image": "",\n	"content.image_width": "",\n	"content.image_height": "",\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": ""\n}'),
 (4, 3, 'Журналы', 'zhurnaly', '', 14, 2, 1, ' {\n	"content.subtitle": "",\n	"content.image": "",\n	"content.image_width": "",\n	"content.image_height": "",\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": ""\n}'),
@@ -10007,21 +9207,12 @@ INSERT INTO `f8ad7_zoo_category` (`id`, `application_id`, `name`, `alias`, `desc
 (21, 3, 'Терминология', 'terminologiya-2', '', 15, 6, 1, ' {\n	"content.subtitle": "",\n	"content.image": "",\n	"content.image_width": "",\n	"content.image_height": "",\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": ""\n}'),
 (22, 3, 'Видео', 'video', '', 15, 7, 1, ' {\n	"content.subtitle": "",\n	"content.image": "",\n	"content.image_width": "",\n	"content.image_height": "",\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": ""\n}');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_category_item`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_category_item` (
   `category_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_zoo_category_item`
---
-
+TRUNCATE TABLE `f8ad7_zoo_category_item`;
 INSERT INTO `f8ad7_zoo_category_item` (`category_id`, `item_id`) VALUES
 (4, 2),
 (4, 28),
@@ -10180,12 +9371,6 @@ INSERT INTO `f8ad7_zoo_category_item` (`category_id`, `item_id`) VALUES
 (22, 80),
 (22, 82);
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_comment`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_comment` (
 `id` int(11) NOT NULL,
   `parent_id` int(11) NOT NULL,
@@ -10201,12 +9386,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_comment` (
   `state` tinyint(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_item`
---
-
+TRUNCATE TABLE `f8ad7_zoo_comment`;
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_item` (
 `id` int(11) NOT NULL,
   `application_id` int(11) NOT NULL,
@@ -10229,10 +9409,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_item` (
   `params` longtext NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=91 ;
 
---
--- Дамп данных таблицы `f8ad7_zoo_item`
---
-
+TRUNCATE TABLE `f8ad7_zoo_item`;
 INSERT INTO `f8ad7_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `created`, `modified`, `modified_by`, `publish_up`, `publish_down`, `priority`, `hits`, `state`, `access`, `created_by`, `created_by_alias`, `searchable`, `elements`, `params`) VALUES
 (2, 3, 'article', 'Фармакогенетика и фармакогеномика', 'xdebug', '2014-09-16 11:29:18', '2014-10-12 23:37:50', 445, '2014-09-16 11:29:18', '0000-00-00 00:00:00', 0, 794, 1, 1, 445, '', 1, ' {\n	"bf587f28-0a72-4be7-88a1-91a14e77039e":  {\n		"file": "images\\/logo_journal.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 519,\n		"height": 405\n	},\n	"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":  {\n		"0":  {\n			"value": "<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>"\n		}\n	},\n	"28f03c2c-57b1-4901-9554-fd9e8f52b08e":  {\n		"item":  {\n			"0": "4",\n			"1": "3",\n			"2": "5",\n			"3": "8",\n			"4": "10",\n			"5": "9",\n			"6": "13",\n			"7": "14",\n			"8": "11",\n			"9": "12"\n		}\n	},\n	"a5fdc953-00bc-454a-b7eb-1932d78c58e9":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (3, 3, 'article-2', '26-летняя москвичка  переписала  книгу рекордов US Open', 'rgsefdgsdfgdf', '2014-09-16 11:30:03', '2014-10-12 15:30:01', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 24, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art1.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 233,\n		"height": 116\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"93201135-367c-40dc-b5a3-f11afe146908":  {\n		"value": "106"\n	},\n	"366ae034-034e-4f00-8ff6-cffabbca4e23":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	},\n	"6a6697aa-3af4-4701-839f-c53093196605":  {\n\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
@@ -10318,12 +9495,6 @@ INSERT INTO `f8ad7_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `
 (84, 3, 'item', '26-летняя москвичка - переписала книгу рекордов US Open (Copy) (Copy) (Copy) (Copy) (Copy) (Copy)', '26-letnyaya-moskvichka-perepisala-knigu-rekordov-us-open-4-copy-copy-copy-copy-copy-copy', '2014-10-12 23:14:41', '2014-10-12 23:14:41', 445, '2014-10-12 22:57:23', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"042f3794-5c8a-483d-80a8-9efe2b9f81c9":  {\n		"file": "",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": ""\n	},\n	"f0541003-23b2-44b7-abe8-b69c07224135":  {\n		"0":  {\n			"value": "<p>26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open<\\/p>"\n		}\n	},\n	"141f9e77-d131-4ed4-99cd-47f2e0bfe003":  {\n		"file": "images\\/logo.png",\n		"hits": "0",\n		"download_limit": "",\n		"size": "2025"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (90, 3, 'article', 'Фармакогенетика и фармакогеномика (Copy) (Copy) (Copy)', 'xdebug-copy-copy-copy', '2014-10-12 23:38:17', '2014-10-12 23:38:17', 445, '2014-09-16 11:29:18', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"bf587f28-0a72-4be7-88a1-91a14e77039e":  {\n		"file": "images\\/logo_journal.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 519,\n		"height": 405\n	},\n	"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":  {\n		"0":  {\n			"value": "<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>"\n		}\n	},\n	"28f03c2c-57b1-4901-9554-fd9e8f52b08e":  {\n		"item":  {\n			"0": "4",\n			"1": "3",\n			"2": "5",\n			"3": "8",\n			"4": "10",\n			"5": "9",\n			"6": "13",\n			"7": "14",\n			"8": "11",\n			"9": "12"\n		}\n	},\n	"a5fdc953-00bc-454a-b7eb-1932d78c58e9":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_rating`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_rating` (
 `id` int(11) NOT NULL,
   `item_id` int(11) DEFAULT NULL,
@@ -10334,18 +9505,9 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_rating` (
   `created` datetime DEFAULT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
---
--- Дамп данных таблицы `f8ad7_zoo_rating`
---
-
+TRUNCATE TABLE `f8ad7_zoo_rating`;
 INSERT INTO `f8ad7_zoo_rating` (`id`, `item_id`, `element_id`, `user_id`, `value`, `ip`, `created`) VALUES
 (1, 3, 'b9bab2fd-a9cc-47ac-8473-71d232f2bfb6', 0, 5, '127.0.0.1', '2014-09-16 11:46:28');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_search_index`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_search_index` (
   `item_id` int(11) NOT NULL,
@@ -10353,10 +9515,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_search_index` (
   `value` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_zoo_search_index`
---
-
+TRUNCATE TABLE `f8ad7_zoo_search_index`;
 INSERT INTO `f8ad7_zoo_search_index` (`item_id`, `element_id`, `value`) VALUES
 (3, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
 (4, '89335a61-ea45-4fad-b16f-488154d4f8e2', 'іпкаівапівапфвкпфувкрфукарвіфарівер'),
@@ -10434,12 +9593,6 @@ INSERT INTO `f8ad7_zoo_search_index` (`item_id`, `element_id`, `value`) VALUES
 (83, 'f0541003-23b2-44b7-abe8-b69c07224135', '26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open'),
 (84, 'f0541003-23b2-44b7-abe8-b69c07224135', '26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open,26-летняя москвичка переписала книгу рекордов US Open');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_submission`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_submission` (
 `id` int(11) NOT NULL,
   `application_id` int(11) NOT NULL,
@@ -10450,21 +9603,13 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_submission` (
   `params` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_tag`
---
-
+TRUNCATE TABLE `f8ad7_zoo_submission`;
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_tag` (
   `item_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_zoo_tag`
---
-
+TRUNCATE TABLE `f8ad7_zoo_tag`;
 INSERT INTO `f8ad7_zoo_tag` (`item_id`, `name`) VALUES
 (3, 'Актуальные обзоры'),
 (3, 'Новости'),
@@ -10589,28 +9734,13 @@ INSERT INTO `f8ad7_zoo_tag` (`item_id`, `name`) VALUES
 (38, 'Фармакогенетические исследования'),
 (38, 'Фармакогеномные исследования');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_version`
---
-
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_version` (
   `version` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `f8ad7_zoo_version`
---
-
+TRUNCATE TABLE `f8ad7_zoo_version`;
 INSERT INTO `f8ad7_zoo_version` (`version`) VALUES
 ('3.2.2');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_zl_zootrack_categorytrack`
---
 
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_zl_zootrack_categorytrack` (
 `id` int(11) NOT NULL,
@@ -10621,12 +9751,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_zl_zootrack_categorytrack` (
   `params` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_zl_zootrack_itemtrack`
---
-
+TRUNCATE TABLE `f8ad7_zoo_zl_zootrack_categorytrack`;
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_zl_zootrack_itemtrack` (
 `id` int(11) NOT NULL,
   `session_id` varchar(200) NOT NULL,
@@ -10636,12 +9761,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_zl_zootrack_itemtrack` (
   `params` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `f8ad7_zoo_zoofilter_searches`
---
-
+TRUNCATE TABLE `f8ad7_zoo_zl_zootrack_itemtrack`;
 CREATE TABLE IF NOT EXISTS `f8ad7_zoo_zoofilter_searches` (
 `search_id` int(11) NOT NULL,
   `search_uuid` varchar(32) NOT NULL,
@@ -10651,1031 +9771,483 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_zoofilter_searches` (
   `hits` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Indexes for dumped tables
---
+TRUNCATE TABLE `f8ad7_zoo_zoofilter_searches`;
 
---
--- Indexes for table `f8ad7_acymailing_config`
---
 ALTER TABLE `f8ad7_acymailing_config`
  ADD PRIMARY KEY (`namekey`);
 
---
--- Indexes for table `f8ad7_acymailing_fields`
---
 ALTER TABLE `f8ad7_acymailing_fields`
  ADD PRIMARY KEY (`fieldid`), ADD UNIQUE KEY `namekey` (`namekey`), ADD KEY `orderingindex` (`published`,`ordering`);
 
---
--- Indexes for table `f8ad7_acymailing_filter`
---
 ALTER TABLE `f8ad7_acymailing_filter`
  ADD PRIMARY KEY (`filid`);
 
---
--- Indexes for table `f8ad7_acymailing_geolocation`
---
 ALTER TABLE `f8ad7_acymailing_geolocation`
  ADD PRIMARY KEY (`geolocation_id`), ADD KEY `geolocation_type` (`geolocation_subid`,`geolocation_type`);
 
---
--- Indexes for table `f8ad7_acymailing_history`
---
 ALTER TABLE `f8ad7_acymailing_history`
  ADD KEY `subid` (`subid`,`date`), ADD KEY `dateindex` (`date`), ADD KEY `actionindex` (`action`,`mailid`);
 
---
--- Indexes for table `f8ad7_acymailing_list`
---
 ALTER TABLE `f8ad7_acymailing_list`
  ADD PRIMARY KEY (`listid`), ADD KEY `typeorderingindex` (`type`,`ordering`), ADD KEY `useridindex` (`userid`), ADD KEY `typeuseridindex` (`type`,`userid`);
 
---
--- Indexes for table `f8ad7_acymailing_listcampaign`
---
 ALTER TABLE `f8ad7_acymailing_listcampaign`
  ADD PRIMARY KEY (`campaignid`,`listid`);
 
---
--- Indexes for table `f8ad7_acymailing_listmail`
---
 ALTER TABLE `f8ad7_acymailing_listmail`
  ADD PRIMARY KEY (`listid`,`mailid`);
 
---
--- Indexes for table `f8ad7_acymailing_listsub`
---
 ALTER TABLE `f8ad7_acymailing_listsub`
  ADD PRIMARY KEY (`listid`,`subid`), ADD KEY `subidindex` (`subid`), ADD KEY `listidstatusindex` (`listid`,`status`);
 
---
--- Indexes for table `f8ad7_acymailing_mail`
---
 ALTER TABLE `f8ad7_acymailing_mail`
  ADD PRIMARY KEY (`mailid`), ADD KEY `senddate` (`senddate`), ADD KEY `typemailidindex` (`type`,`mailid`), ADD KEY `useridindex` (`userid`);
 
---
--- Indexes for table `f8ad7_acymailing_queue`
---
 ALTER TABLE `f8ad7_acymailing_queue`
  ADD PRIMARY KEY (`subid`,`mailid`), ADD KEY `listingindex` (`senddate`,`subid`), ADD KEY `mailidindex` (`mailid`), ADD KEY `orderingindex` (`priority`,`senddate`,`subid`);
 
---
--- Indexes for table `f8ad7_acymailing_rules`
---
 ALTER TABLE `f8ad7_acymailing_rules`
  ADD PRIMARY KEY (`ruleid`), ADD KEY `ordering` (`published`,`ordering`);
 
---
--- Indexes for table `f8ad7_acymailing_stats`
---
 ALTER TABLE `f8ad7_acymailing_stats`
  ADD PRIMARY KEY (`mailid`), ADD KEY `senddateindex` (`senddate`);
 
---
--- Indexes for table `f8ad7_acymailing_subscriber`
---
 ALTER TABLE `f8ad7_acymailing_subscriber`
  ADD PRIMARY KEY (`subid`), ADD UNIQUE KEY `email` (`email`), ADD KEY `userid` (`userid`), ADD KEY `queueindex` (`enabled`,`accept`,`confirmed`);
 
---
--- Indexes for table `f8ad7_acymailing_template`
---
 ALTER TABLE `f8ad7_acymailing_template`
  ADD PRIMARY KEY (`tempid`), ADD UNIQUE KEY `namekey` (`namekey`), ADD KEY `orderingindex` (`ordering`);
 
---
--- Indexes for table `f8ad7_acymailing_url`
---
 ALTER TABLE `f8ad7_acymailing_url`
  ADD PRIMARY KEY (`urlid`), ADD KEY `url` (`url`(250));
 
---
--- Indexes for table `f8ad7_acymailing_urlclick`
---
 ALTER TABLE `f8ad7_acymailing_urlclick`
  ADD PRIMARY KEY (`urlid`,`mailid`,`subid`), ADD KEY `dateindex` (`date`), ADD KEY `mailidindex` (`mailid`), ADD KEY `subidindex` (`subid`);
 
---
--- Indexes for table `f8ad7_acymailing_userstats`
---
 ALTER TABLE `f8ad7_acymailing_userstats`
  ADD PRIMARY KEY (`mailid`,`subid`), ADD KEY `senddateindex` (`senddate`), ADD KEY `subidindex` (`subid`);
 
---
--- Indexes for table `f8ad7_assets`
---
 ALTER TABLE `f8ad7_assets`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_asset_name` (`name`), ADD KEY `idx_lft_rgt` (`lft`,`rgt`), ADD KEY `idx_parent_id` (`parent_id`);
 
---
--- Indexes for table `f8ad7_associations`
---
 ALTER TABLE `f8ad7_associations`
  ADD PRIMARY KEY (`context`,`id`), ADD KEY `idx_key` (`key`);
 
---
--- Indexes for table `f8ad7_banners`
---
 ALTER TABLE `f8ad7_banners`
  ADD PRIMARY KEY (`id`), ADD KEY `idx_state` (`state`), ADD KEY `idx_own_prefix` (`own_prefix`), ADD KEY `idx_metakey_prefix` (`metakey_prefix`), ADD KEY `idx_banner_catid` (`catid`), ADD KEY `idx_language` (`language`);
 
---
--- Indexes for table `f8ad7_banner_clients`
---
 ALTER TABLE `f8ad7_banner_clients`
  ADD PRIMARY KEY (`id`), ADD KEY `idx_own_prefix` (`own_prefix`), ADD KEY `idx_metakey_prefix` (`metakey_prefix`);
 
---
--- Indexes for table `f8ad7_banner_tracks`
---
 ALTER TABLE `f8ad7_banner_tracks`
  ADD PRIMARY KEY (`track_date`,`track_type`,`banner_id`), ADD KEY `idx_track_date` (`track_date`), ADD KEY `idx_track_type` (`track_type`), ADD KEY `idx_banner_id` (`banner_id`);
 
---
--- Indexes for table `f8ad7_categories`
---
 ALTER TABLE `f8ad7_categories`
  ADD PRIMARY KEY (`id`), ADD KEY `cat_idx` (`extension`,`published`,`access`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_path` (`path`), ADD KEY `idx_left_right` (`lft`,`rgt`), ADD KEY `idx_alias` (`alias`), ADD KEY `idx_language` (`language`);
 
---
--- Indexes for table `f8ad7_contact_details`
---
 ALTER TABLE `f8ad7_contact_details`
  ADD PRIMARY KEY (`id`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_state` (`published`), ADD KEY `idx_catid` (`catid`), ADD KEY `idx_createdby` (`created_by`), ADD KEY `idx_featured_catid` (`featured`,`catid`), ADD KEY `idx_language` (`language`), ADD KEY `idx_xreference` (`xreference`);
 
---
--- Indexes for table `f8ad7_content`
---
 ALTER TABLE `f8ad7_content`
  ADD PRIMARY KEY (`id`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_state` (`state`), ADD KEY `idx_catid` (`catid`), ADD KEY `idx_createdby` (`created_by`), ADD KEY `idx_featured_catid` (`featured`,`catid`), ADD KEY `idx_language` (`language`), ADD KEY `idx_xreference` (`xreference`);
 
---
--- Indexes for table `f8ad7_contentitem_tag_map`
---
 ALTER TABLE `f8ad7_contentitem_tag_map`
  ADD UNIQUE KEY `uc_ItemnameTagid` (`type_id`,`content_item_id`,`tag_id`), ADD KEY `idx_tag_type` (`tag_id`,`type_id`), ADD KEY `idx_date_id` (`tag_date`,`tag_id`), ADD KEY `idx_tag` (`tag_id`), ADD KEY `idx_type` (`type_id`), ADD KEY `idx_core_content_id` (`core_content_id`);
 
---
--- Indexes for table `f8ad7_content_frontpage`
---
 ALTER TABLE `f8ad7_content_frontpage`
  ADD PRIMARY KEY (`content_id`);
 
---
--- Indexes for table `f8ad7_content_rating`
---
 ALTER TABLE `f8ad7_content_rating`
  ADD PRIMARY KEY (`content_id`);
 
---
--- Indexes for table `f8ad7_content_types`
---
 ALTER TABLE `f8ad7_content_types`
  ADD PRIMARY KEY (`type_id`), ADD KEY `idx_alias` (`type_alias`);
 
---
--- Indexes for table `f8ad7_djimageslider`
---
 ALTER TABLE `f8ad7_djimageslider`
  ADD PRIMARY KEY (`id`), ADD KEY `catid` (`catid`,`published`);
 
---
--- Indexes for table `f8ad7_extensions`
---
 ALTER TABLE `f8ad7_extensions`
  ADD PRIMARY KEY (`extension_id`), ADD KEY `element_clientid` (`element`,`client_id`), ADD KEY `element_folder_clientid` (`element`,`folder`,`client_id`), ADD KEY `extension` (`type`,`element`,`folder`,`client_id`);
 
---
--- Indexes for table `f8ad7_finder_filters`
---
 ALTER TABLE `f8ad7_finder_filters`
  ADD PRIMARY KEY (`filter_id`);
 
---
--- Indexes for table `f8ad7_finder_links`
---
 ALTER TABLE `f8ad7_finder_links`
  ADD PRIMARY KEY (`link_id`), ADD KEY `idx_type` (`type_id`), ADD KEY `idx_title` (`title`), ADD KEY `idx_md5` (`md5sum`), ADD KEY `idx_url` (`url`(75)), ADD KEY `idx_published_list` (`published`,`state`,`access`,`publish_start_date`,`publish_end_date`,`list_price`), ADD KEY `idx_published_sale` (`published`,`state`,`access`,`publish_start_date`,`publish_end_date`,`sale_price`);
 
---
--- Indexes for table `f8ad7_finder_links_terms0`
---
 ALTER TABLE `f8ad7_finder_links_terms0`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_terms1`
---
 ALTER TABLE `f8ad7_finder_links_terms1`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_terms2`
---
 ALTER TABLE `f8ad7_finder_links_terms2`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_terms3`
---
 ALTER TABLE `f8ad7_finder_links_terms3`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_terms4`
---
 ALTER TABLE `f8ad7_finder_links_terms4`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_terms5`
---
 ALTER TABLE `f8ad7_finder_links_terms5`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_terms6`
---
 ALTER TABLE `f8ad7_finder_links_terms6`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_terms7`
---
 ALTER TABLE `f8ad7_finder_links_terms7`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_terms8`
---
 ALTER TABLE `f8ad7_finder_links_terms8`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_terms9`
---
 ALTER TABLE `f8ad7_finder_links_terms9`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_termsa`
---
 ALTER TABLE `f8ad7_finder_links_termsa`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_termsb`
---
 ALTER TABLE `f8ad7_finder_links_termsb`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_termsc`
---
 ALTER TABLE `f8ad7_finder_links_termsc`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_termsd`
---
 ALTER TABLE `f8ad7_finder_links_termsd`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_termse`
---
 ALTER TABLE `f8ad7_finder_links_termse`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_links_termsf`
---
 ALTER TABLE `f8ad7_finder_links_termsf`
  ADD PRIMARY KEY (`link_id`,`term_id`), ADD KEY `idx_term_weight` (`term_id`,`weight`), ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
---
--- Indexes for table `f8ad7_finder_taxonomy`
---
 ALTER TABLE `f8ad7_finder_taxonomy`
  ADD PRIMARY KEY (`id`), ADD KEY `parent_id` (`parent_id`), ADD KEY `state` (`state`), ADD KEY `ordering` (`ordering`), ADD KEY `access` (`access`), ADD KEY `idx_parent_published` (`parent_id`,`state`,`access`);
 
---
--- Indexes for table `f8ad7_finder_taxonomy_map`
---
 ALTER TABLE `f8ad7_finder_taxonomy_map`
  ADD PRIMARY KEY (`link_id`,`node_id`), ADD KEY `link_id` (`link_id`), ADD KEY `node_id` (`node_id`);
 
---
--- Indexes for table `f8ad7_finder_terms`
---
 ALTER TABLE `f8ad7_finder_terms`
  ADD PRIMARY KEY (`term_id`), ADD UNIQUE KEY `idx_term` (`term`), ADD KEY `idx_term_phrase` (`term`,`phrase`), ADD KEY `idx_stem_phrase` (`stem`,`phrase`), ADD KEY `idx_soundex_phrase` (`soundex`,`phrase`);
 
---
--- Indexes for table `f8ad7_finder_terms_common`
---
 ALTER TABLE `f8ad7_finder_terms_common`
  ADD KEY `idx_word_lang` (`term`,`language`), ADD KEY `idx_lang` (`language`);
 
---
--- Indexes for table `f8ad7_finder_tokens`
---
 ALTER TABLE `f8ad7_finder_tokens`
  ADD KEY `idx_word` (`term`), ADD KEY `idx_context` (`context`);
 
---
--- Indexes for table `f8ad7_finder_tokens_aggregate`
---
 ALTER TABLE `f8ad7_finder_tokens_aggregate`
  ADD KEY `token` (`term`), ADD KEY `keyword_id` (`term_id`);
 
---
--- Indexes for table `f8ad7_finder_types`
---
 ALTER TABLE `f8ad7_finder_types`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `title` (`title`);
 
---
--- Indexes for table `f8ad7_jsecurelog`
---
 ALTER TABLE `f8ad7_jsecurelog`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `f8ad7_k2_attachments`
---
 ALTER TABLE `f8ad7_k2_attachments`
  ADD PRIMARY KEY (`id`), ADD KEY `itemID` (`itemID`);
 
---
--- Indexes for table `f8ad7_k2_categories`
---
 ALTER TABLE `f8ad7_k2_categories`
  ADD PRIMARY KEY (`id`), ADD KEY `category` (`published`,`access`,`trash`), ADD KEY `parent` (`parent`), ADD KEY `ordering` (`ordering`), ADD KEY `published` (`published`), ADD KEY `access` (`access`), ADD KEY `trash` (`trash`), ADD KEY `language` (`language`);
 
---
--- Indexes for table `f8ad7_k2_comments`
---
 ALTER TABLE `f8ad7_k2_comments`
  ADD PRIMARY KEY (`id`), ADD KEY `itemID` (`itemID`), ADD KEY `userID` (`userID`), ADD KEY `published` (`published`), ADD KEY `latestComments` (`published`,`commentDate`);
 
---
--- Indexes for table `f8ad7_k2_extra_fields`
---
 ALTER TABLE `f8ad7_k2_extra_fields`
  ADD PRIMARY KEY (`id`), ADD KEY `group` (`group`), ADD KEY `published` (`published`), ADD KEY `ordering` (`ordering`);
 
---
--- Indexes for table `f8ad7_k2_extra_fields_groups`
---
 ALTER TABLE `f8ad7_k2_extra_fields_groups`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `f8ad7_k2_items`
---
 ALTER TABLE `f8ad7_k2_items`
  ADD PRIMARY KEY (`id`), ADD KEY `item` (`published`,`publish_up`,`publish_down`,`trash`,`access`), ADD KEY `catid` (`catid`), ADD KEY `created_by` (`created_by`), ADD KEY `ordering` (`ordering`), ADD KEY `featured` (`featured`), ADD KEY `featured_ordering` (`featured_ordering`), ADD KEY `hits` (`hits`), ADD KEY `created` (`created`), ADD KEY `language` (`language`);
 
---
--- Indexes for table `f8ad7_k2_rating`
---
 ALTER TABLE `f8ad7_k2_rating`
  ADD PRIMARY KEY (`itemID`);
 
---
--- Indexes for table `f8ad7_k2_tags`
---
 ALTER TABLE `f8ad7_k2_tags`
  ADD PRIMARY KEY (`id`), ADD KEY `published` (`published`);
 
---
--- Indexes for table `f8ad7_k2_tags_xref`
---
 ALTER TABLE `f8ad7_k2_tags_xref`
  ADD PRIMARY KEY (`id`), ADD KEY `tagID` (`tagID`), ADD KEY `itemID` (`itemID`);
 
---
--- Indexes for table `f8ad7_k2_users`
---
 ALTER TABLE `f8ad7_k2_users`
  ADD PRIMARY KEY (`id`), ADD KEY `userID` (`userID`), ADD KEY `group` (`group`);
 
---
--- Indexes for table `f8ad7_k2_user_groups`
---
 ALTER TABLE `f8ad7_k2_user_groups`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `f8ad7_languages`
---
 ALTER TABLE `f8ad7_languages`
  ADD PRIMARY KEY (`lang_id`), ADD UNIQUE KEY `idx_sef` (`sef`), ADD UNIQUE KEY `idx_image` (`image`), ADD UNIQUE KEY `idx_langcode` (`lang_code`), ADD KEY `idx_access` (`access`), ADD KEY `idx_ordering` (`ordering`);
 
---
--- Indexes for table `f8ad7_menu`
---
 ALTER TABLE `f8ad7_menu`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_client_id_parent_id_alias_language` (`client_id`,`parent_id`,`alias`,`language`), ADD KEY `idx_componentid` (`component_id`,`menutype`,`published`,`access`), ADD KEY `idx_menutype` (`menutype`), ADD KEY `idx_left_right` (`lft`,`rgt`), ADD KEY `idx_alias` (`alias`), ADD KEY `idx_path` (`path`(255)), ADD KEY `idx_language` (`language`);
 
---
--- Indexes for table `f8ad7_menu_types`
---
 ALTER TABLE `f8ad7_menu_types`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_menutype` (`menutype`);
 
---
--- Indexes for table `f8ad7_messages`
---
 ALTER TABLE `f8ad7_messages`
  ADD PRIMARY KEY (`message_id`), ADD KEY `useridto_state` (`user_id_to`,`state`);
 
---
--- Indexes for table `f8ad7_messages_cfg`
---
 ALTER TABLE `f8ad7_messages_cfg`
  ADD UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`);
 
---
--- Indexes for table `f8ad7_modules`
---
 ALTER TABLE `f8ad7_modules`
  ADD PRIMARY KEY (`id`), ADD KEY `published` (`published`,`access`), ADD KEY `newsfeeds` (`module`,`published`), ADD KEY `idx_language` (`language`);
 
---
--- Indexes for table `f8ad7_modules_menu`
---
 ALTER TABLE `f8ad7_modules_menu`
  ADD PRIMARY KEY (`moduleid`,`menuid`);
 
---
--- Indexes for table `f8ad7_newsfeeds`
---
 ALTER TABLE `f8ad7_newsfeeds`
  ADD PRIMARY KEY (`id`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_state` (`published`), ADD KEY `idx_catid` (`catid`), ADD KEY `idx_createdby` (`created_by`), ADD KEY `idx_language` (`language`), ADD KEY `idx_xreference` (`xreference`);
 
---
--- Indexes for table `f8ad7_overrider`
---
 ALTER TABLE `f8ad7_overrider`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `f8ad7_postinstall_messages`
---
 ALTER TABLE `f8ad7_postinstall_messages`
  ADD PRIMARY KEY (`postinstall_message_id`);
 
---
--- Indexes for table `f8ad7_redirect_links`
---
 ALTER TABLE `f8ad7_redirect_links`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_link_old` (`old_url`), ADD KEY `idx_link_modifed` (`modified_date`);
 
---
--- Indexes for table `f8ad7_schemas`
---
 ALTER TABLE `f8ad7_schemas`
  ADD PRIMARY KEY (`extension_id`,`version_id`);
 
---
--- Indexes for table `f8ad7_session`
---
 ALTER TABLE `f8ad7_session`
  ADD PRIMARY KEY (`session_id`), ADD KEY `userid` (`userid`), ADD KEY `time` (`time`);
 
---
--- Indexes for table `f8ad7_tags`
---
 ALTER TABLE `f8ad7_tags`
  ADD PRIMARY KEY (`id`), ADD KEY `tag_idx` (`published`,`access`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_path` (`path`), ADD KEY `idx_left_right` (`lft`,`rgt`), ADD KEY `idx_alias` (`alias`), ADD KEY `idx_language` (`language`);
 
---
--- Indexes for table `f8ad7_template_styles`
---
 ALTER TABLE `f8ad7_template_styles`
  ADD PRIMARY KEY (`id`), ADD KEY `idx_template` (`template`), ADD KEY `idx_home` (`home`);
 
---
--- Indexes for table `f8ad7_ucm_base`
---
 ALTER TABLE `f8ad7_ucm_base`
  ADD PRIMARY KEY (`ucm_id`), ADD KEY `idx_ucm_item_id` (`ucm_item_id`), ADD KEY `idx_ucm_type_id` (`ucm_type_id`), ADD KEY `idx_ucm_language_id` (`ucm_language_id`);
 
---
--- Indexes for table `f8ad7_ucm_content`
---
 ALTER TABLE `f8ad7_ucm_content`
  ADD PRIMARY KEY (`core_content_id`), ADD KEY `tag_idx` (`core_state`,`core_access`), ADD KEY `idx_access` (`core_access`), ADD KEY `idx_alias` (`core_alias`), ADD KEY `idx_language` (`core_language`), ADD KEY `idx_title` (`core_title`), ADD KEY `idx_modified_time` (`core_modified_time`), ADD KEY `idx_created_time` (`core_created_time`), ADD KEY `idx_content_type` (`core_type_alias`), ADD KEY `idx_core_modified_user_id` (`core_modified_user_id`), ADD KEY `idx_core_checked_out_user_id` (`core_checked_out_user_id`), ADD KEY `idx_core_created_user_id` (`core_created_user_id`), ADD KEY `idx_core_type_id` (`core_type_id`);
 
---
--- Indexes for table `f8ad7_ucm_history`
---
 ALTER TABLE `f8ad7_ucm_history`
  ADD PRIMARY KEY (`version_id`), ADD KEY `idx_ucm_item_id` (`ucm_type_id`,`ucm_item_id`), ADD KEY `idx_save_date` (`save_date`);
 
---
--- Indexes for table `f8ad7_updates`
---
 ALTER TABLE `f8ad7_updates`
  ADD PRIMARY KEY (`update_id`);
 
---
--- Indexes for table `f8ad7_update_sites`
---
 ALTER TABLE `f8ad7_update_sites`
  ADD PRIMARY KEY (`update_site_id`);
 
---
--- Indexes for table `f8ad7_update_sites_extensions`
---
 ALTER TABLE `f8ad7_update_sites_extensions`
  ADD PRIMARY KEY (`update_site_id`,`extension_id`);
 
---
--- Indexes for table `f8ad7_usergroups`
---
 ALTER TABLE `f8ad7_usergroups`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_usergroup_parent_title_lookup` (`parent_id`,`title`), ADD KEY `idx_usergroup_title_lookup` (`title`), ADD KEY `idx_usergroup_adjacency_lookup` (`parent_id`), ADD KEY `idx_usergroup_nested_set_lookup` (`lft`,`rgt`) USING BTREE;
 
---
--- Indexes for table `f8ad7_users`
---
 ALTER TABLE `f8ad7_users`
  ADD PRIMARY KEY (`id`), ADD KEY `idx_name` (`name`), ADD KEY `idx_block` (`block`), ADD KEY `username` (`username`), ADD KEY `email` (`email`);
 
---
--- Indexes for table `f8ad7_user_keys`
---
 ALTER TABLE `f8ad7_user_keys`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `series` (`series`), ADD UNIQUE KEY `series_2` (`series`), ADD UNIQUE KEY `series_3` (`series`), ADD KEY `user_id` (`user_id`);
 
---
--- Indexes for table `f8ad7_user_notes`
---
 ALTER TABLE `f8ad7_user_notes`
  ADD PRIMARY KEY (`id`), ADD KEY `idx_user_id` (`user_id`), ADD KEY `idx_category_id` (`catid`);
 
---
--- Indexes for table `f8ad7_user_profiles`
---
 ALTER TABLE `f8ad7_user_profiles`
  ADD UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`);
 
---
--- Indexes for table `f8ad7_user_usergroup_map`
---
 ALTER TABLE `f8ad7_user_usergroup_map`
  ADD PRIMARY KEY (`user_id`,`group_id`);
 
---
--- Indexes for table `f8ad7_viewlevels`
---
 ALTER TABLE `f8ad7_viewlevels`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `idx_assetgroup_title_lookup` (`title`);
 
---
--- Indexes for table `f8ad7_weblinks`
---
 ALTER TABLE `f8ad7_weblinks`
  ADD PRIMARY KEY (`id`), ADD KEY `idx_access` (`access`), ADD KEY `idx_checkout` (`checked_out`), ADD KEY `idx_state` (`state`), ADD KEY `idx_catid` (`catid`), ADD KEY `idx_createdby` (`created_by`), ADD KEY `idx_featured_catid` (`featured`,`catid`), ADD KEY `idx_language` (`language`), ADD KEY `idx_xreference` (`xreference`);
 
---
--- Indexes for table `f8ad7_wf_profiles`
---
 ALTER TABLE `f8ad7_wf_profiles`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `f8ad7_widgetkit_widget`
---
 ALTER TABLE `f8ad7_widgetkit_widget`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `f8ad7_xmap_items`
---
 ALTER TABLE `f8ad7_xmap_items`
  ADD PRIMARY KEY (`uid`,`itemid`,`view`,`sitemap_id`), ADD KEY `uid` (`uid`,`itemid`), ADD KEY `view` (`view`);
 
---
--- Indexes for table `f8ad7_xmap_sitemap`
---
 ALTER TABLE `f8ad7_xmap_sitemap`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `f8ad7_zoo_application`
---
 ALTER TABLE `f8ad7_zoo_application`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `f8ad7_zoo_category`
---
 ALTER TABLE `f8ad7_zoo_category`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `ALIAS_INDEX` (`alias`), ADD KEY `PUBLISHED_INDEX` (`published`), ADD KEY `APPLICATIONID_ID_INDEX` (`application_id`,`published`,`id`), ADD KEY `APPLICATIONID_ID_INDEX2` (`application_id`,`id`);
 
---
--- Indexes for table `f8ad7_zoo_category_item`
---
 ALTER TABLE `f8ad7_zoo_category_item`
  ADD PRIMARY KEY (`category_id`,`item_id`), ADD KEY `ITEMID_INDEX` (`item_id`), ADD KEY `CATEGORYID_INDEX` (`category_id`);
 
---
--- Indexes for table `f8ad7_zoo_comment`
---
 ALTER TABLE `f8ad7_zoo_comment`
  ADD PRIMARY KEY (`id`), ADD KEY `STATE_INDEX` (`state`), ADD KEY `CREATED_INDEX` (`created`), ADD KEY `ITEMID_INDEX` (`item_id`), ADD KEY `AUTHOR_INDEX` (`author`), ADD KEY `ITEMID_STATE_INDEX` (`item_id`,`state`);
 
---
--- Indexes for table `f8ad7_zoo_item`
---
 ALTER TABLE `f8ad7_zoo_item`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `ALIAS_INDEX` (`alias`), ADD KEY `PUBLISH_INDEX` (`publish_up`,`publish_down`), ADD KEY `STATE_INDEX` (`state`), ADD KEY `ACCESS_INDEX` (`access`), ADD KEY `CREATED_BY_INDEX` (`created_by`), ADD KEY `NAME_INDEX` (`name`), ADD KEY `APPLICATIONID_INDEX` (`application_id`), ADD KEY `TYPE_INDEX` (`type`), ADD KEY `MULTI_INDEX` (`application_id`,`access`,`state`,`publish_up`,`publish_down`), ADD KEY `MULTI_INDEX2` (`id`,`access`,`state`,`publish_up`,`publish_down`), ADD KEY `ID_APPLICATION_INDEX` (`id`,`application_id`), ADD FULLTEXT KEY `SEARCH_FULLTEXT` (`name`);
 
---
--- Indexes for table `f8ad7_zoo_rating`
---
 ALTER TABLE `f8ad7_zoo_rating`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `f8ad7_zoo_search_index`
---
 ALTER TABLE `f8ad7_zoo_search_index`
  ADD PRIMARY KEY (`item_id`,`element_id`), ADD FULLTEXT KEY `SEARCH_FULLTEXT` (`value`);
 
---
--- Indexes for table `f8ad7_zoo_submission`
---
 ALTER TABLE `f8ad7_zoo_submission`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `ALIAS_INDEX` (`alias`);
 
---
--- Indexes for table `f8ad7_zoo_tag`
---
 ALTER TABLE `f8ad7_zoo_tag`
  ADD PRIMARY KEY (`item_id`,`name`), ADD UNIQUE KEY `NAME_ITEMID_INDEX` (`name`,`item_id`);
 
---
--- Indexes for table `f8ad7_zoo_zl_zootrack_categorytrack`
---
 ALTER TABLE `f8ad7_zoo_zl_zootrack_categorytrack`
  ADD PRIMARY KEY (`id`), ADD KEY `session_id` (`session_id`,`user_id`,`category_id`);
 
---
--- Indexes for table `f8ad7_zoo_zl_zootrack_itemtrack`
---
 ALTER TABLE `f8ad7_zoo_zl_zootrack_itemtrack`
  ADD PRIMARY KEY (`id`), ADD KEY `session_id` (`session_id`,`user_id`,`item_id`);
 
---
--- Indexes for table `f8ad7_zoo_zoofilter_searches`
---
 ALTER TABLE `f8ad7_zoo_zoofilter_searches`
  ADD PRIMARY KEY (`search_id`), ADD UNIQUE KEY `search_uuid` (`search_uuid`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `f8ad7_acymailing_fields`
---
 ALTER TABLE `f8ad7_acymailing_fields`
 MODIFY `fieldid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `f8ad7_acymailing_filter`
---
 ALTER TABLE `f8ad7_acymailing_filter`
 MODIFY `filid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_acymailing_geolocation`
---
 ALTER TABLE `f8ad7_acymailing_geolocation`
 MODIFY `geolocation_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_acymailing_list`
---
 ALTER TABLE `f8ad7_acymailing_list`
 MODIFY `listid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `f8ad7_acymailing_mail`
---
 ALTER TABLE `f8ad7_acymailing_mail`
 MODIFY `mailid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `f8ad7_acymailing_rules`
---
 ALTER TABLE `f8ad7_acymailing_rules`
 MODIFY `ruleid` smallint(5) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_acymailing_subscriber`
---
 ALTER TABLE `f8ad7_acymailing_subscriber`
 MODIFY `subid` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `f8ad7_acymailing_template`
---
 ALTER TABLE `f8ad7_acymailing_template`
 MODIFY `tempid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `f8ad7_acymailing_url`
---
 ALTER TABLE `f8ad7_acymailing_url`
 MODIFY `urlid` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_assets`
---
 ALTER TABLE `f8ad7_assets`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=355;
---
--- AUTO_INCREMENT for table `f8ad7_banners`
---
 ALTER TABLE `f8ad7_banners`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `f8ad7_banner_clients`
---
 ALTER TABLE `f8ad7_banner_clients`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `f8ad7_categories`
---
 ALTER TABLE `f8ad7_categories`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
---
--- AUTO_INCREMENT for table `f8ad7_contact_details`
---
 ALTER TABLE `f8ad7_contact_details`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `f8ad7_content`
---
 ALTER TABLE `f8ad7_content`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=113;
---
--- AUTO_INCREMENT for table `f8ad7_content_types`
---
 ALTER TABLE `f8ad7_content_types`
 MODIFY `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
---
--- AUTO_INCREMENT for table `f8ad7_djimageslider`
---
 ALTER TABLE `f8ad7_djimageslider`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `f8ad7_extensions`
---
 ALTER TABLE `f8ad7_extensions`
 MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10104;
---
--- AUTO_INCREMENT for table `f8ad7_finder_filters`
---
 ALTER TABLE `f8ad7_finder_filters`
 MODIFY `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_finder_links`
---
 ALTER TABLE `f8ad7_finder_links`
 MODIFY `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=300;
---
--- AUTO_INCREMENT for table `f8ad7_finder_taxonomy`
---
 ALTER TABLE `f8ad7_finder_taxonomy`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=147;
---
--- AUTO_INCREMENT for table `f8ad7_finder_terms`
---
 ALTER TABLE `f8ad7_finder_terms`
 MODIFY `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3828;
---
--- AUTO_INCREMENT for table `f8ad7_finder_types`
---
 ALTER TABLE `f8ad7_finder_types`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `f8ad7_jsecurelog`
---
 ALTER TABLE `f8ad7_jsecurelog`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_k2_attachments`
---
 ALTER TABLE `f8ad7_k2_attachments`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_k2_categories`
---
 ALTER TABLE `f8ad7_k2_categories`
 MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_k2_comments`
---
 ALTER TABLE `f8ad7_k2_comments`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_k2_extra_fields`
---
 ALTER TABLE `f8ad7_k2_extra_fields`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_k2_extra_fields_groups`
---
 ALTER TABLE `f8ad7_k2_extra_fields_groups`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_k2_items`
---
 ALTER TABLE `f8ad7_k2_items`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_k2_tags`
---
 ALTER TABLE `f8ad7_k2_tags`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_k2_tags_xref`
---
 ALTER TABLE `f8ad7_k2_tags_xref`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_k2_users`
---
 ALTER TABLE `f8ad7_k2_users`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `f8ad7_k2_user_groups`
---
 ALTER TABLE `f8ad7_k2_user_groups`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_languages`
---
 ALTER TABLE `f8ad7_languages`
 MODIFY `lang_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `f8ad7_menu`
---
 ALTER TABLE `f8ad7_menu`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=200;
---
--- AUTO_INCREMENT for table `f8ad7_menu_types`
---
 ALTER TABLE `f8ad7_menu_types`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `f8ad7_messages`
---
 ALTER TABLE `f8ad7_messages`
 MODIFY `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `f8ad7_modules`
---
 ALTER TABLE `f8ad7_modules`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=155;
---
--- AUTO_INCREMENT for table `f8ad7_newsfeeds`
---
 ALTER TABLE `f8ad7_newsfeeds`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_overrider`
---
 ALTER TABLE `f8ad7_overrider`
 MODIFY `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
---
--- AUTO_INCREMENT for table `f8ad7_postinstall_messages`
---
 ALTER TABLE `f8ad7_postinstall_messages`
 MODIFY `postinstall_message_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `f8ad7_redirect_links`
---
 ALTER TABLE `f8ad7_redirect_links`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_tags`
---
 ALTER TABLE `f8ad7_tags`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `f8ad7_template_styles`
---
 ALTER TABLE `f8ad7_template_styles`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
---
--- AUTO_INCREMENT for table `f8ad7_ucm_content`
---
 ALTER TABLE `f8ad7_ucm_content`
 MODIFY `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_ucm_history`
---
 ALTER TABLE `f8ad7_ucm_history`
 MODIFY `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `f8ad7_updates`
---
 ALTER TABLE `f8ad7_updates`
 MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
---
--- AUTO_INCREMENT for table `f8ad7_update_sites`
---
 ALTER TABLE `f8ad7_update_sites`
 MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `f8ad7_usergroups`
---
 ALTER TABLE `f8ad7_usergroups`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `f8ad7_users`
---
 ALTER TABLE `f8ad7_users`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=451;
---
--- AUTO_INCREMENT for table `f8ad7_user_keys`
---
 ALTER TABLE `f8ad7_user_keys`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_user_notes`
---
 ALTER TABLE `f8ad7_user_notes`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_viewlevels`
---
 ALTER TABLE `f8ad7_viewlevels`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `f8ad7_weblinks`
---
 ALTER TABLE `f8ad7_weblinks`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_wf_profiles`
---
 ALTER TABLE `f8ad7_wf_profiles`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `f8ad7_widgetkit_widget`
---
 ALTER TABLE `f8ad7_widgetkit_widget`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `f8ad7_xmap_sitemap`
---
 ALTER TABLE `f8ad7_xmap_sitemap`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `f8ad7_zoo_application`
---
 ALTER TABLE `f8ad7_zoo_application`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `f8ad7_zoo_category`
---
 ALTER TABLE `f8ad7_zoo_category`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
---
--- AUTO_INCREMENT for table `f8ad7_zoo_comment`
---
 ALTER TABLE `f8ad7_zoo_comment`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_zoo_item`
---
 ALTER TABLE `f8ad7_zoo_item`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=91;
---
--- AUTO_INCREMENT for table `f8ad7_zoo_rating`
---
 ALTER TABLE `f8ad7_zoo_rating`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `f8ad7_zoo_submission`
---
 ALTER TABLE `f8ad7_zoo_submission`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_zoo_zl_zootrack_categorytrack`
---
 ALTER TABLE `f8ad7_zoo_zl_zootrack_categorytrack`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_zoo_zl_zootrack_itemtrack`
---
 ALTER TABLE `f8ad7_zoo_zl_zootrack_itemtrack`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `f8ad7_zoo_zoofilter_searches`
---
 ALTER TABLE `f8ad7_zoo_zoofilter_searches`
 MODIFY `search_id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
