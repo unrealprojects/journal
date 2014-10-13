@@ -48,8 +48,8 @@ window.upf.Page = {};
 
             // Hide Menu When Width < 1180px
             if($(window).width()<1180){
-                $SiteContent.css({'margin-left':PullWidth});
-                $Menu.css({'left':'-'+PushWidth,'opacity':0});
+                $SiteContent.animate({'margin-left':PullWidth});
+                $Menu.animate({'left':'-'+PushWidth,'opacity':0});
             }
 
             $(window).resize(function(){
@@ -57,6 +57,9 @@ window.upf.Page = {};
                 if($(window).width()<1180){
                     $SiteContent.animate({'margin-left':PullWidth});
                     $Menu.animate({'left':'-'+PushWidth,'opacity':0});
+                }else{
+                    $SiteContent.animate({'margin-left':PushWidth});
+                    $Menu.animate({'left':PullWidth,'opacity':1});
                 }
             });
 
@@ -135,7 +138,6 @@ upf.Page.Headers = function(){
 
 
 upf.Menu.ToggleMenu();
-upf.Menu.HideMenu();
 upf.Page.Headers();
 
 
