@@ -1,6 +1,5 @@
 <!-- Site Header -->
 <header class="Site-Header">
-    <div class="Sidebar-Toggle"></div>
     <div class="Site-Logo">
         <h2>
             Фармакогенетика<span>Фармакогеномика</span>

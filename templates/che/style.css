@@ -1358,7 +1358,7 @@ table.Adaptive .Caption,
 
   .Visible-LR {
     display: inline-block; } }
-.About .About-Content h1, .Tags h3, .element h3, .Projects .Projects-Header, h1.title, .pos-top .element-itemname a {
+.About .About-Content h1, .Tags h3, .yoo-zoo .details .heading h1.title, .Projects .Projects-Header, h1.title {
   user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -1367,16 +1367,16 @@ table.Adaptive .Caption,
 a, input,
 select,
 textarea,
-button, header.Site-Header .Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-value span {
+button, .Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-value span {
   cursor: pointer !important; }
 
 .Page-Sidebar nav.Site-Navigation .nav.menu_left li a {
   width: 100%; }
 
-[class*='Grid']:before, .Site-Navigation.Primary nav ul:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:before, header.Site-Header .Toolbar .Authorization ul:before, ul.Pagination:before, .About:before, .floatbox > .pos-content .pos-item:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .content .search:before, .pos-top:before, .pos-item:before, .pos-bottom .element:before, .Projects:before, .content:before, header.Site-Header:before, header.Site-Header .Toolbar:before, .Site-Navigation.Primary nav:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary:before, [class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .About:after, .floatbox > .pos-content .pos-item:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, .pos-top:after, .pos-item:after, .pos-bottom .element:after, .Projects:after, .content:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
+[class*='Grid']:before, .Site-Navigation.Primary nav ul:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:before, header.Site-Header .Toolbar .Authorization ul:before, ul.Pagination:before, .About:before, .yoo-zoo .items .pos-item:before, .Adv:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .content .search:before, .Projects:before, .content:before, header.Site-Header:before, header.Site-Header .Toolbar:before, .Site-Navigation.Primary nav:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary:before, [class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .About:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, .Projects:after, .content:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   content: " ";
   display: table; }
-[class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .About:after, .floatbox > .pos-content .pos-item:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, .pos-top:after, .pos-item:after, .pos-bottom .element:after, .Projects:after, .content:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
+[class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .About:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, .Projects:after, .content:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   clear: both; }
 
 ol[class*='Grid'] > li,
@@ -1388,7 +1388,7 @@ ul[class*='Grid'] > li, .Site-Navigation.Primary nav ul, footer[role='contentinf
 .Site-Navigation.Primary nav ul > *, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul > *, header.Site-Header .Toolbar .Authorization ul > *, ul.Pagination > * {
   float: left; }
 
-.About, .floatbox > .pos-content .pos-item, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search, .pos-top, .pos-item {
+.About, .yoo-zoo .items .pos-item, .Adv, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search {
   padding: 20px;
   border: 1px solid #efeff3;
   background-color: white; }
@@ -1422,18 +1422,18 @@ button {
 .Site-Navigation.Primary nav ul:first-child a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:first-child a {
   padding-left: 0; }
 
-.About .About-Content h1, .Tags h3, .element h3, .Projects .Projects-Header, h1.title, .pos-top .element-itemname a {
+.About .About-Content h1, .Tags h3, .yoo-zoo .details .heading h1.title, .Projects .Projects-Header, h1.title {
   font-family: 'PT Serif Caption', 'PT Serif', serif;
   font-size: 32px;
   font-weight: 100;
   line-height: 32px;
   color: black; }
 
-.Tags h3 {
+.Tags h3, .yoo-zoo .details .heading h1.title, .Projects .Projects-Header {
   margin-top: 20px;
-  margin-bottom: 10px; }
+  margin-bottom: 20px; }
 
-.Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, header.Site-Header .Sidebar-Toggle, ul.Pagination li a {
+.Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Sidebar-Toggle, ul.Pagination li a {
   -webkit-transition: color 0.4s, background-color 0.4s, border-color 0.4s;
   -moz-transition: color 0.4s, background-color 0.4s, border-color 0.4s;
   transition: color 0.4s, background-color 0.4s, border-color 0.4s; }
@@ -1480,14 +1480,26 @@ button {
   .About .About-Image img {
     width: 100%; }
 
-.pos-title {
+.Tags ul.zoo-list {
+  margin-top: 10px; }
+  .Tags ul.zoo-list li:nth-child(odd) a {
+    background-color: #ededee; }
+  .Tags ul.zoo-list li {
+    margin: 0;
+    padding: 0; }
+    .Tags ul.zoo-list li a {
+      padding: 5px 15px; }
+      .Tags ul.zoo-list li a:hover {
+        background-color: #d4d4d5; }
+
+.yoo-zoo .items .pos-item .pos-title {
   position: relative; }
-  .pos-title article.item {
+  .yoo-zoo .items .pos-item .pos-title article.item {
     display: none; }
-  .pos-title article:last-of-type {
+  .yoo-zoo .items .pos-item .pos-title article:last-of-type {
     display: block; }
-    .pos-title article:last-of-type a {
-      bottom: 10px;
+    .yoo-zoo .items .pos-item .pos-title article:last-of-type a {
+      bottom: 25px;
       left: 10px;
       position: absolute;
       padding: 5px 7px !important;
@@ -1498,144 +1510,21 @@ button {
       letter-spacing: 0 !important;
       background-color: red;
       font-weight: bold; }
-
-.pos-bottom .element {
-  background: none !important; }
-  .pos-bottom .element .zoo-list {
-    float: left;
-    width: 100%; }
-    .pos-bottom .element .zoo-list li {
-      margin: 0 !important;
-      padding: 0 !important; }
-      .pos-bottom .element .zoo-list li a {
-        color: #424445;
-        padding: 5px 15px; }
-    .pos-bottom .element .zoo-list li:nth-child(odd) a {
-      display: block;
-      background-color: #eee; }
-
-.item > .pos-title {
-  background: white;
-  float: left;
-  padding: 15px; }
-  .item > .pos-title img {
-    float: right;
-    width: 60%;
-    height: auto; }
-  .item > .pos-title a {
-    text-decoration: none;
-    color: black; }
-  .item > .pos-title p {
-    font-size: 16px;
-    width: 60%; }
-  .item > .pos-title p:nth-of-type(2) {
-    font-weight: 100; }
-
-.item > .pos-subtitle {
-  width: 40%;
-  float: left;
-  clear: both; }
-
-.zoo-tagcloud {
-  list-style: none;
-  padding: 0px;
-  width: 85%; }
-  .zoo-tagcloud li {
-    padding: 5px 15px; }
-  .zoo-tagcloud li:nth-of-type(odd) {
-    background: #DFDFDF; }
-  .zoo-tagcloud a {
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
-    font-weight: 300; }
-
-.zoo-item-list {
-  list-style: none;
-  display: block;
-  padding: 0px;
-  border-left: 5px solid #d0ae1d; }
-
-p.title {
-  padding: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ddd6d6;
-  font-size: 14px;
-  text-align: left;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  background: white; }
-  p.title img {
-    width: 100%;
-    height: auto;
+.yoo-zoo .items .pos-item .pos-subtitle {
+  font-size: 18px;
+  font-weight: 100; }
+.yoo-zoo .items .pos-item .floatbox .pos-content {
+  margin-top: 20px; }
+  .yoo-zoo .items .pos-item .floatbox .pos-content .element {
+    font-size: 12px;
+    color: #7c7e80;
+    width: auto; }
+  .yoo-zoo .items .pos-item .floatbox .pos-content .first {
     float: left; }
-  p.title a {
-    text-decoration: none;
-    font-size: 16px;
-    color: black;
-    font-weight: 200;
-    text-align: left;
-    display: block; }
-
-.item > .pos-subtitle .custom {
-  width: 85%;
-  background: white;
-  text-align: center;
-  padding: 20px 0px;
-  float: left;
-  border: 1px solid #ddd6d6; }
-
-.item > .floatbox {
-  width: 60%;
-  float: left; }
-
-.floatbox > .pos-content .pos-item {
-  display: inline-block;
-  border: 1px solid #ddd6d6;
-  font-size: 14px;
-  vertical-align: top;
-  margin: 0px;
-  margin-top: -1px; }
-  @media screen and (min-width: 768px) {
-    .floatbox > .pos-content .pos-item {
-      width: 50%; } }
-  .floatbox > .pos-content .pos-item:hover {
-    background-color: #f9f9f9; }
-  .floatbox > .pos-content .pos-item img {
-    width: 100%; }
-  .floatbox > .pos-content .pos-item .pos-title > a {
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    font-weight: 200;
-    text-align: left;
-    display: block;
-    margin-top: 10px; }
-
-.floatbox > .pos-content {
-  padding-left: 20px; }
-  .floatbox > .pos-content .floatbox {
-    display: inline-block; }
-
-.pos-item .pos-meta {
-  width: 50%;
-  display: inline-block;
-  float: left;
-  padding: 0 0 0 25px;
-  margin: 0;
-  background: url(./lib/img/views.png) left center no-repeat;
-  font-size: 12px;
-  color: #7c7e80; }
-
-.pos-item > .floatbox {
-  width: 50%;
-  display: inline-block;
-  float: right;
-  text-align: right;
-  font-size: 12px;
-  color: #7c7e80; }
-  .pos-item > .floatbox .pos-media {
-    float: right !important; }
+  .yoo-zoo .items .pos-item .floatbox .pos-content .last {
+    float: right;
+    padding-left: 25px;
+    background: url(../../templates/che/images/views.png) left center no-repeat; }
 
 .Projects {
   clear: both; }
@@ -1691,29 +1580,6 @@ a {
   text-decoration: none;
   color: black; }
 
-.pos-top .element-image {
-  float: right;
-  margin-left: 20px; }
-
-.item > .floatbox {
-  width: 66.66%;
-  float: right; }
-
-.pos-bottom {
-  float: left;
-  width: 33.33%; }
-
-/*** OlegBlud Styles***/
-.Subscription {
-  display: none; }
-
-.pos-content .pos-title {
-  min-height: 0px !important; }
-
-.teaser-item .pos-title img {
-  width: 100%;
-  height: auto; }
-
 .Page-Sidebar {
   position: fixed;
   background-color: #4a4f5a;
@@ -1756,17 +1622,18 @@ a {
     .Page-Sidebar .Feed-Subscription:hover {
       background: #73932a; }
 
+.Sidebar-Toggle {
+  position: fixed;
+  top: 0;
+  left: 235px;
+  width: 40px;
+  height: 40px;
+  background: #77797c url(../../templates/che/images/menu_w.png) center center no-repeat; }
+  .Sidebar-Toggle:hover {
+    background-color: #1a90ff; }
+
 header.Site-Header {
   position: relative; }
-  header.Site-Header .Sidebar-Toggle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    background: #77797c url(../../templates/che/images/menu_w.png) center center no-repeat; }
-    header.Site-Header .Sidebar-Toggle:hover {
-      background-color: #1a90ff; }
   header.Site-Header .Site-Logo {
     margin-top: 10px;
     float: left;
@@ -1922,5 +1789,16 @@ footer[role='contentinfo'] article.Copyright {
 
 .Content-Wrapper {
   position: relative; }
+
+/*** OlegBlud Styles***/
+.Subscription {
+  display: none; }
+
+.pos-content .pos-title {
+  min-height: 0px !important; }
+
+.teaser-item .pos-title img {
+  width: 100%;
+  height: auto; }
 
 /*# sourceMappingURL=style.css.map */

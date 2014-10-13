@@ -32,65 +32,7 @@ button
 	@extend 			%Control;
 	@extend 			%Clickable;
 }
-.pos-top
-{
-	@extend %Content-Block;
-	.element-image
-	{
-		float: right;
-		margin-left: 20px;
-	}
-	.element-itemname
-	{
-		a
-		{
-			@extend %Heading-Section;
-		}
-	}
 
-}
-.item > .floatbox
-{
-	width: 66.66%;
-	float: right;
-}
-.pos-bottom
-{
-	float: left;
-	width: 33.33%;
-}
-.pos-item
-{
-	@extend %Content-Block;
-}
-
-
-
-
-
-
-/*** OlegBlud Styles***/
-
-.Subscription{
-  display:none;
-
-}
-
-.pos-content .pos-title{
-  min-height: 0px !important;
-}
-
-
-.teaser-item{
-  @extend .Node-XS-6;
-  @extend .Node-MD-4;
-
-    .pos-title  img{
-        width:100%;
-        height: auto;
-    }
-
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Sidebar
@@ -154,7 +96,21 @@ button
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+.Sidebar-Toggle
+{
+	position: 				fixed;
+	top: 					0;
+	left: 					$Sidebar-Width;
+	width: 					40px;
+	height: 				40px;
+	background: 			#77797c url(../../templates/che/images/menu_w.png) center center no-repeat;
+	@extend 				%Animated;
+	@extend 				%Clickable;
+	&:hover
+	{
+		background-color: 	#1a90ff;
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // HEADER
@@ -163,21 +119,6 @@ header.Site-Header
 {
 	position: 					relative;
 	@extend 					%Fix;
-	.Sidebar-Toggle
-	{
-		position: 				absolute;
-		top: 					0;
-		left: 					0;
-		width: 					40px;
-		height: 				40px;
-		background: 			#77797c url(../../templates/che/images/menu_w.png) center center no-repeat;
-		@extend 				%Animated;
-		@extend 				%Clickable;
-		&:hover
-		{
-			background-color: 	#1a90ff;
-		}
-	}
 	.Site-Logo
 	{
 		margin-top:				10px;
@@ -463,4 +404,26 @@ footer[role='contentinfo']
 
 .Content-Wrapper{
   position: relative;
+}
+/*** OlegBlud Styles***/
+
+.Subscription{
+	display:none;
+
+}
+
+.pos-content .pos-title{
+	min-height: 0px !important;
+}
+
+
+.teaser-item{
+	@extend .Node-XS-6;
+	@extend .Node-MD-4;
+
+	.pos-title  img{
+		width:100%;
+		height: auto;
+	}
+
 }

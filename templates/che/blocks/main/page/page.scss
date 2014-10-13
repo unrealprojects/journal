@@ -89,11 +89,25 @@ main
 	}
 	ul.zoo-list
 	{
+		margin-top:				10px;
 		li:nth-child(odd)
 		{
 			a
 			{
-
+				background-color: #ededee;
+			}
+		}
+		li
+		{
+			margin: 			0;
+			padding: 			0;
+			a
+			{
+				padding:		5px 15px;
+				&:hover
+				{
+					background-color: #d4d4d5;
+				}
 			}
 		}
 	}
@@ -102,266 +116,94 @@ main
 
 
 
-.pos-title
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Плитки контента
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.yoo-zoo
 {
-	position: relative;
-	article.item
+	.details
 	{
-		display: none;
-	}
-	article:last-of-type
-	{
-		display: block;
-		a
+		.heading h1.title
 		{
-			bottom: 10px;
-			left: 10px;
-			position: absolute;
-			padding: 5px 7px!important;
-			line-height: 13px;
-			border-radius: 3px;
-			font-size: 13px;
-			color: white;
-			letter-spacing: 0!important;
-			background-color: red;
-            font-weight: bold;
-
+			@extend 		%Heading-Section;
+			@extend 		%Heading-Section-Spacing;
 		}
 	}
-}
-.pos-bottom
-{
-	.element
+	.items
 	{
-		background: none!important;
-		@extend %Fix;
-		.zoo-list
+		.pos-item
 		{
-			float: left;
-			width: 100%;
-			li
+			@extend 	%Content-Block;
+			.pos-title
 			{
-				margin: 0!important;
-				padding: 0!important;
-				a
+				position: relative;
+				article.item
 				{
-					color: #424445;
-					padding: 5px 15px;
+					display: none;
+				}
+				article:last-of-type
+				{
+					display: block;
+					a
+					{
+						bottom: 25px;
+						left: 10px;
+						position: absolute;
+						padding: 5px 7px!important;
+						line-height: 13px;
+						border-radius: 3px;
+						font-size: 13px;
+						color: white;
+						letter-spacing: 0!important;
+						background-color: red;
+						font-weight: bold;
+
+					}
 				}
 			}
-			li:nth-child(odd) a
+			.pos-subtitle
 			{
-				display: block;
-				background-color: #eee;
+				font-size:			18px;
+				font-weight: 		100;
 			}
-
+			.floatbox
+			{
+				.pos-content
+				{
+					margin-top:		20px;
+					.element
+					{
+						font-size:	12px;
+						color:		#7c7e80;
+						width: 		auto;
+					}
+					.first
+					{
+						float: 		left;
+					}
+					.last
+					{
+						float: 		right;
+						padding-left: 25px;
+						background: url(../../templates/che/images/views.png) left center no-repeat;
+					}
+				}
+			}
 		}
 	}
 }
-.item > .pos-title
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Реклама
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.Adv
 {
-
-	background: white;
-	float: left;
-	padding: 15px;
-
-
-	img
-	{
-		float: right;
-		width: 60%;
-		height: auto;
-	}
-	a
-	{
-		text-decoration: none;
-		color: black;
-	}
-
-	p
-	{
-		font-size: 16px;
-		width: 60%;
-	}
-
-	p:nth-of-type(2)
-	{
-		font-weight: 100;
-
-	}
+	@extend 					%Content-Block;
 }
-
-//Левая колонка
-.item > .pos-subtitle
-{
-	width: 40%;
-	float: left;
-    clear: both;
-
-}
-
-//Рубрики
-.zoo-tagcloud
-{
-	list-style: none;
-	padding: 0px;
-	width: 85%;
-
-	li
-	{
-
-		padding: 5px 15px;
-	}
-
-	li:nth-of-type(odd)
-	{
-		background: #DFDFDF;
-	}
-
-	a
-	{
-		text-decoration: none;
-		color: black;
-		font-size: 14px;
-		font-weight: 300;
-	}
-}
-
-//Топ пять
-.zoo-item-list
-{
-	list-style: none;
-	display: block;
-	padding: 0px;
-	border-left: 5px solid #d0ae1d;
-
-}
-
-p.title
-{
-	padding: 15px;
-	box-sizing: border-box;
-	border: 1px solid #ddd6d6;
-	font-size: 14px;
-	text-align: left;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	background: white;
-
-	img
-	{
-		width: 100%;
-		height: auto;
-		float: left;
-
-	}
-	a
-	{
-		text-decoration: none;
-		font-size: 16px;
-		color: black;
-		font-weight: 200;
-		text-align: left;
-		display: block;
-	}
-
-}
-
-//Рекламный блок
-
-.item > .pos-subtitle .custom
-{
-	width: 85%;
-	background: white;
-	text-align: center;
-	padding: 20px 0px;
-	float: left;
-	border: 1px solid #ddd6d6;
-}
-
-//блок контента
-.item > .floatbox
-{
-	width: 60%;
-	float: left;
-
-}
-
-.floatbox > .pos-content .pos-item
-{
-	display: inline-block;
-	border: 1px solid #ddd6d6;
-	font-size: 14px;
-	vertical-align: top;
-	margin: 0px;
-	margin-top: -1px;
-	@extend %Content-Block;
-	@include Adaptive($Viewport-XS)
-	{
-      width: 50%;
-	}
-	&:hover
-	{
-		background-color: $C-Grey-6;
-	}
-	img
-	{
-		width: 100%;
-	}
-
-	.pos-title > a
-	{
-		text-decoration: none;
-		font-size: 18px;
-		color: black;
-		font-weight: 200;
-		text-align: left;
-		display: block;
-		margin-top: 10px;
-	}
-
-}
-
-.floatbox > .pos-content
-{
-	padding-left: 20px;
-	.floatbox
-	{
-		display: inline-block;
-	}
-
-}
-
-.pos-item .pos-meta
-{
-	width: 50%;
-	display: inline-block;
-	float: left;
-	padding: 0 0 0 25px;
-	margin: 0;
-	background: url(./lib/img/views.png) left center no-repeat;
-	font-size: 12px;
-	color: #7c7e80;
-}
-.pos-item > .floatbox
-{
-	width: 50%;
-	display: inline-block;
-	float: right;
-	text-align: right;
-	font-size: 12px;
-	color: #7c7e80;
-	.pos-media
-	{
-		float: right!important
-	}
-
-}
-.element h3
-{
-	@extend %Heading-Section;
-}
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 .Projects
@@ -371,6 +213,7 @@ p.title
 	.Projects-Header
 	{
 		@extend %Heading-Section;
+		@extend %Heading-Section-Spacing;
 	}
 	.custom
 	{

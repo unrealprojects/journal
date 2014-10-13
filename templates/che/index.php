@@ -15,6 +15,7 @@
         <button class="Feed-Subscription">Подписка на сайт</button>
     </aside>
 
+<div class="Sidebar-Toggle"></div>
 <div class="Content-Wrapper">
     <?php
         $parent_dir = JPATH_BASE . "/templates/che/blocks";
