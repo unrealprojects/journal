@@ -9,7 +9,7 @@
     <div class="Grid Split">
         <?php  if ($this->countModules('tags') || $this->countModules('popular') || $this->countModules('adv')) : ?>
 
-            <div class="Before-Component  Node-XXS-3">
+            <div class="Before-Component  Node-XXS-4">
 
                 <?php  if( $this->countModules('tags') ) : ?>
                     <div class="Tags">
@@ -46,7 +46,7 @@
 
 
 
-            <div class="Component Node-XXS-9">
+            <div class="Component Node-XXS-8">
                 <jdoc:include type="message" />
                 <jdoc:include type="component" />
             </div>
