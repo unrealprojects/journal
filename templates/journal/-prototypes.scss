@@ -112,6 +112,14 @@
 		{
 			display: 	block;
 			padding: 	0 15px;
+			@include 	Adaptive(1400px)
+			{
+				padding: 0 30px;
+			}
+			@include 	Adaptive($Viewport-LR)
+			{
+				padding: 0 50px;
+			}
 			@extend 	%Animated;
 			@extend 	%Uppercase;
 		}
@@ -146,7 +154,7 @@
 }
 %Heading-Section-Spacing
 {
-	margin-top:			20px;
+	margin-top:			40px;
 	margin-bottom:		20px;
 }
 %Content-Spacing

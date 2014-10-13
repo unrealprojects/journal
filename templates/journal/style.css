@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif+Caption);
 [class*='Grid'] {
   display: block; }
 
@@ -1426,6 +1427,12 @@ button {
 .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
   display: block;
   padding: 0 15px; }
+  @media screen and (min-width: 1400px) {
+    .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
+      padding: 0 30px; } }
+  @media screen and (min-width: 1880px) {
+    .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
+      padding: 0 50px; } }
 .Site-Navigation.Primary nav ul:first-child a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:first-child a {
   padding-left: 0; }
 
@@ -1437,7 +1444,7 @@ button {
   color: black; }
 
 .Tags h3, .yoo-zoo .details .heading h1.title, .Projects .Projects-Header {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px; }
 
 .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Sidebar-Toggle, ul.Pagination li a {
@@ -1462,25 +1469,25 @@ button {
 .About .About-Content {
   float: left;
   display: inline-block;
-  width: 40%;
+  width: 50%;
   padding-right: 30px; }
-  @media screen and (min-width: 1024px) {
-    .About .About-Content {
-      width: 50%; } }
   @media screen and (min-width: 1260px) {
     .About .About-Content {
       width: 60%; } }
   .About .About-Content h1 {
     margin-bottom: 20px; }
   .About .About-Content h4 {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px; }
+  .About .About-Content p {
+    font-size: 14px;
+    line-height: 23px; }
 .About .About-Image {
-  width: 60%;
+  width: 50%;
   float: right;
   display: inline-block; }
-  @media screen and (min-width: 1024px) {
-    .About .About-Image {
-      width: 50%; } }
   @media screen and (min-width: 1260px) {
     .About .About-Image {
       width: 40%; } }
@@ -1495,7 +1502,9 @@ button {
     margin: 0;
     padding: 0; }
     .Tags ul.zoo-list li a {
-      padding: 5px 15px; }
+      padding: 5px 15px;
+      font-size: 14px;
+      color: #4f555c; }
       .Tags ul.zoo-list li a:hover {
         background-color: #d4d4d5; }
 
@@ -1518,6 +1527,7 @@ button {
       background-color: red;
       font-weight: bold; }
 .yoo-zoo .items .pos-item .pos-subtitle {
+  line-height: 23px;
   font-size: 18px;
   font-weight: 100; }
 .yoo-zoo .items .pos-item .floatbox .pos-content {
@@ -1660,12 +1670,12 @@ a {
 
 .Sidebar-Toggle {
   position: fixed;
-  top: 0;
+  top: 5px;
   z-index: 10;
   margin-left: 235px;
   width: 40px;
   height: 40px;
-  background: #77797c url(../../templates/journal/images/menu_w.png) center center no-repeat; }
+  background: #77797c url(../../templates/journal/images/toggle.png) center center no-repeat; }
   .Sidebar-Toggle:hover {
     background-color: #1a90ff; }
 
@@ -1677,14 +1687,15 @@ header.Site-Header {
     height: 107px;
     background: url(../../templates/journal/images/logo.png) left top no-repeat; }
     header.Site-Header .Site-Logo h2 {
-      padding-top: 35px;
-      padding-left: 100px;
+      padding-top: 40px;
+      padding-left: 60px;
       font-family: 'PT Serif Caption', 'PT Serif', serif;
       font-weight: 100;
       font-size: 28px;
       text-align: right; }
       header.Site-Header .Site-Logo h2 span {
         display: block;
+        margin-top: -7px;
         font-size: 31px; }
   header.Site-Header .Toolbar {
     margin-top: 60px;
@@ -1696,7 +1707,8 @@ header.Site-Header {
         margin: 0 !important;
         color: black;
         font-family: 'PT Serif', serif;
-        font-size: 16px !important;
+        font-size: 12px !important;
+        font-weight: bold;
         letter-spacing: 0 !important; }
         header.Site-Header .Toolbar .Languages .goog-te-menu-value:hover {
           color: #c82222; }
@@ -1714,30 +1726,32 @@ header.Site-Header {
         display: none; }
       header.Site-Header .Toolbar .Authorization ul li a {
         display: block;
-        padding: 10px; }
+        padding: 10px 5px;
+        font-size: 12px;
+        font-weight: bold; }
         header.Site-Header .Toolbar .Authorization ul li a:hover {
           color: #c82222; }
         header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
           display: block;
           margin-top: 1px;
-          margin-left: 35px;
+          margin-left: 20px;
           padding: 8px 15px;
           border-radius: 20px;
           border: 0;
           font-family: 'PT Serif', serif;
           color: white;
-          background-color: #c82222;
+          background-color: #d83333;
           /* Fallback */
-          background: -webkit-linear-gradient(to bottom, #e62727, #c82222);
+          background: -webkit-linear-gradient(to bottom, #f53636, #d83333);
           /* Chrome 10+, Saf5.1+, iOS 5+ */
-          background: -moz-linear-gradient(to bottom, #e62727, #c82222);
+          background: -moz-linear-gradient(to bottom, #f53636, #d83333);
           /* FF3.6 */
-          background: -ms-linear-gradient(to bottom, #e62727, #c82222);
+          background: -ms-linear-gradient(to bottom, #f53636, #d83333);
           /* IE10 */
-          background: -o-linear-gradient(to bottom, #e62727, #c82222);
+          background: -o-linear-gradient(to bottom, #f53636, #d83333);
           /* Opera 11.10+ */
-          background: linear-gradient(to bottom, #e62727, #c82222);
-          filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#e62727', EndColorStr='#c82222'); }
+          background: linear-gradient(to bottom, #f53636, #d83333);
+          filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f53636', EndColorStr='#d83333'); }
           header.Site-Header .Toolbar .Authorization ul li a.Button-Like:hover {
             background: #c82222; }
 
@@ -1834,6 +1848,20 @@ footer[role='contentinfo'] article.Copyright {
 .pos-title img {
   width: 100%;
   height: auto; }
+
+.Scroll-Top {
+  display: none;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #efeff3;
+  background: white url(../../templates/journal/images/scroll-top.png) center center no-repeat; }
+  .Scroll-Top:hover {
+    border-color: #23262f;
+    background: #4a4f5a url(../../templates/journal/images/scroll-top-hover.png) center center no-repeat; }
 
 .item-page h2 {
   margin-bottom: 20px; }

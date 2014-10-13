@@ -29,12 +29,8 @@
 	{
 		float: 					left;
 		display: 				inline-block;
-		width: 					40%;
+		width: 					50%;
 		padding-right: 			30px;
-		@include 				Adaptive($Viewport-SM)
-		{
-			width:				50%;
-		}
 		@include 				Adaptive($Viewport-MD)
 		{
 			width:				60%;
@@ -47,17 +43,21 @@
 		h4
 		{
 			margin-bottom:		20px;
+			font-weight:		bold;
+			font-size:			14px;
+			line-height:		23px;
+		}
+		p
+		{
+			font-size:			14px;
+			line-height:		23px;
 		}
 	}
 	.About-Image
 	{
-		width: 					60%;
+		width: 					50%;
 		float:					right;
 		display: 				inline-block;
-		@include 				Adaptive($Viewport-SM)
-		{
-			width:				50%;
-		}
 		@include 				Adaptive($Viewport-MD)
 		{
 			width:				40%;
@@ -100,6 +100,8 @@
 			a
 			{
 				padding:		5px 15px;
+				font-size:		14px;
+				color:			#4f555c;
 				&:hover
 				{
 					background-color: #d4d4d5;
@@ -159,6 +161,7 @@
 			}
 			.pos-subtitle
 			{
+				line-height: 		23px;
 				font-size:			18px;
 				font-weight: 		100;
 			}
@@ -369,5 +372,6 @@ fieldset.only
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
