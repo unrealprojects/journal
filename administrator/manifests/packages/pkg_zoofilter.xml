@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" method="upgrade" version="2.5">
+	<name>ZOOfilter Package</name>
+	<author>ZOOlanders</author>
+	<creationDate>January 2014</creationDate>
+	<packagename>zoofilter</packagename>
+	<version>3.1</version>
+	<copyright>Copyright (C) 2011 JOOlanders, SL</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html GNU/GPL</license>
+	<authorEmail>info@zoolanders.com</authorEmail>
+	<authorUrl>http://www.zoolanders.com</authorUrl>
+	<description>ZOOorder for ZOO developed by ZOOlanders (http://www.zoolanders.com)</description>
+	<scriptfile>install.script.php</scriptfile>
+	<dependencies joomla="2.5.9" zoo="3.1" zlfw="3.1" />
+	<files folder="packages">
+		<!-- Plugin -->
+		<file type="plugin" id="zoofilter" group="system">plg_zoofilter.zip</file>
+		<!-- Module -->
+		<file type="module" id="mod_zoofilter" client="site">mod_zoofilter.zip</file>
+	</files>
+</extension>

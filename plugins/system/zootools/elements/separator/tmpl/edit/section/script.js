@@ -1,0 +1,8 @@
+/* ===================================================
+ * ZOOtools
+ * https://zoolanders.com/extensions/zootools
+ * ===================================================
+ * Copyright (C) JOOlanders SL
+ * http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * ========================================================== */
+!function(a){var b=function(){};b.prototype=a.extend(b.prototype,{name:"ZOOtoolsSeparatorSection",options:{title:"",folding:0},initialize:function(b,c){this.options=a.extend({},this.options,c);var d=this,e=a('<div class="zl-separator-section zl-bootstrap" />');title=a('<span class="zlux-x-title">'+d.options.title+"</span>"),title.appendTo(e),b.parent().before(e).remove(),a(document).ready(function(){var b=e.nextAll(".zl-separator-section").first(),c=e.nextUntil(b,".element");if(2==d.options.folding&&c.hide(),d.options.folding)var f=2==d.options.folding?"open":"close",g=a('<a class="btn btn-small fold" href="#"><i class="icon-eye-'+f+'"></i></a>').appendTo(e).on("click",function(a){a.preventDefault(),c.toggle(),g.find("i").toggleClass("icon-eye-open icon-eye-close")})})},exFunc:function(){}}),a.fn[b.prototype.name]=function(){var c=arguments,d=c[0]?c[0]:null;return this.each(function(){var e=a(this);if(b.prototype[d]&&e.data(b.prototype.name)&&"initialize"!=d)e.data(b.prototype.name)[d].apply(e.data(b.prototype.name),Array.prototype.slice.call(c,1));else if(!d||a.isPlainObject(d)){var f=new b;b.prototype.initialize&&f.initialize.apply(f,a.merge([e],c)),e.data(b.prototype.name,f)}else a.error("Method "+d+" does not exist on jQuery."+b.name)})}}(jQuery);

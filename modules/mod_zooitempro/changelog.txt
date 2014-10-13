@@ -1,0 +1,41 @@
+Changelog
+------------
+
+3.1.4
+ # Quick fix from last release
+
+3.1.3
+ + Tags filtering
+ + Current Category layout
+ # Fixed issue if both frontpage and categories filters where selected
+
+3.1.2
+ # Install issues solved
+
+3.1.1
+ # Fixed minor issues with renderer_layout and media_positions params
+
+3.1
+ + Frontpage, State, Author, and Publish Down filters
+ ^ Layouts workflow improved
+ + Widgetkit Layouts
+ + ZOOtrack Layouts
+
+3.0.2
+ + Simple IDs Cache implemented
+ ^ Improved Cross App filtering
+
+3.0.1
+ # Period Date search fixed
+
+3.0
+ Initial Release
+
+
+* -> Security Fix
+# -> Bug Fix
+$ -> Language fix or change
++ -> Addition
+^ -> Change
+- -> Removed
+! -> Note

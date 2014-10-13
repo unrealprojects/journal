@@ -1,0 +1,25 @@
+Changelog
+------------
+
+3.1
+ ^ ZLFW 3.1 compatibility
+
+3.0.3
+ ^ BS Styles loaded from ZLUX
+
+3.0.2
+ # ZLField integration Optimized
+
+3.0.1
+ # Fixed JS loop
+
+3.0
+ ! Initial Release
+
+* -> Security Fix
+# -> Bug Fix
+$ -> Language fix or change
++ -> Addition
+^ -> Change
+- -> Removed
+! -> Note

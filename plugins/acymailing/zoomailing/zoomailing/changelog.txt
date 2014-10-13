@@ -1,0 +1,79 @@
+Changelog
+------------
+
+3.1.2
+ # Fixed filtering issue with autonews
+
+3.1.1
+ # Fixed Item User Access on autonews
+
+3.1
+ ^ ZLFW 3.1 compatibility
+ ^ Improved the Items query to take in consideration the user access
+ ^ Filter params are not anymore exclusive to autonews
+ ^ The ordering of inserted items is done based on the order you select them
+ # Fixed Category Tag rendering issues
+
+3.0.3
+ ^ ZLFW 3.0.9 compatibility
+ # Strict Standart issues fixed
+
+3.0.2
+ ^ Improved install script
+
+3.0.1
+ # initTypeLayouts fixed to Static function
+ # fixed Joomla 3.0 conversion related bugs
+
+3.0
+ ^ ZOO & Joomla 3 compatibility
+ - Removed j1.5 compatibility
+
+2.6.2
+ # Multiple Categories Tags fix
+
+2.6.1
+ + Autonews send Items created since X days feature
+
+2.6
+ + Online Layout tag
+ - Online Layout static option
+ + ZOOaccess compatibility
+ - Removed ZOO 2.4 compatibility
+ + {zl-siteurl} Tag option renders site url
+ + New order options on Category Tab
+ ^ Compatibility with ZLFW 2.6+
+
+2.5.1
+ ^ ZLFW integration
+ # Auto-newsletter integration fixed
+
+2.5
+ # Category layouts render
+ + Online optional layout
+
+2.4.5
+ # FrontEnd Item Link issue workaround
+
+2.4.4
+ # UserHelper issue workaround
+
+2.4.3
+ # Category list showing IDs instead of names
+
+2.4.2
+ ^ Joomla 1.5 and 1.7 compatibility, merged
+
+2.4.1
+ ^ ZOO strings are now translated
+
+2.4.0
+ Initial Release
+
+* -> Security Fix
+# -> Bug Fix
+$ -> Language fix or change
++ -> Addition
+^ -> Change
+- -> Removed
+! -> Note

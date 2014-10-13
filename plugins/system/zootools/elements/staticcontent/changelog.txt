@@ -1,0 +1,22 @@
+Changelog
+------------
+
+3.1
+ ^ ZLFW 3.1 compatibility
+
+3.0.1
+ # Submission partial compatibility
+
+3.0
+ ^ Moved to ZOOtools Extension
+
+2.5
+ ! Initial Release
+
+* -> Security Fix
+# -> Bug Fix
+$ -> Language fix or change
++ -> Addition
+^ -> Change
+- -> Removed
+! -> Note

@@ -1,0 +1,27 @@
+/* ZOOfilter default form style*/
+
+
+.zoo-filter .form-element-row
+{
+    overflow: hidden;
+    margin-bottom: 3px;
+    padding: 5px;
+}
+
+.zoo-filter label 
+{
+    height: 1em;
+    margin-bottom: 10px;
+	cursor: default;
+}
+
+.zoo-filter input 
+{
+    height: 1em;
+    margin-bottom: 15px;
+	padding: 3px;
+}
+
+.zoo-filter .clearfix {
+    clear: both;
+}

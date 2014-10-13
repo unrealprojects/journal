@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="acymailing" method="upgrade" version="2.5.6" zlfw="3.1">
+	<name>ZOOmailing</name>
+	<author>ZOOlanders</author>
+	<creationDate>November 2010</creationDate>
+	<copyright>Copyright (C) JOOlanders SL</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only</license>
+	<authorEmail>info@zoolanders.com</authorEmail>
+	<authorUrl>http://www.zoolanders.com</authorUrl>
+	<version>3.1.2</version>
+	<description>PLG_ZOOMAILING_SYS_DESCRIPTION</description>
+	<scriptfile>install.script.php</scriptfile>
+	<files>
+		<filename plugin="zoomailing">zoomailing.php</filename>
+		<filename>install.script.php</filename>
+		<filename>index.html</filename>
+		<folder>zoomailing</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_acymailing_zoomailing.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_acymailing_zoomailing.sys.ini</language>
+	</languages>
+	<config addpath="/components/com_acymailing/params">
+		<fields name="params" >
+			<fieldset name="basic">
+				<field name="debug" type="radio" default="0" label="Debug" description="For debuging purposes, disable it for live web projects.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			
+				<field name="displayzoo" type="radio" default="all" label="Display Zoo items" description="Select if you want to display all items in the popup for items selection or only published items">
+					<option value="all">All items</option>
+					<option value="onlypub">Only published items</option>
+				</field>
+				<field name="removepictures" type="radio" default="no" label="Remove pictures" description="Do you want to automatically remove the pictures when including an item in your Newsletter?">
+					<option value="no">No</option>
+					<option value="yes">Yes</option>
+				</field>
+				<field name="removejs" type="radio" default="yes" label="Remove Javascript" description="Do you want to automatically remove the javascript included in your items?">
+					<option value="no">No</option>
+					<option value="yes">Yes</option>
+				</field>
+				<field name="zooaccess" type="radio" default="registered" label="Zoo item Access" description="If you use the automatic article insertion (via the categories tab), AcyMailing will only include items having the selected access in your Newsletter">
+					<option value="public">Public only</option>
+					<option value="registered">Public and Registered</option>
+					<option value="all">All</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

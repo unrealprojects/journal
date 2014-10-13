@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout name="default">
+		<name>Default</name>
+		<description>An item is rendered with the default layout.</description>
+	</layout>
+	<layout name="layout2">
+		<name>Layout 2</name>
+		<description>An item is rendered with the layout 2.</description>
+	</layout>
+	<layout name="layout3">
+		<name>Layout 3</name>
+		<description>An item is rendered with the layout 3.</description>
+	</layout>
+</metadata>

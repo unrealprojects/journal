@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+        <params>
+                <!-- Username / Password -->
+                <param name="username" type="text" default="" size="30"
+                        label="ZLMANAGER_USERNAME"
+                        description ="ZLMANAGER_USERNAME_DESC" />
+                <param name="password" type="password" default="" size="30"
+                        label="ZLMANAGER_PASSWORD"
+                        description ="ZLMANAGER_PASSWORD_DESC" />
+        </params>
+        
+        <!-- Joomla! 1.6... -->
+        
+        <fieldset
+                name="updates"
+                label="ZLMANAGER_UPDATES"
+                description="ZLMANAGER_UPDATES_DESC"
+                >
+                <field name="username" type="text" default="" size="30"
+                        label="ZLMANAGER_USERNAME"
+                        description ="ZLMANAGER_USERNAME_DESC" />
+                <field name="password" type="password" default="" size="30"
+                        label="ZLMANAGER_PASSWORD"
+                        description ="ZLMANAGER_PASSWORD_DESC" />
+        </fieldset>
+
+</config>
