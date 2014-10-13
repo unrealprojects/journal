@@ -1,15 +1,107 @@
+.Content-Wrapper
+{
+	margin-left:				$Sidebar-Width;
+	padding-left:				$Content-Spacing - 85px;
+	padding-right:				$Content-Spacing - 85px;
+	@include 					Adaptive($Viewport-SM)
+	{
+		padding-left:				$Content-Spacing - 75px;
+		padding-right:				$Content-Spacing - 75px;
+	}
+	@include 					Adaptive($Viewport-MD)
+	{
+		padding-left:				$Content-Spacing - 50px;
+		padding-right:				$Content-Spacing - 50px;
+	}
+
+	min-width: 					1000px;
+}
+
 main
 {
-	padding-left: 				$Content-Spacing;
-	margin-right: 				$Content-Spacing;
-	@extend 					%Push-Left;
 }
 
 
-.page
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// About
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.About
 {
-	@extend %Fix;
+	@extend 					%Content-Block;
+	.About-Content
+	{
+		float: 					left;
+		display: 				inline-block;
+		width: 					40%;
+		padding-right: 			30px;
+		@include 				Adaptive($Viewport-SM)
+		{
+			width:				50%;
+		}
+		@include 				Adaptive($Viewport-MD)
+		{
+			width:				60%;
+		}
+		h1
+		{
+			@extend 			%Heading-Section;
+			margin-bottom:		20px;
+		}
+		h4
+		{
+			margin-bottom:		20px;
+		}
+	}
+	.About-Image
+	{
+		width: 					60%;
+		float:					right;
+		display: 				inline-block;
+		@include 				Adaptive($Viewport-SM)
+		{
+			width:				50%;
+		}
+		@include 				Adaptive($Viewport-MD)
+		{
+			width:				40%;
+		}
+		img
+		{
+			width: 				100%;
+		}
+	}
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Tags
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.Tags
+{
+	h3
+	{
+		@extend 				%Heading-Section;
+		@extend 				%Heading-Section-Spacing;
+	}
+	ul.zoo-list
+	{
+		li:nth-child(odd)
+		{
+			a
+			{
+
+			}
+		}
+	}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 .pos-title
 {
 	position: relative;
