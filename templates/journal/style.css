@@ -41,247 +41,85 @@
   float: right; }
 
 @media screen and (min-width: 1px) {
-  [class*='Grid'].Merge > .Node-XXS-1-2 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-XXS-1-2 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-XXS-2-2 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XXS-2-2 {
-    width: 90%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XXS-1-3 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-XXS-1-3 {
-    width: 28.33333%; }
-
-  [class*='Grid'].Merge > .Node-XXS-2-3 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-XXS-2-3 {
-    width: 56.66667%; }
-
-  [class*='Grid'].Merge > .Node-XXS-3-3 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XXS-3-3 {
-    width: 85%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XXS-1-4 {
-    width: 25%; }
-
-  [class*='Grid'].Split > .Node-XXS-1-4 {
-    width: 20%; }
-
-  [class*='Grid'].Merge > .Node-XXS-2-4 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-XXS-2-4 {
-    width: 40%; }
-
-  [class*='Grid'].Merge > .Node-XXS-3-4 {
-    width: 75%; }
-
-  [class*='Grid'].Split > .Node-XXS-3-4 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-XXS-4-4 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XXS-4-4 {
-    width: 80%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XXS-1-5 {
-    width: 20%; }
-
-  [class*='Grid'].Split > .Node-XXS-1-5 {
-    width: 15%; }
-
-  [class*='Grid'].Merge > .Node-XXS-2-5 {
-    width: 40%; }
-
-  [class*='Grid'].Split > .Node-XXS-2-5 {
-    width: 30%; }
-
-  [class*='Grid'].Merge > .Node-XXS-3-5 {
-    width: 60%; }
-
-  [class*='Grid'].Split > .Node-XXS-3-5 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-XXS-4-5 {
-    width: 80%; }
-
-  [class*='Grid'].Split > .Node-XXS-4-5 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-XXS-5-5 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XXS-5-5 {
-    width: 75%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XXS-1-6 {
-    width: 16.66667%; }
-
-  [class*='Grid'].Split > .Node-XXS-1-6 {
-    width: 11.66667%; }
-
-  [class*='Grid'].Merge > .Node-XXS-2-6 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-XXS-2-6 {
-    width: 23.33333%; }
-
-  [class*='Grid'].Merge > .Node-XXS-3-6 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-XXS-3-6 {
-    width: 35%; }
-
-  [class*='Grid'].Merge > .Node-XXS-4-6 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-XXS-4-6 {
-    width: 46.66667%; }
-
-  [class*='Grid'].Merge > .Node-XXS-5-6 {
-    width: 83.33333%; }
-
-  [class*='Grid'].Split > .Node-XXS-5-6 {
-    width: 58.33333%; }
-
-  [class*='Grid'].Merge > .Node-XXS-6-6 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XXS-6-6 {
-    width: 70%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XXS-1-7 {
-    width: 14.28571%; }
-
-  [class*='Grid'].Split > .Node-XXS-1-7 {
-    width: 9.28571%; }
-
-  [class*='Grid'].Merge > .Node-XXS-2-7 {
-    width: 28.57143%; }
-
-  [class*='Grid'].Split > .Node-XXS-2-7 {
-    width: 18.57143%; }
-
-  [class*='Grid'].Merge > .Node-XXS-3-7 {
-    width: 42.85714%; }
-
-  [class*='Grid'].Split > .Node-XXS-3-7 {
-    width: 27.85714%; }
-
-  [class*='Grid'].Merge > .Node-XXS-4-7 {
-    width: 57.14286%; }
-
-  [class*='Grid'].Split > .Node-XXS-4-7 {
-    width: 37.14286%; }
-
-  [class*='Grid'].Merge > .Node-XXS-5-7 {
-    width: 71.42857%; }
-
-  [class*='Grid'].Split > .Node-XXS-5-7 {
-    width: 46.42857%; }
-
-  [class*='Grid'].Merge > .Node-XXS-6-7 {
-    width: 85.71429%; }
-
-  [class*='Grid'].Split > .Node-XXS-6-7 {
-    width: 55.71429%; }
-
-  [class*='Grid'].Merge > .Node-XXS-7-7 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XXS-7-7 {
-    width: 65%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  .Merge > .Node-XXS-1 {
+  .Merge > .Node-XXS-1,
+  .Control-Group > .Node-XXS-1 {
     width: 8.33333%; }
 
   [class*='Grid'].Split > .Node-XXS-1 {
     width: 3.75%; }
 
-  .Merge > .Node-XXS-2 {
+  .Merge > .Node-XXS-2,
+  .Control-Group > .Node-XXS-2 {
     width: 16.66667%; }
 
   [class*='Grid'].Split > .Node-XXS-2 {
     width: 12.5%; }
 
-  .Merge > .Node-XXS-3 {
+  .Merge > .Node-XXS-3,
+  .Control-Group > .Node-XXS-3 {
     width: 25%; }
 
   [class*='Grid'].Split > .Node-XXS-3 {
     width: 21.25%; }
 
-  .Merge > .Node-XXS-4 {
+  .Merge > .Node-XXS-4,
+  .Control-Group > .Node-XXS-4 {
     width: 33.33333%; }
 
   [class*='Grid'].Split > .Node-XXS-4 {
     width: 30%; }
 
-  .Merge > .Node-XXS-5 {
+  .Merge > .Node-XXS-5,
+  .Control-Group > .Node-XXS-5 {
     width: 41.66667%; }
 
   [class*='Grid'].Split > .Node-XXS-5 {
     width: 38.75%; }
 
-  .Merge > .Node-XXS-6 {
+  .Merge > .Node-XXS-6,
+  .Control-Group > .Node-XXS-6 {
     width: 50%; }
 
   [class*='Grid'].Split > .Node-XXS-6 {
     width: 47.5%; }
 
-  .Merge > .Node-XXS-7 {
+  .Merge > .Node-XXS-7,
+  .Control-Group > .Node-XXS-7 {
     width: 58.33333%; }
 
   [class*='Grid'].Split > .Node-XXS-7 {
     width: 56.25%; }
 
-  .Merge > .Node-XXS-8 {
+  .Merge > .Node-XXS-8,
+  .Control-Group > .Node-XXS-8 {
     width: 66.66667%; }
 
   [class*='Grid'].Split > .Node-XXS-8 {
     width: 65%; }
 
-  .Merge > .Node-XXS-9 {
+  .Merge > .Node-XXS-9,
+  .Control-Group > .Node-XXS-9 {
     width: 75%; }
 
   [class*='Grid'].Split > .Node-XXS-9 {
     width: 73.75%; }
 
-  .Merge > .Node-XXS-10 {
+  .Merge > .Node-XXS-10,
+  .Control-Group > .Node-XXS-10 {
     width: 83.33333%; }
 
   [class*='Grid'].Split > .Node-XXS-10 {
     width: 82.5%; }
 
-  .Merge > .Node-XXS-11 {
+  .Merge > .Node-XXS-11,
+  .Control-Group > .Node-XXS-11 {
     width: 91.66667%; }
 
   [class*='Grid'].Split > .Node-XXS-11 {
     width: 91.25%; }
 
-  .Merge > .Node-XXS-12 {
+  .Merge > .Node-XXS-12,
+  .Control-Group > .Node-XXS-12 {
     width: 100%; }
 
   [class*='Grid'].Split > .Node-XXS-12 {
@@ -289,247 +127,87 @@
     margin-left: 0;
     margin-right: 0; } }
 @media screen and (min-width: 768px) {
-  [class*='Grid'].Merge > .Node-XS-1-2 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-XS-1-2 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-XS-2-2 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XS-2-2 {
-    width: 90%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XS-1-3 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-XS-1-3 {
-    width: 28.33333%; }
-
-  [class*='Grid'].Merge > .Node-XS-2-3 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-XS-2-3 {
-    width: 56.66667%; }
-
-  [class*='Grid'].Merge > .Node-XS-3-3 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XS-3-3 {
-    width: 85%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XS-1-4 {
-    width: 25%; }
-
-  [class*='Grid'].Split > .Node-XS-1-4 {
-    width: 20%; }
-
-  [class*='Grid'].Merge > .Node-XS-2-4 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-XS-2-4 {
-    width: 40%; }
-
-  [class*='Grid'].Merge > .Node-XS-3-4 {
-    width: 75%; }
-
-  [class*='Grid'].Split > .Node-XS-3-4 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-XS-4-4 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XS-4-4 {
-    width: 80%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XS-1-5 {
-    width: 20%; }
-
-  [class*='Grid'].Split > .Node-XS-1-5 {
-    width: 15%; }
-
-  [class*='Grid'].Merge > .Node-XS-2-5 {
-    width: 40%; }
-
-  [class*='Grid'].Split > .Node-XS-2-5 {
-    width: 30%; }
-
-  [class*='Grid'].Merge > .Node-XS-3-5 {
-    width: 60%; }
-
-  [class*='Grid'].Split > .Node-XS-3-5 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-XS-4-5 {
-    width: 80%; }
-
-  [class*='Grid'].Split > .Node-XS-4-5 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-XS-5-5 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XS-5-5 {
-    width: 75%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XS-1-6 {
-    width: 16.66667%; }
-
-  [class*='Grid'].Split > .Node-XS-1-6 {
-    width: 11.66667%; }
-
-  [class*='Grid'].Merge > .Node-XS-2-6 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-XS-2-6 {
-    width: 23.33333%; }
-
-  [class*='Grid'].Merge > .Node-XS-3-6 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-XS-3-6 {
-    width: 35%; }
-
-  [class*='Grid'].Merge > .Node-XS-4-6 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-XS-4-6 {
-    width: 46.66667%; }
-
-  [class*='Grid'].Merge > .Node-XS-5-6 {
-    width: 83.33333%; }
-
-  [class*='Grid'].Split > .Node-XS-5-6 {
-    width: 58.33333%; }
-
-  [class*='Grid'].Merge > .Node-XS-6-6 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XS-6-6 {
-    width: 70%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-XS-1-7 {
-    width: 14.28571%; }
-
-  [class*='Grid'].Split > .Node-XS-1-7 {
-    width: 9.28571%; }
-
-  [class*='Grid'].Merge > .Node-XS-2-7 {
-    width: 28.57143%; }
-
-  [class*='Grid'].Split > .Node-XS-2-7 {
-    width: 18.57143%; }
-
-  [class*='Grid'].Merge > .Node-XS-3-7 {
-    width: 42.85714%; }
-
-  [class*='Grid'].Split > .Node-XS-3-7 {
-    width: 27.85714%; }
-
-  [class*='Grid'].Merge > .Node-XS-4-7 {
-    width: 57.14286%; }
-
-  [class*='Grid'].Split > .Node-XS-4-7 {
-    width: 37.14286%; }
-
-  [class*='Grid'].Merge > .Node-XS-5-7 {
-    width: 71.42857%; }
-
-  [class*='Grid'].Split > .Node-XS-5-7 {
-    width: 46.42857%; }
-
-  [class*='Grid'].Merge > .Node-XS-6-7 {
-    width: 85.71429%; }
-
-  [class*='Grid'].Split > .Node-XS-6-7 {
-    width: 55.71429%; }
-
-  [class*='Grid'].Merge > .Node-XS-7-7 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-XS-7-7 {
-    width: 65%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  .Merge > .Node-XS-1 {
+  .Merge > .Node-XS-1,
+  .Control-Group > .Node-XS-1 {
     width: 8.33333%; }
 
   [class*='Grid'].Split > .Node-XS-1 {
     width: 3.75%; }
 
-  .Merge > .Node-XS-2 {
+  .Merge > .Node-XS-2,
+  .Control-Group > .Node-XS-2 {
     width: 16.66667%; }
 
   [class*='Grid'].Split > .Node-XS-2 {
     width: 12.5%; }
 
-  .Merge > .Node-XS-3 {
+  .Merge > .Node-XS-3,
+  .Control-Group > .Node-XS-3 {
     width: 25%; }
 
   [class*='Grid'].Split > .Node-XS-3 {
     width: 21.25%; }
 
-  .Merge > .Node-XS-4 {
+  .Merge > .Node-XS-4,
+  .Control-Group > .Node-XS-4 {
     width: 33.33333%; }
 
   [class*='Grid'].Split > .Node-XS-4 {
     width: 30%; }
 
-  .Merge > .Node-XS-5 {
+  .Merge > .Node-XS-5,
+  .Control-Group > .Node-XS-5 {
     width: 41.66667%; }
 
   [class*='Grid'].Split > .Node-XS-5 {
     width: 38.75%; }
 
-  .Merge > .Node-XS-6, body[data-page=home] .Merge > .teaser-item {
+  .Merge > .Node-XS-6, body[data-page=home] .Merge > .teaser-item,
+  .Control-Group > .Node-XS-6,
+  body[data-page=home] .Control-Group > .teaser-item {
     width: 50%; }
 
   [class*='Grid'].Split > .Node-XS-6, body[data-page=home] [class*='Grid'].Split > .teaser-item {
     width: 47.5%; }
 
-  .Merge > .Node-XS-7 {
+  .Merge > .Node-XS-7,
+  .Control-Group > .Node-XS-7 {
     width: 58.33333%; }
 
   [class*='Grid'].Split > .Node-XS-7 {
     width: 56.25%; }
 
-  .Merge > .Node-XS-8 {
+  .Merge > .Node-XS-8,
+  .Control-Group > .Node-XS-8 {
     width: 66.66667%; }
 
   [class*='Grid'].Split > .Node-XS-8 {
     width: 65%; }
 
-  .Merge > .Node-XS-9 {
+  .Merge > .Node-XS-9,
+  .Control-Group > .Node-XS-9 {
     width: 75%; }
 
   [class*='Grid'].Split > .Node-XS-9 {
     width: 73.75%; }
 
-  .Merge > .Node-XS-10 {
+  .Merge > .Node-XS-10,
+  .Control-Group > .Node-XS-10 {
     width: 83.33333%; }
 
   [class*='Grid'].Split > .Node-XS-10 {
     width: 82.5%; }
 
-  .Merge > .Node-XS-11 {
+  .Merge > .Node-XS-11,
+  .Control-Group > .Node-XS-11 {
     width: 91.66667%; }
 
   [class*='Grid'].Split > .Node-XS-11 {
     width: 91.25%; }
 
-  .Merge > .Node-XS-12, body[data-page=list] .Merge > .teaser-item {
+  .Merge > .Node-XS-12, body[data-page=list] .Merge > .teaser-item,
+  .Control-Group > .Node-XS-12,
+  body[data-page=list] .Control-Group > .teaser-item {
     width: 100%; }
 
   [class*='Grid'].Split > .Node-XS-12, body[data-page=list] [class*='Grid'].Split > .teaser-item {
@@ -537,247 +215,85 @@
     margin-left: 0;
     margin-right: 0; } }
 @media screen and (min-width: 1024px) {
-  [class*='Grid'].Merge > .Node-SM-1-2 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-SM-1-2 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-SM-2-2 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-SM-2-2 {
-    width: 90%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-SM-1-3 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-SM-1-3 {
-    width: 28.33333%; }
-
-  [class*='Grid'].Merge > .Node-SM-2-3 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-SM-2-3 {
-    width: 56.66667%; }
-
-  [class*='Grid'].Merge > .Node-SM-3-3 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-SM-3-3 {
-    width: 85%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-SM-1-4 {
-    width: 25%; }
-
-  [class*='Grid'].Split > .Node-SM-1-4 {
-    width: 20%; }
-
-  [class*='Grid'].Merge > .Node-SM-2-4 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-SM-2-4 {
-    width: 40%; }
-
-  [class*='Grid'].Merge > .Node-SM-3-4 {
-    width: 75%; }
-
-  [class*='Grid'].Split > .Node-SM-3-4 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-SM-4-4 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-SM-4-4 {
-    width: 80%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-SM-1-5 {
-    width: 20%; }
-
-  [class*='Grid'].Split > .Node-SM-1-5 {
-    width: 15%; }
-
-  [class*='Grid'].Merge > .Node-SM-2-5 {
-    width: 40%; }
-
-  [class*='Grid'].Split > .Node-SM-2-5 {
-    width: 30%; }
-
-  [class*='Grid'].Merge > .Node-SM-3-5 {
-    width: 60%; }
-
-  [class*='Grid'].Split > .Node-SM-3-5 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-SM-4-5 {
-    width: 80%; }
-
-  [class*='Grid'].Split > .Node-SM-4-5 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-SM-5-5 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-SM-5-5 {
-    width: 75%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-SM-1-6 {
-    width: 16.66667%; }
-
-  [class*='Grid'].Split > .Node-SM-1-6 {
-    width: 11.66667%; }
-
-  [class*='Grid'].Merge > .Node-SM-2-6 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-SM-2-6 {
-    width: 23.33333%; }
-
-  [class*='Grid'].Merge > .Node-SM-3-6 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-SM-3-6 {
-    width: 35%; }
-
-  [class*='Grid'].Merge > .Node-SM-4-6 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-SM-4-6 {
-    width: 46.66667%; }
-
-  [class*='Grid'].Merge > .Node-SM-5-6 {
-    width: 83.33333%; }
-
-  [class*='Grid'].Split > .Node-SM-5-6 {
-    width: 58.33333%; }
-
-  [class*='Grid'].Merge > .Node-SM-6-6 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-SM-6-6 {
-    width: 70%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-SM-1-7 {
-    width: 14.28571%; }
-
-  [class*='Grid'].Split > .Node-SM-1-7 {
-    width: 9.28571%; }
-
-  [class*='Grid'].Merge > .Node-SM-2-7 {
-    width: 28.57143%; }
-
-  [class*='Grid'].Split > .Node-SM-2-7 {
-    width: 18.57143%; }
-
-  [class*='Grid'].Merge > .Node-SM-3-7 {
-    width: 42.85714%; }
-
-  [class*='Grid'].Split > .Node-SM-3-7 {
-    width: 27.85714%; }
-
-  [class*='Grid'].Merge > .Node-SM-4-7 {
-    width: 57.14286%; }
-
-  [class*='Grid'].Split > .Node-SM-4-7 {
-    width: 37.14286%; }
-
-  [class*='Grid'].Merge > .Node-SM-5-7 {
-    width: 71.42857%; }
-
-  [class*='Grid'].Split > .Node-SM-5-7 {
-    width: 46.42857%; }
-
-  [class*='Grid'].Merge > .Node-SM-6-7 {
-    width: 85.71429%; }
-
-  [class*='Grid'].Split > .Node-SM-6-7 {
-    width: 55.71429%; }
-
-  [class*='Grid'].Merge > .Node-SM-7-7 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-SM-7-7 {
-    width: 65%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  .Merge > .Node-SM-1 {
+  .Merge > .Node-SM-1,
+  .Control-Group > .Node-SM-1 {
     width: 8.33333%; }
 
   [class*='Grid'].Split > .Node-SM-1 {
     width: 3.75%; }
 
-  .Merge > .Node-SM-2 {
+  .Merge > .Node-SM-2,
+  .Control-Group > .Node-SM-2 {
     width: 16.66667%; }
 
   [class*='Grid'].Split > .Node-SM-2 {
     width: 12.5%; }
 
-  .Merge > .Node-SM-3 {
+  .Merge > .Node-SM-3,
+  .Control-Group > .Node-SM-3 {
     width: 25%; }
 
   [class*='Grid'].Split > .Node-SM-3 {
     width: 21.25%; }
 
-  .Merge > .Node-SM-4 {
+  .Merge > .Node-SM-4,
+  .Control-Group > .Node-SM-4 {
     width: 33.33333%; }
 
   [class*='Grid'].Split > .Node-SM-4 {
     width: 30%; }
 
-  .Merge > .Node-SM-5 {
+  .Merge > .Node-SM-5,
+  .Control-Group > .Node-SM-5 {
     width: 41.66667%; }
 
   [class*='Grid'].Split > .Node-SM-5 {
     width: 38.75%; }
 
-  .Merge > .Node-SM-6 {
+  .Merge > .Node-SM-6,
+  .Control-Group > .Node-SM-6 {
     width: 50%; }
 
   [class*='Grid'].Split > .Node-SM-6 {
     width: 47.5%; }
 
-  .Merge > .Node-SM-7 {
+  .Merge > .Node-SM-7,
+  .Control-Group > .Node-SM-7 {
     width: 58.33333%; }
 
   [class*='Grid'].Split > .Node-SM-7 {
     width: 56.25%; }
 
-  .Merge > .Node-SM-8 {
+  .Merge > .Node-SM-8,
+  .Control-Group > .Node-SM-8 {
     width: 66.66667%; }
 
   [class*='Grid'].Split > .Node-SM-8 {
     width: 65%; }
 
-  .Merge > .Node-SM-9 {
+  .Merge > .Node-SM-9,
+  .Control-Group > .Node-SM-9 {
     width: 75%; }
 
   [class*='Grid'].Split > .Node-SM-9 {
     width: 73.75%; }
 
-  .Merge > .Node-SM-10 {
+  .Merge > .Node-SM-10,
+  .Control-Group > .Node-SM-10 {
     width: 83.33333%; }
 
   [class*='Grid'].Split > .Node-SM-10 {
     width: 82.5%; }
 
-  .Merge > .Node-SM-11 {
+  .Merge > .Node-SM-11,
+  .Control-Group > .Node-SM-11 {
     width: 91.66667%; }
 
   [class*='Grid'].Split > .Node-SM-11 {
     width: 91.25%; }
 
-  .Merge > .Node-SM-12 {
+  .Merge > .Node-SM-12,
+  .Control-Group > .Node-SM-12 {
     width: 100%; }
 
   [class*='Grid'].Split > .Node-SM-12 {
@@ -785,247 +301,87 @@
     margin-left: 0;
     margin-right: 0; } }
 @media screen and (min-width: 1260px) {
-  [class*='Grid'].Merge > .Node-MD-1-2 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-MD-1-2 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-MD-2-2 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-MD-2-2 {
-    width: 90%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-MD-1-3 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-MD-1-3 {
-    width: 28.33333%; }
-
-  [class*='Grid'].Merge > .Node-MD-2-3 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-MD-2-3 {
-    width: 56.66667%; }
-
-  [class*='Grid'].Merge > .Node-MD-3-3 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-MD-3-3 {
-    width: 85%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-MD-1-4 {
-    width: 25%; }
-
-  [class*='Grid'].Split > .Node-MD-1-4 {
-    width: 20%; }
-
-  [class*='Grid'].Merge > .Node-MD-2-4 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-MD-2-4 {
-    width: 40%; }
-
-  [class*='Grid'].Merge > .Node-MD-3-4 {
-    width: 75%; }
-
-  [class*='Grid'].Split > .Node-MD-3-4 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-MD-4-4 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-MD-4-4 {
-    width: 80%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-MD-1-5 {
-    width: 20%; }
-
-  [class*='Grid'].Split > .Node-MD-1-5 {
-    width: 15%; }
-
-  [class*='Grid'].Merge > .Node-MD-2-5 {
-    width: 40%; }
-
-  [class*='Grid'].Split > .Node-MD-2-5 {
-    width: 30%; }
-
-  [class*='Grid'].Merge > .Node-MD-3-5 {
-    width: 60%; }
-
-  [class*='Grid'].Split > .Node-MD-3-5 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-MD-4-5 {
-    width: 80%; }
-
-  [class*='Grid'].Split > .Node-MD-4-5 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-MD-5-5 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-MD-5-5 {
-    width: 75%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-MD-1-6 {
-    width: 16.66667%; }
-
-  [class*='Grid'].Split > .Node-MD-1-6 {
-    width: 11.66667%; }
-
-  [class*='Grid'].Merge > .Node-MD-2-6 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-MD-2-6 {
-    width: 23.33333%; }
-
-  [class*='Grid'].Merge > .Node-MD-3-6 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-MD-3-6 {
-    width: 35%; }
-
-  [class*='Grid'].Merge > .Node-MD-4-6 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-MD-4-6 {
-    width: 46.66667%; }
-
-  [class*='Grid'].Merge > .Node-MD-5-6 {
-    width: 83.33333%; }
-
-  [class*='Grid'].Split > .Node-MD-5-6 {
-    width: 58.33333%; }
-
-  [class*='Grid'].Merge > .Node-MD-6-6 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-MD-6-6 {
-    width: 70%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-MD-1-7 {
-    width: 14.28571%; }
-
-  [class*='Grid'].Split > .Node-MD-1-7 {
-    width: 9.28571%; }
-
-  [class*='Grid'].Merge > .Node-MD-2-7 {
-    width: 28.57143%; }
-
-  [class*='Grid'].Split > .Node-MD-2-7 {
-    width: 18.57143%; }
-
-  [class*='Grid'].Merge > .Node-MD-3-7 {
-    width: 42.85714%; }
-
-  [class*='Grid'].Split > .Node-MD-3-7 {
-    width: 27.85714%; }
-
-  [class*='Grid'].Merge > .Node-MD-4-7 {
-    width: 57.14286%; }
-
-  [class*='Grid'].Split > .Node-MD-4-7 {
-    width: 37.14286%; }
-
-  [class*='Grid'].Merge > .Node-MD-5-7 {
-    width: 71.42857%; }
-
-  [class*='Grid'].Split > .Node-MD-5-7 {
-    width: 46.42857%; }
-
-  [class*='Grid'].Merge > .Node-MD-6-7 {
-    width: 85.71429%; }
-
-  [class*='Grid'].Split > .Node-MD-6-7 {
-    width: 55.71429%; }
-
-  [class*='Grid'].Merge > .Node-MD-7-7 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-MD-7-7 {
-    width: 65%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  .Merge > .Node-MD-1 {
+  .Merge > .Node-MD-1,
+  .Control-Group > .Node-MD-1 {
     width: 8.33333%; }
 
   [class*='Grid'].Split > .Node-MD-1 {
     width: 3.75%; }
 
-  .Merge > .Node-MD-2 {
+  .Merge > .Node-MD-2,
+  .Control-Group > .Node-MD-2 {
     width: 16.66667%; }
 
   [class*='Grid'].Split > .Node-MD-2 {
     width: 12.5%; }
 
-  .Merge > .Node-MD-3 {
+  .Merge > .Node-MD-3,
+  .Control-Group > .Node-MD-3 {
     width: 25%; }
 
   [class*='Grid'].Split > .Node-MD-3 {
     width: 21.25%; }
 
-  .Merge > .Node-MD-4, body[data-page=home] .Merge > .teaser-item {
+  .Merge > .Node-MD-4, body[data-page=home] .Merge > .teaser-item,
+  .Control-Group > .Node-MD-4,
+  body[data-page=home] .Control-Group > .teaser-item {
     width: 33.33333%; }
 
   [class*='Grid'].Split > .Node-MD-4, body[data-page=home] [class*='Grid'].Split > .teaser-item {
     width: 30%; }
 
-  .Merge > .Node-MD-5 {
+  .Merge > .Node-MD-5,
+  .Control-Group > .Node-MD-5 {
     width: 41.66667%; }
 
   [class*='Grid'].Split > .Node-MD-5 {
     width: 38.75%; }
 
-  .Merge > .Node-MD-6, body[data-page=list] .Merge > .teaser-item {
+  .Merge > .Node-MD-6, body[data-page=list] .Merge > .teaser-item,
+  .Control-Group > .Node-MD-6,
+  body[data-page=list] .Control-Group > .teaser-item {
     width: 50%; }
 
   [class*='Grid'].Split > .Node-MD-6, body[data-page=list] [class*='Grid'].Split > .teaser-item {
     width: 47.5%; }
 
-  .Merge > .Node-MD-7 {
+  .Merge > .Node-MD-7,
+  .Control-Group > .Node-MD-7 {
     width: 58.33333%; }
 
   [class*='Grid'].Split > .Node-MD-7 {
     width: 56.25%; }
 
-  .Merge > .Node-MD-8 {
+  .Merge > .Node-MD-8,
+  .Control-Group > .Node-MD-8 {
     width: 66.66667%; }
 
   [class*='Grid'].Split > .Node-MD-8 {
     width: 65%; }
 
-  .Merge > .Node-MD-9 {
+  .Merge > .Node-MD-9,
+  .Control-Group > .Node-MD-9 {
     width: 75%; }
 
   [class*='Grid'].Split > .Node-MD-9 {
     width: 73.75%; }
 
-  .Merge > .Node-MD-10 {
+  .Merge > .Node-MD-10,
+  .Control-Group > .Node-MD-10 {
     width: 83.33333%; }
 
   [class*='Grid'].Split > .Node-MD-10 {
     width: 82.5%; }
 
-  .Merge > .Node-MD-11 {
+  .Merge > .Node-MD-11,
+  .Control-Group > .Node-MD-11 {
     width: 91.66667%; }
 
   [class*='Grid'].Split > .Node-MD-11 {
     width: 91.25%; }
 
-  .Merge > .Node-MD-12 {
+  .Merge > .Node-MD-12,
+  .Control-Group > .Node-MD-12 {
     width: 100%; }
 
   [class*='Grid'].Split > .Node-MD-12 {
@@ -1033,247 +389,85 @@
     margin-left: 0;
     margin-right: 0; } }
 @media screen and (min-width: 1880px) {
-  [class*='Grid'].Merge > .Node-LR-1-2 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-LR-1-2 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-LR-2-2 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-LR-2-2 {
-    width: 90%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-LR-1-3 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-LR-1-3 {
-    width: 28.33333%; }
-
-  [class*='Grid'].Merge > .Node-LR-2-3 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-LR-2-3 {
-    width: 56.66667%; }
-
-  [class*='Grid'].Merge > .Node-LR-3-3 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-LR-3-3 {
-    width: 85%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-LR-1-4 {
-    width: 25%; }
-
-  [class*='Grid'].Split > .Node-LR-1-4 {
-    width: 20%; }
-
-  [class*='Grid'].Merge > .Node-LR-2-4 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-LR-2-4 {
-    width: 40%; }
-
-  [class*='Grid'].Merge > .Node-LR-3-4 {
-    width: 75%; }
-
-  [class*='Grid'].Split > .Node-LR-3-4 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-LR-4-4 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-LR-4-4 {
-    width: 80%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-LR-1-5 {
-    width: 20%; }
-
-  [class*='Grid'].Split > .Node-LR-1-5 {
-    width: 15%; }
-
-  [class*='Grid'].Merge > .Node-LR-2-5 {
-    width: 40%; }
-
-  [class*='Grid'].Split > .Node-LR-2-5 {
-    width: 30%; }
-
-  [class*='Grid'].Merge > .Node-LR-3-5 {
-    width: 60%; }
-
-  [class*='Grid'].Split > .Node-LR-3-5 {
-    width: 45%; }
-
-  [class*='Grid'].Merge > .Node-LR-4-5 {
-    width: 80%; }
-
-  [class*='Grid'].Split > .Node-LR-4-5 {
-    width: 60%; }
-
-  [class*='Grid'].Merge > .Node-LR-5-5 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-LR-5-5 {
-    width: 75%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-LR-1-6 {
-    width: 16.66667%; }
-
-  [class*='Grid'].Split > .Node-LR-1-6 {
-    width: 11.66667%; }
-
-  [class*='Grid'].Merge > .Node-LR-2-6 {
-    width: 33.33333%; }
-
-  [class*='Grid'].Split > .Node-LR-2-6 {
-    width: 23.33333%; }
-
-  [class*='Grid'].Merge > .Node-LR-3-6 {
-    width: 50%; }
-
-  [class*='Grid'].Split > .Node-LR-3-6 {
-    width: 35%; }
-
-  [class*='Grid'].Merge > .Node-LR-4-6 {
-    width: 66.66667%; }
-
-  [class*='Grid'].Split > .Node-LR-4-6 {
-    width: 46.66667%; }
-
-  [class*='Grid'].Merge > .Node-LR-5-6 {
-    width: 83.33333%; }
-
-  [class*='Grid'].Split > .Node-LR-5-6 {
-    width: 58.33333%; }
-
-  [class*='Grid'].Merge > .Node-LR-6-6 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-LR-6-6 {
-    width: 70%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  [class*='Grid'].Merge > .Node-LR-1-7 {
-    width: 14.28571%; }
-
-  [class*='Grid'].Split > .Node-LR-1-7 {
-    width: 9.28571%; }
-
-  [class*='Grid'].Merge > .Node-LR-2-7 {
-    width: 28.57143%; }
-
-  [class*='Grid'].Split > .Node-LR-2-7 {
-    width: 18.57143%; }
-
-  [class*='Grid'].Merge > .Node-LR-3-7 {
-    width: 42.85714%; }
-
-  [class*='Grid'].Split > .Node-LR-3-7 {
-    width: 27.85714%; }
-
-  [class*='Grid'].Merge > .Node-LR-4-7 {
-    width: 57.14286%; }
-
-  [class*='Grid'].Split > .Node-LR-4-7 {
-    width: 37.14286%; }
-
-  [class*='Grid'].Merge > .Node-LR-5-7 {
-    width: 71.42857%; }
-
-  [class*='Grid'].Split > .Node-LR-5-7 {
-    width: 46.42857%; }
-
-  [class*='Grid'].Merge > .Node-LR-6-7 {
-    width: 85.71429%; }
-
-  [class*='Grid'].Split > .Node-LR-6-7 {
-    width: 55.71429%; }
-
-  [class*='Grid'].Merge > .Node-LR-7-7 {
-    width: 100%; }
-
-  [class*='Grid'].Split > .Node-LR-7-7 {
-    width: 65%;
-    margin-left: 0;
-    margin-right: 0; }
-
-  .Merge > .Node-LR-1 {
+  .Merge > .Node-LR-1,
+  .Control-Group > .Node-LR-1 {
     width: 8.33333%; }
 
   [class*='Grid'].Split > .Node-LR-1 {
     width: 3.75%; }
 
-  .Merge > .Node-LR-2 {
+  .Merge > .Node-LR-2,
+  .Control-Group > .Node-LR-2 {
     width: 16.66667%; }
 
   [class*='Grid'].Split > .Node-LR-2 {
     width: 12.5%; }
 
-  .Merge > .Node-LR-3 {
+  .Merge > .Node-LR-3,
+  .Control-Group > .Node-LR-3 {
     width: 25%; }
 
   [class*='Grid'].Split > .Node-LR-3 {
     width: 21.25%; }
 
-  .Merge > .Node-LR-4 {
+  .Merge > .Node-LR-4,
+  .Control-Group > .Node-LR-4 {
     width: 33.33333%; }
 
   [class*='Grid'].Split > .Node-LR-4 {
     width: 30%; }
 
-  .Merge > .Node-LR-5 {
+  .Merge > .Node-LR-5,
+  .Control-Group > .Node-LR-5 {
     width: 41.66667%; }
 
   [class*='Grid'].Split > .Node-LR-5 {
     width: 38.75%; }
 
-  .Merge > .Node-LR-6 {
+  .Merge > .Node-LR-6,
+  .Control-Group > .Node-LR-6 {
     width: 50%; }
 
   [class*='Grid'].Split > .Node-LR-6 {
     width: 47.5%; }
 
-  .Merge > .Node-LR-7 {
+  .Merge > .Node-LR-7,
+  .Control-Group > .Node-LR-7 {
     width: 58.33333%; }
 
   [class*='Grid'].Split > .Node-LR-7 {
     width: 56.25%; }
 
-  .Merge > .Node-LR-8 {
+  .Merge > .Node-LR-8,
+  .Control-Group > .Node-LR-8 {
     width: 66.66667%; }
 
   [class*='Grid'].Split > .Node-LR-8 {
     width: 65%; }
 
-  .Merge > .Node-LR-9 {
+  .Merge > .Node-LR-9,
+  .Control-Group > .Node-LR-9 {
     width: 75%; }
 
   [class*='Grid'].Split > .Node-LR-9 {
     width: 73.75%; }
 
-  .Merge > .Node-LR-10 {
+  .Merge > .Node-LR-10,
+  .Control-Group > .Node-LR-10 {
     width: 83.33333%; }
 
   [class*='Grid'].Split > .Node-LR-10 {
     width: 82.5%; }
 
-  .Merge > .Node-LR-11 {
+  .Merge > .Node-LR-11,
+  .Control-Group > .Node-LR-11 {
     width: 91.66667%; }
 
   [class*='Grid'].Split > .Node-LR-11 {
     width: 91.25%; }
 
-  .Merge > .Node-LR-12 {
+  .Merge > .Node-LR-12,
+  .Control-Group > .Node-LR-12 {
     width: 100%; }
 
   [class*='Grid'].Split > .Node-LR-12 {
@@ -1366,25 +560,27 @@ table.Adaptive .Caption,
 .Row-Close {
   margin-right: 0 !important; }
 
-.About .About-Content h1, .Tags h3, .yoo-zoo .details .heading h1.title, .Projects .Projects-Header, h1.title, .Dropdown-Title, .item-page h2, .tag-title {
+.About .About-Content h1, .Tags h3, .yoo-zoo .details .heading h1.title, .k2ProfileHeading, .Projects .Projects-Header, h1.title, .Dropdown-Title, .item-page h2, .tag-title, label {
   user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none; }
 
-a, input,
+label.Control-Group, input[type='submit'],
+input[type='button'],
+button, .Control-Group label, .Control-Group input[type='checkbox'].Slide, a:link,
+a:visited, input,
 select,
-textarea,
-button, .Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-value span {
+textarea, .Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-value span {
   cursor: pointer !important; }
 
 .Page-Sidebar nav.Site-Navigation .nav.menu_left li a {
   width: 100%; }
 
-[class*='Grid']:before, .Site-Navigation.Primary nav ul:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:before, header.Site-Header .Toolbar .Authorization ul:before, ul.Pagination:before, .About:before, .yoo-zoo .items .pos-item:before, .Adv:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .content .search:before, #login-form:before, .Popular ul.zoo-itempro-default .layout-default:before, .Projects:before, .content:before, header.Site-Header:before, header.Site-Header .Toolbar:before, .Site-Navigation.Primary nav:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary:before, [class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .About:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Projects:after, .content:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
+[class*='Grid']:before, .Site-Navigation.Primary nav ul:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:before, header.Site-Header .Toolbar .Authorization ul:before, ul.Pagination:before, .UPF-Window .UPF-Window-Content:before, .About:before, .yoo-zoo .items .pos-item:before, .Adv:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .content .search:before, #login-form:before, .Popular ul.zoo-itempro-default .layout-default:before, .Control-Group:before, .Projects:before, .content:before, header.Site-Header:before, header.Site-Header .Toolbar:before, .Site-Navigation.Primary nav:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary:before, [class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Control-Group:after, .Projects:after, .content:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   content: " ";
   display: table; }
-[class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .About:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Projects:after, .content:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
+[class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Control-Group:after, .Projects:after, .content:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   clear: both; }
 
 ol[class*='Grid'] > li,
@@ -1396,37 +592,64 @@ ul[class*='Grid'] > li, .Site-Navigation.Primary nav ul, footer[role='contentinf
 .Site-Navigation.Primary nav ul > *, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul > *, header.Site-Header .Toolbar .Authorization ul > *, ul.Pagination > * {
   float: left; }
 
-.About, .yoo-zoo .items .pos-item, .Adv, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search, #login-form, .Popular ul.zoo-itempro-default .layout-default {
+.UPF-Window .UPF-Window-Content, .About, .yoo-zoo .items .pos-item, .Adv, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search, #login-form, .Popular ul.zoo-itempro-default .layout-default {
   padding: 20px;
   border: 1px solid #efeff3;
   background-color: white; }
 
-.Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Languages .goog-te-menu-value, header.Site-Header .Toolbar .Authorization ul li a, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
+input[type='submit'],
+input[type='button'],
+button, .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Languages .goog-te-menu-value, header.Site-Header .Toolbar .Authorization ul li a, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
   text-transform: uppercase; }
 
-#search-searchword, input,
+input[type='text'],
+input[type='tel'],
+input[type='submit'],
+input[type='button'],
+input[type='search'],
+input[type='email'],
+input[type='file'],
+input[type='password'],
 select,
 textarea,
+.Dropdown, Label.File-Upload > span, #search-searchword, input,
 button {
   padding: 5px 10px;
   border-radius: 6px;
-  border: 1px solid #efeff3;
+  border: 1px solid #e1e1e5;
   line-height: 13px;
   font-size: 13px;
-  background-color: white;
+  background-color: #f5f5f9;
   outline: 0; }
-  #search-searchword:focus, input:focus,
   select:focus,
   textarea:focus,
+  .Dropdown:focus, Label.File-Upload > span:focus, #search-searchword:focus, input:focus,
   button:focus {
     border-color: #c82222; }
+
+input[type='submit'],
+input[type='button'],
+button {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid;
+  line-height: 13px;
+  font-size: 13px;
+  font-family: 'PT Serif', serif;
+  background-color: #c82222;
+  color: white; }
+  input[type='submit']:hover,
+  input[type='button']:hover,
+  button:hover {
+    background-color: #e12626; }
 
 .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
 
 .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
   display: block;
-  padding: 0 15px; }
+  padding: 0 15px;
+  color: black; }
   @media screen and (min-width: 1400px) {
     .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
       padding: 0 30px; } }
@@ -1436,18 +659,18 @@ button {
 .Site-Navigation.Primary nav ul:first-child a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:first-child a {
   padding-left: 0; }
 
-.About .About-Content h1, .Tags h3, .yoo-zoo .details .heading h1.title, .Projects .Projects-Header, h1.title, .Dropdown-Title, .item-page h2, .tag-title {
+.About .About-Content h1, .Tags h3, .yoo-zoo .details .heading h1.title, .k2ProfileHeading, .Projects .Projects-Header, h1.title, .Dropdown-Title, .item-page h2, .tag-title {
   font-family: 'PT Serif Caption', 'PT Serif', serif;
   font-size: 32px;
   font-weight: 100;
   line-height: 32px;
   color: black; }
 
-.Tags h3, .yoo-zoo .details .heading h1.title, .Projects .Projects-Header {
+.Tags h3, .yoo-zoo .details .heading h1.title, .k2ProfileHeading, .Projects .Projects-Header {
   margin-top: 40px;
   margin-bottom: 20px; }
 
-.Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Sidebar-Toggle, ul.Pagination li a {
+.Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .UPF-Window .UPF-Window-Close, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Sidebar-Toggle, ul.Pagination li a {
   -webkit-transition: color 0.4s, background-color 0.4s, border-color 0.4s;
   -moz-transition: color 0.4s, background-color 0.4s, border-color 0.4s;
   transition: color 0.4s, background-color 0.4s, border-color 0.4s; }
@@ -1463,32 +686,496 @@ button {
 .UPF-Window {
   display: none; }
   .UPF-Window .UPF-Window-Wrapper {
-    background: rgba(0, 0, 0, 0.2); }
+    background: rgba(0, 0, 0, 0.3); }
   .UPF-Window .UPF-Window-Content {
     width: 400px;
     padding: 20px;
     margin: 0 auto;
     z-index: 8888888888;
     position: relative;
-    background: #2782a4;
-    border: 4px solid #18637f;
-    color: #f9f9f9; }
+    box-shadow: 0 0 30px black; }
   .UPF-Window .UPF-Window-Close {
     position: absolute;
     top: -15px;
     right: -15px;
+    padding-top: 6px;
     font-size: 14px;
+    width: 30px;
+    height: 30px;
     background: #e43f3f;
-    border: 4px solid #a02828;
-    border-radius: 0px;
+    border: 1px solid #a02828;
+    border-radius: 6px;
     color: #f9f9f9; }
+    .UPF-Window .UPF-Window-Close:hover {
+      background: #555555;
+      border: 1px solid #212121; }
+
+input[type='text'],
+input[type='tel'],
+input[type='submit'],
+input[type='button'],
+input[type='search'],
+input[type='email'],
+input[type='file'],
+input[type='password'],
+select,
+textarea,
+.Dropdown, Label.File-Upload > span, #search-searchword, input,
+button {
+  display: inline-block;
+  height: 30px;
+  border: 1px #b7b7b7 solid;
+  border-radius: 5px;
+  outline: 0;
+  font-size: 14px;
+  line-height: 14px; }
+
+input[type='text'],
+input[type='tel'],
+input[type='submit'],
+input[type='button'],
+input[type='search'],
+input[type='email'],
+input[type='file'],
+input[type='password'],
+select,
+textarea,
+.Dropdown {
+  padding: 7px;
+  box-shadow: 0 0 1px white inset;
+  background-color: #f9f9f9;
+  color: #212121;
+  -webkit-transition: border-color 0.4s, background-color 0.4s, color 0.4s;
+  -moz-transition: border-color 0.4s, background-color 0.4s, color 0.4s;
+  transition: border-color 0.4s, background-color 0.4s, color 0.4s; }
+  input[type='text']:hover,
+  input[type='tel']:hover,
+  input[type='submit']:hover,
+  input[type='button']:hover,
+  input[type='search']:hover,
+  input[type='email']:hover,
+  input[type='file']:hover,
+  input[type='password']:hover,
+  select:hover,
+  textarea:hover,
+  .Dropdown:hover {
+    background-color: #e7e7e7; }
+  input[type='text']:focus,
+  input[type='tel']:focus,
+  input[type='submit']:focus,
+  input[type='button']:focus,
+  input[type='search']:focus,
+  input[type='email']:focus,
+  input[type='file']:focus,
+  input[type='password']:focus,
+  select:focus,
+  textarea:focus,
+  .Dropdown:focus {
+    border-color: #00a4c6;
+    background-color: #e5fbff;
+    box-shadow: 0 0 1px white inset, 0 0 10px #95edff; }
+  input[type='text'][disabled], input[type='text'][disabled]:hover,
+  input[type='tel'][disabled],
+  input[type='tel'][disabled]:hover,
+  input[type='submit'][disabled],
+  input[type='submit'][disabled]:hover,
+  input[type='button'][disabled],
+  input[type='button'][disabled]:hover,
+  input[type='search'][disabled],
+  input[type='search'][disabled]:hover,
+  input[type='email'][disabled],
+  input[type='email'][disabled]:hover,
+  input[type='file'][disabled],
+  input[type='file'][disabled]:hover,
+  input[type='password'][disabled],
+  input[type='password'][disabled]:hover,
+  select[disabled],
+  select[disabled]:hover,
+  textarea[disabled],
+  textarea[disabled]:hover,
+  .Dropdown[disabled],
+  .Dropdown[disabled]:hover {
+    border-color: #b7b7b7;
+    background-color: #e7e7e7;
+    color: #b7b7b7;
+    cursor: not-allowed; }
+  input[type='text'].Ghost,
+  input[type='tel'].Ghost,
+  input[type='submit'].Ghost,
+  input[type='button'].Ghost,
+  input[type='search'].Ghost,
+  input[type='email'].Ghost,
+  input[type='file'].Ghost,
+  input[type='password'].Ghost,
+  select.Ghost,
+  textarea.Ghost,
+  .Dropdown.Ghost {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none; }
+  input[type='text'].Error,
+  input[type='tel'].Error,
+  input[type='submit'].Error,
+  input[type='button'].Error,
+  input[type='search'].Error,
+  input[type='email'].Error,
+  input[type='file'].Error,
+  input[type='password'].Error,
+  select.Error,
+  textarea.Error,
+  .Dropdown.Error {
+    color: #a02828;
+    border-color: #e43f3f;
+    background-color: #fff3f3; }
+  input[type='text'].Warning,
+  input[type='tel'].Warning,
+  input[type='submit'].Warning,
+  input[type='button'].Warning,
+  input[type='search'].Warning,
+  input[type='email'].Warning,
+  input[type='file'].Warning,
+  input[type='password'].Warning,
+  select.Warning,
+  textarea.Warning,
+  .Dropdown.Warning {
+    color: #b4771e;
+    border-color: #e4a43f;
+    background-color: #fff9f1; }
+  input[type='text'].Success,
+  input[type='tel'].Success,
+  input[type='submit'].Success,
+  input[type='button'].Success,
+  input[type='search'].Success,
+  input[type='email'].Success,
+  input[type='file'].Success,
+  input[type='password'].Success,
+  select.Success,
+  textarea.Success,
+  .Dropdown.Success {
+    color: #54894e;
+    border-color: #6ea268;
+    background-color: #f1fff0; }
+  input[type='text'].Info,
+  input[type='tel'].Info,
+  input[type='submit'].Info,
+  input[type='button'].Info,
+  input[type='search'].Info,
+  input[type='email'].Info,
+  input[type='file'].Info,
+  input[type='password'].Info,
+  select.Info,
+  textarea.Info,
+  .Dropdown.Info {
+    color: #18637f;
+    border-color: #2782a4;
+    background-color: #f4fdff; }
+
+select {
+  padding: 5px; }
+
+select:focus {
+  border-radius: 5px 5px 0 0; }
+
+select[multiple='multiple'] {
+  -moz-appearance: button;
+  min-height: 232px; }
+
+textarea {
+  resize: vertical;
+  line-height: 21px;
+  min-height: 58px;
+  -webkit-transition-property: min-height;
+  -moz-transition-property: min-height;
+  transition-property: min-height;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s; }
+  textarea:focus {
+    background-color: #f9f9f9;
+    min-height: 100px; }
+
+input[type='file'] {
+  -moz-appearance: button;
+  padding: 3px; }
+
+input[type='submit'],
+input[type='button'],
+button {
+  border-color: #a02828;
+  background-color: #f46d6d;
+  color: white; }
+  input[type='submit']:hover,
+  input[type='button']:hover,
+  button:hover {
+    background-color: #e43f3f; }
+
+Label.File-Upload {
+  width: 100%;
+  display: block;
+  padding: 0 !important;
+  text-align: left; }
+  Label.File-Upload input[type='file'] {
+    height: 0;
+    padding: 0;
+    border: 0;
+    visibility: hidden; }
+  Label.File-Upload > span {
+    padding: 7px; }
+    Label.File-Upload > span:hover {
+      border-color: #b7b7b7;
+      background-color: #e7e7e7; }
+    Label.File-Upload > span > span.fa {
+      margin-right: 10px; }
+
+.Form-Group + .Form-Group {
+  margin-top: 50px; }
+
+.Control-Group label {
+  height: 30px;
+  padding: 7px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  line-height: 14px; }
+.Control-Group input,
+.Control-Group select,
+.Control-Group textarea {
+  width: 100%; }
+.Control-Group input
+select {
+  background-color: white; }
+.Control-Group input[type='checkbox'].Slide {
+  -webkit-appearance: none;
+  position: relative;
+  width: 60px;
+  height: 30px;
+  margin: 0px 0;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  background-color: #f46d6d;
+  box-shadow: none;
+  -webkit-transition: background-color .5s, border-color .5s; }
+  .Control-Group input[type='checkbox'].Slide:focus {
+    outline: 0;
+    border-color: #a02828; }
+  .Control-Group input[type='checkbox'].Slide:after {
+    position: absolute;
+    content: '';
+    left: 2px;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: white;
+    -webkit-transition: left .3s; }
+  .Control-Group input[type='checkbox'].Slide:before {
+    position: absolute;
+    content: 'x';
+    top: 7px;
+    left: 40px;
+    line-height: 14px;
+    font-size: 14px;
+    color: white; }
+  .Control-Group input[type='checkbox'].Slide:hover {
+    background-color: #a02828; }
+.Control-Group input[type='checkbox'].Slide:checked {
+  background-color: #2ecc71; }
+  .Control-Group input[type='checkbox'].Slide:checked:after {
+    left: 32px; }
+  .Control-Group input[type='checkbox'].Slide:checked:before {
+    content: 'o';
+    top: 7px;
+    left: 10px; }
+  .Control-Group input[type='checkbox'].Slide:checked:hover {
+    background-color: #5ec67d; }
+  .Control-Group input[type='checkbox'].Slide:checked:focus {
+    border-color: #5ec67d; }
+.Control-Group input[type='checkbox'][disabled].Slide,
+.Control-Group input[type='checkbox'][disabled].Slide:hover {
+  cursor: default;
+  background-color: #cccccc; }
+.Control-Group + .Control-Group {
+  margin-top: 15px; }
+.Control-Group .Input-Group.Error {
+  color: white;
+  background-color: #f2070b;
+  border-radius: 5px; }
+  .Control-Group .Input-Group.Error input.Error,
+  .Control-Group .Input-Group.Error select.Error,
+  .Control-Group .Input-Group.Error textarea.Error {
+    border-color: #e43f3f;
+    color: #a02828; }
+.Control-Group .Input-Group .Message {
+  display: block;
+  padding: 7px; }
+  .Control-Group .Input-Group .Message.Error {
+    color: white; }
+.Control-Group .Input-Group.Merge input[type='text'],
+.Control-Group .Input-Group.Merge input[type='tel'],
+.Control-Group .Input-Group.Merge input[type='password'],
+.Control-Group .Input-Group.Merge input[type='file'],
+.Control-Group .Input-Group.Merge input[type='button'],
+.Control-Group .Input-Group.Merge input[type='submit'] {
+  border-radius: 0; }
+  .Control-Group .Input-Group.Merge input[type='text']:first-child,
+  .Control-Group .Input-Group.Merge input[type='tel']:first-child,
+  .Control-Group .Input-Group.Merge input[type='password']:first-child,
+  .Control-Group .Input-Group.Merge input[type='file']:first-child,
+  .Control-Group .Input-Group.Merge input[type='button']:first-child,
+  .Control-Group .Input-Group.Merge input[type='submit']:first-child {
+    border-right: 0;
+    border-radius: 5px 0 0 5px; }
+  .Control-Group .Input-Group.Merge input[type='text']:last-child,
+  .Control-Group .Input-Group.Merge input[type='tel']:last-child,
+  .Control-Group .Input-Group.Merge input[type='password']:last-child,
+  .Control-Group .Input-Group.Merge input[type='file']:last-child,
+  .Control-Group .Input-Group.Merge input[type='button']:last-child,
+  .Control-Group .Input-Group.Merge input[type='submit']:last-child {
+    border-left: 0;
+    border-radius: 0 5px 5px 0; }
+.Control-Group .Input-Group.Vertical input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  border-radius: 0; }
+  .Control-Group .Input-Group.Vertical input:first-child {
+    border-bottom: 0;
+    border-radius: 5px 5px 0 0; }
+  .Control-Group .Input-Group.Vertical input:last-child {
+    border-top: 0;
+    border-radius: 0 0 5px 5px; }
+.Control-Group .Input-Group.Prefix span, .Control-Group .Input-Group.Prefix label,
+.Control-Group .Input-Group.Postfix span,
+.Control-Group .Input-Group.Postfix label {
+  padding: 7px;
+  height: 30px;
+  border: 1px #b7b7b7 solid;
+  background-color: #eee;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14px;
+  color: #888;
+  box-shadow: 0 0 1px white inset; }
+.Control-Group .Input-Group.Prefix span, .Control-Group .Input-Group.Prefix label {
+  border-radius: 5px 0 0 5px; }
+.Control-Group .Input-Group.Postfix span {
+  border-radius: 0 5px 5px 0; }
+.Control-Group .Input-Group.Upload input[type='file'] {
+  display: block;
+  width: 100%; }
+.Control-Group .Input-Group.Upload ul {
+  margin-top: 15px; }
+  .Control-Group .Input-Group.Upload ul li {
+    position: relative;
+    overflow: hidden; }
+    .Control-Group .Input-Group.Upload ul li a.Link-Delete {
+      position: absolute;
+      display: block;
+      padding: 7px;
+      right: 0;
+      bottom: -34px;
+      width: 100%;
+      background-color: #f46d6d;
+      color: white; }
+    .Control-Group .Input-Group.Upload ul li img {
+      width: 100%; }
+    .Control-Group .Input-Group.Upload ul li:hover a {
+      bottom: 0; }
+
+.Vertical .Control-Group > label, .Vertical .Control-Group > .Label-Group {
+  display: block;
+  padding: 7px 0; }
+  .Vertical .Control-Group > label .Left, .Vertical .Control-Group > .Label-Group .Left {
+    float: left;
+    padding: 7px 0; }
+  .Vertical .Control-Group > label a.Right, .Vertical .Control-Group > .Label-Group a.Right {
+    float: right;
+    padding: 7px 0; }
+
+.Panel {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px #b7b7b7 solid;
+  background-color: #f9f9f9;
+  color: #212121; }
+  .Panel.Invert {
+    background-color: #3c3c3c;
+    border-color: #212121; }
+    .Panel.Invert.Shadow {
+      text-shadow: 1px 1px 1px #555555; }
+    .Panel.Invert.Simple {
+      border: 1px #3c3c3c solid; }
+  .Panel.Invert {
+    color: white !important; }
+  .Panel.Simple {
+    box-shadow: none !important; }
+  .Panel.Success {
+    color: #54894e;
+    background-color: #f1fff0;
+    border-color: #8ad390;
+    box-shadow: 0 0 1px #d2ecd0 inset; }
+    .Panel.Success.Invert {
+      background-color: #6ea268;
+      border-color: #54894e; }
+      .Panel.Success.Invert.Shadow {
+        text-shadow: 1px 1px 1px #555555; }
+      .Panel.Success.Invert.Simple {
+        border: 1px #6ea268 solid; }
+  .Panel.Warning {
+    color: #b4771e;
+    background-color: #fff9f1;
+    border-color: #f4c06d;
+    box-shadow: 0 0 1px #ffe0ad inset; }
+    .Panel.Warning.Invert {
+      background-color: #e4a43f;
+      border-color: #b4771e; }
+      .Panel.Warning.Invert.Shadow {
+        text-shadow: 1px 1px 1px #555555; }
+      .Panel.Warning.Invert.Simple {
+        border: 1px #e4a43f solid; }
+  .Panel.Error {
+    color: #a02828;
+    background-color: #fff3f3;
+    border-color: #f46d6d;
+    box-shadow: 0 0 1px #ffadad inset; }
+    .Panel.Error.Invert {
+      background-color: #e43f3f;
+      border-color: #a02828; }
+      .Panel.Error.Invert.Shadow {
+        text-shadow: 1px 1px 1px #555555; }
+      .Panel.Error.Invert.Simple {
+        border: 1px #e43f3f solid; }
+  .Panel.Info {
+    color: #18637f;
+    background-color: #f4fdff;
+    border-color: #8abfd3;
+    box-shadow: 0 0 1px #dceff2 inset; }
+    .Panel.Info.Invert {
+      background-color: #2782a4;
+      border-color: #18637f; }
+      .Panel.Info.Invert.Shadow {
+        text-shadow: 1px 1px 1px #555555; }
+      .Panel.Info.Invert.Simple {
+        border: 1px #2782a4 solid; }
+  .Panel.Primary {
+    color: #00a4c6;
+    background-color: #f3fdff;
+    border-color: #95edff;
+    box-shadow: 0 0 1px #ccf0f8 inset; }
+    .Panel.Primary.Invert {
+      background-color: #25c9eb;
+      border-color: #00a4c6; }
+      .Panel.Primary.Invert.Shadow {
+        text-shadow: 1px 1px 1px #555555; }
+      .Panel.Primary.Invert.Simple {
+        border: 1px #25c9eb solid; }
 
 .Content-Wrapper {
   margin-left: 235px;
   padding-left: 40px;
   padding-right: 40px;
   min-width: 1000px;
-  max-width: 1350px; }
+  max-width: 1350px;
+  min-height: 100%; }
   @media screen and (min-width: 1024px) {
     .Content-Wrapper {
       padding-left: 50px;
@@ -1540,6 +1227,8 @@ button {
       .Tags ul.zoo-list li a:hover {
         background-color: #d4d4d5; }
 
+.yoo-zoo .items .pos-item:hover {
+  background: #fafafa; }
 .yoo-zoo .items .pos-item .pos-title {
   position: relative; }
   .yoo-zoo .items .pos-item .pos-title article.item {
@@ -1562,6 +1251,8 @@ button {
   line-height: 23px;
   font-size: 18px;
   font-weight: 100; }
+  .yoo-zoo .items .pos-item .pos-subtitle a {
+    color: black; }
 .yoo-zoo .items .pos-item .floatbox .pos-content {
   margin-top: 20px; }
   .yoo-zoo .items .pos-item .floatbox .pos-content .element {
@@ -1575,10 +1266,33 @@ button {
     padding-left: 25px;
     background: url(../../templates/journal/images/views.png) left center no-repeat; }
 
+.Top-Five .Popular {
+  border-left: 5px solid #d0ae1d; }
+  .Top-Five .Popular ul li .layout-default .media a {
+    color: black;
+    font-size: 18px;
+    line-height: 23px; }
+    .Top-Five .Popular ul li .layout-default .media a img {
+      display: none; }
+  .Top-Five .Popular ul li .layout-default p.title a img {
+    display: none; }
+
 .Adv {
   margin-top: 80px; }
   .Adv img {
     width: 100%; }
+
+#system-message-container p {
+  padding: 5px 10px;
+  color: #a02828;
+  background-color: #fff3f3;
+  border-color: #f46d6d;
+  box-shadow: 0 0 1px #ffadad inset; }
+  #system-message-container p + p {
+    margin-top: 10px; }
+
+.k2AccountPageUpdate {
+  padding: 10px 0 !important; }
 
 .Projects {
   clear: both; }
@@ -1641,6 +1355,12 @@ fieldset.only {
     padding-left: 25px;
     background: url(../../templates/journal/images/views.png) left center no-repeat; }
 
+#Footer-Pusher {
+  clear: both;
+  height: 246px;
+  border: 0;
+  color: transparent; }
+
 * {
   margin: 0;
   padding: 0;
@@ -1648,15 +1368,26 @@ fieldset.only {
   -moz-box-sizing: border-box;
   cursor: default; }
 
+html,
+body {
+  height: 100% !important; }
+
 body {
   min-width: 1000px;
   border-top: 5px solid #1a90ff;
   background: #F5F5F5;
   font-family: 'PT Serif', serif; }
 
-a {
+a:link,
+a:visited {
   text-decoration: none;
-  color: black; }
+  color: #1a90ff; }
+  a:link:hover,
+  a:visited:hover {
+    color: #4bb1ff; }
+
+p + p {
+  margin-top: 10px; }
 
 .Page-Sidebar {
   position: fixed;
@@ -1764,7 +1495,8 @@ header.Site-Header {
         display: block;
         padding: 10px 5px;
         font-size: 12px;
-        font-weight: bold; }
+        font-weight: bold;
+        color: black; }
         header.Site-Header .Toolbar .Authorization ul li a:hover {
           color: #c82222; }
         header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
@@ -1854,25 +1586,27 @@ ul.Pagination li span {
   background-color: black;
   color: white; }
 
-footer[role='contentinfo'] nav.Site-Navigation.Secondary {
-  margin-bottom: 40px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+footer[role='contentinfo'] {
   border-top: 5px solid #77972b;
-  border-bottom: 1px solid #e9ebec; }
-  footer[role='contentinfo'] nav.Site-Navigation.Secondary ul {
-    width: auto;
-    float: left; }
-    footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a:hover {
-      color: #77972b; }
-  footer[role='contentinfo'] nav.Site-Navigation.Secondary div.Metrics {
-    margin-top: -4px;
-    float: right; }
-footer[role='contentinfo'] article.Copyright {
-  margin-bottom: 40px;
-  font-size: 10px;
-  line-height: 1.45;
-  color: #b8babc; }
+  margin-top: -246px; }
+  footer[role='contentinfo'] nav.Site-Navigation.Secondary {
+    margin-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e9ebec; }
+    footer[role='contentinfo'] nav.Site-Navigation.Secondary ul {
+      width: auto;
+      float: left; }
+      footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a:hover {
+        color: #77972b; }
+    footer[role='contentinfo'] nav.Site-Navigation.Secondary div.Metrics {
+      margin-top: -4px;
+      float: right; }
+  footer[role='contentinfo'] article.Copyright {
+    margin-bottom: 40px;
+    font-size: 10px;
+    line-height: 1.45;
+    color: #b8babc; }
 
 .pos-content .pos-title {
   min-height: 0px !important; }

@@ -1,0 +1,470 @@
+%Control
+{
+	display: inline-block;
+	height: $Control-Height;
+
+	border: $Control-Border-Width $Control-Border-Color solid;
+	border-radius: $Control-Border-Radius;
+	outline: 0;
+
+	font-size: $Control-Font-Size;
+	line-height: $Control-Line-Height;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Default controls styling
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+input[type='text'],
+input[type='tel'],
+input[type='submit'],
+input[type='button'],
+input[type='search'],
+input[type='email'],
+input[type='file'],
+input[type='password'],
+select,
+textarea,
+.Dropdown
+{
+	padding: $Control-Padding;
+	box-shadow: 0 0 1px white inset;
+	background-color: $Control-Bg-Color;
+	color: $Control-Color;
+	@extend %Control;
+
+	@include Transitions(#{border-color .4s, background-color .4s, color .4s});
+
+	&:hover
+	{
+		background-color: $C-Grey-5;
+	}
+	&:focus
+	{
+		border-color: $Control-Border-Color-Focus;
+		background-color: $Control-Bg-Color-Focus;
+		box-shadow: 0 0 1px white inset,
+		0 0 10px $C-Cyan-3;
+	}
+	&[disabled],
+	&[disabled]:hover
+	{
+		border-color: $Control-Border-Color-Disabled;
+		background-color: $Control-Bg-Color-Disabled;
+		color: $Control-Color-Disabled;
+		cursor: not-allowed;
+	}
+	&.Ghost
+	{
+		border-color: transparent;
+		background: transparent;
+		box-shadow: none;
+		&:focus
+		{
+
+		}
+	}
+	&.Error
+	{
+		color: $C-Red-1;
+		border-color: $C-Red-2;
+		background-color: $C-Red-6;
+	}
+	&.Warning
+	{
+		color: $C-Orange-1;
+		border-color: $C-Orange-2;
+		background-color: $C-Orange-6;
+	}
+	&.Success
+	{
+		color: $C-Green-1;
+		border-color: $C-Green-2;
+		background-color: $C-Green-6;
+	}
+	&.Info
+	{
+		color: $C-Blue-1;
+		border-color: $C-Blue-2;
+		background-color: $C-Blue-6;
+	}
+}
+label
+{
+	@extend %Unselectable;
+	&.Control-Group
+	{
+		@extend %Clickable;
+	}
+}
+select
+{
+	padding: $Control-Padding - 2;
+}
+
+select:focus
+{
+	@include Round(top, $Control-Border-Radius);
+}
+select[multiple='multiple']{
+	-moz-appearance: button;
+	min-height: $Control-MultiSelect-Min-Height;
+}
+textarea
+{
+	resize: vertical;
+	line-height: $Control-Textarea-Line-Height;
+	min-height: $Control-Textarea-Min-Height;
+	@include Transition(min-height, .5s);
+	&:focus
+	{
+		background-color: $Control-Bg-Color;
+		min-height: $Control-Textarea-Min-Height-Focus;
+	}
+}
+input[type='file']
+{
+	-moz-appearance: button;
+	padding: $Control-Padding - 4px;
+}
+input[type='submit'],
+input[type='button'],
+button
+{
+	border-color: $Control-Button-Border-Color;
+	background-color: $Control-Button-Bg-Color;
+	color: white;
+	@extend %Clickable;
+	&:hover
+	{
+		background-color: $Control-Button-Bg-Color-Hover;
+	}
+}
+
+Label.File-Upload
+{
+	width: 100%;
+	display: block;
+	padding: 0!important;
+	text-align: left;
+	input[type='file']
+	{
+		height: 0;
+		padding: 0;
+		border: 0;
+		visibility: hidden;
+	}
+	& > span
+	{
+		padding: $Control-Padding;
+		@extend %Control;
+		&:hover
+		{
+			border-color: $C-Grey-4;
+			background-color: $Control-Bg-Color-Hover;
+		}
+		& > span.fa
+		{
+			margin-right: $size-s;
+		}
+
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Form-Group is a bunch of Control-Groups separated vertically
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.Form-Group + .Form-Group
+{
+	margin-top: $size-xl;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+.Control-Group
+{
+	@extend %Fix;
+	label
+	{
+		height: $Control-Height;
+		padding: $Control-Padding;
+		border: $Control-Border-Width solid transparent;
+
+		font-size: $Control-Font-Size;
+		line-height: $Control-Line-Height;
+
+		@extend %Clickable;
+	}
+	input,
+	select,
+	textarea
+	{
+		width: 100%;
+	}
+	input
+	select
+	{
+		background-color: white;
+	}
+	input[type='checkbox'].Slide
+	{
+		-webkit-appearance: none;
+
+		position: relative;
+
+		width: $Checkbox-Width;
+		height: $Checkbox-Height;
+		margin: $Checkbox-Margin 0;
+
+		border: $Checkbox-Border solid transparent;
+		border-radius: $Checkbox-Height;
+		background-color: $Clr-Main;
+		box-shadow: none;
+		@extend %Clickable;
+
+		-webkit-transition: background-color .5s,
+		border-color .5s;
+
+		&:focus
+		{
+			outline: 0;
+			border-color: $Clr-Main-Dark;
+		}
+		&:after
+		{
+			position: absolute;
+			content: '';
+
+			left: $Checkbox-Toggle-Spacing;
+			top: $Checkbox-Toggle-Spacing;
+
+			width: $Checkbox-Toggle-Diameter;
+			height: $Checkbox-Toggle-Diameter;
+
+			border-radius: $Checkbox-Toggle-Diameter;
+			background-color: white;
+
+
+			-webkit-transition: left .3s;
+
+		}
+		&:before
+		{
+			position: absolute;
+			content: 'x';
+			top: ($Checkbox-Height - $Checkbox-Fnt-Size - ($Checkbox-Border *2) )/2;
+			left: $Checkbox-Width - 20px;
+			line-height: $Checkbox-Fnt-Size;
+			font-size: $Checkbox-Fnt-Size;
+			color: white;
+		}
+		&:hover
+		{
+			background-color: $Clr-Main-Dark;
+		}
+	}
+
+	input[type='checkbox'].Slide:checked
+	{
+		background-color: $Clr-Success;
+
+		&:after
+		{
+			left: $Checkbox-Width - $Checkbox-Toggle-Diameter - ($Checkbox-Border * 2) - $Checkbox-Toggle-Spacing;
+		}
+		&:before
+		{
+			content: 'o';
+			top: ($Checkbox-Height - ($Checkbox-Border * 2) - $Checkbox-Fnt-Size) / 2;
+			left: 10px;
+		}
+		&:hover
+		{
+			background-color: $Clr-Success-Dark;
+		}
+		&:focus
+		{
+			border-color: $Clr-Success-Dark;
+		}
+	}
+
+	input[type='checkbox'][disabled].Slide,
+	input[type='checkbox'][disabled].Slide:hover
+	{
+		cursor: default;
+		background-color: $Clr-Grey;
+	}
+	& + .Control-Group
+	{
+		margin-top: $size-n;
+	}
+	.Input-Group.Error
+	{
+		color: white;
+		background-color: $Clr-Error;
+		border-radius: $Control-Border-Radius;
+		input.Error,
+		select.Error,
+		textarea.Error
+		{
+			border-color: $C-Red-2;
+			color: $C-Red-1;
+		}
+	}
+	.Input-Group .Message
+	{
+		display: block;
+		padding: $Control-Padding;
+		&.Error
+		{
+			color: white;
+		}
+	}
+	.Input-Group.Merge
+	{
+		input[type='text'],
+		input[type='tel'],
+		input[type='password'],
+		input[type='file'],
+		input[type='button'],
+		input[type='submit']
+		{
+			border-radius: 0;
+			&:first-child
+			{
+				border-right: 0;
+				border-radius: $Control-Border-Radius 0 0 $Control-Border-Radius;
+			}
+			&:last-child
+			{
+				border-left: 0;
+				border-radius: 0 $Control-Border-Radius $Control-Border-Radius 0;
+			}
+		}
+	}
+	.Input-Group.Vertical
+	{
+		input
+		{
+			display: block;
+			width: 100%;
+			margin: 0;
+			border-radius: 0;
+			&:first-child
+			{
+				border-bottom: 0;
+				border-radius: $Control-Border-Radius $Control-Border-Radius 0 0;
+			}
+			&:last-child
+			{
+				border-top: 0;
+				border-radius: 0 0 $Control-Border-Radius $Control-Border-Radius;
+			}
+		}
+	}
+	.Input-Group.Prefix,
+	.Input-Group.Postfix
+	{
+		span, label
+		{
+			padding: $Control-Padding;
+			height: $Control-Height;
+			border: $Control-Border-Width $Control-Border-Color solid;
+			background-color: #eee;
+
+			text-align: center;
+			font-size: $Control-Font-Size - 2px;
+			line-height: $Control-Line-Height;
+			color: #888;
+			box-shadow: 0 0 1px white inset;
+		}
+	}
+	.Input-Group.Prefix
+	{
+		span, label
+		{
+			border-radius: $Control-Border-Radius 0 0 $Control-Border-Radius;
+		}
+	}
+	.Input-Group.Postfix
+	{
+		span
+		{
+			border-radius: 0 $Control-Border-Radius $Control-Border-Radius 0;
+
+		}
+	}
+	.Input-Group.Button
+	{
+		input[type='button'],
+		input[type='submit'],
+		button
+		{
+
+		}
+	}
+	.Input-Group.Upload
+	{
+		input[type='file']
+		{
+			display: block;
+			width: 100%;
+		}
+		ul
+		{
+			margin-top: $size-n;
+			li
+			{
+				position: relative;
+				overflow: hidden;
+				a.Link-Delete
+				{
+					position: absolute;
+					display: block;
+					padding: $Control-Padding;
+					right: 0;
+					bottom: - ($Control-Height + 4px);
+					width: 100%;
+					background-color: $Clr-Main;
+					color: white;
+				}
+				img
+				{
+					width: 100%;
+				}
+				&:hover a
+				{
+					bottom: 0;
+				}
+			}
+		}
+	}
+}
+.Vertical
+{
+	.Control-Group
+	{
+		& > label,
+		& > .Label-Group
+		{
+			display: block;
+			padding: $Control-Padding 0;
+			.Left
+			{
+				float: left;
+				padding: $Control-Padding 0;
+			}
+			a.Right
+			{
+				float: right;
+				padding: $Control-Padding 0;
+			}
+		}
+	}
+}

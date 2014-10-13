@@ -9,6 +9,11 @@
 	-moz-box-sizing: 	border-box;
 	cursor: 			default;
 }
+html,
+body
+{
+	height: 			100%!important;
+}
 body
 {
 	min-width: 			1000px;
@@ -17,20 +22,35 @@ body
 	font-family: 		'PT Serif', serif;
 }
 
-a
+a:link,
+a:visited
 {
 	text-decoration: 	none;
-	color: 				black;
+	color:				#1a90ff;
 	@extend 			%Clickable;
+	&:hover
+	{
+		color: 			#4bb1ff;
+	}
 
 }
+p + p
+{
+	margin-top:			10px;
+}
 input,
-select,
+select, 
 textarea,
 button
 {
 	@extend 			%Control;
 	@extend 			%Clickable;
+}
+input[type='submit'],
+input[type='button'],
+button
+{
+	@extend 			%Control-Button;
 }
 
 
@@ -94,13 +114,11 @@ button
 		}
 	}
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 .Sidebar-Toggle
 {
 	position: 				fixed;
 	top: 					5px;
-    z-index:                10;
+	z-index:                10;
 	margin-left: 			$Sidebar-Width;
 	width: 					40px;
 	height: 				40px;
@@ -120,6 +138,9 @@ button
 		}
 	}
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // HEADER
@@ -211,6 +232,7 @@ header.Site-Header
 						padding: 	10px 5px;
 						font-size:	12px;
 						font-weight: bold;
+						color:		black;
 						@extend 	%Uppercase;
 						&:hover
 						{
@@ -373,12 +395,13 @@ ul.Pagination
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 footer[role='contentinfo']
 {
+	border-top:			5px solid #77972b;
+	margin-top:				-246px;
 	nav.Site-Navigation.Secondary
 	{
 		margin-bottom:		40px;
 		padding-top: 		40px;
 		padding-bottom:		40px;
-		border-top:			5px solid #77972b;
 		border-bottom:		1px solid #e9ebec;
 		@extend 			%Fix;
 		ul

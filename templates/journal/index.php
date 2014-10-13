@@ -4,6 +4,7 @@
 <head>
     <jdoc:include type="head" />
     <link rel="stylesheet" href="/templates/journal/style.css">
+    <link rel="icon" href="/templates/journal/images/favicon.ico"/>
     <meta name="google-translate-customization" content="ccff3993fba71849-78996be6e1aca67a-g90d82ac7a3fbd458-8"/>
 </head>
 
@@ -17,10 +18,14 @@
 
 <div class="Sidebar-Toggle"></div>
 <div class="Content-Wrapper">
-    <?php
-        $parent_dir = JPATH_BASE . "/templates/journal/blocks";
-        include $parent_dir . '/main/main.php';
-    ?>
+    <div id="Ahaha-Another-Wrapper-Lol">
+        <?php
+            $parent_dir = JPATH_BASE . "/templates/journal/blocks";
+            include $parent_dir . '/main/main.php';
+        ?>
+    </div>
+
+    <hr id="Footer-Pusher">
     <footer role="contentinfo">
         <nav class="Site-Navigation Secondary">
             <jdoc:include type="modules" name="bot_nav"/>
@@ -59,3 +64,12 @@
 </body>
 
 </html>
+
+
+
+
+
+
+<!--
+            %d %b %Y
+-->

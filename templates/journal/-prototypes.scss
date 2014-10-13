@@ -74,10 +74,10 @@
 {
 	padding:			5px 10px;
 	border-radius: 		6px;
-	border:				1px solid #efeff3;
+	border:				1px solid #e1e1e5;
 	line-height:		13px;
 	font-size:			13px;
-	background-color: 	white;
+	background-color: #f5f5f9;
 	outline: 			0;
 	&:focus
 	{
@@ -87,12 +87,18 @@
 %Control-Button
 {
 	padding: 			5px 10px;
-	border-radius:		20px;
+	border-radius:		6px;
 	border:				1px solid;
 	line-height:		13px;
 	font-size:			13px;
 	font-family: 		'PT Serif', serif;
+	background-color: 	#c82222;
+	color:				white;
 	@extend 			%Uppercase;
+	&:hover
+	{
+		background-color: #e12626;
+	}
 }
 %Button-Shadow
 {
@@ -112,6 +118,7 @@
 		{
 			display: 	block;
 			padding: 	0 15px;
+			color:		black;
 			@include 	Adaptive(1400px)
 			{
 				padding: 0 30px;

@@ -17,7 +17,7 @@
         .UPF-Window-Wrapper
         {
             @extend %fixed;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.3);
 
 
         }
@@ -30,9 +30,8 @@
             z-index:    8888888888;
             position:   relative;
 
-            background: $C-Blue-2;
-            border:     4px solid $C-Blue-1;
-            color:      $C-Grey-6;
+			@extend 	%Content-Block;
+			box-shadow: 0 0 30px black;
         }
 
         .UPF-Window-Close
@@ -40,12 +39,21 @@
             position:   absolute;
             top:        -15px;
             right:      -15px;
+			padding-top: 6px;
             font-size:  14px;
+			width: 30px;
+			height: 30px;
 
 
             background:      $C-Red-2;
-            border:          4px solid $C-Red-1;
-            border-radius:   0px;
+            border:          1px solid $C-Red-1;
+            border-radius:   6px;
             color:           $C-Grey-6;
+			@extend 		%Animated;
+			&:hover
+			{
+				background:      $C-Grey-3;
+				border: 		1px solid $C-Grey-1;
+			}
         }
 }

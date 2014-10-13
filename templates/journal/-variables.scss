@@ -70,3 +70,116 @@ $C-Blue-3: #8abfd3;
 $C-Blue-4: #dceff2;
 $C-Blue-5: #eaf8fa;
 $C-Blue-6: #f4fdff;
+
+$Clr-Grey-Lighter: 		#f1f1f1;
+$Clr-Grey-Light: 		#dedede;
+$Clr-Grey:				#cccccc;
+$Clr-Grey-Dark: 		#999999;
+$Clr-Grey-Darker: 		#555555;
+
+$Clr-Sunflower:			#f1c40f;
+$Clr-Orange:			#f39c12;
+$Clr-Carrot:			#e67e22;
+$Clr-Pumpkin:			#d35400;
+
+$Clr-Turquoise:			#1abc9c;
+$Clr-Green-Sea:			#16a085;
+$Clr-Emerald:			#2ecc71;
+$Clr-Nephritis:			#27ae60;
+$Clr-Nephritis: 		#5ec67d;
+
+$Clr-Scarlet:			#ff2400;
+$Clr-Coral:				#ff4040;
+$Clr-Pamegranate:		#c0392b;
+$Clr-Alizarin:			#e74c3c;
+
+$Clr-Cyan-Light:		#25d4f3;
+$Clr-Cyan:				#07b3d2;
+$Clr-Cyan-Dark:			#0599b4;
+$Clr-Belize-Hole:		#2980b9;
+$Clr-Peter-River:		#3498db;
+$Clr-Midnight-Blue:		#2c3e50;
+$Clr-Wet-Asphalt:		#34495e;
+
+$Clr-Asbestos:			#7f8c8d;
+$Clr-Concrete:			#95a5a6;
+$Clr-Silver:			#bdc3c7;
+$Clr-Clouds:			#ecf0f1;
+
+$Clr-Slate-Light:		#3e494b;
+$Clr-Slate:				#374144;
+$Clr-Slate-Dark:		#283032;
+$Clr-Slate-Darker: 		#161a1b;
+
+$Control-Border-Width: 1px;
+$Control-Border-Color: $C-Grey-4;
+$Control-Bg-Color: $C-Grey-6;
+$Control-Border-Radius: 5px;
+$Control-Padding: 7px;
+$Control-Left-Column-Width: 30%;
+$Control-Right-Column-Width: 100% - $Control-Left-Column-Width;
+$Control-Font-Size: 14px;
+$Control-Line-Height: $Control-Font-Size;
+$Control-Height: $Control-Line-Height + ($Control-Padding * 2) + ($Control-Border-Width * 2);
+$Control-Color: $C-Grey-1;
+
+$Control-Bg-Color-Hover: $C-Grey-5;
+
+$Control-Bg-Color-Disabled: $C-Grey-5;
+$Control-Border-Color-Disabled: $C-Grey-4;
+$Control-Color-Disabled: $C-Grey-4;
+
+$Control-Border-Color-Focus: $C-Cyan-1;
+$Control-Bg-Color-Focus: $C-Cyan-5;
+
+$Control-Textarea-Line-Height: ceil($Control-Font-Size * 1.45);
+$Control-Textarea-Min-Rows: 2;
+$Control-Textarea-Min-Height: ($Control-Textarea-Line-Height * $Control-Textarea-Min-Rows) + ($Control-Padding * 2) + ($Control-Border-Width * 2);
+$Control-Textarea-Min-Height-Focus: ($Control-Textarea-Line-Height * ($Control-Textarea-Min-Rows + 2)) + ($Control-Padding * 2) + ($Control-Border-Width * 2);
+$Control-MultiSelect-Min-Height:$Control-Textarea-Min-Height*4;
+
+$Control-Button-Bg-Color: $C-Red-3;
+$Control-Button-Bg-Color-Hover: $C-Red-2;
+$Control-Button-Border-Color:  $C-Red-1;
+
+$Checkbox-Margin:  0px;
+$Checkbox-Height: $Control-Height - $Checkbox-Margin;
+$Checkbox-Width: $Checkbox-Height * 2;
+$Checkbox-Border: $Control-Border-Width;
+$Checkbox-Fnt-Size: 14px;
+$Checkbox-Border-Radius: $Checkbox-Height;
+$Checkbox-Toggle-Spacing: 2px;
+$Checkbox-Toggle-Diameter: $Checkbox-Height - ($Checkbox-Toggle-Spacing * 2) - ($Checkbox-Border * 2);
+
+$Clr-Main:		$C-Red-3;
+$Clr-Main-Dark:	$C-Red-1;
+$Clr-Success:			$Clr-Emerald;
+$Clr-Success-Dark:		$Clr-Nephritis;
+$Clr-Info:				$Clr-Peter-River;
+$Clr-Info-Dark:			$Clr-Belize-Hole;
+$Clr-Warning:			$Clr-Carrot;
+$Clr-Warning-Dark:		$Clr-Pumpkin;
+$Clr-Error: 			#f2070b;
+$Clr-Error-Dark: 		#d1060a;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Grid variables
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$Enable-Fraction-Grid:	false;			// Enables 1/2, 1/3, ... , 1/7 Grids
+$Enable-12-Column:		true;			// Enables 1, 2, 3 ... , 12 Grid
+$Enable-Merged-Grid:	true;			// Enables Grid Merge
+$Enable-Split-Grid:		true;			// Enables Grid Split
+/////////////////////////////
+$Fixed-Grid-Width:		960px;			// Fixed width grid
+/////////////////////////////
+$Fraction-Grid-Limit:	7;				// Determines how much fraction grids do you want
+$Grid-Gutter:			5%;				// Gaps between grid nodes
+$Fraction-Grids-Max: 	12;				// How much do fraction grids do you need
+/////////////////////////////
+$Node-Name:				Node;			// How will you call your grid nodes in HTML (example: <div class="$Node-Name-XS-1-2>)
+$Grid-Name:				Grid;			// How will you call your grids in HTML (example: <div class="$Grid-Name Merge">)
+/////////////////////////////
+$Viewports-List: 		($Viewport-XXS, $Viewport-XS, $Viewport-SM, $Viewport-MD, $Viewport-LR, $Viewport-HG);
+$Viewports-Prefix: 		(XXS, XS, SM, MD, LR, HG);
+$Viewports-Count: 		length($Viewports-List);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
