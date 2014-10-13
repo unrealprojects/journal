@@ -37,7 +37,11 @@
 
                 <position>tags</position>
                 <position>popular</position>
+
                 <position>popular_right</position>
+                <position>adv_right</position>
+
+
                 <position>adv</position>
                 <position>journal_header</position>
         </positions>

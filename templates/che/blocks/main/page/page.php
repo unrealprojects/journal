@@ -68,14 +68,14 @@
                             </ul>
                         </div>
                         <div class="Popular">
-                            <jdoc:include type="modules" name="popular" />
+                            <jdoc:include type="modules" name="popular_right" />
                         </div>
                     </div>
                 <?php endif;?>
 
                 <?php  if( $this->countModules('adv_right') ) : ?>
                     <div class="Adv">
-                        <jdoc:include type="modules" name="adv" />
+                        <jdoc:include type="modules" name="adv_right" />
                     </div>
                 <?php endif; ?>
 
