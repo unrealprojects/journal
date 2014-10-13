@@ -6,7 +6,7 @@
 
 
 
-    <div class="Grid Split"
+    <div class="Grid Split">
         <?php  if ($this->countModules('tags') || $this->countModules('popular') || $this->countModules('adv')) : ?>
 
             <div class="Before-Component  Node-XXS-3">
