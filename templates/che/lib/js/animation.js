@@ -3,12 +3,22 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 window.upf = {};
+window.upf.Actions={};
 window.upf.Menu = {};
 window.upf.Menu.Expanded = true;
+
+window.upf.Actions.Login = {};
+window.upf.Actions.Login.Expanded = false;
+
+
 window.upf.Page = {};
 
 (function($){
     $(document).ready(function(){
+
+
+// Thing
+//$('.skiptranslate span').remove();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // End Initialization
@@ -29,17 +39,19 @@ window.upf.Page = {};
                 $SiteContent = $('.Content-Wrapper'),
                 NavMenu = '.Sidebar-Toggle',
                 PullWidth = '0px',
-                PushWidth = '300px';
+                PushWidth = '235px';
 
 
             // Toggle Menu's body
             $(document).on('click',NavMenu,function(){
                 if($Menu.css('left')!=PullWidth){
                     // Click to Show menu
+                    $(NavMenu).animate({'margin-left':PushWidth});
                     $SiteContent.animate({'margin-left':PushWidth});
                     $Menu.animate({'left':PullWidth,'opacity':1});
                 }else{
                     // Click to Hide menu
+                    $(NavMenu).animate({'margin-left':PullWidth});
                     $SiteContent.animate({'margin-left':PullWidth});
                     $Menu.animate({'left':'-'+PushWidth,'opacity':0});
                 }
@@ -147,26 +159,26 @@ upf.Page.Headers = function(){
 
 
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LogIn
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+upf.Actions.Login = function(){
 
+    // Default Variables
+    var ButtonLogIn='.Authorization .Button-Like',
+        FormLogIn='#login-form',
+        CloseArea='main';
 
+    $(ButtonLogIn).click(function(){
+        $(FormLogIn).fadeToggle(300,'easeInQuint');
+    });
 
-/*** Buttons LogIn - LogOut ***/
-$(".Sign-In").click(function(){
-    $('.Sign-Up-UI').fadeOut(100,'easeInQuint');
-    $('.Sign-In-UI').fadeToggle(300,'easeInQuint');
-});
+    $(CloseArea).click(function(){
+        $(FormLogIn).fadeOut(100,'easeInQuint');
+    });
 
-$(".Sign-Up").click(function(){
-    $('.Sign-In-UI').fadeOut(100,'easeInQuint');
-    $('.Sign-Up-UI').fadeToggle(300,'easeInQuint');
-});
-
-$('main').click(function(){
-    $('.Sign-In-UI,.Sign-Up-UI').fadeOut(100,'easeInQuint');
-});
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // End LogIn
@@ -185,6 +197,7 @@ $('main').click(function(){
 
 upf.Menu.ToggleMenu();
 upf.Page.Headers();
+upf.Actions.Login();
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

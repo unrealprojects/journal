@@ -100,7 +100,8 @@ button
 {
 	position: 				fixed;
 	top: 					0;
-	left: 					$Sidebar-Width;
+    z-index:                10;
+	margin-left: 			$Sidebar-Width;
 	width: 					40px;
 	height: 				40px;
 	background: 			#77797c url(../../templates/che/images/menu_w.png) center center no-repeat;
