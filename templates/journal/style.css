@@ -1849,7 +1849,7 @@ footer[role='contentinfo'] article.Copyright {
   width: 100%;
   height: auto; }
 
-.Scroll-Top {
+#Scroll-Top {
   display: none;
   position: fixed;
   top: 25px;
@@ -1859,7 +1859,7 @@ footer[role='contentinfo'] article.Copyright {
   border-radius: 4px;
   border: 1px solid #efeff3;
   background: white url(../../templates/journal/images/scroll-top.png) center center no-repeat; }
-  .Scroll-Top:hover {
+  #Scroll-Top:hover {
     border-color: #23262f;
     background: #4a4f5a url(../../templates/journal/images/scroll-top-hover.png) center center no-repeat; }
 

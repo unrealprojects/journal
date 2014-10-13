@@ -1,5 +1,5 @@
 <!-- Site Header -->
-<div class="Scroll-Top"></div>
+<div id="Scroll-Top"></div>
 <header class="Site-Header">
     <div class="Site-Logo">
         <h2>
