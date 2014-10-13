@@ -1456,7 +1456,8 @@ button {
   margin-left: 235px;
   padding-left: 40px;
   padding-right: 40px;
-  min-width: 1000px; }
+  min-width: 1000px;
+  max-width: 1350px; }
   @media screen and (min-width: 1024px) {
     .Content-Wrapper {
       padding-left: 50px;
@@ -1675,9 +1676,13 @@ a {
   margin-left: 235px;
   width: 40px;
   height: 40px;
-  background: #77797c url(../../templates/journal/images/toggle.png) center center no-repeat; }
+  background: #77797c url(../../templates/journal/images/close.png) center center no-repeat; }
   .Sidebar-Toggle:hover {
     background-color: #1a90ff; }
+  .Sidebar-Toggle.Expanded {
+    background: #77797c url(../../templates/journal/images/toggle.png) center center no-repeat; }
+    .Sidebar-Toggle.Expanded:hover {
+      background-color: #1a90ff; }
 
 header.Site-Header {
   position: relative; }

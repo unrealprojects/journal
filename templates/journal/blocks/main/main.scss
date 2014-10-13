@@ -104,12 +104,20 @@ button
 	margin-left: 			$Sidebar-Width;
 	width: 					40px;
 	height: 				40px;
-	background: 			#77797c url(../../templates/journal/images/toggle.png) center center no-repeat;
+	background: 			#77797c url(../../templates/journal/images/close.png) center center no-repeat;
 	@extend 				%Animated;
 	@extend 				%Clickable;
 	&:hover
 	{
 		background-color: 	#1a90ff;
+	}
+	&.Expanded
+	{
+		background: 			#77797c url(../../templates/journal/images/toggle.png) center center no-repeat;
+		&:hover
+		{
+			background-color: 	#1a90ff;
+		}
 	}
 }
 
