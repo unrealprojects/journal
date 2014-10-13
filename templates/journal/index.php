@@ -3,7 +3,7 @@
 
 <head>
     <jdoc:include type="head" />
-    <link rel="stylesheet" href="/templates/che/style.css">
+    <link rel="stylesheet" href="/templates/journal/style.css">
     <meta name="google-translate-customization" content="ccff3993fba71849-78996be6e1aca67a-g90d82ac7a3fbd458-8"/>
 </head>
 
@@ -18,14 +18,14 @@
 <div class="Sidebar-Toggle"></div>
 <div class="Content-Wrapper">
     <?php
-        $parent_dir = JPATH_BASE . "/templates/che/blocks";
+        $parent_dir = JPATH_BASE . "/templates/journal/blocks";
         include $parent_dir . '/main/main.php';
     ?>
     <footer role="contentinfo">
         <nav class="Site-Navigation Secondary">
             <jdoc:include type="modules" name="bot_nav"/>
             <div class="Metrics">
-                <img src="templates/che/images/metrics.png" alt=""/>
+                <img src="templates/journal/images/metrics.png" alt=""/>
             </div>
         </nav>
         <article class="Copyright">
@@ -42,33 +42,25 @@
     </div>
 </div>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script src="/templates/che/blocks/main/header/js/translate.js"></script>
-    <script src="/templates/che/lib/js/masonry.pkgd.js"></script>
-    <script src="/templates/che/lib/js/animation.js"></script>
-    <script>
-        (function($){
-            $(document).ready(function(){
-                // Default Variables
-                var Blocks = $('.items');
-                var Selectors = '.teaser-item';
 
-                $(Blocks).masonry({
-                     itemSelector: Selectors
-                });
-
-            });
-        })(jQuery);
-
-    </script>
+    <div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script src="/templates/journal/blocks/main/header/js/translate.js"></script>
+        <script src="/templates/journal/lib/js/masonry.pkgd.js"></script>
+        <script src="/templates/journal/lib/js/grid.js"></script>
+        <script src="/templates/journal/lib/js/animation.js"></script>
+    </div>
 </body>
 
 </html>
+
+
+
 
 
 

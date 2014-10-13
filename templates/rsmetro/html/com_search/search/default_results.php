@@ -12,8 +12,9 @@ defined('_JEXEC') or die;
 
 <dl class="search-results<?php echo $this->pageclass_sfx; ?>">
 <?php foreach($this->results as $result) : ?>
-	<dt class="result-title">
-		<span class="small"><?php echo $this->pagination->limitstart + $result->count.'. ';?></span>
+<article class="Search-Result">
+	<div class="Search-Result-Title">
+		<span class="Small"><?php echo $this->pagination->limitstart + $result->count.'. ';?></span>
 		<?php if ($result->href) :?>
 			<a href="<?php echo JRoute::_($result->href); ?>"<?php if ($result->browsernav == 1) :?> target="_blank"<?php endif;?>>
 				<?php echo $this->escape($result->title);?>
@@ -21,23 +22,25 @@ defined('_JEXEC') or die;
 		<?php else:?>
 			<?php echo $this->escape($result->title);?>
 		<?php endif; ?>
-	</dt>
+	</div>
 	<?php if ($result->section) : ?>
-		<dd class="result-category">
+		<div class="Search-Result-Category">
 			<span class="small<?php echo $this->pageclass_sfx; ?>">
 				(<?php echo $this->escape($result->section); ?>)
 			</span>
-		</dd>
+		</div>
 	<?php endif; ?>
-	<dd class="result-text">
+	<div class="result-text">
 		<?php echo $result->text; ?>
-	</dd>
+	</div>
 	<?php if ($this->params->get('show_date')) : ?>
-		<dd class="result-created<?php echo $this->pageclass_sfx; ?>">
+		<div class="Search-Result-Created">
 			<?php echo JText::sprintf('JGLOBAL_CREATED_DATE_ON', $result->created); ?>
-		</dd>
+		</div>
 	<?php endif; ?>
+</article>
 <?php endforeach; ?>
+
 </dl>
 
 <div class="pagination">

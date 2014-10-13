@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.3" type="template" client="site">
-        <name>Che</name>
+        <name>journal</name>
         <creationDate>01.12.2013</creationDate>
-        <author>Che</author>
-        <authorEmail>Che</authorEmail>
-        <authorUrl>Che</authorUrl>
-        <copyright>Che</copyright>
+        <author>journal</author>
+        <authorEmail>journal</authorEmail>
+        <authorUrl>journal</authorUrl>
+        <copyright>journal</copyright>
         <license>GNU/GPL</license>
         <version>1.0.0</version>
         <description>Che</description>
@@ -46,3 +46,5 @@
                 <position>journal_header</position>
         </positions>
 </extension>
+
+

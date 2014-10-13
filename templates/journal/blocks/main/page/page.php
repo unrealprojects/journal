@@ -47,6 +47,7 @@
 
 
             <div class="Component Node-XXS-9">
+                <jdoc:include type="message" />
                 <jdoc:include type="component" />
             </div>
 

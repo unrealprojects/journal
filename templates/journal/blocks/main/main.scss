@@ -104,7 +104,7 @@ button
 	margin-left: 			$Sidebar-Width;
 	width: 					40px;
 	height: 				40px;
-	background: 			#77797c url(../../templates/che/images/menu_w.png) center center no-repeat;
+	background: 			#77797c url(../../templates/journal/images/menu_w.png) center center no-repeat;
 	@extend 				%Animated;
 	@extend 				%Clickable;
 	&:hover
@@ -125,7 +125,7 @@ header.Site-Header
 		margin-top:				10px;
 		float: 					left;
 		height: 				107px;
-		background: 			url(../../templates/che/images/logo.png) left top no-repeat;
+		background: 			url(../../templates/journal/images/logo.png) left top no-repeat;
 		h2
 		{
 			padding-top:		35px;
@@ -403,28 +403,76 @@ footer[role='contentinfo']
 
 
 
-.Content-Wrapper{
-  position: relative;
-}
-/*** OlegBlud Styles***/
 
-.Subscription{
-	display:none;
 
-}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Page Vertical Grid Items
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .pos-content .pos-title{
 	min-height: 0px !important;
 }
 
 
-.teaser-item{
+body[data-page=home] .teaser-item
+{
 	@extend .Node-XS-6;
 	@extend .Node-MD-4;
+}
 
-	.pos-title  img{
-		width:100%;
-		height: auto;
-	}
+body[data-page=list] .teaser-item
+{
+  @extend .Node-XS-12;
+  @extend .Node-MD-6;
+}
 
+
+
+.pos-title
+{
+    &.Block-No-Image article.Item-Category a
+    {
+        position: relative !important;
+        left: 0px !important;
+        top: -15px;
+    }
+
+    img
+    {
+      width:100%;
+      height: auto;
+    }
+}
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+.item-page{
+    h2{
+        @extend %Heading-Section;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+  /*** OlegBlud Styles***/
+
+  .Subscription
+  {
+    display:none;
+  }
+
+
+  .Content-Wrapper
+  {
+    position: relative;
+  }
+
+
+.tag-title{
+  @extend %Heading-Section;
 }

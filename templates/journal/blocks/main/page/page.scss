@@ -181,7 +181,7 @@
 					{
 						float: 		right;
 						padding-left: 25px;
-						background: url(../../templates/che/images/views.png) left center no-repeat;
+						background: url(../../templates/journal/images/views.png) left center no-repeat;
 					}
 				}
 			}
@@ -199,6 +199,9 @@
 {
 	@extend 					%Content-Block;
     margin-top:                 80px;
+    img{
+        width: 100%;
+    }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -357,7 +360,7 @@ fieldset.only
             {
               float: 		right;
               padding-left: 25px;
-              background: url(../../templates/che/images/views.png) left center no-repeat;
+              background: url(../../templates/journal/images/views.png) left center no-repeat;
             }
         }
     }
@@ -366,3 +369,5 @@ fieldset.only
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
