@@ -4,6 +4,7 @@
 
 window.upf = {};
 window.upf.Menu = {};
+window.upf.Menu.Expanded = true;
 window.upf.Page = {};
 
 (function($){
@@ -48,18 +49,21 @@ window.upf.Page = {};
 
             // Hide Menu When Width < 1180px
             if($(window).width()<1180){
+                upf.Menu.Expanded = false;
                 $SiteContent.animate({'margin-left':PullWidth});
                 $Menu.animate({'left':'-'+PushWidth,'opacity':0});
             }
 
             $(window).resize(function(){
                 // Hide menu
-                if($(window).width()<1180){
+                if($(window).width()<=1180 && upf.Menu.Expanded==true){
                     $SiteContent.animate({'margin-left':PullWidth});
                     $Menu.animate({'left':'-'+PushWidth,'opacity':0});
-                }else{
+                    upf.Menu.Expanded=false;
+                }else if($(window).width()>1180 && upf.Menu.Expanded==false){
                     $SiteContent.animate({'margin-left':PushWidth});
                     $Menu.animate({'left':PullWidth,'opacity':1});
+                    upf.Menu.Expanded=true;
                 }
             });
 
