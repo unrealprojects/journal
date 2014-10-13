@@ -99,9 +99,9 @@ defined('_JEXEC') or die;
 		<div id="recaptcha"></div>
 		<?php endif; ?>
 
-		<div class="k2AccountPageUpdate">
+		<div class="Control-Group k2AccountPageUpdate">
 			<button class="button validate" type="submit">
-				<?php echo JText::_('K2_REGISTER'); ?>
+				Регистрация
 			</button>
 		</div>
 	</div>
