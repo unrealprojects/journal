@@ -128,6 +128,46 @@
 		@extend %Heading-Section-Spacing;
 	}
 }
+#yoo-zoo.Item-Extended
+{
+	.item
+	{
+		border: 0;
+		padding: 0;
+		background-color: transparent;
+		.pos-bottom
+		{
+			.element.element-relateditems
+			{
+				.pos-top
+				{
+					@extend %Content-Block;
+					.pos-title
+					{
+
+					}
+				}
+				h3
+				{
+					@extend %Heading-Section;
+					@extend %Heading-Section-Spacing;
+				}
+				.pos-item
+				{
+					@extend %Content-Block;
+					width: 33.33%;
+					float: left;
+					.pos-subtitle
+					{
+						font-weight: 100;
+						font-size: 18px;
+						line-height: 23px;
+					}
+				}
+			}
+		}
+	}
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
