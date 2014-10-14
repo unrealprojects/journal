@@ -1232,7 +1232,30 @@ select {
     border: 0;
     border-radius: 0; }
     .Dropdown.Ghost:hover {
-      border: 0; }
+      border: 0;
+      color: #e43f3f; }
+    .Dropdown.Ghost.Expanded {
+      box-shadow: none;
+      background-color: transparent; }
+      .Dropdown.Ghost.Expanded .Dropdown-Title:hover {
+        background-color: transparent; }
+      .Dropdown.Ghost.Expanded .Dropdown-Toggle,
+      .Dropdown.Ghost.Expanded .Dropdown-Toggle:hover {
+        background-color: transparent; }
+    .Dropdown.Ghost .Dropdown-Title .Dropdown-Toggle {
+      margin: 0; }
+    .Dropdown.Ghost .Dropdown-Content {
+      border-radius: 0;
+      border: 0;
+      width: 125px;
+      left: 0;
+      right: auto !important;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); }
+      .Dropdown.Ghost .Dropdown-Content li a {
+        font-size: 12px;
+        border-radius: 0; }
+        .Dropdown.Ghost .Dropdown-Content li a:hover {
+          background-color: #e43f3f; }
   .Dropdown.Invert {
     background-color: #3c3c3c;
     border-color: #3c3c3c;

@@ -99,6 +99,46 @@
 		&:hover
 		{
 			border: 0;
+			color: $C-Red-2;
+		}
+		&.Expanded
+		{
+			box-shadow: none;
+			background-color: transparent;
+			.Dropdown-Title:hover
+			{
+				background-color: transparent;
+			}
+			.Dropdown-Toggle,
+			.Dropdown-Toggle:hover
+			{
+				background-color: transparent;
+			}
+		}
+		.Dropdown-Title
+		{
+			.Dropdown-Toggle
+			{
+				margin: 0;
+			}
+		}
+		.Dropdown-Content
+		{
+			border-radius: 0;
+			border: 0;
+			width: 125px;
+			left: 0;
+			right: auto!important;
+			box-shadow: 0 0 20px rgba(0,0,0,.3);
+			li a
+			{
+				font-size: 12px;
+				border-radius: 0;
+				&:hover
+				{
+					background-color: $C-Red-2;
+				}
+			}
 		}
 	}
 	&.Invert
