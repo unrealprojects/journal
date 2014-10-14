@@ -434,8 +434,8 @@ upf.Tools.Dropdown = function(){
         Duration            =   500;
 
     // Presets
-  /*  $(Dropdown).addClass('Collapsed');
-    var Toggle = false;*/
+    $(Dropdown).addClass('Collapsed');
+    var Toggle = false;
 
     // Body
     $(document).on('click',DropdownTitle,function(){
