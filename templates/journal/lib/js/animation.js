@@ -26,16 +26,16 @@ var MasonryObj;
 // 1 Vertical Grid
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    upf.Start.VerticalGrid = function(){
-        // Default Variables
-        var Blocks = $('.items .Grid');
-        var Selectors = '.teaser-item';
-        if($('.items .Grid').length){
-            MasonryObj = new Masonry('.items .Grid',{
-                itemSelector: Selectors
-            });
-        }
+upf.Start.VerticalGrid = function(){
+    // Default Variables
+    var Blocks = $('.items .Grid, .element-relateditems');
+    var Selectors = '.teaser-item,.pos-item';
+    if($('.items .Grid').length){
+        MasonryObj = new Masonry('.items .Grid',{
+            itemSelector: Selectors
+        });
     }
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
