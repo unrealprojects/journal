@@ -28,7 +28,7 @@ switch ($display) {
 
 	case 'buttonlink':
 		if ($limit_reached) {
-			echo '<a class="yoo-zoo element-download-button" href="javascript:alert(\''.JText::_('Download limit reached').'\');" title="'.JText::_('Download limit reached').'"><span><span>'.JText::_('Download').'</span></span></a>';
+			echo '<a class="yoo-zoo element-download-button" href="javascript:alert(\''.JText::_('Download limit reached').'\');" title="'.JText::_('Download limit reached').'"><span><span></span></span></a>';
 		} else {
 			echo '<a class="yoo-zoo element-download-button" href="'.JRoute::_($download_link).'" title="'.$download_name.'"><span><span>'.JText::_('Download').'</span></span></a>';
 		}
@@ -46,6 +46,6 @@ switch ($display) {
 		if ($limit_reached) {
 			echo JText::_('Download limit reached');
 		} else {
-			echo '<a href="'.JRoute::_($download_link).'" title="'.$download_name.'">'.$download_name.'</a>';
+			echo '<a href="'.JRoute::_($download_link).'" title="'.$download_name.'">PDF</a>';
 		}
 }
