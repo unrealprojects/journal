@@ -273,11 +273,10 @@ upf.Actions.Login = function(){
         // Default Variables
         var Elements = $('.pos-title');
 
-
         $(window).scroll(function(){
-            if($(window).scrollTop < 200){
+           /* if($(window).scrollTop() && ){
 
-            }
+              }*/
         });
     }
 
