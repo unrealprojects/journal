@@ -98,6 +98,8 @@
 
 
 <div class="Projects">
-    <h3 class="Projects-Header">Наши проекты</h3>
-    <jdoc:include type="modules" name="projects"/>
+    <?php  if( $this->countModules('projects') ) : ?>
+        <h3 class="Projects-Header">Наши проекты</h3>
+        <jdoc:include type="modules" name="projects"/>
+    <?php endif; ?>
 </div>

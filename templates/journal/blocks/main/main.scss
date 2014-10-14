@@ -53,6 +53,9 @@ button
 	@extend 			%Control-Button;
 }
 
+main{
+    margin-bottom: 20px;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Sidebar
@@ -324,8 +327,8 @@ header.Site-Header
 .Site-Navigation.Primary
 {
 	margin-top:					20px;
-	padding-top: 				20px;
-	padding-bottom:				20px;
+    padding-top:                24px;
+    padding-bottom:             18px;
 	border-top:					1px solid #e9ebec;
 	border-bottom:				1px solid #e9ebec;
 	margin-bottom:				20px;
@@ -448,7 +451,9 @@ ul.Pagination
 footer[role='contentinfo']
 {
 	border-top:			5px solid #77972b;
-	margin-top:				-246px;
+    max-width:          1200px;
+    margin:             -246px auto;
+
 	nav.Site-Navigation.Secondary
 	{
 		margin-bottom:		40px;
