@@ -74,6 +74,60 @@
 		}
 	}
 }
+#yoo-zoo > .item
+{
+	@extend %Content-Block;
+	.pos-content
+	{
+		@extend		%Content-Block-Textarea-Spacing;
+	}
+	h1.pos-title
+	{
+		font-size: 0;
+		margin-bottom:			15px;
+	}
+	.floatbox
+	{
+		margin: 0;
+	}
+	.pos-subtitle
+	{
+		a
+		{
+			margin-top: 10px;
+			color:	#000000;
+		}
+	}
+	.pos-content .element-textarea p
+	{
+		font-size:			14px;
+		line-height:		23px;
+	}
+	.pos-content .element-download
+	{
+		@extend %File-Download;
+	}
+	.pos-bottom
+	{
+	}
+	.pos-bottom .element-itemhits
+	{
+		@extend %Content-Block-Footer;
+		@extend %Content-Block-Views;
+	}
+	.pos-bottom .element-itemcreated
+	{
+		@extend %Content-Block-Footer;
+		@extend %Content-Block-Date;
+	}
+}
+#yoo-zoo
+{
+	.tag-title
+	{
+		@extend %Heading-Section-Spacing;
+	}
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -180,21 +234,15 @@
 				.pos-content
 				{
 					margin-top:		20px;
-					.element
-					{
-						font-size:	12px;
-						color:		#7c7e80;
-						width: 		auto;
-					}
 					.first
 					{
-						float: 		left;
+						@extend %Content-Block-Footer;
+						@extend %Content-Block-Date;
 					}
 					.last
 					{
-						float: 		right;
-						padding-left: 25px;
-						background: url(../../templates/journal/images/views.png) left center no-repeat;
+						@extend %Content-Block-Footer;
+						@extend %Content-Block-Views;
 					}
 				}
 			}
@@ -537,4 +585,3 @@ fieldset.only
 		}
 	}
 }
-
