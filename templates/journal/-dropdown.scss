@@ -96,6 +96,7 @@
 	{
 		border: 0;
 		border-radius: 0;
+		padding: 0;
 		&:hover
 		{
 			border: 0;
@@ -119,7 +120,13 @@
 		{
 			.Dropdown-Toggle
 			{
+				padding: 8px 10px;
 				margin: 0;
+				@extend %Clickable;
+				&:hover
+				{
+					background-color: transparent;
+				}
 			}
 		}
 		.Dropdown-Content

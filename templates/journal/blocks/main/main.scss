@@ -155,6 +155,7 @@ header.Site-Header
 	@extend 					%Fix;
 	.Site-Logo
 	{
+		position: 				relative;
 		margin-top:				10px;
 		float: 					left;
 		height: 				107px;
@@ -172,6 +173,27 @@ header.Site-Header
 				display: 		block;
 				margin-top:		-7px;
 				font-size:		31px;
+			}
+		}
+		& a
+		{
+			position: 			absolute;
+			top:				20px;
+			width: 				100%;
+			text-align: 		center;
+			@include 			Opacity(0);
+		}
+
+		&:hover
+		{
+			background: none; 
+			h2
+			{
+				@include Opacity(0);
+			}
+			a
+			{
+				@include Opacity(1);
 			}
 		}
 	}

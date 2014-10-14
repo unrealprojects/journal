@@ -11,6 +11,7 @@
 
             <div class="Before-Component  Node-XXS-4">
 
+
                 <?php  if( $this->countModules('tags') ) : ?>
                     <div class="Tags">
                         <h3>Рубрики журнала</h3>

@@ -25,6 +25,7 @@
 	max-width:					1200px;
 }
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // About
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -71,6 +72,100 @@
 		img
 		{
 			width: 				100%;
+		}
+	}
+}
+#yoo-zoo > .item
+{
+	@extend %Content-Block;
+	.pos-content
+	{
+		@extend		%Content-Block-Textarea-Spacing;
+	}
+	h1.pos-title
+	{
+		font-size: 0;
+		margin-bottom:			15px;
+	}
+	.floatbox
+	{
+		margin: 0;
+	}
+	.pos-subtitle
+	{
+		a
+		{
+			margin-top: 10px;
+			color:	#000000;
+		}
+	}
+	.pos-content .element-textarea p
+	{
+		font-size:			14px;
+		line-height:		23px;
+	}
+	.pos-content .element-download
+	{
+		@extend %File-Download;
+	}
+	.pos-bottom
+	{
+	}
+	.pos-bottom .element-itemhits
+	{
+		@extend %Content-Block-Footer;
+		@extend %Content-Block-Views;
+	}
+	.pos-bottom .element-itemcreated
+	{
+		@extend %Content-Block-Footer;
+		@extend %Content-Block-Date;
+	}
+}
+#yoo-zoo
+{
+	.tag-title
+	{
+		@extend %Heading-Section-Spacing;
+	}
+}
+#yoo-zoo.Item-Extended
+{
+	.item
+	{
+		border: 0;
+		padding: 0;
+		background-color: transparent;
+		.pos-bottom
+		{
+			.element.element-relateditems
+			{
+				.pos-top
+				{
+					@extend %Content-Block;
+					.pos-title
+					{
+
+					}
+				}
+				h3
+				{
+					@extend %Heading-Section;
+					@extend %Heading-Section-Spacing;
+				}
+				.pos-item
+				{
+					@extend %Content-Block;
+					width: 33.33%;
+					float: left;
+					.pos-subtitle
+					{
+						font-weight: 100;
+						font-size: 18px;
+						line-height: 23px;
+					}
+				}
+			}
 		}
 	}
 }
@@ -180,21 +275,15 @@
 				.pos-content
 				{
 					margin-top:		20px;
-					.element
-					{
-						font-size:	12px;
-						color:		#7c7e80;
-						width: 		auto;
-					}
 					.first
 					{
-						float: 		left;
+						@extend %Content-Block-Footer;
+						@extend %Content-Block-Date;
 					}
 					.last
 					{
-						float: 		right;
-						padding-left: 25px;
-						background: url(../../templates/journal/images/views.png) left center no-repeat;
+						@extend %Content-Block-Footer;
+						@extend %Content-Block-Views;
 					}
 				}
 			}
@@ -538,4 +627,3 @@ fieldset.only
 		}
 	}
 }
-
