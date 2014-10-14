@@ -21,7 +21,7 @@
                 <?php  if( $this->countModules('popular') ) : ?>
                     <div class="Top-Five">
                         <div class="Dropdown Expanded">
-                            <div class="Dropdown-Title">Топ 5 за неделю<span class="Dropdown-Toggle"></span></div>
+                            <div class="Dropdown-Title">Топ 5 за неделю<span class="Dropdown-Toggle fa fa-close"></span></div>
                             <ul class="Dropdown-Content" style="display: block;">
                                 <li class="Icon"><a href="#">За все время</a></li>
                                 <li class="Icon"><a href="#">За месяц</a></li>

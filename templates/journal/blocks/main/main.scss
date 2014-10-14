@@ -39,7 +39,7 @@ p + p
 	margin-top:			10px;
 }
 input,
-select, 
+select,
 textarea,
 button
 {
@@ -120,18 +120,22 @@ button
 	top: 					5px;
 	z-index:                10;
 	margin-left: 			$Sidebar-Width;
-	width: 					40px;
-	height: 				40px;
-	background: 			#77797c url(../../templates/journal/images/close.png) center center no-repeat;
+	padding:				12px 15px;
+	background-color: 		#77797c;
+	font-size:				13px;
+	color:					white;
+	@extend 				.fa, .fa-close;
 	@extend 				%Animated;
 	@extend 				%Clickable;
+
 	&:hover
 	{
 		background-color: 	#1a90ff;
 	}
 	&.Expanded
 	{
-		background: 			#77797c url(../../templates/journal/images/toggle.png) center center no-repeat;
+		background-color:	#77797c;
+		@extend 			.fa-bars;
 		&:hover
 		{
 			background-color: 	#1a90ff;
@@ -590,15 +594,18 @@ a{
 	position: 		fixed;
 	top: 			25px;
 	right: 			25px;
-	width: 			35px;
-	height: 		35px;
+	padding:		7px 10px;
 	border-radius:	4px;
 	border:			1px solid #efeff3;
-	background: 	white url(../../templates/journal/images/scroll-top.png) center center no-repeat;
+	background-color: white;
+	@extend 		.fa, .fa-angle-up;
+	@extend 		%Clickable;
+	@extend 		%Animated;
 	&:hover
 	{
-		border-color: #23262f;
-		background: #4a4f5a url(../../templates/journal/images/scroll-top-hover.png) center center no-repeat;
+		border-color: 			$C-Red-1;
+		background-color:		$C-Red-2;
+		color:					white;
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
