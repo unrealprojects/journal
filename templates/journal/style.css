@@ -337,12 +337,11 @@
   [class*='Grid'].Split > .Node-MD-5 {
     width: 38.75%; }
 
-  .Merge > .Node-MD-6, body[data-page=list] .Merge > .teaser-item,
-  .Control-Group > .Node-MD-6,
-  body[data-page=list] .Control-Group > .teaser-item {
+  .Merge > .Node-MD-6,
+  .Control-Group > .Node-MD-6 {
     width: 50%; }
 
-  [class*='Grid'].Split > .Node-MD-6, body[data-page=list] [class*='Grid'].Split > .teaser-item {
+  [class*='Grid'].Split > .Node-MD-6 {
     width: 47.5%; }
 
   .Merge > .Node-MD-7,
@@ -1611,13 +1610,44 @@ footer[role='contentinfo'] {
 .pos-content .pos-title {
   min-height: 0px !important; }
 
-.pos-title.Block-No-Image article.Item-Category a {
+.pos-title.Block-No-Image article.Item-Category a, .zoo-itempro-default .media.Block-No-Image article.Item-Category a {
   position: relative !important;
   left: 0px !important;
   top: -15px; }
-.pos-title img {
-  width: 100%;
-  height: auto; }
+
+.zoo-itempro-default .media {
+  position: relative; }
+  .zoo-itempro-default .media article.item {
+    display: none; }
+  .zoo-itempro-default .media article:last-of-type, .zoo-itempro-default .media .Item-Category {
+    display: block; }
+    .zoo-itempro-default .media article:last-of-type a, .zoo-itempro-default .media .Item-Category a {
+      bottom: 25px;
+      left: 10px;
+      position: absolute;
+      padding: 0px 7px !important;
+      line-height: 13px;
+      border-radius: 3px;
+      font-size: 13px !important;
+      color: white !important;
+      letter-spacing: 0 !important;
+      background-color: red;
+      font-weight: bold; }
+
+.zoo-itempro-default .media .Block-No-Image .Item-Category {
+  display: block; }
+  .zoo-itempro-default .media .Block-No-Image .Item-Category a {
+    bottom: 25px;
+    left: 10px;
+    position: absolute;
+    padding: 5px 7px !important;
+    line-height: 13px;
+    border-radius: 3px;
+    font-size: 13px !important;
+    color: white !important;
+    letter-spacing: 0 !important;
+    background-color: red;
+    font-weight: bold; }
 
 #Scroll-Top {
   display: none;
@@ -1642,5 +1672,20 @@ footer[role='contentinfo'] {
 
 .Content-Wrapper {
   position: relative; }
+
+.Site-Logo {
+  cursor: pointer; }
+  .Site-Logo img {
+    width: 100%;
+    height: auto; }
+  .Site-Logo h2 {
+    cursor: pointer;
+    color: black; }
+  .Site-Logo h2 span {
+    cursor: pointer; }
+
+img {
+  width: 100%;
+  height: auto; }
 
 /*# sourceMappingURL=style.css.map */

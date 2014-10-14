@@ -1,11 +1,13 @@
 <!-- Site Header -->
 <div id="Scroll-Top"></div>
 <header class="Site-Header">
-    <div class="Site-Logo">
-        <h2>
-            Фармакогенетика<span>Фармакогеномика</span>
-        </h2>
-    </div>
+    <a href="">
+        <div class="Site-Logo">
+            <h2>
+                Фармакогенетика<span>Фармакогеномика</span>
+            </h2>
+        </div>
+    </a>
     <div class="Toolbar">
         <div class="Languages">
             <jdoc:include type="modules" name="languages"/>

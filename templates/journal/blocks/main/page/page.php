@@ -53,9 +53,16 @@
 
 
 
-        <?php  if ( $this->countModules('popular_right') || $this->countModules('adv_right')) : ?>
+        <?php  if ( $this->countModules('popular_right') || $this->countModules('adv_right')  || $this->countModules('categories_right') ) : ?>
 
             <div class="Before-Component  Node-XXS-4">
+
+                <?php  if( $this->countModules('categories_right') ) : ?>
+                    <div class="Tags">
+                        <h3>Рубрики</h3>
+                        <jdoc:include type="modules" name="categories_right" />
+                    </div>
+                <?php endif;?>
 
                 <?php  if( $this->countModules('popular_right') ) : ?>
                     <div class="Top-Five">

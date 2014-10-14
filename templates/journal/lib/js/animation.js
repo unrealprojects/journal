@@ -167,6 +167,7 @@ upf.Page.Headers = function(){
     // Set data-page="home"
         if(location.pathname        == '/' ||
             location.pathname       == '/archive' ||
+            location.pathname         ==      '/authors'  ||
             location.pathname         ==      '/journals'){
             $Body.attr('data-page','home');
         }
@@ -175,7 +176,7 @@ upf.Page.Headers = function(){
         else if(location.pathname         ==      '/news'  ||
                 location.pathname         ==      '/articles' ||
                 location.pathname         ==      '/libs'  ||
-                location.pathname         ==      '/authors'  ||
+
                 location.pathname         ==      '/video'  ||
                 location.pathname         ==      '/events'  ||
                 location.pathname         ==      '/medication'  ||
@@ -187,17 +188,31 @@ upf.Page.Headers = function(){
 
 
     // Set data-page="static"
-        else if(location.pathname    ==      '/redkollegia'
+        else if(location.pathname    ==      '/redkollegiya' ||
+                location.pathname    ==      '/contacts' ||
+                location.pathname    ==      '/links' ||
+                location.pathname    ==      '/sponsors' ||
+                location.pathname    ==      '/subscribe'
 
             )
         {
             $Body.attr('data-page',page_static);
+            $('.Component').removeClass('Node-XXS-8');
+            $('.Component').addClass('Node-XXS-12');
         }
 
-    // Set data-page="static"
+    // Set data-page="list"
         else{
             $Body.attr('data-page',page_default);
         }
+
+
+    // For Unique Elements
+    if(location.pathname        ==      '/archive'){
+        $('#yoo-zoo .heading h1.title').html('Архив Новостей');
+    }
+
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -247,7 +262,7 @@ upf.Actions.Login = function(){
 
     upf.Start.CategoryLinks = function(){
         // Default Variables
-        var Elements = $('.pos-title');
+        var Elements = $('.pos-title, .zoo-itempro-default .media');
 
         $(Elements).each(function(){
             if(!$(this).find('img').length){
