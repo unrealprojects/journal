@@ -19,6 +19,7 @@ http://journal/libs/item/26-letnyaya-moskvichka-perepisala-knigu-rekordov-us-ope
 16 Запретить тянуть банер и топ 5 за неделю
 17 Icon-Loading - при ajax на главной
 18 http://journal/component/search/?searchword=&searchphrase=all&Itemid=179 поправить кнопку поиска. и заголовок
+19 "Подробнее" на главной, оформить
 
 
 blud
@@ -27,3 +28,6 @@ blud
 10 Реализовать переключение табов
 
 11 заменить на популярные статьи в журналах
+
+
+12 Страница подробнее

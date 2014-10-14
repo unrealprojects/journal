@@ -195,6 +195,7 @@ upf.Page.Headers = function(){
                 SiteSection    ==      'contacts' ||
                 SiteSection    ==      'links' ||
                 SiteSection    ==      'sponsors' ||
+                SiteSection    ==      'about' ||
                 SiteSection    ==      'subscribe'
 
             )
