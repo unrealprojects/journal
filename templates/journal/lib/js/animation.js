@@ -28,10 +28,18 @@ var MasonryObj;
 
 upf.Start.VerticalGrid = function(){
     // Default Variables
-    var Blocks = $('.items .Grid, .element-relateditems');
-    var Selectors = '.teaser-item,.pos-item';
+    var Selectors = '.teaser-item';
+
     if($('.items .Grid').length){
         MasonryObj = new Masonry('.items .Grid',{
+            itemSelector: Selectors
+        });
+    }
+
+    // Inner Related
+    Selectors = '.pos-item';
+    if($('.element-relateditems').length){
+        MasonryObjRelated = new Masonry('.element-relateditems',{
             itemSelector: Selectors
         });
     }
