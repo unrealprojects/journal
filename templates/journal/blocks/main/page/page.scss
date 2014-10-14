@@ -399,15 +399,27 @@ fieldset.only
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Top Five
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-.Dropdown-Title
-{
-  @extend %Heading-Section;
-}
+
 .Dropdown-Content{
    @extend %Unstyle;
 }
 .Top-Five{
     margin-top: 40px;
+}
+.Top-Five-Header
+{
+	margin-bottom: 30px;
+	@extend %Fix;
+	h3
+	{
+		display: inline-block;
+		width: auto;
+		float: left;
+	}
+	.Dropdown
+	{
+		float: right;
+	}
 }
 .Popular
 {
