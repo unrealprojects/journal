@@ -60,6 +60,14 @@
 			line-height:		23px;
 		}
 	}
+	.About-More
+	{
+		margin-top:				20px;
+		display: 				inline-block;
+		font-size:				12px;
+		color:					#707175;
+		border-bottom:			1px solid;
+	}
 	.About-Image
 	{
 		width: 					50%;
@@ -669,4 +677,9 @@ fieldset.only
 			}
 		}
 	}
+}
+button[name='Search']
+{
+	position: relative;
+	@extend .fa, .fa-search;
 }
