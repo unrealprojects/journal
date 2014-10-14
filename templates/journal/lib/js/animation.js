@@ -180,6 +180,7 @@ upf.Page.Headers = function(){
         if((SiteSection         ==      'authors'  && SiteSectionType == 'item') ||
            (SiteSection         ==      'journals'&& SiteSectionType == 'item')){
             $('#yoo-zoo').addClass('Item-Extended');
+            $('.Component').addClass('Node-XS-12').removeClass('Node-XXS-8');
         }
 
     // Set data-page="list"
