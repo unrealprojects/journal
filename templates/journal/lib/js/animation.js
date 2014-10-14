@@ -546,7 +546,6 @@ $(document).ready(function(){
         $('.Popular>ul').hide();
         $('.Popular>ul:nth-of-type(3)').show();
         return false;
-        return false;
     });
 });
 
