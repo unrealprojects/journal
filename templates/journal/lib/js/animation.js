@@ -229,7 +229,7 @@ upf.Page.Headers = function(){
         }
 
     if(location.pathname.split('/')[2] !==undefined && location.pathname.split('/')[2].length>2){
-        $('.Dropdown-Title').text('Интересные');
+        $('.Top-Five-Header h3').text('Интересные');
     }
 
     // Links in Categories
