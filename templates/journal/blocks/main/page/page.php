@@ -55,7 +55,7 @@
 
         <?php  if ( $this->countModules('popular_right') || $this->countModules('adv_right')  || $this->countModules('categories_right') ) : ?>
 
-            <div class="Before-Component  Node-XXS-4">
+            <div class="After-Component  Node-XXS-4">
 
                 <?php  if( $this->countModules('categories_right') ) : ?>
                     <div class="Tags">

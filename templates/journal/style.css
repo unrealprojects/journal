@@ -1664,6 +1664,9 @@ footer[role='contentinfo'] {
   float: left;
   width: 100%; }
 
+.Pagination-Wrapper {
+  display: none; }
+
 a.Color-Purple {
   background: #812b97 !important; }
 a.Color-Green {

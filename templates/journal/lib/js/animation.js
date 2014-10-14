@@ -4,6 +4,7 @@
 
 window.upf = {};
 window.upf.Start ={};
+window.upf.Tools ={};
 
 window.upf.Menu = {};
 window.upf.Menu.Expanded = true;
@@ -208,12 +209,12 @@ upf.Page.Headers = function(){
             $Body.attr('data-page',page_default);
         }
 
-  /*  if(location.pathname.split('/')[2].length>2){
+    if(location.pathname.split('/')[2] !==undefined && location.pathname.split('/')[2].length>2){
         $('.Dropdown-Title').text('Интересные');
-    }*/
+    }
 
     // Links in Categories
-    $('.zoo-list a').each(function($ItemKey,Item){
+    $('.After-Component .zoo-list a').each(function($ItemKey,Item){
         if(SiteSection){
             $(Item).attr('href','/'+SiteSection+$(Item).attr('href'))
         }
@@ -371,17 +372,21 @@ upf.Actions.Pagination = function(){
                     if(Chanks[Chanks.length-1]){
                          Page = Chanks[Chanks.length-1].toInt() + 1;
                          delete Chanks[Chanks.length-1];
+                        Chanks[Chanks.length-1] = Page;
                     }else if(Page){
+                        Chanks[Chanks.length-1] = Page;
                         Page++;
                     }else{
+                        Chanks[Chanks.length] = Page;
                         Page = 2;
                     }
                 }else{
                     Page = 2;
+                    Chanks[Chanks.length] = Page;
                 }
 
 
-                var link = Chanks.join('/') + Page + '?tmpl=component'
+                var link = Chanks.join('/') + '?tmpl=component'
                 console.log(link);
 
 
@@ -412,6 +417,63 @@ upf.Actions.Pagination = function(){
 
 
 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Dropdown
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+upf.Tools.Dropdown = function(){
+    // Default Variables
+    var Dropdown            =   '.Dropdown',
+        DropdownContent     =   '.Dropdown-Content',
+        DropdownTitle       =   '.Dropdown-Title',
+        DropdownToggle      =   '.Dropdown-Toggle',
+        Collapsed           =   'Collapsed',
+        Expanded            =   'Expanded',
+        Duration            =   500;
+
+    // Presets
+    $(Dropdown).addClass('Collapsed');
+    var Toggle = false;
+
+    // Body
+    $(document).on('click',DropdownTitle,function(){
+        $(Dropdown+'.'+Expanded).not($(this).parent()).find(DropdownContent).slideUp(Duration);
+        $(Dropdown+'.'+Expanded).not($(this).parent()).find(DropdownToggle).animate({transform: 'rotate(0deg)'},Duration);
+        $(Dropdown+'.'+Expanded).not($(this).parent()).removeClass(Expanded).addClass(Collapsed);
+
+        $(this).parents(Dropdown).find(DropdownContent).slideToggle(Duration);
+        $(this).parents(Dropdown).toggleClass(Collapsed+' '+Expanded);
+
+        // Toggle Button
+        if(!Toggle){
+            $(this).parents(Dropdown).find(DropdownToggle).animate({transform: 'rotate(-180deg)'},Duration);
+            Toggle = true;
+        }else{
+            $(this).parents(Dropdown).find(DropdownToggle).animate({transform: 'rotate(0deg)'},Duration);
+            Toggle = false;
+        }
+
+        return false;
+    });
+
+    // Focus Out
+    $(document).on('click','body',function(){
+        $(Dropdown+'.'+Expanded).find(DropdownContent).slideUp(Duration);
+        $(Dropdown+'.'+Expanded).find(DropdownToggle).animate({transform: 'rotate(0deg)'},Duration);
+        $(Dropdown+'.'+Expanded).removeClass(Expanded).addClass(Collapsed);
+    });
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Execute
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -419,6 +481,7 @@ upf.Actions.Pagination = function(){
 $(document).ready(function(){
     upf.Menu.ToggleMenu();
     upf.Menu.ScrollMenu();
+    upf.Tools.Dropdown();
     upf.Actions.Login();
     upf.Actions.Pagination();
 

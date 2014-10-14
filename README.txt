@@ -20,7 +20,7 @@ http://journal/libs/item/26-letnyaya-moskvichka-perepisala-knigu-rekordov-us-ope
 16 Цвет ссылки в блоке топ
 15 Поправить Категории в ленте (когда две строки)
 16 Запретить тянуть банер и топ 5 за неделю
-
+17 Icon-Loading - при ajax на главной
 
 
 blud
