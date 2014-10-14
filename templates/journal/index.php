@@ -11,6 +11,7 @@
 <body>
     <aside class="Page-Sidebar">
         <nav class="Site-Navigation">
+            <span class="fa fa close"></span>
             <jdoc:include type="modules" name="left_nav"/>
         </nav>
         <button class="Feed-Subscription">Подписка на сайт</button>
@@ -46,7 +47,6 @@
         <jdoc:include type="modules" name="subscription"/>
     </div>
 </div>
-
 
     <div class="Scripts">
         <script type="text/javascript">
