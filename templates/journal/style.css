@@ -560,7 +560,7 @@ table.Adaptive .Caption,
 .Row-Close {
   margin-right: 0 !important; }
 
-.About .About-Content h1, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems h3, .Tags h3, .yoo-zoo .details .heading h1.title, .k2ProfileHeading, .Projects .Projects-Header, h1.title, .Top-Five-Header h3, .search .page-title, .item-page h2, .tag-title, label, .Dropdown {
+.About .About-Content h1, #yoo-zoo.Item-Extended .item .pos-top .element-itemname, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems h3, .Tags h3, .yoo-zoo .details .heading h1.title, .k2ProfileHeading, .Projects .Projects-Header, h1.title, .Top-Five-Header h3, .search .page-title, .item-page h2, .tag-title, label, .Dropdown {
   user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -577,10 +577,10 @@ textarea, .Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-
 .Page-Sidebar nav.Site-Navigation .nav.menu_left li a {
   width: 100%; }
 
-[class*='Grid']:before, .Site-Navigation.Primary nav ul:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:before, header.Site-Header .Toolbar .Authorization ul:before, ul.Pagination:before, .UPF-Window .UPF-Window-Content:before, .About:before, #yoo-zoo > .item:before, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-top:before, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:before, .yoo-zoo .items .pos-item:before, .Adv:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .content .search:before, #login-form:before, .Popular ul.zoo-itempro-default .layout-default:before, .Component .search form#searchForm:before, #yoo-zoo > .item .pos-content:before, .Control-Group:before, .Dropdown:before, .Projects:before, .content:before, .Top-Five-Header:before, header.Site-Header:before, header.Site-Header .Toolbar:before, .Site-Navigation.Primary nav:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary:before, [class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, #yoo-zoo > .item:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-top:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Component .search form#searchForm:after, #yoo-zoo > .item .pos-content:after, .Control-Group:after, .Dropdown:after, .Projects:after, .content:after, .Top-Five-Header:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
+[class*='Grid']:before, .Site-Navigation.Primary nav ul:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:before, header.Site-Header .Toolbar .Authorization ul:before, ul.Pagination:before, .UPF-Window .UPF-Window-Content:before, .About:before, #yoo-zoo > .item:before, #yoo-zoo.Item-Extended .item .pos-top:before, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:before, .yoo-zoo .items .pos-item:before, .Adv:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .content .search:before, #login-form:before, .Popular ul.zoo-itempro-default .layout-default:before, .Component .search form#searchForm:before, #yoo-zoo > .item .pos-content:before, .Control-Group:before, .Dropdown:before, .Projects:before, .content:before, .Top-Five-Header:before, header.Site-Header:before, header.Site-Header .Toolbar:before, .Site-Navigation.Primary nav:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary:before, [class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, #yoo-zoo > .item:after, #yoo-zoo.Item-Extended .item .pos-top:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Component .search form#searchForm:after, #yoo-zoo > .item .pos-content:after, .Control-Group:after, .Dropdown:after, .Projects:after, .content:after, .Top-Five-Header:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   content: " ";
   display: table; }
-[class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, #yoo-zoo > .item:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-top:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Component .search form#searchForm:after, #yoo-zoo > .item .pos-content:after, .Control-Group:after, .Dropdown:after, .Projects:after, .content:after, .Top-Five-Header:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
+[class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, #yoo-zoo > .item:after, #yoo-zoo.Item-Extended .item .pos-top:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Component .search form#searchForm:after, #yoo-zoo > .item .pos-content:after, .Control-Group:after, .Dropdown:after, .Projects:after, .content:after, .Top-Five-Header:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   clear: both; }
 
 ol[class*='Grid'] > li,
@@ -592,7 +592,7 @@ ul[class*='Grid'] > li, .Site-Navigation.Primary nav ul, footer[role='contentinf
 .Site-Navigation.Primary nav ul > *, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul > *, header.Site-Header .Toolbar .Authorization ul > *, ul.Pagination > * {
   float: left; }
 
-.UPF-Window .UPF-Window-Content, .About, #yoo-zoo > .item, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-top, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item, .yoo-zoo .items .pos-item, .Adv, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search, #login-form, .Popular ul.zoo-itempro-default .layout-default, .Component .search form#searchForm {
+.UPF-Window .UPF-Window-Content, .About, #yoo-zoo > .item, #yoo-zoo.Item-Extended .item .pos-top, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item, .yoo-zoo .items .pos-item, .Adv, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search, #login-form, .Popular ul.zoo-itempro-default .layout-default, .Component .search form#searchForm {
   padding: 20px;
   border: 1px solid #efeff3;
   background-color: white; }
@@ -600,17 +600,17 @@ ul[class*='Grid'] > li, .Site-Navigation.Primary nav ul, footer[role='contentinf
 .yoo-zoo .items .pos-item:hover, .Top-Five .Popular ul li .layout-default:hover, .Popular ul.zoo-itempro-default .layout-default:hover {
   background-color: #fcfcfc; }
 
-#yoo-zoo > .item .pos-bottom .element-itemhits, #yoo-zoo > .item .pos-bottom .element-itemcreated, .yoo-zoo .items .pos-item .floatbox .pos-content .first, .yoo-zoo .items .pos-item .floatbox .pos-content .last {
+#yoo-zoo > .item .pos-bottom .element-itemhits, #yoo-zoo > .item .pos-bottom .element-itemcreated, #yoo-zoo.Item-Extended .item .pos-top .element-itemcreated, #yoo-zoo.Item-Extended .item .pos-top .element-itemhits, .yoo-zoo .items .pos-item .floatbox .pos-content .first, .yoo-zoo .items .pos-item .floatbox .pos-content .last {
   font-size: 12px;
   color: #7c7e80;
   width: auto; }
 
-#yoo-zoo > .item .pos-bottom .element-itemhits, .yoo-zoo .items .pos-item .floatbox .pos-content .last {
+#yoo-zoo > .item .pos-bottom .element-itemhits, #yoo-zoo.Item-Extended .item .pos-top .element-itemhits, .yoo-zoo .items .pos-item .floatbox .pos-content .last {
   float: right;
   padding-left: 25px;
   background: url(../../templates/journal/images/views.png) left center no-repeat; }
 
-#yoo-zoo > .item .pos-bottom .element-itemcreated, .yoo-zoo .items .pos-item .floatbox .pos-content .first {
+#yoo-zoo > .item .pos-bottom .element-itemcreated, #yoo-zoo.Item-Extended .item .pos-top .element-itemcreated, .yoo-zoo .items .pos-item .floatbox .pos-content .first {
   float: left; }
 
 #yoo-zoo > .item .pos-content {
@@ -694,7 +694,7 @@ button {
 .Site-Navigation.Primary nav ul:first-child a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:first-child a {
   padding-left: 0; }
 
-.About .About-Content h1, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems h3, .Tags h3, .yoo-zoo .details .heading h1.title, .k2ProfileHeading, .Projects .Projects-Header, h1.title, .Top-Five-Header h3, .search .page-title, .item-page h2, .tag-title {
+.About .About-Content h1, #yoo-zoo.Item-Extended .item .pos-top .element-itemname, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems h3, .Tags h3, .yoo-zoo .details .heading h1.title, .k2ProfileHeading, .Projects .Projects-Header, h1.title, .Top-Five-Header h3, .search .page-title, .item-page h2, .tag-title {
   font-family: 'PT Serif Caption', 'PT Serif', serif;
   font-size: 32px;
   font-weight: 100;
@@ -1384,6 +1384,35 @@ select {
   border: 0;
   padding: 0;
   background-color: transparent; }
+  #yoo-zoo.Item-Extended .item .pos-top {
+    position: relative; }
+    #yoo-zoo.Item-Extended .item .pos-top .element-itemname {
+      display: inline-block;
+      width: 60%;
+      float: left;
+      margin-bottom: 20px; }
+      #yoo-zoo.Item-Extended .item .pos-top .element-itemname a {
+        color: #000; }
+    #yoo-zoo.Item-Extended .item .pos-top .element-textarea {
+      display: inline-block;
+      width: 60%;
+      float: left;
+      margin-bottom: 20px;
+      padding-bottom: 30px; }
+    #yoo-zoo.Item-Extended .item .pos-top .element-image {
+      float: right;
+      width: 40%; }
+    #yoo-zoo.Item-Extended .item .pos-top .element-itemcreated {
+      position: absolute;
+      left: 20px;
+      bottom: 25px; }
+    #yoo-zoo.Item-Extended .item .pos-top .element-itemhits {
+      position: absolute;
+      right: 40%;
+      bottom: 25px;
+      width: auto;
+      text-align: right;
+      padding-right: 20px; }
   #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item {
     width: 33.33%;
     float: left; }
