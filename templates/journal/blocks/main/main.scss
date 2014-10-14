@@ -168,6 +168,7 @@ header.Site-Header
 			font-weight: 		100;
 			font-size:			28px;
 			text-align: 		right;
+			@include 			Transition(opacity, .2s);
 			span
 			{
 				display: 		block;
@@ -178,15 +179,24 @@ header.Site-Header
 		& a
 		{
 			position: 			absolute;
-			top:				20px;
+			top:				50px;
 			width: 				100%;
+			font-size:			22px!important;
 			text-align: 		center;
+			color:				$C-Red-2;
+			@extend 			.fa, .fa-chevron-circle-left;
 			@include 			Opacity(0);
+			@include 			Transition(opacity, .2s);
+			&:before
+			{
+				color: 			#000000;
+				padding-right:	10px;
+			}
 		}
 
 		&:hover
 		{
-			background: none; 
+			background-image:   none;
 			h2
 			{
 				@include Opacity(0);
