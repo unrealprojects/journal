@@ -178,15 +178,19 @@ header.Site-Header
 		& a
 		{
 			position: 			absolute;
+			top:				20px;
+			width: 				100%;
+			text-align: 		center;
 			@include 			Opacity(0);
 		}
 
 		&:hover
 		{
+			background: none; 
 			h2
 			{
 				@include Opacity(0);
-			} 
+			}
 			a
 			{
 				@include Opacity(1);
