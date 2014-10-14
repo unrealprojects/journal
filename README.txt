@@ -21,13 +21,12 @@ http://journal/libs/item/26-letnyaya-moskvichka-perepisala-knigu-rekordov-us-ope
 15 Поправить Категории в ленте (когда две строки)
 16 Запретить тянуть банер и топ 5 за неделю
 17 Icon-Loading - при ajax на главной
+18 http://journal/component/search/?searchword=&searchphrase=all&Itemid=179 поправить кнопку поиска. и заголовок
 
 
 blud
-3 ajax preload Ленты
-
 
 9 Сделать остальные модули выборки
 10 Реализовать переключение табов
 
-11  убрать из журналов
+11 заменить на популярные статьи в журналах
