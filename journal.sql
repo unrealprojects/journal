@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Окт 14 2014 г., 20:10
+-- Время создания: Окт 14 2014 г., 21:52
 -- Версия сервера: 5.6.17
 -- Версия PHP: 5.4.28
 
@@ -1316,13 +1316,13 @@ INSERT INTO `f8ad7_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `f
 (105, 233, 'Метки', 'tags', '<p>Компонент Теги позволяет создавать новые разделы сайта, куда будут относиться определенные материалы. В данном случае его можно сравнить с компонентом категории. Да именно так: материалы будут разделяться на определенные категории, но в случае с тегами этих категорий можно выбрать любое количество. Это значит, что один материал может относиться к разделу (тегу) "Шаблон" и например "CSS". Затем во всех заданных материалов, будут отображаться данные метки. По этим меткам можно осуществлять переход на другие материалы с этими тегами.</p>', '', -2, 11, '2014-03-15 22:53:14', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-15 22:53:14', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 2, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (106, 235, 'Умный поиск', 'smart-search', '<p>«Умный поиск» — новый поисковый компонент в составе исходной комплектации Joomla. В его основе — более гибкий и более быстрый алгоритм. Среди возможностей компонента — автоматическое дополнение поисковых запросов и использующая стемминг функция «Возможно, вы имели в виду...».</p>\r\n<p>Стемминг?</p>\r\n<p>Благодаря стеммингу поисковая система, анализируя слово «коты», выделяет из него основу [прим. перев.: необязательно морфологическую] «кот». Подобную основу она найдет в словах «котенок», «котик». В словах «рыбалка», «рыба», «рыбак» она выделит основу «рыб». Подробнее о стемминге — в соответствующей <a href="http://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BC%D0%BC%D0%B8%D0%BD%D0%B3">статье в Википедии.</a></p>\r\n', '\r\n<p>«Умный поиск» использует два алгоритма стемминга. Один предназначен исключительно для английского языка. Другой, так называемый «Snowball» [в окне настроек — «Снежок»], помимо английского, поддерживает: русский, датский, немецкий, испанский, финский, французский, венгерский, итальянский, норвежский, голландский, португальский, румынский, турецкий. Для работы «Snowball» необходимо специальное расширение интерпретатора <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> для стемминга.</p>\r\n<p>Гибкость и скорость «Умного поиска» не будут доступны без индексации контента.</p>\r\n<p><img title="«Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска" src="images/sampledata/joomla/smart_search_1.jpg" alt="«Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска" width="500" height="363" /></p>\r\n<p>Рис. 1. «Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска.</p>\r\n<h4>Активация</h4>\r\n<p>По умолчанию компонент «Умный поиск» выключен. Для его активации необходимо включить одноименный плагин, относящийся к группе «content», а также пять плагинов, относящихся к группе «finder» [группы выбираются при помощи выпадающего списка на странице менеджера плагинов] (рис. 2). Название группы [как и название компонента, «com_finder»] происходит от названия стороннего расширения для Joomla, «Finder», после включения в исходную комплектацию превратившегося в «Умный поиск» [по англ. — «Smart Search»].</p>\r\n<p><img title="Плагины «Умного поиска»" src="images/sampledata/joomla/smart_search_2.jpg" alt="Плагины «Умного поиска»" width="500" height="291" /></p>\r\n<p>Рис. 2. Плагины «Умного поиска».</p>\r\n<h4>Индексация</h4>\r\n<p>Для работы «Умного поиска» необходима индексация контента. Она производится автоматически во время сохранения статей, категорий, контактных данных, лент новостей и т. д. Первоначальную индексацию можно провести, кликнув по пиктограмме «Индексировать» на панели инструментов, на странице компонента: текстовое меню административного раздела → пункт «Компоненты» → подпункт «Умный поиск».</p>\r\n<p><img title="Индексация" src="images/sampledata/joomla/smart_search_3.jpg" alt="Индексация" width="500" height="355" /></p>\r\n<p>Рис. 3. Индексация.</p>\r\n<h4>Настройка под сайт</h4>\r\n<p>После активации и индексации необходимо решить как реализовать интерфейс «Умного поиска» на стороне посетителей: при помощи модуля, при помощи ссылки на страницу компонента или при помощи того и другого. Автоматическое дополнение поисковых запросов и использующая стемминг функция «Возможно, вы имели в виду...» будут доступны в обоих случаях (рис. 4 и 5).</p>\r\n<p><img title="«Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска" src="images/sampledata/joomla/smart_search_4.jpg" alt="«Умный поиск»: модуль, автоматическое дополнение поискового запроса, ссылка на страницу поиска" width="500" height="363" /></p>\r\n<p>Рис. 4. Автоматическое дополнение поисковых запросов.</p>\r\n<p><img title="Функция «Возможно, вы имели в виду…»" src="images/sampledata/joomla/smart_search_5.jpg" alt="Функция «Возможно, вы имели в виду…»" width="500" height="449" /></p>\r\n<p>Рис. 5. Использующая стемминг функция «Возможно, вы имели в виду...».</p>\r\n<p>«Умный поиск» — поставляется настроенным. Благодаря контекстным окнам указателя (тултипам) есть возможность ознакомиться с его параметрами. Подробнее о настройках компонента — в соответствующей <a href="http://docs.joomla.org/Smart_Search_configuration_options">статье на сайте документации Joomla [на англ.].</a></p>\r\n<h4>Отключение традиционного поискового компонента</h4>\r\n<p>Для отключения традиционного поискового компонента необходимо:</p>\r\n<ul>\r\n<li>отключить или удалить все модули типа «Поиск» (текстовое меню административного раздела → пункт «Расширения» → подпункт «Менеджер модулей» → выпадающий список «Выбор типа» → значение «Поиск»);</li>\r\n<li>отключить или удалить все плагины типа «search» (текстовое меню административного раздела → пункт «Расширения» → подпункт «Менеджер плагинов» → выпадающий список «Выбор типа» → значение «search»);</li>\r\n<li>удалить из меню ссылки, относящиеся к традиционному поисковому компоненту.</li>\r\n</ul>', -2, 11, '2014-03-15 22:53:39', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-15 22:53:39', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 1, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (107, 237, 'Обновление Joomla!', 'update-joomla', '<p>В последних версиях Joomla разработчики очень много времени и внимания уделили системе обновления Joomla и расширений для нее. Они сделали все возможное, что бы как можно больше упростить процесс обновления до так называемого "одного клика". Т.е. для того что бы обновить версию Joomla достаточно одного-два клика мыши.</p>\r\n', '\r\n<p><img src="images/sampledata/joomla/update_joomla_1.jpg" alt="Быстрые значки проверки актуальности joomla! И расширений" /></p>\r\n<p>Рис. 1. Быстрые значки проверки актуальности joomla! И расширений.</p>\r\n<p><img src="images/sampledata/joomla/update_joomla_2.jpg" alt="Обновление joomla!" /></p>\r\n<p>Рис. 2. Обновление joomla!.</p>\r\n<p><img src="images/sampledata/joomla/update_joomla_3.jpg" alt="Обновление расширений" /></p>\r\n<p>Рис. 3. Обновление расширений.</p>', -2, 11, '2014-03-15 22:54:02', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-03-15 22:54:02', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 0, '', '', 1, 0, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(108, 305, 'Редколлегия', 'redkollegiya', '<p>Экономические науки</p>\r\n<p>Воронкова Ольга Васильевна&nbsp;— главный редактор журнала, председатель редколлегии, д.э.н., профессор, член-корреспондент РАЕН.</p>\r\n<p>Тел.:&nbsp;8 (4752) 638780;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:voronkova@tambov-konfcentr.ru">voronkova@tambov-konfcentr.ru</a></p>\r\n<p>Кузнецов Юрий Викторович&nbsp;— д.э.н., профессор, заведующий кафедрой управления и планирования социально-экономических процессов Санкт-Петербургского государственного университета, заслуженный работник высшей школы РФ, почетный Президент Национальной академии туризма.</p>\r\n<p>Тел.:&nbsp;8 (812) 2737527;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:tour@econ.pu.ru">tour@econ.pu.ru</a></p>\r\n<p>История, философия и социология</p>\r\n<p>Скворцов Николай Генрихович&nbsp;— д.с.н., профессор, проректор по научной работе Санкт-Петербургского государственного университета.</p>\r\n<p>Тел.:&nbsp;8 (812) 3241258;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:n.skvortsov@spbu.ru">n.skvortsov@spbu.ru</a></p>\r\n<p>История науки</p>\r\n<p>Тютюнник Вячеслав Михайлович&nbsp;— д.т.н., к.х.н., профессор, директор Тамбовского филиала Московского государственного университета культуры и искусств, президент Международного Информационного Нобелевского Центра, академик РАЕН.</p>\r\n<p>Тел.:&nbsp;8 (4752)50-46-00;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:vmt@tmb.ru">vmt@tmb.ru</a></p>\r\n<p>Педагогика и психология</p>\r\n<p>Ляшенко Татьяна Васильевна&nbsp;— д.пед.н, профессор, декан факультета информационных технологий и медиадизайна Санкт-Петербургского государственного университета культуры и искусств.</p>\r\n<p>Тел.:&nbsp;8 (812)9525781;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:decanat@fitim.ru">decanat@fitim.ru</a></p>\r\n<p>Серых Анна Борисовна&nbsp;— д.пед.н, д.п.н., профессор, заведующий кафедрой специальных психолого-педагогических дисциплин Балтийского федерального университета имени И. Канта.</p>\r\n<p>Тел.:&nbsp;8 (911)4511091</p>\r\n<p>E-mail:&nbsp;<a href="mailto:serykh@baltnet.ru">serykh@baltnet.ru</a></p>', '', 1, 2, '2014-10-11 15:12:43', 445, '', '2014-10-11 15:12:55', 445, 0, '0000-00-00 00:00:00', '2014-10-11 15:12:43', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 5, '', '', 1, 38, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(108, 305, 'Редколлегия', 'redkollegiya', '<p>Экономические науки</p>\r\n<p>Воронкова Ольга Васильевна&nbsp;— главный редактор журнала, председатель редколлегии, д.э.н., профессор, член-корреспондент РАЕН.</p>\r\n<p>Тел.:&nbsp;8 (4752) 638780;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:voronkova@tambov-konfcentr.ru">voronkova@tambov-konfcentr.ru</a></p>\r\n<p>Кузнецов Юрий Викторович&nbsp;— д.э.н., профессор, заведующий кафедрой управления и планирования социально-экономических процессов Санкт-Петербургского государственного университета, заслуженный работник высшей школы РФ, почетный Президент Национальной академии туризма.</p>\r\n<p>Тел.:&nbsp;8 (812) 2737527;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:tour@econ.pu.ru">tour@econ.pu.ru</a></p>\r\n<p>История, философия и социология</p>\r\n<p>Скворцов Николай Генрихович&nbsp;— д.с.н., профессор, проректор по научной работе Санкт-Петербургского государственного университета.</p>\r\n<p>Тел.:&nbsp;8 (812) 3241258;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:n.skvortsov@spbu.ru">n.skvortsov@spbu.ru</a></p>\r\n<p>История науки</p>\r\n<p>Тютюнник Вячеслав Михайлович&nbsp;— д.т.н., к.х.н., профессор, директор Тамбовского филиала Московского государственного университета культуры и искусств, президент Международного Информационного Нобелевского Центра, академик РАЕН.</p>\r\n<p>Тел.:&nbsp;8 (4752)50-46-00;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:vmt@tmb.ru">vmt@tmb.ru</a></p>\r\n<p>Педагогика и психология</p>\r\n<p>Ляшенко Татьяна Васильевна&nbsp;— д.пед.н, профессор, декан факультета информационных технологий и медиадизайна Санкт-Петербургского государственного университета культуры и искусств.</p>\r\n<p>Тел.:&nbsp;8 (812)9525781;</p>\r\n<p>E-mail:&nbsp;<a href="mailto:decanat@fitim.ru">decanat@fitim.ru</a></p>\r\n<p>Серых Анна Борисовна&nbsp;— д.пед.н, д.п.н., профессор, заведующий кафедрой специальных психолого-педагогических дисциплин Балтийского федерального университета имени И. Канта.</p>\r\n<p>Тел.:&nbsp;8 (911)4511091</p>\r\n<p>E-mail:&nbsp;<a href="mailto:serykh@baltnet.ru">serykh@baltnet.ru</a></p>', '', 1, 2, '2014-10-11 15:12:43', 445, '', '2014-10-11 15:12:55', 445, 0, '0000-00-00 00:00:00', '2014-10-11 15:12:43', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 5, '', '', 1, 39, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (109, 306, 'Спонсорам', 'sponsoram', '<p>1. Игровая форма</p>\r\n<p>Спонсору предоставляется право на размещение своего логотипа на игровой форме основного состава команды во время официальных матчей Суперлиги, а так же на матчах Еврокубков.</p>\r\n<p>Размещение логотипа спонсора на игровой форме баскетболистов подчеркивает особый статус партнерства. Реклама на игровой форме отличается эксклюзивностью; она обеспечивает большой охват аудитории (игры широко освещаются в прессе, в сети Интернет, по ТВ) и присутствие информации о спонсоре не только на домашних, но и на гостевых матчах клуба.</p>\r\n<p>2.&nbsp;Пресс-баннер</p>\r\n<p>Спонсору предоставляется право на размещение своего логотипа на рекламном щите в&nbsp;пресс-центре.</p>\r\n<p>Размещение логотипа спонсора на специальном заднике за спинами тренеров в поле зрения фото- и телекамер обеспечивает присутствие информации о компании во время проведения пресс-конференций. Пресс-конференции проходят после каждого сыгранного матча с участием главных тренеров команд и журналистов, аккредитованных клубом для освещения матчей.</p>\r\n<p>3. Билеты и абонементы на матч</p>\r\n<p>Спонсору предоставляется право на размещение своего логотипа на лицевой стороне билетов к каждому домашнему матчу клуба, а также на обложке сезонных абонементов.</p>\r\n<p>Билеты и абонементы являются для каждого болельщика одними из наиболее ценных атрибутов футбольного сезона. Абонемент хранится в течение всего сезона, поэтому логотип Вашей компании неоднократно попадает в поле зрения болельщиков. Билеты на баскетбол периодически участвуют в розыгрыше призов, что также позволяет привлечь дополнительное внимание болельщиков к Вашей компании.</p>\r\n<p>4. Официальные программки к матчам</p>\r\n<p>Спонсору предоставляется право размещения логотипа или рекламной полосы формата А5 в официальных программках к каждому домашнему матчу.</p>\r\n<p>Программка, представляющая собой яркое, красочное и информативное издание, является действенным маркетинговым инструментом, способным повысить популярность и узнаваемость Вашей торговой марки и привлечь внимание значительной аудитории футбольных болельщиков – Ваших потенциальных клиентов.</p>\r\n<p>5. Афиши на матчи</p>\r\n<p>Спонсору предоставляется право размещения логотипа на афишах формата А1.</p>\r\n<p>Афиши с анонсами домашних матчей команды развешиваются за&nbsp;3 дня&nbsp;до каждого матча в&nbsp;30 наиболее&nbsp;оживленных точках города. Благодаря яркому дизайну афиши неизменно привлекают внимание тысяч болельщиков, и, соответственно, в поле их зрения попадает логотип Вашей компании.</p>\r\n<p>6. Клубный автобус</p>\r\n<p>Спонсору предоставляется право на размещение логотипа на клубном автобусе.</p>\r\n<p>Автобус служит для перевозки игроков команды в те или иные регионы для участия ее в очередных играх Суперлиги.</p>\r\n<p>Варианты размещения: левый и правый борт автобуса.</p>\r\n<p>7.&nbsp;Промо-акции</p>\r\n<p>Спонсору предоставляется право на проведение&nbsp;промоушн-акций&nbsp;в холле в дни домашних матчей, а также на организацию совместно с&nbsp;промоушн-акций&nbsp;в рамках общегородских мероприятий.</p>\r\n<p>Все PR-мероприятия, проводимые, направлены на укрепление положительного образа нашего партнера, способствуют его максимальной узнаваемости, а также наиболее эффективному продвижению его бренда.</p>\r\n<p>Варианты проведения&nbsp;промо-акций:</p>\r\n<p>- вручение призов/подарков (лучшему игроку, ветеранам и т.д.);</p>\r\n<p>- проведение конкурсов;</p>\r\n<p>- распространение рекламной полиграфической продукции спонсора.</p>\r\n<p>8. Баннеры на страницах&nbsp;интернет-сайтов</p>\r\n<p>Баннерная&nbsp;реклама —&nbsp;реклама&nbsp;веб-сайта&nbsp;пользователя, странички, логотипа и т.д. путем размещением баннеров на наших сайтах. Один из самых популярных способов рекламы в Интернете, позволяющий эффективно увеличить посещаемость&nbsp;веб-сайтов&nbsp;наших спонсоров.</p>', '', 1, 2, '2014-10-11 15:14:26', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-10-11 15:14:26', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 4, '', '', 1, 7, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
 INSERT INTO `f8ad7_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
 (110, 307, 'Контакты', 'kontakty', '<p>Татьяна Оберемова</p>\r\n<address>\r\n<p>Менеджер по связям с общественностью Nokia в России<br />Ленинградское шоссе, 16а, строение 2<br />125171, Москва, Россия</p>\r\n</address>\r\n<div>&nbsp;</div>\r\n<address>\r\n<p>Андрей Орлов<br />Менеджер по связям с общественностью Nokia , Украина и Юг СНГ<br />Ленинградское шоссе, 16а, строение 2<br />125171, Москва, Россия</p>\r\n</address>\r\n<div>&nbsp;</div>\r\n<address>\r\n<p>Александр Пахотенко<br />Менеджер по работе с социальными сетями Nokia в Евразии (русскоязычный сегмент)<br />Ленинградское шоссе, 16а, строение 2<br />125171, Москва, Россия</p>\r\n</address>\r\n<div>&nbsp;</div>\r\n<address>\r\n<p>Тел.: +358 7180 34900<br />Пн-Пт 9:00 до 17:00 (CET+1)</p>\r\n<p>Keilalahdentie 2-4 FIN-02150 ESPOO<br />P.O. Box 226 FIN-00045 ФИНЛЯНДИЯ</p>\r\n</address>', '', 1, 2, '2014-10-11 16:06:22', 445, '', '2014-10-11 16:08:56', 445, 0, '0000-00-00 00:00:00', '2014-10-11 16:06:22', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 3, '', '', 1, 40, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (111, 327, 'Подписка', 'subscribe', '<p style="margin: 0.8em 0px; padding: 0px; line-height: 1.5em; color: #2d2d2d; font-family: Tahoma, Arial, sans-serif; font-size: 12px;">После регистрации на нашем сайте вы можете оформлять подписки на любимые издания. Как только свежие выпуски будут появляться в продаже, они будут автоматически появляться в вашей личной библиотеке.</p>\r\n<p style="margin: 0.8em 0px; padding: 0px; line-height: 1.5em; color: #2d2d2d; font-family: Tahoma, Arial, sans-serif; font-size: 12px;">Помимо этого мы отправим вам уведомление о новом поступлении, чтобы вы могли быть одним из первых, кто ознакомиться со свежей прессой.</p>', '', 1, 2, '2014-10-12 12:27:40', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-10-12 12:27:40', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 2, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (112, 330, 'Ссылки', 'links', '<ul>\r\n<li>Новинка!<br /><a title="Лучшая биржа ссылок навсегда" href="http://kupilink.com/links/serv/gogettop.html">GoGetTop</a>&nbsp;–&nbsp;Автоматизированная покупка качественных вечных ссылок в рассрочку. Отличное качество ссылок. Ручное размещение. Удобный интерфейс.</li>\r\n<li><a title="Лучшая биржа ссылок навсегда" href="http://kupilink.com/gogetlinks.html">GoGetLinks</a>&nbsp;–&nbsp;Покупка качественных ссылок навсегда. Контекстные ссылки, ссылки в коротких заметках, ссылки-картинки. Ручное размещение.</li>\r\n<li><a title="Постоянные ссылки под Google" href="http://kupilink.com/links/serv/getgoodlinks.html">GetGoodLinks</a>&nbsp;– Аналог предыдущей биржи. Главное отличие - упор на продвижение в Google. Высокое качество - основная характеристика GetGoodLinks.</li>\r\n<li><a title="Лучшая биржа по размещению статей навсегда" href="http://kupilink.com/miralinks.html">MiraLinks</a>&nbsp;–&nbsp;Лучший сервис по размещению статей со ссылками навсегда. Ручное или автоматизированное размещение.</li>\r\n</ul>', '', 1, 2, '2014-10-12 12:42:30', 445, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-10-12 12:42:30', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 1, '', '', 1, 10, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(113, 378, 'О журнале', 'about', '<section class="About">\r\n<article class="About-Content">\r\n<h1>О журнале</h1>\r\n<h4>Научно-практический медицинский журнал «Фармакогенетика и фармакогеномика» издаётся с 2014 г.</h4>\r\n</article>\r\n<div class="About-Image"><img src="/images/logo_journal.jpg" alt="Формакогенетика" /></div>\r\n<p>«Фармакогенетика и фармакогеномика» публикует оригинальные статьи о проведённых клинических, клинико-экспериментальных и фундаментальных научных работах, обзоры, лекции, описания клинических случаев, а также вспомогательные материалы по всем актуальным проблемам персонаизированной медицины</p>\r\n<a href="about" class="About-More">Подробнее</a></section>', '', 1, 2, '2014-10-14 17:27:31', 445, '', '2014-10-14 17:52:54', 445, 0, '0000-00-00 00:00:00', '2014-10-14 17:27:31', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 4, 0, '', '', 1, 6, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
+(113, 378, 'О журнале', 'about', '<section class="About-Page">\r\n<article class="About-Content">\r\n<h4>Научно-практический медицинский журнал «Фармакогенетика и фармакогеномика» издаётся с 2014 г.</h4>\r\n</article>\r\n<div class="About-Image"><img src="/images/logo_journal.jpg" alt="Формакогенетика" /></div>\r\n<p>«Фармакогенетика и фармакогеномика» публикует оригинальные статьи о проведённых клинических, клинико-экспериментальных и фундаментальных научных работах, обзоры, лекции, описания клинических случаев, а также вспомогательные материалы по всем актуальным проблемам персонаизированной медицины</p>\r\n<a href="about" class="About-More">Подробнее</a></section>', '', 1, 2, '2014-10-14 17:27:31', 445, '', '2014-10-14 20:13:28', 445, 445, '2014-10-14 20:13:28', '2014-10-14 17:27:31', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, '', '', 1, 9, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
 
 -- --------------------------------------------------------
 
@@ -1883,7 +1883,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links` (
   `sale_price` double unsigned NOT NULL DEFAULT '0',
   `type_id` int(11) NOT NULL,
   `object` mediumblob NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=306 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=308 ;
 
 --
 -- Дамп данных таблицы `f8ad7_finder_links`
@@ -1979,7 +1979,7 @@ INSERT INTO `f8ad7_finder_links` (`link_id`, `url`, `route`, `title`, `descripti
 (298, 'index.php?option=com_zoo&view=item&id=89', 'index.php?option=com_zoo&task=item&item_id=89&Itemid=179', 'Фармакогенетика и фармакогеномика (Copy) (Copy)', '', '2014-10-13 02:38:46', 'a5336320de19283e1bf97993346b0e87', 1, 1, 1, '*', '2014-09-16 11:29:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223839223b733a353a22616c696173223b733a31383a227864656275672d636f70792d322d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322032333a33383a3137223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a32333a226974656d2f7864656275672d636f70792d322d636f7079223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a3534363a22c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a373a224a6f75726e616c223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a224a6f75726e616c223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a323a7b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31343a22d096d183d180d0bdd0b0d0bbd18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d096d183d180d0bdd0b0d0bbd18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3839223b733a353a22726f757465223b733a35363a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3839264974656d69643d313739223b733a353a227469746c65223b733a37383a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b02028436f7079292028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a32393a3138223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
 (299, 'index.php?option=com_zoo&view=item&id=90', 'index.php?option=com_zoo&task=item&item_id=90&Itemid=179', 'Фармакогенетика и фармакогеномика (Copy) (Copy) (Copy)', '', '2014-10-13 02:38:47', '3d6b0d20e1cd1f8c9baa8b399bc18a9a', 1, 1, 1, '*', '2014-09-16 11:29:18', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223930223b733a353a22616c696173223b733a32313a227864656275672d636f70792d636f70792d636f7079223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31322032333a33383a3137223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a32363a226974656d2f7864656275672d636f70792d636f70792d636f7079223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a3534363a22c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a373a224a6f75726e616c223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a224a6f75726e616c223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a323a7b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a31343a22d096d183d180d0bdd0b0d0bbd18b223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d096d183d180d0bdd0b0d0bbd18b223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3930223b733a353a22726f757465223b733a35363a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3930264974656d69643d313739223b733a353a227469746c65223b733a38353a22d0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b02028436f7079292028436f7079292028436f707929223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d30392d31362031313a32393a3138223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
 (301, 'index.php?option=com_zoo&view=item&id=45', 'index.php?option=com_zoo&task=item&item_id=45&Itemid=179', '26-летняя москвичка переписала книгу рекордов US Open', '', '2014-10-14 14:05:26', '8fca2816bb46b042bdc620178326c4ac', 1, 1, 1, '*', '2014-10-12 22:57:23', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 1, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a31323a7b733a323a226964223b733a323a223435223b733a353a22616c696173223b733a35363a2232362d6c65746e796179612d6d6f736b766963686b612d70657265706973616c612d6b6e6967752d72656b6f72646f762d75732d6f70656e223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31342031313a30353a3235223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a31303a2273656172636861626c65223b733a313a2231223b733a363a226c61796f7574223b733a343a226974656d223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a353a7b733a353a227469746c65223b733a303a22223b733a31313a226465736372697074696f6e223b733a303a22223b733a383a226b6579776f726473223b733a303a22223b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b7d7d733a31303a226d657461617574686f72223b733a303a22223b733a373a2273756d6d617279223b733a303a22223b733a343a2270617468223b733a36313a226974656d2f32362d6c65746e796179612d6d6f736b766963686b612d70657265706973616c612d6b6e6967752d72656b6f72646f762d75732d6f70656e223b733a31323a22656c656d656e745f64617461223b613a313a7b693a303b733a313139353a2232362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e2c32362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e223b7d7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a31303a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a343a226c696e6b223b693a343b733a373a226d6574616b6579223b693a353b733a383a226d65746164657363223b693a363b733a31303a226d657461617574686f72223b693a373b733a363a22617574686f72223b693a383b733a31363a22637265617465645f62795f616c696173223b693a393b733a31323a22656c656d656e745f64617461223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a323a7b733a343a2254797065223b613a313a7b733a343a224974656d223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a343a224974656d223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a333a7b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a31343a22d093d0bbd0b0d0b2d0bdd0b0d18f223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a34353a22d09fd180d0bed0b3d180d0b0d0bcd0bcd0bdd0bed0b520d0bed0b1d0b5d181d0bfd0b5d187d0b5d0bdd0b8d0b5223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a34353a22d09fd180d0bed0b3d180d0b0d0bcd0bcd0bdd0bed0b520d0bed0b1d0b5d181d0bfd0b5d187d0b5d0bdd0b8d0b5223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d733a32303a22d091d0b8d0b1d0bbd0b8d0bed182d0b5d0bad0b0223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32303a22d091d0b8d0b1d0bbd0b8d0bed182d0b5d0bad0b0223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34303a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f26766965773d6974656d2669643d3435223b733a353a22726f757465223b733a35363a22696e6465782e7068703f6f7074696f6e3d636f6d5f7a6f6f267461736b3d6974656d266974656d5f69643d3435264974656d69643d313739223b733a353a227469746c65223b733a39313a2232362dd0bbd0b5d182d0bdd18fd18f20d0bcd0bed181d0bad0b2d0b8d187d0bad0b020d0bfd0b5d180d0b5d0bfd0b8d181d0b0d0bbd0b020d0bad0bdd0b8d0b3d18320d180d0b5d0bad0bed180d0b4d0bed0b2205553204f70656e223b733a31313a226465736372697074696f6e223b733a303a22223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b623a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a313a222a223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d31302d31322032323a35373a3233223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a313b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d),
-(305, 'index.php?option=com_content&view=article&id=113', 'index.php?option=com_content&view=article&id=113:about&catid=2:uncategorised&Itemid=200', 'О журнале', 'О журнале Научно-практический медицинский журнал «Фармакогенетика и фармакогеномика» издаётся с 2014 г. «Фармакогенетика и фармакогеномика» публикует оригинальные статьи о проведённых клинических, клинико-экспериментальных и фундаментальных научных работа', '2014-10-14 20:52:54', '6766e5f2e88446f0fce9b9bbf7efd01c', 1, 1, 1, 'ru-RU', '2014-10-14 17:27:31', '0000-00-00 00:00:00', '2014-10-14 17:27:31', '0000-00-00 00:00:00', 0, 0, 5, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a32343a7b733a323a226964223b733a333a22313133223b733a353a22616c696173223b733a353a2261626f7574223b733a373a2273756d6d617279223b733a313031303a223c73656374696f6e20636c6173733d2241626f7574223e0d0a3c61727469636c6520636c6173733d2241626f75742d436f6e74656e74223e0d0a3c68313ed09e20d0b6d183d180d0bdd0b0d0bbd0b53c2f68313e0d0a3c68343ed09dd0b0d183d187d0bdd0be2dd0bfd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd181d0bad0b8d0b920d0b6d183d180d0bdd0b0d0bb20c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0b8d0b7d0b4d0b0d191d182d181d18f20d181203230313420d0b32e3c2f68343e0d0a3c2f61727469636c653e0d0a3c64697620636c6173733d2241626f75742d496d616765223e3c696d67207372633d222f696d616765732f6c6f676f5f6a6f75726e616c2e6a70672220616c743d22d0a4d0bed180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b022202f3e3c2f6469763e0d0a3c703ec2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b3c2f703e0d0a3c6120687265663d2261626f75742220636c6173733d2241626f75742d4d6f7265223ed09fd0bed0b4d180d0bed0b1d0bdd0b5d0b53c2f613e3c2f73656374696f6e3e223b733a343a22626f6479223b733a303a22223b733a353a226361746964223b733a313a2232223b733a31303a22637265617465645f6279223b733a333a22343435223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31342031373a35323a3534223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a363a22706172616d73223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a37343a7b733a31343a2261727469636c655f6c61796f7574223b733a393a225f3a64656661756c74223b733a31303a2273686f775f7469746c65223b733a313a2231223b733a31313a226c696e6b5f7469746c6573223b733a313a2230223b733a31303a2273686f775f696e74726f223b733a313a2230223b733a31393a22696e666f5f626c6f636b5f706f736974696f6e223b733a313a2230223b733a31333a2273686f775f63617465676f7279223b733a313a2230223b733a31333a226c696e6b5f63617465676f7279223b733a313a2230223b733a32303a2273686f775f706172656e745f63617465676f7279223b733a313a2230223b733a32303a226c696e6b5f706172656e745f63617465676f7279223b733a313a2230223b733a31313a2273686f775f617574686f72223b733a313a2230223b733a31313a226c696e6b5f617574686f72223b733a313a2230223b733a31363a2273686f775f6372656174655f64617465223b733a313a2230223b733a31363a2273686f775f6d6f646966795f64617465223b733a313a2230223b733a31373a2273686f775f7075626c6973685f64617465223b733a313a2230223b733a32303a2273686f775f6974656d5f6e617669676174696f6e223b733a313a2230223b733a393a2273686f775f766f7465223b733a313a2230223b733a31333a2273686f775f726561646d6f7265223b733a313a2230223b733a31393a2273686f775f726561646d6f72655f7469746c65223b733a313a2230223b733a31343a22726561646d6f72655f6c696d6974223b733a333a22313030223b733a393a2273686f775f74616773223b733a313a2230223b733a31303a2273686f775f69636f6e73223b733a313a2230223b733a31353a2273686f775f7072696e745f69636f6e223b733a313a2230223b733a31353a2273686f775f656d61696c5f69636f6e223b733a313a2230223b733a393a2273686f775f68697473223b733a313a2230223b733a31313a2273686f775f6e6f61757468223b733a313a2230223b733a31333a2275726c735f706f736974696f6e223b733a313a2230223b733a32333a2273686f775f7075626c697368696e675f6f7074696f6e73223b733a313a2231223b733a32303a2273686f775f61727469636c655f6f7074696f6e73223b733a313a2231223b733a31323a22736176655f686973746f7279223b733a313a2231223b733a31333a22686973746f72795f6c696d6974223b693a31303b733a32353a2273686f775f75726c735f696d616765735f66726f6e74656e64223b733a313a2230223b733a32343a2273686f775f75726c735f696d616765735f6261636b656e64223b733a313a2231223b733a373a2274617267657461223b693a303b733a373a2274617267657462223b693a303b733a373a2274617267657463223b693a303b733a31313a22666c6f61745f696e74726f223b733a343a226c656674223b733a31343a22666c6f61745f66756c6c74657874223b733a343a226c656674223b733a31353a2263617465676f72795f6c61796f7574223b733a363a225f3a626c6f67223b733a33323a2273686f775f63617465676f72795f68656164696e675f7469746c655f74657874223b733a313a2231223b733a31393a2273686f775f63617465676f72795f7469746c65223b733a313a2230223b733a31363a2273686f775f6465736372697074696f6e223b733a313a2230223b733a32323a2273686f775f6465736372697074696f6e5f696d616765223b733a313a2230223b733a383a226d61784c6576656c223b733a313a2231223b733a32313a2273686f775f656d7074795f63617465676f72696573223b733a313a2230223b733a31363a2273686f775f6e6f5f61727469636c6573223b733a313a2231223b733a31363a2273686f775f7375626361745f64657363223b733a313a2231223b733a32313a2273686f775f6361745f6e756d5f61727469636c6573223b733a313a2230223b733a31333a2273686f775f6361745f74616773223b733a313a2231223b733a32313a2273686f775f626173655f6465736372697074696f6e223b733a313a2231223b733a31313a226d61784c6576656c636174223b733a323a222d31223b733a32353a2273686f775f656d7074795f63617465676f726965735f636174223b733a313a2230223b733a32303a2273686f775f7375626361745f646573635f636174223b733a313a2231223b733a32353a2273686f775f6361745f6e756d5f61727469636c65735f636174223b733a313a2231223b733a32303a226e756d5f6c656164696e675f61727469636c6573223b733a313a2231223b733a31383a226e756d5f696e74726f5f61727469636c6573223b733a313a2234223b733a31313a226e756d5f636f6c756d6e73223b733a313a2232223b733a393a226e756d5f6c696e6b73223b733a313a2234223b733a31383a226d756c74695f636f6c756d6e5f6f72646572223b733a313a2230223b733a32343a2273686f775f73756263617465676f72795f636f6e74656e74223b733a313a2230223b733a32313a2273686f775f706167696e6174696f6e5f6c696d6974223b733a313a2231223b733a31323a2266696c7465725f6669656c64223b733a343a2268696465223b733a31333a2273686f775f68656164696e6773223b733a313a2231223b733a31343a226c6973745f73686f775f64617465223b733a313a2230223b733a31313a22646174655f666f726d6174223b733a303a22223b733a31343a226c6973745f73686f775f68697473223b733a313a2231223b733a31363a226c6973745f73686f775f617574686f72223b733a313a2231223b733a31313a226f7264657262795f707269223b733a353a226f72646572223b733a31313a226f7264657262795f736563223b733a353a227264617465223b733a31303a226f726465725f64617465223b733a393a227075626c6973686564223b733a31353a2273686f775f706167696e6174696f6e223b733a313a2232223b733a32333a2273686f775f706167696e6174696f6e5f726573756c7473223b733a313a2231223b733a31343a2273686f775f666565645f6c696e6b223b733a313a2231223b733a31323a22666565645f73756d6d617279223b733a313a2230223b733a31383a22666565645f73686f775f726561646d6f7265223b733a313a2230223b7d7d733a373a226d6574616b6579223b733a303a22223b733a383a226d65746164657363223b733a303a22223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a343a7b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b733a363a22726967687473223b733a303a22223b733a31303a22787265666572656e6365223b733a303a22223b7d7d733a373a2276657273696f6e223b733a313a2234223b733a383a226f72646572696e67223b733a313a2230223b733a383a2263617465676f7279223b733a32353a22d091d0b5d0b720d0bad0b0d182d0b5d0b3d0bed180d0b8d0b8223b733a393a226361745f7374617465223b733a313a2231223b733a31303a226361745f616363657373223b733a313a2231223b733a343a22736c7567223b733a393a223131333a61626f7574223b733a373a22636174736c7567223b733a31353a22323a756e63617465676f7269736564223b733a363a22617574686f72223b733a353a2241646d696e223b733a363a226c61796f7574223b733a373a2261727469636c65223b733a343a2270617468223b733a33313a2261626f75742f322d756e63617465676f72697365642f3131332d61626f7574223b733a31303a226d657461617574686f72223b4e3b7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a383a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a373a226d6574616b6579223b693a343b733a383a226d65746164657363223b693a353b733a31303a226d657461617574686f72223b693a363b733a363a22617574686f72223b693a373b733a31363a22637265617465645f62795f616c696173223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a343a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a363a22417574686f72223b613a313a7b733a353a2241646d696e223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a353a2241646d696e223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a32353a22d091d0b5d0b720d0bad0b0d182d0b5d0b3d0bed180d0b8d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32353a22d091d0b5d0b720d0bad0b0d182d0b5d0b3d0bed180d0b8d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a224c616e6775616765223b613a313a7b733a353a2272752d5255223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a353a2272752d5255223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34383a22696e6465782e7068703f6f7074696f6e3d636f6d5f636f6e74656e7426766965773d61727469636c652669643d313133223b733a353a22726f757465223b733a38373a22696e6465782e7068703f6f7074696f6e3d636f6d5f636f6e74656e7426766965773d61727469636c652669643d3131333a61626f75742663617469643d323a756e63617465676f7269736564264974656d69643d323030223b733a353a227469746c65223b733a31373a22d09e20d0b6d183d180d0bdd0b0d0bbd0b5223b733a31313a226465736372697074696f6e223b733a3735353a22d09e20d0b6d183d180d0bdd0b0d0bbd0b520d09dd0b0d183d187d0bdd0be2dd0bfd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd181d0bad0b8d0b920d0b6d183d180d0bdd0b0d0bb20c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0b8d0b7d0b4d0b0d191d182d181d18f20d181203230313420d0b32e20c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b20d09fd0bed0b4d180d0bed0b1d0bdd0b5d0b5223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b693a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a353a2272752d5255223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d31302d31342031373a32373a3331223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22323031342d31302d31342031373a32373a3331223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a353b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d);
+(307, 'index.php?option=com_content&view=article&id=113', 'index.php?option=com_content&view=article&id=113:about&catid=2:uncategorised&Itemid=200', 'О журнале', 'Научно-практический медицинский журнал «Фармакогенетика и фармакогеномика» издаётся с 2014 г. «Фармакогенетика и фармакогеномика» публикует оригинальные статьи о проведённых клинических, клинико-экспериментальных и фундаментальных научных работах, обзоры,', '2014-10-14 23:13:28', '962f3352600639458e91400279e30288', 1, 1, 1, 'ru-RU', '2014-10-14 17:27:31', '0000-00-00 00:00:00', '2014-10-14 17:27:31', '0000-00-00 00:00:00', 0, 0, 5, 0x4f3a31393a2246696e646572496e6465786572526573756c74223a31393a7b733a31313a22002a00656c656d656e7473223b613a32343a7b733a323a226964223b733a333a22313133223b733a353a22616c696173223b733a353a2261626f7574223b733a373a2273756d6d617279223b733a3938373a223c73656374696f6e20636c6173733d2241626f75742d50616765223e0d0a3c61727469636c6520636c6173733d2241626f75742d436f6e74656e74223e0d0a3c68343ed09dd0b0d183d187d0bdd0be2dd0bfd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd181d0bad0b8d0b920d0b6d183d180d0bdd0b0d0bb20c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0b8d0b7d0b4d0b0d191d182d181d18f20d181203230313420d0b32e3c2f68343e0d0a3c2f61727469636c653e0d0a3c64697620636c6173733d2241626f75742d496d616765223e3c696d67207372633d222f696d616765732f6c6f676f5f6a6f75726e616c2e6a70672220616c743d22d0a4d0bed180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b022202f3e3c2f6469763e0d0a3c703ec2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b3c2f703e0d0a3c6120687265663d2261626f75742220636c6173733d2241626f75742d4d6f7265223ed09fd0bed0b4d180d0bed0b1d0bdd0b5d0b53c2f613e3c2f73656374696f6e3e223b733a343a22626f6479223b733a303a22223b733a353a226361746964223b733a313a2232223b733a31303a22637265617465645f6279223b733a333a22343435223b733a31363a22637265617465645f62795f616c696173223b733a303a22223b733a383a226d6f646966696564223b733a31393a22323031342d31302d31342032303a31333a3238223b733a31313a226d6f6469666965645f6279223b733a333a22343435223b733a363a22706172616d73223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a37343a7b733a31343a2261727469636c655f6c61796f7574223b733a393a225f3a64656661756c74223b733a31303a2273686f775f7469746c65223b733a313a2231223b733a31313a226c696e6b5f7469746c6573223b733a313a2230223b733a31303a2273686f775f696e74726f223b733a313a2230223b733a31393a22696e666f5f626c6f636b5f706f736974696f6e223b733a313a2230223b733a31333a2273686f775f63617465676f7279223b733a313a2230223b733a31333a226c696e6b5f63617465676f7279223b733a313a2230223b733a32303a2273686f775f706172656e745f63617465676f7279223b733a313a2230223b733a32303a226c696e6b5f706172656e745f63617465676f7279223b733a313a2230223b733a31313a2273686f775f617574686f72223b733a313a2230223b733a31313a226c696e6b5f617574686f72223b733a313a2230223b733a31363a2273686f775f6372656174655f64617465223b733a313a2230223b733a31363a2273686f775f6d6f646966795f64617465223b733a313a2230223b733a31373a2273686f775f7075626c6973685f64617465223b733a313a2230223b733a32303a2273686f775f6974656d5f6e617669676174696f6e223b733a313a2230223b733a393a2273686f775f766f7465223b733a313a2230223b733a31333a2273686f775f726561646d6f7265223b733a313a2230223b733a31393a2273686f775f726561646d6f72655f7469746c65223b733a313a2230223b733a31343a22726561646d6f72655f6c696d6974223b733a333a22313030223b733a393a2273686f775f74616773223b733a313a2230223b733a31303a2273686f775f69636f6e73223b733a313a2230223b733a31353a2273686f775f7072696e745f69636f6e223b733a313a2230223b733a31353a2273686f775f656d61696c5f69636f6e223b733a313a2230223b733a393a2273686f775f68697473223b733a313a2230223b733a31313a2273686f775f6e6f61757468223b733a313a2230223b733a31333a2275726c735f706f736974696f6e223b733a313a2230223b733a32333a2273686f775f7075626c697368696e675f6f7074696f6e73223b733a313a2231223b733a32303a2273686f775f61727469636c655f6f7074696f6e73223b733a313a2231223b733a31323a22736176655f686973746f7279223b733a313a2231223b733a31333a22686973746f72795f6c696d6974223b693a31303b733a32353a2273686f775f75726c735f696d616765735f66726f6e74656e64223b733a313a2230223b733a32343a2273686f775f75726c735f696d616765735f6261636b656e64223b733a313a2231223b733a373a2274617267657461223b693a303b733a373a2274617267657462223b693a303b733a373a2274617267657463223b693a303b733a31313a22666c6f61745f696e74726f223b733a343a226c656674223b733a31343a22666c6f61745f66756c6c74657874223b733a343a226c656674223b733a31353a2263617465676f72795f6c61796f7574223b733a363a225f3a626c6f67223b733a33323a2273686f775f63617465676f72795f68656164696e675f7469746c655f74657874223b733a313a2231223b733a31393a2273686f775f63617465676f72795f7469746c65223b733a313a2230223b733a31363a2273686f775f6465736372697074696f6e223b733a313a2230223b733a32323a2273686f775f6465736372697074696f6e5f696d616765223b733a313a2230223b733a383a226d61784c6576656c223b733a313a2231223b733a32313a2273686f775f656d7074795f63617465676f72696573223b733a313a2230223b733a31363a2273686f775f6e6f5f61727469636c6573223b733a313a2231223b733a31363a2273686f775f7375626361745f64657363223b733a313a2231223b733a32313a2273686f775f6361745f6e756d5f61727469636c6573223b733a313a2230223b733a31333a2273686f775f6361745f74616773223b733a313a2231223b733a32313a2273686f775f626173655f6465736372697074696f6e223b733a313a2231223b733a31313a226d61784c6576656c636174223b733a323a222d31223b733a32353a2273686f775f656d7074795f63617465676f726965735f636174223b733a313a2230223b733a32303a2273686f775f7375626361745f646573635f636174223b733a313a2231223b733a32353a2273686f775f6361745f6e756d5f61727469636c65735f636174223b733a313a2231223b733a32303a226e756d5f6c656164696e675f61727469636c6573223b733a313a2231223b733a31383a226e756d5f696e74726f5f61727469636c6573223b733a313a2234223b733a31313a226e756d5f636f6c756d6e73223b733a313a2232223b733a393a226e756d5f6c696e6b73223b733a313a2234223b733a31383a226d756c74695f636f6c756d6e5f6f72646572223b733a313a2230223b733a32343a2273686f775f73756263617465676f72795f636f6e74656e74223b733a313a2230223b733a32313a2273686f775f706167696e6174696f6e5f6c696d6974223b733a313a2231223b733a31323a2266696c7465725f6669656c64223b733a343a2268696465223b733a31333a2273686f775f68656164696e6773223b733a313a2231223b733a31343a226c6973745f73686f775f64617465223b733a313a2230223b733a31313a22646174655f666f726d6174223b733a303a22223b733a31343a226c6973745f73686f775f68697473223b733a313a2231223b733a31363a226c6973745f73686f775f617574686f72223b733a313a2231223b733a31313a226f7264657262795f707269223b733a353a226f72646572223b733a31313a226f7264657262795f736563223b733a353a227264617465223b733a31303a226f726465725f64617465223b733a393a227075626c6973686564223b733a31353a2273686f775f706167696e6174696f6e223b733a313a2232223b733a32333a2273686f775f706167696e6174696f6e5f726573756c7473223b733a313a2231223b733a31343a2273686f775f666565645f6c696e6b223b733a313a2231223b733a31323a22666565645f73756d6d617279223b733a313a2230223b733a31383a22666565645f73686f775f726561646d6f7265223b733a313a2230223b7d7d733a373a226d6574616b6579223b733a303a22223b733a383a226d65746164657363223b733a303a22223b733a383a226d65746164617461223b4f3a393a224a5265676973747279223a313a7b733a373a22002a0064617461223b4f3a383a22737464436c617373223a343a7b733a363a22726f626f7473223b733a303a22223b733a363a22617574686f72223b733a303a22223b733a363a22726967687473223b733a303a22223b733a31303a22787265666572656e6365223b733a303a22223b7d7d733a373a2276657273696f6e223b733a313a2236223b733a383a226f72646572696e67223b733a313a2230223b733a383a2263617465676f7279223b733a32353a22d091d0b5d0b720d0bad0b0d182d0b5d0b3d0bed180d0b8d0b8223b733a393a226361745f7374617465223b733a313a2231223b733a31303a226361745f616363657373223b733a313a2231223b733a343a22736c7567223b733a393a223131333a61626f7574223b733a373a22636174736c7567223b733a31353a22323a756e63617465676f7269736564223b733a363a22617574686f72223b733a353a2241646d696e223b733a363a226c61796f7574223b733a373a2261727469636c65223b733a343a2270617468223b733a33313a2261626f75742f322d756e63617465676f72697365642f3131332d61626f7574223b733a31303a226d657461617574686f72223b4e3b7d733a31353a22002a00696e737472756374696f6e73223b613a353a7b693a313b613a333a7b693a303b733a353a227469746c65223b693a313b733a383a227375627469746c65223b693a323b733a323a226964223b7d693a323b613a323a7b693a303b733a373a2273756d6d617279223b693a313b733a343a22626f6479223b7d693a333b613a383a7b693a303b733a343a226d657461223b693a313b733a31303a226c6973745f7072696365223b693a323b733a31303a2273616c655f7072696365223b693a333b733a373a226d6574616b6579223b693a343b733a383a226d65746164657363223b693a353b733a31303a226d657461617574686f72223b693a363b733a363a22617574686f72223b693a373b733a31363a22637265617465645f62795f616c696173223b7d693a343b613a323a7b693a303b733a343a2270617468223b693a313b733a353a22616c696173223b7d693a353b613a313a7b693a303b733a383a22636f6d6d656e7473223b7d7d733a31313a22002a007461786f6e6f6d79223b613a343a7b733a343a2254797065223b613a313a7b733a373a2241727469636c65223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a373a2241727469636c65223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a363a22417574686f72223b613a313a7b733a353a2241646d696e223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a353a2241646d696e223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a2243617465676f7279223b613a313a7b733a32353a22d091d0b5d0b720d0bad0b0d182d0b5d0b3d0bed180d0b8d0b8223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a32353a22d091d0b5d0b720d0bad0b0d182d0b5d0b3d0bed180d0b8d0b8223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d733a383a224c616e6775616765223b613a313a7b733a353a2272752d5255223b4f3a373a224a4f626a656374223a343a7b733a31303a22002a005f6572726f7273223b613a303a7b7d733a353a227469746c65223b733a353a2272752d5255223b733a353a227374617465223b693a313b733a363a22616363657373223b693a313b7d7d7d733a333a2275726c223b733a34383a22696e6465782e7068703f6f7074696f6e3d636f6d5f636f6e74656e7426766965773d61727469636c652669643d313133223b733a353a22726f757465223b733a38373a22696e6465782e7068703f6f7074696f6e3d636f6d5f636f6e74656e7426766965773d61727469636c652669643d3131333a61626f75742663617469643d323a756e63617465676f7269736564264974656d69643d323030223b733a353a227469746c65223b733a31373a22d09e20d0b6d183d180d0bdd0b0d0bbd0b5223b733a31313a226465736372697074696f6e223b733a3733373a22d09dd0b0d183d187d0bdd0be2dd0bfd180d0b0d0bad182d0b8d187d0b5d181d0bad0b8d0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd181d0bad0b8d0b920d0b6d183d180d0bdd0b0d0bb20c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0b8d0b7d0b4d0b0d191d182d181d18f20d181203230313420d0b32e20c2abd0a4d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0b5d182d0b8d0bad0b020d0b820d184d0b0d180d0bcd0b0d0bad0bed0b3d0b5d0bdd0bed0bcd0b8d0bad0b0c2bb20d0bfd183d0b1d0bbd0b8d0bad183d0b5d18220d0bed180d0b8d0b3d0b8d0bdd0b0d0bbd18cd0bdd18bd0b520d181d182d0b0d182d18cd0b820d0be20d0bfd180d0bed0b2d0b5d0b4d191d0bdd0bdd18bd18520d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d1852c20d0bad0bbd0b8d0bdd0b8d0bad0be2dd18dd0bad181d0bfd0b5d180d0b8d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0b820d184d183d0bdd0b4d0b0d0bcd0b5d0bdd182d0b0d0bbd18cd0bdd18bd18520d0bdd0b0d183d187d0bdd18bd18520d180d0b0d0b1d0bed182d0b0d1852c20d0bed0b1d0b7d0bed180d18b2c20d0bbd0b5d0bad186d0b8d0b82c20d0bed0bfd0b8d181d0b0d0bdd0b8d18f20d0bad0bbd0b8d0bdd0b8d187d0b5d181d0bad0b8d18520d181d0bbd183d187d0b0d0b5d0b22c20d0b020d182d0b0d0bad0b6d0b520d0b2d181d0bfd0bed0bcd0bed0b3d0b0d182d0b5d0bbd18cd0bdd18bd0b520d0bcd0b0d182d0b5d180d0b8d0b0d0bbd18b20d0bfd0be20d0b2d181d0b5d0bc20d0b0d0bad182d183d0b0d0bbd18cd0bdd18bd0bc20d0bfd180d0bed0b1d0bbd0b5d0bcd0b0d0bc20d0bfd0b5d180d181d0bed0bdd0b0d0b8d0b7d0b8d180d0bed0b2d0b0d0bdd0bdd0bed0b920d0bcd0b5d0b4d0b8d186d0b8d0bdd18b20d09fd0bed0b4d180d0bed0b1d0bdd0b5d0b5223b733a393a227075626c6973686564223b4e3b733a353a227374617465223b693a313b733a363a22616363657373223b733a313a2231223b733a383a226c616e6775616765223b733a353a2272752d5255223b733a31383a227075626c6973685f73746172745f64617465223b733a31393a22323031342d31302d31342031373a32373a3331223b733a31363a227075626c6973685f656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a2273746172745f64617465223b733a31393a22323031342d31302d31342031373a32373a3331223b733a383a22656e645f64617465223b733a31393a22303030302d30302d30302030303a30303a3030223b733a31303a226c6973745f7072696365223b4e3b733a31303a2273616c655f7072696365223b4e3b733a373a22747970655f6964223b693a353b733a31353a2264656661756c744c616e6775616765223b733a353a2272752d5255223b7d);
 
 -- --------------------------------------------------------
 
@@ -2018,7 +2018,7 @@ INSERT INTO `f8ad7_finder_links_terms0` (`link_id`, `term_id`, `weight`) VALUES
 (148, 139, 0.56004),
 (149, 139, 0.56004),
 (150, 139, 0.56004),
-(305, 139, 0.56004),
+(307, 139, 0.56004),
 (123, 693, 0.56661),
 (127, 693, 0.56661),
 (144, 693, 0.56661),
@@ -2288,10 +2288,10 @@ INSERT INTO `f8ad7_finder_links_terms0` (`link_id`, `term_id`, `weight`) VALUES
 (262, 3599, 6.8),
 (283, 3599, 6.8),
 (284, 3599, 6.8),
-(305, 4026, 1.9998),
-(305, 4027, 2.4666),
-(305, 4028, 3.4),
-(305, 4029, 0.79992);
+(307, 4152, 1.9998),
+(307, 4153, 2.4666),
+(307, 4154, 3.4),
+(307, 4155, 0.79992);
 
 -- --------------------------------------------------------
 
@@ -2446,7 +2446,7 @@ INSERT INTO `f8ad7_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
 (122, 1405, 0.48),
 (142, 1405, 0.48),
 (145, 1405, 0.48),
-(305, 3268, 0.28),
+(307, 3268, 0.28),
 (286, 3268, 0.48),
 (287, 3268, 0.48),
 (296, 3268, 0.48),
@@ -2455,7 +2455,7 @@ INSERT INTO `f8ad7_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3268, 0.48),
 (294, 3268, 1.92),
 (295, 3268, 1.92),
-(305, 3269, 1.05),
+(307, 3269, 1.05),
 (286, 3269, 1.8),
 (287, 3269, 1.8),
 (296, 3269, 1.8),
@@ -2464,7 +2464,7 @@ INSERT INTO `f8ad7_finder_links_terms1` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3269, 1.8),
 (294, 3269, 7.2),
 (295, 3269, 7.2),
-(305, 3270, 1.33),
+(307, 3270, 1.33),
 (286, 3270, 2.28),
 (287, 3270, 2.28),
 (296, 3270, 2.28),
@@ -2677,10 +2677,10 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (297, 3321, 1.2),
 (298, 3321, 1.2),
 (299, 3321, 1.2),
-(305, 3321, 1.4),
+(307, 3321, 1.4),
 (294, 3321, 4.8),
 (295, 3321, 4.8),
-(305, 3324, 1.30669),
+(307, 3324, 1.30669),
 (286, 3324, 2.24004),
 (287, 3324, 2.24004),
 (296, 3324, 2.24004),
@@ -2689,7 +2689,7 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3324, 2.24004),
 (294, 3324, 8.96016),
 (295, 3324, 8.96016),
-(305, 3325, 1.4),
+(307, 3325, 1.4),
 (286, 3325, 2.4),
 (287, 3325, 2.4),
 (296, 3325, 2.4),
@@ -2698,7 +2698,7 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3325, 2.4),
 (294, 3325, 9.6),
 (295, 3325, 9.6),
-(305, 3326, 0.7),
+(307, 3326, 0.7),
 (286, 3326, 1.2),
 (287, 3326, 1.2),
 (296, 3326, 1.2),
@@ -2707,7 +2707,7 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3326, 1.2),
 (294, 3326, 4.8),
 (295, 3326, 4.8),
-(305, 3327, 1.23669),
+(307, 3327, 1.23669),
 (286, 3327, 2.12004),
 (287, 3327, 2.12004),
 (296, 3327, 2.12004),
@@ -2716,7 +2716,7 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3327, 2.12004),
 (294, 3327, 8.48016),
 (295, 3327, 8.48016),
-(305, 3328, 1.4),
+(307, 3328, 1.4),
 (286, 3328, 2.4),
 (287, 3328, 2.4),
 (296, 3328, 2.4),
@@ -2906,8 +2906,8 @@ INSERT INTO `f8ad7_finder_links_terms2` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3814, 3.11661),
 (294, 3814, 6.23322),
 (295, 3814, 6.23322),
-(305, 4064, 1.28331),
-(305, 4065, 1.33);
+(307, 4187, 1.28331),
+(307, 4188, 1.33);
 
 -- --------------------------------------------------------
 
@@ -3061,7 +3061,7 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (148, 238, 6.4),
 (149, 238, 6.4),
 (150, 238, 6.4),
-(305, 413, 0.14007),
+(307, 413, 0.14007),
 (286, 413, 0.27347),
 (287, 413, 0.27347),
 (296, 413, 0.27347),
@@ -3282,10 +3282,10 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (297, 3252, 1.92),
 (298, 3252, 1.92),
 (299, 3252, 1.92),
-(305, 3252, 2.24),
+(307, 3252, 2.24),
 (294, 3252, 7.68),
 (295, 3252, 7.68),
-(305, 3254, 1.35331),
+(307, 3254, 1.35331),
 (286, 3254, 2.31996),
 (287, 3254, 2.31996),
 (296, 3254, 2.31996),
@@ -3294,7 +3294,7 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3254, 2.31996),
 (294, 3254, 9.27984),
 (295, 3254, 9.27984),
-(305, 3255, 1.09669),
+(307, 3255, 1.09669),
 (286, 3255, 1.88004),
 (287, 3255, 1.88004),
 (296, 3255, 1.88004),
@@ -3303,7 +3303,7 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3255, 1.88004),
 (294, 3255, 7.52016),
 (295, 3255, 7.52016),
-(305, 3256, 1.28331),
+(307, 3256, 1.28331),
 (286, 3256, 2.19996),
 (287, 3256, 2.19996),
 (296, 3256, 2.19996),
@@ -3438,13 +3438,13 @@ INSERT INTO `f8ad7_finder_links_terms4` (`link_id`, `term_id`, `weight`) VALUES
 (294, 3806, 5.89322),
 (295, 3806, 5.89322),
 (299, 3827, 0.34),
-(305, 4030, 0.39996),
-(305, 4034, 0.24),
-(305, 4035, 1.71996),
-(305, 4045, 1.33),
-(305, 4046, 0.37331),
-(305, 4047, 0.93331),
-(305, 4048, 1.05);
+(307, 4156, 0.39996),
+(307, 4160, 0.24),
+(307, 4161, 1.71996),
+(307, 4169, 1.33),
+(307, 4170, 0.37331),
+(307, 4171, 0.93331),
+(307, 4172, 1.05);
 
 -- --------------------------------------------------------
 
@@ -3685,7 +3685,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (297, 3233, 1.2),
 (298, 3233, 1.2),
 (299, 3233, 1.2),
-(305, 3233, 1.4),
+(307, 3233, 1.4),
 (294, 3233, 4.8),
 (295, 3233, 4.8),
 (286, 3234, 1.92),
@@ -3694,7 +3694,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (297, 3234, 1.92),
 (298, 3234, 1.92),
 (299, 3234, 1.92),
-(305, 3234, 2.24),
+(307, 3234, 2.24),
 (294, 3234, 7.68),
 (295, 3234, 7.68),
 (286, 3235, 2.4),
@@ -3703,10 +3703,10 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (297, 3235, 2.4),
 (298, 3235, 2.4),
 (299, 3235, 2.4),
-(305, 3235, 2.8),
+(307, 3235, 2.8),
 (294, 3235, 9.6),
 (295, 3235, 9.6),
-(305, 3260, 0.7),
+(307, 3260, 0.7),
 (286, 3260, 1.2),
 (287, 3260, 1.2),
 (296, 3260, 1.2),
@@ -3715,7 +3715,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3260, 1.2),
 (294, 3260, 4.8),
 (295, 3260, 4.8),
-(305, 3261, 1.33),
+(307, 3261, 1.33),
 (286, 3261, 2.28),
 (287, 3261, 2.28),
 (296, 3261, 2.28),
@@ -3724,7 +3724,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3261, 2.28),
 (294, 3261, 9.12),
 (295, 3261, 9.12),
-(305, 3262, 1.4),
+(307, 3262, 1.4),
 (286, 3262, 2.4),
 (287, 3262, 2.4),
 (296, 3262, 2.4),
@@ -3733,7 +3733,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3262, 2.4),
 (294, 3262, 9.6),
 (295, 3262, 9.6),
-(305, 3263, 1.02662),
+(307, 3263, 1.02662),
 (286, 3263, 1.75992),
 (287, 3263, 1.75992),
 (296, 3263, 1.75992),
@@ -3742,7 +3742,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3263, 1.75992),
 (294, 3263, 7.03968),
 (295, 3263, 7.03968),
-(305, 3264, 1.4),
+(307, 3264, 1.4),
 (286, 3264, 2.4),
 (287, 3264, 2.4),
 (296, 3264, 2.4),
@@ -3751,7 +3751,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3264, 2.4),
 (294, 3264, 9.6),
 (295, 3264, 9.6),
-(305, 3265, 1.4),
+(307, 3265, 1.4),
 (286, 3265, 2.4),
 (287, 3265, 2.4),
 (296, 3265, 2.4),
@@ -3760,7 +3760,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3265, 2.4),
 (294, 3265, 9.6),
 (295, 3265, 9.6),
-(305, 3266, 1.14331),
+(307, 3266, 1.14331),
 (286, 3266, 1.95996),
 (287, 3266, 1.95996),
 (296, 3266, 1.95996),
@@ -3769,7 +3769,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3266, 1.95996),
 (294, 3266, 7.83984),
 (295, 3266, 7.83984),
-(305, 3267, 1.19),
+(307, 3267, 1.19),
 (286, 3267, 2.04),
 (287, 3267, 2.04),
 (296, 3267, 2.04),
@@ -3778,7 +3778,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3267, 2.04),
 (294, 3267, 8.16),
 (295, 3267, 8.16),
-(305, 3318, 0.23331),
+(307, 3318, 0.23331),
 (286, 3318, 0.39996),
 (287, 3318, 0.39996),
 (296, 3318, 0.39996),
@@ -3787,7 +3787,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3318, 0.39996),
 (294, 3318, 1.59984),
 (295, 3318, 1.59984),
-(305, 3319, 1.19),
+(307, 3319, 1.19),
 (286, 3319, 2.04),
 (287, 3319, 2.04),
 (296, 3319, 2.04),
@@ -3796,7 +3796,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3319, 2.04),
 (294, 3319, 8.16),
 (295, 3319, 8.16),
-(305, 3320, 1.4),
+(307, 3320, 1.4),
 (286, 3320, 2.4),
 (287, 3320, 2.4),
 (296, 3320, 2.4),
@@ -3810,7 +3810,7 @@ INSERT INTO `f8ad7_finder_links_terms5` (`link_id`, `term_id`, `weight`) VALUES
 (281, 3786, 0.96),
 (283, 3786, 0.96),
 (284, 3786, 0.96),
-(305, 4049, 0.72);
+(307, 4173, 0.72);
 
 -- --------------------------------------------------------
 
@@ -4261,7 +4261,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (142, 1423, 2.12004),
 (145, 1423, 2.12004),
 (301, 1423, 2.12004),
-(305, 3294, 0.7),
+(307, 3294, 0.7),
 (286, 3294, 1.2),
 (287, 3294, 1.2),
 (296, 3294, 1.2),
@@ -4270,7 +4270,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3294, 1.2),
 (294, 3294, 4.8),
 (295, 3294, 4.8),
-(305, 3295, 1.33),
+(307, 3295, 1.33),
 (286, 3295, 2.28),
 (287, 3295, 2.28),
 (296, 3295, 2.28),
@@ -4279,7 +4279,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3295, 2.28),
 (294, 3295, 9.12),
 (295, 3295, 9.12),
-(305, 3296, 0.09331),
+(307, 3296, 0.09331),
 (286, 3296, 0.15996),
 (287, 3296, 0.15996),
 (296, 3296, 0.15996),
@@ -4288,7 +4288,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3296, 0.15996),
 (294, 3296, 0.63984),
 (295, 3296, 0.63984),
-(305, 3297, 0.86331),
+(307, 3297, 0.86331),
 (286, 3297, 1.47996),
 (287, 3297, 1.47996),
 (296, 3297, 1.47996),
@@ -4297,7 +4297,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3297, 1.47996),
 (294, 3297, 5.91984),
 (295, 3297, 5.91984),
-(305, 3298, 1.12),
+(307, 3298, 1.12),
 (286, 3298, 1.92),
 (287, 3298, 1.92),
 (296, 3298, 1.92),
@@ -4306,7 +4306,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3298, 1.92),
 (294, 3298, 7.68),
 (295, 3298, 7.68),
-(305, 3299, 0.42),
+(307, 3299, 0.42),
 (286, 3299, 0.72),
 (287, 3299, 0.72),
 (296, 3299, 0.72),
@@ -4315,7 +4315,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3299, 0.72),
 (294, 3299, 2.88),
 (295, 3299, 2.88),
-(305, 3300, 1.35331),
+(307, 3300, 1.35331),
 (286, 3300, 2.31996),
 (287, 3300, 2.31996),
 (296, 3300, 2.31996),
@@ -4324,7 +4324,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3300, 2.31996),
 (294, 3300, 9.27984),
 (295, 3300, 9.27984),
-(305, 3301, 1.4),
+(307, 3301, 1.4),
 (286, 3301, 2.4),
 (287, 3301, 2.4),
 (296, 3301, 2.4),
@@ -4333,7 +4333,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3301, 2.4),
 (294, 3301, 9.6),
 (295, 3301, 9.6),
-(305, 3302, 0.51331),
+(307, 3302, 0.51331),
 (286, 3302, 0.87996),
 (287, 3302, 0.87996),
 (296, 3302, 0.87996),
@@ -4342,7 +4342,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3302, 0.87996),
 (294, 3302, 3.51984),
 (295, 3302, 3.51984),
-(305, 3303, 1.23669),
+(307, 3303, 1.23669),
 (286, 3303, 2.12004),
 (287, 3303, 2.12004),
 (296, 3303, 2.12004),
@@ -4351,7 +4351,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3303, 2.12004),
 (294, 3303, 8.48016),
 (295, 3303, 8.48016),
-(305, 3304, 1.4),
+(307, 3304, 1.4),
 (286, 3304, 2.4),
 (287, 3304, 2.4),
 (296, 3304, 2.4),
@@ -4360,7 +4360,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3304, 2.4),
 (294, 3304, 9.6),
 (295, 3304, 9.6),
-(305, 3305, 0.42),
+(307, 3305, 0.42),
 (286, 3305, 0.72),
 (287, 3305, 0.72),
 (296, 3305, 0.72),
@@ -4369,7 +4369,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3305, 0.72),
 (294, 3305, 2.88),
 (295, 3305, 2.88),
-(305, 3306, 1.21331),
+(307, 3306, 1.21331),
 (286, 3306, 2.07996),
 (287, 3306, 2.07996),
 (296, 3306, 2.07996),
@@ -4378,7 +4378,7 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3306, 2.07996),
 (294, 3306, 8.31984),
 (295, 3306, 8.31984),
-(305, 3307, 1.37669),
+(307, 3307, 1.37669),
 (286, 3307, 2.36004),
 (287, 3307, 2.36004),
 (296, 3307, 2.36004),
@@ -4474,11 +4474,11 @@ INSERT INTO `f8ad7_finder_links_terms7` (`link_id`, `term_id`, `weight`) VALUES
 (265, 3757, 0.63996),
 (266, 3757, 0.63996),
 (285, 3757, 0.63996),
-(305, 4031, 1.7334),
-(305, 4032, 3.1334),
-(305, 4033, 3.5334),
-(305, 4059, 1.4),
-(305, 4060, 0.42);
+(307, 4157, 1.7334),
+(307, 4158, 3.1334),
+(307, 4159, 3.5334),
+(307, 4182, 1.4),
+(307, 4183, 0.42);
 
 -- --------------------------------------------------------
 
@@ -5187,7 +5187,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_terms9` (
 --
 
 INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
-(305, 623, 0.28),
+(307, 623, 0.28),
 (120, 623, 0.48),
 (122, 623, 0.48),
 (125, 623, 0.48),
@@ -5204,7 +5204,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 623, 0.48),
 (294, 623, 1.92),
 (295, 623, 1.92),
-(305, 629, 0.56),
+(307, 629, 0.56),
 (120, 629, 0.96),
 (122, 629, 0.96),
 (125, 629, 0.96),
@@ -5480,7 +5480,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (122, 1426, 0.96),
 (142, 1426, 0.96),
 (145, 1426, 0.96),
-(305, 1675, 0.28),
+(307, 1675, 0.28),
 (119, 1675, 0.48),
 (120, 1675, 0.48),
 (141, 1675, 0.48),
@@ -5539,10 +5539,10 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (297, 3284, 0.08004),
 (298, 3284, 0.08004),
 (299, 3284, 0.08004),
-(305, 3284, 0.20677),
+(307, 3284, 0.16008),
 (294, 3284, 0.32016),
 (295, 3284, 0.32016),
-(305, 3285, 1.00331),
+(307, 3285, 1.00331),
 (286, 3285, 1.71996),
 (287, 3285, 1.71996),
 (296, 3285, 1.71996),
@@ -5551,7 +5551,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3285, 1.71996),
 (294, 3285, 6.87984),
 (295, 3285, 6.87984),
-(305, 3286, 1.28331),
+(307, 3286, 1.28331),
 (286, 3286, 2.19996),
 (287, 3286, 2.19996),
 (296, 3286, 2.19996),
@@ -5560,7 +5560,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3286, 2.19996),
 (294, 3286, 8.79984),
 (295, 3286, 8.79984),
-(305, 3287, 1.00331),
+(307, 3287, 1.00331),
 (286, 3287, 1.71996),
 (287, 3287, 1.71996),
 (296, 3287, 1.71996),
@@ -5569,7 +5569,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3287, 1.71996),
 (294, 3287, 6.87984),
 (295, 3287, 6.87984),
-(305, 3288, 1.21331),
+(307, 3288, 1.21331),
 (286, 3288, 2.07996),
 (287, 3288, 2.07996),
 (296, 3288, 2.07996),
@@ -5578,7 +5578,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3288, 2.07996),
 (294, 3288, 8.31984),
 (295, 3288, 8.31984),
-(305, 3289, 0.37331),
+(307, 3289, 0.37331),
 (286, 3289, 0.63996),
 (287, 3289, 0.63996),
 (296, 3289, 0.63996),
@@ -5587,7 +5587,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3289, 0.63996),
 (294, 3289, 2.55984),
 (295, 3289, 2.55984),
-(305, 3290, 1.16669),
+(307, 3290, 1.16669),
 (286, 3290, 2.00004),
 (287, 3290, 2.00004),
 (296, 3290, 2.00004),
@@ -5596,7 +5596,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3290, 2.00004),
 (294, 3290, 8.00016),
 (295, 3290, 8.00016),
-(305, 3291, 1.35331),
+(307, 3291, 1.35331),
 (286, 3291, 2.31996),
 (287, 3291, 2.31996),
 (296, 3291, 2.31996),
@@ -5605,7 +5605,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3291, 2.31996),
 (294, 3291, 9.27984),
 (295, 3291, 9.27984),
-(305, 3292, 1.14331),
+(307, 3292, 1.14331),
 (286, 3292, 1.95996),
 (287, 3292, 1.95996),
 (296, 3292, 1.95996),
@@ -5614,7 +5614,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3292, 1.95996),
 (294, 3292, 7.83984),
 (295, 3292, 7.83984),
-(305, 3293, 1.19),
+(307, 3293, 1.19),
 (286, 3293, 2.04),
 (287, 3293, 2.04),
 (296, 3293, 2.04),
@@ -5623,7 +5623,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3293, 2.04),
 (294, 3293, 8.16),
 (295, 3293, 8.16),
-(305, 3313, 0.32669),
+(307, 3313, 0.32669),
 (286, 3313, 0.56004),
 (287, 3313, 0.56004),
 (296, 3313, 0.56004),
@@ -5632,7 +5632,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3313, 0.56004),
 (294, 3313, 2.24016),
 (295, 3313, 2.24016),
-(305, 3314, 0.91),
+(307, 3314, 0.91),
 (286, 3314, 1.56),
 (287, 3314, 1.56),
 (296, 3314, 1.56),
@@ -5641,7 +5641,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3314, 1.56),
 (294, 3314, 6.24),
 (295, 3314, 6.24),
-(305, 3315, 1.05),
+(307, 3315, 1.05),
 (286, 3315, 1.8),
 (287, 3315, 1.8),
 (296, 3315, 1.8),
@@ -5650,7 +5650,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3315, 1.8),
 (294, 3315, 7.2),
 (295, 3315, 7.2),
-(305, 3316, 0.88669),
+(307, 3316, 0.88669),
 (286, 3316, 1.52004),
 (287, 3316, 1.52004),
 (296, 3316, 1.52004),
@@ -5659,7 +5659,7 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3316, 1.52004),
 (294, 3316, 6.08016),
 (295, 3316, 6.08016),
-(305, 3317, 1.16669),
+(307, 3317, 1.16669),
 (286, 3317, 2.00004),
 (287, 3317, 2.00004),
 (296, 3317, 2.00004),
@@ -5836,14 +5836,13 @@ INSERT INTO `f8ad7_finder_links_terms9` (`link_id`, `term_id`, `weight`) VALUES
 (294, 3813, 12.2664),
 (295, 3813, 12.2664),
 (297, 3824, 5.7332),
-(305, 4036, 0.04669),
-(305, 4037, 1.12),
-(305, 4038, 1.16669),
-(305, 4057, 3.12),
-(305, 4058, 1.37669),
-(305, 4061, 0.04669),
-(305, 4062, 0.84),
-(305, 4063, 0.88669);
+(307, 4162, 0.04669),
+(307, 4163, 1.12),
+(307, 4164, 1.16669),
+(307, 4181, 2.21),
+(307, 4184, 0.04669),
+(307, 4185, 0.84),
+(307, 4186, 0.88669);
 
 -- --------------------------------------------------------
 
@@ -6010,7 +6009,7 @@ INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 (122, 1410, 2.24004),
 (142, 1410, 2.24004),
 (145, 1410, 2.24004),
-(305, 3271, 0.42),
+(307, 3271, 0.42),
 (286, 3271, 0.72),
 (287, 3271, 0.72),
 (296, 3271, 0.72),
@@ -6019,7 +6018,7 @@ INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3271, 0.72),
 (294, 3271, 2.88),
 (295, 3271, 2.88),
-(305, 3272, 0.98),
+(307, 3272, 0.98),
 (286, 3272, 1.68),
 (287, 3272, 1.68),
 (296, 3272, 1.68),
@@ -6028,7 +6027,7 @@ INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3272, 1.68),
 (294, 3272, 6.72),
 (295, 3272, 6.72),
-(305, 3273, 1.09669),
+(307, 3273, 1.09669),
 (286, 3273, 1.88004),
 (287, 3273, 1.88004),
 (296, 3273, 1.88004),
@@ -6037,7 +6036,7 @@ INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3273, 1.88004),
 (294, 3273, 7.52016),
 (295, 3273, 7.52016),
-(305, 3277, 0.37331),
+(307, 3277, 0.37331),
 (286, 3277, 0.63996),
 (287, 3277, 0.63996),
 (296, 3277, 0.63996),
@@ -6077,10 +6076,10 @@ INSERT INTO `f8ad7_finder_links_termsa` (`link_id`, `term_id`, `weight`) VALUES
 (278, 3714, 5.4668),
 (285, 3798, 3.17339),
 (301, 3829, 0.34),
-(305, 4050, 0.51331),
-(305, 4051, 1.12),
-(305, 4052, 1.4),
-(305, 4053, 1.12);
+(307, 4174, 0.51331),
+(307, 4175, 1.12),
+(307, 4176, 1.4),
+(307, 4177, 1.12);
 
 -- --------------------------------------------------------
 
@@ -6197,7 +6196,7 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (157, 3159, 2.24004),
 (158, 3159, 2.24004),
 (159, 3159, 2.24004),
-(305, 3242, 0.18669),
+(307, 3242, 0.18669),
 (286, 3242, 0.32004),
 (287, 3242, 0.32004),
 (296, 3242, 0.32004),
@@ -6206,7 +6205,7 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3242, 0.32004),
 (294, 3242, 1.28016),
 (295, 3242, 1.28016),
-(305, 3243, 1.05),
+(307, 3243, 1.05),
 (286, 3243, 1.8),
 (287, 3243, 1.8),
 (296, 3243, 1.8),
@@ -6215,7 +6214,7 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3243, 1.8),
 (294, 3243, 7.2),
 (295, 3243, 7.2),
-(305, 3244, 1.28331),
+(307, 3244, 1.28331),
 (286, 3244, 2.19996),
 (287, 3244, 2.19996),
 (296, 3244, 2.19996),
@@ -6224,7 +6223,7 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3244, 2.19996),
 (294, 3244, 8.79984),
 (295, 3244, 8.79984),
-(305, 3245, 0.7),
+(307, 3245, 0.7),
 (286, 3245, 1.2),
 (287, 3245, 1.2),
 (296, 3245, 1.2),
@@ -6233,7 +6232,7 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3245, 1.2),
 (294, 3245, 4.8),
 (295, 3245, 4.8),
-(305, 3246, 1.28331),
+(307, 3246, 1.28331),
 (286, 3246, 2.19996),
 (287, 3246, 2.19996),
 (296, 3246, 2.19996),
@@ -6242,7 +6241,7 @@ INSERT INTO `f8ad7_finder_links_termsb` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3246, 2.19996),
 (294, 3246, 8.79984),
 (295, 3246, 8.79984),
-(305, 3247, 1.35331),
+(307, 3247, 1.35331),
 (286, 3247, 2.31996),
 (287, 3247, 2.31996),
 (296, 3247, 2.31996),
@@ -6312,7 +6311,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_links_termsc` (
 
 INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (287, 389, 0.17),
-(305, 389, 0.2),
+(307, 389, 0.2),
 (114, 389, 0.4),
 (119, 389, 0.4),
 (121, 389, 0.4),
@@ -6652,7 +6651,7 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (158, 3201, 2.94661),
 (159, 3201, 2.94661),
 (114, 3218, 0.34),
-(305, 3236, 0.04669),
+(307, 3236, 0.04669),
 (286, 3236, 0.08004),
 (287, 3236, 0.08004),
 (296, 3236, 0.08004),
@@ -6661,7 +6660,7 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3236, 0.08004),
 (294, 3236, 0.32016),
 (295, 3236, 0.32016),
-(305, 3237, 0.86331),
+(307, 3237, 0.86331),
 (286, 3237, 1.47996),
 (287, 3237, 1.47996),
 (296, 3237, 1.47996),
@@ -6670,7 +6669,7 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3237, 1.47996),
 (294, 3237, 5.91984),
 (295, 3237, 5.91984),
-(305, 3238, 1.23669),
+(307, 3238, 1.23669),
 (286, 3238, 2.12004),
 (287, 3238, 2.12004),
 (296, 3238, 2.12004),
@@ -6679,7 +6678,7 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3238, 2.12004),
 (294, 3238, 8.48016),
 (295, 3238, 8.48016),
-(305, 3239, 0.46669),
+(307, 3239, 0.46669),
 (286, 3239, 0.80004),
 (287, 3239, 0.80004),
 (296, 3239, 0.80004),
@@ -6688,7 +6687,7 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3239, 0.80004),
 (294, 3239, 3.20016),
 (295, 3239, 3.20016),
-(305, 3240, 1.16669),
+(307, 3240, 1.16669),
 (286, 3240, 2.00004),
 (287, 3240, 2.00004),
 (296, 3240, 2.00004),
@@ -6697,7 +6696,7 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3240, 2.00004),
 (294, 3240, 8.00016),
 (295, 3240, 8.00016),
-(305, 3241, 1.4),
+(307, 3241, 1.4),
 (286, 3241, 2.4),
 (287, 3241, 2.4),
 (296, 3241, 2.4),
@@ -6817,13 +6816,13 @@ INSERT INTO `f8ad7_finder_links_termsc` (`link_id`, `term_id`, `weight`) VALUES
 (296, 3822, 0.34),
 (297, 3823, 0.34),
 (298, 3826, 0.34),
-(305, 4019, 1.11),
-(305, 4020, 2.6),
-(305, 4021, 3),
-(305, 4022, 3.2666),
-(305, 4023, 0.28),
-(305, 4024, 0.84),
-(305, 4025, 1.23669);
+(307, 4145, 1.11),
+(307, 4146, 2.6),
+(307, 4147, 3),
+(307, 4148, 3.2666),
+(307, 4149, 0.28),
+(307, 4150, 0.84),
+(307, 4151, 1.23669);
 
 -- --------------------------------------------------------
 
@@ -6992,7 +6991,7 @@ INSERT INTO `f8ad7_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 (157, 3162, 2.4),
 (158, 3162, 2.4),
 (159, 3162, 2.4),
-(305, 3281, 0.32669),
+(307, 3281, 0.32669),
 (286, 3281, 0.56004),
 (287, 3281, 0.56004),
 (296, 3281, 0.56004),
@@ -7001,7 +7000,7 @@ INSERT INTO `f8ad7_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3281, 0.56004),
 (294, 3281, 2.24016),
 (295, 3281, 2.24016),
-(305, 3282, 1.05),
+(307, 3282, 1.05),
 (286, 3282, 1.8),
 (287, 3282, 1.8),
 (296, 3282, 1.8),
@@ -7010,7 +7009,7 @@ INSERT INTO `f8ad7_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3282, 1.8),
 (294, 3282, 7.2),
 (295, 3282, 7.2),
-(305, 3283, 1.21331),
+(307, 3283, 1.21331),
 (286, 3283, 2.07996),
 (287, 3283, 2.07996),
 (296, 3283, 2.07996),
@@ -7185,15 +7184,13 @@ INSERT INTO `f8ad7_finder_links_termsd` (`link_id`, `term_id`, `weight`) VALUES
 (299, 3805, 0.56004),
 (294, 3805, 1.68012),
 (295, 3805, 1.68012),
-(305, 4039, 0.28),
-(305, 4040, 1.23669),
-(305, 4041, 1.28331),
-(305, 4042, 1.12008),
-(305, 4043, 1.33),
-(305, 4044, 1.4),
-(305, 4054, 0.7),
-(305, 4055, 1.4),
-(305, 4056, 1.4);
+(307, 4165, 0.28),
+(307, 4166, 1.23669),
+(307, 4167, 1.28331),
+(307, 4168, 0.79339),
+(307, 4178, 0.7),
+(307, 4179, 1.4),
+(307, 4180, 1.4);
 
 -- --------------------------------------------------------
 
@@ -7424,7 +7421,7 @@ INSERT INTO `f8ad7_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
 (122, 1425, 0.39996),
 (142, 1425, 0.39996),
 (145, 1425, 0.39996),
-(305, 3308, 0.32669),
+(307, 3308, 0.32669),
 (286, 3308, 0.56004),
 (287, 3308, 0.56004),
 (296, 3308, 0.56004),
@@ -7432,7 +7429,7 @@ INSERT INTO `f8ad7_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
 (298, 3308, 0.56004),
 (299, 3308, 0.56004),
 (294, 3308, 2.24016),
-(305, 3309, 1.02669),
+(307, 3309, 1.02669),
 (286, 3309, 1.76004),
 (287, 3309, 1.76004),
 (296, 3309, 1.76004),
@@ -7440,7 +7437,7 @@ INSERT INTO `f8ad7_finder_links_termse` (`link_id`, `term_id`, `weight`) VALUES
 (298, 3309, 1.76004),
 (299, 3309, 1.76004),
 (294, 3309, 7.04016),
-(305, 3310, 1.19),
+(307, 3310, 1.19),
 (286, 3310, 2.04),
 (287, 3310, 2.04),
 (296, 3310, 2.04),
@@ -7530,7 +7527,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_taxonomy` (
   `state` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `access` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `ordering` tinyint(1) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=162 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=168 ;
 
 --
 -- Дамп данных таблицы `f8ad7_finder_taxonomy`
@@ -7580,9 +7577,9 @@ INSERT INTO `f8ad7_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 (147, 7, 'Программное обеспечение', 1, 1, 0),
 (148, 1, 'Author', 1, 1, 0),
 (151, 1, 'Language', 1, 1, 0),
-(159, 148, 'Admin', 1, 1, 0),
-(160, 7, 'Без категории', 1, 1, 0),
-(161, 151, 'ru-RU', 1, 1, 0);
+(165, 148, 'Admin', 1, 1, 0),
+(166, 7, 'Без категории', 1, 1, 0),
+(167, 151, 'ru-RU', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -7932,10 +7929,10 @@ INSERT INTO `f8ad7_finder_taxonomy_map` (`link_id`, `node_id`) VALUES
 (301, 141),
 (301, 142),
 (301, 147),
-(305, 21),
-(305, 159),
-(305, 160),
-(305, 161);
+(307, 21),
+(307, 165),
+(307, 166),
+(307, 167);
 
 -- --------------------------------------------------------
 
@@ -7953,7 +7950,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_finder_terms` (
   `soundex` varchar(75) NOT NULL,
   `links` int(10) NOT NULL DEFAULT '0',
   `language` char(3) NOT NULL DEFAULT ''
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4082 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4208 ;
 
 --
 -- Дамп данных таблицы `f8ad7_finder_terms`
@@ -8440,53 +8437,50 @@ INSERT INTO `f8ad7_finder_terms` (`term_id`, `term`, `stem`, `common`, `phrase`,
 (3826, '89', '89', 0, 0, 0.2, '', 1, '*'),
 (3827, '90', '90', 0, 0, 0.2, '', 1, '*'),
 (3829, '45', '45', 0, 0, 0.2, '', 1, '*'),
-(4019, '113', '113', 0, 0, 0.3, '', 1, 'ru'),
-(4020, '113 about', '113 about', 0, 1, 1.3, 'A130', 1, 'ru'),
-(4021, '2 uncategorised', '2 uncategorised', 0, 1, 1.5, 'U5232623', 1, 'ru'),
-(4022, '2 uncategorised 113', '2 uncategorised 113', 0, 1, 1.6333, 'U5232623', 1, 'ru'),
-(4023, '2014', '2014', 0, 0, 0.4, '', 1, 'ru'),
-(4024, '2014 г', '2014 г', 0, 1, 1.2, 'г000', 1, 'ru'),
-(4025, '2014 г «фармакогенетика', '2014 г «фармакогенетика', 0, 1, 1.7667, 'г000', 1, 'ru'),
-(4026, 'about', 'about', 0, 0, 0.3333, 'A130', 1, 'ru'),
-(4027, 'about 2', 'about 2', 0, 1, 1.2333, 'A130', 1, 'ru'),
-(4028, 'about 2 uncategorised', 'about 2 uncategorised', 0, 1, 1.7, 'A135232623', 1, 'ru'),
-(4029, 'admin', 'admin', 0, 0, 0.3333, 'A350', 1, 'ru'),
-(4030, 'ru-ru', 'ru-ru', 0, 0, 0.3333, 'R000', 1, 'ru'),
-(4031, 'uncategorised', 'uncategorised', 0, 0, 0.8667, 'U5232623', 1, 'ru'),
-(4032, 'uncategorised 113', 'uncategorised 113', 0, 1, 1.5667, 'U5232623', 1, 'ru'),
-(4033, 'uncategorised 113 about', 'uncategorised 113 about', 0, 1, 1.7667, 'U523262313', 1, 'ru'),
-(4034, 'без', 'без', 0, 0, 0.2, 'б000', 1, 'ru'),
-(4035, 'без категории', 'без категории', 0, 1, 1.4333, 'б000', 1, 'ru'),
-(4036, 'г', 'г', 0, 0, 0.0667, 'г000', 1, 'ru'),
-(4037, 'г «фармакогенетика', 'г «фармакогенетика', 0, 1, 1.6, 'г000', 1, 'ru'),
-(4038, 'г «фармакогенетика и', 'г «фармакогенетика и', 0, 1, 1.6667, 'г000', 1, 'ru'),
-(4039, 'журнал', 'журнал', 0, 0, 0.4, 'ж000', 1, 'ru'),
-(4040, 'журнал «фармакогенетика', 'журнал «фармакогенетика', 0, 1, 1.7667, 'ж000', 1, 'ru'),
-(4041, 'журнал «фармакогенетика и', 'журнал «фармакогенетика и', 0, 1, 1.8333, 'ж000', 1, 'ru'),
-(4042, 'журнале', 'журнале', 0, 0, 0.4667, 'ж000', 1, 'ru'),
-(4043, 'журнале научно-практический', 'журнале научно-практический', 0, 1, 1.9, 'ж000', 1, 'ru'),
-(4044, 'журнале научно-практический медицинский', 'журнале научно-практический медицинский', 0, 1, 2, 'ж000', 1, 'ru'),
-(4045, 'и фармакогеномика» издаётся', 'и фармакогеномика» издаётся', 0, 1, 1.9, 'и000', 1, 'ru'),
-(4046, 'издаётся', 'издаётся', 0, 0, 0.5333, 'и000', 1, 'ru'),
-(4047, 'издаётся с', 'издаётся с', 0, 1, 1.3333, 'и000', 1, 'ru'),
-(4048, 'издаётся с 2014', 'издаётся с 2014', 0, 1, 1.5, 'и000', 1, 'ru'),
-(4049, 'категории', 'категории', 0, 0, 0.6, 'к000', 1, 'ru'),
-(4050, 'медицинский', 'медицинский', 0, 0, 0.7333, 'м000', 1, 'ru'),
-(4051, 'медицинский журнал', 'медицинский журнал', 0, 1, 1.6, 'м000', 1, 'ru'),
-(4052, 'медицинский журнал «фармакогенетика', 'медицинский журнал «фармакогенетика', 0, 1, 2, 'м000', 1, 'ru'),
-(4053, 'медицины подробнее', 'медицины подробнее', 0, 1, 1.6, 'м000', 1, 'ru'),
-(4054, 'научно-практический', 'научно-практический', 0, 0, 1, 'н000', 1, 'ru'),
-(4055, 'научно-практический медицинский', 'научно-практический медицинский', 0, 1, 2, 'н000', 1, 'ru'),
-(4056, 'научно-практический медицинский журнал', 'научно-практический медицинский журнал', 0, 1, 2, 'н000', 1, 'ru'),
-(4057, 'о журнале', 'о журнале', 0, 1, 1.3, 'о000', 1, 'ru'),
-(4058, 'о журнале научно-практический', 'о журнале научно-практический', 0, 1, 1.9667, 'о000', 1, 'ru'),
-(4059, 'персонаизированной медицины подробнее', 'персонаизированной медицины подробнее', 0, 1, 2, 'п000', 1, 'ru'),
-(4060, 'подробнее', 'подробнее', 0, 0, 0.6, 'п000', 1, 'ru'),
-(4061, 'с', 'с', 0, 0, 0.0667, 'с000', 1, 'ru'),
-(4062, 'с 2014', 'с 2014', 0, 1, 1.2, 'с000', 1, 'ru'),
-(4063, 'с 2014 г', 'с 2014 г', 0, 1, 1.2667, 'с000', 1, 'ru'),
-(4064, 'фармакогеномика» издаётся', 'фармакогеномика» издаётся', 0, 1, 1.8333, 'ф000', 1, 'ru'),
-(4065, 'фармакогеномика» издаётся с', 'фармакогеномика» издаётся с', 0, 1, 1.9, 'ф000', 1, 'ru');
+(4145, '113', '113', 0, 0, 0.3, '', 1, 'ru'),
+(4146, '113 about', '113 about', 0, 1, 1.3, 'A130', 1, 'ru'),
+(4147, '2 uncategorised', '2 uncategorised', 0, 1, 1.5, 'U5232623', 1, 'ru'),
+(4148, '2 uncategorised 113', '2 uncategorised 113', 0, 1, 1.6333, 'U5232623', 1, 'ru'),
+(4149, '2014', '2014', 0, 0, 0.4, '', 1, 'ru'),
+(4150, '2014 г', '2014 г', 0, 1, 1.2, 'г000', 1, 'ru'),
+(4151, '2014 г «фармакогенетика', '2014 г «фармакогенетика', 0, 1, 1.7667, 'г000', 1, 'ru'),
+(4152, 'about', 'about', 0, 0, 0.3333, 'A130', 1, 'ru'),
+(4153, 'about 2', 'about 2', 0, 1, 1.2333, 'A130', 1, 'ru'),
+(4154, 'about 2 uncategorised', 'about 2 uncategorised', 0, 1, 1.7, 'A135232623', 1, 'ru'),
+(4155, 'admin', 'admin', 0, 0, 0.3333, 'A350', 1, 'ru'),
+(4156, 'ru-ru', 'ru-ru', 0, 0, 0.3333, 'R000', 1, 'ru'),
+(4157, 'uncategorised', 'uncategorised', 0, 0, 0.8667, 'U5232623', 1, 'ru'),
+(4158, 'uncategorised 113', 'uncategorised 113', 0, 1, 1.5667, 'U5232623', 1, 'ru'),
+(4159, 'uncategorised 113 about', 'uncategorised 113 about', 0, 1, 1.7667, 'U523262313', 1, 'ru'),
+(4160, 'без', 'без', 0, 0, 0.2, 'б000', 1, 'ru'),
+(4161, 'без категории', 'без категории', 0, 1, 1.4333, 'б000', 1, 'ru'),
+(4162, 'г', 'г', 0, 0, 0.0667, 'г000', 1, 'ru'),
+(4163, 'г «фармакогенетика', 'г «фармакогенетика', 0, 1, 1.6, 'г000', 1, 'ru'),
+(4164, 'г «фармакогенетика и', 'г «фармакогенетика и', 0, 1, 1.6667, 'г000', 1, 'ru'),
+(4165, 'журнал', 'журнал', 0, 0, 0.4, 'ж000', 1, 'ru'),
+(4166, 'журнал «фармакогенетика', 'журнал «фармакогенетика', 0, 1, 1.7667, 'ж000', 1, 'ru'),
+(4167, 'журнал «фармакогенетика и', 'журнал «фармакогенетика и', 0, 1, 1.8333, 'ж000', 1, 'ru'),
+(4168, 'журнале', 'журнале', 0, 0, 0.4667, 'ж000', 1, 'ru'),
+(4169, 'и фармакогеномика» издаётся', 'и фармакогеномика» издаётся', 0, 1, 1.9, 'и000', 1, 'ru'),
+(4170, 'издаётся', 'издаётся', 0, 0, 0.5333, 'и000', 1, 'ru'),
+(4171, 'издаётся с', 'издаётся с', 0, 1, 1.3333, 'и000', 1, 'ru'),
+(4172, 'издаётся с 2014', 'издаётся с 2014', 0, 1, 1.5, 'и000', 1, 'ru'),
+(4173, 'категории', 'категории', 0, 0, 0.6, 'к000', 1, 'ru'),
+(4174, 'медицинский', 'медицинский', 0, 0, 0.7333, 'м000', 1, 'ru'),
+(4175, 'медицинский журнал', 'медицинский журнал', 0, 1, 1.6, 'м000', 1, 'ru'),
+(4176, 'медицинский журнал «фармакогенетика', 'медицинский журнал «фармакогенетика', 0, 1, 2, 'м000', 1, 'ru'),
+(4177, 'медицины подробнее', 'медицины подробнее', 0, 1, 1.6, 'м000', 1, 'ru'),
+(4178, 'научно-практический', 'научно-практический', 0, 0, 1, 'н000', 1, 'ru'),
+(4179, 'научно-практический медицинский', 'научно-практический медицинский', 0, 1, 2, 'н000', 1, 'ru'),
+(4180, 'научно-практический медицинский журнал', 'научно-практический медицинский журнал', 0, 1, 2, 'н000', 1, 'ru'),
+(4181, 'о журнале', 'о журнале', 0, 1, 1.3, 'о000', 1, 'ru'),
+(4182, 'персонаизированной медицины подробнее', 'персонаизированной медицины подробнее', 0, 1, 2, 'п000', 1, 'ru'),
+(4183, 'подробнее', 'подробнее', 0, 0, 0.6, 'п000', 1, 'ru'),
+(4184, 'с', 'с', 0, 0, 0.0667, 'с000', 1, 'ru'),
+(4185, 'с 2014', 'с 2014', 0, 1, 1.2, 'с000', 1, 'ru'),
+(4186, 'с 2014 г', 'с 2014 г', 0, 1, 1.2667, 'с000', 1, 'ru'),
+(4187, 'фармакогеномика» издаётся', 'фармакогеномика» издаётся', 0, 1, 1.8333, 'ф000', 1, 'ru'),
+(4188, 'фармакогеномика» издаётся с', 'фармакогеномика» издаётся с', 0, 1, 1.9, 'ф000', 1, 'ru');
 
 -- --------------------------------------------------------
 
@@ -9606,8 +9600,8 @@ CREATE TABLE IF NOT EXISTS `f8ad7_session` (
 --
 
 INSERT INTO `f8ad7_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('jhtjf6255723t71kkc7dk5lia6', 1, 0, '1413313803', '__default|a:8:{s:15:"session.counter";i:540;s:19:"session.timer.start";i:1413277840;s:18:"session.timer.last";i:1413312714;s:17:"session.timer.now";i:1413313801;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":10:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:9:"com_users";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:4:"user";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":4:{s:6:"filter";O:8:"stdClass":8:{s:18:"client_id_previous";i:0;s:6:"search";s:0:"";s:6:"access";i:0;s:5:"state";s:0:"";s:8:"position";s:0:"";s:6:"module";s:14:"mod_zooitempro";s:9:"client_id";i:0;s:8:"language";s:0:"";}s:8:"ordercol";s:7:"a.title";s:9:"orderdirn";s:3:"asc";s:10:"limitstart";i:0;}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:7:{i:2;i:168;i:5;i:176;i:6;i:128;i:8;i:135;i:10;i:153;i:11;i:166;i:12;i:174;}}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:18:"com_zooapplication";i:3;s:9:"com_zoo_3";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":7:{s:12:"filter_order";s:9:"a.created";s:16:"filter_order_Dir";s:4:"desc";s:18:"filter_category_id";s:2:"16";s:10:"limitstart";i:0;s:11:"filter_type";s:1:"0";s:16:"filter_author_id";i:0;s:6:"search";s:0:"";}}s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:0;}}s:9:"com_menus";O:8:"stdClass":2:{s:5:"items";O:8:"stdClass":3:{s:8:"menutype";s:8:"left-nav";s:10:"limitstart";i:0;s:4:"list";a:4:{s:9:"direction";s:3:"asc";s:5:"limit";i:20;s:8:"ordering";s:5:"a.lft";s:5:"start";d:0;}}s:4:"edit";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":4:{s:2:"id";a:2:{i:0;i:149;i:1;i:200;}s:4:"data";N;s:4:"type";N;s:4:"link";N;}}}s:20:"plg_zlfw_zlfieldtype";s:7:"article";s:11:"com_content";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:7:"article";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:0:{}}}}}}s:4:"user";O:5:"JUser":30:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";i:445;s:4:"name";s:5:"Admin";s:8:"username";s:5:"admin";s:5:"email";s:18:"olegblud@gmail.com";s:8:"password";s:60:"$2y$10$FgMxVUsGMEcas4E.zcuT5ei.fz7iYL9m/rwQz5hc7cS6krWdmgSL6";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-15 13:41:46";s:13:"lastvisitDate";s:19:"2014-10-14 09:10:52";s:10:"activation";s:1:"0";s:6:"params";s:92:"{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:0;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:0:"";s:10:"resetCount";s:1:"0";s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":6:{s:11:"admin_style";s:0:"";s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";s:9:"password2";s:0:"";s:4:"tags";N;s:10:"superadmin";b:1;s:3:"gid";i:1000;}s:13:"session.token";s:32:"ac569eba3689bc19c58dc89ec94c87ea";}__wf|a:1:{s:13:"session.token";s:32:"5c5ca7b3a69b234415e23fd100f7c644";}', 445, 'root'),
-('lqbirqg8kjo8geobe6fu4tcsi1', 0, 1, '1413313624', '__default|a:8:{s:15:"session.counter";i:1275;s:19:"session.timer.start";i:1413232439;s:18:"session.timer.last";i:1413313620;s:17:"session.timer.now";i:1413313622;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":2:{s:5:"users";O:8:"stdClass":1:{s:5:"login";O:8:"stdClass":1:{s:4:"form";O:8:"stdClass":1:{s:4:"data";a:1:{s:6:"return";s:39:"index.php?option=com_users&view=profile";}}}}s:9:"com_users";O:8:"stdClass":1:{s:12:"registration";O:8:"stdClass":1:{s:4:"data";a:6:{s:4:"name";s:9:"qwertyyqw";s:8:"username";s:9:"qwertyyqw";s:9:"password1";s:17:"qwertyyqw@adsf.df";s:9:"password2";s:17:"qwertyyqw@adsf.df";s:6:"email1";s:17:"qwertyyqw@adsf.df";s:6:"email2";s:17:"qwertyyqw@adsf.df";}}}}}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}s:13:"session.token";s:32:"450dc86e9c98a43b9501fcc2a51aa189";}__wf|a:1:{s:13:"session.token";s:32:"78cd31c3e19904f7fb8f22332cd10878";}', 0, '');
+('jhtjf6255723t71kkc7dk5lia6', 1, 0, '1413319923', '__default|a:8:{s:15:"session.counter";i:561;s:19:"session.timer.start";i:1413277840;s:18:"session.timer.last";i:1413319911;s:17:"session.timer.now";i:1413319915;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":10:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:0:"";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:9:"com_users";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:4:"user";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":4:{s:6:"filter";O:8:"stdClass":8:{s:18:"client_id_previous";i:0;s:6:"search";s:0:"";s:6:"access";i:0;s:5:"state";s:0:"";s:8:"position";s:0:"";s:6:"module";s:14:"mod_zooitempro";s:9:"client_id";i:0;s:8:"language";s:0:"";}s:8:"ordercol";s:7:"a.title";s:9:"orderdirn";s:3:"asc";s:10:"limitstart";i:0;}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:7:{i:2;i:168;i:5;i:176;i:6;i:128;i:8;i:135;i:10;i:153;i:11;i:166;i:12;i:174;}}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:18:"com_zooapplication";i:3;s:9:"com_zoo_3";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":7:{s:12:"filter_order";s:9:"a.created";s:16:"filter_order_Dir";s:4:"desc";s:18:"filter_category_id";s:2:"16";s:10:"limitstart";i:0;s:11:"filter_type";s:1:"0";s:16:"filter_author_id";i:0;s:6:"search";s:0:"";}}s:6:"global";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";i:0;}}s:9:"com_menus";O:8:"stdClass":2:{s:5:"items";O:8:"stdClass":3:{s:8:"menutype";s:8:"left-nav";s:10:"limitstart";i:0;s:4:"list";a:4:{s:9:"direction";s:3:"asc";s:5:"limit";i:20;s:8:"ordering";s:5:"a.lft";s:5:"start";d:0;}}s:4:"edit";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":4:{s:2:"id";a:2:{i:0;i:149;i:1;i:200;}s:4:"data";N;s:4:"type";N;s:4:"link";N;}}}s:20:"plg_zlfw_zlfieldtype";s:6:"author";s:11:"com_content";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:7:"article";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:1:{i:0;i:113;}}}}}}s:4:"user";O:5:"JUser":30:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";i:445;s:4:"name";s:5:"Admin";s:8:"username";s:5:"admin";s:5:"email";s:18:"olegblud@gmail.com";s:8:"password";s:60:"$2y$10$FgMxVUsGMEcas4E.zcuT5ei.fz7iYL9m/rwQz5hc7cS6krWdmgSL6";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-09-15 13:41:46";s:13:"lastvisitDate";s:19:"2014-10-14 09:10:52";s:10:"activation";s:1:"0";s:6:"params";s:92:"{"admin_style":"","admin_language":"","language":"","editor":"","helpsite":"","timezone":""}";s:6:"groups";a:1:{i:0;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:0:"";s:10:"resetCount";s:1:"0";s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":6:{s:11:"admin_style";s:0:"";s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:0:"";}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";s:9:"password2";s:0:"";s:4:"tags";N;s:10:"superadmin";b:1;s:3:"gid";i:1000;}s:13:"session.token";s:32:"ac569eba3689bc19c58dc89ec94c87ea";}__wf|a:1:{s:13:"session.token";s:32:"5c5ca7b3a69b234415e23fd100f7c644";}', 445, 'root'),
+('lqbirqg8kjo8geobe6fu4tcsi1', 0, 1, '1413319712', '__default|a:8:{s:15:"session.counter";i:1380;s:19:"session.timer.start";i:1413232439;s:18:"session.timer.last";i:1413319710;s:17:"session.timer.now";i:1413319711;s:22:"session.client.browser";s:109:"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36";s:8:"registry";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":2:{s:5:"users";O:8:"stdClass":1:{s:5:"login";O:8:"stdClass":1:{s:4:"form";O:8:"stdClass":1:{s:4:"data";a:1:{s:6:"return";s:39:"index.php?option=com_users&view=profile";}}}}s:9:"com_users";O:8:"stdClass":1:{s:12:"registration";O:8:"stdClass":1:{s:4:"data";a:6:{s:4:"name";s:9:"qwertyyqw";s:8:"username";s:9:"qwertyyqw";s:9:"password1";s:17:"qwertyyqw@adsf.df";s:9:"password2";s:17:"qwertyyqw@adsf.df";s:6:"email1";s:17:"qwertyyqw@adsf.df";s:6:"email2";s:17:"qwertyyqw@adsf.df";}}}}}s:4:"user";O:5:"JUser":26:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:9:"JRegistry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:10:"superadmin";N;}s:13:"session.token";s:32:"450dc86e9c98a43b9501fcc2a51aa189";}__wf|a:1:{s:13:"session.token";s:32:"78cd31c3e19904f7fb8f22332cd10878";}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -9765,7 +9759,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_ucm_history` (
   `sha1_hash` varchar(50) NOT NULL DEFAULT '' COMMENT 'SHA1 hash of the version_data column.',
   `version_data` mediumtext NOT NULL COMMENT 'json-encoded string of version data',
   `keep_forever` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0=auto delete; 1=keep'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Дамп данных таблицы `f8ad7_ucm_history`
@@ -9785,7 +9779,9 @@ INSERT INTO `f8ad7_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `ve
 (10, 4, 3, '', '2014-10-14 08:53:47', 0, 768, '61ee0cfe3b6fb4d52a4cdcd9f289d2b86e2dcc81', '{"id":4,"name":"qwertyyqw","alias":"qwertyyqw","con_position":null,"address":null,"suburb":null,"state":null,"country":null,"postcode":null,"telephone":null,"fax":null,"misc":null,"image":null,"email_to":"qwertyyqw@adsf.df","default_con":0,"published":"0","checked_out":"0","checked_out_time":"0000-00-00 00:00:00","ordering":"0","params":null,"user_id":452,"catid":"34","access":1,"mobile":"","webpage":"","sortname1":null,"sortname2":null,"sortname3":null,"language":"*","created":"2014-10-14 08:53:47","created_by":0,"created_by_alias":"","modified":"0000-00-00 00:00:00","modified_by":"0","metakey":null,"metadesc":null,"metadata":null,"featured":"0","xreference":"","publish_up":"0000-00-00 00:00:00","publish_down":"0000-00-00 00:00:00","version":"1","hits":"0"}', 0),
 (11, 113, 1, '', '2014-10-14 17:27:31', 445, 4188, '5f95fc6e4ad9feb9888d9e3364489b08096c1193', '{"id":113,"asset_id":378,"title":"\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435","alias":"about","introtext":"<section class=\\"About\\">\\r\\n<article class=\\"About-Content\\">\\r\\n<h1>\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435<\\/h1>\\r\\n<h4>\\u041d\\u0430\\u0443\\u0447\\u043d\\u043e-\\u043f\\u0440\\u0430\\u043a\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u0438\\u0439 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b \\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u0438\\u0437\\u0434\\u0430\\u0451\\u0442\\u0441\\u044f \\u0441 2014 \\u0433.<\\/h4>\\r\\n<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>\\r\\n<\\/article>\\r\\n<div class=\\"About-Image\\"><img src=\\"\\/images\\/logo_journal.jpg\\" alt=\\"\\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430\\" \\/><\\/div>\\r\\n<a href=\\"about\\" class=\\"About-More\\">\\u041f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u0435\\u0435<\\/a><\\/section>","fulltext":"","state":1,"catid":"2","created":"2014-10-14 17:27:31","created_by":445,"created_by_alias":"","modified":"","modified_by":null,"checked_out":null,"checked_out_time":null,"publish_up":"2014-10-14 17:27:31","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":1,"ordering":null,"metakey":"","metadesc":"","access":"1","hits":null,"metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0),
 (12, 113, 1, '', '2014-10-14 17:31:56', 445, 4231, '424a790aba418ba8720c41816d417f7acad29946', '{"id":113,"asset_id":"378","title":"\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435","alias":"about","introtext":"<section class=\\"About-Page\\">\\r\\n<article class=\\"About-Content\\">\\r\\n<h1>\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435<\\/h1>\\r\\n<h4>\\u041d\\u0430\\u0443\\u0447\\u043d\\u043e-\\u043f\\u0440\\u0430\\u043a\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u0438\\u0439 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b \\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u0438\\u0437\\u0434\\u0430\\u0451\\u0442\\u0441\\u044f \\u0441 2014 \\u0433.<\\/h4>\\r\\n<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>\\r\\n<\\/article>\\r\\n<div class=\\"About-Image\\"><img src=\\"\\/images\\/logo_journal.jpg\\" alt=\\"\\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430\\" \\/><\\/div>\\r\\n<a href=\\"about\\" class=\\"About-More\\">\\u041f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u0435\\u0435<\\/a><\\/section>","fulltext":"","state":1,"catid":"2","created":"2014-10-14 17:27:31","created_by":"445","created_by_alias":"","modified":"2014-10-14 17:31:56","modified_by":445,"checked_out":"445","checked_out_time":"2014-10-14 17:27:31","publish_up":"2014-10-14 17:27:31","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":2,"ordering":"0","metakey":"","metadesc":"","access":"1","hits":"2","metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0),
-(13, 113, 1, '', '2014-10-14 17:32:38', 445, 4226, '0886caf622383d7225e21220cefa843c62f67ae8', '{"id":113,"asset_id":"378","title":"\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435","alias":"about","introtext":"<section class=\\"About\\">\\r\\n<article class=\\"About-Content\\">\\r\\n<h1>\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435<\\/h1>\\r\\n<h4>\\u041d\\u0430\\u0443\\u0447\\u043d\\u043e-\\u043f\\u0440\\u0430\\u043a\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u0438\\u0439 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b \\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u0438\\u0437\\u0434\\u0430\\u0451\\u0442\\u0441\\u044f \\u0441 2014 \\u0433.<\\/h4>\\r\\n<\\/article>\\r\\n<div class=\\"About-Image\\"><img src=\\"\\/images\\/logo_journal.jpg\\" alt=\\"\\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430\\" \\/><\\/div>\\r\\n<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>\\r\\n<a href=\\"about\\" class=\\"About-More\\">\\u041f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u0435\\u0435<\\/a><\\/section>","fulltext":"","state":1,"catid":"2","created":"2014-10-14 17:27:31","created_by":"445","created_by_alias":"","modified":"2014-10-14 17:32:38","modified_by":445,"checked_out":"445","checked_out_time":"2014-10-14 17:31:56","publish_up":"2014-10-14 17:27:31","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":3,"ordering":"0","metakey":"","metadesc":"","access":"1","hits":"3","metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0);
+(13, 113, 1, '', '2014-10-14 17:32:38', 445, 4226, '0886caf622383d7225e21220cefa843c62f67ae8', '{"id":113,"asset_id":"378","title":"\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435","alias":"about","introtext":"<section class=\\"About\\">\\r\\n<article class=\\"About-Content\\">\\r\\n<h1>\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435<\\/h1>\\r\\n<h4>\\u041d\\u0430\\u0443\\u0447\\u043d\\u043e-\\u043f\\u0440\\u0430\\u043a\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u0438\\u0439 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b \\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u0438\\u0437\\u0434\\u0430\\u0451\\u0442\\u0441\\u044f \\u0441 2014 \\u0433.<\\/h4>\\r\\n<\\/article>\\r\\n<div class=\\"About-Image\\"><img src=\\"\\/images\\/logo_journal.jpg\\" alt=\\"\\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430\\" \\/><\\/div>\\r\\n<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>\\r\\n<a href=\\"about\\" class=\\"About-More\\">\\u041f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u0435\\u0435<\\/a><\\/section>","fulltext":"","state":1,"catid":"2","created":"2014-10-14 17:27:31","created_by":"445","created_by_alias":"","modified":"2014-10-14 17:32:38","modified_by":445,"checked_out":"445","checked_out_time":"2014-10-14 17:31:56","publish_up":"2014-10-14 17:27:31","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":3,"ordering":"0","metakey":"","metadesc":"","access":"1","hits":"3","metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0),
+(14, 113, 1, '', '2014-10-14 20:13:15', 445, 4231, '525033c769a383c82b7f02c5667ee027c5761a1d', '{"id":113,"asset_id":"378","title":"\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435","alias":"about","introtext":"<section class=\\"About-Page\\">\\r\\n<article class=\\"About-Content\\">\\r\\n<h1>\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435<\\/h1>\\r\\n<h4>\\u041d\\u0430\\u0443\\u0447\\u043d\\u043e-\\u043f\\u0440\\u0430\\u043a\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u0438\\u0439 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b \\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u0438\\u0437\\u0434\\u0430\\u0451\\u0442\\u0441\\u044f \\u0441 2014 \\u0433.<\\/h4>\\r\\n<\\/article>\\r\\n<div class=\\"About-Image\\"><img src=\\"\\/images\\/logo_journal.jpg\\" alt=\\"\\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430\\" \\/><\\/div>\\r\\n<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>\\r\\n<a href=\\"about\\" class=\\"About-More\\">\\u041f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u0435\\u0435<\\/a><\\/section>","fulltext":"","state":1,"catid":"2","created":"2014-10-14 17:27:31","created_by":"445","created_by_alias":"","modified":"2014-10-14 20:13:15","modified_by":445,"checked_out":"445","checked_out_time":"2014-10-14 20:12:18","publish_up":"2014-10-14 17:27:31","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":5,"ordering":"0","metakey":"","metadesc":"","access":"1","hits":"7","metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0),
+(15, 113, 1, '', '2014-10-14 20:13:28', 445, 4168, '1557720adc66fd9acd91e9ddbe29435ef63dbd9c', '{"id":113,"asset_id":"378","title":"\\u041e \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0435","alias":"about","introtext":"<section class=\\"About-Page\\">\\r\\n<article class=\\"About-Content\\">\\r\\n<h4>\\u041d\\u0430\\u0443\\u0447\\u043d\\u043e-\\u043f\\u0440\\u0430\\u043a\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u0441\\u043a\\u0438\\u0439 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b \\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u0438\\u0437\\u0434\\u0430\\u0451\\u0442\\u0441\\u044f \\u0441 2014 \\u0433.<\\/h4>\\r\\n<\\/article>\\r\\n<div class=\\"About-Image\\"><img src=\\"\\/images\\/logo_journal.jpg\\" alt=\\"\\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430\\" \\/><\\/div>\\r\\n<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>\\r\\n<a href=\\"about\\" class=\\"About-More\\">\\u041f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u0435\\u0435<\\/a><\\/section>","fulltext":"","state":1,"catid":"2","created":"2014-10-14 17:27:31","created_by":"445","created_by_alias":"","modified":"2014-10-14 20:13:28","modified_by":445,"checked_out":"445","checked_out_time":"2014-10-14 20:13:15","publish_up":"2014-10-14 17:27:31","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":6,"ordering":"0","metakey":"","metadesc":"","access":"1","hits":"7","metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0);
 
 -- --------------------------------------------------------
 
@@ -10562,7 +10558,7 @@ CREATE TABLE IF NOT EXISTS `f8ad7_zoo_item` (
 --
 
 INSERT INTO `f8ad7_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `created`, `modified`, `modified_by`, `publish_up`, `publish_down`, `priority`, `hits`, `state`, `access`, `created_by`, `created_by_alias`, `searchable`, `elements`, `params`) VALUES
-(2, 3, 'article', 'Фармакогенетика и фармакогеномика', 'xdebug', '2014-09-16 11:29:18', '2014-10-12 23:37:50', 445, '2014-09-16 11:29:18', '0000-00-00 00:00:00', 0, 816, 1, 1, 445, '', 1, ' {\n	"bf587f28-0a72-4be7-88a1-91a14e77039e":  {\n		"file": "images\\/logo_journal.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 519,\n		"height": 405\n	},\n	"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":  {\n		"0":  {\n			"value": "<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>"\n		}\n	},\n	"28f03c2c-57b1-4901-9554-fd9e8f52b08e":  {\n		"item":  {\n			"0": "4",\n			"1": "3",\n			"2": "5",\n			"3": "8",\n			"4": "10",\n			"5": "9",\n			"6": "13",\n			"7": "14",\n			"8": "11",\n			"9": "12"\n		}\n	},\n	"a5fdc953-00bc-454a-b7eb-1932d78c58e9":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
+(2, 3, 'article', 'Фармакогенетика и фармакогеномика', 'xdebug', '2014-09-16 11:29:18', '2014-10-12 23:37:50', 445, '2014-09-16 11:29:18', '0000-00-00 00:00:00', 0, 821, 1, 1, 445, '', 1, ' {\n	"bf587f28-0a72-4be7-88a1-91a14e77039e":  {\n		"file": "images\\/logo_journal.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 519,\n		"height": 405\n	},\n	"c4e7ae4e-ff94-4e71-8d5d-b1fec7599585":  {\n		"0":  {\n			"value": "<p>\\u00ab\\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0438 \\u0444\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430\\u00bb \\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0443\\u0435\\u0442 \\u043e\\u0440\\u0438\\u0433\\u0438\\u043d\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0441\\u0442\\u0430\\u0442\\u044c\\u0438 \\u043e \\u043f\\u0440\\u043e\\u0432\\u0435\\u0434\\u0451\\u043d\\u043d\\u044b\\u0445 \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445, \\u043a\\u043b\\u0438\\u043d\\u0438\\u043a\\u043e-\\u044d\\u043a\\u0441\\u043f\\u0435\\u0440\\u0438\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u0438 \\u0444\\u0443\\u043d\\u0434\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043d\\u0430\\u0443\\u0447\\u043d\\u044b\\u0445 \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0445, \\u043e\\u0431\\u0437\\u043e\\u0440\\u044b, \\u043b\\u0435\\u043a\\u0446\\u0438\\u0438, \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f \\u043a\\u043b\\u0438\\u043d\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435\\u0432, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0432\\u0441\\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b \\u043f\\u043e \\u0432\\u0441\\u0435\\u043c \\u0430\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u0440\\u043e\\u0431\\u043b\\u0435\\u043c\\u0430\\u043c \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u043c\\u0435\\u0434\\u0438\\u0446\\u0438\\u043d\\u044b<\\/p>"\n		}\n	},\n	"28f03c2c-57b1-4901-9554-fd9e8f52b08e":  {\n		"item":  {\n			"0": "4",\n			"1": "3",\n			"2": "5",\n			"3": "8",\n			"4": "10",\n			"5": "9",\n			"6": "13",\n			"7": "14",\n			"8": "11",\n			"9": "12"\n		}\n	},\n	"a5fdc953-00bc-454a-b7eb-1932d78c58e9":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (3, 3, 'article-2', '26-летняя москвичка  переписала  книгу рекордов US Open', 'rgsefdgsdfgdf', '2014-09-16 11:30:03', '2014-10-12 15:30:01', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 25, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art1.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 233,\n		"height": 116\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"93201135-367c-40dc-b5a3-f11afe146908":  {\n		"value": "106"\n	},\n	"366ae034-034e-4f00-8ff6-cffabbca4e23":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	},\n	"6a6697aa-3af4-4701-839f-c53093196605":  {\n\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (4, 3, 'article-2', 'Препарат компании Arena  Pharmaceuticals для лечения  легочной артериальной  гипертензии получил в США статус орфанного', 'rgsefdgsdfgdf-copy', '2014-09-27 16:03:16', '2014-10-12 15:29:56', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 2, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art2.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 239,\n		"height": 135\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"93201135-367c-40dc-b5a3-f11afe146908":  {\n		"value": "106"\n	},\n	"366ae034-034e-4f00-8ff6-cffabbca4e23":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	},\n	"6a6697aa-3af4-4701-839f-c53093196605":  {\n\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (5, 3, 'article-2', 'Минпромторг разъяснил,  какие ограничения  затронут зарубежные ЛС', 'rgsefdgsdfgdf-copy-2', '2014-10-03 08:50:17', '2014-10-12 15:29:49', 445, '2014-09-16 11:30:03', '0000-00-00 00:00:00', 0, 3, 1, 1, 445, '', 1, ' {\n	"28f0c0d8-e8d9-4fa4-a3d1-b8979ff4263d":  {\n		"file": "images\\/art3.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 276,\n		"height": 128\n	},\n	"89335a61-ea45-4fad-b16f-488154d4f8e2":  {\n		"0":  {\n			"value": "<p>\\u0456\\u043f\\u043a\\u0430\\u0456\\u0432\\u0430\\u043f\\u0456\\u0432\\u0430\\u043f\\u0444\\u0432\\u043a\\u043f\\u0444\\u0443\\u0432\\u043a\\u0440\\u0444\\u0443\\u043a\\u0430\\u0440\\u0432\\u0456\\u0444\\u0430\\u0440\\u0456\\u0432\\u0435\\u0440<\\/p>"\n		}\n	},\n	"93201135-367c-40dc-b5a3-f11afe146908":  {\n		"value": "106"\n	},\n	"366ae034-034e-4f00-8ff6-cffabbca4e23":  {\n		"file": "",\n		"hits": "0",\n		"download_limit": "",\n		"size": 0\n	},\n	"6a6697aa-3af4-4701-839f-c53093196605":  {\n\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
@@ -10591,7 +10587,7 @@ INSERT INTO `f8ad7_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `
 (44, 3, 'item', 'Препарат компании Arena Pharmaceuticals для лечения  легочной артериальной гипертензии получил в США  статус орфанного (Copy)', 'preparat-kompanii-arena-pharmaceuticals-dlya-lecheniya-legochnoj-arterialnoj-gipertenzii-poluchil-v-ssha-status-orfannogo-copy', '2014-10-12 22:56:47', '2014-10-12 22:56:47', 445, '2014-10-12 22:52:02', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"042f3794-5c8a-483d-80a8-9efe2b9f81c9":  {\n		"file": "images\\/art2.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 239,\n		"height": 135\n	},\n	"f0541003-23b2-44b7-abe8-b69c07224135":  {\n		"0":  {\n			"value": "<p>\\u041f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 Arena Pharmaceuticals \\u0434\\u043b\\u044f \\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u043b\\u0435\\u0433\\u043e\\u0447\\u043d\\u043e\\u0439 \\u0430\\u0440\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0433\\u0438\\u043f\\u0435\\u0440\\u0442\\u0435\\u043d\\u0437\\u0438\\u0438 \\u043f\\u043e\\u043b\\u0443\\u0447\\u0438\\u043b \\u0432 \\u0421\\u0428\\u0410 \\u0441\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043e\\u0440\\u0444\\u0430\\u043d\\u043d\\u043e\\u0433\\u043e,<\\/p>\\r\\n<p>\\u041f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 Arena Pharmaceuticals \\u0434\\u043b\\u044f \\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u043b\\u0435\\u0433\\u043e\\u0447\\u043d\\u043e\\u0439 \\u0430\\u0440\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0433\\u0438\\u043f\\u0435\\u0440\\u0442\\u0435\\u043d\\u0437\\u0438\\u0438 \\u043f\\u043e\\u043b\\u0443\\u0447\\u0438\\u043b \\u0432 \\u0421\\u0428\\u0410 \\u0441\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043e\\u0440\\u0444\\u0430\\u043d\\u043d\\u043e\\u0433\\u043e,<\\/p>\\r\\n<p>\\u041f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 Arena Pharmaceuticals \\u0434\\u043b\\u044f \\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u043b\\u0435\\u0433\\u043e\\u0447\\u043d\\u043e\\u0439 \\u0430\\u0440\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0433\\u0438\\u043f\\u0435\\u0440\\u0442\\u0435\\u043d\\u0437\\u0438\\u0438 \\u043f\\u043e\\u043b\\u0443\\u0447\\u0438\\u043b \\u0432 \\u0421\\u0428\\u0410 \\u0441\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043e\\u0440\\u0444\\u0430\\u043d\\u043d\\u043e\\u0433\\u043e,<\\/p>\\r\\n<p>\\u041f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 Arena Pharmaceuticals \\u0434\\u043b\\u044f \\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u043b\\u0435\\u0433\\u043e\\u0447\\u043d\\u043e\\u0439 \\u0430\\u0440\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0433\\u0438\\u043f\\u0435\\u0440\\u0442\\u0435\\u043d\\u0437\\u0438\\u0438 \\u043f\\u043e\\u043b\\u0443\\u0447\\u0438\\u043b \\u0432 \\u0421\\u0428\\u0410 \\u0441\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043e\\u0440\\u0444\\u0430\\u043d\\u043d\\u043e\\u0433\\u043e<\\/p>\\r\\n<p>\\u041f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 Arena Pharmaceuticals \\u0434\\u043b\\u044f \\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u043b\\u0435\\u0433\\u043e\\u0447\\u043d\\u043e\\u0439 \\u0430\\u0440\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0433\\u0438\\u043f\\u0435\\u0440\\u0442\\u0435\\u043d\\u0437\\u0438\\u0438 \\u043f\\u043e\\u043b\\u0443\\u0447\\u0438\\u043b \\u0432 \\u0421\\u0428\\u0410 \\u0441\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043e\\u0440\\u0444\\u0430\\u043d\\u043d\\u043e\\u0433\\u043e<\\/p>\\r\\n<p>\\u041f\\u0440\\u0435\\u043f\\u0430\\u0440\\u0430\\u0442 \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 Arena Pharmaceuticals \\u0434\\u043b\\u044f \\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u043b\\u0435\\u0433\\u043e\\u0447\\u043d\\u043e\\u0439 \\u0430\\u0440\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0433\\u0438\\u043f\\u0435\\u0440\\u0442\\u0435\\u043d\\u0437\\u0438\\u0438 \\u043f\\u043e\\u043b\\u0443\\u0447\\u0438\\u043b \\u0432 \\u0421\\u0428\\u0410 \\u0441\\u0442\\u0430\\u0442\\u0443\\u0441 \\u043e\\u0440\\u0444\\u0430\\u043d\\u043d\\u043e\\u0433\\u043e<\\/p>"\n		}\n	},\n	"141f9e77-d131-4ed4-99cd-47f2e0bfe003":  {\n		"file": "images\\/rek.jpg",\n		"hits": "0",\n		"download_limit": "",\n		"size": "28154"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}');
 INSERT INTO `f8ad7_zoo_item` (`id`, `application_id`, `type`, `name`, `alias`, `created`, `modified`, `modified_by`, `publish_up`, `publish_down`, `priority`, `hits`, `state`, `access`, `created_by`, `created_by_alias`, `searchable`, `elements`, `params`) VALUES
 (45, 3, 'item', '26-летняя москвичка переписала книгу рекордов US Open', '26-letnyaya-moskvichka-perepisala-knigu-rekordov-us-open', '2014-10-12 22:57:23', '2014-10-14 11:05:25', 445, '2014-10-12 22:57:23', '0000-00-00 00:00:00', 0, 9, 1, 1, 445, '', 1, ' {\n	"042f3794-5c8a-483d-80a8-9efe2b9f81c9":  {\n		"file": "images\\/art3.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 276,\n		"height": 128\n	},\n	"f0541003-23b2-44b7-abe8-b69c07224135":  {\n		"0":  {\n			"value": "<p>26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open,26-\\u043b\\u0435\\u0442\\u043d\\u044f\\u044f \\u043c\\u043e\\u0441\\u043a\\u0432\\u0438\\u0447\\u043a\\u0430 \\u043f\\u0435\\u0440\\u0435\\u043f\\u0438\\u0441\\u0430\\u043b\\u0430 \\u043a\\u043d\\u0438\\u0433\\u0443 \\u0440\\u0435\\u043a\\u043e\\u0440\\u0434\\u043e\\u0432 US Open<\\/p>"\n		}\n	},\n	"141f9e77-d131-4ed4-99cd-47f2e0bfe003":  {\n		"file": "images\\/logo.png",\n		"hits": "0",\n		"download_limit": "",\n		"size": "2025"\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
-(24, 3, 'author', 'Антон Антонович Антонов', 'anton-antonovich-antonov', '2014-10-12 13:21:00', '2014-10-12 15:27:54', 445, '2014-10-12 13:21:00', '0000-00-00 00:00:00', 0, 8, 1, 1, 445, '', 1, ' {\n	"b3cf5464-43d7-415a-a378-9acd60da43ba":  {\n		"0":  {\n			"value": "<p>\\u041e\\u0434\\u0438\\u043d \\u0438\\u0437 \\u0432\\u044b\\u0434\\u0430\\u044e\\u0449\\u0438\\u0445\\u0441\\u044f \\u0430\\u0432\\u0442\\u043e\\u0440\\u043e\\u0432 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0430 \\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430.<\\/p>"\n		}\n	},\n	"29670d8f-668e-484c-877f-79279f31f4b4":  {\n		"file": "images\\/authors\\/anton.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 849,\n		"height": 627\n	},\n	"bac82bed-0c84-4fc6-b6e8-481534ae4d46":  {\n		"item":  {\n			"0": "13",\n			"1": "14",\n			"2": "4"\n		}\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
+(24, 3, 'author', 'Антон Антонович Антонов', 'anton-antonovich-antonov', '2014-10-12 13:21:00', '2014-10-12 15:27:54', 445, '2014-10-12 13:21:00', '0000-00-00 00:00:00', 0, 24, 1, 1, 445, '', 1, ' {\n	"b3cf5464-43d7-415a-a378-9acd60da43ba":  {\n		"0":  {\n			"value": "<p>\\u041e\\u0434\\u0438\\u043d \\u0438\\u0437 \\u0432\\u044b\\u0434\\u0430\\u044e\\u0449\\u0438\\u0445\\u0441\\u044f \\u0430\\u0432\\u0442\\u043e\\u0440\\u043e\\u0432 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0430 \\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430.<\\/p>"\n		}\n	},\n	"29670d8f-668e-484c-877f-79279f31f4b4":  {\n		"file": "images\\/authors\\/anton.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 849,\n		"height": 627\n	},\n	"bac82bed-0c84-4fc6-b6e8-481534ae4d46":  {\n		"item":  {\n			"0": "13",\n			"1": "14",\n			"2": "4"\n		}\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (25, 3, 'author', 'Антон Антонович Антонов (Copy)', 'anton-antonovich-antonov-copy', '2014-10-12 13:36:35', '2014-10-12 15:27:47', 445, '2014-10-12 13:21:00', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"b3cf5464-43d7-415a-a378-9acd60da43ba":  {\n		"0":  {\n			"value": "<p>\\u041e\\u0434\\u0438\\u043d \\u0438\\u0437 \\u0432\\u044b\\u0434\\u0430\\u044e\\u0449\\u0438\\u0445\\u0441\\u044f \\u0430\\u0432\\u0442\\u043e\\u0440\\u043e\\u0432 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0430 \\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430.<\\/p>"\n		}\n	},\n	"29670d8f-668e-484c-877f-79279f31f4b4":  {\n		"file": "images\\/authors\\/anton.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 849,\n		"height": 627\n	},\n	"bac82bed-0c84-4fc6-b6e8-481534ae4d46":  {\n		"item":  {\n			"0": "13",\n			"1": "14",\n			"2": "4"\n		}\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (26, 3, 'author', 'Антон Антонович Антонов (Copy) (Copy)', 'anton-antonovich-antonov-copy-copy', '2014-10-12 13:36:46', '2014-10-12 15:27:27', 445, '2014-10-12 13:21:00', '0000-00-00 00:00:00', 0, 2, 1, 1, 445, '', 1, ' {\n	"b3cf5464-43d7-415a-a378-9acd60da43ba":  {\n		"0":  {\n			"value": "<p>\\u041e\\u0434\\u0438\\u043d \\u0438\\u0437 \\u0432\\u044b\\u0434\\u0430\\u044e\\u0449\\u0438\\u0445\\u0441\\u044f \\u0430\\u0432\\u0442\\u043e\\u0440\\u043e\\u0432 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0430 \\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430.<\\/p>"\n		}\n	},\n	"29670d8f-668e-484c-877f-79279f31f4b4":  {\n		"file": "images\\/authors\\/anton.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 849,\n		"height": 627\n	},\n	"bac82bed-0c84-4fc6-b6e8-481534ae4d46":  {\n		"item":  {\n			"0": "13",\n			"1": "14",\n			"2": "4"\n		}\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
 (27, 3, 'author', 'Антон Антонович Антонов (Copy)', 'anton-antonovich-antonov-copy-2', '2014-10-12 13:36:46', '2014-10-12 15:27:38', 445, '2014-10-12 13:21:00', '0000-00-00 00:00:00', 0, 0, 1, 1, 445, '', 1, ' {\n	"b3cf5464-43d7-415a-a378-9acd60da43ba":  {\n		"0":  {\n			"value": "<p>\\u041e\\u0434\\u0438\\u043d \\u0438\\u0437 \\u0432\\u044b\\u0434\\u0430\\u044e\\u0449\\u0438\\u0445\\u0441\\u044f \\u0430\\u0432\\u0442\\u043e\\u0440\\u043e\\u0432 \\u0436\\u0443\\u0440\\u043d\\u0430\\u043b\\u0430 \\u0424\\u043e\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u0435\\u0442\\u0438\\u043a\\u0430 \\u0424\\u0430\\u0440\\u043c\\u0430\\u043a\\u043e\\u0433\\u0435\\u043d\\u043e\\u043c\\u0438\\u043a\\u0430.<\\/p>"\n		}\n	},\n	"29670d8f-668e-484c-877f-79279f31f4b4":  {\n		"file": "images\\/authors\\/anton.jpg",\n		"title": "",\n		"link": "",\n		"target": "0",\n		"rel": "",\n		"lightbox_image": "",\n		"spotlight_effect": "",\n		"caption": "",\n		"width": 849,\n		"height": 627\n	},\n	"bac82bed-0c84-4fc6-b6e8-481534ae4d46":  {\n		"item":  {\n			"0": "13",\n			"1": "14",\n			"2": "4"\n		}\n	}\n}', ' {\n	"metadata.title": "",\n	"metadata.description": "",\n	"metadata.keywords": "",\n	"metadata.robots": "",\n	"metadata.author": "",\n	"config.enable_comments": "1",\n	"config.primary_category": "15"\n}'),
@@ -11770,17 +11766,17 @@ MODIFY `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `f8ad7_finder_links`
 --
 ALTER TABLE `f8ad7_finder_links`
-MODIFY `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=306;
+MODIFY `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=308;
 --
 -- AUTO_INCREMENT for table `f8ad7_finder_taxonomy`
 --
 ALTER TABLE `f8ad7_finder_taxonomy`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=162;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=168;
 --
 -- AUTO_INCREMENT for table `f8ad7_finder_terms`
 --
 ALTER TABLE `f8ad7_finder_terms`
-MODIFY `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4082;
+MODIFY `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4208;
 --
 -- AUTO_INCREMENT for table `f8ad7_finder_types`
 --
@@ -11905,7 +11901,7 @@ MODIFY `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `f8ad7_ucm_history`
 --
 ALTER TABLE `f8ad7_ucm_history`
-MODIFY `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `f8ad7_updates`
 --
