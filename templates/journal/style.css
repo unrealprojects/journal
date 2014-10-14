@@ -927,7 +927,9 @@ Label.File-Upload {
     Label.File-Upload > span:hover {
       border-color: #b7b7b7;
       background-color: #e7e7e7; }
-    Label.File-Upload > span > span.fa, .Dropdown Label.File-Upload > span > span.Dropdown-Toggle, Label.File-Upload > span > span.Sidebar-Toggle, Label.File-Upload > span > span#Scroll-Top {
+    Label.File-Upload > span > span.fa, .Dropdown Label.File-Upload > span > span.Dropdown-Toggle,
+    .Projects Label.File-Upload > span > span.prev,
+    .Projects Label.File-Upload > span > span.next, Label.File-Upload > span > span.Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-value Label.File-Upload > span > span:last-child, Label.File-Upload > span > span#Scroll-Top {
       margin-right: 10px; }
 
 .Form-Group + .Form-Group {
@@ -1392,6 +1394,26 @@ select {
 
 .Projects {
   clear: both; }
+  .Projects div:hover .prev,
+  .Projects div:hover .next,
+  .Projects .prev,
+  .Projects .next {
+    display: block !important;
+    top: 30px !important;
+    width: auto !important;
+    margin-top: 0 !important;
+    background: none; }
+    .Projects div:hover .prev:hover,
+    .Projects div:hover .next:hover,
+    .Projects .prev:hover,
+    .Projects .next:hover {
+      color: #e43f3f; }
+  .Projects div:hover .prev,
+  .Projects .prev {
+    left: 20px !important; }
+  .Projects div:hover .next,
+  .Projects .next {
+    right: 20px !important; }
   .Projects .custom {
     margin-bottom: 30px; }
     .Projects .custom .Slide-Item {
@@ -1575,7 +1597,8 @@ header.Site-Header {
     float: right; }
     header.Site-Header .Toolbar .Languages {
       margin-right: 20px;
-      float: left; }
+      float: left;
+      width: auto; }
       header.Site-Header .Toolbar .Languages .goog-te-menu-value {
         margin: 0 !important;
         color: black;
@@ -1585,6 +1608,12 @@ header.Site-Header {
         letter-spacing: 0 !important; }
         header.Site-Header .Toolbar .Languages .goog-te-menu-value:hover {
           color: #c82222; }
+        header.Site-Header .Toolbar .Languages .goog-te-menu-value img {
+          display: none; }
+        header.Site-Header .Toolbar .Languages .goog-te-menu-value span:last-child {
+          margin-left: 5px;
+          width: 13px;
+          overflow: hidden; }
         header.Site-Header .Toolbar .Languages .goog-te-menu-value [style*='border-left'] {
           display: none !important; }
       header.Site-Header .Toolbar .Languages .goog-te-gadget-icon {
@@ -1838,7 +1867,10 @@ img {
   src: url("fonts//fontawesome-webfont.eot?#iefix&v=4.2.0") format("embedded-opentype"), url("fonts//fontawesome-webfont.woff?v=4.2.0") format("woff"), url("fonts//fontawesome-webfont.ttf?v=4.2.0") format("truetype"), url("fonts//fontawesome-webfont.svg?v=4.2.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-.fa, .Dropdown .Dropdown-Toggle, .Sidebar-Toggle, #Scroll-Top {
+.fa, .Dropdown .Dropdown-Toggle, .Projects div:hover .prev,
+.Projects div:hover .next,
+.Projects .prev,
+.Projects .next, .Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-value span:last-child, #Scroll-Top {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -1895,9 +1927,15 @@ img {
 .pull-left {
   float: left; }
 
-.fa.pull-left, .Dropdown .pull-left.Dropdown-Toggle, .pull-left.Sidebar-Toggle, .pull-left#Scroll-Top {
+.fa.pull-left, .Dropdown .pull-left.Dropdown-Toggle, .Projects div:hover .pull-left.prev,
+.Projects div:hover .pull-left.next,
+.Projects .pull-left.prev,
+.Projects .pull-left.next, .pull-left.Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-value span.pull-left:last-child, .pull-left#Scroll-Top {
   margin-right: .3em; }
-.fa.pull-right, .Dropdown .pull-right.Dropdown-Toggle, .pull-right.Sidebar-Toggle, .pull-right#Scroll-Top {
+.fa.pull-right, .Dropdown .pull-right.Dropdown-Toggle, .Projects div:hover .pull-right.prev,
+.Projects div:hover .pull-right.next,
+.Projects .pull-right.prev,
+.Projects .pull-right.next, .pull-right.Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-value span.pull-right:last-child, .pull-right#Scroll-Top {
   margin-left: .3em; }
 
 .fa-spin {
@@ -2223,10 +2261,14 @@ img {
 .fa-eject:before {
   content: ""; }
 
-.fa-chevron-left:before {
+.fa-chevron-left:before, .Projects div:hover .prev:before,
+.Projects div:hover .next:before,
+.Projects .prev:before,
+.Projects .next:before {
   content: ""; }
 
-.fa-chevron-right:before {
+.fa-chevron-right:before, .Projects div:hover .next:before,
+.Projects .next:before {
   content: ""; }
 
 .fa-plus-circle:before {
@@ -2330,7 +2372,7 @@ img {
 .fa-chevron-up:before {
   content: ""; }
 
-.fa-chevron-down:before, .Dropdown .Dropdown-Toggle:before {
+.fa-chevron-down:before, .Dropdown .Dropdown-Toggle:before, header.Site-Header .Toolbar .Languages .goog-te-menu-value span:last-child:before {
   content: ""; }
 
 .fa-retweet:before {
