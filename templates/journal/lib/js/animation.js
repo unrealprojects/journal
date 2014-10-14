@@ -173,6 +173,8 @@ upf.Page.Headers = function(){
             SiteSection         ==      'authors'  ||
             SiteSection         ==      'journals'){
             $Body.attr('data-page','home');
+
+            $('#yoo-zoo').addClass('Item-Extended');
         }
 
     // Set data-page="list"
