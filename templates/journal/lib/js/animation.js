@@ -14,7 +14,7 @@ window.upf.Actions.Login.Expanded = false;
 
 window.upf.Page = {};
 (function($){
-
+var MasonryObj;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -27,10 +27,10 @@ window.upf.Page = {};
 
     upf.Start.VerticalGrid = function(){
         // Default Variables
-        var Blocks = $('.items');
+        var Blocks = $('.items .Grid');
         var Selectors = '.teaser-item';
 
-        Masonry = $(Blocks).masonry({
+        MasonryObj = new Masonry('.items .Grid',{
             itemSelector: Selectors
         });
     }
@@ -163,36 +163,38 @@ upf.Page.Headers = function(){
         page_home        = 'home',
         page_list        = 'list';
 
+    var SiteSection = location.pathname.split('/')[1];
+    console.log(SiteSection);
 
     // Set data-page="home"
-        if(location.pathname        == '/' ||
-            location.pathname       == '/archive' ||
-            location.pathname         ==      '/authors'  ||
-            location.pathname         ==      '/journals'){
+        if( location.pathname       == '/' ||
+            SiteSection       == 'archive' ||
+            SiteSection         ==      'authors'  ||
+            SiteSection         ==      'journals'){
             $Body.attr('data-page','home');
         }
 
     // Set data-page="list"
-        else if(location.pathname         ==      '/news'  ||
-                location.pathname         ==      '/articles' ||
-                location.pathname         ==      '/libs'  ||
+        else if(SiteSection         ==      'news'  ||
+                SiteSection         ==      'articles' ||
+                SiteSection         ==      'libs'  ||
 
-                location.pathname         ==      '/video'  ||
-                location.pathname         ==      '/events'  ||
-                location.pathname         ==      '/medication'  ||
-                location.pathname         ==      '/terminology' ||
-                location.pathname         ==      '/partners')
+                SiteSection         ==      'video'  ||
+                SiteSection         ==      'events'  ||
+                SiteSection         ==      'medication'  ||
+                SiteSection         ==      'terminology' ||
+                SiteSection         ==      'partners')
         {
             $Body.attr('data-page',page_list);
         }
 
 
     // Set data-page="static"
-        else if(location.pathname    ==      '/redkollegiya' ||
-                location.pathname    ==      '/contacts' ||
-                location.pathname    ==      '/links' ||
-                location.pathname    ==      '/sponsors' ||
-                location.pathname    ==      '/subscribe'
+        else if(SiteSection    ==      'redkollegiya' ||
+                SiteSection    ==      'contacts' ||
+                SiteSection    ==      'links' ||
+                SiteSection    ==      'sponsors' ||
+                SiteSection    ==      'subscribe'
 
             )
         {
@@ -206,13 +208,21 @@ upf.Page.Headers = function(){
             $Body.attr('data-page',page_default);
         }
 
+  /*  if(location.pathname.split('/')[2].length>2){
+        $('.Dropdown-Title').text('Интересные');
+    }*/
+
+    // Links in Categories
+    $('.zoo-list a').each(function($ItemKey,Item){
+        if(SiteSection){
+            $(Item).attr('href','/'+SiteSection+$(Item).attr('href'))
+        }
+    })
 
     // For Unique Elements
     if(location.pathname        ==      '/archive'){
         $('#yoo-zoo .heading h1.title').html('Архив Новостей');
     }
-
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -301,27 +311,27 @@ upf.Actions.Login = function(){
 
 
 
-            if($(Item).text() == 'Новости')
+            if($(Item).text().toString() == 'Новости'.toString())
             {
-                $(Item).find('a').addClass('Color-Purple');
+                $(Item).addClass('Color-Purple');
             }
-            else if($(Item).text() == 'Библиотека')
+            else if($(Item).text().toString() == 'Библиотека'.toString())
             {
-                $(Item).find('a').addClass('Color-Green');
+                $(Item).addClass('Color-Green');
             }
-            else if($(Item).text() == 'Препараты')
+            else if($(Item).text().toString() == 'Препараты'.toString())
             {
-                $(Item).find('a').addClass('Color-Blue');
+                $(Item).addClass('Color-Blue');
             }
-            else if($(Item).text() == 'Мероприятия')
+            else if($(Item).text().toString() == 'Мероприятия'.toString())
             {
-                $(Item).find('a').addClass('Color-Red');
+                $(Item).addClass('Color-Red');
             }
-            else if($(Item).text() == 'Статьи')
+            else if($(Item).text().toString() == 'Статьи'.toString())
             {
-                $(Item).find('a').addClass('Color-Yellow');
+                $(Item).addClass('Color-Yellow');
             }else{
-                console.log($(Item).text().trim());
+               // console.log($(Item).text().trim());
             }
         });
 
@@ -337,16 +347,66 @@ upf.Actions.Login = function(){
 // 6 Ajax  Pagination
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    upf.Actions.Pagination = function(){
-        // Default Variables
-        var Elements = $('.pos-title');
-
-        $(window).scroll(function(){
-           /* if($(window).scrollTop() && ){
-
-              }*/
-        });
+upf.Actions.Pagination = function(){
+    // Default Variables
+    var Elements = $('.pos-title');
+    var Ajax = false;
+    function isInt(n) {
+        return n % 1 === 0;
     }
+    var Chanks = location.pathname.split('/');
+    var Page = Chanks[Chanks.length-1];
+
+    $(window).scroll(function(){
+        var ScrollBottom = $(document).height()-$(window).scrollTop()-$(window).height();
+
+
+        //
+        if(ScrollBottom < 200 && !Ajax){
+
+            Ajax   = true;
+
+
+                if(isInt(Page)){
+                    if(Chanks[Chanks.length-1]){
+                         Page = Chanks[Chanks.length-1].toInt() + 1;
+                         delete Chanks[Chanks.length-1];
+                    }else if(Page){
+                        Page++;
+                    }else{
+                        Page = 2;
+                    }
+                }else{
+                    Page = 2;
+                }
+
+
+                var link = Chanks.join('/') + Page + '?tmpl=component'
+                console.log(link);
+
+
+                $.ajax({
+                    url: link,
+                    beforeSend:function(){
+                        $('.Component').append('<div class="Icon-Loading"></div>');
+                    },
+                    success:function(Data)
+                    {
+                        $('.Icon-Loading').remove();
+                        if($(Data).find('.teaser-item').length>1){
+                            $('.items .Grid').append($(Data).find('.teaser-item'));
+
+                            MasonryObj.appended( $(Data).find('.teaser-item'));
+                            MasonryObj.reloadItems();
+                            MasonryObj.layout();
+                            Ajax   = false;
+                        }
+                    }
+                });
+
+        }
+    });
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -361,12 +421,14 @@ $(document).ready(function(){
     upf.Menu.ScrollMenu();
     upf.Actions.Login();
     upf.Actions.Pagination();
-    upf.Start.VerticalGrid();
+
     upf.Start.CategoryLinks();
     upf.Start.CategoryLabels();
 
     $('.Feed-Subscription').upf_window($('.Subscription').html());
     $('.Content-Wrapper  .Subscription').remove();
+
+    upf.Start.VerticalGrid();
 });
 
 

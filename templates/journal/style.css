@@ -1654,16 +1654,28 @@ footer[role='contentinfo'] {
 .zoo-itempro-default .media img {
   display: none; }
 
+.floatbox, .pos-content {
+  margin-top: 20px;
+  display: block;
+  float: left;
+  width: 100%; }
+
+.pos-title {
+  position: relative;
+  display: block;
+  float: left;
+  width: 100%; }
+
 a.Color-Purple {
-  color: #812b97; }
+  background: #812b97 !important; }
 a.Color-Green {
-  color: #77972b; }
+  background: #77972b !important; }
 a.Color-Rad {
-  color: #c82222; }
+  background: #c82222 !important; }
 a.Color-Yellow {
-  color: #d0ae1d; }
+  background: #d0ae1d !important; }
 a.Color-Blue {
-  color: #2b4c97; }
+  background: #2b4c97 !important; }
 
 #Scroll-Top {
   display: none;
