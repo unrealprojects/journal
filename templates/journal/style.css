@@ -1655,6 +1655,7 @@ p + p {
 header.Site-Header {
   position: relative; }
   header.Site-Header .Site-Logo {
+    position: relative;
     margin-top: 10px;
     float: left;
     height: 107px;
@@ -1670,6 +1671,19 @@ header.Site-Header {
         display: block;
         margin-top: -7px;
         font-size: 31px; }
+    header.Site-Header .Site-Logo a {
+      position: absolute;
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0); }
+    header.Site-Header .Site-Logo:hover h2 {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0); }
+    header.Site-Header .Site-Logo:hover a {
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100); }
   header.Site-Header .Toolbar {
     margin-top: 60px;
     float: right; }
