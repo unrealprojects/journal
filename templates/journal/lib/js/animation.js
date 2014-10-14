@@ -30,10 +30,11 @@ var MasonryObj;
         // Default Variables
         var Blocks = $('.items .Grid');
         var Selectors = '.teaser-item';
-
-        MasonryObj = new Masonry('.items .Grid',{
-            itemSelector: Selectors
-        });
+        if($('.items .Grid').length){
+            MasonryObj = new Masonry('.items .Grid',{
+                itemSelector: Selectors
+            });
+        }
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
