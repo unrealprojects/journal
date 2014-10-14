@@ -32,5 +32,5 @@ $renderer_layout = basename($params->find('layout.renderer_layout', $params->get
 </ul>
 
 <?php else : ?>
-<?php echo JText::_('MOD_ZOOITEMPRO_NO_ITEMS_FOUND'); ?>
+    <ul class="zoo-itempro-default zoo-default"><p class="Message-Popular">Нет материалов!</p></ul>
 <?php endif; ?>

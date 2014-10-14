@@ -22,7 +22,7 @@
 {
 	margin: 0 auto;
 	min-width: 					900px;
-	max-width:					1340px;
+	max-width:					1200px;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -215,6 +215,7 @@
 		border-left:						5px solid #d0ae1d;
 		ul
 		{
+            display: none;
 			li
 			{
 				.layout-default
