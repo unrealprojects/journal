@@ -510,3 +510,31 @@ fieldset.only
 	border:			0;
 	color:			transparent;
 }
+.search
+{
+	.page-title
+	{
+		@extend 	%Heading-Section;
+		@extend 	%Heading-Section-Spacing;
+	}
+}
+.Component .search form#searchForm
+{
+	@extend 		%Content-Block;
+}
+
+.item-page
+{
+	ul
+	{
+		@extend %Unstyle;
+		li
+		{
+			& + li
+			{
+				margin-top: 15px;
+			}
+		}
+	}
+
+}
