@@ -1,5 +1,4 @@
 mayhem
-4 Наши проекты: Вставить стрелики как на макете
 5 Лента публикаций: решить проблемму с двойными линиями
 6 http://journal/journals/item/xdebug?category_id=4 - Оформить как главную
 7 http://journal/authors/item/anton-antonovich-antonov?category_id=5 - Оформить как главную (По идее, такие же стили)
@@ -7,7 +6,6 @@ mayhem
 http://journal/video/item/26-letnyaya-moskvichka-perepisala-knigu-rekordov-us-open-2-copy-copy-copy-copy-copy-copy?category_id=22
 http://journal/libs/item/26-letnyaya-moskvichka-perepisala-knigu-rekordov-us-open?category_id=16
 9 Оригинально оформить модуль pdf http://journal/terminology/item/26-letnyaya-moskvichka-perepisala-knigu-rekordov-us-open-2-copy-copy-copy-copy-copy?category_id=21
-10 Побшаманить форму выбора языка
 11 http://journal/links - оформить списки (подправить для class="item-page")
 12 Страницы библиотека, видео, терминология : в один столбик, на них на всех data-page="list"
 

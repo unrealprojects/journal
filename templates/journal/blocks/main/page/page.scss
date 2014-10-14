@@ -310,6 +310,35 @@
 		@extend %Heading-Section;
 		@extend %Heading-Section-Spacing;
 	}
+
+	div:hover .prev,
+	div:hover .next,
+	.prev,
+	.next
+	{
+
+		display: block!important;
+		top: 30px!important;
+		width: auto!important;
+		margin-top: 0!important;
+		background: none;
+		@extend .fa, .fa-chevron-left;
+		&:hover
+		{
+			color:		$C-Red-2;
+		}
+	}
+	div:hover .prev,
+	.prev
+	{
+		left: 20px!important;
+	}
+	div:hover .next,
+	.next
+	{
+		@extend .fa, .fa-chevron-right;
+		right: 20px!important;
+	}
 	.custom
 	{
 		@extend %Content-Block;

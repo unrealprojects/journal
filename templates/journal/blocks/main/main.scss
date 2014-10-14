@@ -184,6 +184,8 @@ header.Site-Header
 		{
 			margin-right: 		20px;
 			float: 				left;
+			width: auto;
+
 			.goog-te-menu-value
 			{
 				margin:			0!important;
@@ -197,9 +199,23 @@ header.Site-Header
 				{
 					color:		#c82222;
 				}
+				img
+				{
+					display: none;
+				}
 				span
 				{
 					@extend 	%Clickable;
+					&:first-child
+					{
+					}
+					&:last-child
+					{
+						@extend 	.fa , .fa-chevron-down;
+						margin-left: 5px;
+						width: 		13px;
+						overflow: 	hidden;
+					}
 				}
 				[style*='border-left']
 				{
