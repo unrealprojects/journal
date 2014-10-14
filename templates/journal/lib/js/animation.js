@@ -30,10 +30,11 @@ var MasonryObj;
         // Default Variables
         var Blocks = $('.items .Grid');
         var Selectors = '.teaser-item';
-
-        MasonryObj = new Masonry('.items .Grid',{
-            itemSelector: Selectors
-        });
+        if($('.items .Grid').length){
+            MasonryObj = new Masonry('.items .Grid',{
+                itemSelector: Selectors
+            });
+        }
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -165,6 +166,7 @@ upf.Page.Headers = function(){
         page_list        = 'list';
 
     var SiteSection = location.pathname.split('/')[1];
+    var SiteSectionType = location.pathname.split('/')[2];
     console.log(SiteSection);
 
     // Set data-page="home"
@@ -173,6 +175,11 @@ upf.Page.Headers = function(){
             SiteSection         ==      'authors'  ||
             SiteSection         ==      'journals'){
             $Body.attr('data-page','home');
+        }
+
+        if((SiteSection         ==      'authors'  && SiteSectionType == 'item') ||
+           (SiteSection         ==      'journals'&& SiteSectionType == 'item')){
+            $('#yoo-zoo').addClass('Item-Extended');
         }
 
     // Set data-page="list"
@@ -195,6 +202,7 @@ upf.Page.Headers = function(){
                 SiteSection    ==      'contacts' ||
                 SiteSection    ==      'links' ||
                 SiteSection    ==      'sponsors' ||
+                SiteSection    ==      'about' ||
                 SiteSection    ==      'subscribe'
 
             )

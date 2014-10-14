@@ -1,4 +1,5 @@
 mayhem
+5 Лента публикаций: решить проблемму с двойными линиями
 6 http://journal/journals/item/xdebug?category_id=4 - Оформить как главную
 7 http://journal/authors/item/anton-antonovich-antonov?category_id=5 - Оформить как главную (По идее, такие же стили)
 8 Оформить остальные внутренние страницы ::
@@ -14,6 +15,8 @@ http://journal/libs/item/26-letnyaya-moskvichka-perepisala-knigu-rekordov-us-ope
 15 Поправить Категории в ленте (когда две строки)
 16 Запретить тянуть банер и топ 5 за неделю
 17 Icon-Loading - при ajax на главной
+18 http://journal/component/search/?searchword=&searchphrase=all&Itemid=179 поправить кнопку поиска. и заголовок
+19 "Подробнее" на главной, оформить
 
 
 blud
@@ -22,5 +25,8 @@ blud
 10 Реализовать переключение табов
 
 11 заменить на популярные статьи в журналах
+
+
+12 Страница подробнее
 
 18 http://journal/component/search/?searchword=&searchphrase=all&Itemid=179 поправить кнопку поиска.
