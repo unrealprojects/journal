@@ -1338,7 +1338,7 @@ select {
 #Ahaha-Another-Wrapper-Lol {
   margin: 0 auto;
   min-width: 900px;
-  max-width: 1340px; }
+  max-width: 1200px; }
 
 .About .About-Content {
   float: left;
@@ -1423,18 +1423,20 @@ select {
 
 .Top-Five .Popular {
   border-left: 5px solid #d0ae1d; }
-  .Top-Five .Popular ul li .layout-default .media a {
-    color: black;
-    font-size: 18px;
-    line-height: 23px; }
-    .Top-Five .Popular ul li .layout-default .media a img {
-      display: none; }
-  .Top-Five .Popular ul li .layout-default p.title a {
-    line-height: 23px;
-    font-size: 18px;
-    color: black; }
-  .Top-Five .Popular ul li .layout-default p.title a img {
+  .Top-Five .Popular ul {
     display: none; }
+    .Top-Five .Popular ul li .layout-default .media a {
+      color: black;
+      font-size: 18px;
+      line-height: 23px; }
+      .Top-Five .Popular ul li .layout-default .media a img {
+        display: none; }
+    .Top-Five .Popular ul li .layout-default p.title a {
+      line-height: 23px;
+      font-size: 18px;
+      color: black; }
+    .Top-Five .Popular ul li .layout-default p.title a img {
+      display: none; }
 
 .Adv {
   margin-top: 80px; }
@@ -1918,6 +1920,9 @@ img {
 
 #searchForm .phrases, #searchForm .only {
   display: none; }
+
+.acyfield_email.acy_requiredField input {
+  width: 100% !important; }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome

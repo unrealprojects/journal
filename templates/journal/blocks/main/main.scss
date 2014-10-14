@@ -680,3 +680,7 @@ img{
 #searchForm .phrases, #searchForm .only{
     display:none;
 }
+
+.acyfield_email.acy_requiredField input{
+    width: 100% !important;
+}

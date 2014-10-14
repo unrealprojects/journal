@@ -119,29 +119,29 @@ var MasonryObj;
 // 2.2 Scroll Top Menu
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    upf.Menu.ScrollMenu = function(){
+upf.Menu.ScrollMenu = function(){
 
-        // Default Variables
-        var NavMenu         =   '.Sidebar-Toggle',
-            NavHeight       =   5;
+    // Default Variables
+    var NavMenu         =   '.Sidebar-Toggle',
+        NavHeight       =   5;
 
 
-        // Start position
-        if($(window).scrollTop() > 5){
-            $(NavMenu).css({'top': '0px'}   );
-        }
-
-        // When Scroll
-        $(window).scroll(function(){
-            // Hide menu
-            if($(window).scrollTop() > 5){
-                $(NavMenu).animate({'top': '0px'},50);
-            }else{
-                $(NavMenu).animate({'top':NavHeight+'px'},100);
-            }
-        });
-
+    // Start position
+    if($(window).scrollTop() > 5){
+        $(NavMenu).css({'top': '0px'}   );
     }
+
+    // When Scroll
+    $(window).scroll(function(){
+        // Hide menu
+        if($(window).scrollTop() > 5){
+            $(NavMenu).animate({'top': '0px'},50);
+        }else{
+            $(NavMenu).animate({'top':NavHeight+'px'},100);
+        }
+    });
+
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -167,8 +167,6 @@ upf.Page.Headers = function(){
 
     var SiteSection = location.pathname.split('/')[1];
     var SiteSectionType = location.pathname.split('/')[2];
-    console.log(SiteSection);
-
     // Set data-page="home"
         if( location.pathname       == '/' ||
             SiteSection       == 'archive' ||
@@ -177,9 +175,14 @@ upf.Page.Headers = function(){
             $Body.attr('data-page','home');
         }
 
-        if((SiteSection         ==      'authors'  && SiteSectionType == 'item') ||
-           (SiteSection         ==      'journals'&& SiteSectionType == 'item')){
+        if(SiteSection         ==      'authors'  ||
+           SiteSection         ==      'journals'){
             $('#yoo-zoo').addClass('Item-Extended');
+            $('.Component').addClass('Node-XS-12').removeClass('Node-XXS-8');
+        }
+
+        if(SiteSection         ==      'authors'){
+            $('.Component').addClass('Node-XS-12').removeClass('Node-XXS-8');
         }
 
     // Set data-page="list"
@@ -279,30 +282,30 @@ upf.Actions.Login = function(){
 // 5 Change Images
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    upf.Start.CategoryLinks = function(){
-        // Hide Images
+upf.Start.CategoryLinks = function(){
+    // Hide Images
 
-        $('.zoo-itempro-default .media img').each(function(ItemKey,Item){
-            if(ItemKey != 0){
-                $(Item).remove();
-            }else{
-                $(Item).show();
-            }
-        });
+    $('.zoo-itempro-default .media img').each(function(ItemKey,Item){
+        if(ItemKey != 0){
+            $(Item).remove();
+        }else{
+            $(Item).show();
+        }
+    });
 
-        // Default Variables
-        var Elements = $('.pos-title, .zoo-itempro-default .media');
+    // Default Variables
+    var Elements = $('.pos-title, .zoo-itempro-default .media');
 
-        $(Elements).each(function(){
-            if(!$(this).find('img').length){
-                $(this).addClass('Block-No-Image');
-            }
-            $(this).find('article:last-of-type').addClass('Item-Category');
-        });
+    $(Elements).each(function(){
+        if(!$(this).find('img').length){
+            $(this).addClass('Block-No-Image');
+        }
+        $(this).find('article:last-of-type').addClass('Item-Category');
+    });
 
 
 
-    }
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -339,8 +342,6 @@ upf.Actions.Login = function(){
             else if($(Item).text().toString() == 'Статьи'.toString())
             {
                 $(Item).addClass('Color-Yellow');
-            }else{
-               // console.log($(Item).text().trim());
             }
         });
 
@@ -371,13 +372,13 @@ upf.Actions.Pagination = function(){
 
 
         //
-        if(ScrollBottom < 200 && !Ajax){
+        if(ScrollBottom < 800 && !Ajax){
 
             Ajax   = true;
 
 
                 if(isInt(Page)){
-                    if(Chanks[Chanks.length-1]){
+                    if(Chanks[Chanks.length-1].length){
                          Page = Chanks[Chanks.length-1].toInt() + 1;
                          delete Chanks[Chanks.length-1];
                         Chanks[Chanks.length-1] = Page;
@@ -385,17 +386,18 @@ upf.Actions.Pagination = function(){
                         Chanks[Chanks.length-1] = Page;
                         Page++;
                     }else{
-                        Chanks[Chanks.length] = Page;
                         Page = 2;
+                        Chanks[Chanks.length-1] = Page;
                     }
                 }else{
                     Page = 2;
                     Chanks[Chanks.length] = Page;
+
                 }
 
 
                 var link = Chanks.join('/') + '?tmpl=component'
-                console.log(link);
+                //console.log(link);
 
 
                 $.ajax({
@@ -408,8 +410,10 @@ upf.Actions.Pagination = function(){
                         $('.Icon-Loading').remove();
                         if($(Data).find('.teaser-item').length>1){
                             $('.items .Grid').append($(Data).find('.teaser-item'));
-
+                            upf.Start.CategoryLinks();
                             MasonryObj.appended( $(Data).find('.teaser-item'));
+
+
                             MasonryObj.reloadItems();
                             MasonryObj.layout();
                             Ajax   = false;
@@ -519,6 +523,30 @@ $(document).ready(function(){
         if($(window).scrollTop() <= 100) {
             $('#Scroll-Top').animate({'top':'-50px'});
         }
+    });
+
+    $('.Popular>ul:first-of-type').show();
+
+    /*** Переключение элементов ***/
+    $('.Dropdown-Content .Icon:nth-of-type(1)').click(function(){
+        $('.Popular>ul').hide();
+        $('.Popular>ul:nth-of-type(1)').show();
+        return false;
+    });
+
+    /*** Переключение элементов ***/
+    $('.Dropdown-Content .Icon:nth-of-type(2)').click(function(){
+        $('.Popular>ul').hide();
+        $('.Popular>ul:nth-of-type(2)').show();
+        return false;
+    });
+
+    /*** Переключение элементов ***/
+    $('.Dropdown-Content .Icon:nth-of-type(3)').click(function(){
+        $('.Popular>ul').hide();
+        $('.Popular>ul:nth-of-type(3)').show();
+        return false;
+        return false;
     });
 });
 
