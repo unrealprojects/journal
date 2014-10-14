@@ -26,16 +26,24 @@ var MasonryObj;
 // 1 Vertical Grid
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    upf.Start.VerticalGrid = function(){
-        // Default Variables
-        var Blocks = $('.items .Grid');
-        var Selectors = '.teaser-item';
-        if($('.items .Grid').length){
-            MasonryObj = new Masonry('.items .Grid',{
-                itemSelector: Selectors
-            });
-        }
+upf.Start.VerticalGrid = function(){
+    // Default Variables
+    var Selectors = '.teaser-item';
+
+    if($('.items .Grid').length){
+        MasonryObj = new Masonry('.items .Grid',{
+            itemSelector: Selectors
+        });
     }
+
+    // Inner Related
+    Selectors = '.pos-item';
+    if($('.element-relateditems').length){
+        MasonryObjRelated = new Masonry('.element-relateditems',{
+            itemSelector: Selectors
+        });
+    }
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -545,7 +553,6 @@ $(document).ready(function(){
     $('.Dropdown-Content .Icon:nth-of-type(3)').click(function(){
         $('.Popular>ul').hide();
         $('.Popular>ul:nth-of-type(3)').show();
-        return false;
         return false;
     });
 });
