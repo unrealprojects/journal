@@ -261,6 +261,16 @@ upf.Actions.Login = function(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     upf.Start.CategoryLinks = function(){
+        // Hide Images
+
+        $('.zoo-itempro-default .media img').each(function(ItemKey,Item){
+            if(ItemKey != 0){
+                $(Item).remove();
+            }else{
+                $(Item).show();
+            }
+        });
+
         // Default Variables
         var Elements = $('.pos-title, .zoo-itempro-default .media');
 
@@ -270,11 +280,54 @@ upf.Actions.Login = function(){
             }
             $(this).find('article:last-of-type').addClass('Item-Category');
         });
+
+
+
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 5.1 Change Category Label Color
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    upf.Start.CategoryLabels = function(){
+        $('article.item a').each(function(ItemKey,Item){
+
+
+
+            if($(Item).text() == 'Новости')
+            {
+                $(Item).find('a').addClass('Color-Purple');
+            }
+            else if($(Item).text() == 'Библиотека')
+            {
+                $(Item).find('a').addClass('Color-Green');
+            }
+            else if($(Item).text() == 'Препараты')
+            {
+                $(Item).find('a').addClass('Color-Blue');
+            }
+            else if($(Item).text() == 'Мероприятия')
+            {
+                $(Item).find('a').addClass('Color-Red');
+            }
+            else if($(Item).text() == 'Статьи')
+            {
+                $(Item).find('a').addClass('Color-Yellow');
+            }else{
+                console.log($(Item).text().trim());
+            }
+        });
+
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -310,6 +363,7 @@ $(document).ready(function(){
     upf.Actions.Pagination();
     upf.Start.VerticalGrid();
     upf.Start.CategoryLinks();
+    upf.Start.CategoryLabels();
 
     $('.Feed-Subscription').upf_window($('.Subscription').html());
     $('.Content-Wrapper  .Subscription').remove();

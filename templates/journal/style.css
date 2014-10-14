@@ -1610,7 +1610,7 @@ footer[role='contentinfo'] {
 .pos-content .pos-title {
   min-height: 0px !important; }
 
-.pos-title.Block-No-Image article.Item-Category a, .zoo-itempro-default .media.Block-No-Image article.Item-Category a {
+.pos-title.Block-No-Image article.Item-Category a {
   position: relative !important;
   left: 0px !important;
   top: -15px; }
@@ -1634,12 +1634,12 @@ footer[role='contentinfo'] {
       background-color: red;
       font-weight: bold; }
 
-.zoo-itempro-default .media .Block-No-Image .Item-Category {
-  display: block; }
-  .zoo-itempro-default .media .Block-No-Image .Item-Category a {
-    bottom: 25px;
+.zoo-itempro-default .media.Block-No-Image .Item-Category {
+  display: block;
+  margin-bottom: 10px; }
+  .zoo-itempro-default .media.Block-No-Image .Item-Category a {
     left: 10px;
-    position: absolute;
+    position: static;
     padding: 5px 7px !important;
     line-height: 13px;
     border-radius: 3px;
@@ -1648,6 +1648,20 @@ footer[role='contentinfo'] {
     letter-spacing: 0 !important;
     background-color: red;
     font-weight: bold; }
+
+.zoo-itempro-default .media img {
+  display: none; }
+
+a.Color-Purple {
+  color: #812b97; }
+a.Color-Green {
+  color: #77972b; }
+a.Color-Rad {
+  color: #c82222; }
+a.Color-Yellow {
+  color: #d0ae1d; }
+a.Color-Blue {
+  color: #2b4c97; }
 
 #Scroll-Top {
   display: none;
