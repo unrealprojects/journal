@@ -1,12 +1,12 @@
 .Content-Wrapper
 {
 	margin-left:				$Sidebar-Width;
-	padding-left:				$Content-Spacing - 85px;
-	padding-right:				$Content-Spacing - 85px;
+	padding-left:				$Content-Spacing - 105px;
+	padding-right:				$Content-Spacing - 105px;
 	@include 					Adaptive($Viewport-SM)
 	{
-		padding-left:				$Content-Spacing - 75px;
-		padding-right:				$Content-Spacing - 75px;
+		padding-left:				$Content-Spacing - 95px;
+		padding-right:				$Content-Spacing - 95px;
 	}
 	@include 					Adaptive($Viewport-MD)
 	{
@@ -14,12 +14,16 @@
 		padding-right:				$Content-Spacing - 50px;
 	}
 
-	min-width: 					1000px;
-	max-width:					1350px;
+
 	min-height: 				100%;
 }
 
-
+#Ahaha-Another-Wrapper-Lol
+{
+	margin: 0 auto;
+	min-width: 					900px;
+	max-width:					1340px;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // About
@@ -132,11 +136,8 @@
 	{
 		.pos-item
 		{
-			@extend 	%Content-Block;
-			&:hover
-			{
-				background: #fafafa;
-			}
+			@extend 		%Content-Block;
+			@extend 		%Content-Block-Hover;
 			.pos-title
 			{
 				position: relative;
@@ -218,6 +219,10 @@
 			{
 				.layout-default
 				{
+					&:hover
+					{
+						@extend 			%Content-Block-Hover;
+					}
 					.media
 					{
 						a
@@ -233,6 +238,12 @@
 					}
 					p.title
 					{
+						a
+						{
+							line-height: 	23px;
+							font-size: 		18px;
+							color:			black;
+						}
 						a img
 						{
 							display: 		none;
@@ -415,6 +426,7 @@ fieldset.only
 		display: inline-block;
 		width: auto;
 		float: left;
+		@extend %Heading-Section;
 	}
 	.Dropdown
 	{
@@ -435,7 +447,8 @@ fieldset.only
         @extend %Unstyle;
 
         .layout-default{
-          @extend %Content-Block;
+          	@extend 			%Content-Block;
+			@extend 			%Content-Block-Hover;
         }
 
         .description

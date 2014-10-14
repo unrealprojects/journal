@@ -65,6 +65,14 @@
 	@extend 			%Fix;
 }
 
+%Content-Block-Hover
+{
+	&:hover
+	{
+		background-color: 	#fcfcfc;
+	}
+}
+
 %Uppercase
 {
 	text-transform: 	uppercase;
