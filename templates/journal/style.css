@@ -1681,14 +1681,13 @@ a.Color-Blue {
   background: #2b4c97 !important; }
 
 #Scroll-Top {
-  display: none;
   position: fixed;
-  top: 25px;
   right: 25px;
   padding: 7px 10px;
   border-radius: 4px;
   border: 1px solid #efeff3;
-  background-color: white; }
+  background-color: white;
+  top: -50px; }
   #Scroll-Top:hover {
     border-color: #a02828;
     background-color: #e43f3f;
