@@ -590,9 +590,7 @@ a{
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #Scroll-Top
 {
-	display:		none;
 	position: 		fixed;
-	top: 			25px;
 	right: 			25px;
 	padding:		7px 10px;
 	border-radius:	4px;
@@ -607,6 +605,7 @@ a{
 		background-color:		$C-Red-2;
 		color:					white;
 	}
+    top:		-50px;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -662,4 +661,6 @@ img{
     height: auto;
 }
 
-
+#searchForm .phrases, #searchForm .only{
+    display:none;
+}

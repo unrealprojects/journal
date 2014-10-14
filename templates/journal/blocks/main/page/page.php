@@ -23,14 +23,14 @@
                         <div class="Top-Five-Header">
                         <h3>Топ 5</h3>
                         <div class="Dropdown Collapsed">
-                            <div class="Dropdown-Title">За неделю<span class="Dropdown-Toggle"></span></div>
+                            <div class="Dropdown-Title"><span class="Dropdown-Toggle fa fa-angle-down"></span></div>
                             <ul class="Dropdown-Content">
                                 <li class="Icon"><a href="#">За все время</a></li>
                                 <li class="Icon"><a href="#">За месяц</a></li>
                                 <li class="Icon"><a href="#">За неделю</a></li>
                             </ul>
                         </div>
-                    </div>
+                        </div>
                         <div class="Popular">
                             <jdoc:include type="modules" name="popular" />
                         </div>
@@ -69,16 +69,13 @@
 
                 <?php  if( $this->countModules('popular_right') ) : ?>
                     <div class="Top-Five">
-                        <div class="Top-Five-Header">
-                            <h3>Топ 5</h3>
-                            <div class="Dropdown Collapsed">
-                                <div class="Dropdown-Title">За неделю<span class="Dropdown-Toggle"></span></div>
-                                <ul class="Dropdown-Content">
-                                    <li class="Icon"><a href="#">За все время</a></li>
-                                    <li class="Icon"><a href="#">За месяц</a></li>
-                                    <li class="Icon"><a href="#">За неделю</a></li>
-                                </ul>
-                            </div>
+                        <div class="Dropdown Collapsed">
+                            <div class="Dropdown-Title"><span class="Dropdown-Toggle fa fa-angle-down"></span></div>
+                            <ul class="Dropdown-Content">
+                                <li class="Icon"><a href="#">За все время</a></li>
+                                <li class="Icon"><a href="#">За месяц</a></li>
+                                <li class="Icon"><a href="#">За неделю</a></li>
+                            </ul>
                         </div>
                         <div class="Popular">
                             <jdoc:include type="modules" name="popular_right" />

@@ -492,6 +492,26 @@ $(document).ready(function(){
     $('.Content-Wrapper  .Subscription').remove();
 
     upf.Start.VerticalGrid();
+
+
+
+    /*** Скролл вверх ***/
+    $('#Scroll-Top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 400);
+        return false;
+    });
+
+    $(window).scroll(function(){
+        /*** Появление Кнопка Вверх ***/
+        if(($(window).scrollTop() > 100) && ($(window).width() > 500)) {
+            $('#Scroll-Top').animate({'top':'25px'});
+        }
+        if($(window).scrollTop() <= 100) {
+            $('#Scroll-Top').animate({'top':'-50px'});
+        }
+    });
 });
 
 

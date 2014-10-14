@@ -59,17 +59,10 @@
         <script src="/templates/journal/lib/js/masonry.pkgd.js"></script>
         <script src="/templates/journal/lib/js/grid.js"></script>
         <script src="/templates/journal/lib/js/jquery.modbox.js"></script>
+        <script src="/templates/journal/lib/js/jquery.transform2d.js"></script>
+        <script src="/templates/journal/lib/js/jquery.transform3d.js"></script>
         <script src="/templates/journal/lib/js/animation.js"></script>
     </div>
 </body>
 
 </html>
-
-
-
-
-
-
-<!--
-            %d %b %Y
--->
