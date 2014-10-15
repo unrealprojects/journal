@@ -1684,16 +1684,20 @@ button[name='Search'] {
     float: left;
     margin-right: 30px; }
 
-.element.element-relateditems.last {
+.item .element.element-relateditems, .item .element.element-itemtag {
   margin-top: 20px;
-  height: auto !important; }
-  .element.element-relateditems.last h3, .element.element-relateditems.last a {
+  height: auto !important;
+  display: flex;
+  font-size: 14px; }
+  .item .element.element-relateditems > h3, .item .element.element-relateditems > a, .item .element.element-itemtag > h3, .item .element.element-itemtag > a {
+    padding-left: 3px;
+    color: #4f555c;
     display: inline-block;
     float: left;
     line-height: 18px;
     font-size: 14px;
     font-weight: 100; }
-  .element.element-relateditems.last h3 {
+  .item .element.element-relateditems > h3, .item .element.element-itemtag > h3 {
     padding-right: 10px; }
 
 * {
@@ -2002,8 +2006,10 @@ footer[role='contentinfo'] {
     footer[role='contentinfo'] nav.Site-Navigation.Secondary ul {
       width: auto;
       float: left; }
-      footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a:hover {
-        color: #77972b; }
+      footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li {
+        font-weight: bold; }
+        footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a:hover {
+          color: #77972b; }
     footer[role='contentinfo'] nav.Site-Navigation.Secondary div.Metrics {
       margin-top: -4px;
       float: right; }
@@ -2030,13 +2036,13 @@ body[data-page=list] .teaser-item {
   left: 0px !important;
   top: -15px; }
 
-.zoo-itempro-default .media {
+[data-alias=home] .zoo-itempro-default .media {
   position: relative; }
-  .zoo-itempro-default .media article.item {
+  [data-alias=home] .zoo-itempro-default .media article.item {
     display: none; }
-  .zoo-itempro-default .media article:last-of-type, .zoo-itempro-default .media .Item-Category {
+  [data-alias=home] .zoo-itempro-default .media article:last-of-type, [data-alias=home] .zoo-itempro-default .media .Item-Category {
     display: block; }
-    .zoo-itempro-default .media article:last-of-type a, .zoo-itempro-default .media .Item-Category a {
+    [data-alias=home] .zoo-itempro-default .media article:last-of-type a, [data-alias=home] .zoo-itempro-default .media .Item-Category a {
       bottom: 25px;
       left: 10px;
       position: absolute;
@@ -2049,10 +2055,16 @@ body[data-page=list] .teaser-item {
       background-color: red;
       font-weight: bold; }
 
+.zoo-itempro-default .media article.item {
+  display: none; }
+
 .zoo-itempro-default .media.Block-No-Image .Item-Category {
+  display: none; }
+
+[data-alias=home] .zoo-itempro-default .media.Block-No-Image .Item-Category {
   display: block;
   margin-bottom: 10px; }
-  .zoo-itempro-default .media.Block-No-Image .Item-Category a {
+  [data-alias=home] .zoo-itempro-default .media.Block-No-Image .Item-Category a {
     left: 10px;
     position: static;
     padding: 5px 7px !important;
@@ -2110,8 +2122,10 @@ fieldset {
     background-color: #e43f3f;
     color: white; }
 
-.item-page h2 {
-  margin-bottom: 20px; }
+.item-page {
+  margin-top: 40px; }
+  .item-page h2 {
+    margin-bottom: 20px; }
 
 /*** OlegBlud Styles***/
 .Subscription {
@@ -2151,6 +2165,20 @@ button[name='Search'] {
   margin: 0 auto;
   background: url(../../templates/journal/images/loading.gif) no-repeat;
   background-size: 100%; }
+
+#remember {
+  height: 18px;
+  margin-left: 1px;
+  text-align: left;
+  float: left;
+  display: block;
+  width: 18px;
+  margin-bottom: 20px; }
+
+#modlgn-remember {
+  position: relative;
+  top: 10px;
+  left: 10px; }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -3830,9 +3858,9 @@ button[name='Search'] {
 
 .Breadcrumbs {
   padding: 5px;
+  padding-left: 15px;
   margin-top: 20px;
-  background-color: #e7e7e7;
-  border-radius: 6px; }
+  background-color: #e7e7e7; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > span, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > a {
     padding: 5px;
     font-size: 13px;
@@ -3845,7 +3873,9 @@ button[name='Search'] {
     font-family: FontAwesome;
     vertical-align: middle;
     padding: 0 10px;
-    content: "\f105"; }
+    content: "\f105";
+    font-size: 12px;
+    border-radius: 0px; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item:first-child:before {
     padding: 0;
     content: ""; }

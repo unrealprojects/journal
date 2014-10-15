@@ -29,9 +29,6 @@ JHtml::_('behavior.formvalidation');
 		<fieldset>
 			<?php foreach ($this->form->getFieldset($fieldset->name) as $name => $field) : ?>
 				<div class="Control-Group">
-					<div class="control-label">
-						<?php echo $field->label; ?>
-					</div>
 					<div class="controls">
 						<?php echo $field->input; ?>
 					</div>

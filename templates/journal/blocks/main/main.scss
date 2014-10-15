@@ -489,6 +489,7 @@ footer[role='contentinfo']
 			@extend 		%Navigation-Inline;
 			li
 			{
+                font-weight: bold;
 				a
 				{
 					&:hover
@@ -558,7 +559,7 @@ body[data-page=list] .teaser-item
     }
 }
 
-.zoo-itempro-default .media
+[data-alias=home] .zoo-itempro-default .media
 {
     position: relative;
     article.item
@@ -586,7 +587,19 @@ body[data-page=list] .teaser-item
     }
 }
 
+.zoo-itempro-default .media
+{
+    article.item
+    {
+        display: none;
+    }
+}
+
 .zoo-itempro-default .media.Block-No-Image .Item-Category
+{
+    display: none;
+}
+[data-alias=home] .zoo-itempro-default .media.Block-No-Image .Item-Category
 {
     display: block;
     margin-bottom: 10px;
@@ -703,6 +716,7 @@ fieldset
 
 
 .item-page{
+    margin-top: 40px;
     h2{
         @extend %Heading-Section;
         margin-bottom: 20px;
@@ -769,3 +783,20 @@ button[name='Search'] {
     background: url(../../templates/journal/images/loading.gif) no-repeat;
     background-size: 100%;
 }
+
+#remember{
+    height: 18px;
+    margin-left: 1px;
+    text-align: left;
+    float: left;
+    display: block;
+    width: 18px;
+    margin-bottom: 20px;
+}
+
+#modlgn-remember{
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+

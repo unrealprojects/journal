@@ -2,9 +2,10 @@
 // NOT CONFIGURABLE IN THIS VERSION, LOL :D
 .Breadcrumbs {
     padding: $size-xs;
+    padding-left: 15px;
     margin-top: $size;
     background-color: $C-Grey-5;
-    @include Round(all, $Control-Border-Radius);
+    //@include Round(all, $Control-Border-Radius);
 
     .Breadcrumb-List {
         @extend %Inline;
@@ -30,6 +31,8 @@
                 padding: 0 $size-s;
                 content: "\f105";
                 @extend %Unselectable;
+                font-size: 12px;
+                border-radius: 0px;
             }
         }
 

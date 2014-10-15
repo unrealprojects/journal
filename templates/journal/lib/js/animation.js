@@ -351,6 +351,9 @@ upf.Start.CategoryLinks = function(){
             if($(Item).text().toString() == 'Новости'.toString())
             {
                 $(Item).addClass('Color-Purple');
+                $(Item).parents('pos-title').find('>a').attr('href',
+                    '/news'+$(Item).parents('pos-title').find('>a').attr('href')
+                );
             }
             else if($(Item).text().toString() == 'Библиотека'.toString())
             {

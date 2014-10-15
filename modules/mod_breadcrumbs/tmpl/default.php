@@ -19,10 +19,6 @@ JHtml::_('bootstrap.tooltip');
         {
             echo '<li class="Breadcrumb-Item Active">' . JText::_('MOD_BREADCRUMBS_HERE') . '&#160;</li>';
         }
-        else
-        {
-            echo '<li class="Breadcrumb-Item Active"><span class="divider icon-location"></span></li>';
-        }
 
         // Get rid of duplicated entries on trail including home page when using multilanguage
         for ($i = 0; $i < $count; $i++)
@@ -47,7 +43,7 @@ JHtml::_('bootstrap.tooltip');
         if ($key != $last_item_key)
         {
             // Render all but last item - along with separator
-            echo '<li>';
+            echo '<li class="Breadcrumb-Item Active">';
             if (!empty($item->link))
             {
                 echo '<a href="' . $item->link . '" class="pathway">' . $item->name . '</a>';
