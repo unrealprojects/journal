@@ -430,7 +430,7 @@ upf.Actions.Pagination = function(){
                     url: link,
                     beforeSend:function(){
 
-                        $('.Component').append('<div class="Icon-Loading"></div>');
+                        $('.Load-More').before('<div class="Icon-Loading"></div>');
                     },
                     success:function(Data)
                     {

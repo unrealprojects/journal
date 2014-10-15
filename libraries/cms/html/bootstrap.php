@@ -451,7 +451,7 @@ abstract class JHtmlBootstrap
 	 *
 	 * @since   3.0
 	 */
-	public static function tooltip($selector = '.hasTooltip', $params = array())
+	public static function tooltip($selector = '.', $params = array())
 	{
 		if (!isset(static::$loaded[__METHOD__][$selector]))
 		{

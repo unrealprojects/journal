@@ -89,19 +89,19 @@ JFactory::getDocument()->addScriptDeclaration("
 ?>
 <h3><?php echo JText::_('COM_CONTENTHISTORY_MODAL_TITLE'); ?></h3>
 <div class="btn-group pull-right">
-	<button id="toolbar-load" type="submit" class="btn hasTooltip" data-placement="bottom" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_LOAD_DESC'); ?>"
+	<button id="toolbar-load" type="submit" class="btn " data-placement="bottom" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_LOAD_DESC'); ?>"
 		data-url="<?php echo JRoute::_($loadUrl);?>" id="content-url">
 		<span class="icon-upload"></span><?php echo '&#160;' . JText::_('COM_CONTENTHISTORY_BUTTON_LOAD'); ?></button>
-	<button id="toolbar-preview" type="button" class="btn hasTooltip" data-placement="bottom" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_PREVIEW_DESC'); ?>"
+	<button id="toolbar-preview" type="button" class="btn " data-placement="bottom" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_PREVIEW_DESC'); ?>"
 		data-url="<?php echo JRoute::_('index.php?option=com_contenthistory&view=preview&layout=preview&tmpl=component&' . JSession::getFormToken() . '=1');?>">
 		<span class="icon-search"></span><?php echo '&#160;' . JText::_('COM_CONTENTHISTORY_BUTTON_PREVIEW'); ?></button>
-	<button id="toolbar-compare" type="button" class="btn hasTooltip" data-placement="bottom" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_DESC'); ?>"
+	<button id="toolbar-compare" type="button" class="btn " data-placement="bottom" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_DESC'); ?>"
 		data-url="<?php echo JRoute::_('index.php?option=com_contenthistory&view=compare&layout=compare&tmpl=component&' . JSession::getFormToken() . '=1');?>">
 		<span class="icon-zoom-in"></span><?php echo '&#160;' . JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE'); ?></button>
-    <button onclick="if (document.adminForm.boxchecked.value==0){alert('<?php echo $deleteMessage; ?>');}else{ Joomla.submitbutton('history.keep')}" class="btn hasTooltip"
+    <button onclick="if (document.adminForm.boxchecked.value==0){alert('<?php echo $deleteMessage; ?>');}else{ Joomla.submitbutton('history.keep')}" class="btn "
     	title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_KEEP_DESC'); ?>">
     	<span class="icon-lock"></span><?php echo '&#160;' . JText::_('COM_CONTENTHISTORY_BUTTON_KEEP'); ?></button>
-    <button onclick="if (document.adminForm.boxchecked.value==0){alert('<?php echo $deleteMessage; ?>');}else{ Joomla.submitbutton('history.delete')}" class="btn hasTooltip"
+    <button onclick="if (document.adminForm.boxchecked.value==0){alert('<?php echo $deleteMessage; ?>');}else{ Joomla.submitbutton('history.delete')}" class="btn "
     	title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_DELETE_DESC'); ?>">
     	<span class="icon-delete"></span><?php echo '&#160;' . JText::_('COM_CONTENTHISTORY_BUTTON_DELETE'); ?></button>
 </div>

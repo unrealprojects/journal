@@ -191,7 +191,7 @@ function pagination_item_active(&$item)
 	if (!is_numeric($item->text))
 	{
 		JHtml::_('bootstrap.tooltip');
-		$title = ' class="hasTooltip" title="' . $item->text . '"';
+		$title = ' class="" title="' . $item->text . '"';
 	}
 
 	return '<li><a' . $title . ' href="#" onclick="document.adminForm.' . $item->prefix . $limit . '; Joomla.submitform();return false;">' . $display . '</a></li>';

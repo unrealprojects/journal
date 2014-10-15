@@ -30,20 +30,20 @@ JFactory::getDocument()->addScriptDeclaration("
 <legend>
 <?php echo JText::sprintf('COM_CONTENTHISTORY_COMPARE_TITLE'); ?>
 <div class="btn-group pull-right">
-&nbsp;<button id="toolbar-all-rows" class="btn hasTooltip" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_ALL_ROWS_DESC'); ?>"
+&nbsp;<button id="toolbar-all-rows" class="btn " title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_ALL_ROWS_DESC'); ?>"
 	onclick="jQuery('.items-equal').show(); jQuery('#toolbar-all-rows').hide(); jQuery('#toolbar-changed-rows').show()"
 	style="display:none" >
 	<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_ALL_ROWS'); ?></button>
 
-<button id="toolbar-changed-rows" class="btn hasTooltip" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_CHANGED_ROWS_DESC'); ?>"
+<button id="toolbar-changed-rows" class="btn " title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_CHANGED_ROWS_DESC'); ?>"
 	onclick="jQuery('.items-equal').hide(); jQuery('#toolbar-all-rows').show(); jQuery('#toolbar-changed-rows').hide()">
 	<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_CHANGED_ROWS'); ?></button>
 
-<button class="diff-header btn hasTooltip" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_HTML_DESC'); ?>"
+<button class="diff-header btn " title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_HTML_DESC'); ?>"
 	onclick="jQuery('.diffhtml, .diffhtml-header').show(); jQuery('.diff, .diff-header').hide()">
 	<i class="icon-wrench"></i> <?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_HTML'); ?></button>
 
-<button class="diffhtml-header btn hasTooltip" title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_TEXT_DESC'); ?>"
+<button class="diffhtml-header btn " title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_TEXT_DESC'); ?>"
 	onclick="jQuery('.diffhtml, .diffhtml-header').hide(); jQuery('.diff, .diff-header').show()">
 	<i class="icon-pencil"></i> <?php echo JText::_('COM_CONTENTHISTORY_BUTTON_COMPARE_TEXT'); ?></button>
 </div>

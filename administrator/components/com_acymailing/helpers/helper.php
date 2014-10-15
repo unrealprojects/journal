@@ -399,8 +399,8 @@ if (is_callable("date_default_timezone_set")) date_default_timezone_set(@date_de
 					<input type="text" name="search" id="search" value="<?php echo htmlspecialchars($search, ENT_COMPAT, 'UTF-8');?>" class="text_area" placeholder="<?php echo JText::_('ACY_SEARCH'); ?>" title="<?php echo JText::_('ACY_SEARCH'); ?>" />
 				</div>
 				<div class="btn-group pull-left hidden-phone">
-					<button onclick="document.adminForm.limitstart.value=0;this.form.submit();" class="btn tip hasTooltip" type="submit" title="<?php echo JText::_('ACY_SEARCH'); ?>" ><i class="icon-search"></i></button>
-					<button onclick="document.adminForm.limitstart.value=0;document.getElementById('search').value='';this.form.submit();" class="btn tip hasTooltip" type="button" title="<?php echo JText::_( 'JOOMEXT_RESET' ); ?>" ><i class="icon-remove"></i></button>
+					<button onclick="document.adminForm.limitstart.value=0;this.form.submit();" class="btn tip " type="submit" title="<?php echo JText::_('ACY_SEARCH'); ?>" ><i class="icon-search"></i></button>
+					<button onclick="document.adminForm.limitstart.value=0;document.getElementById('search').value='';this.form.submit();" class="btn tip " type="button" title="<?php echo JText::_( 'JOOMEXT_RESET' ); ?>" ><i class="icon-remove"></i></button>
 				</div>
 			<?php
 		}else{

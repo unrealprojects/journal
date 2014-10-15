@@ -17,10 +17,10 @@ JHtml::_('bootstrap.tooltip');
 			<div id="filter-bar" class="btn-toolbar">
 				<div class="filter-search input-append">
 					<label for="helpsearch" class="element-invisible"><?php echo JText::_('COM_ADMIN_SEARCH'); ?></label>
-					<input type="text" name="helpsearch" id="helpsearch" placeholder="<?php echo JText::_('JSEARCH_FILTER'); ?>" value="<?php echo $this->escape($this->help_search); ?>" class="input-small hasTooltip" title="<?php echo JHtml::tooltipText('COM_ADMIN_SEARCH'); ?>" />
-					<button type="submit" class="btn hasTooltip" title="<?php JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>">
+					<input type="text" name="helpsearch" id="helpsearch" placeholder="<?php echo JText::_('JSEARCH_FILTER'); ?>" value="<?php echo $this->escape($this->help_search); ?>" class="input-small " title="<?php echo JHtml::tooltipText('COM_ADMIN_SEARCH'); ?>" />
+					<button type="submit" class="btn " title="<?php JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>">
 						<i class="icon-search"></i></button>
-					<button type="button" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>" onclick="f=document.adminForm;f.helpsearch.value='';f.submit()">
+					<button type="button" class="btn " title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>" onclick="f=document.adminForm;f.helpsearch.value='';f.submit()">
 						<i class="icon-remove"></i></button>
 				</div>
 			</div>

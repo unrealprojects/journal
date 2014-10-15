@@ -822,7 +822,7 @@ abstract class JHtml
 	 *
 	 * @since   1.5
 	 */
-	public static function tooltip($tooltip, $title = '', $image = 'tooltip.png', $text = '', $href = '', $alt = 'Tooltip', $class = 'hasTooltip')
+	public static function tooltip($tooltip, $title = '', $image = 'tooltip.png', $text = '', $href = '', $alt = 'Tooltip', $class = '')
 	{
 		if (is_array($title))
 		{
@@ -963,7 +963,7 @@ abstract class JHtml
 		}
 
 		$attribs['class'] = isset($attribs['class']) ? $attribs['class'] : 'input-medium';
-		$attribs['class'] = trim($attribs['class'] . ' hasTooltip');
+		$attribs['class'] = trim($attribs['class'] . ' ');
 
 		$readonly = isset($attribs['readonly']) && $attribs['readonly'] == 'readonly';
 		$disabled = isset($attribs['disabled']) && $attribs['disabled'] == 'disabled';
