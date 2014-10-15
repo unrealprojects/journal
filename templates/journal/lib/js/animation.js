@@ -92,7 +92,7 @@ upf.Start.VerticalGrid = function(){
             // Hide Menu When Width < 1180px
             if($(window).width()<1180){
                 upf.Menu.Expanded = false;
-                $(NavMenu).animate({'margin-left':PullWidth});
+                $(NavMenu).animate({'margin-left':PullWidth}).toggleClass('Expanded Collapsed');
                 $SiteContent.animate({'margin-left':PullWidth});
                 $Menu.animate({'left':'-'+PushWidth,'opacity':0});
             }
@@ -100,12 +100,15 @@ upf.Start.VerticalGrid = function(){
             $(window).resize(function(){
                 // Hide menu
                 if($(window).width()<=1180 && upf.Menu.Expanded==true){
-                    $(NavMenu).animate({'margin-left':PullWidth});
+
+                    $(NavMenu).animate({'margin-left':PullWidth}).toggleClass('Expanded Collapsed');
                     $SiteContent.animate({'margin-left':PullWidth});
                     $Menu.animate({'left':'-'+PushWidth,'opacity':0});
                     upf.Menu.Expanded=false;
+
                 }else if($(window).width()>1180 && upf.Menu.Expanded==false){
-                    $(NavMenu).animate({'margin-left':PushWidth});
+
+                    $(NavMenu).animate({'margin-left':PushWidth}).toggleClass('Expanded Collapsed');
                     $SiteContent.animate({'margin-left':PushWidth});
                     $Menu.animate({'left':PullWidth,'opacity':1});
                     upf.Menu.Expanded=true;
@@ -238,8 +241,14 @@ upf.Page.Headers = function(){
             $Body.attr('data-page',page_default);
         }
 
+    if( SiteSection       ==      'video'){
+        $Body.attr('data-alias','video');
+    }
+
     if(location.pathname.split('/')[2] !==undefined && location.pathname.split('/')[2].length>2){
         $('.Top-Five-Header h3').text('Интересные');
+        $('.Dropdown').remove();
+
     }
 
     // Links in Categories
@@ -503,15 +512,57 @@ upf.Tools.Dropdown = function(){
         $(Dropdown+'.'+Expanded).find(DropdownToggle).animate({transform: 'rotate(0deg)'},Duration);
         $(Dropdown+'.'+Expanded).removeClass(Expanded).addClass(Collapsed);
     });
+
+
+
+    /*** Переключение элементов ***/
+    $('.Dropdown-Content .Icon:nth-of-type(1)').click(function(){
+        $('.Top-Five-Header h3').text('Топ 5 за все время');
+        $('.Popular>ul').hide();
+        $('.Popular>ul:nth-of-type(1)').show();
+        return false;
+    });
+
+    /*** Переключение элементов ***/
+    $('.Dropdown-Content .Icon:nth-of-type(2)').click(function(){
+        $('.Top-Five-Header h3').text('Топ 5 за месяц');
+        $('.Popular>ul').hide();
+        $('.Popular>ul:nth-of-type(2)').show();
+        return false;
+    });
+
+    /*** Переключение элементов ***/
+    $('.Dropdown-Content .Icon:nth-of-type(3)').click(function(){
+        $('.Top-Five-Header h3').text('Топ 5 за неделю');
+        $('.Popular>ul').hide();
+        $('.Popular>ul:nth-of-type(3)').show();
+        return false;
+    });
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+upf.Actions.BlockClickAble = function(){
+    var SelectorItem = '.teaser-item,.zoo-itempro-default li',
+        SelectorLink = '.pos-subtitle a, .title a';
+
+    $(SelectorItem).click(function(){
+       location.href =  $(this).find(SelectorLink).attr('href');
+    });
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Click Able To Block
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Execute
@@ -523,9 +574,13 @@ $(document).ready(function(){
     upf.Tools.Dropdown();
     upf.Actions.Login();
     upf.Actions.Pagination();
+    upf.Actions.BlockClickAble();
 
     upf.Start.CategoryLinks();
     upf.Start.CategoryLabels();
+
+
+
 
     $('.Feed-Subscription').upf_window($('.Subscription').html());
     $('.Content-Wrapper  .Subscription').remove();
@@ -552,35 +607,16 @@ $(document).ready(function(){
         }
     });
 
+
+
+
     $('.Popular>ul:first-of-type').show();
 
-    /*** Переключение элементов ***/
-    $('.Dropdown-Content .Icon:nth-of-type(1)').click(function(){
-        $('.Popular>ul').hide();
-        $('.Popular>ul:nth-of-type(1)').show();
-        return false;
-    });
-
-    /*** Переключение элементов ***/
-    $('.Dropdown-Content .Icon:nth-of-type(2)').click(function(){
-        $('.Popular>ul').hide();
-        $('.Popular>ul:nth-of-type(2)').show();
-        return false;
-    });
-
-    /*** Переключение элементов ***/
-    $('.Dropdown-Content .Icon:nth-of-type(3)').click(function(){
-        $('.Popular>ul').hide();
-        $('.Popular>ul:nth-of-type(3)').show();
-        return false;
-    });
 });
 
 
 upf.Page.Headers();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 
 })(jQuery);

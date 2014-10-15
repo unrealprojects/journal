@@ -14,7 +14,7 @@ JHtml::_('bootstrap.tooltip');
 $lang = JFactory::getLanguage();
 $upper_limit = $lang->getUpperLimitSearchWord();
 ?>
-<form id="searchForm" action="<?php echo JRoute::_('index.php?option=com_search');?>" method="post">
+<form id="searchForm" action="<?php echo JRoute::_('index.php?option=com_search');?>" method="post" style="margin-bottom: 20px;">
 
 	<div class="btn-toolbar">
 		<div class="btn-group pull-left">
@@ -27,15 +27,8 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 		<div class="clearfix"></div>
 	</div>
 
-	<div class="searchintro<?php echo $this->params->get('pageclass_sfx'); ?>">
-		<?php if (!empty($this->searchword)):?>
-		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', '<span class="badge badge-info">'. $this->total. '</span>');?></p>
-		<?php endif;?>
-	</div>
-
 	<fieldset class="phrases">
-		<legend><?php echo JText::_('COM_SEARCH_FOR');?>
-		</legend>
+		<legend><?php echo JText::_('COM_SEARCH_FOR');?></legend>
 			<div class="phrases-box">
 			<?php echo $this->lists['searchphrase']; ?>
 			</div>
@@ -60,19 +53,5 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 		<?php endforeach; ?>
 		</fieldset>
 	<?php endif; ?>
-
-<?php if ($this->total > 0) : ?>
-
-	<div class="form-limit">
-		<label for="limit">
-			<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>
-		</label>
-		<?php echo $this->pagination->getLimitBox(); ?>
-	</div>
-<p class="counter">
-		<?php echo $this->pagination->getPagesCounter(); ?>
-	</p>
-
-<?php endif; ?>
 
 </form>

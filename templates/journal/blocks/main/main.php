@@ -15,7 +15,7 @@
         <nav class="Authorization">
             <ul>
                 <li><a id="SingIn" href="#">Вход</a></li>
-                <li><a class="Button-Like" href="http://journal/component/users/?view=registration">Регистрация</a></li>
+                <li><a class="Button-Like" href="/component/users/?view=registration">Регистрация</a></li>
             </ul>
             <jdoc:include type="modules" name="authorization"/>
         </nav>

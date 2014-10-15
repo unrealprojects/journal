@@ -7,7 +7,7 @@
 	padding: 			0;
 	box-sizing: 		border-box;
 	-moz-box-sizing: 	border-box;
-	cursor: 			default;
+//	cursor: 			default;
 }
 html,
 body
@@ -533,13 +533,19 @@ body[data-page=home] .teaser-item
 {
 	@extend .Node-XS-6;
 	@extend .Node-MD-4;
+    cursor: pointer !important;
 }
 
 body[data-page=list] .teaser-item
 {
-  @extend .Node-XS-12;
+    @extend .Node-XS-12;
+    cursor: pointer !important;
 }
 
+.zoo-itempro-default li
+{
+    cursor: pointer !important;
+}
 
 
 .pos-title
@@ -619,6 +625,10 @@ body[data-page=list] .teaser-item
 
 .Pagination-Wrapper{
     display:none;
+}
+
+.Message-Popular{
+    @extend %Content-Block;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

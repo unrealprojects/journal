@@ -31,6 +31,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .About
 {
+    display: none;
 	@extend 					%Content-Block;
 	@extend 					%Content-Block-Item;
 
@@ -85,6 +86,10 @@
 		}
 	}
 }
+[data-alias=home] .About{
+    display:block;
+}
+
 #yoo-zoo > .item
 {
 	@extend %Content-Block;
@@ -547,6 +552,8 @@ body[data-alias=home] .yoo-zoo .items .pos-item
 		}
 	}
 }
+
+
 .item-page
 {
 	@extend %Content-Block;
@@ -595,6 +602,14 @@ fieldset.only
 	@extend %Control;
 }
 
+.element-textarea iframe{
+    width: 100%;
+    height: 380px;
+}
+
+[data-alias=video] .item .pos-title{
+    display:none;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Registration
@@ -642,6 +657,7 @@ fieldset.only
 	.Dropdown
 	{
 		float: right;
+        top: 7px;
 	}
 }
 .Popular

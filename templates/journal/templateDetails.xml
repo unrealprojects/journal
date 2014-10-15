@@ -45,6 +45,7 @@
 
                 <position>adv</position>
                 <position>journal_header</position>
+                <position>breadcrumbs</position>
         </positions>
 </extension>
 
