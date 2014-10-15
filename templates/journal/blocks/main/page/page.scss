@@ -1,17 +1,17 @@
 .Content-Wrapper
 {
-	margin-left:				$Sidebar-Width;
-	padding-left:				$Content-Spacing - 105px;
-	padding-right:				$Content-Spacing - 105px;
+	margin-left:				235px;
+	padding-left:				20px;
+	padding-right:				20px;
 	@include 					Adaptive($Viewport-SM)
 	{
-		padding-left:				$Content-Spacing - 95px;
-		padding-right:				$Content-Spacing - 95px;
+		padding-left:				40px;
+		padding-right:				40px;
 	}
 	@include 					Adaptive($Viewport-MD)
 	{
-		padding-left:				$Content-Spacing - 50px;
-		padding-right:				$Content-Spacing - 50px;
+		padding-left:				75px;
+		padding-right:				75px;
 	}
 
 
@@ -757,4 +757,44 @@ button[name='Search']
 {
 	position: relative;
 	@extend .fa, .fa-search;
+}
+.login,
+.remind,
+.reset
+{
+	@extend %Content-Block;
+}
+.login fieldset.well
+{
+	border: 0;
+	color: 0;
+}
+
+.nav.nav-stacked.nav-tabs
+{
+	margin-top: 10px;
+	@extend 	%Unstyle;
+	@extend 	%Content-Block;
+	li
+	{
+		float: left;
+		margin-right: 30px;
+	}
+}
+.element.element-relateditems.last
+{
+	margin-top: 20px;
+	height: auto!important;
+	h3, a
+	{
+		display: inline-block;
+		float: left;
+		line-height: 18px;
+		font-size: 14px;
+		font-weight: 100;
+	}
+	h3
+	{
+		padding-right: 10px;
+	}
 }
