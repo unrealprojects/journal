@@ -10,10 +10,9 @@
 defined('_JEXEC') or die;
 ?>
 
-<dl class="Search-Result">
+<dl class="Search-Result-Block Grid Merge">
     <?php foreach($this->results as $result) : ?>
         <article class="Search-Result">
-            <div class="Search-Result-Nub=mber"><?php echo $this->pagination->limitstart + $result->count.'. ';?></div>
             <div class="Search-Result-Title">
                 <?php if ($result->href) :?>
                     <a href="<?php echo JRoute::_($result->href); ?>"<?php if ($result->browsernav == 1) :?> target="_blank"<?php endif;?>>
@@ -25,9 +24,9 @@ defined('_JEXEC') or die;
             </div>
             <?php if ($result->section) : ?>
                 <div class="Search-Result-Category">
-			<span class="small<?php echo $this->pageclass_sfx; ?>">
-				(<?php echo $this->escape($result->section); ?>)
-			</span>
+                    <span class="small<?php echo $this->pageclass_sfx; ?>">
+                        (<?php echo $this->escape($result->section); ?>)
+                    </span>
                 </div>
             <?php endif; ?>
             <div class="Search-Result-Text">

@@ -666,17 +666,17 @@ class JPagination
 	protected function _list_render($list)
 	{
 		// Reverse output rendering for right-to-left display.
-		$html = '<ul>';
-		$html .= '<li class="pagination-start">' . $list['start']['data'] . '</li>';
-		$html .= '<li class="pagination-prev">' . $list['previous']['data'] . '</li>';
+		$html = '<ul class="Pagination" style="margin-top: 20px">';
+		$html .= '<li rel="start">' . $list['start']['data'] . '</li>';
+		$html .= '<li class="prev">' . $list['previous']['data'] . '</li>';
 
 		foreach ($list['pages'] as $page)
 		{
 			$html .= '<li>' . $page['data'] . '</li>';
 		}
 
-		$html .= '<li class="pagination-next">' . $list['next']['data'] . '</li>';
-		$html .= '<li class="pagination-end">' . $list['end']['data'] . '</li>';
+		$html .= '<li rel="next">' . $list['next']['data'] . '</li>';
+		$html .= '<li rel="finish">' . $list['end']['data'] . '</li>';
 		$html .= '</ul>';
 
 		return $html;
@@ -702,7 +702,7 @@ class JPagination
 		{
 			JHtml::_('bootstrap.tooltip');
 			$title = ' title="' . $item->text . '"';
-			$class = 'hasTooltip ';
+			$class = '';
 		}
 
 		if ($app->isAdmin())

@@ -65,6 +65,10 @@
 	@extend 			%Fix;
 }
 
+%Content-Block-Item{
+    padding-left:			40px;
+}
+
 %Content-Block-Hover
 {
 	&:hover
@@ -72,6 +76,7 @@
 		background-color: 	#fcfcfc;
 	}
 }
+
 %Content-Block-Footer
 {
 	font-size:	12px;

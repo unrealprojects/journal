@@ -160,13 +160,11 @@ JFactory::getDocument()->addScriptDeclaration("
 				<td class="center">
 					<?php if ($item->keep_forever) : ?>
 						<a class="btn btn-micro active" rel="tooltip" href="javascript:void(0);"
-							onclick="return listItemTask('cb<?php echo $i; ?>','history.keep')"
-							data-original-title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_KEEP_TOGGLE_OFF'); ?>">
+							onclick="return listItemTask('cb<?php echo $i; ?>','history.keep')">
 							<?php echo JText::_('JYES'); ?>&nbsp;<i class="icon-lock"></i>
 					<?php else : ?>
 						<a class="btn btn-micro active" rel="tooltip" href="javascript:void(0);"
-							onclick="return listItemTask('cb<?php echo $i; ?>','history.keep')"
-							data-original-title="<?php echo JText::_('COM_CONTENTHISTORY_BUTTON_KEEP_TOGGLE_ON'); ?>">
+							onclick="return listItemTask('cb<?php echo $i; ?>','history.keep">
 							<?php echo JText::_('JNO'); ?>
 					<?php endif; ?>
 				</td>

@@ -8,7 +8,7 @@
 	outline: 0;
 
 	font-size: $Control-Font-Size;
-	line-height: $Control-Line-Height;
+	line-height: $Control-Line-Height+2px;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -468,3 +468,4 @@ Label.File-Upload
 		}
 	}
 }
+

@@ -182,11 +182,13 @@ header.Site-Header
 		& a
 		{
 			position: 			absolute;
-			top:				50px;
+			top:				60px;
 			width: 				100%;
-			font-size:			22px!important;
+			font-size:			14px!important;
+            font-weight:        bold !important;
 			text-align: 		center;
-			color:				$C-Red-2;
+			color:				$C-Red-1;
+            text-transform:     uppercase;
 			@extend 			.fa, .fa-chevron-circle-left;
 			@include 			Opacity(0);
 			@include 			Transition(opacity, .2s);
@@ -194,6 +196,9 @@ header.Site-Header
 			{
 				color: 			#000000;
 				padding-right:	10px;
+                font-size: 22px;
+                position: relative;
+                top: 3px;
 			}
 		}
 
@@ -328,7 +333,7 @@ header.Site-Header
 {
 	margin-top:					20px;
     padding-top:                24px;
-    padding-bottom:             18px;
+    padding-bottom:             24px;
 	border-top:					1px solid #e9ebec;
 	border-bottom:				1px solid #e9ebec;
 	margin-bottom:				20px;
@@ -363,17 +368,27 @@ header.Site-Header
 	{
 		width: 					auto;
 		float: 					right;
+        position: relative;
 		form
 		{
 			margin-top: 	-3px;
 
+
 			#mod-search-searchword
 			{
-				width: 150px;
+				width: 0px;
+                background: none;
 				float: left;
+                cursor: text !important;
+                border: 1px solid #e9ebec;
+                position: absolute;
+                right: 0px;
+
 				@include 			Opacity(0);
 				&:focus
 				{
+                    width:180px;
+                    border: 1px solid #b7b7b7;
 					@include 		Opacity(1);
 				}
 			}
@@ -381,6 +396,9 @@ header.Site-Header
 			{
 				border: 0;
 				background-color: transparent;
+                padding: 6px 7px;
+                position: absolute;
+                right: 0px;
 			}
 		}
 		&:hover
@@ -389,7 +407,10 @@ header.Site-Header
 			#mod-search-searchword
 			{
 				@include 		Transition(opacity, .5s);
+				@include 		Transition(width, .3s);
+                width:180px;
 				@include 		Opacity(1);
+
 			}
 		}
 
@@ -436,7 +457,7 @@ ul.Pagination
 		}
 		span
 		{
-			background-color: black;
+			background-color: #4a4f5a;
 			color: white;
 		}
 	}
@@ -648,6 +669,7 @@ a{
 	padding:		7px 10px;
 	border-radius:	4px;
 	border:			1px solid #efeff3;
+    z-index: 1000000;
 	background-color: white;
 	@extend 		.fa, .fa-angle-up;
 	@extend 		%Clickable;
@@ -716,6 +738,11 @@ img{
 
 #searchForm .phrases, #searchForm .only{
     display:none;
+}
+
+button[name='Search'] {
+    position: relative;
+    margin-left: 20px;
 }
 
 .acyfield_email.acy_requiredField input{

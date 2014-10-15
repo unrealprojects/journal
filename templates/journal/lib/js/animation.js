@@ -183,8 +183,18 @@ upf.Page.Headers = function(){
             $Body.attr('data-page','home');
         }
 
+        if( location.pathname       == '/' ||
+            SiteSection       == 'archive'){
+            $Body.attr('data-alias','home');
+        }
+
+        if( location.pathname       == '/'){
+            $('#yoo-zoo .heading').append('<a class="Rss" href="/feed/rss/journal/home?format=feed"><span class="fa fa-rss"></span></a>');
+        }
+
         if(SiteSection         ==      'authors'  ||
-           SiteSection         ==      'journals'){
+           SiteSection         ==      'journals' ||
+           SiteSection         ==      'component'){
             $('#yoo-zoo').addClass('Item-Extended');
             $('.Component').addClass('Node-XS-12').removeClass('Node-XXS-8');
         }
@@ -374,13 +384,12 @@ upf.Actions.Pagination = function(){
     }
     var Chanks = location.pathname.split('/');
     var Page = Chanks[Chanks.length-1];
-
-    $(window).scroll(function(){
-        var ScrollBottom = $(document).height()-$(window).scrollTop()-$(window).height();
-
-
+    if($('.Component .items').length>0){
+        $('.Component').append('<div class="Load-More">Показать еще</div>');
+    }
+    $('.Load-More').click(function(){
         //
-        if(ScrollBottom < 800 && !Ajax){
+        if(!Ajax){
 
             Ajax   = true;
 
@@ -411,6 +420,7 @@ upf.Actions.Pagination = function(){
                 $.ajax({
                     url: link,
                     beforeSend:function(){
+
                         $('.Component').append('<div class="Icon-Loading"></div>');
                     },
                     success:function(Data)
@@ -418,14 +428,23 @@ upf.Actions.Pagination = function(){
                         $('.Icon-Loading').remove();
                         if($(Data).find('.teaser-item').length>1){
                             $('.items .Grid').append($(Data).find('.teaser-item'));
+
+                            // Events
                             upf.Start.CategoryLinks();
+                            upf.Start.CategoryLabels();
+
                             MasonryObj.appended( $(Data).find('.teaser-item'));
-
-
                             MasonryObj.reloadItems();
                             MasonryObj.layout();
                             Ajax   = false;
+
+                        }else{
+                            $('.Load-More').remove();
                         }
+                    },
+                    error:function(){
+                        $('.Load-More').remove();
+                        $('.Icon-Loading').remove();
                     }
                 });
 

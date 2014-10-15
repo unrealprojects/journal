@@ -577,10 +577,10 @@ textarea, .Sidebar-Toggle, header.Site-Header .Toolbar .Languages .goog-te-menu-
 .Page-Sidebar nav.Site-Navigation .nav.menu_left li a {
   width: 100%; }
 
-[class*='Grid']:before, .Site-Navigation.Primary nav ul:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:before, header.Site-Header .Toolbar .Authorization ul:before, ul.Pagination:before, .UPF-Window .UPF-Window-Content:before, .About:before, #yoo-zoo > .item:before, #yoo-zoo.Item-Extended .item .pos-top:before, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:before, .yoo-zoo .items .pos-item:before, .Adv:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .content .search:before, #login-form:before, .Popular ul.zoo-itempro-default .layout-default:before, .Component .search form#searchForm:before, #yoo-zoo > .item .pos-content:before, .Control-Group:before, .Dropdown:before, .Projects:before, .content:before, .Top-Five-Header:before, header.Site-Header:before, header.Site-Header .Toolbar:before, .Site-Navigation.Primary nav:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary:before, [class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, #yoo-zoo > .item:after, #yoo-zoo.Item-Extended .item .pos-top:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Component .search form#searchForm:after, #yoo-zoo > .item .pos-content:after, .Control-Group:after, .Dropdown:after, .Projects:after, .content:after, .Top-Five-Header:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
+[class*='Grid']:before, .Site-Navigation.Primary nav ul:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:before, header.Site-Header .Toolbar .Authorization ul:before, ul.Pagination:before, .UPF-Window .UPF-Window-Content:before, .About:before, #yoo-zoo > .item:before, #yoo-zoo.Item-Extended .item .pos-top:before, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:before, .yoo-zoo .items .pos-item:before, .Adv:before, .Projects .custom:before, .pos-bottom .element.last .custom:before, .item-page:before, .content .search:before, #login-form:before, .Popular ul.zoo-itempro-default .layout-default:before, .Search-Result:before, .Component .search form#searchForm:before, #yoo-zoo > .item .pos-content:before, .Control-Group:before, .Dropdown:before, .Projects:before, .content:before, .Top-Five-Header:before, header.Site-Header:before, header.Site-Header .Toolbar:before, .Site-Navigation.Primary nav:before, footer[role='contentinfo'] nav.Site-Navigation.Secondary:before, [class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, #yoo-zoo > .item:after, #yoo-zoo.Item-Extended .item .pos-top:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Search-Result:after, .Component .search form#searchForm:after, #yoo-zoo > .item .pos-content:after, .Control-Group:after, .Dropdown:after, .Projects:after, .content:after, .Top-Five-Header:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   content: " ";
   display: table; }
-[class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, #yoo-zoo > .item:after, #yoo-zoo.Item-Extended .item .pos-top:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Component .search form#searchForm:after, #yoo-zoo > .item .pos-content:after, .Control-Group:after, .Dropdown:after, .Projects:after, .content:after, .Top-Five-Header:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
+[class*='Grid']:after, .Site-Navigation.Primary nav ul:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:after, header.Site-Header .Toolbar .Authorization ul:after, ul.Pagination:after, .UPF-Window .UPF-Window-Content:after, .About:after, #yoo-zoo > .item:after, #yoo-zoo.Item-Extended .item .pos-top:after, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item:after, .yoo-zoo .items .pos-item:after, .Adv:after, .Projects .custom:after, .pos-bottom .element.last .custom:after, .item-page:after, .content .search:after, #login-form:after, .Popular ul.zoo-itempro-default .layout-default:after, .Search-Result:after, .Component .search form#searchForm:after, #yoo-zoo > .item .pos-content:after, .Control-Group:after, .Dropdown:after, .Projects:after, .content:after, .Top-Five-Header:after, header.Site-Header:after, header.Site-Header .Toolbar:after, .Site-Navigation.Primary nav:after, footer[role='contentinfo'] nav.Site-Navigation.Secondary:after {
   clear: both; }
 
 ol[class*='Grid'] > li,
@@ -592,10 +592,13 @@ ul[class*='Grid'] > li, .Site-Navigation.Primary nav ul, footer[role='contentinf
 .Site-Navigation.Primary nav ul > *, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul > *, header.Site-Header .Toolbar .Authorization ul > *, ul.Pagination > * {
   float: left; }
 
-.UPF-Window .UPF-Window-Content, .About, #yoo-zoo > .item, #yoo-zoo.Item-Extended .item .pos-top, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item, .yoo-zoo .items .pos-item, .Adv, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search, #login-form, .Popular ul.zoo-itempro-default .layout-default, .Component .search form#searchForm {
+.UPF-Window .UPF-Window-Content, .About, #yoo-zoo > .item, #yoo-zoo.Item-Extended .item .pos-top, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item, .yoo-zoo .items .pos-item, .Adv, .Projects .custom, .pos-bottom .element.last .custom, .item-page, .content .search, #login-form, .Popular ul.zoo-itempro-default .layout-default, .Search-Result, .Component .search form#searchForm {
   padding: 20px;
   border: 1px solid #efeff3;
   background-color: white; }
+
+.About, #yoo-zoo.Item-Extended .item .pos-top, .item-page {
+  padding-left: 40px; }
 
 .yoo-zoo .items .pos-item:hover, .Top-Five .Popular ul li .layout-default:hover, .Popular ul.zoo-itempro-default .layout-default:hover {
   background-color: #fcfcfc; }
@@ -618,7 +621,7 @@ ul[class*='Grid'] > li, .Site-Navigation.Primary nav ul, footer[role='contentinf
 
 input[type='submit'],
 input[type='button'],
-button, .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Languages .goog-te-menu-value, header.Site-Header .Toolbar .Authorization ul li a, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
+button, .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Load-More, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Languages .goog-te-menu-value, header.Site-Header .Toolbar .Authorization ul li a, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
   text-transform: uppercase; }
 
 #yoo-zoo > .item .pos-content .element-download a {
@@ -678,7 +681,7 @@ button {
   button:hover {
     background-color: #e12626; }
 
-.Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
+.Load-More, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
 
 .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
@@ -758,11 +761,11 @@ textarea,
 .Dropdown, Label.File-Upload > span, #search-searchword, input,
 button {
   display: inline-block;
-  height: 30px;
+  height: 28px;
   border: 1px #b7b7b7 solid;
-  border-radius: 5px;
+  border-radius: 6px;
   outline: 0;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 14px; }
 
 input[type='text'],
@@ -909,16 +912,16 @@ select {
   padding: 5px; }
 
 select:focus {
-  border-radius: 5px 5px 0 0; }
+  border-radius: 6px 6px 0 0; }
 
 select[multiple='multiple'] {
   -moz-appearance: button;
-  min-height: 232px; }
+  min-height: 208px; }
 
 textarea {
   resize: vertical;
-  line-height: 21px;
-  min-height: 58px;
+  line-height: 18px;
+  min-height: 52px;
   -webkit-transition-property: min-height;
   -moz-transition-property: min-height;
   transition-property: min-height;
@@ -927,7 +930,7 @@ textarea {
   transition-duration: 0.5s; }
   textarea:focus {
     background-color: #f9f9f9;
-    min-height: 100px; }
+    min-height: 88px; }
 
 input[type='file'] {
   -moz-appearance: button;
@@ -968,11 +971,11 @@ Label.File-Upload {
   margin-top: 50px; }
 
 .Control-Group label {
-  height: 30px;
+  height: 28px;
   padding: 7px;
   border: 1px solid transparent;
-  font-size: 14px;
-  line-height: 14px; }
+  font-size: 12px;
+  line-height: 12px; }
 .Control-Group input,
 .Control-Group select,
 .Control-Group textarea {
@@ -983,11 +986,11 @@ select {
 .Control-Group input[type='checkbox'].Slide {
   -webkit-appearance: none;
   position: relative;
-  width: 60px;
-  height: 30px;
+  width: 56px;
+  height: 28px;
   margin: 0px 0;
   border: 1px solid transparent;
-  border-radius: 30px;
+  border-radius: 28px;
   background-color: #f46d6d;
   box-shadow: none;
   -webkit-transition: background-color .5s, border-color .5s; }
@@ -999,16 +1002,16 @@ select {
     content: '';
     left: 2px;
     top: 2px;
-    width: 24px;
-    height: 24px;
-    border-radius: 24px;
+    width: 22px;
+    height: 22px;
+    border-radius: 22px;
     background-color: white;
     -webkit-transition: left .3s; }
   .Control-Group input[type='checkbox'].Slide:before {
     position: absolute;
     content: 'x';
-    top: 7px;
-    left: 40px;
+    top: 6px;
+    left: 36px;
     line-height: 14px;
     font-size: 14px;
     color: white; }
@@ -1017,10 +1020,10 @@ select {
 .Control-Group input[type='checkbox'].Slide:checked {
   background-color: #2ecc71; }
   .Control-Group input[type='checkbox'].Slide:checked:after {
-    left: 32px; }
+    left: 30px; }
   .Control-Group input[type='checkbox'].Slide:checked:before {
     content: 'o';
-    top: 7px;
+    top: 6px;
     left: 10px; }
   .Control-Group input[type='checkbox'].Slide:checked:hover {
     background-color: #5ec67d; }
@@ -1035,7 +1038,7 @@ select {
 .Control-Group .Input-Group.Error {
   color: white;
   background-color: #f2070b;
-  border-radius: 5px; }
+  border-radius: 6px; }
   .Control-Group .Input-Group.Error input.Error,
   .Control-Group .Input-Group.Error select.Error,
   .Control-Group .Input-Group.Error textarea.Error {
@@ -1060,7 +1063,7 @@ select {
   .Control-Group .Input-Group.Merge input[type='button']:first-child,
   .Control-Group .Input-Group.Merge input[type='submit']:first-child {
     border-right: 0;
-    border-radius: 5px 0 0 5px; }
+    border-radius: 6px 0 0 6px; }
   .Control-Group .Input-Group.Merge input[type='text']:last-child,
   .Control-Group .Input-Group.Merge input[type='tel']:last-child,
   .Control-Group .Input-Group.Merge input[type='password']:last-child,
@@ -1068,7 +1071,7 @@ select {
   .Control-Group .Input-Group.Merge input[type='button']:last-child,
   .Control-Group .Input-Group.Merge input[type='submit']:last-child {
     border-left: 0;
-    border-radius: 0 5px 5px 0; }
+    border-radius: 0 6px 6px 0; }
 .Control-Group .Input-Group.Vertical input {
   display: block;
   width: 100%;
@@ -1076,26 +1079,26 @@ select {
   border-radius: 0; }
   .Control-Group .Input-Group.Vertical input:first-child {
     border-bottom: 0;
-    border-radius: 5px 5px 0 0; }
+    border-radius: 6px 6px 0 0; }
   .Control-Group .Input-Group.Vertical input:last-child {
     border-top: 0;
-    border-radius: 0 0 5px 5px; }
+    border-radius: 0 0 6px 6px; }
 .Control-Group .Input-Group.Prefix span, .Control-Group .Input-Group.Prefix label,
 .Control-Group .Input-Group.Postfix span,
 .Control-Group .Input-Group.Postfix label {
   padding: 7px;
-  height: 30px;
+  height: 28px;
   border: 1px #b7b7b7 solid;
   background-color: #eee;
   text-align: center;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 10px;
+  line-height: 12px;
   color: #888;
   box-shadow: 0 0 1px white inset; }
 .Control-Group .Input-Group.Prefix span, .Control-Group .Input-Group.Prefix label {
-  border-radius: 5px 0 0 5px; }
+  border-radius: 6px 0 0 6px; }
 .Control-Group .Input-Group.Postfix span {
-  border-radius: 0 5px 5px 0; }
+  border-radius: 0 6px 6px 0; }
 .Control-Group .Input-Group.Upload input[type='file'] {
   display: block;
   width: 100%; }
@@ -1109,7 +1112,7 @@ select {
       display: block;
       padding: 7px;
       right: 0;
-      bottom: -34px;
+      bottom: -32px;
       width: 100%;
       background-color: #f46d6d;
       color: white; }
@@ -1130,7 +1133,7 @@ select {
 
 .Panel {
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 6px;
   border: 1px #b7b7b7 solid;
   background-color: #f9f9f9;
   color: #212121; }
@@ -1227,7 +1230,7 @@ select {
     border-color: #b7b7b7;
     color: #3c3c3c;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-    border-radius: 5px 5px 0 0; }
+    border-radius: 6px 6px 0 0; }
   .Dropdown .Dropdown-Toggle {
     float: right;
     margin-left: 30px; }
@@ -1236,14 +1239,14 @@ select {
   .Dropdown .Dropdown-Content {
     display: none;
     position: absolute;
-    top: 29px;
+    top: 27px;
     left: -1px;
     right: -1px;
     border: 1px #b7b7b7 solid;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     background-color: white;
     z-index: 100;
-    border-radius: 0 0 5px 5px; }
+    border-radius: 0 0 6px 6px; }
     .Dropdown .Dropdown-Content li {
       width: 100%;
       text-align: left; }
@@ -1259,7 +1262,7 @@ select {
       .Dropdown .Dropdown-Content li.Divide {
         border-top: #b7b7b7 1px solid; }
       .Dropdown .Dropdown-Content li:last-child a {
-        border-radius: 0 0 5px 5px; }
+        border-radius: 0 0 6px 6px; }
   .Dropdown.Ghost {
     border: 0;
     border-radius: 0;
@@ -1319,7 +1322,7 @@ select {
       .Dropdown.Invert .Dropdown-Content li.Divide {
         border-top: #b7b7b7 1px solid; }
       .Dropdown.Invert .Dropdown-Content li:last-child a {
-        border-radius: 0 0 5px 5px; }
+        border-radius: 0 0 6px 6px; }
 
 .Content-Wrapper {
   margin-left: 235px;
@@ -1374,17 +1377,19 @@ select {
   .About .About-Image img {
     width: 100%; }
 
-#yoo-zoo > .item h1.pos-title {
-  font-size: 0;
-  margin-bottom: 15px; }
-#yoo-zoo > .item .floatbox {
-  margin: 0; }
-#yoo-zoo > .item .pos-subtitle a {
-  margin-top: 10px;
-  color: #000000; }
-#yoo-zoo > .item .pos-content .element-textarea p {
-  font-size: 14px;
-  line-height: 23px; }
+#yoo-zoo > .item {
+  margin-top: 40px; }
+  #yoo-zoo > .item h1.pos-title {
+    font-size: 0;
+    margin-bottom: 15px; }
+  #yoo-zoo > .item .floatbox {
+    margin: 0; }
+  #yoo-zoo > .item .pos-subtitle a {
+    margin-top: 10px;
+    color: #000000; }
+  #yoo-zoo > .item .pos-content .element-textarea p {
+    font-size: 14px;
+    line-height: 23px; }
 
 #yoo-zoo.Item-Extended .item {
   border: 0;
@@ -1410,7 +1415,7 @@ select {
       width: 40%; }
     #yoo-zoo.Item-Extended .item .pos-top .element-itemcreated {
       position: absolute;
-      left: 20px;
+      left: 40px;
       bottom: 25px; }
     #yoo-zoo.Item-Extended .item .pos-top .element-itemhits {
       position: absolute;
@@ -1439,26 +1444,15 @@ select {
       font-size: 14px;
       color: #4f555c; }
       .Tags ul.zoo-list li a:hover {
-        background-color: #d4d4d5; }
+        background-color: #4a4f5a;
+        color: white; }
 
+.yoo-zoo .details .heading {
+  position: relative; }
 .yoo-zoo .items .pos-item .pos-title {
   position: relative; }
   .yoo-zoo .items .pos-item .pos-title article.item {
     display: none; }
-  .yoo-zoo .items .pos-item .pos-title article:last-of-type {
-    display: block; }
-    .yoo-zoo .items .pos-item .pos-title article:last-of-type a {
-      bottom: 25px;
-      left: 10px;
-      position: absolute;
-      padding: 5px 7px !important;
-      line-height: 13px;
-      border-radius: 3px;
-      font-size: 13px;
-      color: white;
-      letter-spacing: 0 !important;
-      background-color: red;
-      font-weight: bold; }
 .yoo-zoo .items .pos-item .pos-subtitle {
   line-height: 23px;
   font-size: 18px;
@@ -1467,6 +1461,49 @@ select {
     color: black; }
 .yoo-zoo .items .pos-item .floatbox .pos-content {
   margin-top: 20px; }
+
+body[data-alias=home] .yoo-zoo .items .pos-item article:last-of-type {
+  display: block !important; }
+  body[data-alias=home] .yoo-zoo .items .pos-item article:last-of-type a {
+    bottom: 25px;
+    left: 10px;
+    position: absolute;
+    padding: 5px 7px !important;
+    line-height: 13px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: white;
+    letter-spacing: 0 !important;
+    background-color: red;
+    font-weight: bold; }
+
+.Load-More {
+  display: block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 0;
+  font-family: 'PT Serif', serif;
+  font-size: 12px;
+  color: white;
+  background-color: #73932a;
+  /* Fallback */
+  background: -webkit-linear-gradient(to bottom, #85aa2f, #73932a);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background: -moz-linear-gradient(to bottom, #85aa2f, #73932a);
+  /* FF3.6 */
+  background: -ms-linear-gradient(to bottom, #85aa2f, #73932a);
+  /* IE10 */
+  background: -o-linear-gradient(to bottom, #85aa2f, #73932a);
+  /* Opera 11.10+ */
+  background: linear-gradient(to bottom, #85aa2f, #73932a);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#85aa2f', EndColorStr='#73932a');
+  text-align: center;
+  width: 300px;
+  font-weight: bold;
+  margin: 40px auto;
+  cursor: pointer; }
+  .Load-More:hover {
+    background: #73932a; }
 
 .Top-Five .Popular {
   border-left: 5px solid #d0ae1d; }
@@ -1591,6 +1628,18 @@ fieldset.only {
     float: right;
     padding-left: 25px;
     background: url(../../templates/journal/images/views.png) left center no-repeat; }
+
+.Rss {
+  display: block;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  font-size: 18px;
+  cursor: pointer !important;
+  z-index: 10; }
+  .Rss span {
+    color: #7c7e80 !important;
+    cursor: pointer !important; }
 
 #Footer-Pusher {
   clear: both;
@@ -1720,11 +1769,13 @@ header.Site-Header {
         font-size: 31px; }
     header.Site-Header .Site-Logo a {
       position: absolute;
-      top: 50px;
+      top: 60px;
       width: 100%;
-      font-size: 22px !important;
+      font-size: 14px !important;
+      font-weight: bold !important;
       text-align: center;
-      color: #e43f3f;
+      color: #a02828;
+      text-transform: uppercase;
       opacity: 0;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
       filter: alpha(opacity=0);
@@ -1736,7 +1787,10 @@ header.Site-Header {
       transition-duration: 0.2s; }
       header.Site-Header .Site-Logo a:before {
         color: #000000;
-        padding-right: 10px; }
+        padding-right: 10px;
+        font-size: 22px;
+        position: relative;
+        top: 3px; }
     header.Site-Header .Site-Logo:hover {
       background-image: none; }
       header.Site-Header .Site-Logo:hover h2 {
@@ -1816,7 +1870,7 @@ header.Site-Header {
 .Site-Navigation.Primary {
   margin-top: 20px;
   padding-top: 24px;
-  padding-bottom: 18px;
+  padding-bottom: 24px;
   border-top: 1px solid #e9ebec;
   border-bottom: 1px solid #e9ebec;
   margin-bottom: 20px; }
@@ -1830,22 +1884,33 @@ header.Site-Header {
     padding-right: 0; }
   .Site-Navigation.Primary .Search-Form {
     width: auto;
-    float: right; }
+    float: right;
+    position: relative; }
     .Site-Navigation.Primary .Search-Form form {
       margin-top: -3px; }
       .Site-Navigation.Primary .Search-Form form #mod-search-searchword {
-        width: 150px;
+        width: 0px;
+        background: none;
         float: left;
+        cursor: text !important;
+        border: 1px solid #e9ebec;
+        position: absolute;
+        right: 0px;
         opacity: 0;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
         filter: alpha(opacity=0); }
         .Site-Navigation.Primary .Search-Form form #mod-search-searchword:focus {
+          width: 180px;
+          border: 1px solid #b7b7b7;
           opacity: 1;
           -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
           filter: alpha(opacity=100); }
       .Site-Navigation.Primary .Search-Form form input[type='image'] {
         border: 0;
-        background-color: transparent; }
+        background-color: transparent;
+        padding: 6px 7px;
+        position: absolute;
+        right: 0px; }
     .Site-Navigation.Primary .Search-Form:hover #mod-search-searchword {
       -webkit-transition-property: opacity;
       -moz-transition-property: opacity;
@@ -1853,6 +1918,13 @@ header.Site-Header {
       -webkit-transition-duration: 0.5s;
       -moz-transition-duration: 0.5s;
       transition-duration: 0.5s;
+      -webkit-transition-property: width;
+      -moz-transition-property: width;
+      transition-property: width;
+      -webkit-transition-duration: 0.3s;
+      -moz-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      width: 180px;
       opacity: 1;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
       filter: alpha(opacity=100); }
@@ -1873,7 +1945,7 @@ ul.Pagination li a {
     border-color: #a02828;
     color: white; }
 ul.Pagination li span {
-  background-color: black;
+  background-color: #4a4f5a;
   color: white; }
 
 footer[role='contentinfo'] {
@@ -1976,6 +2048,7 @@ a.Color-Blue {
   padding: 7px 10px;
   border-radius: 4px;
   border: 1px solid #efeff3;
+  z-index: 1000000;
   background-color: white;
   top: -50px; }
   #Scroll-Top:hover {
@@ -2010,6 +2083,10 @@ img {
 
 #searchForm .phrases, #searchForm .only {
   display: none; }
+
+button[name='Search'] {
+  position: relative;
+  margin-left: 20px; }
 
 .acyfield_email.acy_requiredField input {
   width: 100% !important; }

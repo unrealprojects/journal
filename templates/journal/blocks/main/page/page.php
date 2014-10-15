@@ -14,7 +14,7 @@
 
                 <?php  if( $this->countModules('tags') ) : ?>
                     <div class="Tags">
-                        <h3>Рубрики журнала</h3>
+                        <h3>Рубрики</h3>
                         <jdoc:include type="modules" name="tags" />
                     </div>
                 <?php endif;?>
