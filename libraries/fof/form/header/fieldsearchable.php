@@ -62,7 +62,7 @@ class FOFFormHeaderFieldsearchable extends FOFFormHeaderField
 	 */
 	protected function getButtons()
 	{
-		$buttonclass = $this->element['buttonclass'] ? (string) $this->element['buttonclass'] : 'btn hasTip hasTooltip';
+		$buttonclass = $this->element['buttonclass'] ? (string) $this->element['buttonclass'] : 'btn hasTip ';
 		$buttonsState = strtolower($this->element['buttons']);
 		$show_buttons = !in_array($buttonsState, array('no', 'false', '0'));
 

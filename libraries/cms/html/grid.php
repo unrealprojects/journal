@@ -47,7 +47,7 @@ abstract class JHtmlGrid
 
 		if ($toggle)
 		{
-			return '<a class="grid_' . $bool . ' hasTooltip" title="' . $title . '" rel="{id:\'cb' . $i . '\', task:\'' . $task
+			return '<a class="grid_' . $bool . ' " title="' . $title . '" rel="{id:\'cb' . $i . '\', task:\'' . $task
 				. '\'}" href="#toggle"></a>';
 		}
 		else
@@ -90,7 +90,7 @@ abstract class JHtmlGrid
 		}
 
 		$html = '<a href="#" onclick="Joomla.tableOrdering(\'' . $order . '\',\'' . $direction . '\',\'' . $task . '\');return false;"'
-			. ' class="hasTooltip" title="' . JHtml::tooltipText(($tip ? $tip : $title), 'JGLOBAL_CLICK_TO_SORT_THIS_COLUMN') . '">';
+			. ' class="" title="' . JHtml::tooltipText(($tip ? $tip : $title), 'JGLOBAL_CLICK_TO_SORT_THIS_COLUMN') . '">';
 
 		if (isset($title['0']) && $title['0'] == '<')
 		{
@@ -126,7 +126,7 @@ abstract class JHtmlGrid
 	{
 		JHtml::_('bootstrap.tooltip');
 
-		return '<input type="checkbox" name="' . $name . '" value="" class="hasTooltip" title="' . JHtml::tooltipText($tip) . '" onclick="' . $action . '" />';
+		return '<input type="checkbox" name="' . $name . '" value="" class="" title="' . JHtml::tooltipText($tip) . '" onclick="' . $action . '" />';
 	}
 
 	/**
@@ -296,7 +296,7 @@ abstract class JHtmlGrid
 			$date = JHtml::_('date', $row->checked_out_time, JText::_('DATE_FORMAT_LC1'));
 			$time = JHtml::_('date', $row->checked_out_time, 'H:i');
 
-			$hover = '<span class="editlinktip hasTooltip" title="' . JHtml::tooltipText('JLIB_HTML_CHECKED_OUT', $row->editor) . '<br />' . $date . '<br />'
+			$hover = '<span class="editlinktip " title="' . JHtml::tooltipText('JLIB_HTML_CHECKED_OUT', $row->editor) . '<br />' . $date . '<br />'
 				. $time . '">';
 		}
 

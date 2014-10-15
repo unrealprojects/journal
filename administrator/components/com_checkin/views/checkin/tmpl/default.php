@@ -21,12 +21,12 @@ $listDirn = $this->escape($this->state->get('list.direction'));
 	<div id="j-main-container" class="span10">
 		<div id="filter-bar" class="btn-toolbar">
 			<div class="filter-search btn-group pull-left">
-				<input type="text" name="filter_search" id="filter_search" placeholder="<?php echo JText::_('JSEARCH_FILTER'); ?>" value="<?php echo $this->escape($this->state->get('filter.search')); ?>" class="hasTooltip" title="<?php echo JHtml::tooltipText('COM_CHECKIN_FILTER_SEARCH_DESC'); ?>" />
+				<input type="text" name="filter_search" id="filter_search" placeholder="<?php echo JText::_('JSEARCH_FILTER'); ?>" value="<?php echo $this->escape($this->state->get('filter.search')); ?>" class="" title="<?php echo JHtml::tooltipText('COM_CHECKIN_FILTER_SEARCH_DESC'); ?>" />
 			</div>
 			<div class="btn-group pull-left">
-				<button type="submit" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>">
+				<button type="submit" class="btn " title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>">
 					<i class="icon-search"></i></button>
-				<button type="button" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.id('filter_search').value='';this.form.submit();">
+				<button type="button" class="btn " title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.id('filter_search').value='';this.form.submit();">
 					<i class="icon-remove"></i></button>
 			</div>
 		</div>
