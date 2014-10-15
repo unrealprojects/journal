@@ -13,7 +13,7 @@ JHtml::_('bootstrap.tooltip');
 
 ?>
 
-<ul class="breadcrumb<?php echo $moduleclass_sfx; ?>">
+<ul class="Breadcrumb<?php echo $moduleclass_sfx; ?>">
 	<?php
 	if ($params->get('showHere', 1))
 	{

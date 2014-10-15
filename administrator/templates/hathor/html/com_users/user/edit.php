@@ -91,7 +91,7 @@ $fieldsets = $this->form->getFieldsets();
 		<?php echo JHtml::_('sliders.panel', JText::_('COM_USERS_USER_TWO_FACTOR_AUTH'), 'twofactorauth'); ?>
 		<div class="control-group">
 			<div class="control-label">
-				<label id="jform_twofactor_method-lbl" for="jform_twofactor_method" class=""
+				<label id="jform_twofactor_method-lbl" for="jform_twofactor_method" class="hasTooltip"
 					   title="<strong><?php echo JText::_('COM_USERS_USER_FIELD_TWOFACTOR_LABEL') ?></strong><br/><?php echo JText::_('COM_USERS_USER_FIELD_TWOFACTOR_DESC') ?>">
 					<?php echo JText::_('COM_USERS_USER_FIELD_TWOFACTOR_LABEL'); ?>
 				</label>

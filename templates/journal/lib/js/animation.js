@@ -247,8 +247,6 @@ upf.Page.Headers = function(){
 
     if(location.pathname.split('/')[2] !==undefined && location.pathname.split('/')[2].length>2){
         $('.Top-Five-Header h3').text('Интересные');
-        $('.Dropdown').remove();
-
     }
 
     // Links in Categories
@@ -422,14 +420,13 @@ upf.Actions.Pagination = function(){
                 }
 
 
-                var link = Chanks.join('/') + '?tmpl=component'
+                var link = Chanks.join('/') + '?tmpl=component';
                 //console.log(link);
 
 
                 $.ajax({
                     url: link,
                     beforeSend:function(){
-
                         $('.Load-More').before('<div class="Icon-Loading"></div>');
                     },
                     success:function(Data)
@@ -525,7 +522,7 @@ upf.Tools.Dropdown = function(){
 
     /*** Переключение элементов ***/
     $('.Dropdown-Content .Icon:nth-of-type(2)').click(function(){
-        $('.Top-Five-Header h3').text('Топ 5 за месяц');
+        $('.Top-Five-Header h3').text('Топ 5 за ');
         $('.Popular>ul').hide();
         $('.Popular>ul:nth-of-type(2)').show();
         return false;
@@ -533,7 +530,6 @@ upf.Tools.Dropdown = function(){
 
     /*** Переключение элементов ***/
     $('.Dropdown-Content .Icon:nth-of-type(3)').click(function(){
-        $('.Top-Five-Header h3').text('Топ 5 за неделю');
         $('.Popular>ul').hide();
         $('.Popular>ul:nth-of-type(3)').show();
         return false;

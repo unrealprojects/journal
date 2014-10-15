@@ -70,7 +70,7 @@ class JFormFieldSpacer extends JFormField
 			$text = $this->translateLabel ? JText::_($text) : $text;
 
 			// Build the class for the label.
-			$class = !empty($this->description) ? '' : '';
+			$class = !empty($this->description) ? 'hasTooltip' : '';
 			$class = $this->required == true ? $class . ' required' : $class;
 
 			// Add the opening label tag and main attributes attributes.

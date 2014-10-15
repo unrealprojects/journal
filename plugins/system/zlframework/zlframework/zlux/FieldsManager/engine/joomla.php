@@ -64,7 +64,7 @@ class zluxFieldsEngineJoomla extends zluxFieldsEngine
 		$desc = $fld->get('desc');
 
 		// Build the class for the label.
-		$class = !empty($desc) ? '' : '';
+		$class = !empty($desc) ? 'hasTooltip' : '';
 		$class = $fld->get('required') ? $class . ' required' : $class;
 		// $class = !empty($this->labelclass) ? $class . ' ' . $this->labelclass : $class;
 

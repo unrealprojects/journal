@@ -66,7 +66,7 @@ $assoc		= JLanguageAssociations::isEnabled();
 			</div>
 			<div class="btn-group pull-left">
 				<button type="submit" class="btn " title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>"><i class="icon-search"></i></button>
-				<button type="button" class="btn " title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.id('filter_search').value='';this.form.submit();"><i class="icon-remove"></i></button>
+				<button type="button" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.id('filter_search').value='';this.form.submit();"><i class="icon-remove"></i></button>
 			</div>
 			<div class="btn-group pull-right hidden-phone">
 				<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
@@ -149,7 +149,7 @@ $assoc		= JLanguageAssociations::isEnabled();
 						}
 						elseif (!$saveOrder)
 						{
-							$iconClass = ' inactive tip-top " title="' . JHtml::tooltipText('JORDERINGDISABLED');
+							$iconClass = ' inactive tip-top hasTooltip" title="' . JHtml::tooltipText('JORDERINGDISABLED');
 						}
 						?>
 						<span class="sortable-handler<?php echo $iconClass ?>">

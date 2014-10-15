@@ -40,7 +40,7 @@ class JHtmlTemplates
 			if (file_exists($preview))
 			{
 				$preview = $baseUrl . '/templates/' . $template . '/template_preview.png';
-				$html = '<a href="' . $preview . '" class="thumbnail pull-left modal " title="' . JHtml::tooltipText('COM_TEMPLATES_CLICK_TO_ENLARGE') . '">' . $html . '</a>';
+				$html = '<a href="' . $preview . '" class="thumbnail pull-left modal hasTooltip" title="' . JHtml::tooltipText('COM_TEMPLATES_CLICK_TO_ENLARGE') . '">' . $html . '</a>';
 			}
 		}
 

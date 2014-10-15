@@ -71,7 +71,7 @@ JFactory::getDocument()->addScriptDeclaration($script);
 							?>
 						</h3>
 						<div class="info-labels">
-							<span class="label " title="<?php echo JHtml::tooltipText('COM_MODULES_FIELD_CLIENT_ID_LABEL'); ?>">
+							<span class="label hasTooltip" title="<?php echo JHtml::tooltipText('COM_MODULES_FIELD_CLIENT_ID_LABEL'); ?>">
 								<?php echo $this->item->client_id == 0 ? JText::_('JSITE') : JText::_('JADMINISTRATOR'); ?>
 							</span>
 						</div>

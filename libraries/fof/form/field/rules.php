@@ -508,7 +508,7 @@ class FOFFormFieldRules extends JFormFieldRules implements FOFFormField
             {
                 $html[] = '<tr>';
                 $html[] = '<td headers="actions-th' . $group->value . '">';
-                $html[] = '<label for="' . $this->id . '_' . $action->name . '_' . $group->value . '" class="" title="'
+                $html[] = '<label for="' . $this->id . '_' . $action->name . '_' . $group->value . '" class="hasTooltip" title="'
                     . htmlspecialchars(JText::_($action->title) . ' ' . JText::_($action->description), ENT_COMPAT, 'UTF-8') . '">';
                 $html[] = JText::_($action->title);
                 $html[] = '</label>';

@@ -358,7 +358,7 @@ if ($this->type == 'image')
 		<div class="modal-body">
 			<div id="template-manager-css" class="form-horizontal">
 				<div class="control-group">
-					<label for="new_name" class="control-label " title="<?php echo JHtml::tooltipText('COM_TEMPLATES_TEMPLATE_NEW_NAME_DESC'); ?>"><?php echo JText::_('COM_TEMPLATES_TEMPLATE_NEW_NAME_LABEL')?></label>
+					<label for="new_name" class="control-label hasTooltip" title="<?php echo JHtml::tooltipText('COM_TEMPLATES_TEMPLATE_NEW_NAME_DESC'); ?>"><?php echo JText::_('COM_TEMPLATES_TEMPLATE_NEW_NAME_LABEL')?></label>
 					<div class="controls">
 						<input class="input-xlarge" type="text" id="new_name" name="new_name"  />
 					</div>
@@ -383,7 +383,7 @@ if ($this->type == 'image')
 			<div class="modal-body">
 				<div id="template-manager-css" class="form-horizontal">
 					<div class="control-group">
-						<label for="new_name" class="control-label " title="<?php echo JHtml::tooltipText(JText::_('COM_TEMPLATES_NEW_FILE_NAME')); ?>"><?php echo JText::_('COM_TEMPLATES_NEW_FILE_NAME')?></label>
+						<label for="new_name" class="control-label hasTooltip" title="<?php echo JHtml::tooltipText(JText::_('COM_TEMPLATES_NEW_FILE_NAME')); ?>"><?php echo JText::_('COM_TEMPLATES_NEW_FILE_NAME')?></label>
 						<div class="controls">
 							<input class="input-xlarge" type="text" name="new_name" required />
 						</div>
@@ -459,7 +459,7 @@ if ($this->type == 'image')
 					<fieldset>
 						<input type="hidden" class="address" name="address" />
 						<div class="control-group">
-							<label for="new_name" class="control-label " title="<?php echo JHtml::tooltipText('COM_TEMPLATES_FILE_NEW_NAME_DESC'); ?>"><?php echo JText::_('COM_TEMPLATES_FILE_NEW_NAME_LABEL')?></label>
+							<label for="new_name" class="control-label hasTooltip" title="<?php echo JHtml::tooltipText('COM_TEMPLATES_FILE_NEW_NAME_DESC'); ?>"><?php echo JText::_('COM_TEMPLATES_FILE_NEW_NAME_LABEL')?></label>
 							<div class="controls">
 								<input type="text" id="new_name" name="new_name" required />
 							</div>
@@ -517,12 +517,12 @@ if ($this->type == 'image')
 			<div class="modal-body">
 				<div id="template-manager-css" class="form-horizontal">
 					<div class="control-group">
-						<label for="height" class="control-label " title="<?php echo JHtml::tooltipText('COM_TEMPLATES_IMAGE_HEIGHT'); ?>"><?php echo JText::_('COM_TEMPLATES_IMAGE_HEIGHT')?></label>
+						<label for="height" class="control-label hasTooltip" title="<?php echo JHtml::tooltipText('COM_TEMPLATES_IMAGE_HEIGHT'); ?>"><?php echo JText::_('COM_TEMPLATES_IMAGE_HEIGHT')?></label>
 						<div class="controls">
 							<input class="input-xlarge" type="number" name="height" placeholder="<?php echo $this->image['height']; ?> px" required />
 						</div>
 						<br />
-						<label for="width" class="control-label " title="<?php echo JHtml::tooltipText('COM_TEMPLATES_IMAGE_WIDTH'); ?>"><?php echo JText::_('COM_TEMPLATES_IMAGE_WIDTH')?></label>
+						<label for="width" class="control-label hasTooltip" title="<?php echo JHtml::tooltipText('COM_TEMPLATES_IMAGE_WIDTH'); ?>"><?php echo JText::_('COM_TEMPLATES_IMAGE_WIDTH')?></label>
 						<div class="controls">
 							<input class="input-xlarge" type="number" name="width" placeholder="<?php echo $this->image['width']; ?> px" required />
 						</div>

@@ -1,6 +1,6 @@
 <div class="page">
 
-    <?php  if ($this->countModules('journal_header')) : ?>
+    <?php  if ($this->countModules('breadcrumbs')) : ?>
         <jdoc:include type="modules" name="breadcrumbs" />
     <?php endif; ?>
 

@@ -7,9 +7,7 @@
     <link rel="icon" href="/templates/journal/images/favicon.ico"/>
     <meta name="google-translate-customization" content="ccff3993fba71849-78996be6e1aca67a-g90d82ac7a3fbd458-8"/>
 
-    <!--[if lt IE 9]>
-    <script src="/templates/journal/lib/js/ie8/html5shiv.js" type="text/javascript"></script>
-    <![endif]-->
+
     <!--[if lt IE 9]>
     <script src="/templates/journal/lib/js/ie8/respond.js" type="text/javascript"></script>
     <![endif]-->
@@ -77,7 +75,6 @@
     <!--[if lt IE 10]>
     <script src="/templates/journal/lib/js/ie8/jquery.placeholder.js" type="text/javascript"></script>
     <![endif]-->
-
 </body>
 
 </html>

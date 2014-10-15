@@ -476,7 +476,7 @@ abstract class JHtmlFilter
 			// Start date filter.
 			$attribs['class'] = 'input-medium';
 			$html .= '<li class="filter-date' . $classSuffix . '">';
-			$html .= '<label for="filter_date1" class="" title ="' . JText::_('COM_FINDER_FILTER_DATE1_DESC') . '">';
+			$html .= '<label for="filter_date1" class="hasTooltip" title ="' . JText::_('COM_FINDER_FILTER_DATE1_DESC') . '">';
 			$html .= JText::_('COM_FINDER_FILTER_DATE1');
 			$html .= '</label>';
 			$html .= '<br />';
@@ -488,7 +488,7 @@ abstract class JHtmlFilter
 
 			// End date filter.
 			$html .= '<li class="filter-date' . $classSuffix . '">';
-			$html .= '<label for="filter_date2" class="" title ="' . JText::_('COM_FINDER_FILTER_DATE2_DESC') . '">';
+			$html .= '<label for="filter_date2" class="hasTooltip" title ="' . JText::_('COM_FINDER_FILTER_DATE2_DESC') . '">';
 			$html .= JText::_('COM_FINDER_FILTER_DATE2');
 			$html .= '</label>';
 			$html .= '<br />';
