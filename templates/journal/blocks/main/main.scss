@@ -758,3 +758,10 @@ button[name='Search'] {
 .acyfield_email.acy_requiredField input{
     width: 100% !important;
 }
+
+.Icon-Loading{
+    width:36px;
+    height: 36px;
+    background: url(../../templates/journal/images/loading.gif) no-repeat;
+    background-size: 100%;
+}

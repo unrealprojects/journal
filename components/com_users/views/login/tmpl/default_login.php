@@ -41,7 +41,7 @@ JHtml::_('behavior.keepalive');
 		<fieldset class="well">
 			<?php foreach ($this->form->getFieldset('credentials') as $field) : ?>
 				<?php if (!$field->hidden) : ?>
-					<div class="control-group">
+					<div class="Control-Group">
 						<div class="control-label">
 							<?php echo $field->label; ?>
 						</div>
@@ -53,7 +53,7 @@ JHtml::_('behavior.keepalive');
 			<?php endforeach; ?>
 
 			<?php if ($this->tfa): ?>
-				<div class="control-group">
+				<div class="Control-Group">
 					<div class="control-label">
 						<?php echo $this->form->getField('secretkey')->label; ?>
 					</div>
@@ -64,7 +64,7 @@ JHtml::_('behavior.keepalive');
 			<?php endif; ?>
 
 			<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
-			<div  class="control-group">
+			<div  class="Control-Group">
 				<div class="control-label"><label><?php echo JText::_('COM_USERS_LOGIN_REMEMBER_ME') ?></label></div>
 				<div class="controls"><input id="remember" type="checkbox" name="remember" class="inputbox" value="yes"/></div>
 			</div>
