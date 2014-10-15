@@ -19,7 +19,7 @@ class JConfig {
 	public $dbprefix = 'f8ad7_';
 	public $live_site = '';
 	public $secret = 'nyhzdYWv5IId9YVp';
-	public $gzip = '0';
+	public $gzip = '1';
 	public $error_reporting = 'default';
 	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
 	public $ftp_host = '';
