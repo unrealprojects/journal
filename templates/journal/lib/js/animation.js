@@ -369,6 +369,7 @@ upf.Start.CategoryLinks = function(){
                     SiteSection         ==      'articles' ||
                     SiteSection         ==      'libs'  ||
                     SiteSection         ==      'events'  ||
+                    SiteSection         ==      'video'  ||
                     SiteSection         ==      'medication'  ||
                     SiteSection         ==      'terminology' ||
                     SiteSection         ==      'partners') && SiteSectionType != 'tag')
