@@ -9,15 +9,10 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-// retrieve credentials avoiding cache
-$table = $this->app->table->get('extensions', '#__');
-$table->key = 'extension_id';
-
-$component = $table->get(JComponentHelper::getComponent('com_zoolanders')->id);
-$data = $this->app->parameter->create($component->params);
-
-$user = $data->find('zoolanders.username', '');
-$pass = $data->find('zoolanders.password', false);
+// get values
+$data = $this->app->zl->getConfig('zoolanders');
+$user = $data->get('username', '');
+$pass = $data->get('password', false);
 $pass = $pass ? $this->app->zlfw->crypt($pass, 'decrypt') : '';
 
 ?>

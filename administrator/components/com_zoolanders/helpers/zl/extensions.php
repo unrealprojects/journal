@@ -151,7 +151,7 @@ class zlHelperExtensions extends AppHelper {
 			$url = 'https://www.zoolanders.com/index.php?option=com_zoo&controller=zooextensions&task=getExtList&format=raw';
 			$url .= $this->_getCredentialsParams();
 
-			$file = $this->app->path->path('tmp:') . '/zlextensions.json';
+			$file = JPATH_SITE . '/tmp/zlextensions.json';
 			$this->download($url, $file);
 
 			$json = JFile::read($file);
@@ -428,7 +428,7 @@ class zlHelperExtensions extends AppHelper {
 				$url .= '&task=download&controller=zooextensions';
 
 				// set path
-				$file = JPath::clean($this->app->path->path('tmp:') . '/'.str_replace(' ', '_', $ext->title).'_v'.str_replace(' ', '_', $ext->version).'.zip');
+				$file = JPath::clean(JPATH_SITE . '/tmp/'.str_replace(' ', '_', $ext->title).'_v'.str_replace(' ', '_', $ext->version).'.zip');
 
 				// download
 				$success = $this->download($url, $file);
@@ -547,7 +547,7 @@ class zlHelperExtensions extends AppHelper {
 			$url .= '&task=download&controller=zooextensions';
 
 			// set path
-			$file = JPath::clean($this->app->path->path('tmp:') . '/zl_'.$ext->name.'.zip');
+			$file = JPath::clean(JPATH_SITE . '/tmp/zl_'.$ext->name.'.zip');
 
 			// download
 			$success = $this->download($url, $file);
@@ -726,7 +726,7 @@ class zlHelperExtensions extends AppHelper {
 		$response = array('errors' => array(), 'notices' => array());
 
 		// Unpack the package
-		$dir = $this->app->path->path('tmp:') . '/' . uniqid('zoolanders_');
+		$dir = JPATH_SITE . '/tmp/' . uniqid('zoolanders_');
 		$success = JArchive::extract($file, $dir);
 
 		if(!$success) {
@@ -863,8 +863,6 @@ class zlHelperExtensions extends AppHelper {
 			curl_setopt($ch, CURLOPT_HEADER, true);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($ch, CURLOPT_SSLVERSION, 3);
-			curl_setopt($ch, CURLOPT_SSL_CIPHER_LIST, 'ALL');
 			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
 			curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 
@@ -898,8 +896,6 @@ class zlHelperExtensions extends AppHelper {
 		curl_setopt($ch, CURLOPT_HEADER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($ch, CURLOPT_SSLVERSION, 3);
-		curl_setopt($ch, CURLOPT_SSL_CIPHER_LIST, 'ALL');
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		 

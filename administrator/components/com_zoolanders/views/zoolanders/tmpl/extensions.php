@@ -40,7 +40,6 @@ $groups[] = array('name' => 'elements', 'list' => $elements);
 $groups[] = array('name' => 'extensions', 'list' => $extensions);
 $groups[] = array('name' => 'apps', 'list' => $apps);
 
-$warning = $this->app->zlfw->path->checkSystemPaths();
 ?>
 
 <div id="zl-extensions">
@@ -48,13 +47,8 @@ $warning = $this->app->zlfw->path->checkSystemPaths();
 	<!-- menu -->
 	<?php echo $this->partial('zlmenu'); ?>
 
-	<!-- Messages, warnings, notices: -->
-	<?php if($warning):?>
-		<div class="uk-alert uk-alert-danger" data-uk-alert>
-			<p><span class="uk-icon-exclamation-triangle"></span> <?php echo $warning; ?></p>
-		</div>
 	<!-- if no extensions, abort -->
-	<?php elseif(empty($all_exts)): ?>
+	<?php if(empty($all_exts)) : ?>
 		<div class="uk-text-center uk-margin-large-top">
 			<?php echo JText::_('PLG_ZLFRAMEWORK_EXT_EMPTY_LIST'); ?>
 		</div>
@@ -122,9 +116,8 @@ $warning = $this->app->zlfw->path->checkSystemPaths();
 							<div class="zx-x-version uk-width-2-6 uk-width-medium-1-10 uk-text-center">
 							<?php
 								if($ext->title == 'ZL Framework') {
-									$badge = 'uk-badge-success';
-									$content = $ext->installed->version;
-									$title = '';
+									$badge = false;
+									$content = '---';
 								} else if($ext->state == 'uptodate') {
 									$badge = 'uk-badge-success';
 									$title = JText::sprintf('PLG_ZLFRAMEWORK_EXT_UPTODATE_TIP', $ext->title, $ext->version);
@@ -178,7 +171,7 @@ $warning = $this->app->zlfw->path->checkSystemPaths();
 							<div class="zx-x-actions uk-width-1-1 uk-width-medium-4-10">
 
 								<?php if (!isset($ext->deprecated)) : ?>
-
+									
 								<!-- install/update button -->
 								<?php if($ext->title == 'ZL Framework') : ?>
 								<button type="button" class="<?php echo $btn_class; ?>" disabled>
@@ -217,7 +210,7 @@ $warning = $this->app->zlfw->path->checkSystemPaths();
 								<?php endif; ?>
 
 								<!-- status -->
-								<?php if($ext->type == 'extension' && $ext->state != 'uninstalled' && $ext->title != 'ZL Framework' && $ext->name != 'zlmanager' && $ext->title != 'ZOOlanders') :
+								<?php if($ext->type == 'extension' && $ext->state != 'uninstalled' && $ext->title != 'ZL Framework' && $ext->name != 'zlmanager' && $ext->title != 'ZOOlanders') : 
 
 									$state = $ext->installed->enabled;
 									$title = JText::_($state ? 'PLG_ZLFRAMEWORK_ENABLED' : 'PLG_ZLFRAMEWORK_DISABLED');
@@ -247,7 +240,7 @@ $warning = $this->app->zlfw->path->checkSystemPaths();
 								<?php endif; ?>
 
 							</div>
-
+							
 						</div>
 					</td>
 				</tr>

@@ -15,10 +15,18 @@ window.upf.Actions.Login.Expanded = false;
 
 window.upf.Page = {};
 (function($){
-var MasonryObj;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    Array.prototype.clean = function(deleteValue) {
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] == deleteValue) {
+                this.splice(i, 1);
+                i--;
+            }
+        }
+        return this;
+    };
 
 
 
@@ -34,15 +42,27 @@ upf.Start.VerticalGrid = function(){
         MasonryObj = new Masonry('.items .Grid',{
             itemSelector: Selectors
         });
+
+
+        // Inner Related
+        Selectors = '.pos-item';
+        if($('.element-relateditems').length){
+            MasonryObjRelated = new Masonry('.element-relateditems',{
+                itemSelector: Selectors
+            });
+        }
+        function ReloadMasonry(){
+            MasonryObj.reloadItems();
+            MasonryObj.layout();
+        }
+        setTimeout(ReloadMasonry,1200)
     }
 
-    // Inner Related
-    Selectors = '.pos-item';
-    if($('.element-relateditems').length){
-        MasonryObjRelated = new Masonry('.element-relateditems',{
-            itemSelector: Selectors
-        });
-    }
+
+
+
+
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -196,6 +216,7 @@ upf.Page.Headers = function(){
         }
 
         if(SiteSection         ==      'authors'  ||
+            SiteSection         ==      'video'  ||
            SiteSection         ==      'journals' ||
            SiteSection         ==      'component'){
             $('#yoo-zoo').addClass('Item-Extended');
@@ -211,7 +232,7 @@ upf.Page.Headers = function(){
                 SiteSection         ==      'articles' ||
                 SiteSection         ==      'libs'  ||
 
-                SiteSection         ==      'video'  ||
+
                 SiteSection         ==      'events'  ||
                 SiteSection         ==      'medication'  ||
                 SiteSection         ==      'terminology' ||
@@ -260,6 +281,20 @@ upf.Page.Headers = function(){
     if(location.pathname        ==      '/archive'){
         $('#yoo-zoo .heading h1.title').html('Архив Новостей');
     }
+
+    if(SiteSection         ==      'item'){
+     $Body.attr('data-alias','item');
+
+        $('.Tags').remove();
+
+        $('.Component').after($('.Before-Component').detach().toggleClass('Row-Close Row-Open'));
+        $('.Component').toggleClass('Row-Close Row-Open');
+            if($('.pos-content iframe').length>0){
+                $('.pos-title').remove();
+            }
+        $('.Before-Component').show();
+    }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -275,6 +310,7 @@ upf.Page.Headers = function(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 4 LogIn
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 upf.Actions.Login = function(){
 
     // Default Variables
@@ -393,10 +429,24 @@ upf.Actions.Pagination = function(){
         return n % 1 === 0;
     }
     var Chanks = location.pathname.split('/');
-    var Page = Chanks[Chanks.length-1];
-    if($('.Component .items').length>0){
+
+
+    var Page = 1;
+    if(isInt(Chanks[Chanks.length-1]) && Chanks[Chanks.length-1]>0){
+        Page = Chanks[Chanks.length-1];
+        console.log(Chanks[Chanks.length-1]);
+        delete Chanks[Chanks.length-1];
+    }
+    Chanks=Chanks.clean("");
+
+
+
+    if($('.Component .items').length>0 && $('.Component .items .teaser-item').length>29 ){
         $('.Component').append('<div class="Load-More">Показать еще</div>');
     }
+
+
+
     $('.Load-More').click(function(){
         //
         if(!Ajax){
@@ -404,27 +454,15 @@ upf.Actions.Pagination = function(){
             Ajax   = true;
 
 
-                if(isInt(Page)){
-                    if(Chanks[Chanks.length-1].length){
-                         Page = Chanks[Chanks.length-1].toInt() + 1;
-                         delete Chanks[Chanks.length-1];
-                        Chanks[Chanks.length-1] = Page;
-                    }else if(Page){
-                        Chanks[Chanks.length-1] = Page;
-                        Page++;
-                    }else{
-                        Page = 2;
-                        Chanks[Chanks.length-1] = Page;
-                    }
-                }else{
-                    Page = 2;
-                    Chanks[Chanks.length] = Page;
-
-                }
+            Page++;
+            var link = '';
+            if(Chanks.length>0){
+                link = Chanks.join('/') + '/' + Page +'?tmpl=component';
+            }else{
+                 link =   Page +'?tmpl=component';
+            }
 
 
-                var link = Chanks.join('/') + '?tmpl=component';
-                //console.log(link);
 
 
                 $.ajax({
@@ -525,7 +563,7 @@ upf.Tools.Dropdown = function(){
 
     /*** Переключение элементов ***/
     $('.Dropdown-Content .Icon:nth-of-type(2)').click(function(){
-        $('.Top-Five-Header h3').text('Топ 5 за ');
+        $('.Top-Five-Header h3').text('Топ 5 за месяц');
         $('.Popular>ul').hide();
         $('.Popular>ul:nth-of-type(2)').show();
         return false;
@@ -533,16 +571,22 @@ upf.Tools.Dropdown = function(){
 
     /*** Переключение элементов ***/
     $('.Dropdown-Content .Icon:nth-of-type(3)').click(function(){
+        $('.Top-Five-Header h3').text('Топ 5 за неделю');
         $('.Popular>ul').hide();
         $('.Popular>ul:nth-of-type(3)').show();
         return false;
     });
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Click Able To Block
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 upf.Actions.BlockClickAble = function(){
     var SelectorItem = '.teaser-item,.zoo-itempro-default li',
         SelectorLink = '.pos-subtitle a, .title a';
@@ -554,7 +598,26 @@ upf.Actions.BlockClickAble = function(){
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Click Able To Block
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Hide Images In Teaser
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    upf.Actions.HideImagesInTeaser = function(){
+            var SelectorItem = '.teaser-item .pos-meta',
+            SelectorLink = '.pos-subtitle a, .title a';
+
+        $('.teaser-item').each(function(){
+            if(!$('.pos-meta',this).length){
+                $('.pos-title',this).hide();
+            }
+        });
+    }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -574,6 +637,7 @@ $(document).ready(function(){
     upf.Actions.Login();
     upf.Actions.Pagination();
     upf.Actions.BlockClickAble();
+    upf.Actions.HideImagesInTeaser();
 
     upf.Start.CategoryLinks();
     upf.Start.CategoryLabels();
@@ -620,13 +684,3 @@ upf.Page.Headers();
 
 })(jQuery);
 
-
-var head = document.getElementsByTagName('head')[0],
-    style = document.createElement('style');
-style.type = 'text/css';
-
-style.styleSheet.cssText = ':before,:after{content:none !important';
-head.appendChild(style);
-setTimeout(function(){
-    head.removeChild(style);
-}, 0);

@@ -39,29 +39,38 @@ JHtml::_('bootstrap.tooltip');
         $show_last = $params->get('showLast', 1);
 
         // Generate the trail
-        foreach ($list as $key => $item) :
-        if ($key != $last_item_key)
-        {
-            // Render all but last item - along with separator
-            echo '<li class="Breadcrumb-Item Active">';
-            if (!empty($item->link))
-            {
-                echo '<a href="' . $item->link . '" class="pathway">' . $item->name . '</a>';
-            }
-            else
-            {
-                echo '<span>' . $item->name . '</span>';
+        foreach ($list as $key => $item) {
+
+
+            //Cut words
+            $Words = explode(' ',$item->name);
+            if(count($Words)>8){
+                $item->name = implode (array_slice( $Words, 0, 8 ) , ' ');
+                $item->name = $item->name . ' ...';
             }
 
-            echo '</li>';
-        }
-        elseif ($show_last)
-        {
-            // Render last item if reqd.
-            echo '<li class="Breadcrumb-Item">';
-            echo '<span>' . $item->name . '</span>';
-            echo '</li>';
-        }
-        endforeach; ?>
+            if ($key != $last_item_key)
+            {
+                // Render all but last item - along with separator
+                echo '<li class="Breadcrumb-Item Active">';
+                if (!empty($item->link))
+                {
+                    echo '<a href="' . $item->link . '" class="pathway">' . $item->name . '</a>';
+                }
+                else
+                {
+                    echo '<span>' . $item->name . '</span>';
+                }
+
+                echo '</li>';
+            }
+            elseif ($show_last)
+            {
+                // Render last item if reqd.
+                echo '<li class="Breadcrumb-Item">';
+                echo '<span>' . $item->name . '</span>';
+                echo '</li>';
+            }
+        } ?>
     </ul>
 </div>

@@ -57,6 +57,14 @@ main{
     margin-bottom: 20px;
 }
 
+[data-alias=item] .Before-Component{
+    display:none;
+}
+
+[data-alias=item] .Tags{
+    display:none;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Sidebar
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -131,6 +139,9 @@ main{
 	@extend 				%Animated;
 	@extend 				%Clickable;
 
+    &:before{
+        font: normal normal normal 14px/1 FontAwesome;
+    }
 
 
 	&:hover
@@ -704,6 +715,10 @@ fieldset
 	@extend 		.fa, .fa-angle-up;
 	@extend 		%Clickable;
 	@extend 		%Animated;
+    &:before{
+        font: normal normal normal 14px/1 FontAwesome;
+    }
+
 	&:hover
 	{
 		border-color: 			$C-Red-1;
@@ -721,6 +736,8 @@ fieldset
 
 .item-page{
     margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     h2{
         @extend %Heading-Section;
         margin-bottom: 20px;
@@ -783,9 +800,10 @@ button[name='Search'] {
 .Icon-Loading{
     width:26px;
     height: 26px;
-    margin: 0 auto;
+    margin: 40px auto;
     background: url(../../templates/journal/images/loading.gif) no-repeat;
     background-size: 100%;
+
 }
 
 #remember{
@@ -803,4 +821,3 @@ button[name='Search'] {
     top: 10px;
     left: 10px;
 }
-

@@ -1,6 +1,17 @@
 <?php
+/**
+* @package		ZOOlanders Packager
+* @author    	JOOlanders, SL http://www.zoolanders.com
+* @copyright 	Copyright (C) JOOlanders, SL
+* @license   	http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+*/
+
+// no direct access
+defined('_JEXEC') or die('Restricted access');
 
 class pkg_zoolandersInstallerScript {
+
+	protected $_error;
 
 	public function install($parent) {}
 
@@ -15,9 +26,6 @@ class pkg_zoolandersInstallerScript {
 			Jerror::raiseWarning(null, $this->_error);
 			return false;
 		}
-
-		// load config, necesary for some packages
-		require_once(JPATH_ADMINISTRATOR.'/components/com_zoo/config.php');
 	}
 
 	public function postflight($type, $parent, $results)
@@ -39,56 +47,36 @@ class pkg_zoolandersInstallerScript {
 	 */
 	protected function checkRequirements($parent)
 	{
-		// get joomla release
-		$joomla_release = new JVersion();
-		$joomla_release = $joomla_release->getShortVersion();
-
-		// manifest file minimum joomla version
-		$min_joomla_release = $parent->get( "manifest" )->attributes()->version;
-
-		/*
-		 * abort if the current Joomla! release is older
-		 */
-		if( version_compare( (string)$joomla_release, (string)$min_joomla_release, '<' ) ) {
-			$this->_error = "Joomla! v{$min_joomla_release} or higher required, please update it and retry the installation.";
-			return false;
-		}
-
-		/*
-		 * make sure ZOO exist, is enabled
-		 */
-		if (!JFile::exists(JPATH_ADMINISTRATOR.'/components/com_zoo/config.php')
-			|| !JComponentHelper::getComponent('com_zoo', true)->enabled) {
-			$this->_error = "ZOOlanders Extensions relies on <a href=\"http://www.yootheme.com/zoo\" target=\"_blank\">ZOO</a>, be sure is installed and enabled before retrying the installation.";
-			return false;
-		}
-
-		// and up to date
-		$zoo_manifest = simplexml_load_file(JPATH_ADMINISTRATOR.'/components/com_zoo/zoo.xml');
-		$min_zoo_release = $parent->get( "manifest" )->attributes()->zooversion;
-
-		if( version_compare((string)$zoo_manifest->version, (string)$min_zoo_release, '<') ) {
-			$this->_error = "ZOO v{$min_zoo_release} or higher required, please update it and retry the installation.";
-
-			return false;
-		}
-
-		/*
-		 * make sure ZLFW exist, is enabled
-		 */
-		if($min_zlfw_release = $parent->get( "manifest" )->attributes()->zlfwversion)
+		// init vars
+		$dependencies = $parent->get( "manifest" )->dependencies->attributes();
+		
+		// check Joomla
+		if ($min_v = (string)$dependencies->joomla) 
 		{
-			if (!JFile::exists(JPATH_ROOT.'/plugins/system/zlframework/zlframework.php')
-					|| !JPluginHelper::isEnabled('system', 'zlframework')) {
-				$this->_error = "ZOOlanders Extensions relies on <a href=\"https://www.zoolanders.com/extensions/zl-framework\" target=\"_blank\">ZL Framework</a>, be sure is installed and enabled before retrying the installation.";
+			// if up to date
+			$joomla_release = new JVersion();
+			$joomla_release = $joomla_release->getShortVersion();
+			if( version_compare( (string)$joomla_release, $min_v, '<' ) ) {
+				$this->_error = "Joomla! v{$min_v} or higher required, please update it and retry the installation.";
+				return false;
+			}
+		}
+
+		// check ZOO
+		if ($min_v = (string)$dependencies->zoo) 
+		{
+			// if installed and enabled
+			if (!JFile::exists(JPATH_ADMINISTRATOR.'/components/com_zoo/config.php')
+				|| !JComponentHelper::getComponent('com_zoo', true)->enabled) {
+				$this->_error = "ZOOlanders Extensions relies on <a href=\"http://www.yootheme.com/zoo\" target=\"_blank\">ZOO</a>, be sure is installed and enabled before retrying the installation.";
 				return false;
 			}
 
-			// and up to date
-			$zlfw_manifest = simplexml_load_file(JPATH_ROOT.'/plugins/system/zlframework/zlframework.xml');
+			// if up to date
+			$zoo_manifest = simplexml_load_file(JPATH_ADMINISTRATOR.'/components/com_zoo/zoo.xml');
 
-			if( version_compare((string)$zlfw_manifest->version, (string)$min_zlfw_release, '<') ) {
-				$this->_error = "<a href=\"https://www.zoolanders.com/extensions/zl-framework\" target=\"_blank\">ZL Framework</a> v{$min_zlfw_release} or higher required, please update it and retry the installation.";
+			if( version_compare((string)$zoo_manifest->version, $min_v, '<') ) {
+				$this->_error = "ZOO v{$min_v} or higher required, please update it and retry the installation.";
 				return false;
 			}
 		}
@@ -100,35 +88,34 @@ class pkg_zoolandersInstallerScript {
 
 ?>
 
-		<h3><?php echo JText::_($name); ?></h3>
-		<table class="adminlist table table-bordered table-striped" width="100%">
-			<thead>
-				<tr>
-					<th class="title"><?php echo JText::_($type); ?></th>
-					<th width="60%"><?php echo JText::_('Status'); ?></th>
+	<h3><?php echo JText::_($name); ?></h3>
+	<table class="adminlist table table-bordered table-striped" width="100%">
+		<thead>
+			<tr>
+				<th class="title"><?php echo JText::_($type); ?></th>
+				<th width="60%"><?php echo JText::_('Status'); ?></th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<?php
+				foreach ($result as $i => $ext) : ?>
+				<tr class="row<?php echo $i++ % 2; ?>">
+					<td class="key"><?php echo $ext->name; ?></td>
+					<td>
+						<?php $style = $ext->status ? 'font-weight: bold; color: green;' : 'font-weight: bold; color: red;'; ?>
+						<span style="<?php echo $style; ?>"><?php echo JText::_($ext->message); ?></span>
+					</td>
 				</tr>
-			</thead>
-			<tfoot>
-				<tr>
-					<td colspan="2">&nbsp;</td>
-				</tr>
-			</tfoot>
-			<tbody>
-				<?php
-					foreach ($result as $i => $ext) : ?>
-					<tr class="row<?php echo $i++ % 2; ?>">
-						<td class="key"><?php echo $ext->name; ?></td>
-						<td>
-							<?php $style = $ext->status ? 'font-weight: bold; color: green;' : 'font-weight: bold; color: red;'; ?>
-							<span style="<?php echo $style; ?>"><?php echo JText::_($ext->message); ?></span>
-						</td>
-					</tr>
-				<?php endforeach; ?>
-			</tbody>
-		</table>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
 
 <?php
 
 	}
-
 }

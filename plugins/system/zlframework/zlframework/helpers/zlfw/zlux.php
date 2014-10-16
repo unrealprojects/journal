@@ -97,7 +97,7 @@ class zlfwHelperZlux extends AppHelper {
 			// set loaded state
 			$this->_zlux2_loaded = true;
 
-		} else if(!$zlux2 && !$this->_zlux1_loaded) {
+		} else if(!$this->_zlux1_loaded) {
 
 			// zlux assets
 			$this->app->document->addStylesheet('zlfw:zlux/zluxMain.css');
@@ -147,8 +147,7 @@ class zlfwHelperZlux extends AppHelper {
 				'zlfw' => 'plugins/system/zlframework/zlframework/',
 				'zlux' => 'plugins/system/zlframework/zlframework/vendor/zlux/',
 				'ajax' => JURI::base() . 'index.php?option=com_zoolanders&format=raw&'. $this->app->session->getFormToken() .'=1',
-				'root' => JURI::root(),
-				'root_path' => JURI::root(true)
+				'root' => JURI::root()
 			);
 
 			$javascript .= "jQuery.zx.url.push(" . json_encode($urls) . ");";

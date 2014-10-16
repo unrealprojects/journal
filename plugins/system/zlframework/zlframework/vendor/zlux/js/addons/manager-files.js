@@ -601,8 +601,9 @@
 
 
     // init code
-    $.UIkit.ready(function(context) {
-        $("[data-zx-manager-files]", context).each(function() {
+    $(document).on("uk-domready", function(e) {
+
+        $("[data-zx-manager-files]").each(function() {
             var manager = $(this);
 
             if (!manager.data("filesManager")) {

@@ -1536,7 +1536,7 @@ body[data-alias=home] .yoo-zoo .items .pos-item article:last-of-type {
       display: none; }
 
 .Adv {
-  margin-top: 80px; }
+  margin-top: 60px; }
   .Adv img {
     width: 100%; }
 
@@ -1687,18 +1687,20 @@ button[name='Search'] {
 .item .element.element-relateditems, .item .element.element-itemtag {
   margin-top: 20px;
   height: auto !important;
-  display: flex;
+  display: block;
   font-size: 14px; }
   .item .element.element-relateditems > h3, .item .element.element-relateditems > a, .item .element.element-itemtag > h3, .item .element.element-itemtag > a {
     padding-left: 3px;
     color: #4f555c;
-    display: inline-block;
-    float: left;
+    display: inline;
     line-height: 18px;
     font-size: 14px;
     font-weight: 100; }
   .item .element.element-relateditems > h3, .item .element.element-itemtag > h3 {
     padding-right: 10px; }
+
+.teaser-item .pos-meta {
+  display: none; }
 
 * {
   margin: 0;
@@ -1729,6 +1731,12 @@ p + p {
 
 main {
   margin-bottom: 20px; }
+
+[data-alias=item] .Before-Component {
+  display: none; }
+
+[data-alias=item] .Tags {
+  display: none; }
 
 .Page-Sidebar {
   position: fixed;
@@ -1781,6 +1789,8 @@ main {
   background-color: #77797c;
   font-size: 13px;
   color: white; }
+  .Sidebar-Toggle:before {
+    font: normal normal normal 14px/1 FontAwesome; }
   .Sidebar-Toggle:hover {
     background-color: #1a90ff; }
   .Sidebar-Toggle.Expanded {
@@ -2117,13 +2127,17 @@ fieldset {
   z-index: 1000000;
   background-color: white;
   top: -50px; }
+  #Scroll-Top:before {
+    font: normal normal normal 14px/1 FontAwesome; }
   #Scroll-Top:hover {
     border-color: #a02828;
     background-color: #e43f3f;
     color: white; }
 
 .item-page {
-  margin-top: 40px; }
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px; }
   .item-page h2 {
     margin-bottom: 20px; }
 
@@ -2162,7 +2176,7 @@ button[name='Search'] {
 .Icon-Loading {
   width: 26px;
   height: 26px;
-  margin: 0 auto;
+  margin: 40px auto;
   background: url(../../templates/journal/images/loading.gif) no-repeat;
   background-size: 100%; }
 
@@ -3860,7 +3874,7 @@ button[name='Search'] {
   padding: 5px;
   padding-left: 15px;
   margin-top: 20px;
-  background-color: #e7e7e7; }
+  background-color: #e9ebec; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > span, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > a {
     padding: 5px;
     font-size: 13px;

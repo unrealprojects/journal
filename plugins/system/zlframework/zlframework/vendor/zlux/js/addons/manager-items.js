@@ -292,8 +292,8 @@
     });
 
     // init code
-    $.UIkit.ready(function(context) {
-        $("[data-zx-itempicker]", context).each(function() {
+    $(document).on("uk-domready", function(e) {
+        $("[data-zx-itempicker]").each(function() {
             var ele = $(this);
 
             if (!ele.data("itempicker")) {

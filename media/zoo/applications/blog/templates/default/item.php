@@ -19,7 +19,7 @@ $css_class = $this->application->getGroup().'-'.$this->template->name;
 
 ?>
 
-<div id="yoo-zoo" class="yoo-zoo <?php echo $css_class; ?> <?php echo $css_class.'-'.$this->item->alias; ?>">
+<div id="yoo-zoo" class="yoo-zoo <?php echo $css_class; ?> <?php echo $css_class.'-'.$this->item->alias; ?> <?php echo $this->item->category; ?>">
 <?php if ($this->item->canEdit()) : ?>
     <?php $edit_link = $this->app->route->submission($this->item->getApplication()->getItemEditSubmission(), $this->item->type, null, $this->item->id, 'itemedit'); ?>
 <?php endif; ?>

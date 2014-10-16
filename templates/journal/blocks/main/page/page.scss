@@ -451,7 +451,9 @@ body[data-alias=home] .yoo-zoo .items .pos-item
 .Adv
 {
 	@extend 					%Content-Block;
-    margin-top:                 80px;
+    margin-top:                 60px;
+
+
     img{
         width: 100%;
     }
@@ -786,14 +788,15 @@ button[name='Search']
 {
 	margin-top: 20px;
 	height: auto!important;
-    display: flex;
+    display: block;
     font-size: 14px;
+
+
 	>h3, >a
 	{
         padding-left: 3px;
         color: #4f555c;
-		display: inline-block;
-		float: left;
+		display: inline;
 		line-height: 18px;
 		font-size: 14px;
 		font-weight: 100;
@@ -802,4 +805,11 @@ button[name='Search']
 	{
 		padding-right: 10px;
 	}
+}
+
+
+
+// Only Selected Photos
+.teaser-item .pos-meta{
+    display: none;
 }

@@ -230,7 +230,7 @@ class zlfwHelper extends AppHelper {
 	/**
 	 * Fix plugins order
 	 */
-	public function checkPluginOrder($plugin = '')
+	public function checkPluginOrder()
 	{
 		// init vars
 		$db = JFactory::getDBO();
@@ -247,14 +247,11 @@ class zlfwHelper extends AppHelper {
 			('zootools', 'zoo_zlelements')
 		")->execute();
 
-		// set others and provided plugin after
+		// set the rest of the extension right after
 		$order++;
-		// known plugins
-		$plugins = array('zooaccess', 'zooaksubs', 'zoocart', 'zoocompare', 'zoofilter', 'zooorder', 'zooseo', 'zootrack', 'zlwidgets');
-		// add the new plugin
-		if(!empty($plugin)) array_push($plugins, $plugin);
-		// query
-		$db->setQuery("UPDATE `#__extensions` SET `ordering` = {$order} WHERE `type` = 'plugin' AND `element` in ('".implode('\',\'', $plugins)."')")->execute();
+		$db->setQuery("UPDATE `#__extensions` SET `ordering` = {$order} WHERE `type` = 'plugin' AND `element` in 
+			('zooaccess', 'zooaksubs', 'zoocart', 'zoocompare', 'zoofilter', 'zooorder', 'zooseo', 'zootrack', 'zlwidgets')
+		")->execute();
 	}
 
 	/*
@@ -344,7 +341,7 @@ class zlfwHelper extends AppHelper {
 		return $result;
 	}
 
-	/* deprecated name */
+	/* depricated name */
 	public function getAppsObject($apps, $all = false, $group = null){
 		return $this->getApplications($apps, $all, $group);
 	}

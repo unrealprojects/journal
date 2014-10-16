@@ -324,12 +324,6 @@ class ZLModelItem extends ZLModel
 		// init vars
 		$this->apps  = $this->getState('application', array());
 		$this->types = $this->getState('type', array());
-		$elements = $this->getState('element', array());
-
-		// if no filter data, abort
-		if(empty($this->apps) && empty($this->types) && empty($elements)) {
-			return array();
-		}
 
 		// convert apps into raw array
 		if (count($this->apps)) foreach ($this->apps as $key => $app) {
@@ -467,8 +461,6 @@ class ZLModelItem extends ZLModel
 
 		// get the filter query
 		$nestedFilter = $this->getNestedArrayFilter();
-		$i = 0;
-		$nestedFilterQuery = '';
 		foreach ($nestedFilter as $app => &$types) {
 
 			// iterate over types
@@ -506,19 +498,13 @@ class ZLModelItem extends ZLModel
 			// app query
 			$app_query = in_array($app, $this->apps) ? 'a.application_id = ' . (int)$app : '';
 
-			// get the app->type->elements query
-			$logic = $i == 0 ? '' : 'OR '; // must be AND only of first iterance, then must be OR
+			// set the app->type->elements query
 			if ($app_query && $types_query) {
-				$nestedFilterQuery .= $logic . '(' . $app_query . ' AND (' . $types_query . '))';
+				$wheres['AND'][] = '(' . $app_query . ' AND (' . $types_query . '))';
 			} else if ($app_query || $types_query) {
-				$nestedFilterQuery .= $logic . '(' . $app_query . $types_query . ')';
+				$wheres['AND'][] = '(' . $app_query . $types_query . ')';
 			}
-
-			$i++;
 		}
-
-		// add nestedFilterQuery
-		if(!empty($nestedFilterQuery)) $wheres['AND'][] = '(' . $nestedFilterQuery . ')';
 
 		// At the end, merge ORs
 		if( count( $wheres['OR'] ) ) {
@@ -563,9 +549,9 @@ class ZLModelItem extends ZLModel
 			// Search ranges!
 			if ($is_range && !$is_date){
 
-				// make sure the values are not null
-				$from = $from !== null ? $from : $value;
-				$to = $to !== null ? $to : $value;
+				// make sure the values are set
+				$from = !empty($from) ? $from : $value;
+				$to = !empty($to) ? $to : $value;
 
 				// get and add the query
 				if ($sql = $this->getElementRangeSearch($id, $from, $to, $type, $convert, $k)) {

@@ -14,7 +14,7 @@
         return ZX;
     }
 
-    ZX.version = '2.0.2';
+    ZX.version = '2.0';
 
 
     /** URI **/
@@ -22,7 +22,6 @@
     ZX.url.urls = {
         ajax: '',
         root: '',
-        root_path: '',
         zlux: ''
     };
     /**
@@ -41,23 +40,9 @@
     ZX.url.get = function (url, params) {
         url = url.split(':');
         params = params === undefined ? {} : params;
-        var result;
 
-        if(url.length === 2 && url[1] !== '') {
-
-            var root_path = ZX.url.urls.root_path.replace(/^\//, '');
-
-            result = ZX.url._get(url[0]) + '/' + url[1]
-
-            // make sure the joomla root path is not present
-            .replace(new RegExp('^'+root_path, 'g'), '')
-            .replace(new RegExp('^\/'+root_path, 'g'), '');
-
-        } else {
-            result = ZX.url._get(url[0]) + ($.isEmptyObject(params) ? '' : '&' + $.param(params));
-        }
-
-        return ZX.url.clean(result);
+        return ZX.url.clean(url.length === 2 ? ZX.url._get(url[0]) + '/' + url[1] : url[0]) +
+            ($.isEmptyObject(params) ? '' : '&' + $.param(params));
     };
     ZX.url._get = function (url) {
         return ZX.url.urls[url] !== undefined ? ZX.url.urls[url] : url;
@@ -75,8 +60,8 @@
         // replace \ with /
         .replace(/\\/g, '/')
 
-        // replace double or more slashes
-        .replace(/\/\/+/g, '/')
+        // replace // with /
+        .replace(/\/\//g, '/')
 
         // remove undefined
         .replace(/undefined/g, '')
@@ -298,13 +283,12 @@
         };
 
         fn.plugins = {};
-        fn.instances = [];
 
         $.extend(true, fn.prototype, {
 
             type: 'component',
 
-            defaults: {plugins: []},
+            defaults : {plugins: []},
 
             init: function(){},
 
@@ -449,7 +433,7 @@
         var args = arguments, cmd = command.match(/^([a-z\-]+)(?:\.([a-z]+))?/i), extension = cmd[1], method = cmd[2];
 
         if (!ZX[extension]) {
-            $.error("ZLUX extension [" + extension + "] does not exist.");
+            $.error("UIkit extension [" + extension + "] does not exist.");
             return this;
         }
 
@@ -464,10 +448,7 @@
                 data = $this.data(extension);
 
                 // if no instance, init it
-                if (!data) {
-                    $this.data(extension, (data = ZX[extension](this, method ? undefined : options)));
-                    ZX.extensions[extension].instances.push(data);
-                }
+                if (!data) $this.data(extension, (data = ZX[extension](this, method ? undefined : options)));
 
                 // if method provided, execute it
                 if (method) data[method].apply(data, Array.prototype.slice.call(args, 1));
