@@ -221,6 +221,8 @@ upf.Page.Headers = function(){
            SiteSection         ==      'component'){
             $('#yoo-zoo').addClass('Item-Extended');
             $('.Component').addClass('Node-XS-12').removeClass('Node-XXS-8');
+            $('.Before-Component').remove();
+            $('.After-Component').remove();
         }
 
         if(SiteSection         ==      'authors'){
