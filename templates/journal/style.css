@@ -2224,6 +2224,16 @@ button[name='Search'] {
   top: 10px;
   left: 10px; }
 
+#Page-Preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #F5F5F5 url(../../templates/journal/images/loading.gif) no-repeat center center; }
+
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

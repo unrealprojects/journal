@@ -6,15 +6,15 @@ Error: Undefined mixin 'Adaptive'.
 
 1: @import 'page/page';
 2: 
-3: 
-4: *
-5: {
-6: 	margin: 			0;
-7: 	padding: 			0;
-8: 	box-sizing: 		border-box;
-9: 	-moz-box-sizing: 	border-box;
-10: //	cursor: 			default;
-11: }
+3: * {
+4:     margin: 0;
+5:     padding: 0;
+6:     box-sizing: border-box;
+7:     -moz-box-sizing: border-box;
+8:     //	cursor: 			default;
+9: }
+10: 
+11: html,
 
 Backtrace:
 page\page.scss:6:in `Adaptive'
@@ -86,4 +86,4 @@ C:/Ruby200-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'Adaptive'.\A         on line 6 of page\page.scss, in `Adaptive'\A         from line 6 of page\page.scss\A         from line 1 of main.scss\A \A 1: @import 'page/page';\A 2: \A 3: \A 4: *\A 5: {\A 6: 	margin: 			0;\A 7: 	padding: 			0;\A 8: 	box-sizing: 		border-box;\A 9: 	-moz-box-sizing: 	border-box;\A 10: //	cursor: 			default;\A 11: }"; }
+  content: "Error: Undefined mixin 'Adaptive'.\A         on line 6 of page\page.scss, in `Adaptive'\A         from line 6 of page\page.scss\A         from line 1 of main.scss\A \A 1: @import 'page/page';\A 2: \A 3: * {\A 4:     margin: 0;\A 5:     padding: 0;\A 6:     box-sizing: border-box;\A 7:     -moz-box-sizing: border-box;\A 8:     //	cursor: 			default;\A 9: }\A 10: \A 11: html,"; }

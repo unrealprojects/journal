@@ -833,6 +833,9 @@ upf.Actions.BlockClickAble = function(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function(){
+    $(window).load(function(){
+        $('#Page-Preloader').delay(300).fadeOut('slow',function(){$(this).remove();});
+    });
     upf.Menu.ToggleMenu();
     upf.Menu.ScrollMenu();
     upf.Tools.Dropdown();
