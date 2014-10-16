@@ -208,6 +208,9 @@
 		{
 			.element.element-relateditems
 			{
+                .pos-meta{
+                    display: none;
+                }
 				h3
 				{
 					@extend %Heading-Section;
@@ -299,8 +302,13 @@
 	{
 		.pos-item
 		{
+
 			@extend 		%Content-Block;
 			@extend 		%Content-Block-Hover;
+            .pos-title.Block-No-Image{
+                display:none;
+            }
+
 			.pos-title
 			{
 				position: relative;
@@ -339,9 +347,15 @@
 		}
 	}
 }
+.pos-item{
+    cursor: pointer !important;
+}
 
 body[data-alias=home] .yoo-zoo .items .pos-item
 {
+    .pos-title.Block-No-Image{
+        display:block !important;
+    }
     article:last-of-type
     {
         display: block !important;

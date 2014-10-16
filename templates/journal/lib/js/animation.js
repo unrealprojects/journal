@@ -30,42 +30,7 @@ window.upf.Page = {};
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 1 Vertical Grid
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-upf.Start.VerticalGrid = function(){
-    // Default Variables
-    var Selectors = '.teaser-item';
-
-    if($('.items .Grid').length){
-        MasonryObj = new Masonry('.items .Grid',{
-            itemSelector: Selectors
-        });
-
-
-        // Inner Related
-        Selectors = '.pos-item';
-        if($('.element-relateditems').length){
-            MasonryObjRelated = new Masonry('.element-relateditems',{
-                itemSelector: Selectors
-            });
-        }
-        function ReloadMasonry(){
-            MasonryObj.reloadItems();
-            MasonryObj.layout();
-        }
-        setTimeout(ReloadMasonry,1200)
-    }
-
-
-
-
-
-
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -216,7 +181,7 @@ upf.Page.Headers = function(){
         }
 
         if(SiteSection         ==      'authors'  ||
-            SiteSection         ==      'video'  ||
+           SiteSection         ==      'video'    ||
            SiteSection         ==      'journals' ||
            SiteSection         ==      'component'){
             $('#yoo-zoo').addClass('Item-Extended');
@@ -227,7 +192,20 @@ upf.Page.Headers = function(){
 
         if(SiteSection         ==      'authors'){
             $('.Component').addClass('Node-XS-12').removeClass('Node-XXS-8');
+            $('.element-relateditems .pos-subtitle a').each(function(){
+                $(this).attr('href',
+                    '/articles'+$(this).attr('href')
+                );
+            });
         }
+
+    if(SiteSection         ==      'journals'){
+        $('.element-relateditems .pos-subtitle a').each(function(){
+            $(this).attr('href',
+                '/articles'+$(this).attr('href')
+            );
+        });
+    }
 
     // Set data-page="list"
         else if(SiteSection         ==      'news'  ||
@@ -354,12 +332,11 @@ upf.Start.CategoryLinks = function(){
 
     $(Elements).each(function(){
         if(!$(this).find('img').length){
+            $(this).find('img').remove();
             $(this).addClass('Block-No-Image');
         }
         $(this).find('article:last-of-type').addClass('Item-Category');
     });
-
-
 
 }
 
@@ -376,31 +353,214 @@ upf.Start.CategoryLinks = function(){
 
     upf.Start.CategoryLabels = function(){
         $('article.item a').each(function(ItemKey,Item){
+            var SiteSection = location.pathname.split('/')[1];
+            var SiteSectionType = location.pathname.split('/')[2];
 
 
+            var Edit_Icons = true;
 
-            if($(Item).text().toString() == 'Новости'.toString())
+            if(SiteSection         ==      'news'  ||
+                    SiteSection         ==      'articles' ||
+                    SiteSection         ==      'libs'  ||
+                    SiteSection         ==      'events'  ||
+                    SiteSection         ==      'medication'  ||
+                    SiteSection         ==      'terminology' ||
+                    SiteSection         ==      'partners')
+            {
+                Edit_Icons = false;
+            }
+
+            if($(Item).text().toString() == 'Новости'.toString() && Edit_Icons )
             {
                 $(Item).addClass('Color-Purple');
-                $(Item).parents('pos-title').find('>a').attr('href',
-                    '/news'+$(Item).parents('pos-title').find('>a').attr('href')
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/news' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
                 );
+
+                $(Item).parents('.layout-default').find('.title a').attr('href',
+                    '/news' + $(Item).parents('.layout-default').find('.title a').attr('href')
+                );
+
             }
-            else if($(Item).text().toString() == 'Библиотека'.toString())
+
+            else if( $(Item).text().toString() == 'Библиотека'.toString() && Edit_Icons )
             {
                 $(Item).addClass('Color-Green');
+
+                // Change Link
+                    $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                          '/libs' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                    );
+
+                    $(Item).parents('.layout-default').find('.title a').attr('href',
+                        '/libs' + $(Item).parents('.layout-default').find('.title a').attr('href')
+                    );
             }
-            else if($(Item).text().toString() == 'Препараты'.toString())
+
+            else if($(Item).text().toString() == 'Препараты'.toString() && Edit_Icons )
             {
                 $(Item).addClass('Color-Blue');
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/medication' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+                $(Item).parents('.layout-default').find('.title a').attr('href',
+                    '/medication' + $(Item).parents('.layout-default').find('.title a').attr('href')
+                );
+
             }
-            else if($(Item).text().toString() == 'Мероприятия'.toString())
+
+            else if($(Item).text().toString() == 'Мероприятия'.toString() && Edit_Icons )
             {
                 $(Item).addClass('Color-Red');
+
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/events' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+                $(Item).parents('.layout-default').find('.title a').attr('href',
+                    '/events' + $(Item).parents('.layout-default').find('.title a').attr('href')
+                );
             }
-            else if($(Item).text().toString() == 'Статьи'.toString())
+
+            else if($(Item).text().toString() == 'Статьи'.toString() && Edit_Icons )
             {
                 $(Item).addClass('Color-Yellow');
+
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/articles' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+                $(Item).parents('.layout-default').find('.title a').attr('href',
+                    '/articles' + $(Item).parents('.layout-default').find('.title a').attr('href')
+                );
+            }
+
+            else if($(Item).text().toString() == 'Видео'.toString() && Edit_Icons )
+            {
+                $(Item).addClass('Color-Red');
+
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/video' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+                $(Item).parents('.layout-default').find('.title a').attr('href',
+                    '/video' + $(Item).parents('.layout-default').find('.title a').attr('href')
+                );
+            }
+
+
+            else if($(Item).text().toString() == 'Партнеры'.toString() && Edit_Icons )
+            {
+                $(Item).addClass('Color-Red');
+
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/partners' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+                $(Item).parents('.layout-default').find('.title a').attr('href',
+                    '/partners' + $(Item).parents('.layout-default').find('.title a').attr('href')
+                );
+            }
+        });
+
+    }
+
+
+
+    upf.Start.CategoryLabelsAjax = function(){
+        $('article.item a').each(function(ItemKey,Item){
+
+
+            if($(Item).text().toString() == 'Новости'.toString()  && $(this).parent().is(':visible') )
+            {
+                $(Item).addClass('Color-Purple');
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/news' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+            }
+
+            else if( $(Item).text().toString() == 'Библиотека'.toString() && $(this).parent().is(':visible') )
+            {
+                $(Item).addClass('Color-Green');
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/libs' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+            }
+
+            else if($(Item).text().toString() == 'Препараты'.toString()  && $(this).parent().is(':visible') )
+            {
+                $(Item).addClass('Color-Blue');
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/medication' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+            }
+
+            else if($(Item).text().toString() == 'Мероприятия'.toString()  && $(this).parent().is(':visible') )
+            {
+                $(Item).addClass('Color-Red');
+
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/events' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+            }
+
+            else if($(Item).text().toString() == 'Статьи'.toString()  && $(this).parent().is(':visible') )
+            {
+                $(Item).addClass('Color-Yellow');
+
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/articles' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+            }
+
+            else if($(Item).text().toString() == 'Видео'.toString()  && $(this).parent().is(':visible') )
+            {
+                $(Item).addClass('Color-Red');
+
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/video' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
+            }
+
+
+            else if($(Item).text().toString() == 'Партнеры'.toString()  && $(this).parent().is(':visible') )
+            {
+                $(Item).addClass('Color-Red');
+
+
+                // Change Link
+                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
+                    '/partners' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
+                );
+
             }
         });
 
@@ -472,13 +632,17 @@ upf.Actions.Pagination = function(){
                             $('.items .Grid').append($(Data).find('.teaser-item'));
 
                             // Events
+                            upf.Actions.HideImagesInTeaser();
                             upf.Start.CategoryLinks();
-                            upf.Start.CategoryLabels();
+                            upf.Start.CategoryLabelsAjax();
+
+                            upf.Actions.BlockClickAble();
 
                             MasonryObj.appended( $(Data).find('.teaser-item'));
                             MasonryObj.reloadItems();
                             MasonryObj.layout();
                             Ajax   = false;
+
 
                         }else{
                             $('.Load-More').remove();
@@ -583,7 +747,7 @@ upf.Tools.Dropdown = function(){
 // Click Able To Block
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 upf.Actions.BlockClickAble = function(){
-    var SelectorItem = '.teaser-item,.zoo-itempro-default li',
+    var SelectorItem = '.teaser-item,.pos-item,.zoo-itempro-default li',
         SelectorLink = '.pos-subtitle a, .title a';
 
     $(SelectorItem).click(function(){
@@ -608,7 +772,7 @@ upf.Actions.BlockClickAble = function(){
 
         $('.teaser-item').each(function(){
             if(!$('.pos-meta',this).length){
-                $('.pos-title',this).hide();
+                $('.pos-title img',this).remove();
             }
         });
     }
@@ -616,7 +780,43 @@ upf.Actions.BlockClickAble = function(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 1 Vertical Grid
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    upf.Start.VerticalGrid = function(){
+        // Default Variables
+        var Selectors = '.teaser-item';
+
+        if($('.items .Grid').length){
+            MasonryObj = new Masonry('.items .Grid',{
+                itemSelector: Selectors
+            });
+
+
+
+
+            function ReloadMasonry(){
+                MasonryObj.reloadItems();
+                MasonryObj.layout();
+            }
+            setTimeout(ReloadMasonry,1400)
+        }
+
+        // Inner Related
+        Selectors = '.pos-item';
+        if($('.element-relateditems').length>0){
+            MasonryObjRelated = new Masonry('.element-relateditems',{
+                itemSelector: Selectors
+            });
+        }
+
+
+
+
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -631,11 +831,11 @@ $(document).ready(function(){
     upf.Tools.Dropdown();
     upf.Actions.Login();
     upf.Actions.Pagination();
-    upf.Actions.BlockClickAble();
+
     upf.Actions.HideImagesInTeaser();
 
     upf.Start.CategoryLinks();
-    upf.Start.CategoryLabels();
+
 
 
 
@@ -643,7 +843,7 @@ $(document).ready(function(){
     $('.Feed-Subscription').upf_window($('.Subscription').html());
     $('.Content-Wrapper  .Subscription').remove();
 
-    upf.Start.VerticalGrid();
+
 
 
 
@@ -670,10 +870,18 @@ $(document).ready(function(){
 
     $('.Popular>ul:first-of-type').show();
 
+
+    upf.Start.CategoryLabels();
+
+    upf.Actions.BlockClickAble();
+
+    upf.Start.VerticalGrid();
+
+
 });
 
+    upf.Page.Headers();
 
-upf.Page.Headers();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
