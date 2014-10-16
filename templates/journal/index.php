@@ -34,13 +34,20 @@
         ?>
     </div>
 
+
+
+
+    <div class="Subscription">
+        <jdoc:include type="modules" name="subscription"/>
+    </div>
     <hr id="Footer-Pusher">
+</div>
     <footer role="contentinfo">
         <nav class="Site-Navigation Secondary">
             <jdoc:include type="modules" name="bot_nav"/>
-<!--            <div class="Metrics">-->
-<!--                <img src="templates/journal/images/metrics.png" alt=""/>-->
-<!--            </div>-->
+            <!--            <div class="Metrics">-->
+            <!--                <img src="templates/journal/images/metrics.png" alt=""/>-->
+            <!--            </div>-->
         </nav>
         <article class="Copyright">
             Редакция журнала «Качественная клиническая практика» не несёт ответственность за содержание и достоверность рекламных материалов. Перепечатка опубликованных
@@ -50,12 +57,6 @@
             заменой консультации врача.
         </article>
     </footer>
-
-    <div class="Subscription">
-        <jdoc:include type="modules" name="subscription"/>
-    </div>
-</div>
-
     <div class="Scripts">
         <script type="text/javascript">
             function googleTranslateElementInit() {

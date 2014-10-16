@@ -2017,10 +2017,23 @@ ul.Pagination li span {
   color: white; }
 
 footer[role='contentinfo'] {
+  margin-left: 235px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-top: 5px solid #77972b;
-  max-width: 1200px;
-  margin: -246px auto; }
+  margin-top: -246px; }
+  @media screen and (min-width: 1024px) {
+    footer[role='contentinfo'] {
+      padding-left: 40px;
+      padding-right: 40px; } }
+  @media screen and (min-width: 1260px) {
+    footer[role='contentinfo'] {
+      padding-left: 75px;
+      padding-right: 75px; } }
   footer[role='contentinfo'] nav.Site-Navigation.Secondary {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 40px;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -2036,6 +2049,9 @@ footer[role='contentinfo'] {
       margin-top: -4px;
       float: right; }
   footer[role='contentinfo'] article.Copyright {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 40px;
     font-size: 10px;
     line-height: 1.45;
