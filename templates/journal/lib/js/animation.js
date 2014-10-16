@@ -174,6 +174,12 @@ upf.Page.Headers = function(){
         if( location.pathname       == '/' ||
             SiteSection       == 'archive'){
             $Body.attr('data-alias','home');
+
+            $('.layout-default .title a').each(function(){
+                $(this).attr('href',
+                    $(this).attr('href').replace('/archive','')
+                );
+            });
         }
 
         if( location.pathname       == '/'){
