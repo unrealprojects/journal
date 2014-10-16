@@ -365,13 +365,13 @@ upf.Start.CategoryLinks = function(){
 
             var Edit_Icons = true;
 
-            if(SiteSection         ==      'news'  ||
+            if((SiteSection         ==      'news'  ||
                     SiteSection         ==      'articles' ||
                     SiteSection         ==      'libs'  ||
                     SiteSection         ==      'events'  ||
                     SiteSection         ==      'medication'  ||
                     SiteSection         ==      'terminology' ||
-                    SiteSection         ==      'partners')
+                    SiteSection         ==      'partners') && SiteSectionType != 'tag')
             {
                 Edit_Icons = false;
             }
