@@ -272,13 +272,6 @@ upf.Page.Headers = function(){
         $('.Top-Five-Header h3').text('Интересные');
     }
 
-    // Links in Categories
-    $('.After-Component .zoo-list a').each(function($ItemKey,Item){
-        if(SiteSection){
-            $(Item).attr('href','/'+SiteSection+$(Item).attr('href'))
-        }
-    })
-
     // For Unique Elements
     if(location.pathname        ==      '/archive'){
         $('#yoo-zoo .heading h1.title').html('Архив Новостей');
