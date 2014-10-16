@@ -44,63 +44,63 @@ window.upf.Page = {};
 // 2.1 Toggle Menu
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        upf.Menu.ToggleMenu = function(){
+upf.Menu.ToggleMenu = function(){
 
-            // Default Variables
-            var $Menu = $('.Page-Sidebar'),
-                $SiteContent = $('.Content-Wrapper'),
-                NavMenu = '.Sidebar-Toggle',
-                PullWidth = '0px',
-                PushWidth = '235px';
-
-
-            // Toggle Menu's body
-            $(document).on('click',NavMenu,function(){
-
-                if($Menu.css('left')!=PullWidth){
-                    // Click to Show menu
-                    $(NavMenu).animate({'margin-left':PushWidth}).toggleClass('Expanded Collapsed');
-                    $SiteContent.animate({'margin-left':PushWidth});
-                    $Menu.animate({'left':PullWidth,'opacity':1});
-                }else{
-                    // Click to Hide menu
-                    $(NavMenu).animate({'margin-left':PullWidth}).toggleClass('Expanded Collapsed');
-                    $SiteContent.animate({'margin-left':PullWidth});
-                    $Menu.animate({'left':'-'+PushWidth,'opacity':0});
-                }
-
-                $('.items').masonry( 'reload' );
-                return false;
-            });
+    // Default Variables
+    var $Menu = $('.Page-Sidebar'),
+        $SiteContent = $('.Content-Wrapper,footer'),
+        NavMenu = '.Sidebar-Toggle',
+        PullWidth = '0px',
+        PushWidth = '235px';
 
 
-            // Hide Menu When Width < 1180px
-            if($(window).width()<1180){
-                upf.Menu.Expanded = false;
-                $(NavMenu).animate({'margin-left':PullWidth}).toggleClass('Expanded Collapsed');
-                $SiteContent.animate({'margin-left':PullWidth});
-                $Menu.animate({'left':'-'+PushWidth,'opacity':0});
-            }
+    // Toggle Menu's body
+    $(document).on('click',NavMenu,function(){
 
-            $(window).resize(function(){
-                // Hide menu
-                if($(window).width()<=1180 && upf.Menu.Expanded==true){
-
-                    $(NavMenu).animate({'margin-left':PullWidth}).toggleClass('Expanded Collapsed');
-                    $SiteContent.animate({'margin-left':PullWidth});
-                    $Menu.animate({'left':'-'+PushWidth,'opacity':0});
-                    upf.Menu.Expanded=false;
-
-                }else if($(window).width()>1180 && upf.Menu.Expanded==false){
-
-                    $(NavMenu).animate({'margin-left':PushWidth}).toggleClass('Expanded Collapsed');
-                    $SiteContent.animate({'margin-left':PushWidth});
-                    $Menu.animate({'left':PullWidth,'opacity':1});
-                    upf.Menu.Expanded=true;
-                }
-            });
-
+        if($Menu.css('left')!=PullWidth){
+            // Click to Show menu
+            $(NavMenu).animate({'margin-left':PushWidth}).toggleClass('Expanded Collapsed');
+            $SiteContent.animate({'margin-left':PushWidth});
+            $Menu.animate({'left':PullWidth,'opacity':1});
+        }else{
+            // Click to Hide menu
+            $(NavMenu).animate({'margin-left':PullWidth}).toggleClass('Expanded Collapsed');
+            $SiteContent.animate({'margin-left':PullWidth});
+            $Menu.animate({'left':'-'+PushWidth,'opacity':0});
         }
+
+        $('.items').masonry( 'reload' );
+        return false;
+    });
+
+
+    // Hide Menu When Width < 1180px
+    if($(window).width()<1180){
+        upf.Menu.Expanded = false;
+        $(NavMenu).animate({'margin-left':PullWidth}).toggleClass('Expanded Collapsed');
+        $SiteContent.animate({'margin-left':PullWidth});
+        $Menu.animate({'left':'-'+PushWidth,'opacity':0});
+    }
+
+    $(window).resize(function(){
+        // Hide menu
+        if($(window).width()<=1180 && upf.Menu.Expanded==true){
+
+            $(NavMenu).animate({'margin-left':PullWidth}).toggleClass('Expanded Collapsed');
+            $SiteContent.animate({'margin-left':PullWidth});
+            $Menu.animate({'left':'-'+PushWidth,'opacity':0});
+            upf.Menu.Expanded=false;
+
+        }else if($(window).width()>1180 && upf.Menu.Expanded==false){
+
+            $(NavMenu).animate({'margin-left':PushWidth}).toggleClass('Expanded Collapsed');
+            $SiteContent.animate({'margin-left':PushWidth});
+            $Menu.animate({'left':PullWidth,'opacity':1});
+            upf.Menu.Expanded=true;
+        }
+    });
+
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

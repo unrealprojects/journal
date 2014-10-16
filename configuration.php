@@ -13,8 +13,8 @@ class JConfig {
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
 	public $host = 'localhost';
-	public $user = 'db_user';
-	public $password = '123123';
+	public $user = 'root';
+	public $password = '987975';
 	public $db = 'journal';
 	public $dbprefix = 'f8ad7_';
 	public $live_site = '';
@@ -25,7 +25,7 @@ class JConfig {
 	public $ftp_host = '';
 	public $ftp_port = '';
 	public $ftp_user = 'root';
-	public $ftp_pass = '12345';
+	public $ftp_pass = '987975';
 	public $ftp_root = '';
 	public $ftp_enable = '0';
 	public $offset = 'UTC';

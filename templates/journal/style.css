@@ -2020,6 +2020,8 @@ footer[role='contentinfo'] {
   margin-left: 235px;
   padding-left: 20px;
   padding-right: 20px;
+  z-index: 100;
+  position: relative;
   border-top: 5px solid #77972b;
   margin-top: -246px; }
   @media screen and (min-width: 1024px) {
@@ -3902,7 +3904,7 @@ button[name='Search'] {
   padding: 5px;
   padding-left: 15px;
   margin-top: 20px;
-  background-color: #e9ebec; }
+  background-color: #F0F0F0; }
   .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > span, .Breadcrumbs .Breadcrumb-List .Breadcrumb-Item > a {
     padding: 5px;
     font-size: 13px;
