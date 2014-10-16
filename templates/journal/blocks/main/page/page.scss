@@ -605,9 +605,16 @@ fieldset.only
 }
 
 .element-textarea iframe{
-    width: 100%;
-    height: 380px;
+    width:      100%;
+
+    @include    Adaptive($Viewport-LR){
+        height: 640px;
+    }
+
+    height:     580px;
+
 }
+
 
 [data-alias=video] .item .pos-title{
     display:none;
