@@ -365,6 +365,7 @@ upf.Start.CategoryLinks = function(){
 
             var Edit_Icons = true;
 
+
             if((SiteSection         ==      'news'  ||
                     SiteSection         ==      'articles' ||
                     SiteSection         ==      'libs'  ||
@@ -372,7 +373,7 @@ upf.Start.CategoryLinks = function(){
                     SiteSection         ==      'video'  ||
                     SiteSection         ==      'medication'  ||
                     SiteSection         ==      'terminology' ||
-                    SiteSection         ==      'partners') && SiteSectionType != 'tag')
+                    SiteSection         ==      'partners') && SiteSectionType != 'tag' && SiteSectionType!='item')
             {
                 Edit_Icons = false;
             }
@@ -390,6 +391,7 @@ upf.Start.CategoryLinks = function(){
                 );
 
             }
+
 
             else if( $(Item).text().toString() == 'Библиотека'.toString() && Edit_Icons )
             {
