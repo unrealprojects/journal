@@ -217,6 +217,7 @@ upf.Page.Headers = function(){
         else if(SiteSection         ==      'news'  ||
                 SiteSection         ==      'articles' ||
                 SiteSection         ==      'libs'  ||
+                SiteSection         ==      'video'  ||
 
 
                 SiteSection         ==      'events'  ||
