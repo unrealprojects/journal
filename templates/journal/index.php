@@ -14,6 +14,33 @@
     <!--[if lt IE 9]>
     <script src="/templates/journal/lib/js/ie8/respond.js" type="text/javascript"></script>
     <![endif]-->
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter26667966 = new Ya.Metrika({id:26667966,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true});
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/26667966" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -45,16 +72,16 @@
     <footer role="contentinfo">
         <nav class="Site-Navigation Secondary">
             <jdoc:include type="modules" name="bot_nav"/>
-            <!--            <div class="Metrics">-->
-            <!--                <img src="templates/journal/images/metrics.png" alt=""/>-->
-            <!--            </div>-->
+                        <div class="Metrics">
+                            <!-- Yandex.Metrika informer -->
+                            <a href="https://metrika.yandex.ru/stat/?id=26667966&amp;from=informer"
+                               target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/26667966/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+                                                                   style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:26667966,lang:'ru'});return false}catch(e){}"/></a>
+                            <!-- /Yandex.Metrika informer -->
+                        </div>
         </nav>
         <article class="Copyright">
-            Редакция журнала «Качественная клиническая практика» не несёт ответственность за содержание и достоверность рекламных материалов. Перепечатка опубликованных
-            материалов разрешается только по письменному разрешению ООО «Издательство ОКИ» и согласованием с Редакцией журнала. Мнение Редакции может не всегда совпадать
-            с мнением авторов. При копировании на сайт статей из журнала "Качественная клиническая практика" активная ссылка на: http://www.clinvest.ru/ обязательна! Публикации
-            на clinvest.ru не должны использоваться для самостоятельной диагностики и лечения, не должны рассматриваться в качестве рекомендаций пациентам и не могут служить
-            заменой консультации врача.
+            <jdoc:include type="modules" name="footer"/>
         </article>
     </footer>
     <div class="Scripts">
@@ -71,7 +98,6 @@
         <script src="/templates/journal/lib/js/jquery.transform2d.js"></script>
         <script src="/templates/journal/lib/js/jquery.transform3d.js"></script>
         <script src="/templates/journal/lib/js/animation.js"></script>
-
 
     </div>
 
