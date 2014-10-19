@@ -9,10 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--[if lt IE 9]>
-    <script src="/templates/journal/lib/js/ie8/html5shiv.js" type="text/javascript"></script>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script src="/templates/journal/lib/js/ie8/respond.js" type="text/javascript"></script>
+        <script src="/templates/journal/lib/js/ie8/html5shiv.js" type="text/javascript"></script>
+        <script src="/templates/journal/lib/js/ie8/respond.js" type="text/javascript"></script>
     <![endif]-->
 
 
@@ -97,7 +95,7 @@
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <script src="/templates/journal/lib/js/masonry.pkgd.js"></script>
-<!--        <script src="/templates/journal/lib/js/grid.js"></script>-->
+        <script src="/templates/journal/lib/js/grid.js"></script>
         <script src="/templates/journal/lib/js/jquery.modbox.js"></script>
         <script src="/templates/journal/lib/js/jquery.transform2d.js"></script>
         <script src="/templates/journal/lib/js/jquery.transform3d.js"></script>
@@ -107,7 +105,7 @@
 
 
     <!--[if lt IE 10]>
-    <script src="/templates/journal/lib/js/ie8/jquery.placeholder.js" type="text/javascript"></script>
+        <script src="/templates/journal/lib/js/ie8/jquery.placeholder.js" type="text/javascript"></script>
     <![endif]-->
 
 </body>

@@ -27,7 +27,7 @@
   table.Adaptive td.Data > *,
   [class*='Node'].Merge > .Node-Name-XXS-6 {
     width: 50%; } }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1px) {
   [class*='Grid'].Split > * {
     margin-left: 2.5%;
     margin-right: 2.5%; }
@@ -77,11 +77,12 @@
   [class*='Grid'].Split > .Node-XXS-5 {
     width: 38.75%; }
 
-  .Merge > .Node-XXS-6,
-  .Control-Group > .Node-XXS-6 {
+  .Merge > .Node-XXS-6, body[data-page=home] .Merge > .teaser-item,
+  .Control-Group > .Node-XXS-6,
+  body[data-page=home] .Control-Group > .teaser-item {
     width: 50%; }
 
-  [class*='Grid'].Split > .Node-XXS-6 {
+  [class*='Grid'].Split > .Node-XXS-6, body[data-page=home] [class*='Grid'].Split > .teaser-item {
     width: 47.5%; }
 
   .Merge > .Node-XXS-7,
@@ -119,11 +120,12 @@
   [class*='Grid'].Split > .Node-XXS-11 {
     width: 91.25%; }
 
-  .Merge > .Node-XXS-12,
-  .Control-Group > .Node-XXS-12 {
+  .Merge > .Node-XXS-12, body[data-page=list] .Merge > .teaser-item,
+  .Control-Group > .Node-XXS-12,
+  body[data-page=list] .Control-Group > .teaser-item {
     width: 100%; }
 
-  [class*='Grid'].Split > .Node-XXS-12 {
+  [class*='Grid'].Split > .Node-XXS-12, body[data-page=list] [class*='Grid'].Split > .teaser-item {
     width: 100%;
     margin-left: 0;
     margin-right: 0; } }
@@ -163,12 +165,11 @@
   [class*='Grid'].Split > .Node-XS-5 {
     width: 38.75%; }
 
-  .Merge > .Node-XS-6, body[data-page=home] .Merge > .teaser-item,
-  .Control-Group > .Node-XS-6,
-  body[data-page=home] .Control-Group > .teaser-item {
+  .Merge > .Node-XS-6,
+  .Control-Group > .Node-XS-6 {
     width: 50%; }
 
-  [class*='Grid'].Split > .Node-XS-6, body[data-page=home] [class*='Grid'].Split > .teaser-item {
+  [class*='Grid'].Split > .Node-XS-6 {
     width: 47.5%; }
 
   .Merge > .Node-XS-7,
@@ -206,12 +207,11 @@
   [class*='Grid'].Split > .Node-XS-11 {
     width: 91.25%; }
 
-  .Merge > .Node-XS-12, body[data-page=list] .Merge > .teaser-item,
-  .Control-Group > .Node-XS-12,
-  body[data-page=list] .Control-Group > .teaser-item {
+  .Merge > .Node-XS-12,
+  .Control-Group > .Node-XS-12 {
     width: 100%; }
 
-  [class*='Grid'].Split > .Node-XS-12, body[data-page=list] [class*='Grid'].Split > .teaser-item {
+  [class*='Grid'].Split > .Node-XS-12 {
     width: 100%;
     margin-left: 0;
     margin-right: 0; } }
