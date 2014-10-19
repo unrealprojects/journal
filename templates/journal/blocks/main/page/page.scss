@@ -110,10 +110,14 @@
 	}
 	.pos-subtitle
 	{
+        float:left;
+        clear: left;
+        margin-top: 20px;
 		a
 		{
-			margin-top: 10px;
 			color:	#000000;
+            float: left;
+            clear: left;
 		}
 	}
 	.pos-content .element-textarea p
@@ -128,12 +132,12 @@
 	.pos-bottom
 	{
 	}
-	.pos-bottom .element-itemhits
+	.pos-bottom .element-itemhits, .pos-top .element-itemhits
 	{
 		@extend %Content-Block-Footer;
 		@extend %Content-Block-Views;
 	}
-	.pos-bottom .element-itemcreated
+	.pos-bottom .element-itemcreated, .pos-top .element-itemcreated
 	{
 		@extend %Content-Block-Footer;
 		@extend %Content-Block-Date;
@@ -227,6 +231,7 @@
 						font-weight: 100;
 						font-size: 18px;
 						line-height: 23px;
+
 					}
 				}
 			}
@@ -357,7 +362,7 @@ body[data-alias=home] .yoo-zoo .items .pos-item
     .pos-title.Block-No-Image{
         display:block !important;
     }
-    article:last-of-type
+    article.Item-Category
     {
         display: block !important;
         a
@@ -619,14 +624,14 @@ fieldset.only
 	@extend %Control;
 }
 
-.element-textarea iframe{
-    width:      100%;
+.pos-top iframe{
+    width:      100% !important;
 
     @include    Adaptive($Viewport-LR){
-        height: 640px;
+        height: 640px !important;
     }
 
-    height:     580px;
+    height:     540px !important;
 
 }
 
