@@ -1,8 +1,7 @@
-window.upf= {};
-upf.Grid = {};
+
 /*********************************************************************************************************************** Horizontal Alignment ***/
 (function($){
-upf.Grid.HorizontalAlignment = function(){
+var HorizontalAlignment = function(){
     // Default Variables
     var GridClass            =   '.Grid.Split, .Control-Group.Split',   // Used Grid Class Names
         NodeClass            =   'Node',                    // Node Class Name
@@ -62,7 +61,7 @@ upf.Grid.HorizontalAlignment = function(){
     ask: Если просто Grid то он 12-колоночный, Grid-7 Строгое колличество колонок
  */
 /*********************************************************************************************************************** Execute Functions ***/
-upf.Grid.HorizontalAlignment();
+HorizontalAlignment();
 })(jQuery);
 
 

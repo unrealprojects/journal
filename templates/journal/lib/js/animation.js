@@ -832,6 +832,10 @@ $(document).ready(function(){
     $(window).load(function(){
         $('#Page-Preloader').delay(300).fadeOut('slow',function(){$(this).remove();});
     });
+
+    upf.Page.Headers();
+
+
     upf.Menu.ToggleMenu();
     upf.Menu.ScrollMenu();
     upf.Tools.Dropdown();
@@ -881,12 +885,13 @@ $(document).ready(function(){
 
     upf.Actions.BlockClickAble();
 
+
     upf.Start.VerticalGrid();
 
 
 });
 
-    upf.Page.Headers();
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
