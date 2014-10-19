@@ -190,10 +190,15 @@ upf.Page.Headers = function(){
            SiteSection         ==      'video'    ||
            SiteSection         ==      'journals' ||
            SiteSection         ==      'component'){
-            $('#yoo-zoo').addClass('Item-Extended');
-            $('.Component').addClass('Node-XS-12').removeClass('Node-XXS-8');
-            $('.Before-Component').remove();
-            $('.After-Component').remove();
+
+            if(SiteSectionType == 'item' && SiteSection == 'video'){
+                $('.Component').addClass('Node-XS-12').removeClass('Node-XXS-8');
+            }else{
+                $('#yoo-zoo').addClass('Item-Extended');
+                $('.Component').addClass('Node-XS-12').removeClass('Node-XXS-8');
+                $('.Before-Component').remove();
+                $('.After-Component').remove();
+            }
         }
 
         if(SiteSection         ==      'authors'){
@@ -338,10 +343,25 @@ upf.Start.CategoryLinks = function(){
 
     $(Elements).each(function(){
         if(!$(this).find('img').length){
-            $(this).find('img').remove();
-            $(this).addClass('Block-No-Image');
+
+                $(this).find('img').remove();
+                $(this).addClass('Block-No-Image');
         }
-        $(this).find('article:last-of-type').addClass('Item-Category');
+
+        $('article',this).each(function(){
+            if($('a',this).text()=='Видео' ||
+               $('a',this).text()=='Новости' ||
+               $('a',this).text()=='Статьи' ||
+               $('a',this).text()=='Мероприятия' ||
+               $('a',this).text()=='Библиотека' ||
+               $('a',this).text()=='Авторы' ||
+               $('a',this).text()=='Журналы')
+            {
+                $(this).addClass('Item-Category');
+            }
+        });
+
+        //$(this).find('article:last-of-type').addClass('Item-Category');
     });
 
 }
@@ -454,7 +474,7 @@ upf.Start.CategoryLinks = function(){
 
             else if($(Item).text().toString() == 'Видео'.toString() && Edit_Icons )
             {
-                $(Item).addClass('Color-Red');
+                $(Item).addClass('Color-Orange');
 
 
                 // Change Link
@@ -467,21 +487,6 @@ upf.Start.CategoryLinks = function(){
                 );
             }
 
-
-            else if($(Item).text().toString() == 'Партнеры'.toString() && Edit_Icons )
-            {
-                $(Item).addClass('Color-Red');
-
-
-                // Change Link
-                $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href',
-                    '/partners' + $(Item).parents('.teaser-item').find('.pos-subtitle a').attr('href')
-                );
-
-                $(Item).parents('.layout-default').find('.title a').attr('href',
-                    '/partners' + $(Item).parents('.layout-default').find('.title a').attr('href')
-                );
-            }
         });
 
     }

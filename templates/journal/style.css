@@ -611,17 +611,17 @@ ul[class*='Grid'] > li, .Site-Navigation.Primary nav ul, footer[role='contentinf
 .yoo-zoo .items .pos-item:hover, .Top-Five .Popular ul li .layout-default:hover, .Popular ul.zoo-itempro-default .layout-default:hover {
   background-color: #fcfcfc; }
 
-#yoo-zoo > .item .pos-bottom .element-itemhits, #yoo-zoo > .item .pos-bottom .element-itemcreated, #yoo-zoo.Item-Extended .item .pos-top .element-itemcreated, #yoo-zoo.Item-Extended .item .pos-top .element-itemhits, .yoo-zoo .items .pos-item .floatbox .pos-content .first, .yoo-zoo .items .pos-item .floatbox .pos-content .last {
+#yoo-zoo > .item .pos-bottom .element-itemhits, #yoo-zoo > .item .pos-top .element-itemhits, #yoo-zoo > .item .pos-bottom .element-itemcreated, #yoo-zoo > .item .pos-top .element-itemcreated, #yoo-zoo.Item-Extended .item .pos-top .element-itemcreated, #yoo-zoo.Item-Extended .item .pos-top .element-itemhits, .yoo-zoo .items .pos-item .floatbox .pos-content .first, .yoo-zoo .items .pos-item .floatbox .pos-content .last {
   font-size: 12px;
   color: #7c7e80;
   width: auto; }
 
-#yoo-zoo > .item .pos-bottom .element-itemhits, #yoo-zoo.Item-Extended .item .pos-top .element-itemhits, .yoo-zoo .items .pos-item .floatbox .pos-content .last {
+#yoo-zoo > .item .pos-bottom .element-itemhits, #yoo-zoo > .item .pos-top .element-itemhits, #yoo-zoo.Item-Extended .item .pos-top .element-itemhits, .yoo-zoo .items .pos-item .floatbox .pos-content .last {
   float: right;
   padding-left: 25px;
   background: url(../../templates/journal/images/views.png) left center no-repeat; }
 
-#yoo-zoo > .item .pos-bottom .element-itemcreated, #yoo-zoo.Item-Extended .item .pos-top .element-itemcreated, .yoo-zoo .items .pos-item .floatbox .pos-content .first {
+#yoo-zoo > .item .pos-bottom .element-itemcreated, #yoo-zoo > .item .pos-top .element-itemcreated, #yoo-zoo.Item-Extended .item .pos-top .element-itemcreated, .yoo-zoo .items .pos-item .floatbox .pos-content .first {
   float: left; }
 
 #yoo-zoo > .item .pos-content {
@@ -629,7 +629,7 @@ ul[class*='Grid'] > li, .Site-Navigation.Primary nav ul, footer[role='contentinf
 
 input[type='submit'],
 input[type='button'],
-button, .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Load-More, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Languages .goog-te-menu-value, header.Site-Header .Toolbar .Authorization ul li a, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
+button, .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Load-More, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Languages .goog-te-menu-value, header.Site-Header .Toolbar .Authorization ul #login-form .logout-button input[type=submit], header.Site-Header .Toolbar .Authorization ul li a, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
   text-transform: uppercase; }
 
 #yoo-zoo > .item .pos-content .element-download a {
@@ -689,7 +689,7 @@ button {
   button:hover {
     background-color: #e12626; }
 
-.Load-More, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
+.Load-More, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Authorization ul #login-form .logout-button input[type=submit], header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
 
 .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
@@ -1397,9 +1397,14 @@ select {
     margin-bottom: 15px; }
   #yoo-zoo > .item .floatbox {
     margin: 0; }
-  #yoo-zoo > .item .pos-subtitle a {
-    margin-top: 10px;
-    color: #000000; }
+  #yoo-zoo > .item .pos-subtitle {
+    float: left;
+    clear: left;
+    margin-top: 20px; }
+    #yoo-zoo > .item .pos-subtitle a {
+      color: #000000;
+      float: left;
+      clear: left; }
   #yoo-zoo > .item .pos-content .element-textarea p {
     font-size: 14px;
     line-height: 23px; }
@@ -1484,9 +1489,9 @@ select {
 
 body[data-alias=home] .yoo-zoo .items .pos-item .pos-title.Block-No-Image {
   display: block !important; }
-body[data-alias=home] .yoo-zoo .items .pos-item article:last-of-type {
+body[data-alias=home] .yoo-zoo .items .pos-item article.Item-Category {
   display: block !important; }
-  body[data-alias=home] .yoo-zoo .items .pos-item article:last-of-type a {
+  body[data-alias=home] .yoo-zoo .items .pos-item article.Item-Category a {
     bottom: 25px;
     left: 10px;
     position: absolute;
@@ -1618,12 +1623,12 @@ fieldset.only {
     padding: 10px 0;
     font-weight: bold; }
 
-.element-textarea iframe {
-  width: 100%;
-  height: 580px; }
+.pos-top iframe {
+  width: 100% !important;
+  height: 540px !important; }
   @media screen and (min-width: 1880px) {
-    .element-textarea iframe {
-      height: 640px; } }
+    .pos-top iframe {
+      height: 640px !important; } }
 
 [data-alias=video] .item .pos-title {
   display: none; }
@@ -1698,7 +1703,7 @@ button[name='Search'] {
 
 .item .element.element-relateditems, .item .element.element-itemtag {
   margin-top: 20px;
-  height: auto !important;
+  height: auto;
   display: block;
   font-size: 14px; }
   .item .element.element-relateditems > h3, .item .element.element-relateditems > a, .item .element.element-itemtag > h3, .item .element.element-itemtag > a {
@@ -1903,6 +1908,42 @@ header.Site-Header {
       float: right; }
       header.Site-Header .Toolbar .Authorization #login-form {
         display: none; }
+      header.Site-Header .Toolbar .Authorization ul .SingIn-Info {
+        display: block;
+        padding: 10px 5px;
+        font-size: 12px;
+        font-weight: bold;
+        color: black; }
+      header.Site-Header .Toolbar .Authorization ul #login-form {
+        margin-top: 1px;
+        display: block;
+        padding: 0px;
+        border: none;
+        background: none;
+        position: static; }
+        header.Site-Header .Toolbar .Authorization ul #login-form .logout-button input[type=submit] {
+          display: block;
+          margin-top: 1px;
+          margin-left: 20px;
+          padding: 8px 15px;
+          border-radius: 20px;
+          border: 0;
+          font-family: 'PT Serif', serif;
+          color: white;
+          background-color: #d83333;
+          /* Fallback */
+          background: -webkit-linear-gradient(to bottom, #f53636, #d83333);
+          /* Chrome 10+, Saf5.1+, iOS 5+ */
+          background: -moz-linear-gradient(to bottom, #f53636, #d83333);
+          /* FF3.6 */
+          background: -ms-linear-gradient(to bottom, #f53636, #d83333);
+          /* IE10 */
+          background: -o-linear-gradient(to bottom, #f53636, #d83333);
+          /* Opera 11.10+ */
+          background: linear-gradient(to bottom, #f53636, #d83333);
+          filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f53636', EndColorStr='#d83333'); }
+          header.Site-Header .Toolbar .Authorization ul #login-form .logout-button input[type=submit]:hover {
+            background: #c82222; }
       header.Site-Header .Toolbar .Authorization ul li a {
         display: block;
         padding: 10px 5px;
@@ -2080,9 +2121,9 @@ body[data-page=list] .teaser-item {
   position: relative; }
   [data-alias=home] .zoo-itempro-default .media article.item {
     display: none; }
-  [data-alias=home] .zoo-itempro-default .media article:last-of-type, [data-alias=home] .zoo-itempro-default .media .Item-Category {
+  [data-alias=home] .zoo-itempro-default .media article.Item-Category, [data-alias=home] .zoo-itempro-default .media .Item-Category {
     display: block; }
-    [data-alias=home] .zoo-itempro-default .media article:last-of-type a, [data-alias=home] .zoo-itempro-default .media .Item-Category a {
+    [data-alias=home] .zoo-itempro-default .media article.Item-Category a, [data-alias=home] .zoo-itempro-default .media .Item-Category a {
       bottom: 25px;
       left: 10px;
       position: absolute;
@@ -2144,6 +2185,10 @@ a.Color-Yellow {
   background: #d0ae1d !important; }
 a.Color-Blue {
   background: #2b4c97 !important; }
+a.Color-Pink {
+  background: #2b4c97 !important; }
+a.Color-Orange {
+  background: #11c9f6 !important; }
 
 fieldset {
   border: transparent; }
@@ -2226,13 +2271,14 @@ button[name='Search'] {
 
 #Page-Preloader {
   position: fixed;
-  left: 0;
+  left: 235px;
   top: 0;
+  right: 0px;
+  bottom: 0px;
   z-index: 999;
-  width: 100%;
-  height: 100%;
   overflow: visible;
-  background: #F5F5F5 url(../../templates/journal/images/loading.gif) no-repeat center center; }
+  background: #F5F5F5 url(../../templates/journal/images/loading.gif) no-repeat center center;
+  background-size: 4%; }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome

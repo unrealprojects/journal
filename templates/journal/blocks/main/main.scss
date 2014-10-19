@@ -258,6 +258,41 @@ header.Site-Header {
             ul {
                 @extend %Inline;
                 @extend %Unstyle;
+
+                .SingIn-Info{
+                    display: block;
+                    padding: 10px 5px;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: black;
+                }
+                #login-form{
+                    margin-top: 1px;
+                    display: block;
+                    padding: 0px;
+                    border: none;
+                    background: none;
+                    position: static;
+
+                    .logout-button input[type=submit]{
+                        display: block;
+                        margin-top: 1px;
+                        margin-left: 20px;
+                        padding: 8px 15px;
+                        border-radius: 20px;
+                        border: 0;
+                        font-family: 'PT Serif', serif;
+                        color: white;
+                        @include Gradient(#f53636, #d83333, to bottom);
+                        @extend %Uppercase;
+                        @extend %Button-Shadow;
+                        &:hover {
+                            background: #c82222;
+                        }
+                    }
+                }
+
+
                 li {
                     a {
                         display: block;
@@ -504,8 +539,9 @@ body[data-page=list] .teaser-item {
     position: relative;
     article.item {
         display: none;
+
     }
-    article:last-of-type, .Item-Category {
+    article.Item-Category, .Item-Category {
         display: block;
 
         a {
@@ -602,6 +638,15 @@ a {
 
     &.Color-Blue {
         background: #2b4c97 !important;
+    }
+
+    &.Color-Pink {
+        background: #2b4c97 !important;
+    }
+
+
+    &.Color-Orange {
+        background: rgb(17, 201, 246) !important;
     }
 }
 
@@ -723,12 +768,13 @@ button[name='Search'] {
 
 #Page-Preloader {
     position: fixed;
-    left: 0;
+    left: 235px;
     top: 0;
     right:0px;
     bottom:0px;
     z-index: 999;
     overflow: visible;
     background: #F5F5F5 url(../../templates/journal/images/loading.gif) no-repeat center center;
-    background-size: 10%;
+    background-size: 4%;
 }
+

@@ -14,10 +14,17 @@
 
         <nav class="Authorization">
             <ul>
-                <li><a id="SingIn" href="#">Вход</a></li>
-                <li><a class="Button-Like" href="/component/users/?view=registration">Регистрация</a></li>
+                <?php if(!$User = JFactory::getUser()->name){ ?>
+                    <li><a id="SingIn" href="#">Вход</a></li>
+                    <li><a class="Button-Like" href="/component/users/?view=registration">Регистрация</a></li>
+                <?php }else{ ?>
+                    <li><a href="/component/users/profile?layout=edit" class="SingIn-Info"><?php echo JFactory::getUser()->username; ?></a>
+                    <li><jdoc:include type="modules" name="authorization"/></li>
+                <?php } ?>
             </ul>
-            <jdoc:include type="modules" name="authorization"/>
+            <?php if(!$User = JFactory::getUser()->name){ ?>
+                <jdoc:include type="modules" name="authorization"/>
+            <?php } ?>
         </nav>
     </div>
 </header>
