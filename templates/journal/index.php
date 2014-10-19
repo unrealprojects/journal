@@ -15,6 +15,7 @@
     <script src="/templates/journal/lib/js/ie8/respond.js" type="text/javascript"></script>
     <![endif]-->
 
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (d, w, c) {
