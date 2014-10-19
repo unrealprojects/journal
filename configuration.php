@@ -4,7 +4,7 @@ class JConfig {
 	public $offline_message = 'Сайт закрыт на техническое обслуживание.<br /> Пожалуйста, зайдите позже.';
 	public $display_offline_message = '1';
 	public $offline_image = '';
-	public $sitename = 'Формакогенетика Формакогеномика';
+	public $sitename = 'Фармакогенетика и Фармакогеномика';
 	public $editor = 'jce';
 	public $captcha = '0';
 	public $list_limit = '20';
@@ -31,8 +31,8 @@ class JConfig {
 	public $offset = 'UTC';
 	public $mailonline = '1';
 	public $mailer = 'mail';
-	public $mailfrom = 'chevil92@gmail.com';
-	public $fromname = 'journal';
+	public $mailfrom = 'mail@pharmacogenetics-pharmacogenomics.ru';
+	public $fromname = 'Фармакогенетика и Фармакогеномика';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '0';
 	public $smtpuser = '';
