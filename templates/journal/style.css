@@ -1756,12 +1756,14 @@ main {
   display: none; }
 
 .Page-Sidebar {
+  position: absolute;
   position: fixed;
   background-color: #4a4f5a;
   width: 235px;
   left: 0;
   top: 0;
-  bottom: 0; }
+  bottom: 0;
+  z-index: 99999999999; }
   .Page-Sidebar nav.Site-Navigation .nav.menu_left {
     margin-top: 50px; }
     .Page-Sidebar nav.Site-Navigation .nav.menu_left li a {
@@ -2220,9 +2222,6 @@ fieldset {
 .Subscription {
   display: none; }
 
-.Content-Wrapper {
-  position: relative; }
-
 .Site-Logo {
   cursor: pointer; }
   .Site-Logo img {
@@ -2279,6 +2278,10 @@ button[name='Search'] {
   overflow: visible;
   background: #F5F5F5 url(../../templates/journal/images/loading.gif) no-repeat center center;
   background-size: 4%; }
+
+.Control-Group input[type=radio] {
+  width: auto;
+  height: 10px; }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
