@@ -12,43 +12,43 @@ defined('_JEXEC') or die;
 ?>
 
 <fieldset id="users-profile-core">
-	<legend>
+	<h1>
 		<?php echo JText::_('COM_USERS_PROFILE_CORE_LEGEND'); ?>
-	</legend>
-	<dl class="dl-horizontal">
-		<dt>
+	</h1>
+	<div class="Grid Merge">
+		<div class='Node-XS-3'>
 			<?php echo JText::_('COM_USERS_PROFILE_NAME_LABEL'); ?>
-		</dt>
-		<dd>
+		</div>
+		<div class='Node-XS-9'>
 			<?php echo $this->data->name; ?>
-		</dd>
-		<dt>
+		</div>
+		<div class='Node-XS-3'>
 			<?php echo JText::_('COM_USERS_PROFILE_USERNAME_LABEL'); ?>
-		</dt>
-		<dd>
+		</div>
+		<div class='Node-XS-9'>
 			<?php echo htmlspecialchars($this->data->username); ?>
-		</dd>
-		<dt>
+		</div>
+		<div class='Node-XS-3'>
 			<?php echo JText::_('COM_USERS_PROFILE_REGISTERED_DATE_LABEL'); ?>
-		</dt>
-		<dd>
+		</div>
+		<div class='Node-XS-9'>
 			<?php echo JHtml::_('date', $this->data->registerDate); ?>
-		</dd>
-		<dt>
+		</div>
+		<div class='Node-XS-3'>
 			<?php echo JText::_('COM_USERS_PROFILE_LAST_VISITED_DATE_LABEL'); ?>
-		</dt>
+		</div>
 
 		<?php if ($this->data->lastvisitDate != '0000-00-00 00:00:00'){?>
-			<dd>
+			<div class='Node-XS-9'>
 				<?php echo JHtml::_('date', $this->data->lastvisitDate); ?>
-			</dd>
+			</div>
 		<?php }
 		else
 		{?>
-			<dd>
+			<div class='Node-XS-9'>
 				<?php echo JText::_('COM_USERS_PROFILE_NEVER_VISITED'); ?>
-			</dd>
+			</div>
 		<?php } ?>
 
-	</dl>
+	</div>
 </fieldset>

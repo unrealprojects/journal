@@ -292,7 +292,6 @@ header.Site-Header {
                     }
                 }
 
-
                 li {
                     a {
                         display: block;
@@ -778,3 +777,7 @@ button[name='Search'] {
     background-size: 4%;
 }
 
+.Control-Group input[type=radio]{
+    width: auto;
+    height: 10px;
+}

@@ -91,7 +91,6 @@
             }
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        <script src="/templates/journal/blocks/main/header/js/translate.js"></script>
         <script src="/templates/journal/lib/js/masonry.pkgd.js"></script>
         <script src="/templates/journal/lib/js/grid.js"></script>
         <script src="/templates/journal/lib/js/jquery.modbox.js"></script>
