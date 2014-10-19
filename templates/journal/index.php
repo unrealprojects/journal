@@ -85,7 +85,11 @@
             <jdoc:include type="modules" name="footer"/>
         </article>
     </footer>
-    <div class="Scripts">
+
+
+
+
+
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({pageLanguage: 'ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
@@ -99,7 +103,7 @@
         <script src="/templates/journal/lib/js/jquery.transform3d.js"></script>
         <script src="/templates/journal/lib/js/animation.js"></script>
 
-    </div>
+
 
 
     <!--[if lt IE 10]>
