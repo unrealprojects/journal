@@ -834,7 +834,7 @@ $(document).ready(function(){
     });
 
     upf.Page.Headers();
-
+    upf.Start.VerticalGrid();
 
     upf.Menu.ToggleMenu();
     upf.Menu.ScrollMenu();
