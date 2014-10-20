@@ -176,15 +176,15 @@
 		a
 		{
 			display: 	block;
-			padding: 	0 30px;
+			padding: 	0 25px;
 			color:		black;
 			@include 	Adaptive(1400px)
 			{
-				padding: 0 40px;
+				padding: 0 35px;
 			}
 			@include 	Adaptive($Viewport-LR)
 			{
-				padding: 0 60px;
+				padding: 0 55px;
 			}
 			@extend 	%Animated;
 			@extend 	%Uppercase;
