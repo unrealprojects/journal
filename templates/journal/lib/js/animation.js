@@ -905,7 +905,7 @@ $(document).ready(function(){
     /*** Random Photo ***/
     if($('.Adv img').length>0){
         $('.Adv img').hide();
-        $('.Adv img')[Math.floor(((jQuery('.Adv img').length)*Math.random()))].show();
+        $('.Adv img')[Math.floor((($('.Adv img').length)*Math.random()))].show();
     }
 
 
