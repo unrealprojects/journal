@@ -694,14 +694,14 @@ button {
 
 .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
   display: block;
-  padding: 0 30px;
+  padding: 0 25px;
   color: black; }
   @media screen and (min-width: 1400px) {
     .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
-      padding: 0 40px; } }
+      padding: 0 35px; } }
   @media screen and (min-width: 1880px) {
     .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
-      padding: 0 60px; } }
+      padding: 0 55px; } }
 .Site-Navigation.Primary nav ul:first-child a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:first-child a {
   padding-left: 0; }
 
