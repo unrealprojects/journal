@@ -22,5 +22,7 @@ $css_class = $application->getGroup().'-'.$application->getTemplate()->name;
 </ul>
 
 <?php else : ?>
-<?php echo JText::_('COM_ZOO_NO_ITEMS_FOUND'); ?>
+<ul class="uk-list uk-list-line <?php echo $css_class ?>">
+    <li class="uk-clearfix"><?php echo JText::_('COM_ZOO_NO_ITEMS_FOUND'); ?></li>
+</ul>
 <?php endif;

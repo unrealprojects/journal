@@ -152,6 +152,18 @@ upf.Page.Headers = function(){
 
     var SiteSection = location.pathname.split('/')[1];
     var SiteSectionType = location.pathname.split('/')[2];
+
+    $('a').each(function(){
+        if($(this).attr('href')){
+            var LinkSection         =        $(this).attr('href').split('/')[1];
+
+            if(LinkSection == SiteSection){
+                $(this).addClass('Active');
+            }
+        }
+    });
+
+
     // Set data-page="home"
         if( location.pathname       == '/' ||
             SiteSection       == 'archive' ||
@@ -754,7 +766,7 @@ upf.Actions.BlockClickAble = function(){
         SelectorLink = '.pos-subtitle a, .title a';
 
     $(SelectorItem).click(function(){
-       location.href =  $(this).find(SelectorLink).attr('href');
+       location.href = $(this).find(SelectorLink).attr('href');
     });
 
 }
@@ -857,6 +869,7 @@ $(document).ready(function(){
 
 
 
+
     /*** Скролл вверх ***/
     $('#Scroll-Top').click(function () {
         $('body,html').animate({
@@ -888,6 +901,12 @@ $(document).ready(function(){
 
     upf.Start.VerticalGrid();
 
+
+    /*** Random Photo ***/
+    if($('.Adv img').length>0){
+        $('.Adv img').hide();
+        $('.Adv img')[[Math.floor(((jQuery('.Adv img').length)*Math.random()))]].show();
+    }
 
 });
 

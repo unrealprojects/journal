@@ -213,6 +213,8 @@
 		{
 			.element.element-relateditems
 			{
+                margin-top: 100px;
+                margin-bottom: 40px;
                 .pos-meta{
                     display: none;
                 }
@@ -472,6 +474,7 @@ body[data-alias=home] .yoo-zoo .items .pos-item
 {
 	@extend 					%Content-Block;
     margin-top:                 60px;
+    margin-bottom:                 40px;
 
 
     img{
@@ -490,9 +493,9 @@ body[data-alias=home] .yoo-zoo .items .pos-item
 	{
 		padding: 5px 10px;
 		color: $C-Red-1;
-		background-color: $C-Red-6;
-		border-color: $C-Red-3;
-		box-shadow: 0 0 1px $C-Red-4 inset;
+		background-color: $C-Green-6;
+		border-color: $C-Green-3;
+		box-shadow: 0 0 1px $C-Green-4 inset;
 		& + p
 		{
 			margin-top: 10px;
@@ -580,6 +583,7 @@ body[data-alias=home] .yoo-zoo .items .pos-item
 {
 	@extend %Content-Block;
 	@extend %Content-Block-Item;
+    margin-bottom: 40px;
 }
 #yoo-zoo .item p.pos-meta
 {
@@ -674,10 +678,13 @@ fieldset.only
 }
 .Top-Five-Header
 {
+    position: relative;
 	margin-bottom: 30px;
+
 	@extend %Fix;
 	h3
 	{
+        margin-right: 40px;
 		display: inline-block;
 		width: auto;
 		float: left;
@@ -685,8 +692,9 @@ fieldset.only
 	}
 	.Dropdown
 	{
-		float: right;
-        top: 7px;
+        position: absolute;
+        top: 10px;
+        right: 0px;
 	}
 }
 .Popular
@@ -839,4 +847,9 @@ button[name='Search']
 // Only Selected Photos
 .teaser-item .pos-meta{
     display: none;
+}
+
+#yoo-zoo .tag-title, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems h3{
+    position: relative;
+    top: -50px;
 }

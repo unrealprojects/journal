@@ -32,5 +32,7 @@ $renderer_layout = basename($params->find('layout.renderer_layout', $params->get
 </ul>
 
 <?php else : ?>
-<?php echo JText::_('MOD_ZOOITEMPRO_NO_ITEMS_FOUND'); ?>
+    <ul class="zoo-itempro-default zoo-default">
+        <li><div class="layout-default"><?php echo JText::_('MOD_ZOOITEMPRO_NO_ITEMS_FOUND'); ?></div></li>
+    </ul>
 <?php endif; ?>

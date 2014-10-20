@@ -101,8 +101,8 @@ defined('_JEXEC') or die;
 
 		<div class="Control-Group k2AccountPageUpdate">
 			<button class="button validate" type="submit">
-				Регистрация
-			</button>
+                Зарегистрироваться
+            </button>
 		</div>
 	</div>
 	<input type="hidden" name="option" value="<?php echo $this->optionValue; ?>" />

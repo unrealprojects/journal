@@ -158,7 +158,20 @@ class mod_zooitemproHelper
 
 		// set created
 		if ($params->find('items.itemfilter.dates.created._filter')) {
-			$model->created($params->find('items.itemfilter.dates.created'));
+            $item = $params->find('items.itemfilter.dates.created');
+            if($item['interval_unit']=='DAY'){
+                $item['period_mode'] = 'static';
+                $item['value'] = date("Y-m-d H:i:s",mktime(0, 0, 0, date("m")  , date("d")-7, date("Y")));
+                $item['value_to'] = date("Y-m-d H:i:s");
+
+
+            }elseif($item['interval_unit']=='MONTH'){
+                $item['period_mode'] = 'static';
+                $item['value'] = date("Y-m-d H:i:s",mktime(0, 0, 0, date("m")  , date("d")-30, date("Y")));
+                $item['value_to'] = date("Y-m-d H:i:s");
+            }
+
+            $model->created($item);
 		}
 
 		// set modified

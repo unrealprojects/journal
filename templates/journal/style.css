@@ -629,7 +629,7 @@ ul[class*='Grid'] > li, .Site-Navigation.Primary nav ul, footer[role='contentinf
 
 input[type='submit'],
 input[type='button'],
-button, .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Load-More, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Languages .goog-te-menu-value, header.Site-Header .Toolbar .Authorization ul #login-form .logout-button input[type=submit], header.Site-Header .Toolbar .Authorization ul li a, header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
+button, .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a, .Load-More, .Page-Sidebar nav.Site-Navigation .nav.menu_left li a, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Languages .goog-te-menu-value, header.Site-Header .Toolbar .Authorization ul #login-form .logout-button input[type=submit], header.Site-Header .Toolbar .Authorization ul li a, header.Site-Header .Toolbar .Authorization ul li a.Button-Like, .button.validate {
   text-transform: uppercase; }
 
 #yoo-zoo > .item .pos-content .element-download a {
@@ -689,19 +689,19 @@ button {
   button:hover {
     background-color: #e12626; }
 
-.Load-More, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Authorization ul #login-form .logout-button input[type=submit], header.Site-Header .Toolbar .Authorization ul li a.Button-Like {
+.Load-More, .Page-Sidebar .Feed-Subscription, header.Site-Header .Toolbar .Authorization ul #login-form .logout-button input[type=submit], header.Site-Header .Toolbar .Authorization ul li a.Button-Like, .button.validate {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
 
 .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
   display: block;
-  padding: 0 15px;
+  padding: 0 30px;
   color: black; }
   @media screen and (min-width: 1400px) {
     .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
-      padding: 0 30px; } }
+      padding: 0 40px; } }
   @media screen and (min-width: 1880px) {
     .Site-Navigation.Primary nav ul li a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a {
-      padding: 0 50px; } }
+      padding: 0 60px; } }
 .Site-Navigation.Primary nav ul:first-child a, footer[role='contentinfo'] nav.Site-Navigation.Secondary ul:first-child a {
   padding-left: 0; }
 
@@ -1442,15 +1442,18 @@ select {
       width: auto;
       text-align: right;
       padding-right: 20px; }
-  #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-meta {
-    display: none; }
-  #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item {
-    width: 33.33%;
-    float: left; }
-    #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item .pos-subtitle {
-      font-weight: 100;
-      font-size: 18px;
-      line-height: 23px; }
+  #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems {
+    margin-top: 100px;
+    margin-bottom: 40px; }
+    #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-meta {
+      display: none; }
+    #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item {
+      width: 33.33%;
+      float: left; }
+      #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems .pos-item .pos-subtitle {
+        font-weight: 100;
+        font-size: 18px;
+        line-height: 23px; }
 
 .Tags ul.zoo-list {
   margin-top: 10px; }
@@ -1550,16 +1553,17 @@ body[data-alias=home] .yoo-zoo .items .pos-item article.Item-Category {
       display: none; }
 
 .Adv {
-  margin-top: 60px; }
+  margin-top: 60px;
+  margin-bottom: 40px; }
   .Adv img {
     width: 100%; }
 
 #system-message-container p {
   padding: 5px 10px;
   color: #a02828;
-  background-color: #fff3f3;
-  border-color: #f46d6d;
-  box-shadow: 0 0 1px #ffadad inset; }
+  background-color: #f1fff0;
+  border-color: #8ad390;
+  box-shadow: 0 0 1px #d2ecd0 inset; }
   #system-message-container p + p {
     margin-top: 10px; }
 
@@ -1597,6 +1601,9 @@ body[data-alias=home] .yoo-zoo .items .pos-item article.Item-Category {
         display: block;
         width: 216px;
         margin: 0 auto; }
+
+.item-page {
+  margin-bottom: 40px; }
 
 #yoo-zoo .item p.pos-meta {
   font-style: normal;
@@ -1642,14 +1649,17 @@ fieldset.only {
   margin-top: 40px; }
 
 .Top-Five-Header {
+  position: relative;
   margin-bottom: 30px; }
   .Top-Five-Header h3 {
+    margin-right: 40px;
     display: inline-block;
     width: auto;
     float: left; }
   .Top-Five-Header .Dropdown {
-    float: right;
-    top: 7px; }
+    position: absolute;
+    top: 10px;
+    right: 0px; }
 
 .Popular img {
   width: 100%;
@@ -1719,6 +1729,10 @@ button[name='Search'] {
 .teaser-item .pos-meta {
   display: none; }
 
+#yoo-zoo .tag-title, #yoo-zoo.Item-Extended .item .pos-bottom .element.element-relateditems h3 {
+  position: relative;
+  top: -50px; }
+
 * {
   margin: 0;
   padding: 0;
@@ -1772,6 +1786,9 @@ main {
       color: #dce0e5;
       font-size: 14px; }
       .Page-Sidebar nav.Site-Navigation .nav.menu_left li a:hover {
+        background-color: #33363e;
+        color: white; }
+      .Page-Sidebar nav.Site-Navigation .nav.menu_left li a.Active {
         background-color: #33363e;
         color: white; }
   .Page-Sidebar .Feed-Subscription {
@@ -1945,7 +1962,8 @@ header.Site-Header {
           background: linear-gradient(to bottom, #f53636, #d83333);
           filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f53636', EndColorStr='#d83333'); }
           header.Site-Header .Toolbar .Authorization ul #login-form .logout-button input[type=submit]:hover {
-            background: #c82222; }
+            background: #c82222;
+            transition: 0; }
       header.Site-Header .Toolbar .Authorization ul li a {
         display: block;
         padding: 10px 5px;
@@ -1988,6 +2006,8 @@ header.Site-Header {
   .Site-Navigation.Primary nav ul li a {
     font-weight: bold; }
     .Site-Navigation.Primary nav ul li a:hover {
+      color: #c82222; }
+    .Site-Navigation.Primary nav ul li a.Active {
       color: #c82222; }
   .Site-Navigation.Primary nav ul li:first-child a {
     padding-left: 0; }
@@ -2089,6 +2109,8 @@ footer[role='contentinfo'] {
       footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li {
         font-weight: bold; }
         footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a:hover {
+          color: #77972b; }
+        footer[role='contentinfo'] nav.Site-Navigation.Secondary ul li a.Active {
           color: #77972b; }
     footer[role='contentinfo'] nav.Site-Navigation.Secondary div.Metrics {
       margin-top: -4px;
@@ -2216,7 +2238,7 @@ fieldset {
   padding-top: 40px;
   padding-bottom: 40px; }
   .item-page h2 {
-    margin-bottom: 20px; }
+    margin-bottom: 40px; }
 
 /*** OlegBlud Styles***/
 .Subscription {
@@ -2282,6 +2304,49 @@ button[name='Search'] {
 .Control-Group input[type=radio] {
   width: auto;
   height: 10px; }
+
+body .k2ProfileHeading {
+  margin-top: 20px; }
+
+input {
+  cursor: text !important; }
+
+.button.validate {
+  display: block;
+  margin-top: 1px;
+  float: right;
+  margin-top: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 0;
+  font-family: 'PT Serif', serif;
+  color: white;
+  background-color: #d83333;
+  /* Fallback */
+  background: -webkit-linear-gradient(to bottom, #f53636, #d83333);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background: -moz-linear-gradient(to bottom, #f53636, #d83333);
+  /* FF3.6 */
+  background: -ms-linear-gradient(to bottom, #f53636, #d83333);
+  /* IE10 */
+  background: -o-linear-gradient(to bottom, #f53636, #d83333);
+  /* Opera 11.10+ */
+  background: linear-gradient(to bottom, #f53636, #d83333);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f53636', EndColorStr='#d83333'); }
+  .button.validate:hover {
+    background: #c82222; }
+
+a.close {
+  display: none; }
+
+.alert-heading {
+  margin-bottom: 10px; }
+
+body .Projects .Projects-Header {
+  margin-top: 0px; }
+
+.yoo-zoo {
+  margin-bottom: 40px; }
 
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome

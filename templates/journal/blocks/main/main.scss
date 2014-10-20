@@ -93,6 +93,10 @@ main {
                         background-color: darken(#4a4f5a, 10%);
                         color: white;
                     }
+                    &.Active{
+                        background-color: darken(#4a4f5a, 10%);
+                        color: white;
+                    }
                 }
             }
         }
@@ -291,6 +295,7 @@ header.Site-Header {
                         @extend %Button-Shadow;
                         &:hover {
                             background: #c82222;
+                            transition: 0;
                         }
                     }
                 }
@@ -349,6 +354,9 @@ header.Site-Header {
                 a {
                     font-weight: bold;
                     &:hover {
+                        color: #c82222;
+                    }
+                    &.Active{
                         color: #c82222;
                     }
                 }
@@ -483,6 +491,10 @@ footer[role='contentinfo'] {
                 font-weight: bold;
                 a {
                     &:hover {
+                        color: #77972b;
+                    }
+
+                    &.Active{
                         color: #77972b;
                     }
                 }
@@ -692,7 +704,7 @@ fieldset {
     padding-bottom: 40px;
     h2 {
         @extend %Heading-Section;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 }
 
@@ -783,4 +795,47 @@ button[name='Search'] {
 .Control-Group input[type=radio]{
     width: auto;
     height: 10px;
+}
+
+
+body .k2ProfileHeading{
+    margin-top: 20px;
+}
+
+input{
+    cursor: text !important;
+}
+
+.button.validate{
+    display: block;
+    margin-top: 1px;
+    float: right;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 0;
+    font-family: 'PT Serif', serif;
+    color: white;
+    @include Gradient(#f53636, #d83333, to bottom);
+    @extend %Uppercase;
+    @extend %Button-Shadow;
+    &:hover {
+        background: #c82222;
+    }
+}
+
+a.close{
+    display: none;
+}
+
+.alert-heading{
+    margin-bottom: 10px;
+}
+
+body .Projects .Projects-Header{
+    margin-top:0px;
+}
+
+.yoo-zoo{
+    margin-bottom: 40px;
 }
