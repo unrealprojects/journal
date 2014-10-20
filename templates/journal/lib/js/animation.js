@@ -905,7 +905,14 @@ $(document).ready(function(){
     /*** Random Photo ***/
     if($('.Adv img').length>0){
         $('.Adv img').hide();
-        $('.Adv img')[Math.floor((($('.Adv img').length)*Math.random()))].show();
+        var breakKey = Math.floor((($('.Adv img').length)*Math.random()));
+        $('.Adv img').each(function($Key,$Value){
+
+
+            if(breakKey == $Key){
+                $(this).show();
+            }
+        });
     }
 
 
